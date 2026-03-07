@@ -6,6 +6,8 @@ const FoldersEnum = {
 	characters     : 'characters',
 	talents        : 'talents',
 	constellations : 'constellations',
+	hyperlinks	   : 'hyperlinks',
+	stories		   : 'stories',
 	
 	weapons        : 'weapons',
 

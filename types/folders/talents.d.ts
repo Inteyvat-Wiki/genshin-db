@@ -37,6 +37,7 @@ declare module "genshin-db" {
 	}
 
 	export interface CombatTalentDetail {
+		id: number;
 		name: string;
 		descriptionRaw: string;
 		description: string; // sanitized with removeColorHTML, removeHashtag, replaceGenderM, replaceLayoutPC, replaceNonBreakSpace
@@ -50,8 +51,10 @@ declare module "genshin-db" {
 	}
 
 	export interface PassiveTalentDetail {
+		id: number;
 		name: string;
 		descriptionRaw: string;
 		description: string; // sanitized with removeColorHTML, removeHashtag, replaceGenderM, replaceLayoutPC, replaceNonBreakSpace
+		unlock_ascension: number;
 	}
 }

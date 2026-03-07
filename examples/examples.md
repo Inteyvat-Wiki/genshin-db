@@ -80,7 +80,6 @@ const genshindb = require('genshin-db');
 {
   id: 10000037,
   name: 'Ganyu',
-  title: 'Plenilune Gaze',
   description: 'The secretary at Yuehai Pavilion. The blood of the qilin, an illuminated beast, flows within her veins.',
   weaponType: 'WEAPON_BOW',
   weaponText: 'Bow',
@@ -90,20 +89,23 @@ const genshindb = require('genshin-db');
   rarity: 5,
   birthdaymmdd: '12/2',
   birthday: 'December 2',
+  affiliation: 'Yuehai Pavilion',
   elementType: 'ELEMENT_CRYO',
   elementText: 'Cryo',
-  affiliation: 'Yuehai Pavilion',
+  constellation: 'Sinae Unicornis',
+  title: 'Plenilune Gaze',
   associationType: 'ASSOC_LIYUE',
   region: 'Liyue',
-  substatType: 'FIGHT_PROP_CRITICAL_HURT',
-  substatText: 'CRIT DMG',
-  constellation: 'Sinae Unicornis',
   cv: {
     english: 'Rachel Lepore & Jennifer Losi',
     chinese: '林簌',
     japanese: '上田麗奈',
     korean: 'Kim Seon-hye'
   },
+  substatType: 'FIGHT_PROP_CRITICAL_HURT',
+  substatText: 'CRIT DMG',
+  mihoyo_icon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Ganyu.png',
+  mihoyo_sideIcon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_side_icon/UI_AvatarIcon_Side_Ganyu.png',
   costs: {
     ascend1: [
       { id: 202, name: 'Mora', count: 20000 },
@@ -148,23 +150,15 @@ const genshindb = require('genshin-db');
     ]
   },
   images: {
-    card: 'https://static.wikia.nocookie.net/gensin-impact/images/8/8d/Character_Ganyu_Card.png',
-    portrait: 'https://static.wikia.nocookie.net/gensin-impact/images/a/a0/Character_Ganyu_Portrait.png',
-    cover1: 'https://act-webstatic.hoyoverse.com/upload/contentweb/2022/07/22/1ae0d0aaad9ee9b55652ea7ec67f0465_3602224572622981451.png',
-    cover2: 'https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20210105/2021010519280045054.png',
-    'hoyolab-avatar': 'https://img-os-static.hoyolab.com/communityWeb/upload/4af4adf192a35db2dd76d9718acc7bc8.png',
     filename_icon: 'UI_AvatarIcon_Ganyu',
     filename_iconCard: 'UI_AvatarIcon_Ganyu_Card',
-    filename_sideIcon: 'UI_AvatarIcon_Side_Ganyu',
     filename_gachaSplash: 'UI_Gacha_AvatarImg_Ganyu',
     filename_gachaSlice: 'UI_Gacha_AvatarIcon_Ganyu',
-    mihoyo_icon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Ganyu.png',
-    mihoyo_sideIcon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_side_icon/UI_AvatarIcon_Side_Ganyu.png',
-    hoyowiki_icon: 'https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2024/03/12/35428890/797ded201635d241d358c307e9e7417f_464481961971717418.png'
+    filename_sideIcon: 'UI_AvatarIcon_Side_Ganyu'
   },
-  url: { fandom: 'https://genshin-impact.fandom.com/wiki/Ganyu' },
+  url: undefined,
   stats: [Function (anonymous)],
-  version: '1.2'
+  version: ''
 }
 ```
 
@@ -226,7 +220,6 @@ const genshindb = require('genshin-db');
 {
   id: 10000021,
   name: 'アンバー',
-  title: '飛行チャンピオン',
   description: '元気満々な女の子、騎士団で最も優秀で、最後の偵察騎士である。',
   weaponType: 'WEAPON_BOW',
   weaponText: '弓',
@@ -236,20 +229,23 @@ const genshindb = require('genshin-db');
   rarity: 4,
   birthdaymmdd: '8/10',
   birthday: '8月10日',
+  affiliation: '西風騎士団',
   elementType: 'ELEMENT_PYRO',
   elementText: '炎',
-  affiliation: '西風騎士団',
+  constellation: '小兎座',
+  title: '飛行チャンピオン',
   associationType: 'ASSOC_MONDSTADT',
   region: 'モンド',
-  substatType: 'FIGHT_PROP_ATTACK_PERCENT',
-  substatText: '攻撃力',
-  constellation: '小兎座',
   cv: {
     english: 'Kelly Baskin',
     chinese: '蔡书瑾',
     japanese: '石見舞菜香',
     korean: '김연우'
   },
+  substatType: 'FIGHT_PROP_ATTACK_PERCENT',
+  substatText: '攻撃力',
+  mihoyo_icon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Ambor.png',
+  mihoyo_sideIcon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_side_icon/UI_AvatarIcon_Side_Ambor.png',
   costs: {
     ascend1: [
       { id: 202, name: 'モラ', count: 20000 },
@@ -294,23 +290,15 @@ const genshindb = require('genshin-db');
     ]
   },
   images: {
-    card: 'https://static.wikia.nocookie.net/gensin-impact/images/2/26/Character_Amber_Card.jpg',
-    portrait: 'https://static.wikia.nocookie.net/gensin-impact/images/0/00/Character_Amber_Portrait.png',
-    cover1: 'https://act-webstatic.hoyoverse.com/upload/contentweb/2022/07/22/6f0ef40157e95b0d59455c12f4d3f270_6966278935690800707.png',
-    cover2: 'https://act-webstatic.hoyoverse.com/upload/contentweb/2022/06/28/4f598572016e3177da5d4256fe9c1f5e_8765525983470991811.png',
-    'hoyolab-avatar': 'https://img-os-static.hoyolab.com/communityWeb/upload/b7c1e4d14fdaac060eb86e3ad09bbf78.png',
     filename_icon: 'UI_AvatarIcon_Ambor',
     filename_iconCard: 'UI_AvatarIcon_Ambor_Card',
-    filename_sideIcon: 'UI_AvatarIcon_Side_Ambor',
     filename_gachaSplash: 'UI_Gacha_AvatarImg_Ambor',
     filename_gachaSlice: 'UI_Gacha_AvatarIcon_Ambor',
-    mihoyo_icon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Ambor.png',
-    mihoyo_sideIcon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_side_icon/UI_AvatarIcon_Side_Ambor.png',
-    hoyowiki_icon: 'https://bbs.hoyolab.com/hoyowiki/picture/character/Amber_icon.png'
+    filename_sideIcon: 'UI_AvatarIcon_Side_Ambor'
   },
-  url: { fandom: 'https://genshin-impact.fandom.com/wiki/Amber' },
+  url: undefined,
   stats: [Function (anonymous)],
-  version: '1.0'
+  version: ''
 }
 ```
 
@@ -322,7 +310,6 @@ const genshindb = require('genshin-db');
 {
   id: 10000021,
   name: 'Amber',
-  title: 'La Campeona de Vuelo',
   description: 'Siempre enérgica y llena de vida, Amber es la mejor exploradora de los Caballeros de Favonius, aunque también es la única...',
   weaponType: 'WEAPON_BOW',
   weaponText: 'Arco',
@@ -332,20 +319,23 @@ const genshindb = require('genshin-db');
   rarity: 4,
   birthdaymmdd: '8/10',
   birthday: '10 de agosto',
+  affiliation: 'Caballeros de Favonius',
   elementType: 'ELEMENT_PYRO',
   elementText: 'Pyro',
-  affiliation: 'Caballeros de Favonius',
+  constellation: 'Lepus',
+  title: 'La Campeona de Vuelo',
   associationType: 'ASSOC_MONDSTADT',
   region: 'Mondstadt',
-  substatType: 'FIGHT_PROP_ATTACK_PERCENT',
-  substatText: 'ATQ',
-  constellation: 'Lepus',
   cv: {
     english: 'Kelly Baskin',
     chinese: '蔡书瑾',
     japanese: '石見舞菜香',
     korean: 'Kim Yeon-woo'
   },
+  substatType: 'FIGHT_PROP_ATTACK_PERCENT',
+  substatText: 'ATQ',
+  mihoyo_icon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Ambor.png',
+  mihoyo_sideIcon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_side_icon/UI_AvatarIcon_Side_Ambor.png',
   costs: {
     ascend1: [
       { id: 202, name: 'Mora', count: 20000 },
@@ -390,23 +380,15 @@ const genshindb = require('genshin-db');
     ]
   },
   images: {
-    card: 'https://static.wikia.nocookie.net/gensin-impact/images/2/26/Character_Amber_Card.jpg',
-    portrait: 'https://static.wikia.nocookie.net/gensin-impact/images/0/00/Character_Amber_Portrait.png',
-    cover1: 'https://act-webstatic.hoyoverse.com/upload/contentweb/2022/07/22/6f0ef40157e95b0d59455c12f4d3f270_6966278935690800707.png',
-    cover2: 'https://act-webstatic.hoyoverse.com/upload/contentweb/2022/06/28/4f598572016e3177da5d4256fe9c1f5e_8765525983470991811.png',
-    'hoyolab-avatar': 'https://img-os-static.hoyolab.com/communityWeb/upload/b7c1e4d14fdaac060eb86e3ad09bbf78.png',
     filename_icon: 'UI_AvatarIcon_Ambor',
     filename_iconCard: 'UI_AvatarIcon_Ambor_Card',
-    filename_sideIcon: 'UI_AvatarIcon_Side_Ambor',
     filename_gachaSplash: 'UI_Gacha_AvatarImg_Ambor',
     filename_gachaSlice: 'UI_Gacha_AvatarIcon_Ambor',
-    mihoyo_icon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Ambor.png',
-    mihoyo_sideIcon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_side_icon/UI_AvatarIcon_Side_Ambor.png',
-    hoyowiki_icon: 'https://bbs.hoyolab.com/hoyowiki/picture/character/Amber_icon.png'
+    filename_sideIcon: 'UI_AvatarIcon_Side_Ambor'
   },
-  url: { fandom: 'https://genshin-impact.fandom.com/wiki/Amber' },
+  url: undefined,
   stats: [Function (anonymous)],
-  version: '1.0'
+  version: ''
 }
 ```
 
@@ -418,7 +400,6 @@ const genshindb = require('genshin-db');
 {
   id: 10000033,
   name: 'Tartaglia',
-  title: 'Childe',
   description: 'No. 11 of The Harbingers, also known as "Childe." His name is highly feared on the battlefield.',
   weaponType: 'WEAPON_BOW',
   weaponText: 'Bow',
@@ -428,20 +409,23 @@ const genshindb = require('genshin-db');
   rarity: 5,
   birthdaymmdd: '7/20',
   birthday: 'July 20',
+  affiliation: 'Fatui',
   elementType: 'ELEMENT_HYDRO',
   elementText: 'Hydro',
-  affiliation: 'Fatui',
+  constellation: 'Monoceros Caeli',
+  title: 'Childe',
   associationType: 'ASSOC_FATUI',
   region: 'Snezhnaya',
-  substatType: 'FIGHT_PROP_WATER_ADD_HURT',
-  substatText: 'Hydro DMG Bonus',
-  constellation: 'Monoceros Caeli',
   cv: {
     english: 'Griffin Burns',
     chinese: '鱼冻',
     japanese: '木村良平',
     korean: 'Nam Do-hyeong'
   },
+  substatType: 'FIGHT_PROP_WATER_ADD_HURT',
+  substatText: 'Hydro DMG Bonus',
+  mihoyo_icon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Tartaglia.png',
+  mihoyo_sideIcon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_side_icon/UI_AvatarIcon_Side_Tartaglia.png',
   costs: {
     ascend1: [
       { id: 202, name: 'Mora', count: 20000 },
@@ -486,23 +470,15 @@ const genshindb = require('genshin-db');
     ]
   },
   images: {
-    card: 'https://static.wikia.nocookie.net/gensin-impact/images/4/4c/Character_Tartaglia_Card.png',
-    portrait: 'https://static.wikia.nocookie.net/gensin-impact/images/3/3a/Character_Tartaglia_Portrait.png',
-    cover1: 'https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20201103/2020110321160453386.png',
-    cover2: 'https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20201103/2020110321234137061.png',
-    'hoyolab-avatar': 'https://img-os-static.hoyolab.com/communityWeb/upload/34ebaeb164a8b447dbe52afaae3e1f63.png',
     filename_icon: 'UI_AvatarIcon_Tartaglia',
     filename_iconCard: 'UI_AvatarIcon_Tartaglia_Card',
-    filename_sideIcon: 'UI_AvatarIcon_Side_Tartaglia',
     filename_gachaSplash: 'UI_Gacha_AvatarImg_Tartaglia',
     filename_gachaSlice: 'UI_Gacha_AvatarIcon_Tartaglia',
-    mihoyo_icon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Tartaglia.png',
-    mihoyo_sideIcon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_side_icon/UI_AvatarIcon_Side_Tartaglia.png',
-    hoyowiki_icon: 'https://bbs.hoyolab.com/hoyowiki/picture/character/Tartaglia_icon.png'
+    filename_sideIcon: 'UI_AvatarIcon_Side_Tartaglia'
   },
-  url: { fandom: 'https://genshin-impact.fandom.com/wiki/Tartaglia' },
+  url: undefined,
   stats: [Function (anonymous)],
-  version: '1.1'
+  version: ''
 }
 ```
 
@@ -514,7 +490,6 @@ const genshindb = require('genshin-db');
 {
   id: 10000022,
   name: 'Venti',
-  title: 'Windborne Bard',
   description: "One of the many bards of Mondstadt, who freely wanders the city's streets and alleys.",
   weaponType: 'WEAPON_BOW',
   weaponText: 'Bow',
@@ -524,20 +499,23 @@ const genshindb = require('genshin-db');
   rarity: 5,
   birthdaymmdd: '6/16',
   birthday: 'June 16',
+  affiliation: 'Mondstadt',
   elementType: 'ELEMENT_ANEMO',
   elementText: 'Anemo',
-  affiliation: 'Mondstadt',
+  constellation: 'Carmen Dei',
+  title: 'Windborne Bard',
   associationType: 'ASSOC_MONDSTADT',
   region: 'Mondstadt',
-  substatType: 'FIGHT_PROP_CHARGE_EFFICIENCY',
-  substatText: 'Energy Recharge',
-  constellation: 'Carmen Dei',
   cv: {
     english: 'Erika Harlacher',
     chinese: '喵酱',
     japanese: '村瀬歩',
     korean: 'Jung Yoo-jung'
   },
+  substatType: 'FIGHT_PROP_CHARGE_EFFICIENCY',
+  substatText: 'Energy Recharge',
+  mihoyo_icon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Venti.png',
+  mihoyo_sideIcon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_side_icon/UI_AvatarIcon_Side_Venti.png',
   costs: {
     ascend1: [
       { id: 202, name: 'Mora', count: 20000 },
@@ -582,23 +560,15 @@ const genshindb = require('genshin-db');
     ]
   },
   images: {
-    card: 'https://static.wikia.nocookie.net/gensin-impact/images/7/76/Character_Venti_Card.jpg',
-    portrait: 'https://static.wikia.nocookie.net/gensin-impact/images/c/cf/Character_Venti_Portrait.png',
-    cover1: 'https://act-webstatic.hoyoverse.com/upload/contentweb/2022/07/22/965e940e6caafe8fbd4bf0e17653000b_4508958090491775485.png',
-    cover2: 'https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20191122/2019112211143037621.png',
-    'hoyolab-avatar': 'https://img-os-static.hoyolab.com/communityWeb/upload/f42e16fca94650e2e932c093de92ae54.png',
     filename_icon: 'UI_AvatarIcon_Venti',
     filename_iconCard: 'UI_AvatarIcon_Venti_Card',
-    filename_sideIcon: 'UI_AvatarIcon_Side_Venti',
     filename_gachaSplash: 'UI_Gacha_AvatarImg_Venti',
     filename_gachaSlice: 'UI_Gacha_AvatarIcon_Venti',
-    mihoyo_icon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Venti.png',
-    mihoyo_sideIcon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_side_icon/UI_AvatarIcon_Side_Venti.png',
-    hoyowiki_icon: 'https://bbs.hoyolab.com/hoyowiki/picture/character/Venti_icon.png'
+    filename_sideIcon: 'UI_AvatarIcon_Side_Venti'
   },
-  url: { fandom: 'https://genshin-impact.fandom.com/wiki/Venti' },
+  url: undefined,
   stats: [Function (anonymous)],
-  version: '1.0'
+  version: ''
 }
 ```
 
@@ -840,6 +810,7 @@ const genshindb = require('genshin-db');
   id: 2701,
   name: 'Ningguang',
   combat1: {
+    id: 10271,
     name: 'Sparkling Scatter',
     descriptionRaw: '<color=#FFD780FF>Normal Attack</color>\n' +
       'Shoots gems that deal <color=#FFE699FF>Geo DMG</color>.\n' +
@@ -931,6 +902,7 @@ const genshindb = require('genshin-db');
     }
   },
   combat2: {
+    id: 10272,
     name: 'Jade Screen',
     descriptionRaw: 'Ningguang creates a Jade Screen out of gold, obsidian, and her great opulence, dealing <color=#FFE699FF>AoE Geo DMG</color>.\n' +
       '\n' +
@@ -986,6 +958,7 @@ const genshindb = require('genshin-db');
     }
   },
   combat3: {
+    id: 10274,
     name: 'Starshatter',
     descriptionRaw: 'Gathering a great number of gems, Ningguang scatters them all at once, sending homing projectiles at her opponents that deal massive <color=#FFE699FF>Geo DMG</color>.\n' +
       'If Starshatter is cast when a Jade Screen is nearby, the Jade Screen will fire additional gem projectiles at the same time.\n' +
@@ -1022,19 +995,25 @@ const genshindb = require('genshin-db');
     }
   },
   passive1: {
+    id: 272101,
     name: 'Backup Plan',
     descriptionRaw: 'When Ningguang is in possession of Star Jades, her Charged Attack does not consume Stamina.',
-    description: 'When Ningguang is in possession of Star Jades, her Charged Attack does not consume Stamina.'
+    description: 'When Ningguang is in possession of Star Jades, her Charged Attack does not consume Stamina.',
+    unlock_ascension: 1
   },
   passive2: {
+    id: 272201,
     name: 'Strategic Reserve',
     descriptionRaw: 'A character that passes through the <color=#FFD780FF>Jade Screen</color> will gain a 12% <color=#FFE699FF>Geo DMG Bonus</color> for 10s.',
-    description: 'A character that passes through the Jade Screen will gain a 12% Geo DMG Bonus for 10s.'
+    description: 'A character that passes through the Jade Screen will gain a 12% Geo DMG Bonus for 10s.',
+    unlock_ascension: 4
   },
   passive3: {
+    id: 272301,
     name: 'Trove of Marvelous Treasures',
     descriptionRaw: 'Displays the location of nearby <color=#FFD780FF>ore veins used in forging</color> on the mini-map.',
-    description: 'Displays the location of nearby ore veins used in forging on the mini-map.'
+    description: 'Displays the location of nearby ore veins used in forging on the mini-map.',
+    unlock_ascension: 0
   },
   costs: {
     lvl2: [
@@ -1096,7 +1075,7 @@ const genshindb = require('genshin-db');
     filename_passive2: 'UI_Talent_S_Ningguang_06',
     filename_passive3: 'UI_Talent_Collect_Ore'
   },
-  version: '1.0'
+  version: ''
 }
 ```
 
@@ -1165,9 +1144,11 @@ const genshindb = require('genshin-db');
 
 ```js
 {
+  id: 292301,
   name: 'All Of My Treasures!',
   descriptionRaw: 'Displays the location of nearby <color=#FFD780FF>resources unique to Mondstadt</color> on the mini-map.',
-  description: 'Displays the location of nearby resources unique to Mondstadt on the mini-map.'
+  description: 'Displays the location of nearby resources unique to Mondstadt on the mini-map.',
+  unlock_ascension: 0
 }
 ```
 
@@ -1177,6 +1158,7 @@ const genshindb = require('genshin-db');
 
 ```js
 {
+  id: 10411,
   name: 'Ripple of Fate',
   descriptionRaw: '<color=#FFD780FF>Normal Attack</color>\n' +
     'Performs up to 4 water splash attacks that deal <color=#80C0FFFF>Hydro DMG</color>.\n' +
@@ -1290,6 +1272,7 @@ const genshindb = require('genshin-db');
 
 ```js
 {
+  id: 10412,
   name: 'Mirror Reflection of Doom',
   descriptionRaw: 'Creates an illusory Phantom of Fate from coalesced waterspouts.\n' +
     '\n' +
@@ -1355,6 +1338,7 @@ const genshindb = require('genshin-db');
 
 ```js
 {
+  id: 10413,
   name: 'Illusory Torrent',
   descriptionRaw: '<color=#FFD780FF>Alternate Sprint</color>\n' +
     "Mona cloaks herself within the water's flow, consuming Stamina to move rapidly.\n" +
@@ -1385,6 +1369,7 @@ const genshindb = require('genshin-db');
 
 ```js
 {
+  id: 10415,
   name: 'Stellaris Phantasm',
   descriptionRaw: 'Mona summons the sparkling waves and creates a reflection of the starry sky, applying the Illusory Bubble status to opponents in a large AoE.\n' +
     '\n' +
@@ -1511,11 +1496,13 @@ const genshindb = require('genshin-db');
   id: 2101,
   name: 'Amber',
   c1: {
+    id: 211,
     name: 'One Arrow to Rule Them All',
     descriptionRaw: "Fires 2 arrows per <color=#FFD780FF>Aimed Shot</color>. The second arrow deals 20% of the first arrow's DMG.",
     description: "Fires 2 arrows per Aimed Shot. The second arrow deals 20% of the first arrow's DMG."
   },
   c2: {
+    id: 212,
     name: 'Bunny Triggered',
     descriptionRaw: "Baron Bunny, new and improved! Hitting Baron Bunny's foot with a fully-charged Aimed Shot manually detonates it.\n" +
       'Explosion via manual detonation deals 200% additional DMG.',
@@ -1523,17 +1510,20 @@ const genshindb = require('genshin-db');
       'Explosion via manual detonation deals 200% additional DMG.'
   },
   c3: {
+    id: 213,
     name: 'It Burns!',
     descriptionRaw: 'Increases the Level of <color=#FFD780FF>Fiery Rain</color> by 3.\n' +
       'Maximum upgrade level is 15.',
     description: 'Increases the Level of Fiery Rain by 3.\nMaximum upgrade level is 15.'
   },
   c4: {
+    id: 214,
     name: "It's Not Just Any Doll...",
     descriptionRaw: "Decreases <color=#FFD780FF>Explosive Puppet</color>'s CD by 20%. Adds 1 additional charge.",
     description: "Decreases Explosive Puppet's CD by 20%. Adds 1 additional charge."
   },
   c5: {
+    id: 215,
     name: "It's Baron Bunny!",
     descriptionRaw: 'Increases the Level of <color=#FFD780FF>Explosive Puppet</color> by 3.\n' +
       'Maximum upgrade level is 15.',
@@ -1541,6 +1531,7 @@ const genshindb = require('genshin-db');
       'Maximum upgrade level is 15.'
   },
   c6: {
+    id: 216,
     name: 'Wildfire',
     descriptionRaw: "<color=#FFD780FF>Fiery Rain</color> increases all party members' Movement SPD by 15% and ATK by 15% for 10s.",
     description: "Fiery Rain increases all party members' Movement SPD by 15% and ATK by 15% for 10s."
@@ -1554,7 +1545,7 @@ const genshindb = require('genshin-db');
     filename_c6: 'UI_Talent_S_Ambor_04',
     filename_constellation: 'Eff_UI_Talent_Ambor'
   },
-  version: '1.0'
+  version: ''
 }
 ```
 
@@ -1564,6 +1555,7 @@ const genshindb = require('genshin-db');
 
 ```js
 {
+  id: 333,
   name: 'Abyssal Mayhem: Vortex of Turmoil',
   descriptionRaw: 'Increases the Level of <color=#FFD780FF>Foul Legacy: Raging Tide</color> by 3.\n' +
     'Maximum upgrade level is 15.',
@@ -1581,22 +1573,26 @@ const genshindb = require('genshin-db');
   id: 706,
   name: 'Traveler (Geo)',
   c1: {
+    id: 91,
     name: 'Invincible Stonewall',
     descriptionRaw: 'Party members within the radius of <color=#FFD780FF>Wake of Earth</color> have their CRIT Rate increased by 10% and have increased resistance against interruption.',
     description: 'Party members within the radius of Wake of Earth have their CRIT Rate increased by 10% and have increased resistance against interruption.'
   },
   c2: {
+    id: 92,
     name: 'Rockcore Meltdown',
     descriptionRaw: 'When the meteorite created by <color=#FFD780FF>Starfell Sword</color> is destroyed, it will also explode, dealing additional <color=#FFE699FF>AoE Geo DMG</color> equal to the amount of damage dealt by Starfell Sword.',
     description: 'When the meteorite created by Starfell Sword is destroyed, it will also explode, dealing additional AoE Geo DMG equal to the amount of damage dealt by Starfell Sword.'
   },
   c3: {
+    id: 93,
     name: 'Will of the Rock',
     descriptionRaw: 'Increases the Level of <color=#FFD780FF>Wake of Earth</color> by 3.\n' +
       'Maximum upgrade level is 15.',
     description: 'Increases the Level of Wake of Earth by 3.\nMaximum upgrade level is 15.'
   },
   c4: {
+    id: 94,
     name: 'Reaction Force',
     descriptionRaw: 'The shockwave triggered by <color=#FFD780FF>Wake of Earth</color> regenerates 5 Energy for every opponent hit.\n' +
       'A maximum of 25 Energy can be regenerated in this manner at any one time.',
@@ -1604,12 +1600,14 @@ const genshindb = require('genshin-db');
       'A maximum of 25 Energy can be regenerated in this manner at any one time.'
   },
   c5: {
+    id: 95,
     name: 'Meteorite Impact',
     descriptionRaw: 'Increases the Level of <color=#FFD780FF>Starfell Sword</color> by 3.\n' +
       'Maximum upgrade level is 15.',
     description: 'Increases the Level of Starfell Sword by 3.\nMaximum upgrade level is 15.'
   },
   c6: {
+    id: 96,
     name: 'Everlasting Boulder',
     descriptionRaw: 'The barrier created by <color=#FFD780FF>Wake of Earth</color> lasts 5s longer.\n' +
       'The meteorite created by <color=#FFD780FF>Starfell Sword</color> lasts 10s longer.',
@@ -1617,7 +1615,6 @@ const genshindb = require('genshin-db');
       'The meteorite created by Starfell Sword lasts 10s longer.'
   },
   images: {
-    constellation2: 'Eff_UI_Talent_PlayerGirl_Rock',
     filename_c1: 'UI_Talent_S_PlayerRock_01',
     filename_c2: 'UI_Talent_S_PlayerRock_02',
     filename_c3: 'UI_Talent_U_PlayerRock_02',
@@ -1627,7 +1624,7 @@ const genshindb = require('genshin-db');
     filename_constellation: 'Eff_UI_Talent_PlayerBoy_Rock',
     filename_constellation2: 'Eff_UI_Talent_PlayerGirl_Rock'
   },
-  version: '1.0'
+  version: ''
 }
 ```
 
@@ -1752,8 +1749,8 @@ const genshindb = require('genshin-db');
 {
   id: 14502,
   name: 'Lost Prayer to the Sacred Winds',
-  description: 'An educational tome written by anonymous early inhabitants who worshiped the wind. It has been blessed by the wind for its faithfulness and influence over the millennia.',
   descriptionRaw: 'An educational tome written by anonymous early inhabitants who worshiped the wind. It has been blessed by the wind for its faithfulness and influence over the millennia.',
+  description: 'An educational tome written by anonymous early inhabitants who worshiped the wind. It has been blessed by the wind for its faithfulness and influence over the millennia.',
   weaponType: 'WEAPON_CATALYST',
   weaponText: 'Catalyst',
   rarity: 5,
@@ -1790,11 +1787,11 @@ const genshindb = require('genshin-db');
   mainStatText: 'CRIT Rate',
   baseStatText: '7.2%',
   effectName: 'Boundless Blessing',
-  effectTemplateRaw: 'Increases Movement SPD by 10%. When in battle, gain a <color=#99FFFFFF>{0}</color> Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat.',
   r1: {
     description: 'Increases Movement SPD by 10%. When in battle, gain an 8% Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat.',
     values: [ '8%' ]
   },
+  effectTemplateRaw: 'Increases Movement SPD by 10%. When in battle, gain a <color=#99FFFFFF>{0}</color> Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat.',
   r2: {
     description: 'Increases Movement SPD by 10%. When in battle, earn a 10% Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat.',
     values: [ '10%' ]
@@ -1873,17 +1870,15 @@ const genshindb = require('genshin-db');
       { id: 112004, name: 'Slime Concentrate', count: 18 }
     ]
   },
+  mihoyo_icon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_EquipIcon_Catalyst_Fourwinds.png',
+  mihoyo_awakenIcon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_EquipIcon_Catalyst_Fourwinds_Awaken.png',
   images: {
-    icon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_EquipIcon_Catalyst_Fourwinds.png',
-    awakenicon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_EquipIcon_Catalyst_Fourwinds_Awaken.png',
     filename_icon: 'UI_EquipIcon_Catalyst_Fourwinds',
     filename_awakenIcon: 'UI_EquipIcon_Catalyst_Fourwinds_Awaken',
-    filename_gacha: 'UI_Gacha_EquipIcon_Catalyst_Fourwinds',
-    mihoyo_icon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_EquipIcon_Catalyst_Fourwinds.png',
-    mihoyo_awakenIcon: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_EquipIcon_Catalyst_Fourwinds_Awaken.png'
+    filename_gacha: 'UI_Gacha_EquipIcon_Catalyst_Fourwinds'
   },
   stats: [Function (anonymous)],
-  version: '1.0'
+  version: ''
 }
 ```
 
@@ -2070,15 +2065,15 @@ const genshindb = require('genshin-db');
 {
   id: 104308,
   name: 'Guide to Ballad',
-  rarity: 3,
   sortRank: 13103,
   description: 'Talent Level-Up material.\n' +
     'Poetry is the soul of the land of the wind.\n' +
     'Poetry is the manifestations of the will to encourage. In the dark days, the gales in the streets and alleyways whisper words of fury, like the battle drums, like the low rumbling before the storm.',
   category: 'AVATAR_MATERIAL',
   typeText: 'Character Talent Material',
-  dropDomainId: 4231,
+  rarity: 3,
   dropDomainName: 'Domain of Mastery: Realm of Slumber',
+  dropDomainId: 4231,
   daysOfWeek: [ 'Wednesday', 'Saturday', 'Sunday' ],
   sources: [ 'Placeholder - Craftable Amount: {0}' ],
   images: { filename_icon: 'UI_ItemIcon_104308' },
@@ -2236,13 +2231,13 @@ const genshindb = require('genshin-db');
 {
   id: 113005,
   name: "Dvalin's Sigh",
-  rarity: 5,
   sortRank: 11101,
   description: 'A bit of power taken from the whirlwinds evoked by the Dragon of the East.\n' +
     'Beautiful and transparent, both trade winds and tornadoes will work in his name. The winds move as his companion, his voice, and his freedom.\n' +
     'His enemies are the thousands who stand against the wind.',
   category: 'AVATAR_MATERIAL',
   typeText: 'Character Level-Up Material',
+  rarity: 5,
   sources: [
     'Lv. 70+ Stormterror Challenge Reward',
     'Obtained from the Crafting Bench Conversion Tab'
@@ -2383,9 +2378,9 @@ const genshindb = require('genshin-db');
 {
   id: 15018,
   rarityList: [ 4, 5 ],
-  name: 'Pale Flame',
   effect2Pc: 'Physical DMG is increased by 25%.',
   effect4Pc: 'When an Elemental Skill hits an opponent, ATK is increased by 9% for 7s. This effect stacks up to 2 times and can be triggered once every 0.3s. Once 2 stacks are reached, the 2-set effect is increased by 100%.',
+  name: 'Pale Flame',
   flower: {
     name: 'Stainless Bloom',
     relicType: 'EQUIP_BRACER',
@@ -2410,6 +2405,7 @@ const genshindb = require('genshin-db');
       '"Good. I will do whatever it takes to become an effective instrument in the advancement of our common cause."\n' +
       '"For even if I dress in pure white from head to toe, the ashes of the dead that have long left their stain on every inch of my being can never be cleansed."'
   },
+  mihoyo_flower: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_RelicIcon_15018_4.png',
   plume: {
     name: "Wise Doctor's Pinion",
     relicType: 'EQUIP_NECKLACE',
@@ -2439,6 +2435,7 @@ const genshindb = require('genshin-db');
       '"As for the matter of your title — what do you say to this..."\n' +
       'Taken completely by surprise by the sheer irony of the title he was given, the young man burst into hysterical laughter.'
   },
+  mihoyo_plume: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_RelicIcon_15018_2.png',
   sands: {
     name: 'Moment of Cessation',
     relicType: 'EQUIP_SHOES',
@@ -2459,6 +2456,7 @@ const genshindb = require('genshin-db');
       '"We shall, by whatever means necessary, become the heart that pumps money around the world."\n' +
       '"And, when the moment comes, that heart shall cease beating by our will alone."'
   },
+  mihoyo_sands: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_RelicIcon_15018_5.png',
   goblet: {
     name: 'Surpassing Cup',
     relicType: 'EQUIP_RING',
@@ -2482,6 +2480,7 @@ const genshindb = require('genshin-db');
       '"Since these mask-wearing people are so fun to be around..."\n' +
       `"I think I'll become one of them."`
   },
+  mihoyo_goblet: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_RelicIcon_15018_1.png',
   circlet: {
     name: 'Mocking Mask',
     relicType: 'EQUIP_DRESS',
@@ -2498,24 +2497,15 @@ const genshindb = require('genshin-db');
       'Each one of us has borne witness to the absurd callousness of the foundational principles of this world.\n' +
       'So, let us don our masks in mockery of the world as we go forth and rewrite the rules of destiny.'
   },
+  mihoyo_circlet: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_RelicIcon_15018_3.png',
   images: {
-    flower: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_RelicIcon_15018_4.png',
-    plume: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_RelicIcon_15018_2.png',
-    sands: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_RelicIcon_15018_5.png',
-    goblet: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_RelicIcon_15018_1.png',
-    circlet: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_RelicIcon_15018_3.png',
     filename_flower: 'UI_RelicIcon_15018_4',
     filename_plume: 'UI_RelicIcon_15018_2',
     filename_sands: 'UI_RelicIcon_15018_5',
     filename_goblet: 'UI_RelicIcon_15018_1',
-    filename_circlet: 'UI_RelicIcon_15018_3',
-    mihoyo_flower: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_RelicIcon_15018_4.png',
-    mihoyo_plume: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_RelicIcon_15018_2.png',
-    mihoyo_sands: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_RelicIcon_15018_5.png',
-    mihoyo_goblet: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_RelicIcon_15018_1.png',
-    mihoyo_circlet: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_RelicIcon_15018_3.png'
+    filename_circlet: 'UI_RelicIcon_15018_3'
   },
-  version: '1.5'
+  version: ''
 }
 ```
 
@@ -2559,7 +2549,7 @@ const genshindb = require('genshin-db');
     filename_buff: 'UI_Buff_Item_Atk_Add',
     filename_icon: 'UI_ItemIcon_108123'
   },
-  version: '1.0'
+  version: ''
 }
 ```
 
@@ -2726,10 +2716,10 @@ const genshindb = require('genshin-db');
   filterText: 'ATK-Boosting Dish',
   effect: "Increases all party members' CRIT Rate by 20% and CRIT DMG by 20% for 300s. In Co-Op Mode, this effect only applies to your own character(s).",
   description: "Diluc's specialty. Feast your eyes and then your stomach upon this delicacy as the soft ribs melt in your mouth. Who knew Diluc was able to cook this well?",
-  baseDishId: 3008,
   baseDishName: `"Pile 'Em Up"`,
-  characterId: 10000016,
+  baseDishId: 3008,
   characterName: 'Diluc',
+  characterId: 10000016,
   ingredients: [
     { id: 100061, name: 'Raw Meat', count: 3 },
     { id: 100080, name: 'Potato', count: 3 },
@@ -2740,7 +2730,7 @@ const genshindb = require('genshin-db');
     filename_buff: 'UI_Buff_Item_Atk_CritRate',
     filename_icon: 'UI_ItemIcon_108058'
   },
-  version: '1.0'
+  version: ''
 }
 ```
 
@@ -2755,19 +2745,19 @@ const genshindb = require('genshin-db');
 {
   id: 5254,
   name: 'Domain of Mastery: Altar of Flames I',
-  regionId: 2,
-  regionName: 'Liyue',
   entranceId: 46,
   entranceName: 'Taishan Mansion',
-  domainType: 'UI_ABYSSUS_AVATAR_PROUD',
-  domainText: 'Talent Level-Up Material',
   description: 'A massive amount of Pyro energy is coursing through this scorching ancient sacrificial altar.\n' +
     'You will get scorched by merely being here.\n' +
     'You shall earn Talent level-up materials, if — and only if — you can pass the trial.',
+  regionId: 2,
+  regionName: 'Liyue',
   recommendedLevel: 38,
   recommendedElements: [ 'Hydro', 'Cryo', 'Electro' ],
   daysOfWeek: [ 'Monday', 'Thursday', 'Sunday' ],
   unlockRank: 25,
+  domainType: 'UI_ABYSSUS_AVATAR_PROUD',
+  domainText: 'Talent Level-Up Material',
   rewardPreview: [
     { id: 102, name: 'Adventure EXP', count: 100 },
     { id: 202, name: 'Mora', count: 1575 },
@@ -2781,7 +2771,8 @@ const genshindb = require('genshin-db');
     { id: 20011201, name: 'Pyro Slime' },
     { id: 20011301, name: 'Large Pyro Slime' }
   ],
-  images: { filename_image: 'UI_DungeonPic_Fire' },
+  monsterlist: [ null, null, null ],
+  images: {},
   version: ''
 }
 ```
@@ -3020,12 +3011,6 @@ const genshindb = require('genshin-db');
   monsterId: 20010601,
   name: 'Large Electro Slime',
   specialNames: [ 'Rolling Elemental' ],
-  monsterType: 'MONSTER_ORDINARY',
-  enemyType: 'NORMAL',
-  categoryType: 'CODEX_SUBTYPE_ELEMENTAL',
-  categoryText: 'Elemental Lifeforms',
-  description: 'A monster created by the coalescing of Electro dispersed throughout nature.\n' +
-    'Due to the abundant Electro within its form, it will deliver an electric shock to its surroundings from time to time. At present, some have attempted to harness this energy to aid in production activities. Perhaps some new science will be born from this...?',
   investigation: {
     investigationId: 20,
     name: 'Slime',
@@ -3033,15 +3018,25 @@ const genshindb = require('genshin-db');
     categoryText: 'Easy',
     description: "A pudgy elemental life form.\\nIt's said that desserts made from slimes of different elements will have incredibly distinctive flavors."
   },
+  rewardPreviewId: 16000,
   rewardPreview: [
     { id: 202, name: 'Mora' },
     { id: 112004, name: 'Slime Concentrate', count: 0.0448 },
     { id: 112003, name: 'Slime Secretions', count: 0.1792 },
     { id: 112002, name: 'Slime Condensate', count: 0.6723 }
   ],
+  monsterType: 'MONSTER_ORDINARY',
+  enemyType: 'NORMAL',
+  categoryType: 'CODEX_SUBTYPE_ELEMENTAL',
+  categoryText: 'Elemental Lifeforms',
+  description: 'A monster created by the coalescing of Electro dispersed throughout nature.\n' +
+    'Due to the abundant Electro within its form, it will deliver an electric shock to its surroundings from time to time. At present, some have attempted to harness this energy to aid in production activities. Perhaps some new science will be born from this...?',
+  aggroRange: 'VISION_LEVEL_NORMAL',
+  bgm: 1,
+  budget: 4,
   images: {
-    filename_icon: 'UI_MonsterIcon_Slime_Electric_03',
-    filename_investigationIcon: 'UI_MonsterIcon_Slime_Water_03'
+    filename_investigationIcon: 'UI_MonsterIcon_Slime_Water_03',
+    filename_icon: 'UI_MonsterIcon_Slime_Electric_03'
   },
   stats: [Function (anonymous)],
   version: ''
@@ -3127,18 +3122,18 @@ const genshindb = require('genshin-db');
   name: '100% Outrider',
   description: "Amber's outfit. This is a more formal — but no less cool — version of the Outrider's uniform!",
   isDefault: false,
-  characterId: 10000021,
   characterName: 'Amber',
+  characterId: 10000021,
   source: [],
   images: {
     filename_card: 'UI_AvatarIcon_AmborCostumeWic_Card',
     filename_icon: 'UI_AvatarIcon_AmborCostumeWic',
+    filename_iconCircle: 'UI_AvatarIcon_AmborCostumeWic_Circle',
     filename_splash: 'UI_Costume_AmborCostumeWic',
-    filename_sideIcon: 'UI_AvatarIcon_Side_AmborCostumeWic',
-    filename_iconCircle: 'UI_AvatarIcon_AmborCostumeWic_Circle'
+    filename_sideIcon: 'UI_AvatarIcon_Side_AmborCostumeWic'
   },
-  url: { modelviewer: '' },
-  version: '2.5'
+  url: undefined,
+  version: ''
 }
 ```
 
@@ -3162,7 +3157,6 @@ const genshindb = require('genshin-db');
   id: 140008,
   name: 'Wings of the Stormstrider',
   description: "A stylized wind glider gifted to you as a mark of Inazuma's acknowledgment and recognition.",
-  rarity: 4,
   story: `"'Tengu' — well, apart from the Yougou Tengu, who have a long lineage indeed, this also refers to those who are agile and whose movements are hard to fathom. You see, the tengu have wings, right?"\n` +
     'You have a hard time believing those words at first.\n' +
     '\n' +
@@ -3180,12 +3174,13 @@ const genshindb = require('genshin-db');
     "So that's where tengu wings originated from, huh?\n" +
     'Noticing your doubtful gaze, Sara immediately responds:\n' +
     '"Of course not!"',
+  rarity: 4,
   source: [ 'Reward for reaching a certain Reputation Level in Inazuma' ],
   images: {
     filename_icon: 'UI_FlycloakIcon_Thunderclap',
     filename_gacha: 'UI_Gacha_FlycloakIcon_Thunderclap'
   },
-  version: '2.0'
+  version: ''
 }
 ```
 
@@ -3207,7 +3202,7 @@ const genshindb = require('genshin-db');
   countType: 'COUNT_TYPE_NONE',
   sortOrder: 11015,
   images: { filename_icon: 'UI_AnimalIcon_DogPrick_02' },
-  version: '1.0'
+  version: ''
 }
 ```
 
@@ -3226,7 +3221,7 @@ const genshindb = require('genshin-db');
   countType: 'COUNT_TYPE_CAPTURE',
   sortOrder: 10026,
   images: { filename_icon: 'UI_AnimalIcon_Pigeon_Beak' },
-  version: '3.0'
+  version: ''
 }
 ```
 
@@ -3371,11 +3366,11 @@ const genshindb = require('genshin-db');
 {
   id: 70100003,
   name: 'Knights of Favonius - Library',
-  areaId: 1102,
   areaName: 'Mondstadt',
+  areaId: 1102,
   description: 'The library with the most books in all the northern lands. Other than those collected in the restricted section, all the books here are open for public reading.',
-  regionId: 1,
   regionName: 'Mondstadt',
+  regionId: 1,
   sortOrder: 7,
   images: { filename_image: 'UI_Codex_Scenery_MDtushuguan' },
   version: ''
@@ -3506,9 +3501,9 @@ const genshindb = require('genshin-db');
 {
   id: 2011,
   name: 'Oh!',
-  dupealias: 'Oh! 1',
   setId: 2,
   sortOrder: 27,
+  dupealias: 'Oh! 1',
   images: { filename_icon: 'UI_EmotionIcon27' },
   version: ''
 }
@@ -3532,112 +3527,112 @@ const genshindb = require('genshin-db');
       voicelineType: '1000',
       description: 'Master of Inazuma Kamisato Art Tachi Jutsu — Kamisato Ayaka, present!\n' +
         'Delighted to make your acquaintance.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_draw_appear'
+      voicefile: null
     },
     {
       voicelineId: 3101,
       title: 'Chat: Stability',
       voicelineType: '1101',
       description: 'I only wish life could be as leisurely as this a little more often... How greedy of me.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_character_idle_01'
+      voicefile: null
     },
     {
       voicelineId: 3102,
       title: 'Chat: Sword',
       voicelineType: '1102',
       description: 'A blade is like a tea-leaf. Only those who sample it many times can appreciate its true qualities.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_character_idle_02'
+      voicefile: null
     },
     {
       voicelineId: 3103,
       title: 'Chat: Zoning Out',
       voicelineType: '1103',
       description: "So this is a day in the life of the Traveler... Hehe, I'm learning more about you all the time.",
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_character_idle_03'
+      voicefile: null
     },
     {
       voicelineId: 3104,
       title: 'Chat: Famous Sword',
       voicelineType: '1104',
       description: 'A blade embraces its duty as a jeweler cherishes their gems.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_character_idle_04'
+      voicefile: null
     },
     {
       voicelineId: 3105,
       title: 'When It Rains',
       voicelineType: '1201',
       description: 'Come with me, let us find shelter from the rain.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_weather_heavyRain_01'
+      voicefile: null
     },
     {
       voicelineId: 3106,
       title: 'When Thunder Strikes',
       voicelineType: '1202',
       description: 'Her Excellency... What is she trying to communicate?',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_weather_thunder_01'
+      voicefile: null
     },
     {
       voicelineId: 3107,
       title: 'When It Snows',
       voicelineType: '1205',
       description: '"Snow that once adorned the world in silver, thaws to reveal the gleam of the fruit upon frost-laden branches." *sigh* How picturesque! Only some tea would make this setting more complete.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_weather_snowy_01'
+      voicefile: null
     },
     {
       voicelineId: 3108,
       title: 'When the Sun Is Out',
       voicelineType: '1203',
       description: "There's a pleasant breeze and glorious sunshine... So, where shall we go for a walk?",
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_weather_sunny_01'
+      voicefile: null
     },
     {
       voicelineId: 3109,
       title: "When It's Windy",
       voicelineType: '1204',
       description: "Close your eyes and face the wind... It feels wonderful, doesn't it?",
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_weather_breezy_01'
+      voicefile: null
     },
     {
       voicelineId: 3110,
       title: 'Good Morning',
       voicelineType: '1001',
       description: 'Oh, good morning, Traveler. ...Whenever I see you in the morning, somehow, it makes me feel like... today is going to be a good day.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_dialog_greetingMorning'
+      voicefile: null
     },
     {
       voicelineId: 3111,
       title: 'Good Afternoon',
       voicelineType: '1002',
       description: 'Good afternoon. It is normal to feel drowsy after lunch, might I interest you in a game of Go to stimulate the mind?',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_dialog_greetingNoon'
+      voicefile: null
     },
     {
       voicelineId: 3112,
       title: 'Good Evening',
       voicelineType: '1003',
       description: 'Greetings. An auspicious breeze blows this evening. Tonight will be peaceful.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_dialog_greetingNight'
+      voicefile: null
     },
     {
       voicelineId: 3113,
       title: 'Good Night',
       voicelineType: '1004',
       description: `"Was it one's thoughts that drew him to my dreams? Had I known it a dream, one would not have awakened." Hehe, I love that poem.`,
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_dialog_greetingNight2'
+      voicefile: null
     },
     {
       voicelineId: 3114,
       title: 'About Kamisato Ayaka: Yashiro Commission',
       voicelineType: '2001',
       description: '"Inazuma Shogunate, Yashiro Commission, Kamisato Clan." Widely known as one of the most distinguished clans in all of Inazuma, it is the branch of the Tri-Commission that manages ceremonial and cultural affairs. Since my parents passed, Brother and I assumed responsibility for all clan matters, big and small.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_dialog_idle_01'
+      voicefile: null
     },
     {
       voicelineId: 3115,
       title: 'About Kamisato Ayaka: Position',
       voicelineType: '2004',
       description: 'Many look up to me as the Shirasagi Himegimi and as the daughter of the Kamisato Clan. But the object of their respect has everything to do with my position, and nothing at all to do with me, Ayaka. It makes me think that... maybe, there is only one person I know who is truly able to get close to me...',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_dialog_idle_02',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -3652,7 +3647,7 @@ const genshindb = require('genshin-db');
       title: 'About Kamisato Ayaka: Aspiration',
       voicelineType: '2005',
       description: 'Today, as in the past, I aspire to be somebody whom everyone can trust. But what motivates me is no longer the responsibilities I shoulder, or the expectations of other people. Rather, it is the fact that you are this kind of person, too.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_dialog_idle_03',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -3667,14 +3662,14 @@ const genshindb = require('genshin-db');
       title: 'About Us: Teahouse',
       voicelineType: '2002',
       description: "If you've got time, shall we take a walk to Komore Teahouse? To chat about the art of tea on a pleasant day like this seems like the sophisticated thing to do.",
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_dialog_close1'
+      voicefile: null
     },
     {
       voicelineId: 3118,
       title: 'About Us: Festivals',
       voicelineType: '2003',
       description: 'If I ever have the chance, I would very much like to experience the festivities of another nation with you one day. Though, I will need some guidance on local customs and etiquette, and advice on what gifts to bring... Could I trouble you to give me some guidance?',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_dialog_close2',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -3694,7 +3689,7 @@ const genshindb = require('genshin-db');
       title: 'About the Vision',
       voicelineType: '3001',
       description: 'Visions are a seal of approval for those who are most ambitious. As for my own ambitions, they shall remain private for now. It is nothing more than an insignificant dream.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_dialog_pendant',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -3709,21 +3704,21 @@ const genshindb = require('genshin-db');
       title: 'Something to Share',
       voicelineType: '3002',
       description: 'It is said that "the flavor of Zen is that of tea," and it is also said that "the power of Zen is that of the blade." One might then ask: What does that say about the relationship between tea and the blade?',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_dialog_share'
+      voicefile: null
     },
     {
       voicelineId: 3121,
       title: 'Interesting Things',
       voicelineType: '3003',
       description: "Have you ever noticed the withering sakura tree in the city? For me, there is a beauty to the withering, it brings back fond memories of the spring. Most people don't agree — sakura trees that will never bloom again are removed. But when I look at a tree, all I want is to see it blossom again... just one more time...",
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_pref_gift'
+      voicefile: null
     },
     {
       voicelineId: 3122,
       title: 'About Thoma',
       voicelineType: '4001',
       description: 'Thoma is a dear friend. He always lifts my spirits with his sunny disposition. In a sense, I think of him as another brother, and as a full member of the Kamisato Clan.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_teammate_thoma_01',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -3738,7 +3733,7 @@ const genshindb = require('genshin-db');
       title: 'About Kujou Sara',
       voicelineType: '4002',
       description: 'Kujou Sara of the Tenryou Commission is... not known to smile, and I have had my fair share of disputes with her. She is, however, a loyal servant to Inazuma, there is no question about that.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_teammate_kujouSara_01',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -3753,7 +3748,7 @@ const genshindb = require('genshin-db');
       title: 'About Shikanoin Heizou',
       voicelineType: '4003',
       description: 'Mr. Shikanoin belongs to the Tenryou Commission, just like Miss Kujou. He is very... principled, sometimes even more determinedly so than Miss Kujou. The only thing is, when it comes to the question of which matters should be governed by his principles, I believe only Mr. Shikanoin himself knows the answer...',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_teammate_shikanoinHeizou_01',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -3768,7 +3763,7 @@ const genshindb = require('genshin-db');
       title: 'About Sayu',
       voicelineType: '4007',
       description: "Ah, little Sayu. She hasn't been causing you any trouble lately, has she? Hehe, if you ever notice her slacking off, please let me know.",
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_teammate_sayu_01',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -3783,7 +3778,7 @@ const genshindb = require('genshin-db');
       title: 'About the Raiden Shogun: Guesswork',
       voicelineType: '4008',
       description: 'The Almighty Shogun? It would be improper of me to comment, given that I am one of her subjects. All I will say is that... I think that Her Excellency must get lonely on the road to eternity.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_teammate_raidenShogun_01',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -3798,7 +3793,7 @@ const genshindb = require('genshin-db');
       title: 'About the Raiden Shogun: Standpoint',
       voicelineType: '4009',
       description: "To witness the Musou no Hitotachi and live to tell the tale is quite a remarkable feat. Even though I recognize her as our true deity with the power to change Inazuma's fate at will, if there is conflict between the two of you, then... I shall choose to side with you.",
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_teammate_raidenShogun_02',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -3818,7 +3813,7 @@ const genshindb = require('genshin-db');
       title: 'About Yae Miko',
       voicelineType: '4004',
       description: "I have always greatly enjoyed working with Guuji Yae. Organizing festival affairs generally takes a lot of effort and doesn't generate much income, but Guuji Yae's events always come off both elegant and profitable.",
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_teammate_yaeMiko_01',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -3833,7 +3828,7 @@ const genshindb = require('genshin-db');
       title: 'About Kamisato Ayato',
       voicelineType: '4005',
       description: "As the head of the Kamisato Clan, brother always has a full schedule of places he needs to be. I do try my best to share his load, but there is no changing the pressure he is subjected to all year round, and the toll it takes upon him. *sigh* If you see him, remind him to take care of himself, for his sister's sake...",
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_teammate_ayato_01',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -3849,7 +3844,7 @@ const genshindb = require('genshin-db');
       voicelineType: '4006',
       description: 'The Yashiro Commission and the shrine maidens are responsible for festival affairs, and Yoimiya, as a fireworks expert, knows how to create an atmosphere. So we have become well acquainted with her over the years.\n' +
         'Hmm? Public order and fire prevention? We factor these concerns in well in advance during the planning stage. To deny people the chance to see fireworks simply for these reasons would leave them feeling very disappointed.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_teammate_yoimiya_01',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -3864,7 +3859,7 @@ const genshindb = require('genshin-db');
       title: 'More About Kamisato Ayaka: I',
       voicelineType: '5001',
       description: 'Your request is quite unusual for me. Since I see you as a friend, it would only be fair to be open and honest with you, but if this means sharing secrets of the Kamisato Clan... I would ask that you keep anything I tell you in strict confidence.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_friendship_01',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -3879,7 +3874,7 @@ const genshindb = require('genshin-db');
       title: 'More About Kamisato Ayaka: II',
       voicelineType: '5002',
       description: "The Kamisato Clan once suffered a major blow when we failed to protect a swordsmith of national significance. We were harassed by the Fatui, we lost many of our people, and we received a great deal of criticism. It all aged Father greatly, and severely damaged the Kamisato Clan's standing within the Shogunate. Brother has worked tirelessly to reverse the trend since he assumed leadership, but although our clan's position is now restored and the Yashiro Commission is unified once more, we still rely on Brother to make the decisions on all matters of any importance.",
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_friendship_02',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -3899,7 +3894,7 @@ const genshindb = require('genshin-db');
       title: 'More About Kamisato Ayaka: III',
       voicelineType: '5003',
       description: "The art of blade forging taught by the Shogun varies based on astrology, application, materials used, the furnace conditions, individual personalities, and elemental changes. These differences between smiths is what gave rise to the Raiden Gokaden. Swordsmiths capable of forging renowned blades are seen as spiritual personnel with sacred abilities, and as such they should be managed by the Yashiro Commission, which oversees all cultural, artistic, and ceremonial affairs. So naturally, the swordsmith's betrayal is the fault of ineffectual management by the Kamisato Clan.",
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_friendship_03',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -3919,7 +3914,7 @@ const genshindb = require('genshin-db');
       title: 'More About Kamisato Ayaka: IV',
       voicelineType: '5004',
       description: "My mother was the most incredible person. She was always so dignified and elegant, always smiling, no matter what situation she might be facing. She had so much to deal with in the clan on so many levels, but she took it all in stride — it was like nothing could ever faze her. Everything about her was perfect, and I say that without exaggerating. *sigh* But the moment she passed away, I realized... I couldn't hide behind my mother any longer. I wasn't little Ayaka any more.",
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_friendship_04',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -3940,7 +3935,7 @@ const genshindb = require('genshin-db');
       voicelineType: '5005',
       description: 'What I want to say next is perhaps not befitting of a member of the Inazuma Shogunate, Yashiro Commission, Kamisato Clan, but... unless I am mistaken, I trust that you will not take issue with this slight departure from convention on my part...\n' +
         "That is to say... I'm a little tired, may I rest my head on your shoulder? Just for a moment.",
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_friendship_05',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -3960,21 +3955,21 @@ const genshindb = require('genshin-db');
       title: "Kamisato Ayaka's Hobbies",
       voicelineType: '6001',
       description: 'I have great affection for the arts: music, song, poetry, shougi, and dancing. And you?',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_pref_hobby'
+      voicefile: null
     },
     {
       voicelineId: 3137,
       title: "Kamisato Ayaka's Troubles: Concerns",
       voicelineType: '6002',
       description: "Troubles? Well, I mean... that's life, isn't it? There will always be things that don't go one's way. But I do not wish to worry those around me on account of things that are my concern alone... so, it is best if I keep them to myself.",
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_dialog_annoyed_01'
+      voicefile: null
     },
     {
       voicelineId: 3138,
       title: "Kamisato Ayaka's Troubles: Desires",
       voicelineType: '6006',
       description: "Openness is something I find very difficult. I constantly have to remind myself that as a lady of the Kamisato Clan, there are countless people watching and countless expectations to live up to. I must be a model of exemplary conduct at all times. But even so, shouldn't I still follow my dreams? Shouldn't I... share my true feelings with you?",
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_dialog_annoyed_02',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -3989,35 +3984,35 @@ const genshindb = require('genshin-db');
       title: 'Favorite Food',
       voicelineType: '6003',
       description: "I'm fascinated by food from overseas. Though I don't get to try it very often... So, if I had to choose something from Inazuma, then probably... Chazuke. But not when anybody else is watching... So I tell you that in confidence.",
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_pref_foodLike'
+      voicefile: null
     },
     {
       voicelineId: 3140,
       title: 'Least Favorite Food',
       voicelineType: '6004',
       description: 'Though I do not eschew animal fat and organs entirely, they are far from my first choice.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_pref_foodDislike'
+      voicefile: null
     },
     {
       voicelineId: 3168,
       title: 'Receiving a Gift: I',
       voicelineType: '6007',
       description: 'Mmm... Yes, I am truly fortunate...',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_spice_pref_01'
+      voicefile: null
     },
     {
       voicelineId: 3169,
       title: 'Receiving a Gift: II',
       voicelineType: '6008',
       description: 'Thank you for the opportunity to try this dish. I will always savor it.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_spice_normal_01'
+      voicefile: null
     },
     {
       voicelineId: 3170,
       title: 'Receiving a Gift: III',
       voicelineType: '6009',
       description: "Hmm... It's a bit greasy for my taste.",
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_spice_dislike_01'
+      voicefile: null
     },
     {
       voicelineId: 3141,
@@ -4026,7 +4021,7 @@ const genshindb = require('genshin-db');
       description: "Come with me! We're not going far away — I promise it won't delay you too much.\n" +
         "I managed to find out when your birthday was well in advance, so I could prepare in good time. Hopefully this wasn't assuming too much, but I guessed you might prefer this to an expensive gift.\n" +
         'In honor of your birthday, please allow me to perform a fan dance for you.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_pref_birthday',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         { conditionType: 'FETTER_COND_PLAYER_BIRTHDAY', paramList: [] }
@@ -4037,7 +4032,7 @@ const genshindb = require('genshin-db');
       title: 'Feelings About Ascension: Intro',
       voicelineType: '8001',
       description: 'Thank you very much. It has been richly rewarding to learn from you so far, and I believe my skills with the blade can go even further still.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_starUp_01',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -4052,7 +4047,7 @@ const genshindb = require('genshin-db');
       title: 'Feelings About Ascension: Building Up',
       voicelineType: '8002',
       description: 'Thank you for your guidance. With your assistance, I am gaining a more thorough understanding of my capabilities.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_starUp_02',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -4067,7 +4062,7 @@ const genshindb = require('genshin-db');
       title: 'Feelings About Ascension: Climax',
       voicelineType: '8003',
       description: 'I feel more competent now than ever before. I even have the time outside my work for the Yashiro Commission to try some new things. Would you like to try one of my home-made snacks? I just learned how to make them recently.',
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_starUp_03',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -4083,7 +4078,7 @@ const genshindb = require('genshin-db');
       voicelineType: '8004',
       description: '"Though I cling to that which has given me the strength to hold on, the weight of letting go is ever-foreboding."\n' +
         "My apologies, it should be a happy occasion, and yet it is such a sad phrase that comes to mind. Our time together has been so pleasant that I am fearful of losing what I have gained. I'm sorry, I must compose myself.",
-      voicefile: 'VO_friendship/VO_ayaka/vo_ayaka_starUp_04',
+      voicefile: null,
       hasUnlockConditions: true,
       unlockConditions: [
         {
@@ -4100,229 +4095,157 @@ const genshindb = require('genshin-db');
       title: 'Elemental Skill: I',
       voicelineType: '100001',
       description: 'Take flight.',
-      voicefile: 'VO_gameplay/VO_ayaka/vo_ayaka_battle_skill1_01'
+      voicefile: null
     },
     {
       voicelineId: 3147,
       title: 'Elemental Skill: II',
       voicelineType: '100002',
       description: 'My apologies.',
-      voicefile: 'VO_gameplay/VO_ayaka/vo_ayaka_battle_skill1_02'
+      voicefile: null
     },
     {
       voicelineId: 3148,
       title: 'Elemental Skill: III',
       voicelineType: '100003',
       description: 'Whirling snow.',
-      voicefile: 'VO_gameplay/VO_ayaka/vo_ayaka_battle_skill1_03'
+      voicefile: null
     },
     {
       voicelineId: 3149,
       title: 'Elemental Burst: I',
       voicelineType: '200001',
       description: 'Embrace the ice.',
-      voicefile: 'VO_gameplay/VO_ayaka/vo_ayaka_battle_skill3_01'
+      voicefile: null
     },
     {
       voicelineId: 3150,
       title: 'Elemental Burst: II',
       voicelineType: '200002',
       description: 'Sakura swirl.',
-      voicefile: 'VO_gameplay/VO_ayaka/vo_ayaka_battle_skill3_02'
+      voicefile: null
     },
     {
       voicelineId: 3151,
       title: 'Elemental Burst: III',
       voicelineType: '200003',
       description: 'Kamisato Art: Soumetsu!',
-      voicefile: 'VO_gameplay/VO_ayaka/vo_ayaka_battle_skill3_03'
+      voicefile: null
     },
     {
       voicelineId: 3152,
       title: 'Opening Treasure Chest: I',
       voicelineType: '300001',
       description: 'Collecting rare and exquisite treasures... Yes, this seems suitably sophisticated.',
-      voicefile: 'VO_gameplay/VO_ayaka/vo_ayaka_chest_open_01'
+      voicefile: null
     },
     {
       voicelineId: 3153,
       title: 'Opening Treasure Chest: II',
       voicelineType: '300002',
       description: 'Hehe... Today is a lucky day.',
-      voicefile: 'VO_gameplay/VO_ayaka/vo_ayaka_chest_open_02'
+      voicefile: null
     },
     {
       voicelineId: 3154,
       title: 'Opening Treasure Chest: III',
       voicelineType: '300003',
       description: 'I shall treasure this good fortune.',
-      voicefile: 'VO_gameplay/VO_ayaka/vo_ayaka_chest_open_03'
+      voicefile: null
     },
     {
       voicelineId: 3155,
       title: 'Low HP: I',
       voicelineType: '410001',
       description: 'I will not stand for this.',
-      voicefile: 'VO_gameplay/VO_ayaka/vo_ayaka_life_less30_01'
+      voicefile: null
     },
     {
       voicelineId: 3156,
       title: 'Low HP: II',
       voicelineType: '410002',
       description: 'A worthy opponent...',
-      voicefile: 'VO_gameplay/VO_ayaka/vo_ayaka_life_less30_02'
+      voicefile: null
     },
     {
       voicelineId: 3157,
       title: 'Low HP: III',
       voicelineType: '410003',
       description: 'We ought to end this!',
-      voicefile: 'VO_gameplay/VO_ayaka/vo_ayaka_life_less30_03'
+      voicefile: null
     },
     {
       voicelineId: 3158,
       title: 'Ally at Low HP: I',
       voicelineType: '400001',
       description: 'Do not overdo it.',
-      voicefile: 'VO_gameplay/VO_ayaka/vo_ayaka_life_less30_teammate_01'
+      voicefile: null
     },
     {
       voicelineId: 3159,
       title: 'Ally at Low HP: II',
       voicelineType: '400002',
       description: 'Take care!',
-      voicefile: 'VO_gameplay/VO_ayaka/vo_ayaka_life_less30_teammate_02'
+      voicefile: null
     },
     {
       voicelineId: 3160,
       title: 'Fallen: I',
       voicelineType: '500001',
       description: 'Pardon my indiscretion...',
-      voicefile: 'VO_gameplay/VO_ayaka/vo_ayaka_life_die_01'
+      voicefile: null
     },
     {
       voicelineId: 3161,
       title: 'Fallen: II',
       voicelineType: '500002',
       description: 'Much remains... unfinished...',
-      voicefile: 'VO_gameplay/VO_ayaka/vo_ayaka_life_die_02'
+      voicefile: null
     },
     {
       voicelineId: 3162,
       title: 'Fallen: III',
       voicelineType: '500003',
       description: 'I have dishonored... our clan...',
-      voicefile: 'VO_gameplay/VO_ayaka/vo_ayaka_life_die_03'
+      voicefile: null
     },
     {
       voicelineId: 3163,
       title: 'Heavy Hit Taken: I',
       voicelineType: '910001',
       description: 'So rude!',
-      voicefile: 'VO_gameplay/VO_ayaka/vo_ayaka_battle_hit_H_01'
+      voicefile: null
     },
     {
       voicelineId: 3164,
       title: 'Heavy Hit Taken: II',
       voicelineType: '910002',
       description: 'Unthinkable...',
-      voicefile: 'VO_gameplay/VO_ayaka/vo_ayaka_battle_hit_H_02'
+      voicefile: null
     },
     {
       voicelineId: 3165,
       title: 'Joining Party: I',
       voicelineType: '600001',
       description: 'Kamisato Ayaka, present.',
-      voicefile: 'VO_teamJoin/vo_ayaka_teamJoin_01'
+      voicefile: null
     },
     {
       voicelineId: 3166,
       title: 'Joining Party: II',
       voicelineType: '600002',
       description: 'I await your instruction.',
-      voicefile: 'VO_teamJoin/vo_ayaka_teamJoin_02'
+      voicefile: null
     },
     {
       voicelineId: 3167,
       title: 'Joining Party: III',
       voicelineType: '600003',
       description: 'A pleasure to be working with you.',
-      voicefile: 'VO_teamJoin/vo_ayaka_teamJoin_03'
+      voicefile: null
     }
   ],
-  version: {
-    '3100': '',
-    '3101': '',
-    '3102': '',
-    '3103': '',
-    '3104': '',
-    '3105': '',
-    '3106': '',
-    '3107': '',
-    '3108': '',
-    '3109': '',
-    '3110': '',
-    '3111': '',
-    '3112': '',
-    '3113': '',
-    '3114': '',
-    '3115': '',
-    '3116': '',
-    '3117': '',
-    '3118': '',
-    '3119': '',
-    '3120': '',
-    '3121': '',
-    '3122': '',
-    '3123': '',
-    '3124': '',
-    '3125': '',
-    '3126': '',
-    '3127': '',
-    '3128': '',
-    '3129': '',
-    '3130': '',
-    '3131': '',
-    '3132': '',
-    '3133': '',
-    '3134': '',
-    '3135': '',
-    '3136': '',
-    '3137': '',
-    '3138': '',
-    '3139': '',
-    '3140': '',
-    '3141': '',
-    '3142': '',
-    '3143': '',
-    '3144': '',
-    '3145': '',
-    '3146': '',
-    '3147': '',
-    '3148': '',
-    '3149': '',
-    '3150': '',
-    '3151': '',
-    '3152': '',
-    '3153': '',
-    '3154': '',
-    '3155': '',
-    '3156': '',
-    '3157': '',
-    '3158': '',
-    '3159': '',
-    '3160': '',
-    '3161': '',
-    '3162': '',
-    '3163': '',
-    '3164': '',
-    '3165': '',
-    '3166': '',
-    '3167': '',
-    '3168': '',
-    '3169': '',
-    '3170': ''
-  }
+  version: ''
 }
 ```
 

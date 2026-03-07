@@ -239,6 +239,26 @@ genshin.talents = genshin.talent = function (query, opts) {
 }
 
 /**
+ * Get data about hyperlinks.
+ * @param {string} query - useless
+ * @param {object|Options} opts - The library options, see [Valid Options](https://github.com/theBowja/genshin-db/blob/main/readme.md#genshindbsetoptionsopts)
+ * @returns {object} - The data found based on the query string and options parameter.
+ */
+genshin.hyperlinks = genshin.hyperlink = function (query, opts) {
+    return retrieveData('hyperlinks', Folder.hyperlinks, opts);
+}
+
+/**
+ * Get data about a story(s).
+ * @param {string} query - Character name.
+ * @param {object|Options} opts - The library options, see [Valid Options](https://github.com/theBowja/genshin-db/blob/main/readme.md#genshindbsetoptionsopts)
+ * @returns {object} - The data found based on the query string and options parameter.
+ */
+genshin.stories = genshin.story = function (query, opts) {
+    return retrieveData(query, Folder.stories, opts);
+}
+
+/**
  * Get data about a weapon(s).
  * 
  * The returned object also includes a method to calculate the stats of the weapon at each level, namely .stats().

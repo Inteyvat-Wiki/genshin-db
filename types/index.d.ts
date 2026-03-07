@@ -10,10 +10,12 @@
 /// <reference path="./folders/enemies.d.ts" />
 /// <reference path="./folders/foods.d.ts" />
 /// <reference path="./folders/geographies.d.ts" />
+/// <reference path="./folders/hyperlinks.d.ts" />
 /// <reference path="./folders/materials.d.ts" />
 /// <reference path="./folders/namecards.d.ts" />
 /// <reference path="./folders/outfits.d.ts" />
 /// <reference path="./folders/rarity.d.ts" />
+/// <reference path="./folders/stories.d.ts" />
 /// <reference path="./folders/talentmaterialtypes.d.ts" />
 /// <reference path="./folders/talents.d.ts" />
 // <reference path="./folders/weaponmaterialtypes.d.ts" />
@@ -129,11 +131,13 @@ declare module "genshin-db" {
 	export const enemies: QueryFunction<Enemy>;
 	export const foods: QueryFunction<Food>;
 	export const geographies: QueryFunction<Geography>;
+	export const hyperlinks: QueryFunction<Hyperlink>;
 	export const materials: QueryFunction<Material>;
 	export const namecards: QueryFunction<Namecard>;
 	export const outfits: QueryFunction<Outfit>;
 	/** @deprecated */
 	export const rarity: QueryFunction<Rarity>;
+	export const stories: QueryFunction<Story>;
 	export const talentmaterialtypes: QueryFunction<TalentMaterial>;
 	export const talents: QueryFunction<Talent>;
 	// export const weaponmaterialtypes: QueryFunction<WeaponMaterial>;
