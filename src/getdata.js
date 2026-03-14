@@ -229,6 +229,10 @@ function setAttributesTalent(data, filename) {
         if(myparams[prop] === undefined) continue;
         data[prop].attributes.parameters = myparams[prop];
     }
+    for (const prop of ['passive1', 'passive2', 'passive3', 'passive4']) {
+        if(myparams[prop] === undefined) continue;
+        data[prop].parameters = myparams[prop];
+    }
 }
 
 /* ======================================================================================= */

@@ -56,5 +56,8 @@ declare module "genshin-db" {
 		descriptionRaw: string;
 		description: string; // sanitized with removeColorHTML, removeHashtag, replaceGenderM, replaceLayoutPC, replaceNonBreakSpace
 		unlock_ascension: number;
+		parameters: {
+			[key: string]: number[];
+		};
 	}
 }

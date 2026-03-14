@@ -158,7 +158,7 @@ const genshindb = require('genshin-db');
   },
   url: undefined,
   stats: [Function (anonymous)],
-  version: ''
+  version: '1.2'
 }
 ```
 
@@ -298,7 +298,7 @@ const genshindb = require('genshin-db');
   },
   url: undefined,
   stats: [Function (anonymous)],
-  version: ''
+  version: '1.0'
 }
 ```
 
@@ -388,7 +388,7 @@ const genshindb = require('genshin-db');
   },
   url: undefined,
   stats: [Function (anonymous)],
-  version: ''
+  version: '1.0'
 }
 ```
 
@@ -478,7 +478,7 @@ const genshindb = require('genshin-db');
   },
   url: undefined,
   stats: [Function (anonymous)],
-  version: ''
+  version: '1.1'
 }
 ```
 
@@ -568,7 +568,7 @@ const genshindb = require('genshin-db');
   },
   url: undefined,
   stats: [Function (anonymous)],
-  version: ''
+  version: '1.0'
 }
 ```
 
@@ -899,7 +899,14 @@ const genshindb = require('genshin-db');
            3.79592
         ]
       }
-    }
+    },
+    proudSkillIds: [
+      273101, 273102, 273103,
+      273104, 273105, 273106,
+      273107, 273108, 273109,
+      273110, 273111, 273112,
+      273113, 273114, 273115
+    ]
   },
   combat2: {
     id: 10272,
@@ -955,7 +962,14 @@ const genshindb = require('genshin-db');
           12, 12, 12
         ]
       }
-    }
+    },
+    proudSkillIds: [
+      273201, 273202, 273203,
+      273204, 273205, 273206,
+      273207, 273208, 273209,
+      273210, 273211, 273212,
+      273213, 273214, 273215
+    ]
   },
   combat3: {
     id: 10274,
@@ -992,28 +1006,101 @@ const genshindb = require('genshin-db');
           40, 40, 40
         ]
       }
-    }
+    },
+    proudSkillIds: [
+      273901, 273902, 273903,
+      273904, 273905, 273906,
+      273907, 273908, 273909,
+      273910, 273911, 273912,
+      273913, 273914, 273915
+    ]
   },
   passive1: {
     id: 272101,
     name: 'Backup Plan',
     descriptionRaw: 'When Ningguang is in possession of Star Jades, her Charged Attack does not consume Stamina.',
     description: 'When Ningguang is in possession of Star Jades, her Charged Attack does not consume Stamina.',
-    unlock_ascension: 1
+    unlock_ascension: 1,
+    parameters: {
+      param1: 0,
+      param2: 0,
+      param3: 0,
+      param4: 0,
+      param5: 0,
+      param6: 0,
+      param7: 0,
+      param8: 0,
+      param9: 0,
+      param10: 0,
+      param11: 0,
+      param12: 0,
+      param13: 0,
+      param14: 0,
+      param15: 0,
+      param16: 0,
+      param17: 0,
+      param18: 0,
+      param19: 0,
+      param20: 0
+    }
   },
   passive2: {
     id: 272201,
     name: 'Strategic Reserve',
     descriptionRaw: 'A character that passes through the <color=#FFD780FF>Jade Screen</color> will gain a 12% <color=#FFE699FF>Geo DMG Bonus</color> for 10s.',
     description: 'A character that passes through the Jade Screen will gain a 12% Geo DMG Bonus for 10s.',
-    unlock_ascension: 4
+    unlock_ascension: 4,
+    parameters: {
+      param1: 0.12,
+      param2: 10,
+      param3: 0,
+      param4: 0,
+      param5: 0,
+      param6: 0,
+      param7: 0,
+      param8: 0,
+      param9: 0,
+      param10: 0,
+      param11: 0,
+      param12: 0,
+      param13: 0,
+      param14: 0,
+      param15: 0,
+      param16: 0,
+      param17: 0,
+      param18: 0,
+      param19: 0,
+      param20: 0
+    }
   },
   passive3: {
     id: 272301,
     name: 'Trove of Marvelous Treasures',
     descriptionRaw: 'Displays the location of nearby <color=#FFD780FF>ore veins used in forging</color> on the mini-map.',
     description: 'Displays the location of nearby ore veins used in forging on the mini-map.',
-    unlock_ascension: 0
+    unlock_ascension: 0,
+    parameters: {
+      param1: 0,
+      param2: 0,
+      param3: 0,
+      param4: 0,
+      param5: 0,
+      param6: 0,
+      param7: 0,
+      param8: 0,
+      param9: 0,
+      param10: 0,
+      param11: 0,
+      param12: 0,
+      param13: 0,
+      param14: 0,
+      param15: 0,
+      param16: 0,
+      param17: 0,
+      param18: 0,
+      param19: 0,
+      param20: 0
+    }
   },
   costs: {
     lvl2: [
@@ -1075,7 +1162,7 @@ const genshindb = require('genshin-db');
     filename_passive2: 'UI_Talent_S_Ningguang_06',
     filename_passive3: 'UI_Talent_Collect_Ore'
   },
-  version: ''
+  version: '1.0'
 }
 ```
 
@@ -1148,7 +1235,29 @@ const genshindb = require('genshin-db');
   name: 'All Of My Treasures!',
   descriptionRaw: 'Displays the location of nearby <color=#FFD780FF>resources unique to Mondstadt</color> on the mini-map.',
   description: 'Displays the location of nearby resources unique to Mondstadt on the mini-map.',
-  unlock_ascension: 0
+  unlock_ascension: 0,
+  parameters: {
+    param1: 0,
+    param2: 0,
+    param3: 0,
+    param4: 0,
+    param5: 0,
+    param6: 0,
+    param7: 0,
+    param8: 0,
+    param9: 0,
+    param10: 0,
+    param11: 0,
+    param12: 0,
+    param13: 0,
+    param14: 0,
+    param15: 0,
+    param16: 0,
+    param17: 0,
+    param18: 0,
+    param19: 0,
+    param20: 0
+  }
 }
 ```
 
@@ -1262,7 +1371,14 @@ const genshindb = require('genshin-db');
          3.79592
       ]
     }
-  }
+  },
+  proudSkillIds: [
+    413101, 413102, 413103,
+    413104, 413105, 413106,
+    413107, 413108, 413109,
+    413110, 413111, 413112,
+    413113, 413114, 413115
+  ]
 }
 ```
 
@@ -1328,7 +1444,14 @@ const genshindb = require('genshin-db');
         12, 12, 12
       ]
     }
-  }
+  },
+  proudSkillIds: [
+    413201, 413202, 413203,
+    413204, 413205, 413206,
+    413207, 413208, 413209,
+    413210, 413211, 413212,
+    413213, 413214, 413215
+  ]
 }
 ```
 
@@ -1359,7 +1482,8 @@ const genshindb = require('genshin-db');
       'Stamina Drain|{param2:F2}/s'
     ],
     parameters: { param1: [ 10 ], param2: [ 15 ] }
-  }
+  },
+  proudSkillIds: [ 413301 ]
 }
 ```
 
@@ -1445,7 +1569,14 @@ const genshindb = require('genshin-db');
          0.6,  0.6,  0.6
       ]
     }
-  }
+  },
+  proudSkillIds: [
+    413901, 413902, 413903,
+    413904, 413905, 413906,
+    413907, 413908, 413909,
+    413910, 413911, 413912,
+    413913, 413914, 413915
+  ]
 }
 ```
 
@@ -1545,7 +1676,7 @@ const genshindb = require('genshin-db');
     filename_c6: 'UI_Talent_S_Ambor_04',
     filename_constellation: 'Eff_UI_Talent_Ambor'
   },
-  version: ''
+  version: '1.0'
 }
 ```
 
@@ -1624,7 +1755,7 @@ const genshindb = require('genshin-db');
     filename_constellation: 'Eff_UI_Talent_PlayerBoy_Rock',
     filename_constellation2: 'Eff_UI_Talent_PlayerGirl_Rock'
   },
-  version: ''
+  version: '1.0'
 }
 ```
 
@@ -1878,7 +2009,7 @@ const genshindb = require('genshin-db');
     filename_gacha: 'UI_Gacha_EquipIcon_Catalyst_Fourwinds'
   },
   stats: [Function (anonymous)],
-  version: ''
+  version: '1.0'
 }
 ```
 
@@ -2075,6 +2206,7 @@ const genshindb = require('genshin-db');
   dropDomainName: 'Domain of Mastery: Realm of Slumber',
   dropDomainId: 4231,
   daysOfWeek: [ 'Wednesday', 'Saturday', 'Sunday' ],
+  fullDescription: 'Poetry is the soul of the land of the wind. Poetry is the manifestations of the will to encourage. In the dark days, the gales in the streets and alleyways whisper words of fury, like the battle drums, like the low rumbling before the storm.',
   sources: [ 'Placeholder - Craftable Amount: {0}' ],
   images: { filename_icon: 'UI_ItemIcon_104308' },
   version: ''
@@ -2238,6 +2370,7 @@ const genshindb = require('genshin-db');
   category: 'AVATAR_MATERIAL',
   typeText: 'Character Level-Up Material',
   rarity: 5,
+  fullDescription: "The Dragon of the East's physical form is beautiful and transparent. Both trade winds and tornadoes will work in his name. The winds move as his companion, his voice, and his freedom. His enemies are the thousands who stand against the wind.",
   sources: [
     'Lv. 70+ Stormterror Challenge Reward',
     'Obtained from the Crafting Bench Conversion Tab'
@@ -2259,6 +2392,7 @@ const genshindb = require('genshin-db');
   description: 'This iron chunk can be turned into a multitude of handy items in the hands of a skilled craftsman.',
   category: 'EXCHANGE',
   typeText: 'Forging Ore',
+  fullDescription: "This iron ore can be turned into a multitude of handy items in the hands of a skilled craftsman. Mineral ores' presence on the surface usually indicates abundant ore veins underneath.",
   sources: [ 'Found in the wild' ],
   images: { filename_icon: 'UI_ItemIcon_101001' },
   version: ''
@@ -2505,7 +2639,7 @@ const genshindb = require('genshin-db');
     filename_goblet: 'UI_RelicIcon_15018_1',
     filename_circlet: 'UI_RelicIcon_15018_3'
   },
-  version: ''
+  version: '1.5'
 }
 ```
 
@@ -2549,7 +2683,7 @@ const genshindb = require('genshin-db');
     filename_buff: 'UI_Buff_Item_Atk_Add',
     filename_icon: 'UI_ItemIcon_108123'
   },
-  version: ''
+  version: '1.0'
 }
 ```
 
@@ -2730,7 +2864,7 @@ const genshindb = require('genshin-db');
     filename_buff: 'UI_Buff_Item_Atk_CritRate',
     filename_icon: 'UI_ItemIcon_108058'
   },
-  version: ''
+  version: '1.0'
 }
 ```
 
@@ -3133,7 +3267,7 @@ const genshindb = require('genshin-db');
     filename_sideIcon: 'UI_AvatarIcon_Side_AmborCostumeWic'
   },
   url: undefined,
-  version: ''
+  version: '2.5'
 }
 ```
 
@@ -3180,7 +3314,7 @@ const genshindb = require('genshin-db');
     filename_icon: 'UI_FlycloakIcon_Thunderclap',
     filename_gacha: 'UI_Gacha_FlycloakIcon_Thunderclap'
   },
-  version: ''
+  version: '2.0'
 }
 ```
 
@@ -3202,7 +3336,7 @@ const genshindb = require('genshin-db');
   countType: 'COUNT_TYPE_NONE',
   sortOrder: 11015,
   images: { filename_icon: 'UI_AnimalIcon_DogPrick_02' },
-  version: ''
+  version: '1.0'
 }
 ```
 
@@ -3221,7 +3355,7 @@ const genshindb = require('genshin-db');
   countType: 'COUNT_TYPE_CAPTURE',
   sortOrder: 10026,
   images: { filename_icon: 'UI_AnimalIcon_Pigeon_Beak' },
-  version: ''
+  version: '3.0'
 }
 ```
 
@@ -4245,7 +4379,79 @@ const genshindb = require('genshin-db');
       voicefile: null
     }
   ],
-  version: ''
+  version: {
+    '3100': '',
+    '3101': '',
+    '3102': '',
+    '3103': '',
+    '3104': '',
+    '3105': '',
+    '3106': '',
+    '3107': '',
+    '3108': '',
+    '3109': '',
+    '3110': '',
+    '3111': '',
+    '3112': '',
+    '3113': '',
+    '3114': '',
+    '3115': '',
+    '3116': '',
+    '3117': '',
+    '3118': '',
+    '3119': '',
+    '3120': '',
+    '3121': '',
+    '3122': '',
+    '3123': '',
+    '3124': '',
+    '3125': '',
+    '3126': '',
+    '3127': '',
+    '3128': '',
+    '3129': '',
+    '3130': '',
+    '3131': '',
+    '3132': '',
+    '3133': '',
+    '3134': '',
+    '3135': '',
+    '3136': '',
+    '3137': '',
+    '3138': '',
+    '3139': '',
+    '3140': '',
+    '3141': '',
+    '3142': '',
+    '3143': '',
+    '3144': '',
+    '3145': '',
+    '3146': '',
+    '3147': '',
+    '3148': '',
+    '3149': '',
+    '3150': '',
+    '3151': '',
+    '3152': '',
+    '3153': '',
+    '3154': '',
+    '3155': '',
+    '3156': '',
+    '3157': '',
+    '3158': '',
+    '3159': '',
+    '3160': '',
+    '3161': '',
+    '3162': '',
+    '3163': '',
+    '3164': '',
+    '3165': '',
+    '3166': '',
+    '3167': '',
+    '3168': '',
+    '3169': '',
+    '3170': ''
+  }
 }
 ```
 
