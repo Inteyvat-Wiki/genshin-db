@@ -431,6 +431,16 @@ genshin.geographies = genshin.geography = genshin.viewpoints = genshin.viewpoint
 }
 
 /**
+ * Get data about dungeons
+ * @param {string} query - dungeon name.
+ * @param {object|Options} opts - The library options, see [Valid Options](https://github.com/theBowja/genshin-db/blob/main/readme.md#genshindbsetoptionsopts)
+ * @return {object} - The data found based on the query string and options parameter.
+ */
+genshin.dungeons = genshin.dungeon = function (query, opts) {
+    return retrieveData(query, Folder.dungeons, opts);
+}
+
+/**
  * Get data about adventure ranks
  * @param {string} query - adventure level
  * @param {object|Options} opts - The library options, see [Valid Options](https://github.com/theBowja/genshin-db/blob/main/readme.md#genshindbsetoptionsopts)

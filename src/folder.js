@@ -30,6 +30,7 @@ const FoldersEnum = {
 	animals        : 'animals',
 	namecards      : 'namecards',
 	geographies    : 'geographies',
+	dungeons	   : 'dungeons',
 	adventureranks : 'adventureranks',
 
 	emojis         : 'emojis',

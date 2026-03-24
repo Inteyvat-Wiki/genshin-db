@@ -8,7 +8,7 @@ declare module "genshin-db" {
 
 		description: string;
 		fullDescription: string;
-		category: 'ADSORBATE' | 'AVATAR_MATERIAL' | 'CONSUME' | 'ELEM_CRYSTAL' | 'EXCHANGE' | 'EXP_FRUIT' | 'FISH_BAIT' | 'FISH_ROD' | 'NONE' | 'NOTICE_ADD_HP' | 'WEAPON_EXP_STONE' | 'WOOD'; // enum
+		category: 'ADSORBATE' | 'AVATAR_MATERIAL' | 'CONSUME' | 'CONSUM_BATCH_USE' | 'ELEM_CRYSTAL' | 'EXCHANGE' | 'EXP_FRUIT' | 'FISH_BAIT' | 'FISH_ROD' | 'NONE' | 'NOTICE_ADD_HP' | 'WEAPON_EXP_STONE' | 'WOOD' | 'WIDGET' | 'CHEST' | 'CHEST_BATCH_USE'; // enum
 		typeText: string; // translated
 
 		dropDomainId?: number;
