@@ -1,0 +1,387 @@
+{
+	"id": 71812,
+	"type": "WQ",
+	"name": "Tras los tesoros de Tianchiu",
+	"description": "Parece que hay algo que le preocupa a Lan, del Gremio de Aventureros de Liyue...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_GUIDE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7181201,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		},
+		{
+			"id": 7181202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Derrota a todos los monstruos",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7181203,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Busca los tesoros según las pistas del mapa",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7181204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Investiga los alrededores cuidadosamente",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7181204,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7181205,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7181201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7181206,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Busca los tesoros según las pistas del mapa",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7181207,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Busca los tesoros según las pistas del mapa",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7181208,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Busca los tesoros según las pistas del mapa",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7181209,
+			"order": 9,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7181202,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7181210,
+			"order": 11,
+			"listShowType": "QUEST_SHOW",
+			"description": "Informa a Lan",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7181202,
+						0
+					],
+					"talkId": 7181202
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7181202,
+			"completionStepIds": [
+				7181210
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181210",
+							"2"
+						],
+						"stepId": 7181210,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718120201,
+					"content": "¿Qué tal? ¿Descubriste algo?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718120202
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718120202,
+					"content": "Sí, esto.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718120203
+					]
+				},
+				{
+					"id": 718120203,
+					"content": "Esto es... Nunca había visto nada como esto. ¿Dónde lo encontraste?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718120205
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718120205,
+					"content": "Cerca de las Ruinas de Dunyu...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718120206
+					]
+				},
+				{
+					"id": 718120206,
+					"content": "¿Qué está haciendo algo así en las Ruinas de Dunyu...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718120207
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718120207,
+					"content": "Gracias por ayudar a descifrar esa pista. Según el código del aventurero, esto te pertenece a ti y esta recompensa también.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718120208
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718120208,
+					"content": "Haré los preparativos para que alguien vaya de inmediato a las Ruinas de Dunyu a hacer una búsqueda más detallada.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718120209
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718120209,
+					"content": "Es muy extraño... Hemos recorrido las Ruinas de Dunyu varias veces, ¿cómo se nos pudo escapar esto?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Lan"
+				}
+			]
+		},
+		{
+			"id": 7181203,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181203",
+							"3"
+						],
+						"stepId": 7181203,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_NOT_RECEIVE",
+						"rawParams": [
+							"7181210",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718120301,
+					"content": "¿Es... un pedazo de papel? Tiene algo escrito. Rápido, echémosle un vistazo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718120302
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718120302,
+					"content": "Humm... Al parecer, dice que...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718120303
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718120303,
+					"content": "... tenemos que buscar los tesoros en un lugar con un árbol grande, en un lugar en medio de un camino, y... debajo de unas escaleras...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 7181205,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181202",
+							"2"
+						],
+						"stepId": 7181202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181203",
+							"2"
+						],
+						"stepId": 7181203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181204",
+							"2"
+						],
+						"stepId": 7181204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181209",
+							"2"
+						],
+						"stepId": 7181209,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718120501,
+					"content": "Creo que, para los aventureros, la experiencia vale más que la riqueza.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718120502
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718120502,
+					"content": "Después de todo, durante una aventura, el dinero es inservible en la mayoría de situaciones.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Lan"
+				}
+			]
+		}
+	]
+}

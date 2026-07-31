@@ -1,0 +1,555 @@
+{
+	"id": 72247,
+	"type": "WQ",
+	"name": "Enquête engorgée",
+	"description": "Terminez les épreuves selon les indications de l'apparition nommée Aberaku et obtenez les offrandes...",
+	"unlockDescription": "",
+	"chapter": "Le chant funèbre d'Hypérion",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		72177
+	],
+	"steps": [
+		{
+			"id": 7224701,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7224702,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Activez l'épreuve de l'esprit.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7224705,
+						0
+					],
+					"talkId": 7224705
+				}
+			]
+		},
+		{
+			"id": 7224703,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7224704,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Obtenez les offrandes auprès de l'esprit.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7224702,
+						0
+					],
+					"talkId": 7224702
+				}
+			]
+		},
+		{
+			"id": 7224705,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7224703,
+						0
+					],
+					"talkId": 7224703
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7224701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7224702",
+							"2"
+						],
+						"stepId": 7224702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Aberaku"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722470101,
+					"content": "#Êtes-vous {M#prêt, voyageur}{F#prête, voyageuse} ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Aberaku"
+				}
+			]
+		},
+		{
+			"id": 7224702,
+			"completionStepIds": [
+				7224704
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7224704",
+							"2"
+						],
+						"stepId": 7224704,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Aberaku",
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722470201,
+					"content": "#Vous semblez suffisamment {M#fort}{F#forte} pour transporter les offrandes...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470202
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470202,
+					"content": "Ainsi, je pourrai enfin reposer en paix... Ces objets doivent être acheminés pour...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470203
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470203,
+					"content": "Pour ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470204
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470204,
+					"content": "Pour... pour...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470205
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470205,
+					"content": "Ah, ça y est. Il est cassé.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470206
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470206,
+					"content": "Je suppose qu'il parlait de ces trucs... Même s'ils sont un peu abîmés.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 7224703,
+			"completionStepIds": [
+				7224705
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7224705",
+							"2"
+						],
+						"stepId": 7224705,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_COMMON",
+			"trigger": {
+				"objectNames": [
+					"Paimon",
+					"Aberaku"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722470301,
+					"content": "Il y a quelque chose qui vient d'apparaître !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470302
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470302,
+					"content": "On dirait une autre apparition rémanente.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470303
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470303,
+					"content": "Mon nom est...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470304
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470304,
+					"content": "Aberaku, créateur d'Helios !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470305
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470305,
+					"content": "Ah, mais je connais cette réplique.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470306
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470306,
+					"content": "Il est en train de dire que...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470307
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470307,
+					"content": "... Que son nom est le « créateur d'Helios », c'est ça ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470308,
+						722470309
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470308,
+					"content": "Tu n'as vraiment rien écouté !",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722470310
+					]
+				},
+				{
+					"id": 722470310,
+					"content": "Ah...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470311
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470311,
+					"content": "Aberaku... C'est bizarre comme prénom.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470312
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470312,
+					"content": "Attends, mais s'il s'appelle Aberaku, c'est quoi Helios ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470313
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470313,
+					"content": "Helios ! Helios !!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470314
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470314,
+					"content": "Il est ma propre création... Lorsque Helios fut achevé, sa lumière se répandit d'un horizon à l'autre, et c'est ainsi que le peuple fut épargné par le fléau des dragons.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470315
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470315,
+					"content": "Le peuple débordait d'émotion en le voyant. Ils l'accueillaient les bras levés et les larmes aux yeux. Mais comment se peut-il qu'aujourd'hui...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470316
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470316,
+					"content": "... Euh, attendez un peu. Que fais-je ici ? Pourquoi mon âme est-elle piégée dans le monde des rêves, incapable de reposer en paix ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470317
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470317,
+					"content": "Tu as compris cette fois-ci, Paimon ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722470318
+					]
+				},
+				{
+					"id": 722470318,
+					"content": "Ouais.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470319
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470319,
+					"content": "Cet esprit semble... un peu dérangé, non ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470320
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470320,
+					"content": "Ah, je me souviens ! Mon âme est incomplète, je ne reposerai de nouveau en paix que si tous les morceaux sont réunis.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470321
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470321,
+					"content": "Vous avez un rôle essentiel à jouer, je vous adresse donc ces paroles...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470322
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470322,
+					"content": "#Et nous voilà encore {M#embarqués}{F#embarquées} dans des problèmes...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470323
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470323,
+					"content": "Une partie de mes os aurait dû être conservée en ce lieu, mais ils ont pourri depuis longtemps... S'il vous plaît, je vous en supplie...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470324
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470324,
+					"content": "Prenez avec vous ces offrandes qui contiennent mes pensées... Mais prenez garde : les monstres qui ont piégé mon âme rôdent aux alentours, et ils se jetteront sur quiconque tente de sortir d'ici avec un de ces objets.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470325
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470325,
+					"content": "#Cette entreprise est périlleuse. Faites-moi savoir lorsque vous êtes {M#prêt}{F#prête} avant de commencer, {M#voyageur}{F#voyageuse}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470309,
+					"content": "Non, il s'appelle Aberaku.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722470310
+					]
+				}
+			]
+		},
+		{
+			"id": 7224705,
+			"completionStepIds": [
+				7224702
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7224702",
+							"2"
+						],
+						"stepId": 7224702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Aberaku"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722470501,
+					"content": "#Je suis {M#prêt}{F#prête}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722470502
+					]
+				},
+				{
+					"id": 722470502,
+					"content": "Eh bien, je souhaite que la providence soit de votre côté pendant le combat.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Aberaku"
+				}
+			]
+		},
+		{
+			"id": 7224706,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7224702",
+							"2"
+						],
+						"stepId": 7224702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Aberaku"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722470601,
+					"content": "J'ai besoin d'encore un peu de temps.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722470602
+					]
+				},
+				{
+					"id": 722470602,
+					"content": "J'attendrai que vous terminiez vos préparatifs.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Aberaku"
+				}
+			]
+		}
+	]
+}

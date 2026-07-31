@@ -1,0 +1,176 @@
+{
+	"id": 71703,
+	"type": "WQ",
+	"name": "Permintaan dari Tukang Obat Herbal",
+	"description": "Tukang Obat Herbal Gui dari Liyue Harbor membutuhkan sepuluh Sweet Flower.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Berikan sepuluh Sweet Flower kepada Herbalis Gui",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Herbalis Gui",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170302,
+						0
+					],
+					"talkId": 7170302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170301",
+							"2"
+						],
+						"stepId": 7170301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170301"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Herbalis Gui"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717030101,
+					"content": "Tentang Sweet Flower...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717030102
+					]
+				},
+				{
+					"id": 717030102,
+					"content": "Ah, kamu pasti melihat komisiku, apa kamu sudah mengumpulkan sepuluh Sweet Flower?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717030103,
+						717030104
+					],
+					"speakerTitle": "Herbalis Gui"
+				},
+				{
+					"id": 717030103,
+					"content": "Sudah dikumpulkan.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717030104,
+					"content": "Masih belum...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717030105
+					]
+				},
+				{
+					"id": 717030105,
+					"content": "Tolong bawakan padaku secepatnya setelah kamu mendapatkannya. Takutnya anak-anak itu tidak bisa menunggu lagi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Herbalis Gui"
+				}
+			]
+		},
+		{
+			"id": 7170302,
+			"completionStepIds": [
+				7170302
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170302",
+							"2"
+						],
+						"stepId": 7170302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Herbalis Gui"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717030201,
+					"content": "Biar kulihat... ah benar, seharusnya Sweet Flower ini cukup.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717030202
+					],
+					"speakerTitle": "Herbalis Gui"
+				},
+				{
+					"id": 717030202,
+					"content": "Mohon terimalah ini. Terima kasih telah membantuku.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717030203
+					],
+					"speakerTitle": "Herbalis Gui"
+				},
+				{
+					"id": 717030203,
+					"content": "Baiklah, kuharap anak-anak itu tidak mencari masalah lagi sekarang...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Herbalis Gui"
+				}
+			]
+		}
+	]
+}

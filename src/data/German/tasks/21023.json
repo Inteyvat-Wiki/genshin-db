@@ -1,0 +1,190 @@
+{
+	"id": 21023,
+	"type": "WQ",
+	"name": "Vorläufiger Plan",
+	"description": "Es gibt ein Problem mit der Treppe zum Gasthaus Wangshu. Deswegen bleibt der Zugang solange gesperrt. Doch wie kommt man jetzt nach oben?",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2102301,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102301,
+						0
+					],
+					"talkId": 2102301
+				}
+			]
+		},
+		{
+			"id": 2102302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fahre mit dem Aufzug.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2102303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Huai’an.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102302,
+						0
+					],
+					"talkId": 2102302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2102302,
+			"completionStepIds": [
+				2102303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102303",
+							"2"
+						],
+						"stepId": 2102303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102301",
+							"3"
+						],
+						"stepId": 2102301,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Huai’an"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210230201,
+					"content": "Die Treppe sollte lieber schnellstmöglich repariert werden ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230202
+					],
+					"speakerTitle": "Huai’an"
+				},
+				{
+					"id": 210230202,
+					"content": "Bist du der Verwalter hier?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210230203
+					]
+				},
+				{
+					"id": 210230203,
+					"content": "Ganz richtig, das bin ich. Gibt es ein Problem?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230204
+					],
+					"speakerTitle": "Huai’an"
+				},
+				{
+					"id": 210230204,
+					"content": "Jemand von ganz unten hat uns ein Paket zur für dich mitgegeben.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230205
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 210230205,
+					"content": "Ah, das muss ein Geschenk von einem Geschäftsreisenden sein ... Wieso hat Zhen Qiang es denn nicht selbst hochgebracht?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230206
+					],
+					"speakerTitle": "Huai’an"
+				},
+				{
+					"id": 210230206,
+					"content": "Er hat noch Waren abzuholen? Ha! Wahrscheinlich war er einfach nur zu faul, den Weg nach oben zu gehen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230207
+					],
+					"speakerTitle": "Huai’an"
+				},
+				{
+					"id": 210230207,
+					"content": "Ihr seid meine verehrten Kunden, verzeiht die Unannehmlichkeiten bitte! Die Treppe hätte zu keiner unpassenderen Zeit kaputtgehen können. Ich arbeite bereits an einer Lösung.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230208
+					],
+					"speakerTitle": "Huai’an"
+				},
+				{
+					"id": 210230208,
+					"content": "Wirklich so unpassend und dann lässt man euch auch noch dieses Paket hoch schleppen. Hier, nehmt diese Belohnung als Zeichen meiner Dankbarkeit an.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230209
+					],
+					"speakerTitle": "Huai’an"
+				},
+				{
+					"id": 210230209,
+					"content": "Das war ursprünglich für Zhen Qiang vorgesehen. Aber nachdem er euch das Paket hat liefern lassen, solltet ihr auch seine Belohnung bekommen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230210
+					],
+					"speakerTitle": "Huai’an"
+				},
+				{
+					"id": 210230210,
+					"content": "Nun denn, ich begebe mich wieder zu den Treppenarbeiten. Ihr seid jederzeit herzlich willkommen! Sucht mich auf, solltet ihr einen Wunsch haben.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Huai’an"
+				}
+			]
+		}
+	]
+}

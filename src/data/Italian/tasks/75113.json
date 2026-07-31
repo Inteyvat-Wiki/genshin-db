@@ -1,0 +1,316 @@
+{
+	"id": 75113,
+	"type": "WQ",
+	"name": "",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		75046
+	],
+	"steps": [
+		{
+			"id": 7511301,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7511301,
+						0
+					],
+					"talkId": 7511301
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7511302,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_GLOBAL_VAR_EQUAL",
+					"rawParams": [
+						7511301,
+						0
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					-2414.682,
+					219.929,
+					9752.246
+				],
+				"pointId": 10659
+			}
+		},
+		{
+			"id": 7511303,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7511304,
+						0
+					],
+					"talkId": 7511304
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7511301,
+			"completionStepIds": [
+				7511301
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_B_OR_ETCAND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7511301",
+							"2"
+						],
+						"stepId": 7511301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7511302",
+							"0"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7511302",
+							"2"
+						],
+						"stepId": 7511302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7511302",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Urubamba"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 751130101,
+					"content": "#Gentile {F#guerriera}{M#guerriero}, grazie a te i miei Saurici sono a casa sani e salvi!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130106
+					],
+					"speakerTitle": "Urubamba"
+				},
+				{
+					"id": 751130106,
+					"content": "Hai dimostrato così tanto coraggio e gentilezza che io, Urubamba, sarei onorato di aiutarti ad allenarti per affrontare la Sfida del guerriero. Il tutto gratis, ovviamente!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130104,
+						751130105
+					],
+					"speakerTitle": "Urubamba"
+				},
+				{
+					"id": 751130104,
+					"content": "Cominciamo!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 751130105,
+					"content": "Dammi un attimo per prepararmi...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7511302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7511302",
+							"2"
+						],
+						"stepId": 7511302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7511302",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Urubamba"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 751130201,
+					"content": "Una volta che avrai preso una decisione, non pensarci troppo. Piuttosto, fai del tuo meglio!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Urubamba"
+				}
+			]
+		},
+		{
+			"id": 7511304,
+			"completionStepIds": [
+				7511303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7511303",
+							"2"
+						],
+						"stepId": 7511303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Urubamba"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							-2396.456,
+							225.299,
+							9765.566
+						],
+						"pointId": 10657
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							-2400.91,
+							224.938,
+							9765.562
+						],
+						"pointId": 10889
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							-2400.619,
+							225.076,
+							9766.605
+						],
+						"pointId": 10890
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 751130401,
+					"content": "#Wow, non pensavo te la saresti cavata tanto bene... Evidentemente ti ho {F#sottovalutata}{M#sottovalutato}!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130402
+					],
+					"speakerTitle": "Urubamba"
+				},
+				{
+					"id": 751130402,
+					"content": "#Chi avrebbe mai pensato che, dopo tutto il lavoro per preparare la sfida, {F#una straniera}{M#uno straniero} di passaggio avrebbe fatto man bassa dei premi...? Sembra quasi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130403
+					],
+					"speakerTitle": "Urubamba"
+				},
+				{
+					"id": 751130403,
+					"content": "...Come uno di quei racconti eroici narrati nei rotoli di tessuto!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130405
+					],
+					"speakerTitle": "Urubamba"
+				},
+				{
+					"id": 751130405,
+					"content": "Chissà, magari un giorno anche le tue gesta eroiche finiranno tra le nostre leggende? Anzi, ora che mi ci fai pensare... è molto probabile!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130406
+					],
+					"speakerTitle": "Urubamba"
+				},
+				{
+					"id": 751130406,
+					"content": "#Che ne dici di farci una foto insieme, {F#cara eroina}{M#caro eroe}? Chi lo sa, potrebbe tornarmi utile per potermi vantare di averti conosciuto!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Urubamba"
+				}
+			]
+		}
+	]
+}

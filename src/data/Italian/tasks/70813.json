@@ -1,0 +1,188 @@
+{
+	"id": 70813,
+	"type": "WQ",
+	"name": "Al ladro!",
+	"description": "La tempesta è ormai conclusa e Cyrus della Gilda degli avventurieri ha intenzione di sbarazzarsi dei Cacciatori di tesori...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		20603
+	],
+	"steps": [
+		{
+			"id": 7081301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Cyrus",
+			"finishConditions": []
+		},
+		{
+			"id": 7081302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sconfiggi i Cacciatori di tesori vicino al Vigneto Prima Luce",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7081303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sconfiggi i Cacciatori di tesori che sorvegliano gli accampamenti",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7081304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Cyrus",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7081305,
+						0
+					],
+					"talkId": 7081305
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7081304,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081302",
+							"2"
+						],
+						"stepId": 7081302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081303",
+							"2"
+						],
+						"stepId": 7081303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708130401,
+					"content": "Umpf, quei Cacciatori di tesori... Sono proprio un branco di topi ostinati.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		},
+		{
+			"id": 7081305,
+			"completionStepIds": [
+				7081304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081304",
+							"2"
+						],
+						"stepId": 7081304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708130501,
+					"content": "#Sei tornat{M#o}{F#a}. Hai già sgombrato tutti gli accampamenti?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708130502
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708130502,
+					"content": "Tutto fatto.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708130503
+					]
+				},
+				{
+					"id": 708130503,
+					"content": "#Sapevo che sarebbe stato facile per te, Cavaliere Onorari{M#o}{F#a}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708130504
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708130504,
+					"content": "Devo ammettere che quei Cacciatori di tesori sono davvero ostinati. Durante la tempesta, la gente non faceva che mettersi al riparo, mentre loro hanno avuto il coraggio di uscire allo scoperto per rubare.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708130505
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708130505,
+					"content": "Se solo avessero sfruttato così tanta determinazione per scopi migliori...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		}
+	]
+}

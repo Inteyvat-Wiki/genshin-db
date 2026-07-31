@@ -1,0 +1,294 @@
+{
+	"id": 20035,
+	"type": "IQ",
+	"name": "よくなくなる鍵",
+	"description": "ワイアットはお酒が大好きだが、酔っぱらった後、鍵を失くしたようだ。ワイアットの足跡を辿って鍵を探し、彼に返そう。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2003501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "ワイアットに話を聞く",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003501,
+						0
+					],
+					"talkId": 2003501
+				}
+			]
+		},
+		{
+			"id": 2003502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "元素視角を使って鍵を探す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003504,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "鍵をワイアットに渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003504,
+						0
+					],
+					"talkId": 2003504
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2003501,
+			"completionStepIds": [
+				2003501
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003501",
+							"2"
+						],
+						"stepId": 2003501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ワイアット"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200350101,
+					"content": "旅人、ちょうどよかったよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350102
+					],
+					"speakerTitle": "ワイアット"
+				},
+				{
+					"id": 200350102,
+					"content": "もともと荷物をモンドに運ぶ予定だったが、昨夜ここを通った時、キラキラしたものがいくつか見えてな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350103
+					],
+					"speakerTitle": "ワイアット"
+				},
+				{
+					"id": 200350103,
+					"content": "飲みすぎたせいか…急にその正体を確認したくなったんだ。近くまで行ったらあれがスライムの群れだって気付いて、そしたらヤツらに攻撃されたんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350104
+					],
+					"speakerTitle": "ワイアット"
+				},
+				{
+					"id": 200350104,
+					"content": "怖かったが、方向が分からなくてな、ようやくなんとか馬車に戻れたんだ。それで朝になってから<color=#00E1FFFF>鍵</color>がなくなったことに気付いた…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350105
+					],
+					"speakerTitle": "ワイアット"
+				},
+				{
+					"id": 200350105,
+					"content": "探してきてくれないか？きっとこの周辺に…すぐ近くにあると思うんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350106,
+						200350108
+					],
+					"speakerTitle": "ワイアット"
+				},
+				{
+					"id": 200350106,
+					"content": "分かった。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200350107
+					]
+				},
+				{
+					"id": 200350107,
+					"content": "よかった。ここ結構広くてな、どこから探せばいいか悩んでたんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ワイアット"
+				},
+				{
+					"id": 200350108,
+					"content": "他に急用がある。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200350109
+					]
+				},
+				{
+					"id": 200350109,
+					"content": "こんな広い場所は俺ひとりじゃ探せないよ。お前にしかできないんだ、頼む！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ワイアット"
+				}
+			]
+		},
+		{
+			"id": 2003502,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003501",
+							"3"
+						],
+						"stepId": 2003501,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003502",
+							"2"
+						],
+						"stepId": 2003502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ワイアット"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200350201,
+					"content": "鍵はあったか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350202
+					],
+					"speakerTitle": "ワイアット"
+				},
+				{
+					"id": 200350202,
+					"content": "まだ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200350203
+					]
+				},
+				{
+					"id": 200350203,
+					"content": "ここやっぱり広いよな…頼んだよ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ワイアット"
+				}
+			]
+		},
+		{
+			"id": 2003504,
+			"completionStepIds": [
+				2003504
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003502",
+							"3"
+						],
+						"stepId": 2003502,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ワイアット"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200350401,
+					"content": "鍵はあったか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350402
+					],
+					"speakerTitle": "ワイアット"
+				},
+				{
+					"id": 200350402,
+					"content": "失くした鍵はこれ？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200350403
+					]
+				},
+				{
+					"id": 200350403,
+					"content": "そうだ！それで間違いないよ！もう酒は飲まな…うん、飲みすぎないようにするよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350404
+					],
+					"speakerTitle": "ワイアット"
+				},
+				{
+					"id": 200350404,
+					"content": "それと、これを受け取ってくれ。協力ありがとう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ワイアット"
+				}
+			]
+		}
+	]
+}

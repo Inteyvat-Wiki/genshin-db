@@ -1,0 +1,126 @@
+{
+	"id": 72667,
+	"type": "WQ",
+	"name": "Nachschub vom Köder",
+	"description": "Dir ist der leuchtende Grasköder ausgegangen. Zeit, Kujirai Momiji zu finden, um noch ein paar herzustellen ...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5041,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		72663
+	],
+	"steps": [
+		{
+			"id": 7266701,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ITEM_LESS_THAN",
+					"rawParams": [
+						111027,
+						1
+					]
+				}
+			]
+		},
+		{
+			"id": 7266702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Kujirai Momiji.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7266701,
+						0
+					],
+					"talkId": 7266701
+				}
+			]
+		},
+		{
+			"id": 7266703,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						111027,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7266701,
+			"completionStepIds": [
+				7266702
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7266702",
+							"2"
+						],
+						"stepId": 7266702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_NUM_LESS_THAN",
+						"rawParams": [
+							"111027",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kujirai Momiji"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 726670102,
+					"content": "Mir ist der leuchtende Grasköder ausgegangen.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						726670103
+					]
+				},
+				{
+					"id": 726670103,
+					"content": "Hm? Gut, dass ich letztes Mal genügend Materialien eingepackt habe, ich habe einige übrig.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						726670104
+					],
+					"speakerTitle": "Kujirai Momiji"
+				},
+				{
+					"id": 726670104,
+					"content": "Komm schon, nimm sie. Wenn sie dir wieder ausgehen, weißt du wo du mich finden kannst.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kujirai Momiji"
+				}
+			]
+		}
+	]
+}

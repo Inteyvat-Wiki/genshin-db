@@ -1,0 +1,3486 @@
+{
+	"id": 13013,
+	"type": "LQ",
+	"name": "よみがえる夢",
+	"description": "ある日、あなたとパイモンは、スメールシティの人々が夢について語り合っていることに気づいた…",
+	"unlockDescription": "",
+	"chapter": "温もりの名残",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		13014
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1301301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "スメールシティに行く",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1301301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1301302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "ペドラッシュと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1301301,
+						0
+					],
+					"talkId": 1301301
+				}
+			]
+		},
+		{
+			"id": 1301303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "ペドラッシュと共に「モーメントオブドリーム」に行く",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1301305,
+						0
+					],
+					"talkId": 1301305
+				}
+			]
+		},
+		{
+			"id": 1301304,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "アイルマンが言っていた場所に行く",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1301304,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1301305,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "目の前の魔物を倒す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1301306,
+			"order": 10,
+			"listShowType": "QUEST_SHOW",
+			"description": "アイルマンと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1301303,
+						0
+					],
+					"talkId": 1301303
+				}
+			]
+		},
+		{
+			"id": 1301307,
+			"order": 11,
+			"listShowType": "QUEST_SHOW",
+			"description": "「モーメントオブドリーム」に戻って現状を確認する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1301304,
+						0
+					],
+					"talkId": 1301304
+				}
+			]
+		},
+		{
+			"id": 1301308,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "落ち込んでいるアイルマンを慰める",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1301306,
+						0
+					],
+					"talkId": 1301306
+				}
+			]
+		},
+		{
+			"id": 1301309,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "アイルマンと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1301314,
+						0
+					],
+					"talkId": 1301314
+				}
+			]
+		},
+		{
+			"id": 1301310,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "山頂まで登る",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1301316,
+						0
+					],
+					"talkId": 1301316
+				}
+			]
+		},
+		{
+			"id": 1301311,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1301311,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1301301,
+			"completionStepIds": [
+				1301302
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301302",
+							"2"
+						],
+						"stepId": 1301302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ペドラッシュ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130130101,
+					"content": "そこの旅人さん、こんにちは。「モーメントオブドリーム」をお聞きになったことはございますか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130102,
+						130130103
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130102,
+					"content": "「モーメントオブドリーム」？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130104
+					]
+				},
+				{
+					"id": 130130104,
+					"content": "聞いた感じからすると、なんだか甘い飲み物っぽいな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130105
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130105,
+					"content": "あははっ、違いますよ。これは我々が定期的に開催しているイベントの名前です。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130106
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130106,
+					"content": "近ごろ「夢」が一気に話題になり、多くの人が前日に見た夢を話し合うようになりました。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130107
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130107,
+					"content": "実は私もその一人なんです。最後に夢を見たのがとても幼い頃だったので、懐かしい感覚と胸躍る気持ちに溢れていまして。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130108
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130108,
+					"content": "そっか、みんなまた夢を見られるようになったんだもんな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130109
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130109,
+					"content": "ですのでこれを機に、珍しくて奇妙な夢を見たすべての人へ向けて、自由に夢を語ってもらうイベントを開催することにしたのです。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130110
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130110,
+					"content": "こうして、「モーメントオブドリーム」は生まれました。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130111
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130111,
+					"content": "お茶会みたいなものか…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130112
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130112,
+					"content": "はい。ここでは毎日、想像力に富んだ様々な物語が語られています。ぜひお聞きになってはいかがでしょう？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130113
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130113,
+					"content": "新鮮に思う気持ちは理解できる…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130114
+					]
+				},
+				{
+					"id": 130130114,
+					"content": "そうだな。でもオイラたちからすると、夢を見るのなんて食べるのや寝るのと同じくらい普通のことだぞ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130115
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130115,
+					"content": "無料のお菓子とか飲み物があるんなら、少しは考えてもいいけど…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130116
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130116,
+					"content": "本当ですか？つまり、あなた方は今までに数多くの夢を見てきたということでしょうか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130117
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130117,
+					"content": "そうだけど…全然大したことじゃないから、そんなに興奮すんなよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130118
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130118,
+					"content": "いえいえ、夢の体験を語ってくれる経験豊富な参加者こそ、今の我々のイベントに欠けているものなんです。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130119
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130119,
+					"content": "僭越ながら、お二方のことを「夢見のプロ」と呼ばせてください！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130120,
+						130130121
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130120,
+					"content": "なんか変な感じ…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130122
+					]
+				},
+				{
+					"id": 130130122,
+					"content": "「プロ」、へへっ、悪くない響きだぜ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130123
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130123,
+					"content": "どうやら興味を持っていただけたようですね。一緒に会場へ向かいましょう、すぐそこですよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130124
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130124,
+					"content": "あなたの欲しい飲み物もお菓子も、全部そこにあります。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130125
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130125,
+					"content": "おまえもやることがプロだな！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130126
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130126,
+					"content": "あっ、でも勝手に決めたらダメだよな。こいつの意見を聞かないと。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130127
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130127,
+					"content": "あれ、なんでなにも言わないんだ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130128,
+						130130129
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130128,
+					"content": "パイモンの好きにしていいよ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130130
+					]
+				},
+				{
+					"id": 130130130,
+					"content": "えへへ。じゃあ、はやくオイラたちがプロになれる場所へ連れてってくれ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130131
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130131,
+					"content": "はははっ、いいですよ。ついて来てください。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130129,
+					"content": "どうせ選べないんでしょ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130130
+					]
+				},
+				{
+					"id": 130130121,
+					"content": "何でも「プロ」を付ければいいってもんじゃ…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130122
+					]
+				},
+				{
+					"id": 130130103,
+					"content": "何それ？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130104
+					]
+				}
+			]
+		},
+		{
+			"id": 1301302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301303",
+							"2"
+						],
+						"stepId": 1301303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ペドラッシュ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130130201,
+					"content": "皆さん、少しいいでしょうか。やっとプロの方に来ていただけました！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130202
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130202,
+					"content": "#さあさあこちらへ。何かご質問があれば、{M#彼ら}{F#彼女たち}にお聞きください。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130203
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130203,
+					"content": "外から来たプロの人か、それはよかった！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130204
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130204,
+					"content": "俺から質問させてくれ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130205
+					],
+					"speakerTitle": "ナセイル"
+				},
+				{
+					"id": 130130205,
+					"content": "皆さん、慌てず、秩序を守って一列に並んでください！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130206
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130206,
+					"content": "ちょっとした騒ぎの後、ようやくみんな列に並んだ。",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": [
+						130130207
+					]
+				},
+				{
+					"id": 130130207,
+					"content": "こんなに熱意があるなんて…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130208
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130208,
+					"content": "俺の質問は簡単さ。いつも大変な毎日を過ごしてるし、夢の中ぐらいはスライムになりたいんだ。一体どうしたらいい？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130209,
+						130130210
+					],
+					"speakerTitle": "アタ"
+				},
+				{
+					"id": 130130209,
+					"content": "…難しすぎる。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130211
+					]
+				},
+				{
+					"id": 130130211,
+					"content": "オイラ知ってるぜ！そういう夢をたくさん見てきたから、オイラなら答えられるぞ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130212
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130212,
+					"content": "最初にオイラがなったのは風スライムだ。その時は冒険者の矢に撃たれて、一晩中空を飛んでたぜ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130213
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130213,
+					"content": "二回目は草スライムだな。子供たちにダイコンだと思われて、頭の葉っぱをちぎられたんだ。すごく痛かったぜ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130214
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130214,
+					"content": "三回目は氷スライムで、料理人に捕まって、キンキンに冷えたジュースにされた…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130215
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130215,
+					"content": "四回目にようやく強い岩スライムになって、むかしオイラをいじめたイノシシに復讐しに行ったんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130216
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130216,
+					"content": "でも結局、そいつが仲間を何匹も連れてきて、また負けちゃったんだけどな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130217
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130217,
+					"content": "ちょっと待った、なんでどれも悲惨な結末なんだ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130218
+					],
+					"speakerTitle": "アタ"
+				},
+				{
+					"id": 130130218,
+					"content": "だって、スライムは魔物だろ。見た目はかわいいけど、いつもトラブルを起こすから、冒険者に討伐される運命からは逃れられない。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130219
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130219,
+					"content": "だから魔物はみんな、よくない結末を迎えるんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130220,
+						130130221
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130220,
+					"content": "（ツッコみたいけど…）",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130222
+					]
+				},
+				{
+					"id": 130130222,
+					"content": "確かに、魔物は魔物だったな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130223
+					],
+					"speakerTitle": "アタ"
+				},
+				{
+					"id": 130130223,
+					"content": "俺はただ、違った生活を体験してみたかっただけなんだ。だがこうして聞くと、魔物になったら今よりも酷くなっちまうかもな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130224
+					],
+					"speakerTitle": "アタ"
+				},
+				{
+					"id": 130130224,
+					"content": "ふむ、ただのヤマガラや魚になったほうが楽しいのだろうか…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130225
+					],
+					"speakerTitle": "アタ"
+				},
+				{
+					"id": 130130225,
+					"content": "なんだ、プロってそこまで難しくないな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130226
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130226,
+					"content": "次の人！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130227
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130227,
+					"content": "次は俺だ。プロの人に聞きたいんだが、どんな姿勢で寝たら、前の日に見たのと同じ夢を見られるんだ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130228
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130228,
+					"content": "えっと、それは…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130229
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130229,
+					"content": "#{M#俺}{F#私}も知りたい、パイモンプロ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130230
+					]
+				},
+				{
+					"id": 130130230,
+					"content": "助けてくれないのかよ！？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130231
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130231,
+					"content": "うぅ…じゃ、じゃあ、まずどんな夢を見たいのか教えてくれ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130232
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130232,
+					"content": "普通の夢さ。日差しの気持ちいい日に、妻とおしゃべりしながら、山野に吹く風の音を聴くんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130233
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130233,
+					"content": "じゃあ、直接奥さんと話をすればいいだろ。夢を見る必要なんてないんじゃないか。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130234
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130234,
+					"content": "それが、その…妻はもういないんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130235
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130235,
+					"content": "えっ！ご、ごめん、オイラまた言っちゃいけないことを…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130236
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130236,
+					"content": "いやいや、俺がきちんと言わなかったのが悪い。俺はただ、妻にもう一度会いたいのさ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130237
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130237,
+					"content": "奥さんの写真を見ながら眠りにつくのは？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130238
+					]
+				},
+				{
+					"id": 130130238,
+					"content": "そうだな。姿勢とかよりも、寝る前に考えてることのほうが大事だと思うぞ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130239
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130239,
+					"content": "それだけでいいのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130240
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130240,
+					"content": "奥さんのことを想うのも、夢を見るのもおまえ自身だからな。その二つを結びつけることは難しくないと思うぞ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130241
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130241,
+					"content": "それもそうだな、帰ったらさっそく今夜試してみるよ！アドバイスありがとう！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130242
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130242,
+					"content": "今度は私の番…私は夢で見た植物の名前が知りたいんです！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130243
+					],
+					"speakerTitle": "キャシア"
+				},
+				{
+					"id": 130130243,
+					"content": "私は部屋にある記念品の箱を夢の中に持っていきたい！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130244
+					],
+					"speakerTitle": "デビー"
+				},
+				{
+					"id": 130130244,
+					"content": "俺は昨日、荒れ地の上をカラスが飛んでいる夢を見たんだ。何の意味が込められてるのか教えてくれ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130245
+					],
+					"speakerTitle": "パウリン"
+				},
+				{
+					"id": 130130245,
+					"content": "そう慌てるなって、話は一人ずつだ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130246
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130246,
+					"content": "「プロ」の仕事が一段落するまで、だいぶ時間がかかった。",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": []
+				},
+				{
+					"id": 130130221,
+					"content": "（パイモンも冒険者っぽくなった。）",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130222
+					]
+				},
+				{
+					"id": 130130210,
+					"content": "正直、分からない。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130211
+					]
+				}
+			]
+		},
+		{
+			"id": 1301303,
+			"completionStepIds": [
+				1301306
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301306",
+							"2"
+						],
+						"stepId": 1301306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"アイルマン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130130301,
+					"content": "結構いい景色だな。お昼寝したりおやつを食べたりするのにぴったりだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130302
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130302,
+					"content": "オイラも毎日ここへ暇をつぶしに来たいぜ、へへっ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130303
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130303,
+					"content": "今のところ変わった場所はなさそうね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130304
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130304,
+					"content": "想いの力を否定する気はないわ。もしかしたら数値化できないそういった感情の要素にこそ、夢を思い通りにする力があるのかもしれないもの。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130305
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130305,
+					"content": "アイルマンの奥さんって、きっと魅力的な人なんだろうな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130306
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130306,
+					"content": "あれ？アイルマンは？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130307
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130307,
+					"content": "ここで待っててくれてたのか。今日はすごいお方をお連れしたんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130308
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130308,
+					"content": "草神様が一緒に同行してくれるなんて、すごく驚いたよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130309
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130309,
+					"content": "ここの道に慣れたら、ヘイデルも連れてこよう。あの子、ずっと君に会いたいって言ってるんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130310
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130310,
+					"content": "ど、どうしたんだよ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130311
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130311,
+					"content": "そこには誰もいないぞ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130312
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130312,
+					"content": "待て、メイナー。そっちは危ない、行くな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130313
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130313,
+					"content": "落ちてしまうわ！彼をつかんで！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130314
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130314,
+					"content": "ふぅ、落ちなくてよかったぜ。でもなんで急に変なことを言い始めたんだ…しかも、今度は気を失ってるみたいだぞ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130315
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130315,
+					"content": "彼は今、夢の中にいるわ。さっき口にしたことは、前に彼が話していた夢とほとんど一致している。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130316
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130316,
+					"content": "えっ？それって、眠ってるってことか…しかも、同じような夢を見てるのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130317
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130317,
+					"content": "私もおかしいと思うわ。でも夢遊している人は起こさないほうがいいから、このまま待ちましょう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130318
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130318,
+					"content": "うぅ…ん？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130319
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130319,
+					"content": "メイナー、メイナーは？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130320
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130320,
+					"content": "あっ！起きたんだな、よかったぜ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130321
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130321,
+					"content": "俺は一体…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130322,
+						130130323
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130322,
+					"content": "さっきまで夢遊してた。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130324
+					]
+				},
+				{
+					"id": 130130324,
+					"content": "夢遊？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130325
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130325,
+					"content": "ああ、そうか。確かにあれは夢の中でないとありえない。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130326
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130326,
+					"content": "山頂に着いた瞬間、妻のメイナーがそこに座っているのが見えたんだ。それで俺は彼女に歩み寄った。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130327
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130327,
+					"content": "妻は君たちの紹介を聞くと、慌てて前に行こうとした。でもそっちは崖だから、俺は行くなと言って…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130328
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130328,
+					"content": "そしたら妻が消えたんだ。それから俺の近くで風が吹いて、空が暗くなった。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130329
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130329,
+					"content": "何かおかしいと思い始めた時には、もう目が覚めていた。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130330
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130330,
+					"content": "なんかすごく変な話だな、疲れてるんじゃないか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130331
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130331,
+					"content": "それはない。昨日はぐっすり寝たし、今も眠くはない。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130332
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130332,
+					"content": "おそらく、私たちが来たことによって、潜在意識による夢の創造に影響が出たのかもしれないわね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130333
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130333,
+					"content": "何はともあれ、無事に目覚められてよかったわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130334
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130334,
+					"content": "先ほど何があったのか、だいたい分かりました。すみません、草神様と君たちがいなければ、本当に落ちていたかもしれません。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130335
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130335,
+					"content": "とりあえず、まずは戻りましょう。あなたはしばらくこの場所に来ないほうがいいわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130336
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130336,
+					"content": "…はい、分かりました。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130337
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130337,
+					"content": "ナヒーダ、なにか思い当たることはないのか？オイラ、ちょっと心配だぞ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130338
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130338,
+					"content": "手がかりがあまりに少なく、まだ推測の域を出ないわ。それより心配なのは、もしもアイルマンに起こったことだけが例外でなかった場合ね…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130339
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130339,
+					"content": "そっか、「モーメントオブドリーム」には、他にも夢を鮮明に覚えてる人がたくさんいるんだった！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130340
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130340,
+					"content": "もう何か起こり始めてるかも。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130341
+					]
+				},
+				{
+					"id": 130130341,
+					"content": "ええ、「モーメントオブドリーム」に限らず、このような人はスメールの他の場所にもいるかもしれないわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130342
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130342,
+					"content": "一刻も早く、現状とその進行速度を把握する必要がある。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130343
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130343,
+					"content": "じゃあ、はやく戻ろうぜ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130344
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130344,
+					"content": "アイルマン、ボーっとしてないではやく行くぞ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130323,
+					"content": "落ちそうになってた。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130324
+					]
+				}
+			]
+		},
+		{
+			"id": 1301304,
+			"completionStepIds": [
+				1301307
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301307",
+							"2"
+						],
+						"stepId": 1301307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ペドラッシュ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130130401,
+					"content": "もう戻られたのですか。どうです、上手くいきましたか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130402
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130402,
+					"content": "急を要する事態になったわ。この場にいる全員に、夢について話し合ってもいいけど、決して夢の中の情景を探してはならないと伝えてちょうだい。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130403
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130403,
+					"content": "えっ？は、はい、草神様がそうおっしゃるのでしたら…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130404
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130404,
+					"content": "ですが、何が起こったのか教えていただけませんか？皆さんそんなに真剣な顔をされて…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130405
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130405,
+					"content": "ペドラッシュに起こったことを伝えた。",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": [
+						130130406
+					]
+				},
+				{
+					"id": 130130406,
+					"content": "分かりました、それほど危険なことが起きていたんですね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130407
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130407,
+					"content": "ご安心を。このことはすべての参加者、並びに「モーメントオブドリーム」のスタッフにもお伝えしておきます。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130408
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130408,
+					"content": "参加者リストを使えば、夢について関心を持っている大勢の方とも連絡が取れるでしょう。そうすれば、警告の範囲をもっと全面的に広げられます。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130409
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130409,
+					"content": "ありがとう、本当に助かるわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130410
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130410,
+					"content": "まずは、本日イベントに参加した人がまだここにいるか確認してきます。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130411
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130411,
+					"content": "アタさんはもう帰っているようですね。金づちを作りに行ったようなので、大した問題はないでしょう…おや？待ってください、キャシアさんはどこへ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130412
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130412,
+					"content": "どなたかキャシアさんを見ませんでしたか。もう帰ったのでしょうか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130413
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130413,
+					"content": "ああ、彼女なら行くところがあるって言ってたわ。もうここを離れたみたいね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130414
+					],
+					"speakerTitle": "デビー"
+				},
+				{
+					"id": 130130414,
+					"content": "まずい！まさか夢の中の情景を探しに行ったんじゃないよな！？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130415
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130415,
+					"content": "どこへ向かったか教えてくれるかしら？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130416
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130416,
+					"content": "はい、私も簡単にしか聞いていませんが、たしかチャトラカム洞窟の近くだったと思います。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130417
+					],
+					"speakerTitle": "デビー"
+				},
+				{
+					"id": 130130417,
+					"content": "ありがとう、すぐに行ってみるわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130418
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130418,
+					"content": "それから、軽率な行動を取らないよう他の人たちにも伝えてくれる？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130419
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130419,
+					"content": "分かりました。はぁ、こんなことになるなんて…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "デビー"
+				}
+			]
+		},
+		{
+			"id": 1301305,
+			"completionStepIds": [
+				1301303
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301303",
+							"2"
+						],
+						"stepId": 1301303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ペドラッシュ",
+					"ナヒーダ",
+					"アイルマン",
+					"アタ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130130501,
+					"content": "ふぅ、あいつらの質問、めちゃくちゃ難しかったぜ。オイラたちは別にあいつらより詳しいわけじゃなくて、ただ経験が豊富なだけなのに。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130502,
+						130130503
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130502,
+					"content": "でもそんなに答えを気にしてなかった。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130504
+					]
+				},
+				{
+					"id": 130130504,
+					"content": "そうだな。模索したり考えたりしてる時のほうが、質問の答えを知るよりも面白いもんな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130505
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130505,
+					"content": "例えるなら、三日三晩お腹を空かせた放浪者が、エネルギーの補充にご飯かケーキかなんて気にしないのと同じことだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130506
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130506,
+					"content": "オイラが誰のことを思い浮かべてるのか——今ので分かったか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130507
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130507,
+					"content": "ナヒーダでしょ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130508
+					]
+				},
+				{
+					"id": 130130508,
+					"content": "えへへ、あたりだ。あいつならきっとこんな感じのことを言うと思うぞ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130509
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130509,
+					"content": "でも今は忙しいから、こういうイベントに参加する時間はないだろうな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130510
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130510,
+					"content": "あの、プロのお二方に質問をしたいという方がもう一人いらっしゃるのですが。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130511
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130511,
+					"content": "えっ？もういいだろ、質問に答えてた時、おまえも見てたよな。オイラたちはプロでもなんでもないんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130512
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130512,
+					"content": "その、そちらのお客さんは、少々特殊でして…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130513
+					],
+					"speakerTitle": "ペドラッシュ"
+				},
+				{
+					"id": 130130513,
+					"content": "こんな面白い場所にあなたたちだけで来て、どうして私を呼ばなかったのか問い詰めたい気分だわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130514
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130514,
+					"content": "うわっ！なんでナヒーダがここに！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130515
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130515,
+					"content": "「モーメントオブドリーム」のような面白いイベントはそうそうないもの。どんなに忙しくても、時間を作って見に来ているの。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130516
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130516,
+					"content": "あなたたちに会えたのは、偶然の縁とも言えるわね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130517
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130517,
+					"content": "そうだ！ナヒーダは夢を一番理解してるから、オイラたちの代わりにすべての質問に答えられるよな！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130518
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130518,
+					"content": "確かにそうね。さあ、どんなことでも聞いてちょうだい。面白ければ面白いほどいいわよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130519
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130519,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130520
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130520,
+					"content": "どうしたの？さっきまであんなに賑やかにしていたのに、なぜ急にためらうのかしら。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130521
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130521,
+					"content": "心の準備が必要なのかも。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130522
+					]
+				},
+				{
+					"id": 130130522,
+					"content": "だとしても、私ってそんなに怖そうには見えないはずだけれど。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130523
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130523,
+					"content": "凄さの程度で言ったら、あなたたちだってスメールでいろいろと偉大なことをやったはずよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130524
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130524,
+					"content": "それでもレベルが違うから。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130525
+					]
+				},
+				{
+					"id": 130130525,
+					"content": "はぁ、面白い質問が一気に消えてしまったわ。私って場を興ざめさせるような存在だったのね、ここを離れたほうがいいみたい。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130526
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130526,
+					"content": "いやいや、そういうわけじゃないぞ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130527
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130527,
+					"content": "「モーメントオブドリーム」の原点には背きたくないの。人々がここに集まるのは、美しき夢を自由に語り合うためよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130528
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130528,
+					"content": "だけど今の雰囲気は、まるで容器に入った水のよう。決まった形にはなっているけど、川を流れていた頃の自由自在な姿はもう二度と取り戻せない。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130529
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130529,
+					"content": "私はただ、その中にある一つの水滴になりたいだけ。風情の分からない容器になるのは御免だわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130530
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130530,
+					"content": "これってもしかして…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130531
+					]
+				},
+				{
+					"id": 130130531,
+					"content": "拗ねてるな…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130532
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130532,
+					"content": "みんな、大丈夫だからもっと積極的に聞いてくれ！草神様はすごく付き合いやすいやつなんだ！ほら、はやくしないと本当に行っちゃうぞ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130533
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130533,
+					"content": "じゃ、じゃあ俺からいこう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130534
+					],
+					"speakerTitle": "アタ"
+				},
+				{
+					"id": 130130534,
+					"content": "さっきの「スライム人間」だな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130535
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130535,
+					"content": "なんだその変な呼び名は…俺はもうスライムにはなりたくないんだ。ヤマガラか魚のほうが俺には合ってる。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130536
+					],
+					"speakerTitle": "アタ"
+				},
+				{
+					"id": 130130536,
+					"content": "なるほど、夢の中で小動物になりたいのね。どうしてそのような考えが生まれたのかしら？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130537
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130537,
+					"content": "いつも同じ生活を送っているので、少し違ったことを経験したいのかもしれません。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130538
+					],
+					"speakerTitle": "アタ"
+				},
+				{
+					"id": 130130538,
+					"content": "顔を上げれば空が見え、遠くには海もある。それなのに俺は、まるで永遠に変わらない日々の中に閉じ込められているような気がするんです。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130539
+					],
+					"speakerTitle": "アタ"
+				},
+				{
+					"id": 130130539,
+					"content": "だから夢の中で新鮮な感じを味わいたいということかしら…ごめんなさい、さらに困惑してきたわ。どうして現実でその新鮮な感じを見つけようとしないの？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130540
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130540,
+					"content": "仕事をしないとモラが稼げないからですよ。俺だって毎日釘を打ったり木を切ったりなんかしたくありません。けど、家には養っている家族がいるんです…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130541
+					],
+					"speakerTitle": "アタ"
+				},
+				{
+					"id": 130130541,
+					"content": "それを考えた時、自分の生活がつまらないことで埋め尽くされているのに気づきました。自由な空間なんて、まったくなかったんです。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130542
+					],
+					"speakerTitle": "アタ"
+				},
+				{
+					"id": 130130542,
+					"content": "でも、たとえ夢の中で鳥や魚になっても、最終的には釘を打ったり木を切り続けたりする必要があるでしょ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130543
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130543,
+					"content": "あなたはすでに閉じ込められている。だから、肉体がどんなものに変わろうと、精神がその苦境から飛び出すことはできないわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130544
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130544,
+					"content": "えっ…？そんな…では、どうすればいいんでしょう？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130545
+					],
+					"speakerTitle": "アタ"
+				},
+				{
+					"id": 130130545,
+					"content": "私はあなたの背負っているプレッシャーをこの身で直接感じることはできない。でも、どうすればいいか助言することはできるわ。金づちを変えてみてはどうかしら？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130546
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130546,
+					"content": "金づちを変える？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130547
+					],
+					"speakerTitle": "アタ"
+				},
+				{
+					"id": 130130547,
+					"content": "ええ。長く仕事をしているから、どんな金づちが使いやすいか知っているはずよね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130548
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130548,
+					"content": "はい、もちろんです。まずは叩く回数を増やさないためにも、十分な重さが必要になります。それから滑らないよう、グリップがツルツルなやつはダメですね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130549
+					],
+					"speakerTitle": "アタ"
+				},
+				{
+					"id": 130130549,
+					"content": "そういえば、今使ってる金づちですが、しばらく変えてませんね…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130550
+					],
+					"speakerTitle": "アタ"
+				},
+				{
+					"id": 130130550,
+					"content": "ぜひ変えてみて。ついでに、金づちに好きな装飾や毛皮、革などもつけてみるといいわ。最後に、自分の子供の名前も入れてみなさい。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130551
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130551,
+					"content": "…確かに、なんだか仕事に対して意欲が湧いてきました！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130552
+					],
+					"speakerTitle": "アタ"
+				},
+				{
+					"id": 130130552,
+					"content": "新鮮味は、生活の中における些細な物事から来るものよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130553
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130553,
+					"content": "あなたは鳥や魚になる必要はないの。頑張って日々を過ごしていけば、あなたの大切に思うすべてが、あなたの幸せの源になるわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130554
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130554,
+					"content": "なるほど、完全に理解しました！まるで悟りを開いたかのようです！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130555
+					],
+					"speakerTitle": "アタ"
+				},
+				{
+					"id": 130130555,
+					"content": "今すぐ新しい金づちを選びに…いや、自分で一本作るべきですね。ありがとうございます、草神様！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130556
+					],
+					"speakerTitle": "アタ"
+				},
+				{
+					"id": 130130556,
+					"content": "さすがナヒーダだな、いつも問題の切り口を見つけるのがうまいぜ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130557
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130557,
+					"content": "実は、私もあまり「理解」していないの。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130558
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130558,
+					"content": "えっ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130559
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130559,
+					"content": "私がああいうアドバイスをしたのは、他の職人が同じことをやっていたのを見たから。彼は疲れを感じると、グリップにある名前を見ていたの。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130560
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130560,
+					"content": "すると、彼の顔には笑みが浮かんだ。とても驚いたわ。きっとそれは、彼にとってとても大切な人の名前だったのでしょうね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130561,
+						130130562
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130561,
+					"content": "少し分かった気がする。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130563
+					]
+				},
+				{
+					"id": 130130563,
+					"content": "ええ。観察して初めて、こういった行為が人間の原動力となるのを知ったわ。でも、どうしてなのかしら？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130564
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130564,
+					"content": "それが興奮や期待によるものなのか、それとも仕方ないと思う気持ちからなのか、私には分からない。たとえ彼の考えを知ることができても、彼の気持ちを理解することは難しいでしょうね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130565
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130565,
+					"content": "そうだったのか。ナヒーダからしたら、そんなに遠回りして考える必要があったんだな…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130566
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130566,
+					"content": "ふふっ、だから実はさっき、少し不安だったの。幸い、彼は嬉しそうにしていたから、間違ったことは言っていないようね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130567
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130567,
+					"content": "あまり気にしないで、これが私の学習方法だから。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130568
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130568,
+					"content": "必要なら、手助けするよ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130569
+					]
+				},
+				{
+					"id": 130130569,
+					"content": "オイラを忘れてもらっちゃ困るぞ！オイラだって、顔色を見るのが得意だからな！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130570
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130570,
+					"content": "ありがとう、これで私も安心できるわ。次の質問を聞きましょう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130571
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130571,
+					"content": "さっき同じことを質問しましたが、やっぱり草神様の意見もお聞かせください。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130572
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130572,
+					"content": "一体どのようにすれば、夢の中で毎日、亡くなった妻に会えるのでしょうか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130573
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130573,
+					"content": "亡くなった人への想いね…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130574,
+						130130575
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130574,
+					"content": "（マハールッカデヴァータのことを考えてる？）",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130576
+					]
+				},
+				{
+					"id": 130130576,
+					"content": "たとえかつての美しい思い出を繰り返しても、それによってもたらされるのは現実の虚しさだけよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130577
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130577,
+					"content": "もしも彼女がまだ生きていたら、そんなあなたは見たくなかったはずよね？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130578
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130578,
+					"content": "はい、それは分かっています。ですが、私たちが夢の中で過ごす時間は、ただの記憶の繰り返しではありません。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130579
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130579,
+					"content": "彼女を強く想っているからか、夢の中の彼女はまるで、生き返ったかのようなんです…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130580
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130580,
+					"content": "夢で起こったことを、彼女はすべて覚えている。目覚めた後に再び夢に入っても、前回の話題の続きを一緒に話せるんです。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130581
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130581,
+					"content": "それはまた不思議ね。一般的に連続性のある夢はほとんどないわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130582
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130582,
+					"content": "彼女はまるで私の夢の中で、二回目の命を手に入れたかのようでした。しかし、彼女が生き生きとしていればするほど、目覚めた後の私に虚しさと苦しさが襲いかかるのです。これは喜ぶべきことなのでしょうか、それとも苦しむだけなのでしょうか…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130583
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130583,
+					"content": "もしかしたら、すべての根源は「想い」によるものなのかもしれないわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130584
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130584,
+					"content": "あなたと彼女の間に、とても残念に思っているやり残したことはない？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130585
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130585,
+					"content": "よく分かりません。ただ、彼女と一緒に歳を重ね、人生を最後まで一緒に歩んでいけなかったのは、私にとって一番残念なことです。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130586
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130586,
+					"content": "もういい加減、前を向かなきゃいけないとは思っていました。こんなリアルな夢を見ていなければ、これほど迷走してはいなかったでしょう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130587
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130587,
+					"content": "これが俗に言う「寝ても覚めても」っていうやつだな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130588
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130588,
+					"content": "でも、夢は永遠に夢でしかない。私たちは、現実を生きる者よ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130589
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130589,
+					"content": "過度に夢に溺れるのがいいことであるとは限らない。あなたの精神と気持ちを擦り減らし続けるだけだわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130590
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130590,
+					"content": "分かっています…ですので、私も自責の念に駆られているのです。まだ子供の面倒を見なければいけないというのに…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130591
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130591,
+					"content": "子供に父親のこんな情けない姿を見せてはいけませんよね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130592
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130592,
+					"content": "はぁ…草神様、アドバイスありがとうございました。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130593
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130593,
+					"content": "彼の精神状態、とても心配だわ。早くよくなるといいのだけれど。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130594
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130594,
+					"content": "それと、私の調子は悪くないから、もしも退屈に感じていたら無理に付き合わなくてもいいわよ。あなたたちは元々遊びに来たのだし。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130575,
+					"content": "（いや、もう覚えてないはず。）",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130576
+					]
+				},
+				{
+					"id": 130130562,
+					"content": "ナヒーダはそこから推測したんだね。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130563
+					]
+				},
+				{
+					"id": 130130503,
+					"content": "テンションの上がる夢で心躍ってるのかも。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130504
+					]
+				}
+			]
+		},
+		{
+			"id": 1301306,
+			"completionStepIds": [
+				1301308
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301308",
+							"2"
+						],
+						"stepId": 1301308,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"アイルマン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130130601,
+					"content": "少しよくなったか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130602
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130602,
+					"content": "ああ。本当に草神様の言う通りだと思ってな。この考えから抜け出さないとだめらしい。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130603
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130603,
+					"content": "今思い出してみると、夢の中ではいつも同じような場所で妻と会うんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130604
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130604,
+					"content": "そこは現実にも存在してる。ただ、少し遠くて危険な場所だから、一人で行く勇気がなくてな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130605
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130605,
+					"content": "でも、やっぱり行ってみたい。そこに何もなければ、諦めもつく。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130606
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130606,
+					"content": "それも方法の一つだ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130607
+					]
+				},
+				{
+					"id": 130130607,
+					"content": "このままじゃ、なんだか酔っぱらってるみたいで、夢うつつの状態が続いてしまう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130608
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130608,
+					"content": "あれと似た情景をもう夢で見なければ、現実に戻れると思うんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130609
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130609,
+					"content": "君たち、冒険者なんだろ？もしよかったら、その場所まで護衛を頼めないか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130610,
+						130130611
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130610,
+					"content": "行ってみよう。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130612
+					]
+				},
+				{
+					"id": 130130612,
+					"content": "気分転換だと思えばいいと思うぜ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130613
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130613,
+					"content": "奥さんには会えないけど、美しい景色とかを見たら気分もよくなってくると思うぞ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130614
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130614,
+					"content": "ああ、俺もそうなることを願ってるよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130615
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130615,
+					"content": "えへへ、はやくよくなるといいな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130616
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130616,
+					"content": "（故人への「想い」…やっぱりマハールッカデヴァータのことをナヒーダにも伝えよう。）",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130617
+					]
+				},
+				{
+					"id": 130130617,
+					"content": "（少なくともナヒーダに、彼女が「存在していた」ことを知ってもらわないと。）",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130618
+					]
+				},
+				{
+					"id": 130130618,
+					"content": "また私に隠れて、面白い場所に行くつもり？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130619
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130619,
+					"content": "あれ、ナヒーダは質問に答えてたんじゃないのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130620
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130130620,
+					"content": "ちょうど終わったところよ。今日は奇抜で新しいアイデアをたくさん聞けて、収穫に満ちた一日だったわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130621
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130621,
+					"content": "どこかへ行くようだけど、私も連れていってくれないかしら。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130622
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130622,
+					"content": "いえ、多忙な草神様にこのようなことを頼むわけにはいきません。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130623
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130623,
+					"content": "遠慮はいらないわ。それにこの提案をしたのだって、もちろん考えあってのことよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130624
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130624,
+					"content": "この機会に、私が困惑していることについてあなたたちにも話しておこうと思うの。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130625
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130625,
+					"content": "草神様であっても、困惑するのですか…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130626
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130130626,
+					"content": "私はあなたたちとそこまで大きく変わらないわよ。さあ、歩きながら話しましょう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130627
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130130627,
+					"content": "（マハールッカデヴァータのことは簡単に説明できない。まずはついて行こう。）",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 130130611,
+					"content": "行って目を覚まそう。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130612
+					]
+				}
+			]
+		},
+		{
+			"id": 1301307,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301304",
+							"2"
+						],
+						"stepId": 1301304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301309",
+							"2"
+						],
+						"stepId": 1301309,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301305",
+							"2"
+						],
+						"stepId": 1301305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301306",
+							"2"
+						],
+						"stepId": 1301306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301310",
+							"2"
+						],
+						"stepId": 1301310,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301307",
+							"2"
+						],
+						"stepId": 1301307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"デビー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130130701,
+					"content": "夢に関することばかり話してたら、なんだか眠くなってきた。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "デビー"
+				}
+			]
+		},
+		{
+			"id": 1301308,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301308",
+							"2"
+						],
+						"stepId": 1301308,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301304",
+							"2"
+						],
+						"stepId": 1301304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301305",
+							"2"
+						],
+						"stepId": 1301305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301306",
+							"2"
+						],
+						"stepId": 1301306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301310",
+							"2"
+						],
+						"stepId": 1301310,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ペドラッシュ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130130801,
+					"content": "草神様が直々にこのイベントに参加するなんて…夢にも思いませんでした。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ペドラッシュ"
+				}
+			]
+		},
+		{
+			"id": 1301309,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301308",
+							"2"
+						],
+						"stepId": 1301308,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301304",
+							"2"
+						],
+						"stepId": 1301304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301305",
+							"2"
+						],
+						"stepId": 1301305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301306",
+							"2"
+						],
+						"stepId": 1301306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301310",
+							"2"
+						],
+						"stepId": 1301310,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301307",
+							"2"
+						],
+						"stepId": 1301307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ナセイル"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130130901,
+					"content": "今日は運がいい、友達に自慢しに行こう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ナセイル"
+				}
+			]
+		},
+		{
+			"id": 1301310,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301308",
+							"2"
+						],
+						"stepId": 1301308,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301304",
+							"2"
+						],
+						"stepId": 1301304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301305",
+							"2"
+						],
+						"stepId": 1301305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301306",
+							"2"
+						],
+						"stepId": 1301306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301310",
+							"2"
+						],
+						"stepId": 1301310,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301307",
+							"2"
+						],
+						"stepId": 1301307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"パウリン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130131001,
+					"content": "一夜にして大金持ちになるとか、有名になるとか、そういう単純で手っ取り早い夢がいいな…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "パウリン"
+				}
+			]
+		},
+		{
+			"id": 1301311,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"99902",
+							"3"
+						],
+						"stepId": 99902,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"デビー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130131101,
+					"content": "たかが夢遊じゃない、大げさよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131102
+					],
+					"speakerTitle": "デビー"
+				},
+				{
+					"id": 130131102,
+					"content": "眠くなってきたわ、ふぁあ——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "デビー"
+				}
+			]
+		},
+		{
+			"id": 1301312,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"99902",
+							"3"
+						],
+						"stepId": 99902,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ナセイル"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130131201,
+					"content": "ただの夢なんだし、大事にはならないだろう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ナセイル"
+				}
+			]
+		},
+		{
+			"id": 1301313,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"99902",
+							"3"
+						],
+						"stepId": 99902,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"パウリン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130131301,
+					"content": "なんで急にざわつき始めたんだ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "パウリン"
+				}
+			]
+		},
+		{
+			"id": 1301314,
+			"completionStepIds": [
+				1301309
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301309",
+							"2"
+						],
+						"stepId": 1301309,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"アイルマン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130131401,
+					"content": "なんか遠足みたいな感じだな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131402
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130131402,
+					"content": "冒険者はいつもこんな場所に来るのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131403,
+						130131404
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130131403,
+					"content": "もちろん。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130131405
+					]
+				},
+				{
+					"id": 130131405,
+					"content": "それはすごいな…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131406
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130131406,
+					"content": "夢の中のあなたたちは、いつもここで会うの？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131407
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130131407,
+					"content": "はい、ほとんどの場合がそうです。前方にある山の頂上で会っています。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131408
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130131408,
+					"content": "そこでは特に何もせず、日常の何気ない会話をするんです。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131409
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130131409,
+					"content": "私たちの娘のヘイデルの近況を話すと、彼女はいつも真剣に耳を傾けてくれます。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131410
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130131410,
+					"content": "あとは一緒に思い出話をしたり、面白いことや冗談を言ったり…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131411
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130131411,
+					"content": "どんなに話しても、物足りなさを覚えてしまうんですけどね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131412
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130131412,
+					"content": "平凡と安らぎも、手に入れるのが難しい幸せなんだな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131413
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130131413,
+					"content": "そこが私の困惑しているところよ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131414
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130131414,
+					"content": "私は夢について詳しいわ。だから、夢が一般的に論理性や連続性に欠けているものだと知っている。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131415
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130131415,
+					"content": "でもあなたはさっき、彼女があなたの話したことを覚えていると言ったわよね？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131416
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130131416,
+					"content": "はい、彼女は昔から私の話を熱心に聞いてくれていました。夢の中でもそれは同じです。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131417
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130131417,
+					"content": "彼女はいつも私を驚かせるために、日常の些細なことまで覚えているんです。そのことも、彼女がまるで本当に生き返ったかのように感じた理由の一つでした。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131418
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130131418,
+					"content": "たしかに不思議だな…でも、夢って元々不思議なものだよな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131419
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130131419,
+					"content": "ただ問題は、その描写があまりにも「整然」としていることよ。夢というのは、あなたたちが想像するよりずっと脆弱なものなの。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131420
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130131420,
+					"content": "例えば窓の外で大きな音がしたとする。すると夢の中では、あなたが大砲に入れられて飛ばされるシーンになるかもしれない。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131421
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130131421,
+					"content": "もしも喉が渇いていたら、果てのない砂漠を歩く夢を見るなんてこともあるわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131422
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130131422,
+					"content": "だけどあなたの妻の姿は、とても安定していて干渉を一切受けていないようね。確率的に言うと、こういった状況はとても稀なの。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131423
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130131423,
+					"content": "私にも原因は分かりません。しかし、私にはこの夢を疑うことも拒絶する理由もないのです。何せ、私にとってあまりにも良すぎる話ですから。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131424,
+						130131425
+					],
+					"speakerTitle": "アイルマン"
+				},
+				{
+					"id": 130131424,
+					"content": "確かに。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130131426
+					]
+				},
+				{
+					"id": 130131426,
+					"content": "でも私は知りたいの。このような夢は私にとっても珍しい現象だから、その「現場」を見てみたいわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131427
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130131427,
+					"content": "さあ、遠足だと思って、山の頂上へ行ってみましょう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130131425,
+					"content": "原因なんて気にしなくてもいいかも。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130131426
+					]
+				},
+				{
+					"id": 130131404,
+					"content": "ここよりもさらに危ない。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130131405
+					]
+				}
+			]
+		},
+		{
+			"id": 1301315,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301308",
+							"2"
+						],
+						"stepId": 1301308,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ナヒーダ",
+					"デビー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130131501,
+					"content": "…また連続性のある夢？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131502
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130131502,
+					"content": "はい…何かの暗示なのでしょうか。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "デビー"
+				}
+			]
+		},
+		{
+			"id": 1301316,
+			"completionStepIds": [
+				1301310
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301310",
+							"2"
+						],
+						"stepId": 1301310,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ナヒーダ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130131601,
+					"content": "やっぱり、ここって危険な場所なんだな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131602
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130131602,
+					"content": "大丈夫よ、速戦即決といきましょう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131603
+					],
+					"speakerTitle": "ナヒーダ"
+				},
+				{
+					"id": 130131603,
+					"content": "えっ？ナヒーダも手を出すのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131604
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 130131604,
+					"content": "もちろんよ、これも遠足の一環でしょ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ナヒーダ"
+				}
+			]
+		}
+	]
+}

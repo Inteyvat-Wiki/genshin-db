@@ -1,0 +1,1075 @@
+{
+	"id": 41123,
+	"type": "WQ",
+	"name": "緊急措施",
+	"description": "為了處理和隕石相關的諸多事宜，霍夫曼先生正忙得不可開交…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 2001,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 4112301,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "與霍夫曼對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4112301,
+						0
+					],
+					"talkId": 4112301
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4112311,
+						0
+					],
+					"talkId": 4112311
+				}
+			]
+		},
+		{
+			"id": 4112302,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "打倒盜寶團",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 4112303,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "向霍夫曼回報結果",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4112303,
+						0
+					],
+					"talkId": 4112303
+				}
+			]
+		},
+		{
+			"id": 4112304,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往清泉鎮附近調查",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4112304,
+						0
+					],
+					"talkId": 4112304
+				}
+			]
+		},
+		{
+			"id": 4112305,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "打倒清泉鎮附近的魔物",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 4112306,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "清理清泉鎮附近的魔物營地",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 4112307,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "打倒所有魔物",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 4112308,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "向膽小的莫羅回報",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4112308,
+						0
+					],
+					"talkId": 4112308
+				}
+			]
+		},
+		{
+			"id": 4112309,
+			"order": 10,
+			"listShowType": "QUEST_SHOW",
+			"description": "向霍夫曼回報",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4112309,
+						0
+					],
+					"talkId": 4112309
+				}
+			]
+		},
+		{
+			"id": 4112310,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4112310,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 4112301,
+			"completionStepIds": [
+				4112301
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4112301",
+							"2"
+						],
+						"stepId": 4112301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"10002",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"霍夫曼"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411230101,
+					"content": "您好，旅行者。這段時間請盡量待在城裡，不要外出。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230102
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230102,
+					"content": "怎麼了？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411230103
+					]
+				},
+				{
+					"id": 411230103,
+					"content": "外面那些砸落的隕石，您應該也看見了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230104
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230104,
+					"content": "不知道為什麼，這段時間隕石降落的勢頭似乎更猛了，野外也更加危險了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230105
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230105,
+					"content": "城內的事務越來越多，騎士團也要忙不過來了。偏偏最近城邊還發現了不少盜寶團的蹤跡…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230106
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230106,
+					"content": "這群為了錢什麼都肯幹的傢伙，只怕是想要趁火打劫一番…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230107
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230107,
+					"content": "#如果{F#妳}{M#你}願意的話，能幫忙去城邊趕走那些盜寶團嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230108
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230108,
+					"content": "#本來這應該是騎士團的職責，但我們實在抽不出人手來處理這件事，只能拜託{F#妳}{M#你}了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230109,
+						411230111
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230109,
+					"content": "我知道了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411230110
+					]
+				},
+				{
+					"id": 411230110,
+					"content": "#那就拜託{F#妳}{M#你}了，在這種情況下還讓{F#妳}{M#你}幫忙，實在是不好意思。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230111,
+					"content": "盜寶團不怕隕石嗎？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411230112
+					]
+				},
+				{
+					"id": 411230112,
+					"content": "哼，為了錢，那群傢伙應該什麼都不怕吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230113
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230113,
+					"content": "#那就拜託{F#妳}{M#你}了，在這種情況下還讓{F#妳}{M#你}幫忙，實在是不好意思。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "霍夫曼"
+				}
+			]
+		},
+		{
+			"id": 4112303,
+			"completionStepIds": [
+				4112303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4112303",
+							"2"
+						],
+						"stepId": 4112303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"霍夫曼"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411230301,
+					"content": "#{F#妳}{M#你}把那些盜寶團都趕走了嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230302
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230302,
+					"content": "都趕走了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411230303
+					]
+				},
+				{
+					"id": 411230303,
+					"content": "太好了，實在是幫大忙了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230304
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230304,
+					"content": "那群盜寶團吃了這個教訓，應該不敢來趁火打劫了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230305
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230305,
+					"content": "沒事的話…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411230306
+					]
+				},
+				{
+					"id": 411230306,
+					"content": "#呃，請留步…還有一件事，想要再請{F#妳}{M#你}幫幫忙。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230307
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230307,
+					"content": "其實在隕石落下之後，騎士團就收到很多有關魔物異常的報告。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230308
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230308,
+					"content": "這些報告裡面提到，魔物似乎也受到了隕石的影響，變得格外暴躁。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230309
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230309,
+					"content": "蒙德城的防衛還算全面，不需要擔心，但是有一顆隕石正好落在了清泉鎮旁邊…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230310
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230310,
+					"content": "清泉鎮裡雖然有不少獵人，我們也派了騎士過去協助，但那裡的地形實在難以做到完全防守好。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230311
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230311,
+					"content": "假如漏了魔物進鎮子，那就糟糕了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230312
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230312,
+					"content": "#能請{F#妳}{M#你}去清泉鎮周圍調查一下魔物的情況嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230313,
+						411230315
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230313,
+					"content": "我知道了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411230314
+					]
+				},
+				{
+					"id": 411230314,
+					"content": "#那就拜託{F#妳}{M#你}了，我也會盡量快點再安排些騎士過去支援。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230315,
+					"content": "清泉鎮的情況怎麼樣？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411230316
+					]
+				},
+				{
+					"id": 411230316,
+					"content": "老實說…不太樂觀，除了要處理隕石相關的諸多事宜外，還要提防魔物和盜寶團…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230317
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230317,
+					"content": "同時要應付這麼多東西，實在是太吃力了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230318
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230318,
+					"content": "#那這件事就拜託{F#妳}{M#你}了，我也會盡量快點再安排些騎士過去支援。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "霍夫曼"
+				}
+			]
+		},
+		{
+			"id": 4112304,
+			"completionStepIds": [
+				4112304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4112304",
+							"2"
+						],
+						"stepId": 4112304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"膽小的莫羅"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411230401,
+					"content": "嗚哇！別，別過…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230402
+					],
+					"speakerTitle": "膽小的莫羅"
+				},
+				{
+					"id": 411230402,
+					"content": "#咦？不是魔物…{F#妳}{M#你}，{F#妳}{M#你}是誰？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230403
+					],
+					"speakerTitle": "膽小的莫羅"
+				},
+				{
+					"id": 411230403,
+					"content": "關於魔物的情況…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411230404
+					]
+				},
+				{
+					"id": 411230404,
+					"content": "魔物的情況…那還用問嗎？我就是剛從魔物堆旁邊跑過來的！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230405
+					],
+					"speakerTitle": "膽小的莫羅"
+				},
+				{
+					"id": 411230405,
+					"content": "就在旁邊，一群魔物已經在那紮堆了，一副要進攻鎮子的樣子。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230406
+					],
+					"speakerTitle": "膽小的莫羅"
+				},
+				{
+					"id": 411230406,
+					"content": "#要不是我跑得快，說不定{F#妳}{M#你}就看不到我了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230407
+					],
+					"speakerTitle": "膽小的莫羅"
+				},
+				{
+					"id": 411230407,
+					"content": "那群魔物在哪？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411230408
+					]
+				},
+				{
+					"id": 411230408,
+					"content": "就在鎮子旁邊，很近，走幾步就能看見了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230409
+					],
+					"speakerTitle": "膽小的莫羅"
+				},
+				{
+					"id": 411230409,
+					"content": "#{F#妳}{M#你}也快點去避難吧，我在這再休息一下…再休息一下就回去把情況告訴鎮子裡的人。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "膽小的莫羅"
+				}
+			]
+		},
+		{
+			"id": 4112308,
+			"completionStepIds": [
+				4112308
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4112308",
+							"2"
+						],
+						"stepId": 4112308,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"膽小的莫羅"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411230801,
+					"content": "#咦？怎麼又是{F#妳}{M#你}，{F#妳}{M#你}去做什麼了？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230802
+					],
+					"speakerTitle": "膽小的莫羅"
+				},
+				{
+					"id": 411230802,
+					"content": "我把魔物都打倒了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411230803
+					]
+				},
+				{
+					"id": 411230803,
+					"content": "#打倒了…真的假的，就{F#妳}{M#你}一個人？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230804
+					],
+					"speakerTitle": "膽小的莫羅"
+				},
+				{
+					"id": 411230804,
+					"content": "你可以自己去看看。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411230805
+					]
+				},
+				{
+					"id": 411230805,
+					"content": "呃…我可不敢自己去看，要是被魔物發現了可就完蛋了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230806
+					],
+					"speakerTitle": "膽小的莫羅"
+				},
+				{
+					"id": 411230806,
+					"content": "#算了，不管{F#妳}{M#你}說的是真是假，我都得回去報告一聲。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230807
+					],
+					"speakerTitle": "膽小的莫羅"
+				},
+				{
+					"id": 411230807,
+					"content": "#要是{F#妳}{M#你}真把那些魔物都打倒了，鎮子裡的那些西風騎士總會有辦法驗證的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "膽小的莫羅"
+				}
+			]
+		},
+		{
+			"id": 4112309,
+			"completionStepIds": [
+				4112309
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4112309",
+							"2"
+						],
+						"stepId": 4112309,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"霍夫曼"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411230901,
+					"content": "情況怎麼樣？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230902
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230902,
+					"content": "清泉鎮已經安全了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411230903
+					]
+				},
+				{
+					"id": 411230903,
+					"content": "那就太好了…我還在煩惱抽調不出人手來呢。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230904
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230904,
+					"content": "#十分感謝{F#妳}{M#你}，實在幫大忙了，這些謝禮請收下吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411230905
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411230905,
+					"content": "唉，又是隕石，又是魔物…千萬別再出什麼亂子了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "霍夫曼"
+				}
+			]
+		},
+		{
+			"id": 4112311,
+			"completionStepIds": [
+				4112301
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4112301",
+							"2"
+						],
+						"stepId": 4112301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"10002",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"霍夫曼"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411231101,
+					"content": "您好，榮譽騎士。這段時間請盡量待在城裡，不要外出。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411231102
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411231102,
+					"content": "外面那些砸落的隕石，您應該也看見了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411231103
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411231103,
+					"content": "不知道為什麼，這段時間隕石降落的勢頭似乎更猛了，野外也更加危險了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411231104
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411231104,
+					"content": "城內的事務越來越多，騎士團也要忙不過來了。偏偏最近城邊還發現了不少盜寶團的蹤跡…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411231105
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411231105,
+					"content": "這群為了錢什麼都肯幹的傢伙，只怕是想要趁火打劫一番…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411231106
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411231106,
+					"content": "#如果{F#妳}{M#你}願意的話，能幫忙去城邊趕走那些盜寶團嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411231107,
+						411231109
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411231107,
+					"content": "交給我吧。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411231108
+					]
+				},
+				{
+					"id": 411231108,
+					"content": "#嗯，不愧是榮譽騎士。那就拜託{F#妳}{M#你}了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411231109,
+					"content": "盜寶團不怕隕石嗎？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411231110
+					]
+				},
+				{
+					"id": 411231110,
+					"content": "哼，為了錢，那群傢伙應該什麼都不怕吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411231111
+					],
+					"speakerTitle": "霍夫曼"
+				},
+				{
+					"id": 411231111,
+					"content": "#那就拜託{F#妳}{M#你}了，在這種情況下還讓{F#妳}{M#你}幫忙，實在是不好意思。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "霍夫曼"
+				}
+			]
+		},
+		{
+			"id": 4112351,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4112302",
+							"2"
+						],
+						"stepId": 4112302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"霍夫曼"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411235101,
+					"content": "到現在為止，還沒有隕石掉在城裡，可以說是不幸中的萬幸了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "霍夫曼"
+				}
+			]
+		},
+		{
+			"id": 4112353,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4112303",
+							"3"
+						],
+						"stepId": 4112303,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_NOT_RECEIVE",
+						"rawParams": [
+							"4112309",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"霍夫曼"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411235301,
+					"content": "隕石、魔物和盜寶團…倒楣的事怎麼都一起來…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "霍夫曼"
+				}
+			]
+		},
+		{
+			"id": 4112354,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4112304",
+							"3"
+						],
+						"stepId": 4112304,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_NOT_RECEIVE",
+						"rawParams": [
+							"4112308",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"膽小的莫羅"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411235401,
+					"content": "必須快點通知鎮子裡的人才行…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "膽小的莫羅"
+				}
+			]
+		},
+		{
+			"id": 4112358,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4112309",
+							"2"
+						],
+						"stepId": 4112309,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"膽小的莫羅"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411235801,
+					"content": "#{F#妳}{M#你}真的一個人把那些魔物都打倒了？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411235802
+					],
+					"speakerTitle": "膽小的莫羅"
+				},
+				{
+					"id": 411235802,
+					"content": "#如果是真的…那{F#妳}{M#你}也太能打了吧，比西風騎士都能打。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "膽小的莫羅"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,176 @@
+{
+	"id": 71708,
+	"type": "WQ",
+	"name": "寒鋒の鉄の塊のリクエスト",
+	"description": "軽策荘の寒鋒は鉄の塊を10個必要としている。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "鉄の塊を寒鋒に10個渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "寒鋒と会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170802,
+						0
+					],
+					"talkId": 7170802
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170801,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170801",
+							"2"
+						],
+						"stepId": 7170801,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170801"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"寒鋒"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717080101,
+					"content": "鉄の塊について…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717080102
+					]
+				},
+				{
+					"id": 717080102,
+					"content": "おぉ、それはわしの依頼だ。鉄の塊を10個持って来てくれたのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717080103,
+						717080104
+					],
+					"speakerTitle": "寒鋒"
+				},
+				{
+					"id": 717080103,
+					"content": "持って来たよ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717080104,
+					"content": "まだ…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717080105
+					]
+				},
+				{
+					"id": 717080105,
+					"content": "そうか…用意ができたら持って来てくれ。早く鍬を直して仕事に戻りたいからな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "寒鋒"
+				}
+			]
+		},
+		{
+			"id": 7170802,
+			"completionStepIds": [
+				7170802
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170802",
+							"2"
+						],
+						"stepId": 7170802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"寒鋒"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717080201,
+					"content": "これだけ鉄の塊があれば足りるだろう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717080202
+					],
+					"speakerTitle": "寒鋒"
+				},
+				{
+					"id": 717080202,
+					"content": "これを持って行け。ありがとうな、若いの。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717080203
+					],
+					"speakerTitle": "寒鋒"
+				},
+				{
+					"id": 717080203,
+					"content": "わしの腕がまだ鈍っていないといいんだが…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "寒鋒"
+				}
+			]
+		}
+	]
+}

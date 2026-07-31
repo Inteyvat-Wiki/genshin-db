@@ -1,0 +1,688 @@
+{
+	"id": 20007,
+	"type": "IQ",
+	"name": "Réparation urgente",
+	"description": "Alan s'apprétait à livrer le résultat de sa chasse à Mondstadt lorsqu'il s'est fait attaquer par des Brutocollinus. Sa vie et son convoi sont en danger...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2000701,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Éliminez tous les monstres.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000702,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Alan.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000707,
+						0
+					],
+					"talkId": 2000707
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000708,
+						0
+					],
+					"talkId": 2000708
+				}
+			]
+		},
+		{
+			"id": 2000703,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Collectez du bois.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100306,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000704,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Donnez la planche en bois solide à Alan.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000703,
+						0
+					],
+					"talkId": 2000703
+				}
+			]
+		},
+		{
+			"id": 2000705,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Éliminez tous les monstres.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000706,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Alan.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000709,
+						0
+					],
+					"talkId": 2000709
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000710,
+						0
+					],
+					"talkId": 2000710
+				}
+			]
+		},
+		{
+			"id": 2000707,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Collectez de la corde.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100308,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000708,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Donnez la corde à Alan.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000706,
+						0
+					],
+					"talkId": 2000706
+				}
+			]
+		},
+		{
+			"id": 2000709,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Avancez pour en apprendre davantage.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1127,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2000701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000701",
+							"3"
+						],
+						"stepId": 2000701,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000702",
+							"2"
+						],
+						"stepId": 2000702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Alan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070101,
+					"content": "#Merci, {NICKNAME} ! Heureusement que vous êtes {M#passé}{F#passée} par là... J'ai cru que j'allais mourir...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070102
+					],
+					"speakerTitle": "Alan"
+				},
+				{
+					"id": 200070102,
+					"content": "Cette charrette transporte tout ce que les chasseurs ont réussi à chasser aujourd'hui. Draff m'a demandé de tout livrer à Mondstadt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070103
+					],
+					"speakerTitle": "Alan"
+				},
+				{
+					"id": 200070103,
+					"content": "Je ne suis pas le meilleur chasseur, mais je pensais qu'une petite livraison serait un jeu d'enfant... Faut croire que je me suis planté !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070104
+					],
+					"speakerTitle": "Alan"
+				},
+				{
+					"id": 200070104,
+					"content": "Tout s'est passé si vite ! Ils voulaient la marchandise, c'est sûr... Vous m'avez sauvé la vie !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070105
+					],
+					"speakerTitle": "Alan"
+				},
+				{
+					"id": 200070105,
+					"content": "Je vous en demande sûrement trop, mais... Ma charrette a été abîmée pendant l'attaque, et je n'ai aucun autre moyen de partir d'ici.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070106
+					],
+					"speakerTitle": "Alan"
+				},
+				{
+					"id": 200070106,
+					"content": "La forêt regorge de matériaux qui me permettront de la réparer, mais je ne peux pas laisser ma marchandise seule.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070107
+					],
+					"speakerTitle": "Alan"
+				},
+				{
+					"id": 200070107,
+					"content": "Si ça ne vous dérange pas, pourriez-vous aller me chercher une <color=#00E1FFFF>planche solide</color> ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Alan"
+				}
+			]
+		},
+		{
+			"id": 2000702,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000703",
+							"2"
+						],
+						"stepId": 2000703,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Alan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070201,
+					"content": "J'ai juste besoin de faire une petite réparation pour que ça tienne jusqu'à Mondstadt !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070202
+					],
+					"speakerTitle": "Alan"
+				},
+				{
+					"id": 200070202,
+					"content": "Il devrait y avoir du bois dans les environs...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Alan"
+				}
+			]
+		},
+		{
+			"id": 2000703,
+			"completionStepIds": [
+				2000704
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000704",
+							"2"
+						],
+						"stepId": 2000704,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Alan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070301,
+					"content": "Je pense que ça ira. Merci beaucoup !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070302
+					],
+					"speakerTitle": "Alan"
+				},
+				{
+					"id": 200070302,
+					"content": "Hiii !! Ils reviennent !!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Alan"
+				}
+			]
+		},
+		{
+			"id": 2000704,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000705",
+							"3"
+						],
+						"stepId": 2000705,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000706",
+							"2"
+						],
+						"stepId": 2000706,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Alan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070401,
+					"content": "Vous m'avez encore sauvé ! Ces monstres sont persistants... Qu'est-ce qu'ils peuvent bien vouloir ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070402
+					],
+					"speakerTitle": "Alan"
+				},
+				{
+					"id": 200070402,
+					"content": "Draff est vraiment bon... Il a réussi à chasser ce gibier rare. *soupir* Si seulement je pouvais être comme lui...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070403
+					],
+					"speakerTitle": "Alan"
+				},
+				{
+					"id": 200070403,
+					"content": "Il faut déjà que je ramène tout ça à Mondstadt d'abord.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070404
+					],
+					"speakerTitle": "Alan"
+				},
+				{
+					"id": 200070404,
+					"content": "Je suis navré, mais les monstres ont causé des dégâts supplémentaires sur la charrette avec cette nouvelle attaque...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070405
+					],
+					"speakerTitle": "Alan"
+				},
+				{
+					"id": 200070405,
+					"content": "La situation va empirer si je reste ici ! Je dois la réparer tout de suite. Il y avait de la corde à l'arrière, mais on me l'a volée.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070406
+					],
+					"speakerTitle": "Alan"
+				},
+				{
+					"id": 200070406,
+					"content": "Pourriez-vous m'aider à trouver de la <color=#00E1FFFF>corde</color> ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Alan"
+				}
+			]
+		},
+		{
+			"id": 2000705,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000707",
+							"2"
+						],
+						"stepId": 2000707,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Alan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070501,
+					"content": "Vous devriez en trouver dans les environs...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Alan"
+				}
+			]
+		},
+		{
+			"id": 2000706,
+			"completionStepIds": [
+				2000708
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000707",
+							"3"
+						],
+						"stepId": 2000707,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000708",
+							"2"
+						],
+						"stepId": 2000708,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Alan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070601,
+					"content": "Ça fera l'affaire. Je peux au moins aller jusqu'à Mondstadt comme ça...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070602
+					],
+					"speakerTitle": "Alan"
+				},
+				{
+					"id": 200070602,
+					"content": "Merci beaucoup ! Je vous inviterai à boire quand vous passerez à Deauclaire.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070603
+					],
+					"speakerTitle": "Alan"
+				},
+				{
+					"id": 200070603,
+					"content": "... Du moment que vous ne buvez pas comme Draff.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Alan"
+				}
+			]
+		},
+		{
+			"id": 2000707,
+			"completionStepIds": [
+				2000702
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Alan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070701,
+					"content": "Entendu.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200070702
+					]
+				},
+				{
+					"id": 200070702,
+					"content": "Super ! Je vous attendrai ici, mais revenez vite... J'ai peur de me faire attaquer de nouveau...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Alan"
+				}
+			]
+		},
+		{
+			"id": 2000708,
+			"completionStepIds": [
+				2000702
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Alan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070801,
+					"content": "J'ai autre chose à faire.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200070802
+					]
+				},
+				{
+					"id": 200070802,
+					"content": "Par pitié ! Ces monstres doivent être encore dans les environs... Il faut que je parte d'ici au plus vite !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Alan"
+				}
+			]
+		},
+		{
+			"id": 2000709,
+			"completionStepIds": [
+				2000706
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Alan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070901,
+					"content": "Bien sûr.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200070902
+					]
+				},
+				{
+					"id": 200070902,
+					"content": "Merci énormément ! Vous devriez trouver de la corde dans les environs...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Alan"
+				}
+			]
+		},
+		{
+			"id": 2000710,
+			"completionStepIds": [
+				2000706
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Alan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200071001,
+					"content": "#Je suis {M#occupé}{F#occupée}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200071002
+					]
+				},
+				{
+					"id": 200071002,
+					"content": "C'est vraiment la dernière chose que je vous demande ! J'ai juste besoin d'une corde et je vous laisse tranquille !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Alan"
+				}
+			]
+		}
+	]
+}

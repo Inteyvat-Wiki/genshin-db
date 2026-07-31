@@ -1,0 +1,617 @@
+{
+	"id": 70506,
+	"type": "WQ",
+	"name": "Löwenzahn, Rose und Windmühlenaster",
+	"description": "„Was in aller Welt ist passiert, dass der stellvertretende Großmeister Jean in die Taverne geht?“ „Beruhige dich, wir reden hier über den stellvertretenden Großmeister. Außerdem wäre sie nicht dort, wenn wirklich etwas Schlimmes passiert wäre.“",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70507
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Luka und betritt die Taverne.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050602,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Stell für Lisa das bestimmte Getränk her.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050602,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050603,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Stell für Jean das bestimmte Getränk her.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050603,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050604,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Gib Lisa und Jean die Getränke.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050602,
+						0
+					],
+					"talkId": 7050602
+				}
+			]
+		},
+		{
+			"id": 7050605,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Lisa und Jean.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050601,
+						0
+					],
+					"talkId": 7050601
+				}
+			]
+		},
+		{
+			"id": 7050606,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Geh zu der Bar und bereite dich auf die Wirtsarbeit vor.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050601,
+			"completionStepIds": [
+				7050605
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050605",
+							"2"
+						],
+						"stepId": 7050605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050602",
+							"2"
+						],
+						"stepId": 7050602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050603",
+							"2"
+						],
+						"stepId": 7050603,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lisa",
+					"Jean"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705060101,
+					"content": "#Hallo, {F#meine Süße}{M#mein Süßer}, schön, dich zu sehen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060102
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060102,
+					"content": "Es kommt nicht oft vor, dass wir uns an einem Ort wie diesem treffen, aber im Moment geht es mir genauso wie Lisa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060103
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060103,
+					"content": "Warum nennst du es einen „Ort wie diesen“, wenn die Kneipe doch ein großartiger Ort der Unterhaltung und Entspannung ist?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060104
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060104,
+					"content": "*seufz* Hast du eine Ahnung, wie schwer es für mich war, die vielbeschäftigte Großmeisterin von ihrem Schreibtisch wegzuziehen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060105
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060105,
+					"content": "Wir sind gerade mal ein paar Minuten hier und die Sorge steht ihr schon ins Gesicht geschrieben.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060106
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060106,
+					"content": "Lisa ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060107
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060107,
+					"content": "Beim Ritterorden gibt es nun mal viel zu tun.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060108
+					]
+				},
+				{
+					"id": 705060108,
+					"content": "Ja, Jean ist der stellvertretende Großmeister, über den wir hier sprechen. Es ist nur natürlich, dass sie eine Menge zu tun hat!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060109
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705060109,
+					"content": "Aber wie heißt es so schön ... „Wenn man schon mal da ist!“",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060110
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705060110,
+					"content": "#Warum lässt du {F#sie}{M#ihn} nicht ein paar tolle Getränke für euch zwei mischen! Dann fühlst du dich gleich viel besser.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060111
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705060111,
+					"content": "Ein Stimmungswechsel tut gut.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060112
+					]
+				},
+				{
+					"id": 705060112,
+					"content": "Nur Jean sollte lernen, sich zu entspannen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060113
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060113,
+					"content": "#Also, {F#meine Süße}{M#mein Süßer}, bitte gib mir ein Liebesgedicht, Medium, etwas süßer.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060114
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060114,
+					"content": "Und was ist mit Euch, Jean? Worauf habt Ihr Lust?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060115
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060115,
+					"content": "Ich nehme nur ... einen Kaffee. Mittelgroße Tasse, bitte.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060116
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060116,
+					"content": "Jean, du trinkst normalerweise schon genug Kaffee. Möchtest du etwas anderes?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060117
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705060117,
+					"content": "Danke, aber ich hätte gern ein wachmachendes Getränk ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060118
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060118,
+					"content": "Alles klar, einen Moment.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060119
+					]
+				},
+				{
+					"id": 705060119,
+					"content": "Ja, du bist immer beschäftigt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jean"
+				}
+			]
+		},
+		{
+			"id": 7050602,
+			"completionStepIds": [
+				7050604
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050604",
+							"2"
+						],
+						"stepId": 7050604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lisa",
+					"Jean"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705060201,
+					"content": "Mmh ... Die Süße ist genau richtig. Sehr gut.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060202
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060202,
+					"content": "Der Kaffee ist sehr vollmundig und hat genau die richtige Menge an Bitterkeit.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060203
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060203,
+					"content": "Ich bin froh, dass ihr beide die Getränke mögt.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060204
+					]
+				},
+				{
+					"id": 705060204,
+					"content": "Dass Lisa es so sagen würde, kann ich verstehen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060205
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060205,
+					"content": "Oh?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060206
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060206,
+					"content": "Ich habe in letzter Zeit über meine Schwächen nachgedacht. In vielen Bereichen kann ich mich noch verbessern, zum Beispiel bei meiner Arbeitseffizienz und meiner Geschicklichkeit ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060207
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060207,
+					"content": "Ich habe Angst, dass sich mein Stress auch auf dich auswirkt ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060208
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060208,
+					"content": "Das ist unverständlich ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060209
+					]
+				},
+				{
+					"id": 705060209,
+					"content": "Was?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060210
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060210,
+					"content": "#Ja, {F#meine Süße}{M#mein Süßer} hat es sofort durchschaut.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060211
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060211,
+					"content": "Du hast dich viel zu sehr angestrengt, also dachte ich, ich lade dich auf ein paar Getränke ein. Ich wollte nur, dass du ein bisschen Spaß hast.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060212
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060212,
+					"content": "Aber in der Taverne angekommen, sehe ich, dass du immer noch sehr viel über die Arbeit nachdenkst, und das machte mich etwas traurig.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060213
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060213,
+					"content": "Wenn du ständig so unter Stress stehst, ist es nur eine Frage der Zeit, bis du erschöpft bist.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060214
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060214,
+					"content": "Genau.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060215
+					]
+				},
+				{
+					"id": 705060215,
+					"content": "#{NICKNAME}, denkst du das auch?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060216
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060216,
+					"content": "Hmm, also ... ist es tatsächlich meine größte Herausforderung, zu lernen, mich zu entspannen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060217
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060217,
+					"content": "In Anlehnung an ein Sprichwort aus Liyue: „Alles hat ein Gleichgewicht“.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060218
+					]
+				},
+				{
+					"id": 705060218,
+					"content": "Jawohl! Hart arbeiten, viel feiern und sich noch viel mehr ausruhen. Vielleicht braucht ihr beide sogar mehr Ruhe, als ihr denkt!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060219
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705060219,
+					"content": "Was für eine seltsame Logik.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060220
+					]
+				},
+				{
+					"id": 705060220,
+					"content": "Ähem ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060221
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060221,
+					"content": "Ich ... Ich habe verstanden ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060222
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060222,
+					"content": "Ich danke euch. Ich hätte nie gedacht, dass ein Besuch hier meine Stimmung viel mehr aufhellen würde. Ist das der Grund, warum Lisa und Kaeya die Tavernen lieben?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060223
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060223,
+					"content": "Ja und nein, es kommt drauf an, wer der Wirt ist.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060224
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060224,
+					"content": "#Apropos, ohne dich hätten wir Jean heute nicht umstimmen können. Du kannst wirklich gut mit Worten umgehen, {F#meine Süße}{M#mein Süßer}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060225,
+						705060226
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060225,
+					"content": "Kein Ding!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060227
+					]
+				},
+				{
+					"id": 705060227,
+					"content": "Dann gehen wir wieder.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060228
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060228,
+					"content": "Ich würde in Erwägung ziehen, wieder hierherzukommen, um mich zu entspannen, wenn ich in Zukunft die Gelegenheit dazu habe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060229
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060229,
+					"content": "Auf Wiedersehen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705060226,
+					"content": "Nun, es ist gut, helfen zu können.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060227
+					]
+				}
+			]
+		}
+	]
+}

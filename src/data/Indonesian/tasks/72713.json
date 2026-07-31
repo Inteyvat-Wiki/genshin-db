@@ -1,0 +1,167 @@
+{
+	"id": 72713,
+	"type": "WQ",
+	"name": "Makanan untuk Murakami",
+	"description": "Murakami dari Pulau Narukami menginginkan 15 Mint.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7271301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Berikan 15 Mint kepada Murakami",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7271301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7271302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Murakami",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7271302,
+						0
+					],
+					"talkId": 7271302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7271301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271301",
+							"2"
+						],
+						"stepId": 7271301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7271301"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Murakami"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727130101,
+					"content": "Tentang mint...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727130102
+					]
+				},
+				{
+					"id": 727130102,
+					"content": "Mint, mint... Jika memiliki mint, kita pasti bisa membuat rasa yang berbeda...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727130103
+					],
+					"speakerTitle": "Murakami"
+				},
+				{
+					"id": 727130103,
+					"content": "Kamu adalah orang yang menerima komisi dariku kan? Kalau iya, seharusnya kamu juga sudah menyiapkan 15 mint kan?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727130106,
+						727130104
+					],
+					"speakerTitle": "Murakami"
+				},
+				{
+					"id": 727130106,
+					"content": "Sudah.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 727130104,
+					"content": "Masih belum.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727130105
+					]
+				},
+				{
+					"id": 727130105,
+					"content": "Oke, berikan kepadaku kalau kamu sudah mendapatkannya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Murakami"
+				}
+			]
+		},
+		{
+			"id": 7271302,
+			"completionStepIds": [
+				7271302
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271302",
+							"2"
+						],
+						"stepId": 7271302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Murakami"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727130201,
+					"content": "Berikutnya aku bisa mulai membuat rasa baru. Oh, hampir lupa, imbalan ini untukmu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Murakami"
+				}
+			]
+		}
+	]
+}

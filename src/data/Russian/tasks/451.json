@@ -1,0 +1,746 @@
+{
+	"id": 451,
+	"type": "LQ",
+	"name": "Территория волков",
+	"description": "Вместе с Паймон вы решаете направиться в Вольфендом. Немногие в Мондштадте осмеливаются пойти туда. Вы даже не представляете, какие опасности ждут вас на этой земле, почти не тронутой рукой человека.",
+	"unlockDescription": "",
+	"chapter": "Что значит Лупикал?",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		452
+	],
+	"prevMainQuestList": [
+		396,
+		485
+	],
+	"steps": [
+		{
+			"id": 45101,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отправляйтесь в Вольфендом",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1051,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45102,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Поговорите с Паймон.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						45101,
+						0
+					],
+					"talkId": 45101
+				}
+			]
+		},
+		{
+			"id": 45103,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Победите слаймов",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45104,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поблагодарите мальчика за помощь",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						45103,
+						0
+					],
+					"talkId": 45103
+				}
+			]
+		},
+		{
+			"id": 45105,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Добудьте достаточно мяса",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100061,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						45105,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45106,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Принесите три куска мяса Рэйзору",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						45106,
+						0
+					],
+					"talkId": 45106
+				}
+			]
+		},
+		{
+			"id": 45107,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Паймон",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						45107,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45108,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Подсказка охоты",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						45108,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45109,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Отправляйтесь в Вольфендом.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						45109,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 45101,
+			"completionStepIds": [
+				45102
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45107",
+							"2"
+						],
+						"stepId": 45107,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Паймон"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510101,
+					"content": "Это Вольфендом! Жители Мондштадта редко здесь бывают...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510102
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 4510102,
+					"content": "Несмотря на близость города, это место почти не тронуто цивилизацией. Здесь царят законы природы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510103
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 4510103,
+					"content": "Выживает сильнейший! Даже слаймы здесь просто огрооомные!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510104
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 4510104,
+					"content": "Такие вот здоровенные!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510105
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 4510105,
+					"content": "Ой, они нас заметили. Готовься к бою!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 45103,
+			"completionStepIds": [
+				45104
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45104",
+							"2"
+						],
+						"stepId": 45104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Рэйзор"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510301,
+					"content": "Сп... Спасибо... А-а-а! Волки! Бежим!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510303
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 4510303,
+					"content": "Не бойтесь. Волки - друзья. А вы кто?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510304
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510304,
+					"content": "Обычные путешественники. Просто проходили мимо.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510305
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 4510305,
+					"content": "Вы пахнете... знакомо.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510306
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510306,
+					"content": "Мы пахнем?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510307
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 4510307,
+					"content": "Ордо Фавониус, верно? Рыцари - друзья.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510308,
+						4510309
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510308,
+					"content": "Как тебя зовут?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						4510310
+					]
+				},
+				{
+					"id": 4510310,
+					"content": "Я Рэйзор.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510311
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510311,
+					"content": "Ты тоже рыцарь?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510312
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 4510312,
+					"content": "Нет.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510314
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510314,
+					"content": "А?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510315
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 4510315,
+					"content": "Что это за волки?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						4510316
+					]
+				},
+				{
+					"id": 4510316,
+					"content": "Моя стая. Моя семья.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510317
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510317,
+					"content": "Семья?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510318
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 4510318,
+					"content": "Семья. Я рос с ними. Я живу с ними. Семья.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510319
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510319,
+					"content": "У меня очень много вопросов...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510320
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 4510320,
+					"content": "Они сейчас злые. Я помог тебе. Засада не получилась. Кабан убежал.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510321
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510321,
+					"content": "#Не переживай. Паймон попросит - {NICKNAME} поймает вам кабана.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510322
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 4510322,
+					"content": "#{NICKNAME} - отличн{M#ый}{F#ая} охотни{M#к}{F#ца}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510323
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 4510323,
+					"content": "Не надо. Рыцари помогают, волки голодают. Так всегда.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510324
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510324,
+					"content": "У нас получится, вот увидишь! Жди здесь!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 4510309,
+					"content": "Ты тоже рыцарь?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						4510313
+					]
+				},
+				{
+					"id": 4510313,
+					"content": "Я Рэйзор. Я не рыцарь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510314
+					],
+					"speakerTitle": "Рэйзор"
+				}
+			]
+		},
+		{
+			"id": 45105,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45105",
+							"2"
+						],
+						"stepId": 45105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Рэйзор"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510501,
+					"content": "Вы правда поможете?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510502
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510502,
+					"content": "Волки охотятся сами. Всегда хорошо. Но ловушка - это интересно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510503
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510503,
+					"content": "Ставим ловушку, гоним кабана. Да?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510504
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510504,
+					"content": "Не взорвись.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Рэйзор"
+				}
+			]
+		},
+		{
+			"id": 45106,
+			"completionStepIds": [
+				45106
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45106",
+							"2"
+						],
+						"stepId": 45106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PACK_HAVE_ITEM",
+						"rawParams": [
+							"100061",
+							"3"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Рэйзор"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510601,
+					"content": "Я же говорила!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510602
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 4510602,
+					"content": "Спасибо! Но...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510603
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510603,
+					"content": "Стая охотится. Ловит пять или шесть кабанов. Сегодня опять голодные.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510604
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510604,
+					"content": "Ох.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510605
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 4510605,
+					"content": "Всё хорошо. Спасибо.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510606
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510606,
+					"content": "Вы лучше, чем другой рыцарь. Красная девушка.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510607
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510607,
+					"content": "Она бы сожгла весь лес. Не поймали бы ни одного кабана.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510608
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510608,
+					"content": "Я пойду.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510609
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510609,
+					"content": "Здесь опасно. Берегите себя.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510610
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510610,
+					"content": "Он такой странный.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510611
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 4510611,
+					"content": "Красная девушка? Из ордена?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510612
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 4510612,
+					"content": "#{NICKNAME}, как ты думаешь, кто это?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				}
+			]
+		},
+		{
+			"id": 45107,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45106",
+							"2"
+						],
+						"stepId": 45106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_NUM_LESS_THAN",
+						"rawParams": [
+							"100061",
+							"3"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Рэйзор"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510501,
+					"content": "Вы правда поможете?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510502
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510502,
+					"content": "Волки охотятся сами. Всегда хорошо. Но ловушка - это интересно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510503
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510503,
+					"content": "Ставим ловушку, гоним кабана. Да?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510504
+					],
+					"speakerTitle": "Рэйзор"
+				},
+				{
+					"id": 4510504,
+					"content": "Не взорвись.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Рэйзор"
+				}
+			]
+		}
+	]
+}

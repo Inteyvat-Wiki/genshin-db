@@ -1,0 +1,167 @@
+{
+	"id": 73653,
+	"type": "WQ",
+	"name": "Amir'in Çiğ Et Özel Görevi",
+	"description": "Gandharva'dan Amir'in sekiz porsiyon Çiğ Ete ihtiyacı var.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7365301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Amir'e sekiz porsiyon Çiğ Et ver.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7365301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7365302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Amir ile konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7365302,
+						0
+					],
+					"talkId": 7365302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7365301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7365301",
+							"2"
+						],
+						"stepId": 7365301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7365301"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Amir"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 736530101,
+					"content": "Çiğ Et hakkında...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						736530102
+					]
+				},
+				{
+					"id": 736530102,
+					"content": "Evet, Çiğ Et için bir özel görev ilanı asmıştım.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736530103
+					],
+					"speakerTitle": "Amir"
+				},
+				{
+					"id": 736530103,
+					"content": "Sende yeterince var mı? Bana sekiz porsiyon lazım.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736530106,
+						736530104
+					],
+					"speakerTitle": "Amir"
+				},
+				{
+					"id": 736530106,
+					"content": "Hazır.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 736530104,
+					"content": "Henüz yok.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						736530105
+					]
+				},
+				{
+					"id": 736530105,
+					"content": "Eh, az bir miktar istemiyorum sonuçta. Hazır olduğunda haber verirsin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Amir"
+				}
+			]
+		},
+		{
+			"id": 7365302,
+			"completionStepIds": [
+				7365302
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7365302",
+							"2"
+						],
+						"stepId": 7365302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Amir"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 736530201,
+					"content": "Kaliteliymiş. Arama kurtarma köpekleri sayende aç kalmayacak. Teşekkürler.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Amir"
+				}
+			]
+		}
+	]
+}

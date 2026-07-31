@@ -1,0 +1,363 @@
+{
+	"id": 71121,
+	"type": "WQ",
+	"name": "",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		71102,
+		71120
+	],
+	"steps": [
+		{
+			"id": 7112101,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7112102,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7112102,
+						0
+					],
+					"talkId": 7112102
+				}
+			]
+		},
+		{
+			"id": 7112103,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7112103,
+						0
+					],
+					"talkId": 7112103
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7112151,
+						0
+					],
+					"talkId": 7112151
+				}
+			]
+		},
+		{
+			"id": 7112104,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133116019,
+						19056
+					]
+				}
+			]
+		},
+		{
+			"id": 7112105,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7112103,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7112102,
+			"completionStepIds": [
+				7112102
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7112102",
+							"2"
+						],
+						"stepId": 7112102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Strange Merchant"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 711210201,
+					"content": "Thank you so much, I am so grateful! Haiyaa, the entire cargo would've been lost without you!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						711210202
+					],
+					"speakerTitle": "Strange Merchant"
+				},
+				{
+					"id": 711210202,
+					"content": "I don't have much money on me, but please, take this as your reward. Don't be shy.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						711210203
+					],
+					"speakerTitle": "Strange Merchant"
+				},
+				{
+					"id": 711210203,
+					"content": "Wow, you're too kind!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						711210204
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 711210204,
+					"content": "This is farewell then. I hope we'll meet again!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Strange Merchant"
+				}
+			]
+		},
+		{
+			"id": 7112103,
+			"completionStepIds": [
+				7112103
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7112104",
+							"3"
+						],
+						"stepId": 7112104,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7112102",
+							"3"
+						],
+						"stepId": 7112102,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Strange Merchant"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 711210301,
+					"content": "P—Please spare me, O magnanimous heroes... Wait, it's you guys!?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						711210302
+					],
+					"speakerTitle": "Strange Merchant"
+				},
+				{
+					"id": 711210302,
+					"content": "It's you!?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						711210303
+					]
+				},
+				{
+					"id": 711210303,
+					"content": "Hey hey, what a coincidence, eh...? Ehehe, why don't you guys go back to what you're doing. Now, if you'll excuse me...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						711210304
+					],
+					"speakerTitle": "Strange Merchant"
+				},
+				{
+					"id": 711210304,
+					"content": "I suggest you see what valuables they left behind. Oh, don't mind me, I've already made notes of everything.... I'll return everything that needs to be returned.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						711210305
+					],
+					"speakerTitle": "Strange Merchant"
+				},
+				{
+					"id": 711210305,
+					"content": "Wait...!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						711210306
+					]
+				},
+				{
+					"id": 711210306,
+					"content": "No need, after all, we'll definitely meet again!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Strange Merchant"
+				}
+			]
+		},
+		{
+			"id": 7112151,
+			"completionStepIds": [
+				7112103
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7112104",
+							"3"
+						],
+						"stepId": 7112104,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7112101",
+							"4"
+						],
+						"stepId": 7112101,
+						"stateName": "QUEST_STATE_FAILED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7112102",
+							"4"
+						],
+						"stepId": 7112102,
+						"stateName": "QUEST_STATE_FAILED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Strange Merchant"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 711215101,
+					"content": "#G—Great Chivalrous {M#Hero}{F#Heroine}! Please, spare my life! I'm not with them!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						711215102
+					],
+					"speakerTitle": "Strange Merchant"
+				},
+				{
+					"id": 711215102,
+					"content": "And just who are you!?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						711215103
+					]
+				},
+				{
+					"id": 711215103,
+					"content": "Me!? I'm... Uh... It's a long story...? They stole some stuff, and I was asked by my master to register them and return them, that's all.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						711215104
+					],
+					"speakerTitle": "Strange Merchant"
+				},
+				{
+					"id": 711215104,
+					"content": "Well, since you drove away all the thieves, and my work here is done, I'll just skedaddle for now, if you don't mind!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						711215105
+					],
+					"speakerTitle": "Strange Merchant"
+				},
+				{
+					"id": 711215105,
+					"content": "A moment...!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						711215106
+					]
+				},
+				{
+					"id": 711215106,
+					"content": "No need, after all, we'll definitely meet again!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Strange Merchant"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,190 @@
+{
+	"id": 21023,
+	"type": "WQ",
+	"name": "Временные меры",
+	"description": "На постоялом дворе «Ваншу» проблемы с лестницей, поэтому для гостей она временно закрыта. Но как же теперь подняться наверх?",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2102301,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102301,
+						0
+					],
+					"talkId": 2102301
+				}
+			]
+		},
+		{
+			"id": 2102302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Воспользуйтесь подъёмником",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2102303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Хуай Анем",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102302,
+						0
+					],
+					"talkId": 2102302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2102302,
+			"completionStepIds": [
+				2102303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102303",
+							"2"
+						],
+						"stepId": 2102303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102301",
+							"3"
+						],
+						"stepId": 2102301,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Хуай Ань"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210230201,
+					"content": "Нужно поскорее починить лестницу...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230202
+					],
+					"speakerTitle": "Хуай Ань"
+				},
+				{
+					"id": 210230202,
+					"content": "Это вы хозяин гостиницы?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210230203
+					]
+				},
+				{
+					"id": 210230203,
+					"content": "Да. Что вам угодно?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230204
+					],
+					"speakerTitle": "Хуай Ань"
+				},
+				{
+					"id": 210230204,
+					"content": "Парень внизу попросил передать вам эту посылку.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230205
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 210230205,
+					"content": "О, должно быть, это подарок от одного из постояльцев. Почему же Чжэнь Цян сам её не принёс?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230206
+					],
+					"speakerTitle": "Хуай Ань"
+				},
+				{
+					"id": 210230206,
+					"content": "Он сказал, что ждёт доставку грузов? Ха-ха... Уверен, что ему просто было лень дойти до лифта.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230207
+					],
+					"speakerTitle": "Хуай Ань"
+				},
+				{
+					"id": 210230207,
+					"content": "Прошу прощения, дорогие гости. Мы уже занимаемся решением проблемы с лестницей.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230208
+					],
+					"speakerTitle": "Хуай Ань"
+				},
+				{
+					"id": 210230208,
+					"content": "Благодарю вас за доставку этого подарка. Вот, возьмите это в знак моей благодарности.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230209
+					],
+					"speakerTitle": "Хуай Ань"
+				},
+				{
+					"id": 210230209,
+					"content": "Я приготовил это для Чжэнь Цяна, но раз уж посылку доставили вы, то и награда достанется вам.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230210
+					],
+					"speakerTitle": "Хуай Ань"
+				},
+				{
+					"id": 210230210,
+					"content": "Ладно, мне надо заниматься ремонтом лестницы. Чувствуйте себя как дома. Обращайтесь ко мне, если вам что-нибудь понадобится.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Хуай Ань"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,555 @@
+{
+	"id": 72247,
+	"type": "WQ",
+	"name": "Испытание Теснины",
+	"description": "Пройдите испытания согласно указаниям Абэраку и добудьте подношения...",
+	"unlockDescription": "",
+	"chapter": "Скорбная песнь Гипериона",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		72177
+	],
+	"steps": [
+		{
+			"id": 7224701,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7224702,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Активируйте испытание духа",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7224705,
+						0
+					],
+					"talkId": 7224705
+				}
+			]
+		},
+		{
+			"id": 7224703,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7224704,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Получите у духа подношения",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7224702,
+						0
+					],
+					"talkId": 7224702
+				}
+			]
+		},
+		{
+			"id": 7224705,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7224703,
+						0
+					],
+					"talkId": 7224703
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7224701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7224702",
+							"2"
+						],
+						"stepId": 7224702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Абэраку"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722470101,
+					"content": "#Ты во всеоружии, {M#путешественник}{F#путешественница}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Абэраку"
+				}
+			]
+		},
+		{
+			"id": 7224702,
+			"completionStepIds": [
+				7224704
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7224704",
+							"2"
+						],
+						"stepId": 7224704,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Абэраку",
+					"Паймон"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722470201,
+					"content": "Похоже, что у тебя сил более чем достаточно для того, чтобы отнести подношения...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470202
+					],
+					"speakerTitle": "Абэраку"
+				},
+				{
+					"id": 722470202,
+					"content": "Я смогу наконец-то успокоиться. Эти предметы нужно доставить туда, чтобы...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470203
+					],
+					"speakerTitle": "Абэраку"
+				},
+				{
+					"id": 722470203,
+					"content": "Для чего?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470204
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 722470204,
+					"content": "Чтобы... чтобы...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470205
+					],
+					"speakerTitle": "Абэраку"
+				},
+				{
+					"id": 722470205,
+					"content": "О-о-о. Похоже, он сломался.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470206
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 722470206,
+					"content": "Но подношение, о котором он говорил, - вероятно, вот это... Хоть и выглядит потрёпанно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				}
+			]
+		},
+		{
+			"id": 7224703,
+			"completionStepIds": [
+				7224705
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7224705",
+							"2"
+						],
+						"stepId": 7224705,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_COMMON",
+			"trigger": {
+				"objectNames": [
+					"Паймон",
+					"Абэраку"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722470301,
+					"content": "Что-то появляется!..",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470302
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 722470302,
+					"content": "Похоже, опять какой-то призрак.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470303
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 722470303,
+					"content": "Меня зовут...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470304
+					],
+					"speakerTitle": "Абэраку"
+				},
+				{
+					"id": 722470304,
+					"content": "...Абэраку, создатель Гелиоса!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470305
+					],
+					"speakerTitle": "Абэраку"
+				},
+				{
+					"id": 722470305,
+					"content": "О, Паймон знает.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470306
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 722470306,
+					"content": "То есть он хочет сказать...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470307
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 722470307,
+					"content": "...что его зовут «создатель Гелиоса», да?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470308,
+						722470309
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 722470308,
+					"content": "Ты его совсем не слушала!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722470310
+					]
+				},
+				{
+					"id": 722470310,
+					"content": "Правда? Хм...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470311
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 722470311,
+					"content": "Абэраку... Какое странное имя.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470312
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 722470312,
+					"content": "Подождите, но если он Абэраку, то что такое Гелиос?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470313
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 722470313,
+					"content": "Ах, Гелиос! Гелиос!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470314
+					],
+					"speakerTitle": "Абэраку"
+				},
+				{
+					"id": 722470314,
+					"content": "Моё творение... Гелиос! Когда он был закончен, его свет распространился от горизонта до горизонта, и люди были освобождены от гнёта дракона!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470315
+					],
+					"speakerTitle": "Абэраку"
+				},
+				{
+					"id": 722470315,
+					"content": "Как смотрели на него тогда люди! Как они восторженно кричали, махали, плакали, и слёзы радости текли по их щекам!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470316
+					],
+					"speakerTitle": "Абэраку"
+				},
+				{
+					"id": 722470316,
+					"content": "...Подождите. Почему я здесь? Почему моя душа потерялась в царстве снов, не в силах обрести покой?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470317
+					],
+					"speakerTitle": "Абэраку"
+				},
+				{
+					"id": 722470317,
+					"content": "Теперь понятно, Паймон?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722470318
+					]
+				},
+				{
+					"id": 722470318,
+					"content": "Понятно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470319
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 722470319,
+					"content": "Дух, кажется... обеспокоен.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470320
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 722470320,
+					"content": "Теперь вспомнил! Моя душа разорвана! Если она опять станет целой, я смогу обрести покой.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470321
+					],
+					"speakerTitle": "Абэраку"
+				},
+				{
+					"id": 722470321,
+					"content": "В этом задании вся надежда на вас, поэтому я говорю вам...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470322
+					],
+					"speakerTitle": "Абэраку"
+				},
+				{
+					"id": 722470322,
+					"content": "О-о, жди неприятностей...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470323
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 722470323,
+					"content": "Сюда нужно возложить мои останки, но они давно сгнили... Пожалуйста, я умоляю...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470324
+					],
+					"speakerTitle": "Абэраку"
+				},
+				{
+					"id": 722470324,
+					"content": "Забери эти вещи, хранящие мои воспоминания... Однако здесь полно чудовищ, которые охраняют мою душу. Они нахлынут, как только предмет с моей душой будет извлечён.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470325
+					],
+					"speakerTitle": "Абэраку"
+				},
+				{
+					"id": 722470325,
+					"content": "Это опасно. Скажите мне, как будете готовы, - и начнём.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Абэраку"
+				},
+				{
+					"id": 722470309,
+					"content": "Его зовут Абэраку.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722470310
+					]
+				}
+			]
+		},
+		{
+			"id": 7224705,
+			"completionStepIds": [
+				7224702
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7224702",
+							"2"
+						],
+						"stepId": 7224702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Абэраку"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722470501,
+					"content": "#{M#Готов}{F#Готова}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722470502
+					]
+				},
+				{
+					"id": 722470502,
+					"content": "Тогда желаю... успехов в предстоящей битве.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Абэраку"
+				}
+			]
+		},
+		{
+			"id": 7224706,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7224702",
+							"2"
+						],
+						"stepId": 7224702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Абэраку"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722470601,
+					"content": "Мне нужно немного времени, чтобы подготовиться.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722470602
+					]
+				},
+				{
+					"id": 722470602,
+					"content": "Буду ждать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Абэраку"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,396 @@
+{
+	"id": 72117,
+	"type": "WQ",
+	"name": "Contes de Tatara : Collecte de données",
+	"description": "Xavier, qui fait des recherches sur le Fourneau Mikage, semble avoir une nouvelle idée...",
+	"unlockDescription": "",
+	"chapter": "Les contes de Tatara",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_RANK_ZERO_WQ",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		72116
+	],
+	"steps": [
+		{
+			"id": 7211701,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TIME_VAR_PASS_DAY",
+					"rawParams": [
+						72116,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7211702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Xavier.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7211701,
+						0
+					],
+					"talkId": 7211701
+				}
+			]
+		},
+		{
+			"id": 7211703,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Récupérez les balises.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7211704,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Récupérez les balises.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7211705,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Récupérez les balises.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7211706,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7211706,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7211707,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7211706,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7211708,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Faites votre rapport à Xavier.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7211703,
+						0
+					],
+					"talkId": 7211703
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7211701,
+			"completionStepIds": [
+				7211702
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7211702",
+							"2"
+						],
+						"stepId": 7211702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Xavier"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721170101,
+					"content": "#Ah, {M#voyageur}{F#voyageuse}, vous arrivez à pic. Les données devraient être toutes collectées, il est temps d'aller récupérer ces balises.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721170102,
+						721170104
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721170102,
+					"content": "Je m'en occupe.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721170103
+					]
+				},
+				{
+					"id": 721170103,
+					"content": "Bien, alors je vous laisse y aller. Ne laissez pas les Fatui le découvrir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721170104,
+					"content": "Comment le savez-vous ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721170105
+					]
+				},
+				{
+					"id": 721170105,
+					"content": "Ces balises sont accompagnées d'un manuel d'instruction très détaillé.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721170106
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721170106,
+					"content": "Le manuel décrit en fonction des circonstances la durée requise pour la collecte des données.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721170107
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721170107,
+					"content": "Et pour ce qui est des énergies inconnues comme celle du Tatarigami, je vais simplement considérer qu'elles nécessitent la durée la plus longue. Dans tous les cas, la récupération de ces balises vous incombe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xavier"
+				}
+			]
+		},
+		{
+			"id": 7211702,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7211702",
+							"3"
+						],
+						"stepId": 7211702,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_NOT_RECEIVE",
+						"rawParams": [
+							"7211708",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Xavier"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721170201,
+					"content": "Si on arrive à obtenir ces données, le reste devrait être beaucoup plus simple...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xavier"
+				}
+			]
+		},
+		{
+			"id": 7211703,
+			"completionStepIds": [
+				7211708
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7211708",
+							"2"
+						],
+						"stepId": 7211708,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Xavier"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721170301,
+					"content": "Comment ça s'est passé ? Vous avez toutes nos balises ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721170302
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721170302,
+					"content": "Les voilà.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721170303
+					]
+				},
+				{
+					"id": 721170303,
+					"content": "Bravo ! Maintenant, donnez-moi juste un moment pour que je modifie cet appareil.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721170304
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721170304,
+					"content": "Je dois dire que les Fatui agissent de plus en plus étrangement ces derniers temps. On dirait qu'ils se rassemblent autour du noyau du fourneau.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721170305
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721170305,
+					"content": "J'espère qu'ils ne manigancent pas encore un autre de leurs complots ignobles... Ou pire, qu'ils ne tentent pas quelque chose contre lequel on ne pourrait pas se défendre...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xavier"
+				}
+			]
+		},
+		{
+			"id": 7211704,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7211701",
+							"2"
+						],
+						"stepId": 7211701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Xavier"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721170401,
+					"content": "Maintenant, il ne nous reste plus qu'à attendre que nos balises collectent suffisamment de données.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721170402
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721170402,
+					"content": "Une fois que j'aurai ces données, je ferai quelques modifications sur cet appareil.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721170403
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721170403,
+					"content": "Quand tout sera prêt, on pourra mettre un terme à cet incident.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xavier"
+				}
+			]
+		}
+	]
+}

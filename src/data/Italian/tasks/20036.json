@@ -1,0 +1,455 @@
+{
+	"id": 20036,
+	"type": "IQ",
+	"name": "Sussurri nel vento",
+	"description": "A Glory manca il suo ragazzo, partito per un lungo viaggio. È alla ricerca di un modo per fargli arrivare le sue parole.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2003601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Vai a parlare con Glory",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Glory",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003601,
+						0
+					],
+					"talkId": 2003601
+				}
+			]
+		},
+		{
+			"id": 2003603,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Trova 3 semi di dente di leone",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						2003603,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003604,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Consegna i semi di dente di leone a Glory",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003602,
+						0
+					],
+					"talkId": 2003602
+				}
+			]
+		},
+		{
+			"id": 2003605,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sali in cima alla statua dell'Archon di Anemo e sparpaglia al vento i semi di dente di leone",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_INTERACT_GADGET",
+					"rawParams": [
+						70710009,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003606,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Glory",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003603,
+						0
+					],
+					"talkId": 2003603
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2003601,
+			"completionStepIds": [
+				2003602
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003601",
+							"3"
+						],
+						"stepId": 2003601,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003602",
+							"2"
+						],
+						"stepId": 2003602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Glory"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200360101,
+					"content": "Godwin... quando tornerai...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360102
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360102,
+					"content": "Ciao...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360103
+					]
+				},
+				{
+					"id": 200360103,
+					"content": "#Conosco quella voce... Ma guarda, è {F#la}{M#il} viaggiat{F#rice}{M#ore} dalle terre remote! Sia ringraziato il grande Archon di Anemo per aver incaricato il vento di condurti in questo luogo... Ho una richiesta per te.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360104
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360104,
+					"content": "Il mio... ehm, ragazzo, Godwin... è tra i Cavalieri di Favonius, sai... ha lasciato la città secoli fa e non ha ancora fatto ritorno.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360105
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360105,
+					"content": "Da quando è andato via, non ho ricevuto alcuna notizia da lui.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360106
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360106,
+					"content": "Sono tanto preoccupata per lui. Povero Godwin, e se si imbattesse in quei terribili Hilichurl? Oppure, ha anche detto di essere in guerra contro l'Ordine dell'Abisso, e se restasse ferito? E... e ormai è via da così tanto, e se iniziasse a provare interesse per una di quelle belle ragazze tra i cavalieri?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360107
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360107,
+					"content": "Ah, mi dispiace! Mi dispiace, mi... mi sono lasciata trasportare. Mia madre mi dice sempre che i denti di leone portano i desideri delle persone lontano, in un luogo remoto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360108
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360108,
+					"content": "Perciò, la mia richiesta è... potreste raccogliere tre semi di dente di leone da Levanteolo per me?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360109,
+						200360110
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360109,
+					"content": "Certo.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360111
+					]
+				},
+				{
+					"id": 200360111,
+					"content": "Grazie davvero! Che l'Archon di Anemo sia con te.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360110,
+					"content": "Ho cose più importanti da fare.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360112
+					]
+				},
+				{
+					"id": 200360112,
+					"content": "#Aspetta! Ti supplico, aiutami. Sicuramente, sarà una passeggiata per {F#una}{M#un} viaggiat{F#rice}{M#ore} con la tua esperienza...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Glory"
+				}
+			]
+		},
+		{
+			"id": 2003602,
+			"completionStepIds": [
+				2003604
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003602",
+							"3"
+						],
+						"stepId": 2003602,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_PACK_HAVE_ITEM",
+						"rawParams": [
+							"100057",
+							"3"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003604",
+							"2"
+						],
+						"stepId": 2003604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Glory"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200360201,
+					"content": "Eccoti, hai trovato i semi di dente di leone per me?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360202
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360202,
+					"content": "Sì.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360203
+					]
+				},
+				{
+					"id": 200360203,
+					"content": "Grazie! Puoi metterli nella mia mano? Non ci vedo, li perderei altrimenti.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360204
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360204,
+					"content": "Questi sono abbastanza?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360205
+					]
+				},
+				{
+					"id": 200360205,
+					"content": "Potresti metterli nella mia mano? È l'unico modo in cui posso risponderti.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360206
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360206,
+					"content": "Sì, bastano. E ora è il momento di dire tutto ciò che voglio dire a Godwin...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360207
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360207,
+					"content": "Ehm... tappati le orecchie, per favore. Non si origlia! Queste sono parole private condivise tra innamorati. Beh... *ridacchia* di sicuro avrai vissuto esperienze simili.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360208
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360208,
+					"content": "Ok, ho finito. Ora, portali in cima alla statua dell'Archon di Anemo e liberali nel vento. Il grande Archon in persona penserà a trasportarli.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360209
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360209,
+					"content": "Spero li guiderà fino a Godwin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Glory"
+				}
+			]
+		},
+		{
+			"id": 2003603,
+			"completionStepIds": [
+				2003606
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003606",
+							"2"
+						],
+						"stepId": 2003606,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Glory"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200360301,
+					"content": "Ce l'hai fatta?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360302
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360302,
+					"content": "C'era un sacco di vento, lassù...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360303
+					]
+				},
+				{
+					"id": 200360303,
+					"content": "Ottimo, è quello che ci serve. In questo modo, i semi di dente di leone possono viaggiare lontano.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360304
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360304,
+					"content": "Forse raggiungeranno davvero Godwin, e gli porteranno quello che voglio dirgli.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360305
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360305,
+					"content": "Dammi la mano... Ecco, prendi. Questi sono per ringraziarti.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360306
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360306,
+					"content": "Ci sono tante altre cose che vorrei dire a Godwin. In futuro, potrei aver bisogno del tuo aiuto un'altra volta.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Glory"
+				}
+			]
+		}
+	]
+}

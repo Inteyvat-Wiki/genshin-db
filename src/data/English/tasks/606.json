@@ -1,0 +1,169 @@
+{
+	"id": 606,
+	"type": "AQ",
+	"name": "",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		601
+	],
+	"steps": [
+		{
+			"id": 60601,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						60601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 60602,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 60603,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						60601,
+						0
+					],
+					"talkId": 60601
+				}
+			]
+		},
+		{
+			"id": 60604,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						60106,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 60605,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						60605,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 60601,
+			"completionStepIds": [
+				60603
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"60603",
+							"2"
+						],
+						"stepId": 60603,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"60605",
+							"2"
+						],
+						"stepId": 60605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Noelle"
+				],
+				"points": [
+					{
+						"sceneId": 20260,
+						"position": [
+							2323.988,
+							223.99,
+							-828.775
+						],
+						"pointId": 77
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 6060101,
+					"content": "Thanks for the help! That was over a lot faster than I expected!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						6060102
+					],
+					"speakerTitle": "Noelle"
+				},
+				{
+					"id": 6060102,
+					"content": "I'm sure you have places to be, so don't let me keep you. Rest assured, I'll keep the people around here safe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						6060103
+					],
+					"speakerTitle": "Noelle"
+				},
+				{
+					"id": 6060103,
+					"content": "Be careful out there! I know victory will be ours!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Noelle"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,709 @@
+{
+	"id": 70814,
+	"type": "WQ",
+	"name": "Un aventurier, ça sert à quoi ?",
+	"description": "Tiantian, sur l'ordre de Lan, est responsable d'attribuer les missions de la Guilde des aventuriers, mais est bien embêtée...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		1016
+	],
+	"steps": [
+		{
+			"id": 7081401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Tiantian.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7081403,
+						0
+					],
+					"talkId": 7081403
+				}
+			]
+		},
+		{
+			"id": 7081402,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Éliminez tous les monstres et détruisez les obstacles.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7081403,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Tiantian.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7081405,
+						0
+					],
+					"talkId": 7081405
+				}
+			]
+		},
+		{
+			"id": 7081404,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Éliminez les Pilleurs de trésors à Lisha.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7081405,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Tiantian.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7081407,
+						0
+					],
+					"talkId": 7081407
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7081402,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081401",
+							"2"
+						],
+						"stepId": 7081401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708140201,
+					"content": "Qu'y a-t-il encore ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140202
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 708140202,
+					"content": "Vous avez retrouvé cette épée ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708140203
+					]
+				},
+				{
+					"id": 708140203,
+					"content": "Je vois que vous vous en souvenez. Hélas, je n'ai pas encore trouvé de nouvel indice...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140204
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 708140204,
+					"content": "Disons que je suis encore en train de ramer.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140205
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 708140205,
+					"content": "Si j'ai du nouveau, je ferais peut-être appel à vos services.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140206
+					],
+					"speakerTitle": "Lan"
+				}
+			]
+		},
+		{
+			"id": 7081403,
+			"completionStepIds": [
+				7081401
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081401",
+							"2"
+						],
+						"stepId": 7081401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tiantian"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708140301,
+					"content": "#V—Vous êtes {M#un aventurier}{F#une aventurière} ? C'est pour une mission ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140302
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140302,
+					"content": "Hum, laissez-moi voir un instant... « Participant à une compétition de planage », « Guide de survie en nature » et « Instructeur d'escalade »...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140303
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140303,
+					"content": "Vous travaillez vraiment pour la Guilde des aventuriers ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708140304
+					]
+				},
+				{
+					"id": 708140304,
+					"content": "Je vois ! Lan m'avait déjà fait la même réflexion... Ce ne serait donc pas des aventures que j'ai là ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140305
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140305,
+					"content": "C'est pourtant le seul genre de missions que je puisse attribuer...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140306
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140306,
+					"content": "Vous n'avez pas de demandes concernant des monstres, par exemple ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708140307
+					]
+				},
+				{
+					"id": 708140307,
+					"content": "Ce sont des missions dangereuses. Hum, il y a beaucoup de monstres à Lisha qui peuvent s'en prendre aux passants...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140308
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140308,
+					"content": "Mais une personne normale ne pourrait pas espérer en venir à bout sans être blessée...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140309,
+						708140311
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140309,
+					"content": "Pas de problème.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708140310
+					]
+				},
+				{
+					"id": 708140310,
+					"content": "#Vous en êtes {M#sûr}{F#sûre} ? Bon, si vous insistez... Je vais parler à Lan pour qu'on convienne d'une récompense à vous donner.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140311,
+					"content": "#Je ne suis pas une personne ordinaire, je suis {M#un aventurier}{F#une aventurière}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708140312
+					]
+				},
+				{
+					"id": 708140312,
+					"content": "Si vous insistez... Je vais parler à Lan pour qu'on convienne d'une récompense à vous donner.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tiantian"
+				}
+			]
+		},
+		{
+			"id": 7081404,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081401",
+							"3"
+						],
+						"stepId": 7081401,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081402",
+							"2"
+						],
+						"stepId": 7081402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tiantian"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708140401,
+					"content": "Les aventuriers veulent donc entreprendre ce genre de missions dangereuses ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140402
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140402,
+					"content": "Que font-ils en cas de blessures ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tiantian"
+				}
+			]
+		},
+		{
+			"id": 7081405,
+			"completionStepIds": [
+				7081403
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081403",
+							"2"
+						],
+						"stepId": 7081403,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tiantian"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708140501,
+					"content": "Oh ? Vous êtes déjà de retour ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140502
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140502,
+					"content": "Ma mission est accomplie.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708140503
+					]
+				},
+				{
+					"id": 708140503,
+					"content": "#Vous êtes trop {M#fort}{F#forte} ! Tout à l'heure, j'ai trié les ordres de missions et...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140504
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140504,
+					"content": "Il y avait une montagne de demandes pour se débarrasser de monstres. Ce genre de missions qui plaisent aux aventuriers, c'est ça ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140505
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140505,
+					"content": "J'ai aussi trouvé des rapports qui indiquaient la présence de Pilleurs de trésors dans les environs.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140506
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140506,
+					"content": "Les aventuriers peuvent aussi s'en occuper ? J'ai davantage l'impression que c'est un travail pour les Millelithes...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140507,
+						708140509
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140507,
+					"content": "Oui, bien sûr.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708140508
+					]
+				},
+				{
+					"id": 708140508,
+					"content": "Ah bon ? Les aventuriers ont l'air de savoir tout faire.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140511
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140511,
+					"content": "Je vous laisse vous occuper de cette mission alors. Une généreuse récompense vous attendra à votre retour !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140512
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140512,
+					"content": "Pourquoi vous nous rajoutez une mission supplémentaire ? Nous n'avons même pas...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140513
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 708140513,
+					"content": "La récompense n'en sera que plus grande ! J'en ai déjà parlé à Lan, elle est d'accord pour l'augmenter !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140514
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140514,
+					"content": "Ça me va.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708140515
+					]
+				},
+				{
+					"id": 708140515,
+					"content": "Je compte sur vous.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140516
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140516,
+					"content": "J'ai réussi à refiler deux missions d'un coup.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140517
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140517,
+					"content": "Les conseils de Lan pour me faciliter la tâche ont marché...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140509,
+					"content": "Tant que la récompense ne déçoit pas...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708140510
+					]
+				},
+				{
+					"id": 708140510,
+					"content": "Les aventuriers sont incroyables... Ils peuvent tout faire !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140511
+					],
+					"speakerTitle": "Tiantian"
+				}
+			]
+		},
+		{
+			"id": 7081406,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081403",
+							"3"
+						],
+						"stepId": 7081403,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081404",
+							"2"
+						],
+						"stepId": 7081404,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tiantian"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708140601,
+					"content": "Je compte sur vous, alors !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140602
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140602,
+					"content": "Les conseils de Lan pour me faciliter la tâche ont marché...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tiantian"
+				}
+			]
+		},
+		{
+			"id": 7081407,
+			"completionStepIds": [
+				7081405
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081405",
+							"2"
+						],
+						"stepId": 7081405,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tiantian"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708140701,
+					"content": "Vous avez terminé la mission ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140702
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140702,
+					"content": "C'est bon.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708140703
+					]
+				},
+				{
+					"id": 708140703,
+					"content": "#C'est donc ça la force d'{M#un aventurier}{F#une aventurière} ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140704
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140704,
+					"content": "Si ça ne vous gêne pas, pourriez-vous répondre à une de mes questions ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140705
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140705,
+					"content": "À part tuer les monstres, quelles missions les aventuriers seraient-ils plus enclins à accepter ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140706,
+						708140707,
+						708140708
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140706,
+					"content": "Réparer des véhicules et rénover des bâtiments.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708140709
+					]
+				},
+				{
+					"id": 708140709,
+					"content": "Ouah, vous pouvez faire tout ça ? Quelle polyvalence.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140710
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140710,
+					"content": "Merci beaucoup ! Je note tout ça... Avant que je n'oublie, voici votre récompense.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708140711
+					],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140711,
+					"content": "La prochaine fois que vous viendrez me voir, je vous attendrai avec la meilleure des missions !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tiantian"
+				},
+				{
+					"id": 708140707,
+					"content": "Cueillir des plantes et pêcher du poisson.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708140709
+					]
+				},
+				{
+					"id": 708140708,
+					"content": "Livrer des repas et jouer avec des enfants.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708140709
+					]
+				}
+			]
+		}
+	]
+}

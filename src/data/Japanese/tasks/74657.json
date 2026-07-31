@@ -1,0 +1,167 @@
+{
+	"id": 74657,
+	"type": "WQ",
+	"name": "ガラテアの塩のリクエスト",
+	"description": "ガラテアは塩を10個必要としている。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7465701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "ガラテアに塩を10個渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7465701,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7465702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "ガラテアと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7465702,
+						0
+					],
+					"talkId": 7465702
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7465701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465701",
+							"2"
+						],
+						"stepId": 7465701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7465701"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ガラテア"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746570101,
+					"content": "塩について…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746570102
+					]
+				},
+				{
+					"id": 746570102,
+					"content": "どうも、食塩の供給のことで話をしに来たの？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746570103
+					],
+					"speakerTitle": "ガラテア"
+				},
+				{
+					"id": 746570103,
+					"content": "じゃあ、きっと十分な塩を用意できているんだよね？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746570106,
+						746570104
+					],
+					"speakerTitle": "ガラテア"
+				},
+				{
+					"id": 746570106,
+					"content": "用意できた。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 746570104,
+					"content": "まだ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746570105
+					]
+				},
+				{
+					"id": 746570105,
+					"content": "食塩が足りないとだめなの。私たちはあちこち航海してるから、毎回十分な塩を用意しないといけなくて。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ガラテア"
+				}
+			]
+		},
+		{
+			"id": 7465702,
+			"completionStepIds": [
+				7465702
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465702",
+							"2"
+						],
+						"stepId": 7465702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ガラテア"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746570201,
+					"content": "この量なら短距離の運航には十分ね。君は頼りになりそうだし、これからは優先的に君に連絡するわね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ガラテア"
+				}
+			]
+		}
+	]
+}

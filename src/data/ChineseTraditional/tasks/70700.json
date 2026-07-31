@@ -1,0 +1,176 @@
+{
+	"id": 70700,
+	"type": "WQ",
+	"name": "海倫的特效潤喉茶",
+	"description": "蒙德城的海倫需要十朵甜甜花。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "將十朵甜甜花交給海倫",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070001,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070002,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "與海倫對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070002,
+						0
+					],
+					"talkId": 7070002
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070001,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070001",
+							"2"
+						],
+						"stepId": 7070001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070001"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"海倫"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707000101,
+					"content": "關於甜甜花…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707000102
+					]
+				},
+				{
+					"id": 707000102,
+					"content": "#{F#妳}{M#你}是看到了我的委託嗎？太好了…總算有人願意幫忙了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707000103
+					],
+					"speakerTitle": "海倫"
+				},
+				{
+					"id": 707000103,
+					"content": "#十朵甜甜花，{F#妳}{M#你}已經搜集齊了嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707000104,
+						707000105
+					],
+					"speakerTitle": "海倫"
+				},
+				{
+					"id": 707000104,
+					"content": "搜集齊了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707000105,
+					"content": "還沒有。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707000106
+					]
+				},
+				{
+					"id": 707000106,
+					"content": "#好吧…那{F#妳}{M#你}搜集齊了之後，請盡快拿給我吧，我的嗓子越來越難受了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "海倫"
+				}
+			]
+		},
+		{
+			"id": 7070002,
+			"completionStepIds": [
+				7070002
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070002",
+							"2"
+						],
+						"stepId": 7070002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"海倫"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707000201,
+					"content": "#太好了，謝謝{F#妳}{M#你}幫忙，這些請{F#妳}{M#你}收下。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707000202
+					],
+					"speakerTitle": "海倫"
+				},
+				{
+					"id": 707000202,
+					"content": "我等會就拿它們去泡茶喝，希望能讓我的嗓子舒服點…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "海倫"
+				}
+			]
+		}
+	]
+}

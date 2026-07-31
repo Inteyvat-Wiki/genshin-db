@@ -1,0 +1,176 @@
+{
+	"id": 71701,
+	"type": "WQ",
+	"name": "Hierbas medicinales para el Herborista Gui",
+	"description": "El Herborista Gui, de Liyue, necesita 3 flores chingxin.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Entrégale 3 flores chingxin al Herborista Gui",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con el Herborista Gui",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170102,
+						0
+					],
+					"talkId": 7170102
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170101",
+							"2"
+						],
+						"stepId": 7170101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170101"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Herborista Gui"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717010101,
+					"content": "Sobre las flores chingxin...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717010102
+					]
+				},
+				{
+					"id": 717010102,
+					"content": "Oh, ¿viste mi encargo? Bien, por fin alguien que puede ayudarme.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717010103
+					],
+					"speakerTitle": "Herborista Gui"
+				},
+				{
+					"id": 717010103,
+					"content": "Bueno, ¿ya tienes las 3 flores chingxin que quería?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717010104,
+						717010105
+					],
+					"speakerTitle": "Herborista Gui"
+				},
+				{
+					"id": 717010104,
+					"content": "Sí.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717010105,
+					"content": "Hummm, no.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717010106
+					]
+				},
+				{
+					"id": 717010106,
+					"content": "Cuando las hayas recogido, ven rápido, por favor. Las necesito para hacer medicina para la gente enferma.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Herborista Gui"
+				}
+			]
+		},
+		{
+			"id": 7170102,
+			"completionStepIds": [
+				7170102
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170102",
+							"2"
+						],
+						"stepId": 7170102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Herborista Gui"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717010201,
+					"content": "¡Estas flores chingxin son de muy buena calidad! ¡Gracias! Acepta esto como recompensa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717010202
+					],
+					"speakerTitle": "Herborista Gui"
+				},
+				{
+					"id": 717010202,
+					"content": "Debo apresurarme para enviarlas. Hay pacientes que las necesitan para ponerse mejor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Herborista Gui"
+				}
+			]
+		}
+	]
+}

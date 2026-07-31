@@ -1,0 +1,484 @@
+{
+	"id": 73058,
+	"type": "WQ",
+	"name": "Aragaru's Drawing",
+	"description": "You helped Aragaru defeat the Eremites in Chatrakam Cave. Their goal, however, seems to be related to a friendship that Aragaru has forgotten...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		73032
+	],
+	"steps": [
+		{
+			"id": 7305801,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7305802,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Aragaru",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7305801,
+						0
+					],
+					"talkId": 7305801
+				}
+			]
+		},
+		{
+			"id": 7305803,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Investigate the Eremites' camp",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7305805,
+						0
+					],
+					"talkId": 7305805
+				}
+			]
+		},
+		{
+			"id": 7305804,
+			"order": 10,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Aragaru",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7305802,
+						0
+					],
+					"talkId": 7305802
+				}
+			]
+		},
+		{
+			"id": 7305805,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Investigate the Eremites' camp",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133315008,
+						8015
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7305803,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7305806,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Investigate the Eremites' camp",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133315008,
+						8026
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7305803,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7305807,
+			"order": 30,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		},
+		{
+			"id": 7305808,
+			"order": 9,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7305804,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7305809,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7305801,
+			"completionStepIds": [
+				7305802
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7305802",
+							"2"
+						],
+						"stepId": 7305802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Aragaru",
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 730580101,
+					"content": "Golden Nara and White Floaty, you are here again!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580102
+					],
+					"speakerTitle": "Aragaru"
+				},
+				{
+					"id": 730580102,
+					"content": "Whoa! Say hello before jumping out next time! You scared Paimon again!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580103,
+						730580104
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 730580103,
+					"content": "We're not bad guys.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730580105
+					]
+				},
+				{
+					"id": 730580105,
+					"content": "Hmph... You're right... So, Golden Nara and White Floaty who don't look like bad guys, could you do me a favor?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580106
+					],
+					"speakerTitle": "Aragaru"
+				},
+				{
+					"id": 730580106,
+					"content": "#Sure thing. I'm {NICKNAME}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730580107
+					]
+				},
+				{
+					"id": 730580107,
+					"content": "And Paimon is Paimon, don't forget that again!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580108
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 730580108,
+					"content": "Again...? Uh... Ahem, I'm Aragaru!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580109
+					],
+					"speakerTitle": "Aragaru"
+				},
+				{
+					"id": 730580109,
+					"content": "#We have been here with you, but you forgot it all... Ugh, too much explanation! {NICKNAME}, why don't we do that together?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580110
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 730580110,
+					"content": "You describe your adventure with Aragaru in detail.",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": [
+						730580111
+					]
+				},
+				{
+					"id": 730580111,
+					"content": "Is that so...? I can't remember, but I somehow want to believe you... And you have the flower I gave, I can feel her.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580112
+					],
+					"speakerTitle": "Aragaru"
+				},
+				{
+					"id": 730580112,
+					"content": "Ah, right! The bad Nara set up a campsite. Let's see what they left there. Maybe we could know their plans!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Aragaru"
+				},
+				{
+					"id": 730580104,
+					"content": "We chased the bad guys away for you.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730580105
+					]
+				}
+			]
+		},
+		{
+			"id": 7305802,
+			"completionStepIds": [
+				7305804
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7305804",
+							"2"
+						],
+						"stepId": 7305804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Aragaru",
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 730580201,
+					"content": "How is it? Did you find anything?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580202
+					],
+					"speakerTitle": "Aragaru"
+				},
+				{
+					"id": 730580202,
+					"content": "Hmm... Nothing but vague orders, and this! A dried flower!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580203
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 730580203,
+					"content": "Eh...! This flower, can I have it?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580204
+					],
+					"speakerTitle": "Aragaru"
+				},
+				{
+					"id": 730580204,
+					"content": "That's from the bad guys, aren't you afraid of getting poisoned... or something like that?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580205
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 730580205,
+					"content": "No need to worry, I have seen the flower before... The person, I should know... Please give it to me, okay?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580206
+					],
+					"speakerTitle": "Aragaru"
+				},
+				{
+					"id": 730580206,
+					"content": "Of course, here.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730580207
+					]
+				},
+				{
+					"id": 730580207,
+					"content": "#Thank you! Nara {NICKNAME} and White Floaty!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580208
+					],
+					"speakerTitle": "Aragaru"
+				},
+				{
+					"id": 730580208,
+					"content": "Aragaru brought the little dried flower to Mawtiyima Forest...",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7305804,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7305803",
+							"2"
+						],
+						"stepId": 7305803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Aragaru"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 730580401,
+					"content": "Let's go to the bad Nara's campsite and find out what they're up to!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580402
+					],
+					"speakerTitle": "Aragaru"
+				},
+				{
+					"id": 730580402,
+					"content": "How can you tell if someone's bad?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730580403
+					]
+				},
+				{
+					"id": 730580403,
+					"content": "#Well, I can't really explain it, but Nara {NICKNAME} and White Floaty are not baddies for sure! I believe that!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Aragaru"
+				}
+			]
+		},
+		{
+			"id": 7305805,
+			"completionStepIds": [
+				7305803
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7305803",
+							"2"
+						],
+						"stepId": 7305803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7305803",
+							"3"
+						],
+						"stepId": 7305803,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": []
+		}
+	]
+}

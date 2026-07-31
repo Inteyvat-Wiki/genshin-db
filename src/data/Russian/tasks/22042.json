@@ -1,0 +1,462 @@
+{
+	"id": 22042,
+	"type": "IQ",
+	"name": "Запах рыбы",
+	"description": "Кажется, временная настоятельница святилища Асасэ Нэко чем-то встревожена...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2204201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Нэко",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2204201,
+						0
+					],
+					"talkId": 2204201
+				}
+			]
+		},
+		{
+			"id": 2204202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Покормите котят рыбой",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2204203,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)检测玩家是否打猫$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						2204203,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2204204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Вернитесь к Нэко",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2204203,
+						0
+					],
+					"talkId": 2204203
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2204204,
+						0
+					],
+					"talkId": 2204204
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2204201,
+			"completionStepIds": [
+				2204201
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2204201",
+							"2"
+						],
+						"stepId": 2204201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Нэко"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220420101,
+					"content": "Какие вредные котята...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420102
+					],
+					"speakerTitle": "Нэко"
+				},
+				{
+					"id": 220420102,
+					"content": "Что такое?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220420103
+					]
+				},
+				{
+					"id": 220420103,
+					"content": "А, это ты. Малыши опять сбежали. С каждым днём они всё хуже меня слушаются...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420104,
+						220420105
+					],
+					"speakerTitle": "Нэко"
+				},
+				{
+					"id": 220420104,
+					"content": "Нужна помощь?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220420106
+					]
+				},
+				{
+					"id": 220420106,
+					"content": "Теперь, когда вы развесили металлические шарики вокруг святилища, Нэко верит, что они смогут найти дорогу обратно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420107
+					],
+					"speakerTitle": "Нэко"
+				},
+				{
+					"id": 220420107,
+					"content": "Может быть, для них не так уж и плохо немного одичать, чтобы не выставить себя дураками перед людьми и не опозорить святилище.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420108
+					],
+					"speakerTitle": "Нэко"
+				},
+				{
+					"id": 220420108,
+					"content": "Но если они переборщат и будут голодать с утра до ночи... Это не очень хорошо.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420109
+					],
+					"speakerTitle": "Нэко"
+				},
+				{
+					"id": 220420109,
+					"content": "Отнеси рыбу этим маленьким негодникам, пусть поедят.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420110,
+						220420113
+					],
+					"speakerTitle": "Нэко"
+				},
+				{
+					"id": 220420110,
+					"content": "Хорошо.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220420111
+					]
+				},
+				{
+					"id": 220420111,
+					"content": "Давай дадим карту Нэко.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420112
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 220420112,
+					"content": "Похоже, что у вас нет недостатка в понимании...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420115
+					],
+					"speakerTitle": "Нэко"
+				},
+				{
+					"id": 220420115,
+					"content": "Хорошо. Иди, и побыстрее. У Нэко ещё есть дела в святилище.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Нэко"
+				},
+				{
+					"id": 220420113,
+					"content": "Вот наша карта...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220420114
+					]
+				},
+				{
+					"id": 220420114,
+					"content": "Похоже, что у вас нет недостатка в понимании...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420115
+					],
+					"speakerTitle": "Нэко"
+				},
+				{
+					"id": 220420105,
+					"content": "Нужно их вернуть?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220420106
+					]
+				}
+			]
+		},
+		{
+			"id": 2204202,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2204202",
+							"2"
+						],
+						"stepId": 2204202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Нэко"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220420201,
+					"content": "Отнеси рыбу малышам, и побыстрее. У Нэко ещё есть дела в святилище.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Нэко"
+				}
+			]
+		},
+		{
+			"id": 2204203,
+			"completionStepIds": [
+				2204204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2204203",
+							"2"
+						],
+						"stepId": 2204203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2204204",
+							"2"
+						],
+						"stepId": 2204204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Нэко"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220420301,
+					"content": "#Вы вернулись. Ты накормил{F#а} этих негодников?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420302
+					],
+					"speakerTitle": "Нэко"
+				},
+				{
+					"id": 220420302,
+					"content": "Да.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220420303
+					]
+				},
+				{
+					"id": 220420303,
+					"content": "Хорошо. Благодарю тебя. Без твоей помощи эти дети играли бы и играли... а потом остались бы голодными.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420304
+					],
+					"speakerTitle": "Нэко"
+				},
+				{
+					"id": 220420304,
+					"content": "Что за непослушные дети. Как они могут принимать людей, которые приходят в святилище, таким образом?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Нэко"
+				}
+			]
+		},
+		{
+			"id": 2204204,
+			"completionStepIds": [
+				2204204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2204203",
+							"3"
+						],
+						"stepId": 2204203,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2204204",
+							"2"
+						],
+						"stepId": 2204204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Нэко"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220420401,
+					"content": "Вы вернулись. Странно. Эти дети внезапно вернулись, и они выглядели испуганными.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420402
+					],
+					"speakerTitle": "Нэко"
+				},
+				{
+					"id": 220420402,
+					"content": "Неужели они встретили тех волосатых существ с палками?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420403
+					],
+					"speakerTitle": "Нэко"
+				},
+				{
+					"id": 220420403,
+					"content": "Но, по крайней мере, они вернулись... Подожди, что с тобой?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420404
+					],
+					"speakerTitle": "Нэко"
+				},
+				{
+					"id": 220420404,
+					"content": "Вообще-то, я...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220420405
+					]
+				},
+				{
+					"id": 220420405,
+					"content": "Ты... непостижимый человек! Что заставило тебя сделать это?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420406
+					],
+					"speakerTitle": "Нэко"
+				},
+				{
+					"id": 220420406,
+					"content": "#Ты мог{F#ла} бы просто играть с этими детьми, как обычно...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420407
+					],
+					"speakerTitle": "Нэко"
+				},
+				{
+					"id": 220420407,
+					"content": "#Мяу! Неудивительно, что они так испугались... Ты {F#должна}{M#должен} утешить их.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420408
+					],
+					"speakerTitle": "Нэко"
+				},
+				{
+					"id": 220420408,
+					"content": "Было ошибкой требовать от всех людей, чтобы они были похожи на Хибики...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Нэко"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,204 @@
+{
+	"id": 71011,
+	"type": "WQ",
+	"name": "Tianqiu'daki İzler",
+	"description": "Tianqiu Vadisi'nde vadinin geçmişinden bahseden tuhaf bir tablet var...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		309
+	],
+	"steps": [
+		{
+			"id": 7101101,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						34763,
+						0
+					],
+					"talkId": 34763
+				}
+			]
+		},
+		{
+			"id": 7101102,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						34768,
+						0
+					],
+					"talkId": 34768
+				}
+			]
+		},
+		{
+			"id": 7101103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Tianqiu Vadisi'nin sırrını açığa çıkar.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7101104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Hazine Avcılarını yen.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7101105,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Hazineyi al.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 34763,
+			"completionStepIds": [
+				7101101
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7101101",
+							"2"
+						],
+						"stepId": 7101101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3476301,
+					"content": "\"Tianqiu Vadisi'nde Adeptusların kadim izi soluyor, diz çöküp önümdeki harabelere ağlıyorum. Eskilerin kudretli Azhdaha'sı mağlup olsa da bu güzel memleketi geri getirmek mümkün değil artık.\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kadim Tablet"
+				}
+			]
+		},
+		{
+			"id": 34768,
+			"completionStepIds": [
+				7101102
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7101101",
+							"3"
+						],
+						"stepId": 7101101,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7101102",
+							"2"
+						],
+						"stepId": 7101102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3476801,
+					"content": "Of... Bu tablettekileri okumak çok zor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3476802
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3476802,
+					"content": "Yani bu bir harabe ama aynı zamanda Adeptusların izi. Bu tam olarak ne demek?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3476803
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3476803,
+					"content": "Yine de burada diyor ki, \"Tianqiu Vadisi'nde Adeptusların kadim izi soluyor.\" Yani taş tablette anlatılan olayın Tianqiu Vadisi'nde geçtiği kesin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3476804
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3476804,
+					"content": "Sanırım etrafı araştırmaktan başka çaremiz yok. Belki bir şeyler buluruz.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,334 @@
+{
+	"id": 70006,
+	"type": "WQ",
+	"name": "Échanges complémentaires",
+	"description": "Vous accompagnez Ella Musk dans l'espoir de communiquer avec les Brutocollinus. Est-ce le début d'une nouvelle amitié ?",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5024,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70020
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7000601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à un Brutocollinus.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7000601,
+						0
+					],
+					"talkId": 7000601
+				}
+			]
+		},
+		{
+			"id": 7000602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Donnez au Brutocollinus ce qu'il demande.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7000603,
+						0
+					],
+					"talkId": 7000603
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7000604,
+						0
+					],
+					"talkId": 7000604
+				}
+			]
+		},
+		{
+			"id": 7000603,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7000603,
+						0
+					],
+					"talkId": 7000603
+				}
+			]
+		},
+		{
+			"id": 7000604,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7000604,
+						0
+					],
+					"talkId": 7000604
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7000601,
+			"completionStepIds": [
+				7000601
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7000601",
+							"2"
+						],
+						"stepId": 7000601,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Brutocollinus",
+					"Ella Musk"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700060102,
+					"content": "Mi muhe mosi ! Mi muhe mita, <color=#00E1FFFF>mita movo lata</color> !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700060103
+					],
+					"speakerTitle": "Brutocollinus"
+				},
+				{
+					"id": 700060103,
+					"content": "Oh, il a faim... Voyons voir ce qu'il veut.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700060104
+					],
+					"speakerTitle": "Ella Musk"
+				},
+				{
+					"id": 700060104,
+					"content": "On dirait qu'il veut... une sorte de viande ? Je ne suis pas sûre. Peux-tu jeter un œil à mes notes ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ella Musk"
+				}
+			]
+		},
+		{
+			"id": 7000602,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7000602",
+							"2"
+						],
+						"stepId": 7000602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7000602"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Brutocollinus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700060201,
+					"content": "Mani mi <color=#00E1FFFF>mita movo lata</color> !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700060202
+					],
+					"speakerTitle": "Brutocollinus"
+				},
+				{
+					"id": 700060202,
+					"content": "(Est-ce que c'est ça ?)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7000603,
+			"completionStepIds": [
+				7000602,
+				7000603
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7000603",
+							"2"
+						],
+						"stepId": 7000603,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Brutocollinus",
+					"Ella Musk"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700060301,
+					"content": "Yeye tomo ! Mosi mita !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700060302
+					],
+					"speakerTitle": "Brutocollinus"
+				},
+				{
+					"id": 700060302,
+					"content": "Mosi mita !",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						700060303
+					]
+				},
+				{
+					"id": 700060303,
+					"content": "Et voilà, le tour est joué !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700060304
+					],
+					"speakerTitle": "Ella Musk"
+				},
+				{
+					"id": 700060304,
+					"content": "Du odomu tomo dala ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700060305
+					],
+					"speakerTitle": "Ella Musk"
+				},
+				{
+					"id": 700060305,
+					"content": "Mi mito nye. Ya zido mito, mi mito ! Mi zido !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700060306
+					],
+					"speakerTitle": "Brutocollinus"
+				},
+				{
+					"id": 700060306,
+					"content": "Il veut dire que... Il ne sait pas non plus, mais il pense connaître quelqu'un qui est au courant. Il nous a même indiqué où !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700060307
+					],
+					"speakerTitle": "Ella Musk"
+				},
+				{
+					"id": 700060307,
+					"content": "Bon, allons le chercher !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ella Musk"
+				}
+			]
+		},
+		{
+			"id": 7000604,
+			"completionStepIds": [
+				7000602,
+				7000604
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7000604",
+							"2"
+						],
+						"stepId": 7000604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Brutocollinus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700060401,
+					"content": "Gusha ! Mani nye !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700060402
+					],
+					"speakerTitle": "Brutocollinus"
+				},
+				{
+					"id": 700060402,
+					"content": "Hum, on dirait que ce n'est pas ça...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,176 @@
+{
+	"id": 70708,
+	"type": "WQ",
+	"name": "Buket Alfred",
+	"description": "Alfred dari Mondstadt membutuhkan tiga Cecilia.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Berikan Alfred tiga Cecilia",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Alfred",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070802,
+						0
+					],
+					"talkId": 7070802
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070801,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070801",
+							"2"
+						],
+						"stepId": 7070801,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070801"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Alfred"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707080101,
+					"content": "Tentang Cecilia...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707080102
+					]
+				},
+				{
+					"id": 707080102,
+					"content": "Anda pasti melihat komisi dariku, maaf mereepotkanmu karena harus berjalan jauh...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707080103
+					],
+					"speakerTitle": "Alfred"
+				},
+				{
+					"id": 707080103,
+					"content": "Apa Anda sudah mengumpulkan tiga Cecilia tersebut?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707080104,
+						707080105
+					],
+					"speakerTitle": "Alfred"
+				},
+				{
+					"id": 707080104,
+					"content": "Sudah dikumpulkan.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707080105,
+					"content": "Masih belum.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707080106
+					]
+				},
+				{
+					"id": 707080106,
+					"content": "Setelah kamu mengumpulkan semuanya, tolong berikan padaku secepatnya, dan jangan sampai kelopaknya terpisah ya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Alfred"
+				}
+			]
+		},
+		{
+			"id": 7070802,
+			"completionStepIds": [
+				7070802
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070802",
+							"2"
+						],
+						"stepId": 7070802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Alfred"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707080201,
+					"content": "Cecilia ini... putriku pasti akan sangat menyukainya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707080202
+					],
+					"speakerTitle": "Alfred"
+				},
+				{
+					"id": 707080202,
+					"content": "Terima kasih banyak, tolong terimalah ini sebagai tanda terima kasihku.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Alfred"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,514 @@
+{
+	"id": 76201,
+	"type": "WQ",
+	"name": "植物调查·宿影花",
+	"description": "在那夏镇以北月矩力较弱的区域也生长着宿影花…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7620101,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "（隐藏）点击手册按钮完成$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7620101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7620102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往指定地点开启调查",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7620101,
+						0
+					],
+					"talkId": 7620101
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					1825.854,
+					209.632,
+					9564.927
+				],
+				"pointId": 15872
+			}
+		},
+		{
+			"id": 7620103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "采集宿影花",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						121546,
+						0
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					1815.74,
+					214.932,
+					9584.25
+				],
+				"pointId": 15873
+			}
+		},
+		{
+			"id": 7620104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "与维萨对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7620102,
+						0
+					],
+					"talkId": 7620102
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7620101,
+			"completionStepIds": [
+				7620102
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7620102",
+							"2"
+						],
+						"stepId": 7620102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PLAYER_CURRENT_AVATAR",
+						"rawParams": [
+							"10000130",
+							"0",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 762010101,
+					"content": "快速做好了调查的准备…",
+					"roleType": "TALK_ROLE_NEED_CLICK_BLACK_SCREEN",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7620102,
+			"completionStepIds": [
+				7620104
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7620104",
+							"2"
+						],
+						"stepId": 7620104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"维萨",
+					"梅妲"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							1819.919,
+							212.139,
+							9583.548
+						],
+						"pointId": 16326
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							1821.29,
+							212.391,
+							9584.688
+						],
+						"pointId": 16327
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							1819.141,
+							212.557,
+							9587.804
+						],
+						"pointId": 16474
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							1818.338,
+							212.534,
+							9585.296
+						],
+						"pointId": 16475
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 762010201,
+					"content": "…梅妲姐姐坏心眼，我只是想让你在冒险途中玩得开心，干嘛要说这种扫兴的话，呜…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010202
+					],
+					"speakerTitle": "维萨"
+				},
+				{
+					"id": 762010202,
+					"content": "你要是不改改你那想起一出是一出的毛病，其他人也会受不了你的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010203
+					],
+					"speakerTitle": "梅妲"
+				},
+				{
+					"id": 762010203,
+					"content": "那才不是想起一出是一出，我、我也是有自己的打算的…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010204
+					],
+					"speakerTitle": "维萨"
+				},
+				{
+					"id": 762010204,
+					"content": "打算啊…嗯。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010205
+					],
+					"speakerTitle": "梅妲"
+				},
+				{
+					"id": 762010205,
+					"content": "又这么敷衍我…我再也不和你说话了，到时就算你后悔也没用！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010206
+					],
+					"speakerTitle": "维萨"
+				},
+				{
+					"id": 762010206,
+					"content": "…啊，莉奈娅姐姐！你听我说，梅妲姐姐她——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010207
+					],
+					"speakerTitle": "维萨"
+				},
+				{
+					"id": 762010207,
+					"content": "听维萨磕磕绊绊地讲述了此前发生的事，似乎只是孩子间常见的小矛盾…",
+					"roleType": "TALK_ROLE_NEED_CLICK_BLACK_SCREEN",
+					"nextDialogs": [
+						762010208
+					]
+				},
+				{
+					"id": 762010208,
+					"content": "不管怎么想错的都不是我吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010209
+					],
+					"speakerTitle": "梅妲"
+				},
+				{
+					"id": 762010209,
+					"content": "那我、我也没错啊！莉奈娅姐姐…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010210
+					],
+					"speakerTitle": "维萨"
+				},
+				{
+					"id": 762010210,
+					"content": "唔——有时候的确会发生这样的事呢，明明大家都没错，但结果却不尽如人意。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010211
+					],
+					"speakerTitle": "莉奈娅"
+				},
+				{
+					"id": 762010211,
+					"content": "对了，就像宿影花代表的霜月之子姐妹的故事。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010212
+					],
+					"speakerTitle": "莉奈娅"
+				},
+				{
+					"id": 762010212,
+					"content": "姐妹的故事？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010213
+					],
+					"speakerTitle": "维萨"
+				},
+				{
+					"id": 762010213,
+					"content": "嗯，据说曾经有一对霜月之子的姐妹，她们性格迥异，就像宿影花一红一蓝。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010214
+					],
+					"speakerTitle": "莉奈娅"
+				},
+				{
+					"id": 762010214,
+					"content": "姐妹二人都做了自己认为正确的事，但也正因为这样而分道扬镳。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010215
+					],
+					"speakerTitle": "莉奈娅"
+				},
+				{
+					"id": 762010215,
+					"content": "据说妹妹一直都没有原谅弃自己而去的姐姐，尽管姐姐在那之后拯救了许多人的生命…但最终，两人到死也未能再见上一面。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010216
+					],
+					"speakerTitle": "莉奈娅"
+				},
+				{
+					"id": 762010216,
+					"content": "霜月之子还有这样的故事…从来没听过。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010217
+					],
+					"speakerTitle": "梅妲"
+				},
+				{
+					"id": 762010217,
+					"content": "我也没有。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010218
+					],
+					"speakerTitle": "维萨"
+				},
+				{
+					"id": 762010218,
+					"content": "我也是听吟游诗人讲的，或许有演绎的成分…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010219
+					],
+					"speakerTitle": "莉奈娅"
+				},
+				{
+					"id": 762010219,
+					"content": "哦，原来是编造的故事。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010220
+					],
+					"speakerTitle": "梅妲"
+				},
+				{
+					"id": 762010220,
+					"content": "哎呀，就算故事可能是假的，但道理总归是没错的吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010221
+					],
+					"speakerTitle": "莉奈娅"
+				},
+				{
+					"id": 762010221,
+					"content": "她们谁也不认为自己有错，都坚信自己的选择才是正确的，但她们的选择也让她们永远失去了彼此。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010222
+					],
+					"speakerTitle": "莉奈娅"
+				},
+				{
+					"id": 762010222,
+					"content": "如果为了证明自己是对的，必须以失去朋友为代价…你们会怎么选呢？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010223
+					],
+					"speakerTitle": "莉奈娅"
+				},
+				{
+					"id": 762010223,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010224
+					],
+					"speakerTitle": "维萨"
+				},
+				{
+					"id": 762010224,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010225
+					],
+					"speakerTitle": "梅妲"
+				},
+				{
+					"id": 762010225,
+					"content": "唉，其实冒险途中偶尔有些临时起意的小插曲也不赖。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010226
+					],
+					"speakerTitle": "梅妲"
+				},
+				{
+					"id": 762010226,
+					"content": "…嗯！仔细想想，梅妲姐姐能陪我冒险的时间也很宝贵，要是想法变来变去，可能最后什么都没玩到…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010227
+					],
+					"speakerTitle": "维萨"
+				},
+				{
+					"id": 762010227,
+					"content": "下次…下次我会计划得更好的！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010228
+					],
+					"speakerTitle": "维萨"
+				},
+				{
+					"id": 762010228,
+					"content": "嘿嘿，你们能和好就最好不过了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010229
+					],
+					"speakerTitle": "莉奈娅"
+				},
+				{
+					"id": 762010229,
+					"content": "之后和维萨去冒险的时候如果捡到什么不常见的石头，我们会送去「斯佩兰扎」的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010230
+					],
+					"speakerTitle": "梅妲"
+				},
+				{
+					"id": 762010230,
+					"content": "好呀！那就先谢谢你们啦。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "莉奈娅"
+				}
+			]
+		},
+		{
+			"id": 7620103,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7620102",
+							"2"
+						],
+						"stepId": 7620102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PLAYER_CURRENT_NOT_AVATAR",
+						"rawParams": [
+							"10000130",
+							"0",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 762010301,
+					"content": "（附近似乎有些值得调查的，如果是对本地生态十分了解的<color=#FFCC33FF>莉奈娅</color>，或许会有所收获…）",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

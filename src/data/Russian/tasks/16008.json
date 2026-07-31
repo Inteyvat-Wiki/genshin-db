@@ -1,0 +1,117 @@
+{
+	"id": 16008,
+	"type": "LQ",
+	"name": "Интерлюдия: Перерыв",
+	"description": "Вы находите важную информацию, но пока Альбедо не вернётся, правда остаётся недосягаемой...",
+	"unlockDescription": "",
+	"chapter": "Магия повествования",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1600801,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1600801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1600802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Дождитесь новостей от Альбедо",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TIME_VAR_PASS_DAY",
+					"rawParams": [
+						16008,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1600320,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1600802",
+							"2"
+						],
+						"stepId": 1600802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"#{REALNAME[ID(1)|HOSTONLY(true)]}"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 160032001,
+					"content": "Я останусь здесь на несколько дней. Дайте знать, когда надо отправиться в путь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "#{REALNAME[ID(1)|HOSTONLY(true)]}"
+				}
+			]
+		},
+		{
+			"id": 1600327,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1600802",
+							"2"
+						],
+						"stepId": 1600802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Дурин"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 160032701,
+					"content": "Если захочешь вернуться в историю, приходи ко мне.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Дурин"
+				}
+			]
+		}
+	]
+}

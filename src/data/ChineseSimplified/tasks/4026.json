@@ -1,0 +1,116 @@
+{
+	"id": 4026,
+	"type": "AQ",
+	"name": "(test)隐藏任务，衔接跳转用$HIDDEN",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		4010
+	],
+	"steps": [
+		{
+			"id": 402601,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						401008,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 402602,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						402601,
+						0
+					],
+					"talkId": 402601
+				}
+			]
+		},
+		{
+			"id": 402603,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						402603,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 402604,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						402604,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 402601,
+			"completionStepIds": [
+				402602
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"402602",
+							"2"
+						],
+						"stepId": 402602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"调查"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 40260101,
+					"content": "（现在不是做这些事的时候，我必须尽快前往歌剧院保护芙宁娜。）",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

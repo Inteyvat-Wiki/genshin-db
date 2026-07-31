@@ -1,0 +1,185 @@
+{
+	"id": 70714,
+	"type": "WQ",
+	"name": "육식 애호가 브룩",
+	"description": "샘물 마을의 브룩은 새고기가 6개 필요하다",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7071401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "브룩에게 새고기 6인분 건네기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7071401,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7071402,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "브룩과 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7071402,
+						0
+					],
+					"talkId": 7071402
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7071401,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071401",
+							"2"
+						],
+						"stepId": 7071401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7071401"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"브룩"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707140101,
+					"content": "새고기에 대해…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707140102
+					]
+				},
+				{
+					"id": 707140102,
+					"content": "내 의뢰를 봤구나? 다행이야, 마침 잘 왔어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707140103
+					],
+					"speakerTitle": "브룩"
+				},
+				{
+					"id": 707140103,
+					"content": "새고기 6인분은 다 모았니?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707140104,
+						707140105
+					],
+					"speakerTitle": "브룩"
+				},
+				{
+					"id": 707140104,
+					"content": "모아왔어요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707140105,
+					"content": "아직…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707140106
+					]
+				},
+				{
+					"id": 707140106,
+					"content": "그럼 모으는 대로 빨리 좀 갖다줘. 요리에 넣으려고 기다리고 있거든",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "브룩"
+				}
+			]
+		},
+		{
+			"id": 7071402,
+			"completionStepIds": [
+				7071402
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071402",
+							"2"
+						],
+						"stepId": 7071402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"브룩"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707140201,
+					"content": "이 새고기 정말 싱싱하네…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707140202
+					],
+					"speakerTitle": "브룩"
+				},
+				{
+					"id": 707140202,
+					"content": "고마워, 이건 네게 주는 거니까 받아줘",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707140203
+					],
+					"speakerTitle": "브룩"
+				},
+				{
+					"id": 707140203,
+					"content": "새 메뉴를 연구하면 너한테 제일 먼저 맛보여줄게",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "브룩"
+				}
+			]
+		}
+	]
+}

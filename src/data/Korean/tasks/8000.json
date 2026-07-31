@@ -1,0 +1,977 @@
+{
+	"id": 8000,
+	"type": "AQ",
+	"name": "본의 아닌 제헌",
+	"description": "여행자는 감우와 란 누님으로부터 최근 몬드와 리월 일대의 보물 사냥단이 손을 잡고 「심연 교단」과 관련된 유적을 넘보고 있다는 소식을 접한다. 보물 사냥단이 혼란을 일으킬 것을 걱정해 여행자는 이 조사 의뢰를 받아들인다…",
+	"unlockDescription": "",
+	"chapter": "다시 만날 거야",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		8001
+	],
+	"prevMainQuestList": [
+		454,
+		18000,
+		485,
+		1025
+	],
+	"steps": [
+		{
+			"id": 800001,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "길드 게시판 가까이에 가기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						800001,
+						0
+					],
+					"talkId": 800001
+				}
+			]
+		},
+		{
+			"id": 800002,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "유적으로 가기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_DUNGEON",
+					"rawParams": [
+						1114,
+						233
+					]
+				}
+			]
+		},
+		{
+			"id": 800003,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "보물 사냥단 추적하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 800004,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "유적 깊은 곳의 상황 살피기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						800002,
+						0
+					],
+					"talkId": 800002
+				}
+			]
+		},
+		{
+			"id": 800005,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "유적 탈출하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 800006,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "심연 사도 처치하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 800007,
+			"order": 10,
+			"listShowType": "QUEST_SHOW",
+			"description": "유적 떠나기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_MY_WORLD",
+					"rawParams": [
+						3,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 800008,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "심연 사도와 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						800003,
+						0
+					],
+					"talkId": 800003
+				}
+			]
+		},
+		{
+			"id": 800009,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "심연 사도와 협상하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						800004,
+						0
+					],
+					"talkId": 800004
+				}
+			]
+		},
+		{
+			"id": 800010,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						1800027,
+						3
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						45406,
+						3
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						48508,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 800001,
+			"completionStepIds": [
+				800001
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"800001",
+							"2"
+						],
+						"stepId": 800001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"감우"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 80000101,
+					"content": "맞아, 맞아. 놈들은 겁도 없이 뭐든 다 건든다니까",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000102
+					],
+					"speakerTitle": "란 누님"
+				},
+				{
+					"id": 80000102,
+					"content": "일곱 신에 마신, 악룡… 이런 배경이 있는 유물들까지 손을 대잖아",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000103
+					],
+					"speakerTitle": "란 누님"
+				},
+				{
+					"id": 80000103,
+					"content": "근데 이번엔 심연 교단 걸 넘보다니, 간이 정말 배 밖으로 나왔어…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000104
+					],
+					"speakerTitle": "란 누님"
+				},
+				{
+					"id": 80000104,
+					"content": "아, 여행자! 너희구나",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000105
+					],
+					"speakerTitle": "란 누님"
+				},
+				{
+					"id": 80000105,
+					"content": "엥? 감우 씨가 왜 란 언니랑 같이 있는 거야? 의뢰 공지하려고?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000106
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000106,
+					"content": "#안녕하세요, {NICKNAME}",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000107
+					],
+					"speakerTitle": "감우"
+				},
+				{
+					"id": 80000107,
+					"content": "보물 사냥단에 대해 이야기하고 있었어요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000108
+					],
+					"speakerTitle": "감우"
+				},
+				{
+					"id": 80000108,
+					"content": "응, 겁 없이 뭐든 노리는 보물 사냥단이란 건 알지만 「심연」만큼은 건드리지 말아야 한다는 이야기 중이었어. 심연은 정말 사악하거든",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000109
+					],
+					"speakerTitle": "란 누님"
+				},
+				{
+					"id": 80000109,
+					"content": "최근 총무부에서 몬드와 리월의 보물 사냥단인 남쪽과 북쪽 거물이 손을 잡고 큰 건을 노리고 있다는 정보를 입수했어요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000110
+					],
+					"speakerTitle": "감우"
+				},
+				{
+					"id": 80000110,
+					"content": "보물 사냥단… 남쪽과 북쪽의 거물?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000111
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000111,
+					"content": "응, 세간에선 「남쪽의 왕누님」, 「북쪽의 괴조」라고 불려",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000112
+					],
+					"speakerTitle": "란 누님"
+				},
+				{
+					"id": 80000112,
+					"content": "아, 「괴조」는 알아! 몬드에서 엠버와 겨룬 적이 있거든…. 근데 「왕누님」은 누구지?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000113,
+						80000114
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000113,
+					"content": "왕누님이라면, 서열이 제일 높은 누님인가요?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000116
+					]
+				},
+				{
+					"id": 80000116,
+					"content": "맞아, 리월 일대의 보물 사냥단 우두머리를 그들은 「누님」이라고 불러",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000117
+					],
+					"speakerTitle": "란 누님"
+				},
+				{
+					"id": 80000117,
+					"content": "손재주가 신이 내린 것처럼 대단하다고 해서 「신이 내린 왕누님」이긴 하지만… 이건 그냥 소문일 뿐이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000118
+					],
+					"speakerTitle": "란 누님"
+				},
+				{
+					"id": 80000118,
+					"content": "어쨌든 보물 사냥단이 아무도 발굴한 적 없는 유적을 찾은 모양인데, 그 유적이 심연 교단에서 은밀히 지키고 있던 건가봐요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000119
+					],
+					"speakerTitle": "감우"
+				},
+				{
+					"id": 80000119,
+					"content": "아주 위험한 징조이거늘 보물 사냥단은 보물이 있는 곳이면 눈이 돌아가니…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000120
+					],
+					"speakerTitle": "감우"
+				},
+				{
+					"id": 80000120,
+					"content": "총알받이로 심연 교단의 병력을 유인한 후, 가장 뛰어난 전문가가 유적에 진입해 보물을 훔치기로 한 것 같아요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000121
+					],
+					"speakerTitle": "감우"
+				},
+				{
+					"id": 80000121,
+					"content": "그리고 이를 위해 「누님」과 「괴조」가 폰타인에서 「대보물사냥가」를 섭외했대…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000122
+					],
+					"speakerTitle": "란 누님"
+				},
+				{
+					"id": 80000122,
+					"content": "「대보물사냥가」? 듣기만 해도 포스 넘치는 호칭이네",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000123
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000123,
+					"content": "응, 전설적인 인물이지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000124
+					],
+					"speakerTitle": "란 누님"
+				},
+				{
+					"id": 80000124,
+					"content": "보물 사냥단에서 「대보물사냥가」는 우리 모험가들 마음속의 「대모험가」와 맞먹는 인물이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000125,
+						80000127
+					],
+					"speakerTitle": "란 누님"
+				},
+				{
+					"id": 80000125,
+					"content": "대모험가 앨리스 씨 정도인가요?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000126
+					]
+				},
+				{
+					"id": 80000126,
+					"content": "너희도 《티바트 유람 가이드》의 저자를 아니? 맞아, 「대보물사냥가」도 그 정도로 추앙받고 있어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000129
+					],
+					"speakerTitle": "란 누님"
+				},
+				{
+					"id": 80000129,
+					"content": "그래서 이 일대 보물 사냥단의 남북쪽 거물들도 어떻게든 그를 초빙해 이 계획을 성사시키려는 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000130
+					],
+					"speakerTitle": "란 누님"
+				},
+				{
+					"id": 80000130,
+					"content": "요새 리월에 엄청난 변화가 생기는 바람에 총무부와 천암군은 소문만 무성한 보물 사냥의 작전까지 신경 쓸 정신이 없었죠",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000131
+					],
+					"speakerTitle": "감우"
+				},
+				{
+					"id": 80000131,
+					"content": "하지만 직감적으로 「심연」과 관련 있는 무언가가 위험하다고 느껴져서…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000132
+					],
+					"speakerTitle": "감우"
+				},
+				{
+					"id": 80000132,
+					"content": "모험가 길드에 의뢰 드리러 온 거랍니다",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000133,
+						80000134
+					],
+					"speakerTitle": "감우"
+				},
+				{
+					"id": 80000133,
+					"content": "지나던 김에 제가…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000135
+					]
+				},
+				{
+					"id": 80000135,
+					"content": "응, 우리가 이 의뢰를 맡을게!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000136
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000136,
+					"content": "아, 정말 고마워요…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000137
+					],
+					"speakerTitle": "감우"
+				},
+				{
+					"id": 80000137,
+					"content": "잘됐네, 넌 믿음직한 길드 회원이잖아. 그럼, 조심히 다녀와. 세부적인 건 길드에서 처리할게",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "란 누님"
+				},
+				{
+					"id": 80000134,
+					"content": "저도 「심연」이 위험하다고 생각해요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000135
+					]
+				},
+				{
+					"id": 80000127,
+					"content": "대모험가 스탠리 씨 정도인가요?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000128
+					]
+				},
+				{
+					"id": 80000128,
+					"content": "엇? 설마 몬드에서 그 전설의 선배님을 만난 거야? 맞아, 「대보물사냥가」도 그 정도로 추앙받고 있어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000129
+					],
+					"speakerTitle": "란 누님"
+				},
+				{
+					"id": 80000114,
+					"content": "보물 사냥단이 말하는 「누님」인가요?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000115
+					]
+				},
+				{
+					"id": 80000115,
+					"content": "아는 게 꽤 많네. 보물 사냥단과 많이 싸워봤나봐",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000116
+					],
+					"speakerTitle": "란 누님"
+				}
+			]
+		},
+		{
+			"id": 800002,
+			"completionStepIds": [
+				800004
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"800004",
+							"2"
+						],
+						"stepId": 800004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 80000201,
+					"content": "저기… 사람 같은데?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000202
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000202,
+					"content": "설마… 「대보물사냥가」?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000203
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000203,
+					"content": "저 자세… 뭔가에 「기도」하고 있는 건가?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000204
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000204,
+					"content": "?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000205
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000205,
+					"content": "저… 저건…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000206,
+						80000207
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000206,
+					"content": "…일곱신상?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000208
+					]
+				},
+				{
+					"id": 80000208,
+					"content": "어, 어째서 일곱신상이… 거꾸로 달려있는 거지…?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000209
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000209,
+					"content": "그리고 신상은… 원래 손에… 보주를 받치고 있지 않았나?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000210
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000210,
+					"content": "근데… 저 신상은 손에 뭘 들고 있는 거야…?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000211
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000211,
+					"content": "윽… 갑갑해… 느낌이 아주 안 좋아…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000212
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000212,
+					"content": "저 「대보물사냥가」도 꼼짝 않고 있잖아. 서, 설마 이미…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000213
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000213,
+					"content": "이봐, 괜찮아?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000214
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000214,
+					"content": "(아무 반응도 없고 숨소리도 들리지 않는다)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000215
+					]
+				},
+				{
+					"id": 80000215,
+					"content": "…주, 죽었어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000216
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000216,
+					"content": "#{NICKNAME}, 느낌이 안 좋아",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000217,
+						80000218
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000217,
+					"content": "이 험악한 상황…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000219
+					]
+				},
+				{
+					"id": 80000219,
+					"content": "빨리 여길 나가서 상황을 감우 씨와 란 언니한테 알리자…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000220
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000220,
+					"content": "으앗——또 무슨 일이야?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000218,
+					"content": "이 미지의 사인…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000219
+					]
+				},
+				{
+					"id": 80000207,
+					"content": "이런 기이한 장면은 처음이야…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000208
+					]
+				}
+			]
+		},
+		{
+			"id": 800003,
+			"completionStepIds": [
+				800008
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"800008",
+							"2"
+						],
+						"stepId": 800008,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"심연 사도"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 80000301,
+					"content": "이 힘… 전에 겪어본 적이 있어…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000302
+					],
+					"speakerTitle": "심연 사도"
+				},
+				{
+					"id": 80000302,
+					"content": "음…!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000303
+					],
+					"speakerTitle": "심연 사도"
+				},
+				{
+					"id": 80000303,
+					"content": "그렇군. 당신이 바로… 그분!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000304
+					],
+					"speakerTitle": "심연 사도"
+				},
+				{
+					"id": 80000304,
+					"content": "그렇다면 여기 계속 있을 순 없지…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000305
+					],
+					"speakerTitle": "심연 사도"
+				},
+				{
+					"id": 80000305,
+					"content": "#휴… 힘겨운 전투였어. 넌 괜찮아, {NICKNAME}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000306
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000306,
+					"content": "진짜 강하다. 심연 교단에 저렇게 엄청난 마물이 있을 줄이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000307
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000307,
+					"content": "(저놈… 날 알고 있는 것 같아)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000308
+					]
+				},
+				{
+					"id": 80000308,
+					"content": "응, 왜 그래? 무슨 생각 해?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000309
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000309,
+					"content": "아무것도 아니야. 어서 여기서 나가자",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000310
+					]
+				},
+				{
+					"id": 80000310,
+					"content": "아, 맞다. 여기 유적 출구 근처야. 어서 나가자. 이렇게 무서운 곳에서 계속 있다간 위험한 일이 또 생길 거야!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "페이몬"
+				}
+			]
+		},
+		{
+			"id": 800004,
+			"completionStepIds": [
+				800009
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"800009",
+							"2"
+						],
+						"stepId": 800009,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"심연 사도"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 80000401,
+					"content": "「심연」의 비밀은 엿볼 수 없다",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000402
+					],
+					"speakerTitle": "심연 사도"
+				},
+				{
+					"id": 80000402,
+					"content": "이곳에 왔으니 보았을 것. 그럼 그에 상응하는 대가를 치러야 하지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000403
+					],
+					"speakerTitle": "심연 사도"
+				},
+				{
+					"id": 80000403,
+					"content": "——처벌은, 「사도」가 내리겠다",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000404
+					],
+					"speakerTitle": "심연 사도"
+				},
+				{
+					"id": 80000404,
+					"content": "「심연」…「사도」?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000405,
+						80000406
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 80000405,
+					"content": "데인이 말했던…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000407
+					]
+				},
+				{
+					"id": 80000407,
+					"content": "데인…? 데인슬레이프? 그랬군. 그냥 잘못 침입한 쥐새낀 줄 알았는데 그 찰거머리와 관련이 있었다니…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000408
+					],
+					"speakerTitle": "심연 사도"
+				},
+				{
+					"id": 80000408,
+					"content": "그놈이 보내서 목숨 걸고 온 것이냐? 그가 「심연」에 맞서는 건 아무런 의미가 없어. 하찮은 소동에 새로운 변수가 생기게 둘 순 없지…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000409
+					],
+					"speakerTitle": "심연 사도"
+				},
+				{
+					"id": 80000409,
+					"content": "「심연」은… 막을 수 없다!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "심연 사도"
+				},
+				{
+					"id": 80000406,
+					"content": "데인과 조사했던 사악한 존재…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000407
+					]
+				}
+			]
+		}
+	]
+}

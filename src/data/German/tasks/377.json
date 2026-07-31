@@ -1,0 +1,682 @@
+{
+	"id": 377,
+	"type": "AQ",
+	"name": "Hinter dem Vorhang",
+	"description": "Nach eurer Flucht aus der Kathedrale fandet ihr euch in Dilucs Taverne wieder, wo euch Diluc zu eurem Erstaunen versteckt hielt und half. Als auch die Taverne zur Nachtruhe ihre Türen schloss, führte euch Diluc zu einigen unerwarteten Gestalten.",
+	"unlockDescription": "",
+	"chapter": "Für ein Morgen ohne Tränen",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		20101
+	],
+	"prevMainQuestList": [
+		376
+	],
+	"steps": [
+		{
+			"id": 37701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Verlasse die Taverne.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_MY_WORLD",
+					"rawParams": [
+						3,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37702,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Geh in der Nacht des nächsten Tages zur Taverne.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37703,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Warte, bis die Taverne geschlossen hat (zwischen 0 und 6 Uhr nachts)",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37704,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Kehre zur Taverne zurück.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						37704,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37705,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Diluc.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37702,
+						0
+					],
+					"talkId": 37702
+				}
+			]
+		},
+		{
+			"id": 37706,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Diluc.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37712,
+						0
+					],
+					"talkId": 37712
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 37702,
+			"completionStepIds": [
+				37705
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37704",
+							"3"
+						],
+						"stepId": 37704,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37705",
+							"2"
+						],
+						"stepId": 37705,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Diluc"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3770201,
+					"content": "Ihr seid hier.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770202
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3770202,
+					"content": "#Wartet, ist das nicht ... {NICKNAME}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770203,
+						3770204
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 3770203,
+					"content": "Jean? Ihr seid hier?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3770205
+					]
+				},
+				{
+					"id": 3770205,
+					"content": "Erstens habe ich mehr als nur eine Person verständigt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770206
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3770206,
+					"content": "Zweitens ist sie privat hier, nicht als stellvertretender Großmeister.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770207
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3770207,
+					"content": "Auch als Ehrenritter würdest du sie so nicht zu Gesicht bekommen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770208
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3770208,
+					"content": "Welch Überraschung.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770209
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 3770209,
+					"content": "Ich habe zwar von der heiligen Leier gehört, aber nicht gedacht, dass du es warst ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770210
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 3770210,
+					"content": "Also, der Klang der Leier soll dazu in der Lage sein, Sturmschrecken wieder zu beruhigen ... Ist das wahr?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770211
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 3770211,
+					"content": "#Das ist es! {NICKNAME} hat sich an die vorderste Front gestürzt, um Sturmschrecken und damit die Stadt zu retten.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770212
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3770212,
+					"content": "Das ist der neue Stern am Himmel über dem Ritterorden!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770213
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3770213,
+					"content": "Ich hab trotzdem das Gefühl, dass wir etwas Verbotenes tun ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770214
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3770214,
+					"content": "Das ist schwer zu glauben mit deinen Göttergeschichten.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770215
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3770215,
+					"content": "Vielleicht solltest du noch einmal das Lied singen. Das war überzeugender ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770216
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3770216,
+					"content": "Ich glaube euch.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770217
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 3770217,
+					"content": "Dann wird es auch unser starrsinniger ... Wie bitte?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770218
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3770218,
+					"content": "Mir fällt kein einziger Grund ein, weshalb Dvalin, der Drache des Ostens unter den Vier Winden, uns so in den Rücken fallen sollte.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770219
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 3770219,
+					"content": "Wenn er aber bei der Verteidigung Mondstadts vor vielen Jahren vergiftet worden war ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770220
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 3770220,
+					"content": "und dann auch noch von einem Abgrundmagier verzaubert wurde, nachdem er aufgewacht war, kann ich es ihm nicht verdenken ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770221
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 3770221,
+					"content": "Als stellvertretender Großmeister würde ich solche Worte niemals äußern.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770222
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 3770222,
+					"content": "Aufgrund des diplomatischen Drucks der Fatui können wir nicht einfach öffentlich bekanntgeben, dass wir eine friedliche Lösung für Sturmschrecken bevorzugen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770223
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 3770223,
+					"content": "Das sähe dann so aus, als wollten wir über die Lage hinwegsehen. Deshalb bin ich privat hier.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770224
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 3770224,
+					"content": "Hmpf.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770225
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3770225,
+					"content": "Das ist ein Grund, weshalb ich den Ritterorden nicht mag.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770226
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3770226,
+					"content": "#Was mich aber wirklich verwundert ist, dass Ihr eine{F#r}{M#m} Fremden vertraut, {F#die}{M#den} Ihr gerade erst kennengelernt habt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770227
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3770227,
+					"content": "#Ihr seid dem Ritterorden <color=#00E1FFFF>eher als ich</color> beigetreten und vertraut {F#ihr}{M#ihm} doch auch, oder?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770228
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 3770228,
+					"content": "Ihr sollt nicht davon sprechen, ich bin doch schon längst ausgetreten!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770229,
+						3770230
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3770229,
+					"content": "Eher als Diluc?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3770231
+					]
+				},
+				{
+					"id": 3770231,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770232
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 3770232,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770233
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3770233,
+					"content": "Da sollten wir besser nicht nachbohren ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770234
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3770234,
+					"content": "Ich habe schon eine Vorstellung, wo sich die heilige Leier wirklich befindet.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770235
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 3770235,
+					"content": "(Perfekt! Genau zur richtigen Zeit ein Themenwechsel ...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770236
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3770236,
+					"content": "Der Konflikt zwischen Mondstadt und Snezhnaya ist auf den zwischen den sieben Städten und den sieben Archonten zurückzuführen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770237
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 3770237,
+					"content": "Die Fatui, die vom Archon des Eises angeführt werden, haben es auf die Macht des Anemo-Archons abgesehen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770238
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 3770238,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770239,
+						3770240
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3770239,
+					"content": "Deswegen haben sie vorgeschlagen, die Verteidigung der Stadt zu übernehmen?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3770241
+					]
+				},
+				{
+					"id": 3770241,
+					"content": "So ist es.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770242
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 3770242,
+					"content": "Sollte der Ritterorden einen Angriff auf Dvalin in aller Öffentlichkeit verhindern ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770243
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 3770243,
+					"content": "bleibt ihnen nur, die heilige Leier Der Himmel zu stehlen, um an die Macht des Anemo-Archons zu kommen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770244
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 3770244,
+					"content": "Die Mitglieder der Fatui in Mondstadt sind zahlenmäßig begrenzt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770245
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3770245,
+					"content": "Ich habe schon ein paar wichtige Informationen aus ihnen herausgequetscht ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770246
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3770246,
+					"content": "Diluc hat herausgefunden, dass die Fatui die Leier nicht im Grand Hotel Goth aufbewahren.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770247
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 3770247,
+					"content": "Sie werden sicher nicht so überheblich sein, ein gestohlenes Heiligtum an einem öffentlich zugänglichen Ort aufzubewahren.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770248
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 3770248,
+					"content": "Ah, ich verstehe. Die Lage darf nicht eskalieren, damit keine ernsthafte diplomatische Krise ausbricht.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770249
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3770249,
+					"content": "Tja, so stehen die sieben Städte zueinander.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3770250
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3770250,
+					"content": "Fremder, bist du bereit aufzubrechen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3770240,
+					"content": "Deswegen haben sie vor, Dvalin zu töten?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3770241
+					]
+				},
+				{
+					"id": 3770230,
+					"content": "#*tut so, als hätte {F#sie}{M#er} nichts gehört*",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3770231
+					]
+				},
+				{
+					"id": 3770204,
+					"content": "Was macht der stellvertretende Großmeister hier?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3770205
+					]
+				}
+			]
+		},
+		{
+			"id": 37711,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37706",
+							"2"
+						],
+						"stepId": 37706,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Diluc"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3770250,
+					"content": "Fremder, bist du bereit aufzubrechen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Diluc"
+				}
+			]
+		},
+		{
+			"id": 37712,
+			"completionStepIds": [
+				37706
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Diluc"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3770251,
+					"content": "Gehen wir!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 37713,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Diluc"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3770252,
+					"content": "Warte bitte einen Augenblick.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

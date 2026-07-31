@@ -1,0 +1,927 @@
+{
+	"id": 20069,
+	"type": "IQ",
+	"name": "Цветочная свежесть",
+	"description": "Все цветы со временем вянут. Хозяйка «Шёпота цветов» Флора ищет способ сохранить их свежесть...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2006901,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Флорой",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2006901,
+						0
+					],
+					"talkId": 2006901
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2006903,
+						0
+					],
+					"talkId": 2006903
+				}
+			]
+		},
+		{
+			"id": 2006902,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Закопайте коробку у статуи семи Архонтов",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_INTERACT_GADGET",
+					"rawParams": [
+						70710239,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2006903,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Победите всех врагов",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2006904,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Закопайте коробку у входа в пещеру",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_INTERACT_GADGET",
+					"rawParams": [
+						70710232,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2006905,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Вернитесь к Флоре",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2006902,
+						0
+					],
+					"talkId": 2006902
+				}
+			]
+		},
+		{
+			"id": 2006906,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2006907,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Закопайте коробку у горного водоёма",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_INTERACT_GADGET",
+					"rawParams": [
+						70710240,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2006908,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Закопайте коробку у входа в пещеру",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2006909,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Принесите Флоре свои извинения",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2006904,
+						0
+					],
+					"talkId": 2006904
+				}
+			]
+		},
+		{
+			"id": 2006912,
+			"order": 12,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2006901,
+			"completionStepIds": [
+				2006901
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006901",
+							"2"
+						],
+						"stepId": 2006901,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"40002",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Флора"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200690101,
+					"content": "Цветы увяли. Какая досада...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690102
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690102,
+					"content": "В чём дело?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690103
+					]
+				},
+				{
+					"id": 200690103,
+					"content": "Обычно для подарков люди покупают по одному цветку, поэтому каждое утро я наперёд срезаю отдельные цветки.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690104
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690104,
+					"content": "Но срезанные цветы долго храниться не могут. Если их не продать в тот же день, они вянут...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690105
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690105,
+					"content": "Что бы я ни пробовала, к концу дня они все вянут.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690106
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690106,
+					"content": "Должен же быть какой-нибудь способ хранить цветы свежими подольше...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690107,
+						200690111
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690107,
+					"content": "Может, хранить их как еду?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690108
+					]
+				},
+				{
+					"id": 200690108,
+					"content": "Сара из «Хорошего охотника» как-то говорила, что они хранят оставшиеся продукты в прохладном месте или обкладывают льдом...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690109
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690109,
+					"content": "Я попробовала такой метод, но если цветы просто положить на лёд, они меняют форму и цвет.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690110
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690110,
+					"content": "Они не вянут, но становятся абсолютно непохожими на свежие. Такие цветы никто не покупает...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690114
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690114,
+					"content": "Я уже у многих спросила совета, и Саид... Знаешь его? Он учёный.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690115
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690115,
+					"content": "Так вот, как-то раз Саид пришёл купить цветы и поделился, что в одной из книг прочитал про хранение цветов в холоде.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690116
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690116,
+					"content": "А именно... Нужно поместить цветы в подходящий контейнер, а уже потом класть на лёд.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690117
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690117,
+					"content": "Он сказал, что для проверки этого способа ввиду своей низкой температуры подошёл бы Драконий хребет.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690118
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690118,
+					"content": "Но я слышала, что в горах очень опасно. Никто из искателей приключений не спешит мне помочь...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690119
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690119,
+					"content": "#{NICKNAME}, поможешь мне закопать эти коробки с цветами в снегах Драконьего хребта?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690120,
+						200690121
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690120,
+					"content": "Помогу.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690122
+					]
+				},
+				{
+					"id": 200690122,
+					"content": "#Спасибо, что согласил{F#ась}{M#ся} помочь. Дай подумать... Я слышала, что эта гора просто огромна, и эффект от хранения в разных местах может отличаться...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690123
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690123,
+					"content": "Может быть, стоит попробовать разные места и сравнить...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690124
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690124,
+					"content": "Пожалуйста, закопай по коробке у <color=#00E1FFFF>статуи семи Архонтов</color>, у <color=#00E1FFFF>водоёма в горах</color> и, пожалуй, у <color=#00E1FFFF>входа в пещеру</color>.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690121,
+					"content": "Где именно их закопать?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690122
+					]
+				},
+				{
+					"id": 200690111,
+					"content": "Поэтому остаётся только продавать их в тот же день.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690112
+					]
+				},
+				{
+					"id": 200690112,
+					"content": "Так оно, конечно, лучше, но под вечер всегда остаётся несколько непроданных цветов.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690113
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690113,
+					"content": "Это немного, но мне так жалко смотреть, как они вянут.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690114
+					],
+					"speakerTitle": "Флора"
+				}
+			]
+		},
+		{
+			"id": 2006902,
+			"completionStepIds": [
+				2006905
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006905",
+							"2"
+						],
+						"stepId": 2006905,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"40002",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Флора"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200690201,
+					"content": "Ну, как цветы?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690202
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690202,
+					"content": "Все закопаны в снег.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690203
+					]
+				},
+				{
+					"id": 200690203,
+					"content": "Спасибо. Пусть они некоторое время там побудут.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690204
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690204,
+					"content": "Хе-хе, большое спасибо тебе за твою помощь. Вот, это тебе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690205
+					],
+					"speakerTitle": "Флора"
+				}
+			]
+		},
+		{
+			"id": 2006903,
+			"completionStepIds": [
+				2006901
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006901",
+							"2"
+						],
+						"stepId": 2006901,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"40002",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Флора"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200690301,
+					"content": "Цветы увяли. Какая досада...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690302
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690302,
+					"content": "В чём дело?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690303
+					]
+				},
+				{
+					"id": 200690303,
+					"content": "Обычно для подарков люди покупают по одному цветку, поэтому каждое утро я наперёд срезаю отдельные цветки.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690304
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690304,
+					"content": "Но срезанные цветы долго храниться не могут. Если их не продать в тот же день, они вянут...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690305
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690305,
+					"content": "Что бы я ни пробовала, к концу дня они все вянут.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690306
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690306,
+					"content": "Должен же быть какой-нибудь способ хранить цветы свежими подольше...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690307,
+						200690311
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690307,
+					"content": "Может, хранить их как еду?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690308
+					]
+				},
+				{
+					"id": 200690308,
+					"content": "Сара из «Хорошего охотника» как-то говорила, что они хранят оставшиеся продукты в прохладном месте или обкладывают льдом...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690309
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690309,
+					"content": "Я попробовала такой метод, но если цветы просто положить на лёд, они меняют форму и цвет.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690310
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690310,
+					"content": "Они не вянут, но становятся абсолютно непохожими на свежие. Такие цветы никто не покупает...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690314
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690314,
+					"content": "Я уже у многих спросила совета, и Саид... Знаешь его? Он учёный.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690315
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690315,
+					"content": "Так вот, как-то раз Саид пришёл купить цветы и поделился, что в одной из книг прочитал про хранение цветов в холоде.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690316
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690316,
+					"content": "А именно... Нужно поместить цветы в подходящий контейнер, а уже потом класть на лёд.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690317
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690317,
+					"content": "Он сказал, что для проверки этого способа ввиду своей низкой температуры подошёл бы Драконий хребет.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690318
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690318,
+					"content": "Но я слышала, что в горах очень опасно. Никто из искателей приключений не спешит мне помочь...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690319
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690319,
+					"content": "#{NICKNAME}, поможешь мне закопать эти коробки с цветами в снегах Драконьего хребта?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690320,
+						200690321
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690320,
+					"content": "Помогу.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690322
+					]
+				},
+				{
+					"id": 200690322,
+					"content": "#Спасибо, что согласил{F#ась}{M#ся} помочь. Дай подумать... Я слышала, что эта гора просто огромна, и эффект от хранения в разных местах может отличаться...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690323
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690323,
+					"content": "Может быть, стоит попробовать разные места и сравнить...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690324
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690324,
+					"content": "Пожалуйста, закопай по коробке у <color=#00E1FFFF>статуи семи Архонтов</color> и у <color=#00E1FFFF>входа в пещеру</color>.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690325
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690325,
+					"content": "Потом найди <color=#00E1FFFF>водоём в горах</color>. Озеро или пруд - неважно, и закопай одну коробку на берегу.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690326
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690326,
+					"content": "#Прошу, будь осторож{F#на}{M#ен} и ничего не повреди.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690321,
+					"content": "Где именно их закопать?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690322
+					]
+				},
+				{
+					"id": 200690311,
+					"content": "Поэтому остаётся только продавать их в тот же день.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690312
+					]
+				},
+				{
+					"id": 200690312,
+					"content": "Так оно, конечно, лучше, но под вечер всегда остаётся несколько непроданных цветов.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690313
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690313,
+					"content": "Это немного, но мне так жалко смотреть, как они вянут.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690314
+					],
+					"speakerTitle": "Флора"
+				}
+			]
+		},
+		{
+			"id": 2006904,
+			"completionStepIds": [
+				2006909
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006909",
+							"2"
+						],
+						"stepId": 2006909,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"40002",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Флора"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200690401,
+					"content": "Ну, как цветы?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690402
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690402,
+					"content": "Мне очень жаль...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690403
+					]
+				},
+				{
+					"id": 200690403,
+					"content": "А? Что случилось?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690404
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690404,
+					"content": "Произошёл несчастный случай и твоих цветов не стало...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690405
+					]
+				},
+				{
+					"id": 200690405,
+					"content": "Как не стало?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690406
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690406,
+					"content": "У-у-у... Я их специально отбирала. Эти цветы такие хорошие, такие редкие...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690407
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690407,
+					"content": "Неужели в горах настолько опасно, что даже такой искатель приключений, как ты, не может просто отнести туда коробки?..",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690408
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690408,
+					"content": "#Но всё равно спасибо тебе за то, что удосужил{F#ась}{M#ся} помочь. Пожалуйста, возьми это в знак благодарности. А мне пора возвращаться к цветам.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690409
+					],
+					"speakerTitle": "Флора"
+				},
+				{
+					"id": 200690409,
+					"content": "Эх, пожалуй, придётся пробовать способ Сары...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Флора"
+				}
+			]
+		},
+		{
+			"id": 2006999,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006901",
+							"3"
+						],
+						"stepId": 2006901,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_NOT_RECEIVE",
+						"rawParams": [
+							"2006909",
+							"1"
+						]
+					},
+					{
+						"type": "QUEST_COND_QUEST_NOT_RECEIVE",
+						"rawParams": [
+							"2006905",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Флора"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200699904,
+					"content": "Саид - человек знающий, но разве в Академии Сумеру вообще выращивают цветы?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Флора"
+				}
+			]
+		}
+	]
+}

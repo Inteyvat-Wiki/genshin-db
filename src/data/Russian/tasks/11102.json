@@ -1,0 +1,913 @@
+{
+	"id": 11102,
+	"type": "LQ",
+	"name": "Истребление зла",
+	"description": "Способность Небесного Императора Звездолова изгонять демонов всего лишь эффект Печати согласия. После его непредвиденной неудачи вы пускаетесь в погоню за испускающими тёмную энергию хиличурлами.",
+	"unlockDescription": "",
+	"chapter": "Сон бабочки",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		11103
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1110201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "С помощью чувства стихий выследите хиличурлов с тёмной энергией",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1110201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1110202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Сяо",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1110202,
+						0
+					],
+					"talkId": 1110202
+				}
+			]
+		},
+		{
+			"id": 1110203,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отправляйтесь в пещеру кармы",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_DUNGEON",
+					"rawParams": [
+						1102,
+						173
+					]
+				}
+			]
+		},
+		{
+			"id": 1110204,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1110204,
+						0
+					],
+					"talkId": 1110204
+				}
+			]
+		},
+		{
+			"id": 1110205,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1110206,
+						0
+					],
+					"talkId": 1110206
+				}
+			]
+		},
+		{
+			"id": 1110206,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Очистите пещеру от хиличурлов с тёмной энергией",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1110207,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1110202,
+			"completionStepIds": [
+				1110202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110202",
+							"2"
+						],
+						"stepId": 1110202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Сяо"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111020201,
+					"content": "Это вы... Я вас помню.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020202
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020202,
+					"content": "Я как раз очищал это место от существ, поражённых демоническим проклятием. Кажется, я вам помешал.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020203
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020203,
+					"content": "(Хм, он обычно не такой вежливый. В чём же дело...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020204
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 111020204,
+					"content": "Но ты же тоже изгоняешь демонов. Как ты мог нам помешать?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020205
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 111020205,
+					"content": "Дело в том, что мутация этих монстров произошла из-за меня. Вернее, из-за моей кармы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020206
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020206,
+					"content": "Мутации, карма... Неужели...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020207,
+						111020208
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 111020207,
+					"content": "В книге «Яксы: Защитники Адептов» упоминалось...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020209
+					]
+				},
+				{
+					"id": 111020209,
+					"content": "Да-а, кажется, Паймон припоминает, что Сяо ещё называют Защитником Яксой...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020210
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 111020210,
+					"content": "Тогда получается... О-ох...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020211
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 111020211,
+					"content": "Ох, бедный Сяо...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020212
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 111020212,
+					"content": "...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020213,
+						111020214
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020213,
+					"content": "Мы прочитали о твоём прошлом в книге.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020215
+					]
+				},
+				{
+					"id": 111020215,
+					"content": "Ах. Это та книга с нелепыми догадками эрудитов, живших сотни лет назад?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020216
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020216,
+					"content": "Ничто не вечно, и всё - страдание. Мы, Яксы, не нуждаемся в чужих слезах и сочувствии.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020217
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020217,
+					"content": "Моим ушедшим товарищам такое отношение тоже не понравилось бы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020218
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020218,
+					"content": "Ой... Прости нас...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020219
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 111020219,
+					"content": "Это уже не имеет значения. Как бы то ни было, мне ещё нужно очистить пещеру от демонического влияния, поэтому здесь я с вами прощаюсь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020220
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020220,
+					"content": "П-подожди! Возьми нас с собой, мы тебе поможем, честное слово!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020221
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 111020221,
+					"content": "В этом нет необходимости. Я привык действовать в одиночку. Да и к тому же я сам являюсь причиной этих мутаций...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020222
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020222,
+					"content": "Ну тогда ты можешь принять это в качестве извинений за невежливость Паймон! Ладно?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020223
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 111020223,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020224
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020224,
+					"content": "...Идём.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020214,
+					"content": "Мы только что прочитали книгу «Яксы: Защитники Адептов».",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020215
+					]
+				},
+				{
+					"id": 111020208,
+					"content": "То есть Сяо - последний Якса?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020209
+					]
+				}
+			]
+		},
+		{
+			"id": 1110204,
+			"completionStepIds": [
+				1110204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110204",
+							"2"
+						],
+						"stepId": 1110204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Паймон"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111020401,
+					"content": "От этого места у Паймон мурашки по коже!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020402
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 111020402,
+					"content": "Я проведу ритуал истребления всего зла, чтобы очистить это место от кармы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020403
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020403,
+					"content": "Сохраняйте спокойствие и ни в коем случае не позволяйте гневу поверженных Архонтов захватить вас.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Сяо"
+				}
+			]
+		},
+		{
+			"id": 1110206,
+			"completionStepIds": [
+				1110205
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110205",
+							"2"
+						],
+						"stepId": 1110205,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Паймон"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111020601,
+					"content": "Как много заражённых демоническим влиянием существ... Очень странно. Приди мы позже, и последствия могли быть куда хуже.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020602
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020602,
+					"content": "Вы упомянули о каком-то Звездохвате. Кто это такой?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020603
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020603,
+					"content": "О-о, сейчас Паймон тебе расскажет!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020604
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 111020604,
+					"content": "Люди так легко ведутся на ложь об «исполняющих желания Адептах»...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020605
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020605,
+					"content": "Ты ведь Адепт, Сяо. Ты умеешь исполнять желания?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020606
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 111020606,
+					"content": "Прежние жители Ли Юэ никогда бы не обратились к Адептам с такими эгоистичными просьбами.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020607
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020607,
+					"content": "Что нужно было людям, населявшим Ли Юэ тысячи лет назад, так это силы, чтобы защитить свою родную землю.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020608
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020608,
+					"content": "Но для современных людей идея об Адептах, исполняющих желания, намного более привлекательна...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020609
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 111020609,
+					"content": "Но меня не касается то, насколько слабы нынче люди. Я лишь чту изначальную волю Властелина Камня.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020610
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020610,
+					"content": "Паймон опять ляпнула что-то не то...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020611
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 111020611,
+					"content": "А... Ну да, точно! Тот выдававший себя за Адепта тип использовал Печать согласия, чтобы изгонять демонов!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020612
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 111020612,
+					"content": "Вот как? Глупец. Изгоняет демонов, но не уничтожает их... Неудивительно, что они все собрались здесь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020613
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020613,
+					"content": "Если так будет продолжаться, ситуация может выйти даже из-под моего контроля... Нужно забрать у него Печать согласия.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020614,
+						111020615
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020614,
+					"content": "Всего лишь забрать?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020616
+					]
+				},
+				{
+					"id": 111020616,
+					"content": "Паймон тоже так думает! Нужно хорошенько проучить этого обманщика!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020617
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 111020617,
+					"content": "А у нас как раз есть настоящий Адепт... Если им займётся Сяо, Звездохват никогда больше не посмеет выдавать себя за Адепта!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020618
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 111020618,
+					"content": "Нет. Я истребляю только демонов. Я не убиваю простых смертных.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020619
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020619,
+					"content": "Паймон не предлагала убивать его!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020620
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 111020620,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020621
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020621,
+					"content": "Если мы заставим его прекратить творить зло, это сделает Ли Юэ лучше.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020622
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020622,
+					"content": "Я обладаю способностью, которая называется «Странствие по снам». Она даёт возможность душе путешествовать во время сна...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020623
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020623,
+					"content": "Но с её помощью можно и призывать души других.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020624
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020624,
+					"content": "Вот это настоящее искусство Адепта!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020625,
+						111020626
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 111020625,
+					"content": "Это будто явление во сне?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020627
+					]
+				},
+				{
+					"id": 111020627,
+					"content": "Сначала нужно провести ритуал. Вам придётся помочь мне собрать некоторые предметы: курильницу, семь ламп и что-нибудь, что поможет снизить температуру.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020628
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020628,
+					"content": "Снизить температуру... Туманный цветок подойдёт?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020629
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 111020629,
+					"content": "Но вряд ли курильницу и лампы так легко найти...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020630
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 111020630,
+					"content": "Вы знаете о двух статуях Якс, что охраняют торговую дорогу к югу от горы Тяньхэн?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020631
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020631,
+					"content": "Некогда предки людей Ли Юэ построили там храм в честь защитников Якс. Думаю, вы сможете найти всё необходимое для ритуала там.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020632
+					],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020632,
+					"content": "Когда найдёте, встретьте меня у статуй Якс под покровом ночи, и я научу вас этому искусству.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Сяо"
+				},
+				{
+					"id": 111020626,
+					"content": "Думаю, мы перепугаем его до смерти.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020627
+					]
+				},
+				{
+					"id": 111020615,
+					"content": "Я хочу преподать ему урок.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020616
+					]
+				}
+			]
+		},
+		{
+			"id": 1110220,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110201",
+							"2"
+						],
+						"stepId": 1110201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Верующий мужчина"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111022001,
+					"content": "Наверное, сегодня Звездолов потерпел неудачу просто потому что был не в форме?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Верующий мужчина"
+				}
+			]
+		},
+		{
+			"id": 1110221,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110201",
+							"2"
+						],
+						"stepId": 1110201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Верующая женщина"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111022101,
+					"content": "#Что случилось? Хорошо, что ты {M#оказался}{F#оказалась} рядом...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Верующая женщина"
+				}
+			]
+		},
+		{
+			"id": 1110222,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110201",
+							"2"
+						],
+						"stepId": 1110201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Верующий торговец"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111022201,
+					"content": "Почему же эти хиличурлы не покорились силе Звездолова?..",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Верующий торговец"
+				}
+			]
+		},
+		{
+			"id": 1110223,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110201",
+							"2"
+						],
+						"stepId": 1110201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Небесный Император Звездолов"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111022301,
+					"content": "Мне действительно было нехорошо. Надеюсь, слухи об этом не распространятся повсюду...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Небесный Император Звездолов"
+				}
+			]
+		},
+		{
+			"id": 1110224,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110203",
+							"2"
+						],
+						"stepId": 1110203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Сяо"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111022401,
+					"content": "Заканчивай подготовку и пойдём. Нам не стоит игнорировать этих демонов слишком долго.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Сяо"
+				}
+			]
+		}
+	]
+}

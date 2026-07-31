@@ -1,0 +1,299 @@
+{
+	"id": 20011,
+	"type": "IQ",
+	"name": "通行止め？",
+	"description": "アンソニーはモンド城から清泉町に出かける途中、障害物に足止めされ、ヒルチャールに包囲された。ヒルチャールを倒してアンソニーを助けよう。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2001101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "詳細を確認する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001102,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "近くのモンスターを倒す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "全ての魔物を倒し、障害物を破壊する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "アンソニーと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001103,
+						0
+					],
+					"talkId": 2001103
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2001101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001102",
+							"2"
+						],
+						"stepId": 2001102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"アンソニー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200110101,
+					"content": "誰か助けてくれ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "アンソニー"
+				}
+			]
+		},
+		{
+			"id": 2001102,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001102",
+							"3"
+						],
+						"stepId": 2001102,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001103",
+							"2"
+						],
+						"stepId": 2001103,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"アンソニー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200110201,
+					"content": "ありがとう、旅人…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110202
+					],
+					"speakerTitle": "アンソニー"
+				},
+				{
+					"id": 200110202,
+					"content": "しかしここに障害物がある限り、通れないんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110203
+					],
+					"speakerTitle": "アンソニー"
+				},
+				{
+					"id": 200110203,
+					"content": "ハハハッ、本来なら自分でなんとかするところだけど…ヒルチャールに襲われて、全身痛いんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110204
+					],
+					"speakerTitle": "アンソニー"
+				},
+				{
+					"id": 200110204,
+					"content": "でもアナのために採ってきた薬草が無事でよかった…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110205
+					],
+					"speakerTitle": "アンソニー"
+				},
+				{
+					"id": 200110205,
+					"content": "すまないが、この障害物をなんとかしてくれないか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110206,
+						200110207
+					],
+					"speakerTitle": "アンソニー"
+				},
+				{
+					"id": 200110206,
+					"content": "分かった。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200110208
+					]
+				},
+				{
+					"id": 200110208,
+					"content": "ありがとう、少し休むよ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "アンソニー"
+				},
+				{
+					"id": 200110207,
+					"content": "他に急用がある。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200110209
+					]
+				},
+				{
+					"id": 200110209,
+					"content": "でもアナがまだ俺を待っている…頼む、助けてくれ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "アンソニー"
+				}
+			]
+		},
+		{
+			"id": 2001103,
+			"completionStepIds": [
+				2001104
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001104",
+							"2"
+						],
+						"stepId": 2001104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"アンソニー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200110301,
+					"content": "これで通れるはずだ…ありがとう、旅人。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110302
+					],
+					"speakerTitle": "アンソニー"
+				},
+				{
+					"id": 200110302,
+					"content": "うちはお金がなくてな、アナの病気もずっと治らないから、よくここに薬草を採りに来るんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110303
+					],
+					"speakerTitle": "アンソニー"
+				},
+				{
+					"id": 200110303,
+					"content": "薬草を採ったのはいいが、まさかアイツらに襲われると思わなかった。お前が来てくれてよかったよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110304
+					],
+					"speakerTitle": "アンソニー"
+				},
+				{
+					"id": 200110304,
+					"content": "これはお前にあげるよ。咳止めの効果があるから、よくこれをアナに飲ませているんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110305
+					],
+					"speakerTitle": "アンソニー"
+				},
+				{
+					"id": 200110305,
+					"content": "お前もよく野外にいるだろう？体に気を付けてな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "アンソニー"
+				}
+			]
+		}
+	]
+}

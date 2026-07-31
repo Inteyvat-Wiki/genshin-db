@@ -1,0 +1,302 @@
+{
+	"id": 11004,
+	"type": "LQ",
+	"name": "Древние сокровища",
+	"description": "Сян Лин заинтересовал слух о гигантском Крио папоротнике. Она немедленно отправилась на поиски. Вы решили помочь безудержному шеф-повару.",
+	"unlockDescription": "",
+	"chapter": "Кулинарный тур по Мондштадту",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		11005
+	],
+	"prevMainQuestList": [
+		11003
+	],
+	"steps": [
+		{
+			"id": 1100401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Встретьтесь с Сян Лин в руинах",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_DUNGEON",
+					"rawParams": [
+						1010,
+						125
+					]
+				}
+			]
+		},
+		{
+			"id": 1100402,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Найдите редкий ингредиент в руинах",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1100403,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Сян Лин",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1100403,
+						0
+					],
+					"talkId": 1100403
+				}
+			]
+		},
+		{
+			"id": 1100498,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(Диалог после обнаружения гигантского туманного цветка)",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1100498,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1100499,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(Диалог после победы над врагами в первой боевой зоне)",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1100403,
+			"completionStepIds": [
+				1100403
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100403",
+							"2"
+						],
+						"stepId": 1100403,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Сян Лин"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110040301,
+					"content": "Крио папоротник принесли домой, и его мы, милого, съели всей толпой!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040302
+					],
+					"speakerTitle": "Сян Лин"
+				},
+				{
+					"id": 110040302,
+					"content": "Крио папоротник!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040303,
+						110040305
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 110040303,
+					"content": "Ты идёшь у неё на поводу!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110040304
+					]
+				},
+				{
+					"id": 110040304,
+					"content": "#Ты чего так{F#ая}{M#ой} серьёзн{F#ая}{M#ый}? Разве может быть что-то веселее, чем поиск ингредиентов?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040307
+					],
+					"speakerTitle": "Сян Лин"
+				},
+				{
+					"id": 110040307,
+					"content": "Погоди! Тут есть что-то ещё!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040308
+					],
+					"speakerTitle": "Сян Лин"
+				},
+				{
+					"id": 110040308,
+					"content": "Это же тот кабан, за которым гнался охотник!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040309
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 110040309,
+					"content": "Я никогда раньше не видела такого узора на шкуре кабанов.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040310
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 110040310,
+					"content": "Где же я могла его видеть? Хм... Точно! «История флоры и фауны Ли Юэ»!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040311
+					],
+					"speakerTitle": "Сян Лин"
+				},
+				{
+					"id": 110040311,
+					"content": "Этот вид кабанов вымер более трёхсот лет назад.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040312
+					],
+					"speakerTitle": "Сян Лин"
+				},
+				{
+					"id": 110040312,
+					"content": "Ого! Этот кабан так хорошо сохранился.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040313,
+						110040315
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 110040313,
+					"content": "Случайная заморозка?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110040314
+					]
+				},
+				{
+					"id": 110040314,
+					"content": "Может быть...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040317
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 110040317,
+					"content": "Охота за ценным мясом этих кабанов привела к вымиранию целого вида.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040318
+					],
+					"speakerTitle": "Сян Лин"
+				},
+				{
+					"id": 110040318,
+					"content": "Крио папоротник и кабан. Не одно, а два редчайших сокровища!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040319
+					],
+					"speakerTitle": "Сян Лин"
+				},
+				{
+					"id": 110040319,
+					"content": "Считай, что победа у нас в кармане!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110040320
+					]
+				},
+				{
+					"id": 110040320,
+					"content": "Ладно! Пора возвращаться в Спрингвейл.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Сян Лин"
+				},
+				{
+					"id": 110040315,
+					"content": "Может быть, он долгожитель?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110040316
+					]
+				},
+				{
+					"id": 110040316,
+					"content": "Оченьдолгожитель...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040317
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 110040305,
+					"content": "Крио папоротник!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110040306
+					]
+				},
+				{
+					"id": 110040306,
+					"content": "Ха-ха-ха! Ты так странно поёшь...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040307
+					],
+					"speakerTitle": "Сян Лин"
+				}
+			]
+		}
+	]
+}

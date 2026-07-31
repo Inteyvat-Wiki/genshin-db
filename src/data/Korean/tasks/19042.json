@@ -1,0 +1,194 @@
+{
+	"id": 19042,
+	"type": "LQ",
+	"name": "모험… 이외의 일?",
+	"description": "베넷과 함께하기로 약속했지만 여행자 일행은 모험 이외의 일을 하기로 한다. 예를 들면… 성안 둘러보기?",
+	"unlockDescription": "",
+	"chapter": "아름다운 여정",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1904201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "「영광의 바람」으로 가기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1904201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1904202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "베넷과 함께 쇼핑하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						103201,
+						20101
+					]
+				}
+			]
+		},
+		{
+			"id": 1904203,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "「디어 헌터」로 가기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1904203,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1904204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "베넷과 함께 음식 주문하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						103201,
+						20201
+					]
+				}
+			]
+		},
+		{
+			"id": 1904205,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "「몬드 잡화점」으로 가기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1904205,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1904206,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "알림판 내용 확인하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1904201,
+						0
+					],
+					"talkId": 1904201
+				}
+			]
+		},
+		{
+			"id": 1904207,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "베넷과 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						103201,
+						101
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1904201,
+			"completionStepIds": [
+				1904206
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1904206",
+							"2"
+						],
+						"stepId": 1904206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1904207",
+							"2"
+						],
+						"stepId": 1904207,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1904203",
+							"2"
+						],
+						"stepId": 1904203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1904204",
+							"2"
+						],
+						"stepId": 1904204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1904205",
+							"2"
+						],
+						"stepId": 1904205,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 190420101,
+					"content": "「몬드 잡화점」 특별 세일——모두 반값!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "몬드 잡화점 주문 보드"
+				}
+			]
+		}
+	]
+}

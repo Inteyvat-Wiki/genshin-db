@@ -1,0 +1,583 @@
+{
+	"id": 20026,
+	"type": "IQ",
+	"name": "餐品訂單",
+	"description": "為了滿足顧客的需要，獵鹿人餐館持續提供著送餐服務。但是因為顧客眾多，餐館裡的人手嚴重不足，莎拉小姐想要找一個人來幫忙送餐。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2002601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往獵鹿人餐館詢問莎拉",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "與莎拉對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002601,
+						0
+					],
+					"talkId": 2002601
+				}
+			]
+		},
+		{
+			"id": 2002603,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "找到兩顆鳥蛋",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100062,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002604,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "取得製作好的餐品",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002602,
+						0
+					],
+					"talkId": 2002602
+				}
+			]
+		},
+		{
+			"id": 2002605,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "運送餐品給厄尼斯特",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002603,
+						0
+					],
+					"talkId": 2002603
+				}
+			]
+		},
+		{
+			"id": 2002606,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "橋接",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002603,
+						0
+					],
+					"talkId": 2002603
+				}
+			]
+		},
+		{
+			"id": 2002607,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "找到厄尼斯特",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002603,
+						0
+					],
+					"talkId": 2002603
+				}
+			]
+		},
+		{
+			"id": 2002608,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "把餐費交給莎拉",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002604,
+						0
+					],
+					"talkId": 2002604
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2002601,
+			"completionStepIds": [
+				2002602
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002601",
+							"3"
+						],
+						"stepId": 2002601,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002602",
+							"2"
+						],
+						"stepId": 2002602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"莎拉"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200260101,
+					"content": "餐品外送訂單",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260102
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200260102,
+					"content": "#旅行者，{F#妳}{M#你}來得正好——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260103
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200260103,
+					"content": "#咦？{F#妳}{M#你}說{F#妳}{M#你}只是來吃東西的…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260104
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200260104,
+					"content": "#我，我知道了，但是請{F#妳}{M#你}幫我個忙吧，我一定會把最好吃的料理給{F#妳}{M#你}！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260105
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200260105,
+					"content": "晨曦酒莊的厄尼斯特先生經常在我們這裡訂下酒菜，而且總是會提出各種奇怪的加料要求。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260106
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200260106,
+					"content": "嗯…這次他雖然訂的是<color=#00E1FFFF>炸蘿蔔丸子</color>，但他一定要我們多加蛋類，可是我們的蛋類料理材料都用光了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260107
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200260107,
+					"content": "#所以，請{F#妳}{M#你}幫我們找兩顆鳥蛋回來吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260108,
+						200260111
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200260108,
+					"content": "好吧，但是…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200260109
+					]
+				},
+				{
+					"id": 200260109,
+					"content": "在風起地，應該可以找到很多鳥蛋。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260110
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200260110,
+					"content": "#那麼，就拜託{F#妳}{M#你}了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200260111,
+					"content": "太餓了，我只是來吃飯的。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200260112
+					]
+				},
+				{
+					"id": 200260112,
+					"content": "在風起地，應該可以找到很多鳥蛋。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260113
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200260113,
+					"content": "#等{F#妳}{M#你}幫完我的忙之後，我，我就請{F#妳}{M#你}吃獵鹿人特製料理，就拜託{F#妳}{M#你}了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "莎拉"
+				}
+			]
+		},
+		{
+			"id": 2002602,
+			"completionStepIds": [
+				2002604
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002603",
+							"3"
+						],
+						"stepId": 2002603,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002604",
+							"2"
+						],
+						"stepId": 2002604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"莎拉"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200260201,
+					"content": "已經找好了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200260202
+					]
+				},
+				{
+					"id": 200260202,
+					"content": "這下子材料就夠了，稍等一下…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260203
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200260203,
+					"content": "#好啦，拜託{F#妳}{M#你}把這份特製的<color=#00E1FFFF>炸蘿蔔丸子</color>送給厄尼斯特先生吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260204
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200260204,
+					"content": "#別這麼看著我嘛，我知道{F#妳}{M#你}肚子很餓了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260205
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200260205,
+					"content": "#回來的時候，我會用獵鹿人餐館特製料理來答謝{F#妳}{M#你}的！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "莎拉"
+				}
+			]
+		},
+		{
+			"id": 2002603,
+			"completionStepIds": [
+				2002605,
+				2002606,
+				2002607
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002604",
+							"3"
+						],
+						"stepId": 2002604,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002607",
+							"2"
+						],
+						"stepId": 2002607,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"厄尼斯特"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200260301,
+					"content": "這是你點的餐。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200260302
+					]
+				},
+				{
+					"id": 200260302,
+					"content": "哦！是按照我的要求特製的<color=#00E1FFFF>炸蘿蔔丸子</color>啊。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260303
+					],
+					"speakerTitle": "厄尼斯特"
+				},
+				{
+					"id": 200260303,
+					"content": "果然，加了蛋類之後，口感和香氣都更好了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260304
+					],
+					"speakerTitle": "厄尼斯特"
+				},
+				{
+					"id": 200260304,
+					"content": "哈哈哈，我的品味果然是最棒的！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260305
+					],
+					"speakerTitle": "厄尼斯特"
+				},
+				{
+					"id": 200260305,
+					"content": "#對了，這是餐費，辛苦{F#妳}{M#你}了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "厄尼斯特"
+				}
+			]
+		},
+		{
+			"id": 2002604,
+			"completionStepIds": [
+				2002608
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002607",
+							"3"
+						],
+						"stepId": 2002607,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002608",
+							"2"
+						],
+						"stepId": 2002608,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"莎拉"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200260401,
+					"content": "交付餐費",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260402
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200260402,
+					"content": "#{F#妳}{M#你}回來了，餐品送到了嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260403
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200260403,
+					"content": "這是餐費。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200260404
+					]
+				},
+				{
+					"id": 200260404,
+					"content": "我看看…沒錯，太感謝了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260405
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200260405,
+					"content": "#還有，這份<color=#00E1FFFF>蟹黃火腿焗時蔬</color>給{F#妳}{M#你}，剛剛做好的，趕快趁熱吃了吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "莎拉"
+				}
+			]
+		},
+		{
+			"id": 2002607,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002607",
+							"3"
+						],
+						"stepId": 2002607,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002608",
+							"2"
+						],
+						"stepId": 2002608,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"厄尼斯特"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200260701,
+					"content": "嗯——滿溢的蛋香，和胡蘿蔔的味道完美搭配，果然我是個美食行家啊。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "厄尼斯特"
+				}
+			]
+		}
+	]
+}

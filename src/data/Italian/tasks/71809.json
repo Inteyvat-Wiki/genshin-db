@@ -1,0 +1,696 @@
+{
+	"id": 71809,
+	"type": "WQ",
+	"name": "Un'ode alla città",
+	"description": "La crisi a Liyue si è risolta, ma ha portato un'ondata di cambiamenti in città. Il poeta Qingzhou vorrebbe narrare queste vicende in versi...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		1025
+	],
+	"steps": [
+		{
+			"id": 7180901,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		},
+		{
+			"id": 7180902,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Cerca l'ispirazione poetica al molo sud",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1183,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180903,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Cerca l'ispirazione poetica alla Farmacia Bubu",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1184,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180904,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Cerca l'ispirazione poetica vicino al Belvedere di Yujing",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1185,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180905,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con la gente al Belvedere di Yujing",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180902,
+						0
+					],
+					"talkId": 7180902
+				}
+			]
+		},
+		{
+			"id": 7180906,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con la gente al Belvedere di Yujing",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180903,
+						0
+					],
+					"talkId": 7180903
+				}
+			]
+		},
+		{
+			"id": 7180907,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7180907,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180908,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7180908,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180909,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Torna da Qingzhou",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180904,
+						0
+					],
+					"talkId": 7180904
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7180902,
+			"completionStepIds": [
+				7180905
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180905",
+							"2"
+						],
+						"stepId": 7180905,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718090201,
+					"content": "Va tutto bene... tutto bene...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090202
+					],
+					"speakerTitle": "Hao"
+				},
+				{
+					"id": 718090202,
+					"content": "Cosa va bene?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090203
+					]
+				},
+				{
+					"id": 718090203,
+					"content": "#Oh, sei tu, viaggiat{F#rice}{M#ore}. Che disastro è successo in città, eh?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090204
+					],
+					"speakerTitle": "Hao"
+				},
+				{
+					"id": 718090204,
+					"content": "Beh, almeno non ha avuto conseguenze gravi... E inoltre, è bello che tutte le bancarelle della città siano ancora aperte.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090205
+					],
+					"speakerTitle": "Hao"
+				},
+				{
+					"id": 718090205,
+					"content": "Altrimenti, cosa ne sarebbe stato di tutte quelle prelibatezze che mi piacciono tanto...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090206
+					],
+					"speakerTitle": "Hao"
+				},
+				{
+					"id": 718090206,
+					"content": "Ah, quindi parlavamo di cibo...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090207
+					]
+				},
+				{
+					"id": 718090207,
+					"content": "Ehi, non parlarne con sprezzo. Il modo più veloce per apprezzare una località è assaggiarne la cucina.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090208
+					],
+					"speakerTitle": "Hao"
+				},
+				{
+					"id": 718090208,
+					"content": "Mi viene fame al solo parlarne. Forse dovrei fare uno spuntino...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Hao"
+				}
+			]
+		},
+		{
+			"id": 7180903,
+			"completionStepIds": [
+				7180906
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180906",
+							"2"
+						],
+						"stepId": 7180906,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Fan Er'ye"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718090301,
+					"content": "Più ascolto quest'opera e meno ci capisco...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090302
+					],
+					"speakerTitle": "Fan Er'ye"
+				},
+				{
+					"id": 718090302,
+					"content": "C'è qualcosa che non va?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090303
+					]
+				},
+				{
+					"id": 718090303,
+					"content": "#Oh, salve, viaggiat{F#rice}{M#ore}. Il problema è che, di recente, la Sala da tè Heyu ha prodotto delle nuove opere teatrali.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090304
+					],
+					"speakerTitle": "Fan Er'ye"
+				},
+				{
+					"id": 718090304,
+					"content": "Sono... vivacissime, poco ma sicuro. Eppure non le capisco, né comprendo perché i giovani sembrino apprezzarle tanto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090305
+					],
+					"speakerTitle": "Fan Er'ye"
+				},
+				{
+					"id": 718090305,
+					"content": "Qual è la tua opinione?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090306
+					]
+				},
+				{
+					"id": 718090306,
+					"content": "Ottima domanda. Personalmente, non mi dispiacciono i vecchi classici. Ci sono abituato, in fondo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090307
+					],
+					"speakerTitle": "Fan Er'ye"
+				},
+				{
+					"id": 718090307,
+					"content": "Ma al tempo stesso il Porto di Liyue sta andando incontro tanti cambiamenti... Le nuove opere sembrano allineate all'umore dominante.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090308
+					],
+					"speakerTitle": "Fan Er'ye"
+				},
+				{
+					"id": 718090308,
+					"content": "*sospira* Tutte queste novità in così poco tempo... Le vecchie opere non vanno in scena da un po'. Cosa direbbe Rex Lapis... No, meglio non parlarne...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Fan Er'ye"
+				}
+			]
+		},
+		{
+			"id": 7180904,
+			"completionStepIds": [
+				7180909
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180909",
+							"2"
+						],
+						"stepId": 7180909,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Qingzhou"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718090401,
+					"content": "#Che cos'ha appreso, mi{F#a}{M#o} buo{F#na}{M#n} signor{F#a}{M#e}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090402
+					],
+					"speakerTitle": "Qingzhou"
+				},
+				{
+					"id": 718090402,
+					"content": "Un po' di cose.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090403
+					]
+				},
+				{
+					"id": 718090403,
+					"content": "Invero? Ordunque, me ne parli.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090404
+					],
+					"speakerTitle": "Qingzhou"
+				},
+				{
+					"id": 718090404,
+					"content": "Al molo sud ci sono molti cani.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090405
+					]
+				},
+				{
+					"id": 718090405,
+					"content": "Ottimo, ottimo. Una zona assai vivace.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090406
+					],
+					"speakerTitle": "Qingzhou"
+				},
+				{
+					"id": 718090406,
+					"content": "Vicino alla Farmacia Bubu vivono molti fringuelli.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090407
+					]
+				},
+				{
+					"id": 718090407,
+					"content": "Fringuelli, sì... Un simbolo di placidità. Che immagine deliziosa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090408
+					],
+					"speakerTitle": "Qingzhou"
+				},
+				{
+					"id": 718090408,
+					"content": "Alcuni pensano solo a mangiare...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090409
+					]
+				},
+				{
+					"id": 718090409,
+					"content": "Ahah! Come biasimarli... Il cibo è una delle necessità e gioie primarie della vita, specialmente al Porto di Liyue.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090410
+					],
+					"speakerTitle": "Qingzhou"
+				},
+				{
+					"id": 718090410,
+					"content": "Tutto molto affascinante. Ne prendo nota, potrebbe tornarmi utile.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090411
+					],
+					"speakerTitle": "Qingzhou"
+				},
+				{
+					"id": 718090411,
+					"content": "Alcuni pensano che le cose stiano cambiando troppo velocemente.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090412
+					]
+				},
+				{
+					"id": 718090412,
+					"content": "Mmmh, c'era da aspettarselo, in effetti. Per taluni, è come se Liyue cangiasse pelle all'alba d'ogni nuovo giorno. Persino io arranco e fatico ad accettare ogni cambiamento...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090413
+					],
+					"speakerTitle": "Qingzhou"
+				},
+				{
+					"id": 718090413,
+					"content": "Codesta è una faccenda assai ampia... Temo che non basti un singolo poema a immortalarla. Malgrado ciò, io lo scriverò.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090414
+					],
+					"speakerTitle": "Qingzhou"
+				},
+				{
+					"id": 718090414,
+					"content": "#Dovrebbe bastare, per ora. È stata cosa saggia affidarmi al suo aiuto, mi{F#a}{M#o} buo{F#na}{M#n} signor{F#a}{M#e}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090415
+					],
+					"speakerTitle": "Qingzhou"
+				},
+				{
+					"id": 718090415,
+					"content": "Ora potrò senza meno aggiungere un paio di nuovi componimenti alla mia prossima antologia.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090416
+					],
+					"speakerTitle": "Qingzhou"
+				},
+				{
+					"id": 718090416,
+					"content": "#Oh, giusto. A parte alcuni beni materiali, ho preparato un piccolo presente per lei. Le sono grato per essere giunt{M#o}{F#a} in mio soccorso.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090417
+					],
+					"speakerTitle": "Qingzhou"
+				},
+				{
+					"id": 718090417,
+					"content": "Una volta pubblicata la mia nuova antologia, potrà scambiare questo autografo con una copia gratuita.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Qingzhou"
+				}
+			]
+		},
+		{
+			"id": 7180906,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180905",
+							"3"
+						],
+						"stepId": 7180905,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180908",
+							"2"
+						],
+						"stepId": 7180908,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180909",
+							"2"
+						],
+						"stepId": 7180909,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718090601,
+					"content": "Oh, tutto questo parlare mi ha messo fame. Cosa potrei mangiare?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Hao"
+				}
+			]
+		},
+		{
+			"id": 7180907,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180906",
+							"3"
+						],
+						"stepId": 7180906,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180908",
+							"2"
+						],
+						"stepId": 7180908,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180909",
+							"2"
+						],
+						"stepId": 7180909,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Fan Er'ye"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718090701,
+					"content": "*sospira* Come cambia in fretta la città...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Fan Er'ye"
+				}
+			]
+		},
+		{
+			"id": 7180910,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180902",
+							"2"
+						],
+						"stepId": 7180902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180903",
+							"2"
+						],
+						"stepId": 7180903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180904",
+							"2"
+						],
+						"stepId": 7180904,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180908",
+							"2"
+						],
+						"stepId": 7180908,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Qingzhou"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718091001,
+					"content": "Invero, Liyue mi appare... un po' troppo diversa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Qingzhou"
+				}
+			]
+		}
+	]
+}

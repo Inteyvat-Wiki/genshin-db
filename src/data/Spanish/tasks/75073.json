@@ -1,0 +1,610 @@
+{
+	"id": 75073,
+	"type": "WQ",
+	"name": "",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		75000
+	],
+	"steps": [
+		{
+			"id": 7507301,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7507302,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7507301,
+						0
+					],
+					"talkId": 7507301
+				}
+			]
+		},
+		{
+			"id": 7507303,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7507303,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7507304,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7507305,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7507306,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7507303,
+						0
+					],
+					"talkId": 7507303
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7507304,
+						0
+					],
+					"talkId": 7507304
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7507301,
+			"completionStepIds": [
+				7507302
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7507302",
+							"2"
+						],
+						"stepId": 7507302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Conulaf"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 750730101,
+					"content": "#¡Oh, mi benefacto{F#ra}{M#r}! Gracias por intervenir y ayudarme a despejar estos Hilichurls.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730102
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730102,
+					"content": "A decir verdad, estaba de pie en un acantilado mirando el paisaje y, al no prestar atención, un Hilichurl me dejó inconsciente. Cuando me desperté, ya estaba encerrada aquí.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730103
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730103,
+					"content": "Encerrada, sí... ¡Ah, la llave!... Pues la llave está en la caja de allí, ¿podrías prestarme tu preciosa manita y hacerme otro pequeño e insignificante favor?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730104
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730104,
+					"content": "Te lo agradecería mucho...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Conulaf"
+				}
+			]
+		},
+		{
+			"id": 7507302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7507301",
+							"3"
+						],
+						"stepId": 7507301,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7507305",
+							"0"
+						],
+						"stepId": 7507305,
+						"stateName": "QUEST_STATE_NONE"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7507305",
+							"2"
+						],
+						"stepId": 7507305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7507305",
+							"1"
+						],
+						"stepId": 7507305,
+						"stateName": "QUEST_STATE_UNSTARTED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Conulaf"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 750730201,
+					"content": "#Oh, mi benefacto{F#ra}{M#r}, no puedes dejarme sola en una jaula tan alta con tantos Qucusaurios volando alrededor...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Conulaf"
+				}
+			]
+		},
+		{
+			"id": 7507303,
+			"completionStepIds": [
+				7507306
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7507306",
+							"2"
+						],
+						"stepId": 7507306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7507301",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Conulaf"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							-1090.68,
+							266.915,
+							9297.5
+						],
+						"pointId": 10455
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							-1092.925,
+							267.256,
+							9299.437
+						],
+						"pointId": 8705
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 750730301,
+					"content": "*Snif*, por fin salgo de esta jaula.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730302
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730302,
+					"content": "Este globo aerostático se está moviendo mucho. Quién sabe, tal vez solo un soplido de viento podría hacer caer toda la jaula...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730303
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730303,
+					"content": "Temo que ni siquiera la abu Itztli podría salvarme entonces.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730304
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730304,
+					"content": "¿Quién eres y por qué estás aquí?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						750730305
+					]
+				},
+				{
+					"id": 750730305,
+					"content": "Ah, todavía no me he presentado. Pues mi nombre es Conulaf, y soy una sacerdotisa aprendiz de los Augures Vientonocturno.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730306
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730306,
+					"content": "Actualmente estoy aprendiendo a ser una sacerdotisa cualificada. Había estado siempre en la tribu, hasta que un día los ancianos me dijeron: “Deberías irte de viaje y conocer el mundo”.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730307
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730307,
+					"content": "Así que me echaron de la tribu con el pretexto de mi formación...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730308
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730308,
+					"content": "Pero si conocer el mundo implica ser capturada por los Hilichurls... Sería mejor quedarse en casa, ¿no te parece?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730309,
+						750730311
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730309,
+					"content": "Irte de aventuras tú sola es peligroso...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						750730310
+					]
+				},
+				{
+					"id": 750730310,
+					"content": "Así es. Si no hubieras pasado por aquí, no sé cuánto tiempo habría estado atrapada...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730313
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730313,
+					"content": "Bueno, en fin, gracias por salvarme... Después de comer tanto viento aquí arriba, será mejor que baje primero y reflexione bien sobre cómo continuar mi formación...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730314
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730314,
+					"content": "#No llevo mucho dinero encima, pero mi familia dice que siempre hay que devolver los favores, ¡así que te daré todo esto, mi benefacto{F#ra}{M#r}!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730311,
+					"content": "Mientras seas lo suficientemente fuerte...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						750730312
+					]
+				},
+				{
+					"id": 750730312,
+					"content": "#Jaja, no me vaciles. En el mundo solo hay una milésima parte que llega a ser {F#una aventurera}{M#un aventurero} tan fuerte como tú...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730313
+					],
+					"speakerTitle": "Conulaf"
+				}
+			]
+		},
+		{
+			"id": 7507304,
+			"completionStepIds": [
+				7507306
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7507306",
+							"2"
+						],
+						"stepId": 7507306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7507301",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Conulaf"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							-1090.68,
+							266.915,
+							9297.5
+						],
+						"pointId": 10455
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							-1092.925,
+							267.256,
+							9299.437
+						],
+						"pointId": 8705
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 750730401,
+					"content": "*Snif*, por fin salgo de esta jaula.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730402
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730402,
+					"content": "Este globo aerostático se está moviendo mucho. Quién sabe, tal vez solo un soplido de viento podría hacer caer toda la jaula...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730403
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730403,
+					"content": "Temo que ni siquiera la abu Itztli podría salvarme entonces.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730404
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730404,
+					"content": "¿Qué ha pasado esta vez?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						750730405
+					]
+				},
+				{
+					"id": 750730405,
+					"content": "#Oh, eres tú, mi benefacto{F#ra}{M#r}. ¡Qué suerte que nos hayamos vuelto a encontrar en nuestro viaje! O mejor dicho, ¡que me hayas salvado una vez más!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730406
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730406,
+					"content": "#Ay, mi benefacto{F#ra}{M#r}, ¿no te dije la última vez que me llamo Conulaf, y que soy una sacerdotisa aprendiz de los Augures Vientonocturno?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730407
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730407,
+					"content": "Actualmente estoy aprendiendo a ser una sacerdotisa cualificada. Había estado siempre en la tribu, hasta que un día los ancianos me dijeron: “Deberías irte de viaje y conocer el mundo”.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730408
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730408,
+					"content": "Así que me echaron de la tribu con el pretexto de mi formación...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730409
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730409,
+					"content": "Pero si conocer el mundo implica ser capturada por los Hilichurls... Sería mejor quedarse en casa, ¿no te parece?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730410,
+						750730412
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730410,
+					"content": "Irte de aventuras tú sola es peligroso...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						750730411
+					]
+				},
+				{
+					"id": 750730411,
+					"content": "Así es. Si no hubieras pasado por aquí, no sé cuánto tiempo habría estado atrapada...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730414
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730414,
+					"content": "Bueno, en fin, gracias por salvarme... Después de comer tanto viento aquí arriba, será mejor que baje primero y reflexione bien sobre cómo continuar mi formación...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730415
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730415,
+					"content": "#No llevo mucho dinero encima, pero mi familia dice que siempre hay que devolver los favores, ¡así que te daré todo esto, mi benefacto{F#ra}{M#r}!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730412,
+					"content": "Mientras seas lo suficientemente fuerte, no habrá problema alguno.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						750730413
+					]
+				},
+				{
+					"id": 750730413,
+					"content": "Jaja, no me vaciles. Raramente hay aventureros tan fuertes como tú...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730414
+					],
+					"speakerTitle": "Conulaf"
+				}
+			]
+		}
+	]
+}

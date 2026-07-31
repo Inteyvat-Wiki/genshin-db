@@ -1,0 +1,117 @@
+{
+	"id": 16008,
+	"type": "LQ",
+	"name": "幕間の小休憩",
+	"description": "重要な手がかりを手に入れたものの、すべての答えが揃うのはアルベドが戻ってきてからになるだろう…",
+	"unlockDescription": "",
+	"chapter": "物語という名の魔法",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1600801,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1600801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1600802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "アルベドからの連絡を待つ",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TIME_VAR_PASS_DAY",
+					"rawParams": [
+						16008,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1600320,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1600802",
+							"2"
+						],
+						"stepId": 1600802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"#{REALNAME[ID(1)|HOSTONLY(true)]}"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 160032001,
+					"content": "ここ数日はここにいる。出発する時になったら、また知らせてくれ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "#{REALNAME[ID(1)|HOSTONLY(true)]}"
+				}
+			]
+		},
+		{
+			"id": 1600327,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1600802",
+							"2"
+						],
+						"stepId": 1600802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ドゥリン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 160032701,
+					"content": "もし物語の世界に戻りたくなったら、声をかけて。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ドゥリン"
+				}
+			]
+		}
+	]
+}

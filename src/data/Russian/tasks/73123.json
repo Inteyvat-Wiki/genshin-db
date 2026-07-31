@@ -1,0 +1,262 @@
+{
+	"id": 73123,
+	"type": "WQ",
+	"name": "",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		73061,
+		73025,
+		3001,
+		73025
+	],
+	"steps": [
+		{
+			"id": 7312301,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7312302,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7300309,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7312303,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7312301,
+						0
+					],
+					"talkId": 7312301
+				}
+			]
+		},
+		{
+			"id": 7312304,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7312303,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7312305,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7312303,
+						0
+					],
+					"talkId": 7312303
+				}
+			]
+		},
+		{
+			"id": 7312306,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7302515,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7312301,
+			"completionStepIds": [
+				7312303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7312303",
+							"2"
+						],
+						"stepId": 7312303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7312303"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Аранара-собиратель"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 731230101,
+					"content": "#Ой! Это же {M#друг}{F#подруга} нара! Говорят, что у {M#друга}{F#подруги} нары большущий инвентарь. Аранарам нужно очень много материалов. Может, {M#друг}{F#подруга} нара поделится?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						731230102
+					],
+					"speakerTitle": "Аранара-собиратель"
+				},
+				{
+					"id": 731230102,
+					"content": "Под «материалами» я имею в виду грибы-звёзды! <color=#00E1FFFF>Обычные грибы-звёзды, сонные грибы-звёзды, гиперактивные грибы-звёзды</color> - нужны абсолютно все!..",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Аранара-собиратель"
+				}
+			]
+		},
+		{
+			"id": 7312302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7312304",
+							"2"
+						],
+						"stepId": 7312304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7312303",
+							"3"
+						],
+						"stepId": 7312303,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7312303"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Аранара-собиратель"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 731230201,
+					"content": "Нужно очень много грибов, <color=#00E1FFFF>целых три штуки</color>, только вот будут ли они полезны?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Аранара-собиратель"
+				}
+			]
+		},
+		{
+			"id": 7312303,
+			"completionStepIds": [
+				7312305
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7312305",
+							"2"
+						],
+						"stepId": 7312305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Аранара-собиратель"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 731230301,
+					"content": "#Хорош{F#ая}{M#ий} нара никогда ни в чём не откажет! Как хорошо, что у тебя есть этот волшебный инвентарь. Что ни попроси, всё в нём есть. Спасибо тебе большое, {M#друг}{F#подруга} нара!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						731230302
+					],
+					"speakerTitle": "Аранара-собиратель"
+				},
+				{
+					"id": 731230302,
+					"content": "#Хи-хи, пора в Ванарану. До встречи, {M#друг}{F#подруга} нара!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Аранара-собиратель"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,670 @@
+{
+	"id": 20017,
+	"type": "IQ",
+	"name": "Аварийный ремонт",
+	"description": "Фарра вёз товары в одно местечко рядом с ущельем Пьяницы. Он готовился к торговле с проходящими караванами, но хиличурлы расстроили его планы.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2001701,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Победите всех монстров",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001702,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Фаррой",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001707,
+						0
+					],
+					"talkId": 2001707
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001708,
+						0
+					],
+					"talkId": 2001708
+				}
+			]
+		},
+		{
+			"id": 2001703,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Соберите древесину",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100306,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001704,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте крепкую доску Фарре",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001703,
+						0
+					],
+					"talkId": 2001703
+				}
+			]
+		},
+		{
+			"id": 2001705,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Победите всех монстров",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001706,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Фаррой",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001709,
+						0
+					],
+					"talkId": 2001709
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001710,
+						0
+					],
+					"talkId": 2001710
+				}
+			]
+		},
+		{
+			"id": 2001707,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Найдите верёвку",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100308,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001708,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте верёвку Фарре",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001706,
+						0
+					],
+					"talkId": 2001706
+				}
+			]
+		},
+		{
+			"id": 2001709,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Идите и исследуйте",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1137,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2001701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001701",
+							"3"
+						],
+						"stepId": 2001701,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001702",
+							"2"
+						],
+						"stepId": 2001702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Фарра"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200170101,
+					"content": "Нет! Не бейте, пожалуйста! А, это ты. Славно... А куда делись все хиличурлы? Они убежали?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200170102
+					],
+					"speakerTitle": "Фарра"
+				},
+				{
+					"id": 200170102,
+					"content": "Отлично! Спасибо тебе. Они правда убежали?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200170103
+					],
+					"speakerTitle": "Фарра"
+				},
+				{
+					"id": 200170103,
+					"content": "Фух... За мной должок. Но после такой задержки мне всё равно не поспеть за караваном.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200170104
+					],
+					"speakerTitle": "Фарра"
+				},
+				{
+					"id": 200170104,
+					"content": "К тому же моя повозка сломана, нужно починить её и добраться до города, пока фрукты не испортились.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200170105
+					],
+					"speakerTitle": "Фарра"
+				},
+				{
+					"id": 200170105,
+					"content": "Если они испортятся, будет такая вонища!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200170106
+					],
+					"speakerTitle": "Фарра"
+				},
+				{
+					"id": 200170106,
+					"content": "Фу, уже попахивает. Надо всё перебрать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200170107
+					],
+					"speakerTitle": "Фарра"
+				},
+				{
+					"id": 200170107,
+					"content": "Поможешь мне поискать материалы для ремонта телеги? Мне нужна <color=#00E1FFFF>крепкая доска</color>.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Фарра"
+				}
+			]
+		},
+		{
+			"id": 2001702,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001703",
+							"2"
+						],
+						"stepId": 2001703,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Фарра"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200170201,
+					"content": "В лесу полно <color=#00E1FFFF>крепких досок</color>. Поторопись, фрукты скоро испортятся!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Фарра"
+				}
+			]
+		},
+		{
+			"id": 2001703,
+			"completionStepIds": [
+				2001704
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001704",
+							"2"
+						],
+						"stepId": 2001704,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Фарра"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200170301,
+					"content": "Этого более чем достаточно. Пора починить повозку! Только сначала помою руки.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200170302
+					],
+					"speakerTitle": "Фарра"
+				},
+				{
+					"id": 200170302,
+					"content": "Что? Они возвращаются! Ааа!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Фарра"
+				}
+			]
+		},
+		{
+			"id": 2001704,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001705",
+							"3"
+						],
+						"stepId": 2001705,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001706",
+							"2"
+						],
+						"stepId": 2001706,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Фарра"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200170401,
+					"content": "Спасибо тебе!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200170402
+					],
+					"speakerTitle": "Фарра"
+				},
+				{
+					"id": 200170402,
+					"content": "Здесь становится слишком опасно. Нельзя терять ни минуты.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200170403
+					],
+					"speakerTitle": "Фарра"
+				},
+				{
+					"id": 200170403,
+					"content": "Они снова сломали повозку... Идеального ремонта уже не получится. Просто обвяжу всё верёвкой... Стоп, а куда подевалась моя верёвка?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200170404
+					],
+					"speakerTitle": "Фарра"
+				},
+				{
+					"id": 200170404,
+					"content": "Невероятно! Они стащили <color=#00E1FFFF>верёвку</color>! Добрый человек, пожалуйста, найди её.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Фарра"
+				}
+			]
+		},
+		{
+			"id": 2001705,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001707",
+							"2"
+						],
+						"stepId": 2001707,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Фарра"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200170501,
+					"content": "#Найди для меня верёвку, будь добр{F#а}!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Фарра"
+				}
+			]
+		},
+		{
+			"id": 2001706,
+			"completionStepIds": [
+				2001708
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001707",
+							"3"
+						],
+						"stepId": 2001707,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001708",
+							"2"
+						],
+						"stepId": 2001708,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Фарра"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200170601,
+					"content": "Пойдёт. До города как-нибудь доберусь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200170602
+					],
+					"speakerTitle": "Фарра"
+				},
+				{
+					"id": 200170602,
+					"content": "Спасибо тебе! До встречи!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200170603
+					],
+					"speakerTitle": "Фарра"
+				},
+				{
+					"id": 200170603,
+					"content": "Какая же вонища!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Фарра"
+				}
+			]
+		},
+		{
+			"id": 2001707,
+			"completionStepIds": [
+				2001702
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Фарра"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200170701,
+					"content": "Хорошо.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200170702
+					]
+				},
+				{
+					"id": 200170702,
+					"content": "Отлично! Я буду ждать тебя здесь. Уф, перебрать бы гнилые фрукты поскорее...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Фарра"
+				}
+			]
+		},
+		{
+			"id": 2001708,
+			"completionStepIds": [
+				2001702
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Фарра"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200170801,
+					"content": "Занимайся этим сам.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200170802
+					]
+				},
+				{
+					"id": 200170802,
+					"content": "Подожди! Чувствуешь этот запах? Будет в тысячу раз хуже! Мне нужно доставить эти фрукты вовремя! Пожалуйста, помоги мне.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Фарра"
+				}
+			]
+		},
+		{
+			"id": 2001709,
+			"completionStepIds": [
+				2001706
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Фарра"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200170901,
+					"content": "Конечно.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200170902
+					]
+				},
+				{
+					"id": 200170902,
+					"content": "Вот спасибочки!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Фарра"
+				}
+			]
+		},
+		{
+			"id": 2001710,
+			"completionStepIds": [
+				2001706
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Фарра"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200171001,
+					"content": "Мне некогда.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200171002
+					]
+				},
+				{
+					"id": 200171002,
+					"content": "Погоди, погоди! А что мне делать, если они снова придут? Яблоками их закидывать, что ли?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200171003
+					],
+					"speakerTitle": "Фарра"
+				},
+				{
+					"id": 200171003,
+					"content": "Без твоей помощи мне никак не справиться.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Фарра"
+				}
+			]
+		}
+	]
+}

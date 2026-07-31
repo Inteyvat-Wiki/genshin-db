@@ -1,0 +1,167 @@
+{
+	"id": 72713,
+	"type": "WQ",
+	"name": "Ингредиенты для Мураками",
+	"description": "Мураками с острова Наруками хотел бы получить 15 порций мяты.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7271301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте Мураками 15 порций мяты",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7271301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7271302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Мураками",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7271302,
+						0
+					],
+					"talkId": 7271302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7271301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271301",
+							"2"
+						],
+						"stepId": 7271301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7271301"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мураками"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727130101,
+					"content": "О мяте...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727130102
+					]
+				},
+				{
+					"id": 727130102,
+					"content": "Мяту, да... Мята мне очень нужна... С ней я смогу создать столько новых вкусов...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727130103
+					],
+					"speakerTitle": "Мураками"
+				},
+				{
+					"id": 727130103,
+					"content": "Полагаю, вы приняли моё поручение? В таком случае, полагаю, вы уже принесли мне 15 пучков мяты?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727130106,
+						727130104
+					],
+					"speakerTitle": "Мураками"
+				},
+				{
+					"id": 727130106,
+					"content": "Да, вот.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 727130104,
+					"content": "Пока ещё нет.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727130105
+					]
+				},
+				{
+					"id": 727130105,
+					"content": "Ладно, принесите их мне, как только получите.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Мураками"
+				}
+			]
+		},
+		{
+			"id": 7271302,
+			"completionStepIds": [
+				7271302
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271302",
+							"2"
+						],
+						"stepId": 7271302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мураками"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727130201,
+					"content": "Прекрасно, значит, самое время начинать работу над новыми блюдами! ...О, но сначала надо оплатить ваш труд! Чуть не забыл!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Мураками"
+				}
+			]
+		}
+	]
+}

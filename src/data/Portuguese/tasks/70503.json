@@ -1,0 +1,562 @@
+{
+	"id": 70503,
+	"type": "WQ",
+	"name": "Gelo Sólido, Solúvel em Vinho",
+	"description": "\"Tsc, por que tem um Lawrence bebendo aqui também... que má sorte.\" \"Cof... Melhor ter cuidado com o que fala, ela é uma dos cavaleiros, afinal de contas...\"",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70508,
+		70509
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com Luka, e entre na Taverna",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050302,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Faça o coquetel especial da Eula",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050302,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050303,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dê o coquetel para Eula",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050302,
+						0
+					],
+					"talkId": 7050302
+				}
+			]
+		},
+		{
+			"id": 7050304,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com Eula",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050301,
+						0
+					],
+					"talkId": 7050301
+				}
+			]
+		},
+		{
+			"id": 7050305,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Vá para o balcão e complete os preparativos para os negócios",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050301,
+			"completionStepIds": [
+				7050304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050304",
+							"2"
+						],
+						"stepId": 7050304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050302",
+							"2"
+						],
+						"stepId": 7050302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Eula"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705030101,
+					"content": "#Um copo pequeno de Recife Espumante, por favor... Obrigad{M#o}{F#a}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030102,
+						705030103
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030102,
+					"content": "Eula?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030104
+					]
+				},
+				{
+					"id": 705030104,
+					"content": "Eu... estou bem.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030105
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030105,
+					"content": "Hã... Tem algo estranho com a Eula. Será que ela já estava bebendo antes de vir aqui?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030106
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030106,
+					"content": "Recife Espumante contém café. Será que não vai cair mal no estômago dela de beber café depois de licor?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030107
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030107,
+					"content": "Pelo bem da barriga dela, vamos deixar mais aguado antes de servir a ela!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030103,
+					"content": "Está tudo bem com você?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030104
+					]
+				}
+			]
+		},
+		{
+			"id": 7050302,
+			"completionStepIds": [
+				7050303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050303",
+							"2"
+						],
+						"stepId": 7050303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Eula"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705030238,
+					"content": "Segundo as instruções de Paimon, você mistura a água com o café...",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": []
+				},
+				{
+					"id": 705030201,
+					"content": "Isso tem um gosto muito bom...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030202
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030202,
+					"content": "Uau, ela nem percebeu o tanto de água que adicionamos. Ela deve ter bebido muito.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030203
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030203,
+					"content": "Bartender, mais um! ...Hã? E-espera, são vocês?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030204,
+						705030205
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030204,
+					"content": "Estamos aprendendo a ser bartenders...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030206
+					]
+				},
+				{
+					"id": 705030205,
+					"content": "Você só percebeu a gente agora?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030206
+					]
+				},
+				{
+					"id": 705030206,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030207
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030207,
+					"content": "Desculpe. Acabei de vir aqui da Cauda do Gato. Talvez eu tenha bebido muito...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030208,
+						705030209
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030208,
+					"content": "Tem alguma coisa que está lhe preocupando?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030210
+					]
+				},
+				{
+					"id": 705030209,
+					"content": "Estou aqui se precisar conversar.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030210
+					]
+				},
+				{
+					"id": 705030210,
+					"content": "Sim. É bem solitário beber sozinha. Você vai se sentir melhor se conversar com a gente!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030211
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030211,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030212
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030212,
+					"content": "Acho que eu sempre bebo sozinha...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030213
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030213,
+					"content": "Desde que eu esteja em Mondstadt, nunca serei bem-vinda nas tavernas. Eu na verdade estava me sentindo bem hoje e queria uma bebida, mas mesmo assim eles não paravam de me importunar...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030214
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030214,
+					"content": "#Diga-me, {NICKNAME}, como você conseguiu fazer tantos amigos?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030215
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030215,
+					"content": "As pessoas sempre parecem te apreciar e estão sempre sorrindo quando falam de você.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030216
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030216,
+					"content": "Mas quanto a mim, só de mencionar o nome da minha família é o suficiente para deixar todos...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030217
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030217,
+					"content": "Ei, não pense assim.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030218
+					]
+				},
+				{
+					"id": 705030218,
+					"content": "Você não escolheu nascer no Clã Lawrence, e nós não ligamos para este tipo de coisa. A Eula que conhecemos é uma ótima pessoa!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030219
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030219,
+					"content": "Mas, você não é direta. Sempre faz de conta que tem algum tipo de rancor, e tenta esconder sua gentileza de todo mundo...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030220
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030220,
+					"content": "Ei, quem disse que estou fingindo?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030221,
+						705030222
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030221,
+					"content": "Os outros vão aceitar você, Eula...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030223
+					]
+				},
+				{
+					"id": 705030222,
+					"content": "Vão existir muitas pessoas que vão aceitar você um dia, Eula...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030223
+					]
+				},
+				{
+					"id": 705030223,
+					"content": "Sério? Heh, é difícil de imaginar mesmo quando estou tão bêbada...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030224
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030224,
+					"content": "Mesmo pertencendo aos Cavaleiros de Favonius por todo esse tempo, as pessoas ainda...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030225
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030225,
+					"content": "O vento sempre muda de direção.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030226
+					]
+				},
+				{
+					"id": 705030226,
+					"content": "Oh, certo! O Bardo Desafinado também disse algo sábio assim.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030227
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030227,
+					"content": "Simplesmente seja você mesma, Eula... E continue seguindo em frente.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030228
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030228,
+					"content": "Mais cedo ou mais tarde você conseguirá mudar a ideia que as pessoas têm sobre o Clã Lawrence.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030229
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030229,
+					"content": "É preciso paciência.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030230
+					]
+				},
+				{
+					"id": 705030230,
+					"content": "Sim, obrigada...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030231
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030231,
+					"content": "Eu... *cof cof* Tenho que ir agora.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030232
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030232,
+					"content": "Você quer que eu lhe acompanhe?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030233
+					]
+				},
+				{
+					"id": 705030233,
+					"content": "Não é preciso. Quero me lembrar das palavras que você me disse, e não posso pensar em outras coisas antes de escrever tudo isso para não esquecer...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030234
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030234,
+					"content": "Eula parece ser muito mais honesta depois de umas bebidas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030235
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030235,
+					"content": "Mas algo parece estar faltando quando ela não diz sua frase icônica.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030236
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030236,
+					"content": "Oh-oh! Quando ela acordar amanhã, você acha que ela virá nos ameaçando para esquecer o que passou hoje?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030237
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030237,
+					"content": "Hmm, talvez.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

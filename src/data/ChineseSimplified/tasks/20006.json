@@ -1,0 +1,430 @@
+{
+	"id": 20006,
+	"type": "IQ",
+	"name": "餐品订单",
+	"description": "为了满足顾客的需要，猎鹿人餐馆持续提供着送餐服务。但是因为顾客众多，餐馆里的人手严重不足，莎拉小姐想要找一个人来帮忙送餐。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2000601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往猎鹿人餐馆询问莎拉",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "与莎拉对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000601,
+						0
+					],
+					"talkId": 2000601
+				}
+			]
+		},
+		{
+			"id": 2000603,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)运送餐品给活跃的欧琳$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000602,
+						0
+					],
+					"talkId": 2000602
+				}
+			]
+		},
+		{
+			"id": 2000604,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "运送餐品给活跃的欧琳",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000602,
+						0
+					],
+					"talkId": 2000602
+				}
+			]
+		},
+		{
+			"id": 2000605,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)桥接$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000602,
+						0
+					],
+					"talkId": 2000602
+				}
+			]
+		},
+		{
+			"id": 2000606,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "运送餐品给活跃的欧琳",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000607,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "击退捣乱的史莱姆",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000610,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "把餐费交给餐馆莎拉",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000604,
+						0
+					],
+					"talkId": 2000604
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2000601,
+			"completionStepIds": [
+				2000602
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000601",
+							"3"
+						],
+						"stepId": 2000601,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000602",
+							"2"
+						],
+						"stepId": 2000602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"莎拉"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200060101,
+					"content": "餐品外送订单",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060102
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200060102,
+					"content": "欢迎光临猎鹿人…旅行者？你来得正好。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060103
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200060103,
+					"content": "抱歉啦，我知道你饿着肚子，但是能请你帮我个忙吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060104
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200060104,
+					"content": "清泉镇里的欧琳小姐订了一份<color=#00E1FFFF>蜜酱胡萝卜煎肉</color>，但是我听说，清泉镇最近总是有史莱姆出来捣乱…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060105
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200060105,
+					"content": "我自己不敢过去…能请你帮我把餐品送给<color=#00E1FFFF>清泉镇的欧琳</color>吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060106,
+						200060107
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200060106,
+					"content": "好吧，但是…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200060108
+					]
+				},
+				{
+					"id": 200060108,
+					"content": "等你回来的时候，会有一顿大餐做回报的！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060109
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200060109,
+					"content": "拜托了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200060107,
+					"content": "太饿了，我只是来吃饭的。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200060110
+					]
+				},
+				{
+					"id": 200060110,
+					"content": "等你帮完我的忙之后，我，我就请你吃猎鹿人特制料理，就拜托你了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "莎拉"
+				}
+			]
+		},
+		{
+			"id": 2000602,
+			"completionStepIds": [
+				2000603,
+				2000604,
+				2000605
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000607",
+							"3"
+						],
+						"stepId": 2000607,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000604",
+							"2"
+						],
+						"stepId": 2000604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"活跃的欧琳"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200060201,
+					"content": "谢谢你，这些史莱姆真讨厌。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060202
+					],
+					"speakerTitle": "活跃的欧琳"
+				},
+				{
+					"id": 200060202,
+					"content": "要不是我饿到没力气了，这些家伙…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060203
+					],
+					"speakerTitle": "活跃的欧琳"
+				},
+				{
+					"id": 200060203,
+					"content": "这是你订的餐。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200060204
+					]
+				},
+				{
+					"id": 200060204,
+					"content": "唔——是胡萝卜和肉的香气…要是能早点吃到，那些史莱姆早就被我打飞了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060205
+					],
+					"speakerTitle": "活跃的欧琳"
+				},
+				{
+					"id": 200060205,
+					"content": "算了不管了，这是餐费，带回去给莎拉小姐吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "活跃的欧琳"
+				}
+			]
+		},
+		{
+			"id": 2000604,
+			"completionStepIds": [
+				2000610
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000604",
+							"3"
+						],
+						"stepId": 2000604,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000610",
+							"2"
+						],
+						"stepId": 2000610,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"莎拉"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200060401,
+					"content": "交付餐费",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060402
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200060402,
+					"content": "你回来了，餐品送到了吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060403
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200060403,
+					"content": "这是餐费。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200060404
+					]
+				},
+				{
+					"id": 200060404,
+					"content": "我看看…没错，太感谢了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060405
+					],
+					"speakerTitle": "莎拉"
+				},
+				{
+					"id": 200060405,
+					"content": "还有，这份<color=#00E1FFFF>美味的蟹黄火腿焗时蔬</color>给你，刚刚做好的，赶紧趁热吃了吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "莎拉"
+				}
+			]
+		}
+	]
+}

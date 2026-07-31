@@ -1,0 +1,663 @@
+{
+	"id": 21003,
+	"type": "WQ",
+	"name": "独木难支",
+	"description": "千岩军桥西守卫着荻花洲上的交通要道。但他觉得，就凭自己一个人，多少有些独木难支…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2100301,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "守桥人任务开启$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2100302,
+						0
+					],
+					"talkId": 2100302
+				}
+			]
+		},
+		{
+			"id": 2100302,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "第二次对话$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2100302,
+						0
+					],
+					"talkId": 2100302
+				}
+			]
+		},
+		{
+			"id": 2100311,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "调查周边的营地",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2100320,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "击败营地的敌人",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2100321,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "直接清理营地$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2100330,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "没有对话直接清理完成任务$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2100330,
+						0
+					],
+					"talkId": 2100330
+				}
+			]
+		},
+		{
+			"id": 2100331,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "对话后直接清理营地完成任务$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2100331,
+						0
+					],
+					"talkId": 2100331
+				}
+			]
+		},
+		{
+			"id": 2100399,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "与桥西对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2100399,
+						0
+					],
+					"talkId": 2100399
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2100304,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2100302",
+							"2"
+						],
+						"stepId": 2100302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_COMMON",
+			"trigger": {
+				"objectNames": [
+					"桥西"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210030111,
+					"content": "唉，要是能再多来点人手就好了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210030112
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210030112,
+					"content": "虽然我很想去把它们给清理掉，但又担心我要是离开了这里，又会有怪物趁机袭击过路人，所以只能一直这么干耗着…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210030113
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210030113,
+					"content": "能拜托你，帮我去把那边的怪物给清理掉吗？我也好腾出手来，去解决别的问题…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "桥西"
+				}
+			]
+		},
+		{
+			"id": 2100311,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2100311",
+							"2"
+						],
+						"stepId": 2100311,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"桥西"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210031101,
+					"content": "清理怪物的事就拜托你了，真不好意思，本来是我的工作，却要麻烦你…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210031102
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210031102,
+					"content": "唉，要是能再多来点人手就好了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "桥西"
+				}
+			]
+		},
+		{
+			"id": 2100320,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2100320",
+							"2"
+						],
+						"stepId": 2100320,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"桥西"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210032001,
+					"content": "清理怪物的事就拜托你了，真不好意思，本来是我的工作，却要麻烦你…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210032002
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210032002,
+					"content": "唉，要是能再多来点人手就好了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "桥西"
+				}
+			]
+		},
+		{
+			"id": 2100330,
+			"completionStepIds": [
+				2100330
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2100330",
+							"2"
+						],
+						"stepId": 2100330,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"桥西"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210033001,
+					"content": "这可怎么办…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210033002
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210033002,
+					"content": "怎么了？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210033003
+					]
+				},
+				{
+					"id": 210033003,
+					"content": "嗯？你是什么人？来往大桥者都需要接受盘查，你…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210033004
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210033004,
+					"content": "不过，呃…看你穿得这么古怪，肯定也不是什么坏人…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210033005
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210033005,
+					"content": "什么道理…你想想嘛，想做坏事的话，一定穿得越低调越好吧？哪里会像你穿得这么显眼…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210033015
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210033015,
+					"content": "你在这里做什么？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210033006
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210033006,
+					"content": "我是负责这片区域的「千岩军」。因为这里是荻花洲的交通要道，无论是商货还是行人，都要从这里经过，所以我被派来做护卫。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210033007
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210033007,
+					"content": "几天前，我在旁边发现了一群怪物…那群怪物看起来像是在那里扎了营，虽然它们目前没有什么动作，但安全起见，我还是要盯着它们。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210033008
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210033008,
+					"content": "虽然我很想去把它们给清理掉…但我又担心，要是我离开了这里，会有其他的怪物趁机袭击过路人，所以只能一直这么干耗着…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210033009
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210033009,
+					"content": "我已经把那群怪物全部清理掉了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210033010
+					]
+				},
+				{
+					"id": 210033010,
+					"content": "你已经清理掉了？啊，这…这可再好不过了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210033011
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210033011,
+					"content": "苦你了，真是不好意思，这本来是我的工作，反而麻烦了你…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210033012
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210033012,
+					"content": "唉，也不知道上面是怎么想的，一直没有再派人来这里。我一个人，又怎么能面面俱到呢…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210033013
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210033013,
+					"content": "我一定要找个机会，再和上面好好报告一下这件事。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210033014
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210033014,
+					"content": "谢谢你，这些给你，就算是答谢吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "桥西"
+				}
+			]
+		},
+		{
+			"id": 2100331,
+			"completionStepIds": [
+				2100331
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2100331",
+							"2"
+						],
+						"stepId": 2100331,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"桥西"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210033101,
+					"content": "唉，要是能再多来点人手就好了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210033102
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210033102,
+					"content": "虽然我很想去把它们给清理掉，但又担心我要是离开了这里，又会有怪物趁机袭击过路人，所以只能一直这么干耗着…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210033103
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210033103,
+					"content": "我已经把那群怪物全部清理掉了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210033104
+					]
+				},
+				{
+					"id": 210033104,
+					"content": "你已经清理掉了？啊，这…这可再好不过了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210033105
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210033105,
+					"content": "苦你了，真是不好意思，这本来是我的工作，反而麻烦了你…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210033106
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210033106,
+					"content": "唉，也不知道上面是怎么想的，一直没有再派人来这里。我一个人，又怎么能面面俱到呢…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210033107
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210033107,
+					"content": "我一定要找个机会，再和上面好好报告一下这件事。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210033108
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210033108,
+					"content": "谢谢你，这些给你，就算是答谢吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "桥西"
+				}
+			]
+		},
+		{
+			"id": 2100399,
+			"completionStepIds": [
+				2100399
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2100399",
+							"2"
+						],
+						"stepId": 2100399,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"桥西"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210039901,
+					"content": "你把那些怪物清理掉了吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210039902
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210039902,
+					"content": "已经清理掉了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210039903
+					]
+				},
+				{
+					"id": 210039903,
+					"content": "辛苦你了，真是不好意思，这本来是我的工作，还让你跑了一趟…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210039904
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210039904,
+					"content": "…你也不用掩饰，看你一身尘土的，准是在那里和魔物打了一场吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210039905
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210039905,
+					"content": "唉，也不知道上面是怎么想的，一直没有再派人来这里。我一个人，又怎么能面面俱到呢…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210039906
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210039906,
+					"content": "就算只是两座桥，也是有不少日常行人的，这里要是出了问题，事情绝对只大不小…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210039907
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210039907,
+					"content": "我一定要找个机会，再和上面好好报告一下这件事。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210039908
+					],
+					"speakerTitle": "桥西"
+				},
+				{
+					"id": 210039908,
+					"content": "谢谢你，这些给你，就算是答谢吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "桥西"
+				}
+			]
+		}
+	]
+}

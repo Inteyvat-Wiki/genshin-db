@@ -1,0 +1,580 @@
+{
+	"id": 72149,
+	"type": "WQ",
+	"name": "Cuore di Watatsumi",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "Le Profondità seleniche",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_RANK_ZERO_WQ",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		72145,
+		72146,
+		72147,
+		72148
+	],
+	"steps": [
+		{
+			"id": 7214901,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Torna al Santuario dei Sangonomiya e parla con Tsuyuko",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7214902,
+						0
+					],
+					"talkId": 7214902
+				}
+			]
+		},
+		{
+			"id": 7214902,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Apri il cancello che porta al Cuore di Watatsumi",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7214903,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Raggiungi il Cuore",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7214904,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Infrangi l'ultimo sigillo",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7214905,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Ottieni la Chiave delle Profondità",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7214906,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Tsuyuko",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7214903,
+						0
+					],
+					"talkId": 7214903
+				}
+			]
+		},
+		{
+			"id": 7214907,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7214901,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7214901,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214904",
+							"3"
+						],
+						"stepId": 7214904,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214905",
+							"2"
+						],
+						"stepId": 7214905,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tsuyuko"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721490101,
+					"content": "(La signorina Tsuyuko sembra assorta nei suoi pensieri, forse è meglio non disturbarla.)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tsuyuko"
+				}
+			]
+		},
+		{
+			"id": 7214902,
+			"completionStepIds": [
+				7214901
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214901",
+							"2"
+						],
+						"stepId": 7214901,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tsuyuko",
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721490201,
+					"content": "#Bentornat{F#a}{M#o}, {NICKNAME}. Posso fare qualcosa per te?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490202
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490202,
+					"content": "Riguardo all'incarico...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490203
+					]
+				},
+				{
+					"id": 721490203,
+					"content": "Abbiamo le quattro Perle spirituali!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490204
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 721490204,
+					"content": "Davvero? Sapevo di poter contare su di voi, grazie mille! Allora siamo all'ultimo passaggio prima di poter sbloccare il sigillo del cuore, ovvero quello finale.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490205
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490205,
+					"content": "Mi spiace, ma dovrò chiedervi di accompagnarmi. Spero non vi dispiaccia.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490206
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490206,
+					"content": "#Beh, fatto trenta facciamo trentuno! Giusto, {NICKNAME}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490207,
+						721490208
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 721490207,
+					"content": "Va bene.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490209
+					]
+				},
+				{
+					"id": 721490209,
+					"content": "Non c'è tempo da perdere. Andiamo!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490208,
+					"content": "D'accordo.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490209
+					]
+				}
+			]
+		},
+		{
+			"id": 7214903,
+			"completionStepIds": [
+				7214906
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214905",
+							"3"
+						],
+						"stepId": 7214905,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214906",
+							"2"
+						],
+						"stepId": 7214906,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tsuyuko",
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721490301,
+					"content": "Mmh...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490302
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490302,
+					"content": "Tsuyuko...?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490303
+					]
+				},
+				{
+					"id": 721490303,
+					"content": "Oh, chiedo scusa. Ero persa nei miei pensieri.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490304
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490304,
+					"content": "Grazie al vostro aiuto, ora siamo in possesso della Chiave delle Profondità seleniche.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490305
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490305,
+					"content": "Profondità seleni... Che?! Di che stai parlando?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490306
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 721490306,
+					"content": "Eheh, chiamiamola semplicemente \"Chiave delle Profondità\". Non siete del posto, non pretendiamo che conosciate alla perfezione i termini completi per tutte le nostre tradizioni.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490307
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490307,
+					"content": "Servirà ad aprire l'entrata di Enkanomiya. È stata forgiata con il sangue versato dal nostro Omikami...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490308
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490308,
+					"content": "O così dicono le leggende.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490309
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490309,
+					"content": "Oh...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490310
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 721490310,
+					"content": "Il mistero si infittisce...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490311
+					]
+				},
+				{
+					"id": 721490311,
+					"content": "Eheh! Nessun mistero, anzi al contrario...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490312
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490312,
+					"content": "Bene, non resta che parlare con la Sacerdotessa divina, attendere la sua approvazione e poi cogliere il momento più propizio del flusso nelle vene spirituali...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490313
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490313,
+					"content": "A quel punto, potremo raggiungere Enkanomiya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490314
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490314,
+					"content": "Aspetta, ma allora perché abbiamo fatto tutto questo?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490315
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 721490315,
+					"content": "Beh, il percorso in sé vi ha dato tanto, non è vero?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490316
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490316,
+					"content": "Voglio dire... Avete consolidato un solido rapporto con il Santuario dei Sangonomiya! L'Isola di Watatsumi vi accoglierà nuovamente quando lo vorrete!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490317
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490317,
+					"content": "Non ci sarebbe qualcosa di più concreto?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490318
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 721490318,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490319
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490319,
+					"content": "Si dice che le Perle spirituali risponderanno solo alla chiamata di un'anima candida, e che la Chiave apparirà solo dinnanzi a un cuore puro come le acque più cristalline.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490320
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490320,
+					"content": "Di solito non do molto peso a quei testi, ma di una cosa sono convinta: tu puoi dare una svolta alla situazione attuale sull'Isola di Watatsumi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490321
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490321,
+					"content": "Che dire... Quando sarà il momento di raggiungere Enkanomiya...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490322,
+						721490323
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490322,
+					"content": "Ci incontreremo ancora, giusto?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490325
+					]
+				},
+				{
+					"id": 721490325,
+					"content": "D'accordo, a presto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490323,
+					"content": "Estrarrai un altro omikuji?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490324
+					]
+				},
+				{
+					"id": 721490324,
+					"content": "Eheh, ne ho già ricevuto uno fortunato. Ci rivedremo, non ho dubbi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490325
+					],
+					"speakerTitle": "Tsuyuko"
+				}
+			]
+		},
+		{
+			"id": 7214904,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214907",
+							"2"
+						],
+						"stepId": 7214907,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7214901"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721490401,
+					"content": "Uno strano sigillo luminescente, con sopra il simbolo di un pesce, è stato inciso...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sigillo del cuore"
+				}
+			]
+		}
+	]
+}

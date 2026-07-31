@@ -1,0 +1,746 @@
+{
+	"id": 451,
+	"type": "LQ",
+	"name": "울프의 영지",
+	"description": "여행자와 페이몬은 몬드에서 인적이 드문 울프 영지를 탐방하기로 결정한다. 이 원시 생태 지역에 어떤 위험이 도사리고 있을지 전혀 모른다",
+	"unlockDescription": "",
+	"chapter": "루피카의 의미",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		452
+	],
+	"prevMainQuestList": [
+		396,
+		485
+	],
+	"steps": [
+		{
+			"id": 45101,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "울프 영지로 가기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1051,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45102,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "페이몬과 대화",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						45101,
+						0
+					],
+					"talkId": 45101
+				}
+			]
+		},
+		{
+			"id": 45103,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "슬라임 처치하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45104,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "도와준 소년에게 감사 인사 전하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						45103,
+						0
+					],
+					"talkId": 45103
+				}
+			]
+		},
+		{
+			"id": 45105,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "충분한 짐승 고기 획득하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100061,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						45105,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45106,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "짐승고기 3개를 레이저에게 전달하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						45106,
+						0
+					],
+					"talkId": 45106
+				}
+			]
+		},
+		{
+			"id": 45107,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "페이몬과 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						45107,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45108,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "사냥 알림",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						45108,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45109,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "울프 영지로 가기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						45109,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 45101,
+			"completionStepIds": [
+				45102
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45107",
+							"2"
+						],
+						"stepId": 45107,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"페이몬"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510101,
+					"content": "여기가 바로 「울프 영지」야, 몬드 사람들이 여길 오는 일이 거의 없다고 들었어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510102
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 4510102,
+					"content": "몬드성과 가까운데도 원시 생태를 유지하고 있어…. 자연의 법칙이 모든 걸 다스리는 곳이지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510103
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 4510103,
+					"content": "이른바 약육강식의 세계지, 슬라임마저도 거대하다구!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510104
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 4510104,
+					"content": "봐, 저~~렇게나 커",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510105
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 4510105,
+					"content": "…공격해 온다! 준비해!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 45103,
+			"completionStepIds": [
+				45104
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45104",
+							"2"
+						],
+						"stepId": 45104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"레이저"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510301,
+					"content": "고… 고마워——울프 영지의 늑대들이 왔다! 빨리 도망쳐!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510303
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 4510303,
+					"content": "걱정 마. 늑대는 내 친구야. 근데 너희는 누구지?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510304
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510304,
+					"content": "우리는 그냥 평범한 여행자야…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510305
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 4510305,
+					"content": "평범하지 않아, 너희들. 익숙한 냄새가 나",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510306
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510306,
+					"content": "익숙한 냄새라고?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510307
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 4510307,
+					"content": "기사단, 맞지? 기사단에 친구가 있어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510308,
+						4510309
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510308,
+					"content": "네 이름이 뭐야?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						4510310
+					]
+				},
+				{
+					"id": 4510310,
+					"content": "나는 레이저야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510311
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510311,
+					"content": "너도 페보니우스 기사단인 거야?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510312
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 4510312,
+					"content": "기사단과는 아무 상관 없어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510314
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510314,
+					"content": "으아…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510315
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 4510315,
+					"content": "늑대 무리라니… 대체 무슨 일이야?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						4510316
+					]
+				},
+				{
+					"id": 4510316,
+					"content": "아… 늑대들, 내 가족이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510317
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510317,
+					"content": "가족?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510318
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 4510318,
+					"content": "가족. 날 길러주고 함께 생활해온 가족",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510319
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510319,
+					"content": "아무래도 엄청 복잡한 사연이 있을 것 같네…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510320
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 4510320,
+					"content": "다들 날 탓하고 있어. 너희를 돕느라 위치가 노출돼서 멧돼지 놓쳤어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510321
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510321,
+					"content": "#그랬구나…. 그럼 {NICKNAME}이(가) 멧돼지 잡는 걸 도와줘야겠네",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510322
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 4510322,
+					"content": "#{NICKNAME}도 꽤 잘 잡거든",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510323
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 4510323,
+					"content": "그, 그럴 필요 없어. 기사단의 친구가 나서면 늑대들은 굶게 돼…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510324
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510324,
+					"content": "사양하지 말고 조금만 기다려봐",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 4510309,
+					"content": "너도 기사단의 사람이야?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						4510313
+					]
+				},
+				{
+					"id": 4510313,
+					"content": "나는 레이저. 기사단과는 아무 상관 없어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510314
+					],
+					"speakerTitle": "레이저"
+				}
+			]
+		},
+		{
+			"id": 45105,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45105",
+							"2"
+						],
+						"stepId": 45105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"레이저"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510501,
+					"content": "아, 정말 도와주려는 거야…?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510502
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510502,
+					"content": "늑대 무리만의 방법, 더 효율적이야. 하지만, 함정은 새로워",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510503
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510503,
+					"content": "설치해두고, 멧돼지를 거기로 몰면 돼. 맞지?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510504
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510504,
+					"content": "폭발하진 않겠지…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "레이저"
+				}
+			]
+		},
+		{
+			"id": 45106,
+			"completionStepIds": [
+				45106
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45106",
+							"2"
+						],
+						"stepId": 45106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PACK_HAVE_ITEM",
+						"rawParams": [
+							"100061",
+							"3"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"레이저"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510601,
+					"content": "봐 봐, 우리가 해냈어!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510602
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 4510602,
+					"content": "고마워. 하지만…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510603
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510603,
+					"content": "우리가 나섰다면 대여섯 마리는 잡았을 텐데… 오늘 늑대 몇 마리는 굶겠어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510604
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510604,
+					"content": "으음…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510605
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 4510605,
+					"content": "신경 쓰지 마, 고마워",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510606
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510606,
+					"content": "너희가 기사단의 그 빨갛고 뜨거워 보이는 여자애, 친구보다 대단해",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510607
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510607,
+					"content": "그 애가 나섰으면, 산이 온통 불탔을 거야. 돼지는 한 마리도 못 잡고",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510608
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510608,
+					"content": "나는 가봐야겠어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510609
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510609,
+					"content": "요즘 여긴 위험해. 너희들 조심해야 해",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510610
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510610,
+					"content": "정말 특이한 사람이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510611
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 4510611,
+					"content": "방금 말한 그 기사단 친구 있잖아, 붉은색의 뜨거운 소녀——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510612
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 4510612,
+					"content": "#{NICKNAME}, 누구인 것 같아?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "페이몬"
+				}
+			]
+		},
+		{
+			"id": 45107,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45106",
+							"2"
+						],
+						"stepId": 45106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_NUM_LESS_THAN",
+						"rawParams": [
+							"100061",
+							"3"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"레이저"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510501,
+					"content": "아, 정말 도와주려는 거야…?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510502
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510502,
+					"content": "늑대 무리만의 방법, 더 효율적이야. 하지만, 함정은 새로워",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510503
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510503,
+					"content": "설치해두고, 멧돼지를 거기로 몰면 돼. 맞지?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510504
+					],
+					"speakerTitle": "레이저"
+				},
+				{
+					"id": 4510504,
+					"content": "폭발하진 않겠지…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "레이저"
+				}
+			]
+		}
+	]
+}

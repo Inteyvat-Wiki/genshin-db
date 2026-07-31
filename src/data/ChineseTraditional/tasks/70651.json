@@ -1,0 +1,187 @@
+{
+	"id": 70651,
+	"type": "WQ",
+	"name": "採礦之道",
+	"description": "在野外採集礦石不是一件容易的事…也許，蒙德城的鐵匠瓦格納先生會知道一些關於採集礦石的訣竅…",
+	"unlockDescription": "完成此任務可解鎖功能「礦點檢索」",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_GUIDE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7065101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "與瓦格納對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7065102,
+						0
+					],
+					"talkId": 7065102
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7065103,
+						0
+					],
+					"talkId": 7065103
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7065104,
+						0
+					],
+					"talkId": 7065104
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7065101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7065101",
+							"2"
+						],
+						"stepId": 7065101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"瓦格納"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706510101,
+					"content": "唔，礦石好像有點不夠用了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706510102
+					],
+					"speakerTitle": "瓦格納"
+				},
+				{
+					"id": 706510102,
+					"content": "關於採集礦石…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						706510103
+					]
+				},
+				{
+					"id": 706510103,
+					"content": "#礦石？{F#妳}{M#你}是要鍛造什麼東西嗎？是武器，還是鎧甲？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706510104
+					],
+					"speakerTitle": "瓦格納"
+				},
+				{
+					"id": 706510104,
+					"content": "#{F#妳}{M#你}如果想要採集礦石的話，我倒是知道哪裡採比較方便。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706510105
+					],
+					"speakerTitle": "瓦格納"
+				},
+				{
+					"id": 706510105,
+					"content": "但礦石也分很多種，有最常用的鐵塊，用起來還算順手的白鐵塊，品質還不錯的水晶塊…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706510106
+					],
+					"speakerTitle": "瓦格納"
+				},
+				{
+					"id": 706510106,
+					"content": "還有一種叫做魔晶塊的礦物，品質很不錯，能夠鍛造出很優質的東西。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "瓦格納"
+				}
+			]
+		},
+		{
+			"id": 7065102,
+			"completionStepIds": [
+				7065101
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_NOT_HAVE_BLOSSOM_TALK",
+						"rawParams": []
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7065101",
+							"2"
+						],
+						"stepId": 7065101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"瓦格納"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706510201,
+					"content": "不過魔晶塊很難加工，如果想要用它做鍛造材料的話，還要用不少其他材料來輔助。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706510202
+					],
+					"speakerTitle": "瓦格納"
+				},
+				{
+					"id": 706510202,
+					"content": "不過，我剛從野外回來，好像礦物都被採集過了，現在你想採礦的話，大概採不到什麼了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706510203
+					],
+					"speakerTitle": "瓦格納"
+				},
+				{
+					"id": 706510203,
+					"content": "#唔…這樣好了，{F#妳}{M#你}過段時間再來找我吧，到時候我再把我知道的礦物位置幫{F#妳}{M#你}標在地圖上。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "瓦格納"
+				}
+			]
+		}
+	]
+}

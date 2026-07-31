@@ -1,0 +1,176 @@
+{
+	"id": 70711,
+	"type": "WQ",
+	"name": "Manly Jack's Manly Journey of Manliness",
+	"description": "Manly Jack needs three servings of Mondstadt Grilled Fish.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7071101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Give Manly Jack three servings of Mondstadt Grilled Fish",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7071101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7071102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Manly Jack",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7071102,
+						0
+					],
+					"talkId": 7071102
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7071101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071101",
+							"2"
+						],
+						"stepId": 7071101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7071101"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Manly Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707110101,
+					"content": "Need some Mondstadt Grilled Fish?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707110102
+					]
+				},
+				{
+					"id": 707110102,
+					"content": "I guess you saw that commission, huh? Nice! Now, do you have three servings of Mondstadt Grilled Fish for me?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707110103,
+						707110104
+					],
+					"speakerTitle": "Manly Jack"
+				},
+				{
+					"id": 707110103,
+					"content": "Yes, here they are.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707110104,
+					"content": "Not yet.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707110105
+					]
+				},
+				{
+					"id": 707110105,
+					"content": "Well, just bring them to me once you've got all three.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Manly Jack"
+				}
+			]
+		},
+		{
+			"id": 7071102,
+			"completionStepIds": [
+				7071102
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071102",
+							"2"
+						],
+						"stepId": 7071102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Manly Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707110201,
+					"content": "Wow, these Mondstadt Grilled Fishes smell pretty good...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707110202
+					],
+					"speakerTitle": "Manly Jack"
+				},
+				{
+					"id": 707110202,
+					"content": "Oh, yeah. Here's something to thank you for your help.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707110203
+					],
+					"speakerTitle": "Manly Jack"
+				},
+				{
+					"id": 707110203,
+					"content": "Will this stuff make me manlier, I wonder...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Manly Jack"
+				}
+			]
+		}
+	]
+}

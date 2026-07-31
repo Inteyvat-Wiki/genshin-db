@@ -1,0 +1,666 @@
+{
+	"id": 70504,
+	"type": "WQ",
+	"name": "갑옷을 벗을 때",
+	"description": "「혹시 케이아 대장을 본 사람이 있나요?」 「케이아 씨? 술집에 가서 찾아봐, 후후… 신입인가 보군? 힘내라고」",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70505
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "루카와 대화하고 술집 들어가기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050401,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050402,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "로자리아에게 지정 음료 만들어주기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050402,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050403,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "케이아에게 지정 음료 만들어주기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050403,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050404,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "케이아, 로자리아에게 음료 건네주기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050402,
+						0
+					],
+					"talkId": 7050402
+				}
+			]
+		},
+		{
+			"id": 7050405,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "케이아, 로자리아와 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050401,
+						0
+					],
+					"talkId": 7050401
+				}
+			]
+		},
+		{
+			"id": 7050406,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "카운터로 가서 영업 준비하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050401,
+			"completionStepIds": [
+				7050405
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050405",
+							"2"
+						],
+						"stepId": 7050405,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050402",
+							"2"
+						],
+						"stepId": 7050402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050403",
+							"2"
+						],
+						"stepId": 7050403,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"케이아",
+					"로자리아"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705040101,
+					"content": "여어, 오늘은 네가 바텐더야? 희귀한 광경이네",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040102
+					],
+					"speakerTitle": "케이아"
+				},
+				{
+					"id": 705040102,
+					"content": "그럼 주문할게. 난 오후의…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040103
+					],
+					"speakerTitle": "케이아"
+				},
+				{
+					"id": 705040103,
+					"content": "오자마자 사람을 곤란하게 하다니, 대단하군",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040104
+					],
+					"speakerTitle": "로자리아"
+				},
+				{
+					"id": 705040104,
+					"content": "에이, 여행자가 어떻게 나올지 보려던 것뿐이죠. 로자리아 씨야말로 오늘도 마시러 오셨네요?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040105
+					],
+					"speakerTitle": "케이아"
+				},
+				{
+					"id": 705040105,
+					"content": "술집엔 진상이 많잖아요. 여행자도 하루빨리 경험을 쌓아야죠",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040106
+					],
+					"speakerTitle": "케이아"
+				},
+				{
+					"id": 705040106,
+					"content": "케이아의 입담은 여전하네!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040107
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 705040107,
+					"content": "이거 억울한데, 도와주려는 거라고. 나한테 고맙다고 해야 되는 거 아니야? 달밤의 뒷골목 한 잔을 준다던가",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040108
+					],
+					"speakerTitle": "케이아"
+				},
+				{
+					"id": 705040108,
+					"content": "아 참, 큰 사이즈로!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040109
+					],
+					"speakerTitle": "케이아"
+				},
+				{
+					"id": 705040109,
+					"content": "난 아무거나. 차향이 나는 거면 뭐든 상관없어. 양은 너무 많지 않게",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040110
+					],
+					"speakerTitle": "로자리아"
+				},
+				{
+					"id": 705040110,
+					"content": "네, 잠시만 기다려주세요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705040111
+					]
+				},
+				{
+					"id": 705040111,
+					"content": "천천히 해. 맛있는 술을 기다리는 시간은 사람을 설레게 하거든",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "케이아"
+				}
+			]
+		},
+		{
+			"id": 7050402,
+			"completionStepIds": [
+				7050404
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050404",
+							"2"
+						],
+						"stepId": 7050404,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"로자리아",
+					"케이아"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705040201,
+					"content": "음…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040202
+					],
+					"speakerTitle": "로자리아"
+				},
+				{
+					"id": 705040202,
+					"content": "왜 그래? 입맛에 안 맞아?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040203
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 705040203,
+					"content": "다시 만들어드릴까요…?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705040204
+					]
+				},
+				{
+					"id": 705040204,
+					"content": "아니, 너 때문이 아니야. 난 차를 거의 안 마시는데, 이걸 마시니까 생각나는 일이 있어서",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040205
+					],
+					"speakerTitle": "로자리아"
+				},
+				{
+					"id": 705040205,
+					"content": "성당에 관련된 일인가요?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040206
+					],
+					"speakerTitle": "케이아"
+				},
+				{
+					"id": 705040206,
+					"content": "어, 전에 성당에 행사가 있었는데 안 갔거든. 근데 바바라가 차와 간식을 남겨뒀더라고",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040207
+					],
+					"speakerTitle": "로자리아"
+				},
+				{
+					"id": 705040207,
+					"content": "간식은 오래 둬서 퍼석해졌는지 바바라가 몰래 치웠는데, 차는 이 맛과 거의 비슷했지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040208
+					],
+					"speakerTitle": "로자리아"
+				},
+				{
+					"id": 705040208,
+					"content": "로자리아의 이런 모습 거의 처음 보는 것 같아",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040209
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 705040209,
+					"content": "몬드에 홍차 애호가가 한 명 더 늘었네",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040210
+					],
+					"speakerTitle": "케이아"
+				},
+				{
+					"id": 705040210,
+					"content": "그래도 술이 더 좋지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040211
+					],
+					"speakerTitle": "로자리아"
+				},
+				{
+					"id": 705040211,
+					"content": "케이아 씨는 음료 어때요?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705040212
+					]
+				},
+				{
+					"id": 705040212,
+					"content": "내가 문제점을 찾아내면, 다시 만들어 줄 거야?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040213
+					],
+					"speakerTitle": "케이아"
+				},
+				{
+					"id": 705040213,
+					"content": "하하하, 농담이야. 너한테 미움 살 일을 굳이 왜 하겠어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040214
+					],
+					"speakerTitle": "케이아"
+				},
+				{
+					"id": 705040214,
+					"content": "어휴, 케이아의 사고방식은 종잡을 수가 없다니까! 로자리아는 이 녀석이랑 잘도 마시네…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040215
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 705040215,
+					"content": "그래? 난 그의 사고방식에 관심 없어. 술 마실 땐 술 얘기만 하지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040216
+					],
+					"speakerTitle": "로자리아"
+				},
+				{
+					"id": 705040216,
+					"content": "게다가 너도 그렇고 여기 사장도 그렇고… 케이아는 자기가 흥미 있는 거에만 에너지를 쏟거든",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040217
+					],
+					"speakerTitle": "로자리아"
+				},
+				{
+					"id": 705040217,
+					"content": "에이! 그래도 술친구인데, 배신하는 거예요?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040218
+					],
+					"speakerTitle": "케이아"
+				},
+				{
+					"id": 705040218,
+					"content": "이게 어딜 봐서 배신이야? 아무래도 상관없는 일 아닌가?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040219
+					],
+					"speakerTitle": "로자리아"
+				},
+				{
+					"id": 705040219,
+					"content": "평소엔 「진지한 사람」이 너무 많아. 술집의 느슨한 분위기가 나랑 더 잘 맞는 것 같아",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040220
+					],
+					"speakerTitle": "로자리아"
+				},
+				{
+					"id": 705040220,
+					"content": "오? 진지한 사람들을 비판하는 시간인가요?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040221
+					],
+					"speakerTitle": "케이아"
+				},
+				{
+					"id": 705040221,
+					"content": "그러고 보니, 내가 아는 어떤 사람도 「몬드에서 가장 진지한 사람 랭킹」 3위 안에 들걸",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040222
+					],
+					"speakerTitle": "케이아"
+				},
+				{
+					"id": 705040222,
+					"content": "어느 정도냐면… 아, 그래. 이런 평가를 바로 앞에서 들어도 눈 하나 깜짝 안 할 정도라니까",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040223
+					],
+					"speakerTitle": "케이아"
+				},
+				{
+					"id": 705040223,
+					"content": "그런 랭킹도 있어?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040224
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 705040224,
+					"content": "물론이지. 어디 보자… 연속 음주 일수 랭킹, 최장 근무 시간 랭킹, 최악의 요리사 랭킹, 금단의 지식 보유량 랭킹…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040225
+					],
+					"speakerTitle": "케이아"
+				},
+				{
+					"id": 705040225,
+					"content": "몬드 사람들도 참 한가하네!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040226
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 705040226,
+					"content": "출근 안 해도 되는 사람이 그렇게 많은 건가?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040227,
+						705040228
+					],
+					"speakerTitle": "로자리아"
+				},
+				{
+					"id": 705040227,
+					"content": "그게 아니라…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705040229
+					]
+				},
+				{
+					"id": 705040229,
+					"content": "흠, 나랑 얘가 같이 올라갈 만한 랭킹은 없어?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040230
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 705040230,
+					"content": "있지. 예를 들면, 「최고의 바텐더」?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040231
+					],
+					"speakerTitle": "케이아"
+				},
+				{
+					"id": 705040231,
+					"content": "저, 정말?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040232
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 705040232,
+					"content": "#잘됐다 {NICKNAME}, 우리도 이름을 남길 수 있겠어!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040233
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 705040233,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040234
+					],
+					"speakerTitle": "로자리아"
+				},
+				{
+					"id": 705040234,
+					"content": "흠, 이런 분위기도 나쁘지 않네",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040235
+					],
+					"speakerTitle": "로자리아"
+				},
+				{
+					"id": 705040235,
+					"content": "맞아요, 저 둘은 보고만 있어도 기분이 좋아지죠",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040236
+					],
+					"speakerTitle": "케이아"
+				},
+				{
+					"id": 705040236,
+					"content": "사람의 마음을 움직이는 분위기라, 음, 술집의 홍보 요소가 될 것 같군. 「최고의 바텐더」 칭호가 딱이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040237
+					],
+					"speakerTitle": "케이아"
+				},
+				{
+					"id": 705040237,
+					"content": "응?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040238
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 705040238,
+					"content": "아니야, 두 사람 덕분에 잘 마셨어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040239
+					],
+					"speakerTitle": "케이아"
+				},
+				{
+					"id": 705040239,
+					"content": "응, 나도 슬슬 돌아가야겠네",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040240
+					],
+					"speakerTitle": "로자리아"
+				},
+				{
+					"id": 705040240,
+					"content": "홍차 맛도 아주 좋았어. 나중에 직접 우려서 마셔볼게… 아침에 일찍 일어난다면 말이지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040241
+					],
+					"speakerTitle": "로자리아"
+				},
+				{
+					"id": 705040241,
+					"content": "그럼 가볼게",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040242
+					],
+					"speakerTitle": "케이아"
+				},
+				{
+					"id": 705040242,
+					"content": "나중에 봐요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 705040228,
+					"content": "대충 누굴 가리키는 건지 알겠네요…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705040229
+					]
+				}
+			]
+		}
+	]
+}

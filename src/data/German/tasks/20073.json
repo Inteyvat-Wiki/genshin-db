@@ -1,0 +1,839 @@
+{
+	"id": 20073,
+	"type": "IQ",
+	"name": "Notfallrationen",
+	"description": "Riese bereitet Notfallvorräte vor, um einige leichtsinnige Abenteurer davor zu bewahren, auf Drachengrat in Schwierigkeiten zu geraten ...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2007301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Riese.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2007301,
+						0
+					],
+					"talkId": 2007301
+				}
+			]
+		},
+		{
+			"id": 2007302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Platziere die Nahrungsvorräte an der ersten Stelle.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						2007301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2007303,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Platziere die Nahrungsvorräte an der dritten Stelle.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						2007303,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2007304,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Platziere die Nahrungsvorräte an der zweiten Stelle.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						2007302,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2007305,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						200730801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2007306,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Erstatte Riese Bericht.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2007302,
+						0
+					],
+					"talkId": 2007302
+				}
+			]
+		},
+		{
+			"id": 2007307,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2007308,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						200730801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2007309,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2007301,
+			"completionStepIds": [
+				2007301
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007301",
+							"2"
+						],
+						"stepId": 2007301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Riese"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200730101,
+					"content": "#{F#Reisende}{M#Reisender}! Du kommst genau richtig! Kannst du mir einen Gefallen tun?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730102
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730102,
+					"content": "Was brauchst du?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200730103
+					]
+				},
+				{
+					"id": 200730103,
+					"content": "Wie du sicher schon gesehen hast, sind die Bedingungen hier oben schrecklich. Selbst erfahrene Abenteurer können nicht behaupten, dass sie mit allem fertig werden, was der Drachengrat ihnen entgegenwirft.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730104
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730104,
+					"content": "Ich erhielt den Befehl des Stellvertretenden Großmeisters, hier Wache zu halten und alle Bürger zu warnen, nicht auf den Berg zu gehen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730105
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730105,
+					"content": "Aber während ich viele Bürger überzeugen konnte, dies nicht zu tun, haben diese Abenteurer ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730106
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730106,
+					"content": "Ich glaube, du weißt, was ich meine, wenn ich behaupte, dass es sinnlos ist, sie zu überzeugen. Sie wollen einfach nur diesen Berg erklimmen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730107
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730107,
+					"content": "Ich weiß nicht mehr, wie viele Probleme ich mit den Abenteurern lösen musste ... Aber sie kommen trotzdem immer wieder und nie werden sie weniger.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730108
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730108,
+					"content": "Sich um alle zu kümmern, ist eine unmögliche Aufgabe ... Deshalb habe ich beschlossen, an bestimmten Stellen des Drachengrats einige Vorräte für sie bereitzustellen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730109
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730109,
+					"content": "Dadurch erhalten die Abenteurer, die einen Rückzug antreten müssen und sich auf den Rückweg vorbereiten, mehr Möglichkeiten, sich aus dem Berg zu befreien.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730110
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730110,
+					"content": "Sollte jedoch irgendein leichtsinniger Narr, der von seinem Glück berauscht ist, zu weit nach oben kommen, dann kann er sich nur auf sich selbst verlassen ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730111
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730111,
+					"content": "Also, könntest du mithelfen, diese Vorräte auf den Berg zu bringen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730112,
+						200730114
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730112,
+					"content": "Überlass das mir.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200730113
+					]
+				},
+				{
+					"id": 200730113,
+					"content": "Ich rechne also mit dir. *seufz* Wenn nur diese Abenteurer einen so guten Schwertarm und einen so klugen Kopf auf ihren Schultern tragen würden wie du ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730117
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730117,
+					"content": "Ich habe drei Orte auf deiner Karte markiert. Du musst einfach nur <color=#00E1FFFF>eine Portion Schinken</color> an jedem Ort platzieren.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730118
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730118,
+					"content": "*seufz* Ich wünschte, dass diese Abenteurer ein bisschen mehr Selbsterkenntnis besitzen würden ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730114,
+					"content": "Werden sie von Nutzen sein?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200730115
+					]
+				},
+				{
+					"id": 200730115,
+					"content": "Ob sie es wollen oder nicht ... Es ist besser, sie zu haben als nicht.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730116
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730116,
+					"content": "Unter so fürchterlichen Bedingungen wie auf diesem Berg ist es besser, mehr Vorräte zu haben. Jedenfalls zähle ich auf deine Hilfe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730117
+					],
+					"speakerTitle": "Riese"
+				}
+			]
+		},
+		{
+			"id": 2007302,
+			"completionStepIds": [
+				2007306
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007306",
+							"2"
+						],
+						"stepId": 2007306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Riese"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200730201,
+					"content": "Hast du alle Vorräte platziert?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730202
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730202,
+					"content": "Alle sind da, wo sie sein müssen.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200730203
+					]
+				},
+				{
+					"id": 200730203,
+					"content": "Das ist wundervoll. Jetzt kann ich ruhig schlafen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730204
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730204,
+					"content": "Ich hoffe dennoch, dass jene, die den Berg erklimmen, ausreichend vorbereitet sind und dass wir diese Notvorräte nicht verwenden müssen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730205
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730205,
+					"content": "Wenn ich es mir recht überlege, deine Kleidung scheint auch etwas dürftig zu sein. Ist das die neueste Mode in Mondstadt oder so?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730206
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730206,
+					"content": "Egal wie, bitte nimm dies als Zeichen meines Dankes und zieh ein paar zusätzliche Schichten an.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Riese"
+				}
+			]
+		},
+		{
+			"id": 2007303,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007302",
+							"2"
+						],
+						"stepId": 2007302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"2007301"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200730301,
+					"content": "Das ist ein Notversorgungspunkt. Wenn du etwas benötigst, kannst du dich hier an den Materialien bedienen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730302
+					],
+					"speakerTitle": "Notversorgungspunkt"
+				},
+				{
+					"id": 200730302,
+					"content": "Der Drachengrat ist ein gefährlicher Ort. Bitte geh nicht zu weit rein.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730303
+					],
+					"speakerTitle": "Notversorgungspunkt"
+				},
+				{
+					"id": 200730303,
+					"content": "Vorräte platzieren",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200730303
+					]
+				}
+			]
+		},
+		{
+			"id": 2007304,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007304",
+							"2"
+						],
+						"stepId": 2007304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"2007302"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200730401,
+					"content": "Das ist ein Notversorgungspunkt. Wenn du etwas benötigst, kannst du dich hier an den Materialien bedienen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730402
+					],
+					"speakerTitle": "Notversorgungspunkt"
+				},
+				{
+					"id": 200730402,
+					"content": "Der Drachengrat ist ein gefährlicher Ort. Bitte geh nicht zu weit rein.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730403
+					],
+					"speakerTitle": "Notversorgungspunkt"
+				},
+				{
+					"id": 200730403,
+					"content": "Vorräte platzieren",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200730403
+					]
+				}
+			]
+		},
+		{
+			"id": 2007305,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007303",
+							"2"
+						],
+						"stepId": 2007303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"2007303"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007307",
+							"3"
+						],
+						"stepId": 2007307,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200730501,
+					"content": "Das ist ein Notversorgungspunkt. Wenn du etwas benötigst, kannst du dich hier an den Materialien bedienen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730502
+					],
+					"speakerTitle": "Notversorgungspunkt"
+				},
+				{
+					"id": 200730502,
+					"content": "Der Drachengrat ist ein gefährlicher Ort. Bitte geh nicht zu weit rein.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730503
+					],
+					"speakerTitle": "Notversorgungspunkt"
+				},
+				{
+					"id": 200730503,
+					"content": "Vorräte platzieren",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200730503
+					]
+				}
+			]
+		},
+		{
+			"id": 2007313,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007302",
+							"3"
+						],
+						"stepId": 2007302,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007304",
+							"2"
+						],
+						"stepId": 2007304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007306",
+							"2"
+						],
+						"stepId": 2007306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007303",
+							"2"
+						],
+						"stepId": 2007303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200731301,
+					"content": "Das ist ein Notversorgungspunkt. Wenn du etwas benötigst, kannst du dich hier an den Materialien bedienen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200731302
+					],
+					"speakerTitle": "Notversorgungspunkt"
+				},
+				{
+					"id": 200731302,
+					"content": "Der Drachengrat ist ein gefährlicher Ort. Bitte geh nicht zu weit rein.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Notversorgungspunkt"
+				}
+			]
+		},
+		{
+			"id": 2007314,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007304",
+							"3"
+						],
+						"stepId": 2007304,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007303",
+							"2"
+						],
+						"stepId": 2007303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007306",
+							"2"
+						],
+						"stepId": 2007306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200731401,
+					"content": "Das ist ein Notversorgungspunkt. Wenn du etwas benötigst, kannst du dich hier an den Materialien bedienen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200731402
+					],
+					"speakerTitle": "Notversorgungspunkt"
+				},
+				{
+					"id": 200731402,
+					"content": "Der Drachengrat ist ein gefährlicher Ort. Bitte geh nicht zu weit rein.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Notversorgungspunkt"
+				}
+			]
+		},
+		{
+			"id": 2007315,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007306",
+							"2"
+						],
+						"stepId": 2007306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200731501,
+					"content": "Das ist ein Notversorgungspunkt. Wenn du etwas benötigst, kannst du dich hier an den Materialien bedienen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200731502
+					],
+					"speakerTitle": "Notversorgungspunkt"
+				},
+				{
+					"id": 200731502,
+					"content": "Der Drachengrat ist ein gefährlicher Ort. Bitte geh nicht zu weit rein.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Notversorgungspunkt"
+				}
+			]
+		},
+		{
+			"id": 2007316,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007302",
+							"2"
+						],
+						"stepId": 2007302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007304",
+							"2"
+						],
+						"stepId": 2007304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007303",
+							"2"
+						],
+						"stepId": 2007303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Riese"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200731601,
+					"content": "Vergiss nicht, du musst an drei Orte gehen und an jedem Ort <color=#00E1FFFF>eine Portion Schinken</color> hinterlegen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200731602
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200731602,
+					"content": "Ich wünschte, dass diese Abenteurer ein bisschen mehr Selbsterkenntnis besitzen würden ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Riese"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,130 @@
+{
+	"id": 19064,
+	"type": "LQ",
+	"name": "Kekuatan Noelle",
+	"description": "Noelle yang bercita-cita menjadi Knight di Knights of Favonius menceritakan permasalahannya padamu, dia berharap kamu bisa membantu pelatihan Knight-nya. Untuk memperlihatkan hasil latihannya setiap hari kepadamu, Noelle pun membawamu ke tempat latihan para Knight.",
+	"unlockDescription": "",
+	"chapter": "Pelatihan Knight",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		19065,
+		19066
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1906401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Pergi ke tempat pelatihan",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1906402,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Noelle",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_ANY_SAVE_POINT",
+					"rawParams": [
+						103401,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1906403,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Hancurkan semua boneka kayu sebelum batas waktu berakhir",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1906404,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Noelle",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_ANY_SAVE_POINT",
+					"rawParams": [
+						103401,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1906405,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1906405,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1906401,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1906403",
+							"2"
+						],
+						"stepId": 1906403,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ellin"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 190640101,
+					"content": "Ayo Noelle, semangat!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ellin"
+				}
+			]
+		}
+	]
+}

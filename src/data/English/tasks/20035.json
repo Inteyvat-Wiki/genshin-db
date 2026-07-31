@@ -1,0 +1,294 @@
+{
+	"id": 20035,
+	"type": "IQ",
+	"name": "Lost Key",
+	"description": "Wyatt, who escorts goods, is fond of drinking. However, after some heavy drinking, he has lost his key. Try following his footprints to find his key and bring it back to him.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2003501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Wyatt",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003501,
+						0
+					],
+					"talkId": 2003501
+				}
+			]
+		},
+		{
+			"id": 2003502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Use Elemental Sight to find the key",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003504,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Give the key to Wyatt",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003504,
+						0
+					],
+					"talkId": 2003504
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2003501,
+			"completionStepIds": [
+				2003501
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003501",
+							"2"
+						],
+						"stepId": 2003501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Wyatt"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200350101,
+					"content": "Traveler! You couldn't have picked a better time.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350102
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200350102,
+					"content": "Last night, I was on my way to the city to deliver these goods, when suddenly, some shining orbs caught my eye.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350103
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200350103,
+					"content": "I—I'd had too much to drink, and... I just felt drawn to them, you know? I went to check it out and it turned out to be a huge group of slimes. They even bumped into me really hard!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350104
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200350104,
+					"content": "I panicked and ran, but lost my way. It took me forever to find my cart again. Then, this morning, I found out my <color=#00E1FFFF>key</color> was gone...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350105
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200350105,
+					"content": "Could you help me look for it? It's got to be around here somewhere... I feel like it's right under my nose.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350106,
+						200350108
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200350106,
+					"content": "Okay.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200350107
+					]
+				},
+				{
+					"id": 200350107,
+					"content": "Great! It's such a huge area, I just wouldn't know where to start looking.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200350108,
+					"content": "I have some pressing business to attend to.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200350109
+					]
+				},
+				{
+					"id": 200350109,
+					"content": "This is such a huge area. I just don't know where to start looking. Please, you're the only one that can help me!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Wyatt"
+				}
+			]
+		},
+		{
+			"id": 2003502,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003501",
+							"3"
+						],
+						"stepId": 2003501,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003502",
+							"2"
+						],
+						"stepId": 2003502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Wyatt"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200350201,
+					"content": "Have you found my key?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350202
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200350202,
+					"content": "I'm afraid not.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200350203
+					]
+				},
+				{
+					"id": 200350203,
+					"content": "Well, it is quite a big search area... Good luck!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Wyatt"
+				}
+			]
+		},
+		{
+			"id": 2003504,
+			"completionStepIds": [
+				2003504
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003502",
+							"3"
+						],
+						"stepId": 2003502,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Wyatt"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200350401,
+					"content": "Found the key yet?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350402
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200350402,
+					"content": "I found this key — is it yours?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200350403
+					]
+				},
+				{
+					"id": 200350403,
+					"content": "Yes! That's the one. I can't afford to let that happen again... I really must rein in my drinking.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350404
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200350404,
+					"content": "Oh — and take these. Thanks for your help.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Wyatt"
+				}
+			]
+		}
+	]
+}

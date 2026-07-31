@@ -1,0 +1,185 @@
+{
+	"id": 70710,
+	"type": "WQ",
+	"name": "Cesur Jack'in Cesaret Yolculuğu",
+	"description": "Cesur Jack'in iki porsiyon Bifteğe ihtiyacı var.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7071001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Cesur Jack'e iki porsiyon Biftek ver.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7071001,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7071002,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Cesur Jack ile konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7071002,
+						0
+					],
+					"talkId": 7071002
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7071001,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071001",
+							"2"
+						],
+						"stepId": 7071001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7071001"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cesur Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707100101,
+					"content": "Bifteğe mi ihtiyacın var?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707100102
+					]
+				},
+				{
+					"id": 707100102,
+					"content": "Evet! Verdiğim görev ilanını görmüş olmalısın.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707100103
+					],
+					"speakerTitle": "Cesur Jack"
+				},
+				{
+					"id": 707100103,
+					"content": "Getirdin mi peki?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707100104,
+						707100105
+					],
+					"speakerTitle": "Cesur Jack"
+				},
+				{
+					"id": 707100104,
+					"content": "Evet, işte burada.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707100105,
+					"content": "Daha değil...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707100106
+					]
+				},
+				{
+					"id": 707100106,
+					"content": "Sorun değil. Hazır oldukları an bana getirmen yeterli.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cesur Jack"
+				}
+			]
+		},
+		{
+			"id": 7071002,
+			"completionStepIds": [
+				7071002
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071002",
+							"2"
+						],
+						"stepId": 7071002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cesur Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707100201,
+					"content": "Burnuma güzel kokular geliyor! Porsiyon da fena değilmiş.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707100202
+					],
+					"speakerTitle": "Cesur Jack"
+				},
+				{
+					"id": 707100202,
+					"content": "İşte, bunlar senin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707100203
+					],
+					"speakerTitle": "Cesur Jack"
+				},
+				{
+					"id": 707100203,
+					"content": "Bunları yersem, kesin daha cesur olurum!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cesur Jack"
+				}
+			]
+		}
+	]
+}

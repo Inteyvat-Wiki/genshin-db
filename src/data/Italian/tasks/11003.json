@@ -1,0 +1,557 @@
+{
+	"id": 11003,
+	"type": "LQ",
+	"name": "Una scoperta fortunata",
+	"description": "Xiangling crede che i frutti di loto e i peperoncini di Jueyun non basteranno per assicurarle la vittoria, e parte alla ricerca di altri ingredienti.",
+	"unlockDescription": "",
+	"chapter": "Tour gastronomico di Mondstadt",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		11004
+	],
+	"prevMainQuestList": [
+		11002
+	],
+	"steps": [
+		{
+			"id": 1100301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Raggiungi il luogo menzionato da Xiangling",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1100301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1100302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Xiangling e il tizio tremante",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1100302,
+						0
+					],
+					"talkId": 1100302
+				}
+			]
+		},
+		{
+			"id": 1100303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Prepara una zuppa vegetariana di ravanelli deliziosa",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						108021,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1100304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Servi al cacciatore la zuppa che hai preparato",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1100304,
+						0
+					],
+					"talkId": 1100304
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1100302,
+			"completionStepIds": [
+				1100302
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100302",
+							"2"
+						],
+						"stepId": 1100302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Olaf"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110030201,
+					"content": "Brr... Che f-freddo...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030202
+					],
+					"speakerTitle": "Olaf"
+				},
+				{
+					"id": 110030202,
+					"content": "Sta tremando! Dobbiamo scaldarlo, presto!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030203
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110030203,
+					"content": "Accendiamo un fuoco!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030204
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110030204,
+					"content": "Una zuppa calda sarebbe ancora meglio.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030205
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110030205,
+					"content": "#{NICKNAME}, che ne dici se io mi prendo cura di lui, mentre tu gli prepari una <color=#00E1FFFF>bella scodella di zuppa calda</color>?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030206
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110030206,
+					"content": "Abbiamo superato un accampamento di Hilichurl per arrivare qui. Lì ci sarà quasi sicuramente un falò per cucinare.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030207
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110030207,
+					"content": "D'accordo.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030208
+					]
+				},
+				{
+					"id": 110030208,
+					"content": "Fantastico. Fai più in fretta che puoi!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xiangling"
+				}
+			]
+		},
+		{
+			"id": 1100304,
+			"completionStepIds": [
+				1100304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100304",
+							"2"
+						],
+						"stepId": 1100304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PACK_HAVE_ITEM",
+						"rawParams": [
+							"108021",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Olaf"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110030401,
+					"content": "Mmm... Va meglio... Così va meglio...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030402
+					],
+					"speakerTitle": "Olaf"
+				},
+				{
+					"id": 110030402,
+					"content": "Grazie. Quella zuppa ha davvero funzionato.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030403
+					],
+					"speakerTitle": "Olaf"
+				},
+				{
+					"id": 110030403,
+					"content": "Cos'è successo? Sei rimasto congelato?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030404
+					]
+				},
+				{
+					"id": 110030404,
+					"content": "Sì. Stavo dando la caccia a un cinghiale e, dopo averlo inseguito fin qui, è scivolato in quelle rovine sotterranee laggiù.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030405
+					],
+					"speakerTitle": "Olaf"
+				},
+				{
+					"id": 110030405,
+					"content": "L'ho seguito dentro, ma mi sono imbattuto in un Regisreptus di Cryo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030406
+					],
+					"speakerTitle": "Olaf"
+				},
+				{
+					"id": 110030406,
+					"content": "Mi ha congelato all'istante. Quando mi sono risvegliato sono corso fuori, ma... non ho fatto molta strada prima che le forze mi abbandonassero.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030407
+					],
+					"speakerTitle": "Olaf"
+				},
+				{
+					"id": 110030407,
+					"content": "Regisreptus di Cryo? Non è un rampicante? Non sapevo che attaccassero le persone!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030408
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110030408,
+					"content": "Adesso lo fanno! Ne avevo già sentito parlare, ma questa era la prima volta che ne vedevo uno con i miei occhi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030409
+					],
+					"speakerTitle": "Olaf"
+				},
+				{
+					"id": 110030409,
+					"content": "Accidenti, dovremmo assolutamente mantenerci a debita distanza dalle rovine... Sembra pericoloso.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030410
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110030410,
+					"content": "Sembra delizioso!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030411,
+						110030412
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110030411,
+					"content": "...Sul serio?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030413
+					]
+				},
+				{
+					"id": 110030413,
+					"content": "È lui! L'ingrediente mancante! La ciliegina sulla torta!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030414
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110030414,
+					"content": "Adesso calmati. Possiamo davvero mangiare una pianta così aggressiva?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030415
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110030415,
+					"content": "C'è solo un modo per scoprirlo: andiamo!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030416
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110030416,
+					"content": "*sospira* Ecco che se ne va di nuovo...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030417,
+						110030418
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110030417,
+					"content": "Dobbiamo andare.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030419
+					]
+				},
+				{
+					"id": 110030419,
+					"content": "Non preoccupatevi per me, io starò bene. Ma dovete fermarla, si sta mettendo in grave pericolo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Olaf"
+				},
+				{
+					"id": 110030418,
+					"content": "Dovresti tornare al Villaggio Acquachiara.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030419
+					]
+				},
+				{
+					"id": 110030412,
+					"content": "Esiste qualcosa che NON ti faccia pensare al cibo?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030413
+					]
+				}
+			]
+		},
+		{
+			"id": 1100396,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100304",
+							"2"
+						],
+						"stepId": 1100304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_NUM_LESS_THAN",
+						"rawParams": [
+							"108021",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Xiangling"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110039801,
+					"content": "Abbiamo superato un accampamento di Hilichurl per arrivare qui. Lì ci sarà quasi sicuramente un falò per cucinare.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110039802
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110039802,
+					"content": "Io resto qui a prendermi cura di lui mentre tu vai a preparargli una bella scodella di zuppa calda.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xiangling"
+				}
+			]
+		},
+		{
+			"id": 1100397,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100304",
+							"2"
+						],
+						"stepId": 1100304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_NUM_LESS_THAN",
+						"rawParams": [
+							"108021",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Olaf"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110039901,
+					"content": "Che freddo... C-Che f-freddo laggiù...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Olaf"
+				}
+			]
+		},
+		{
+			"id": 1100398,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100303",
+							"2"
+						],
+						"stepId": 1100303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Xiangling"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110039801,
+					"content": "Abbiamo superato un accampamento di Hilichurl per arrivare qui. Lì ci sarà quasi sicuramente un falò per cucinare.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110039802
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110039802,
+					"content": "Io resto qui a prendermi cura di lui mentre tu vai a preparargli una bella scodella di zuppa calda.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xiangling"
+				}
+			]
+		},
+		{
+			"id": 1100399,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100303",
+							"2"
+						],
+						"stepId": 1100303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Olaf"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110039901,
+					"content": "Che freddo... C-Che f-freddo laggiù...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Olaf"
+				}
+			]
+		}
+	]
+}

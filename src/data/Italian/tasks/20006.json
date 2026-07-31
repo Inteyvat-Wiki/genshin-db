@@ -1,0 +1,430 @@
+{
+	"id": 20006,
+	"type": "IQ",
+	"name": "Consegna a domicilio",
+	"description": "Il Buon Cacciatore ha un servizio di consegna a domicilio per soddisfare le richieste dei suoi clienti ma, a causa del suo successo, ha bisogno di personale. Sara sta cercando qualcuno che possa darle una mano.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2000601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Sara al Buon Cacciatore",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Sara",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000601,
+						0
+					],
+					"talkId": 2000601
+				}
+			]
+		},
+		{
+			"id": 2000603,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000602,
+						0
+					],
+					"talkId": 2000602
+				}
+			]
+		},
+		{
+			"id": 2000604,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Consegna l'ordine a Orlean la Vivace",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000602,
+						0
+					],
+					"talkId": 2000602
+				}
+			]
+		},
+		{
+			"id": 2000605,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000602,
+						0
+					],
+					"talkId": 2000602
+				}
+			]
+		},
+		{
+			"id": 2000606,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Consegna l'ordine a Orlean la Vivace",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000607,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Respingi i Melmosi guastafeste",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000610,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dai il pagamento a Sara al ristorante",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000604,
+						0
+					],
+					"talkId": 2000604
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2000601,
+			"completionStepIds": [
+				2000602
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000601",
+							"3"
+						],
+						"stepId": 2000601,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000602",
+							"2"
+						],
+						"stepId": 2000602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200060101,
+					"content": "Ordina una consegna",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060102
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060102,
+					"content": "#Il Buon Cacciatore ti dà il benvenuto... Oh, ciao viaggiat{F#rice}{M#ore}! Arrivi proprio al momento giusto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060103
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060103,
+					"content": "Scusami, so che stai morendo di fame, ma potresti farmi un favore?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060104
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060104,
+					"content": "Orlean del Villaggio Acquachiara ha ordinato un <color=#00E1FFFF>arrosto al miele</color>, ma mi hanno detto che ultimamente il Villaggio Acquachiara brulica di Melmosi....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060105
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060105,
+					"content": "Non ho il coraggio di fare il viaggio da sola... Potresti consegnare questo ordine a <color=#00E1FFFF>Orlean al Villaggio Acquachiara</color>, per favore?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060106,
+						200060107
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060106,
+					"content": "Ok, ma...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200060108
+					]
+				},
+				{
+					"id": 200060108,
+					"content": "Ti assicuro che ci sarà un pasto fatto con amore ad aspettarti al tuo ritorno!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060109
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060109,
+					"content": "Conto su di te!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060107,
+					"content": "Sono qui solo per mangiare, sto morendo di fame!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200060110
+					]
+				},
+				{
+					"id": 200060110,
+					"content": "Quando avrai fatto quello che ti ho chiesto, ti offrirò qualcosa dal menù speciale del Buon Cacciatore! Grazie mille.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		},
+		{
+			"id": 2000602,
+			"completionStepIds": [
+				2000603,
+				2000604,
+				2000605
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000607",
+							"3"
+						],
+						"stepId": 2000607,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000604",
+							"2"
+						],
+						"stepId": 2000604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Orlean la Vivace"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200060201,
+					"content": "Grazie! Uff, questi Melmosi sono proprio insopportabili.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060202
+					],
+					"speakerTitle": "Orlean la Vivace"
+				},
+				{
+					"id": 200060202,
+					"content": "Se non avessi avuto un calo di zuccheri, gli avrei dato una lezione io stessa...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060203
+					],
+					"speakerTitle": "Orlean la Vivace"
+				},
+				{
+					"id": 200060203,
+					"content": "Ecco il suo ordine.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200060204
+					]
+				},
+				{
+					"id": 200060204,
+					"content": "Mmh... Profuma di carote e carne... Peccato che questo piatto non sia arrivato prima. Avrei distrutto quei Melmosi, se solo avessi combattuto a stomaco pieno!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060205
+					],
+					"speakerTitle": "Orlean la Vivace"
+				},
+				{
+					"id": 200060205,
+					"content": "Suppongo non ci sia niente da fare. Ecco i soldi, portali a Sara da parte mia.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Orlean la Vivace"
+				}
+			]
+		},
+		{
+			"id": 2000604,
+			"completionStepIds": [
+				2000610
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000604",
+							"3"
+						],
+						"stepId": 2000604,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000610",
+							"2"
+						],
+						"stepId": 2000610,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200060401,
+					"content": "Consegna il pagamento",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060402
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060402,
+					"content": "Eccoti qua! La consegna è andata bene?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060403
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060403,
+					"content": "Ecco il pagamento.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200060404
+					]
+				},
+				{
+					"id": 200060404,
+					"content": "Fammi controllare... Perfetto! Grazie!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060405
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060405,
+					"content": "Ecco, questo <color=#00E1FFFF>tortino di granchio, prosciutto e verdure al forno delizioso</color> è per te. Mangialo finché è caldo, è stato appena sfornato.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		}
+	]
+}

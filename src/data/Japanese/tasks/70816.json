@@ -1,0 +1,234 @@
+{
+	"id": 70816,
+	"type": "WQ",
+	"name": "リスクを冒す",
+	"description": "千風の神殿で魔物の動向を監視したジャックはうっかり魔物たちに気付かれて包囲された。なんとかモンド城に逃げたジャックだが、千風の神殿に落とし物をしたようだ…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		372
+	],
+	"steps": [
+		{
+			"id": 7081601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "ジャックと会話する",
+			"finishConditions": []
+		},
+		{
+			"id": 7081602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "千風の神殿でジャックの落とし物を探す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						7081601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7081603,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "千風の神殿でジャックの落とし物を探す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						7081601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7081604,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7081602,
+						3
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7081603,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7081605,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7081604,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7081606,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "ジャックに報告する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7081603,
+						0
+					],
+					"talkId": 7081603
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7081602,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081605",
+							"2"
+						],
+						"stepId": 7081605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ジャック"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708160201,
+					"content": "僕はもっと慎重に行動しないと。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708160202
+					],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 708160202,
+					"content": "でも慎重すぎると…はあ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ジャック"
+				}
+			]
+		},
+		{
+			"id": 7081603,
+			"completionStepIds": [
+				7081606
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081606",
+							"2"
+						],
+						"stepId": 7081606,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ジャック"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708160301,
+					"content": "僕のものは見つかった？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708160302
+					],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 708160302,
+					"content": "見つけた。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708160303
+					]
+				},
+				{
+					"id": 708160303,
+					"content": "よかった。この地図は今まで僕がずっと使ってたもので、メモもたくさんあるから、なくしたら大変なんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708160304
+					],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 708160304,
+					"content": "それに、冒険の証までなくしたら、さすがにキャサリンさんには言えないよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708160305
+					],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 708160305,
+					"content": "冒険者が冒険の途中で冒険の証をなくすなんて…ただの笑い話じゃないか…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708160306
+					],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 708160306,
+					"content": "とにかく、助かったよ。ありがとう。僕からのお礼を受け取ってほしい。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ジャック"
+				}
+			]
+		}
+	]
+}

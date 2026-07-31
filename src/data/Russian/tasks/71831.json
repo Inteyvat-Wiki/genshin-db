@@ -1,0 +1,399 @@
+{
+	"id": 71831,
+	"type": "WQ",
+	"name": "Дела загробные: Возвращение в горы",
+	"description": "Ван Пинъань хочет восстановить храм Бронзового Воробья. Интересно, насколько продвинулись восстановительные работы...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		71830
+	],
+	"steps": [
+		{
+			"id": 7183101,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TIME_VAR_PASS_DAY",
+					"rawParams": [
+						71830,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7183102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Возвращайтесь к статуе Бронзового Воробья",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7183102,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7183103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Ван Пинъанем",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7183103,
+						0
+					],
+					"talkId": 7183103
+				}
+			]
+		},
+		{
+			"id": 7183104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поднесите Бронзовому Воробью благовония",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7183105,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Ван Пинъанем",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7183105,
+						0
+					],
+					"talkId": 7183105
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7183102,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7183104",
+							"2"
+						],
+						"stepId": 7183104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ван Пинъань"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718310201,
+					"content": "Курильница находится там, если хотите воскурить благовония.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ван Пинъань"
+				}
+			]
+		},
+		{
+			"id": 7183103,
+			"completionStepIds": [
+				7183103
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7183103",
+							"2"
+						],
+						"stepId": 7183103,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ван Пинъань"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718310301,
+					"content": "Храм выглядит довольно хорошо...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718310302
+					],
+					"speakerTitle": "Ван Пинъань"
+				},
+				{
+					"id": 718310302,
+					"content": "#{F#Согласна}{M#Согласен}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718310303
+					]
+				},
+				{
+					"id": 718310303,
+					"content": "У вас потрясающее чувство времени. Мы только закончили работы, и я едва успел расплатиться с рабочими.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718310304
+					],
+					"speakerTitle": "Ван Пинъань"
+				},
+				{
+					"id": 718310304,
+					"content": "Не думал, что это будет стоить так дорого! Я потратил почти всю свою мору...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718310305
+					],
+					"speakerTitle": "Ван Пинъань"
+				},
+				{
+					"id": 718310305,
+					"content": "Но, несмотря ни на что, храм был восстановлен.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718310306
+					],
+					"speakerTitle": "Ван Пинъань"
+				},
+				{
+					"id": 718310306,
+					"content": "Хотите воскурить благовония? Мы сделали новую курильницу.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718310307,
+						718310308
+					],
+					"speakerTitle": "Ван Пинъань"
+				},
+				{
+					"id": 718310307,
+					"content": "Хорошо.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718310310
+					]
+				},
+				{
+					"id": 718310310,
+					"content": "Возьмите благовония, вы найдёте курильницу там.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ван Пинъань"
+				},
+				{
+					"id": 718310308,
+					"content": "А ты уже воскурил благовония?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718310309
+					]
+				},
+				{
+					"id": 718310309,
+					"content": "Конечно! Я сделал это сразу, как работы были закончены.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718310310
+					],
+					"speakerTitle": "Ван Пинъань"
+				}
+			]
+		},
+		{
+			"id": 7183105,
+			"completionStepIds": [
+				7183105
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7183105",
+							"2"
+						],
+						"stepId": 7183105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ван Пинъань"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718310501,
+					"content": "Вы уже закончили? Вам понравилось?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718310502
+					],
+					"speakerTitle": "Ван Пинъань"
+				},
+				{
+					"id": 718310502,
+					"content": "Понравилось.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718310503
+					]
+				},
+				{
+					"id": 718310503,
+					"content": "Замечательно. Я надеюсь, что этот храм всегда будет наполнен запахом благовоний...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718310504
+					],
+					"speakerTitle": "Ван Пинъань"
+				},
+				{
+					"id": 718310504,
+					"content": "Хочу остаться здесь подольше. Это тихое место идеально подходит для моей писательской деятельности.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718310505
+					],
+					"speakerTitle": "Ван Пинъань"
+				},
+				{
+					"id": 718310505,
+					"content": "Нужно разобрать материалы, которые я собрал, и продолжить работу над книгой о Защитнике Яксе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718310506
+					],
+					"speakerTitle": "Ван Пинъань"
+				},
+				{
+					"id": 718310506,
+					"content": "Если у вас будет время, вы можете заглянуть в храм проверить, как обстоят дела.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718310507
+					],
+					"speakerTitle": "Ван Пинъань"
+				},
+				{
+					"id": 718310507,
+					"content": "Если захотите воскурить благовония, то приходите ко мне.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718310508
+					],
+					"speakerTitle": "Ван Пинъань"
+				},
+				{
+					"id": 718310508,
+					"content": "Вообще-то я бы с удовольствием отремонтировал и прилегающую территорию...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718310509
+					],
+					"speakerTitle": "Ван Пинъань"
+				},
+				{
+					"id": 718310509,
+					"content": "Надо заново вымостить дорожку, поставить ограждения по обе стороны, разбить цветник...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ван Пинъань"
+				}
+			]
+		},
+		{
+			"id": 7183110,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7183101",
+							"2"
+						],
+						"stepId": 7183101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ван Пинъань"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718300301,
+					"content": "Осторожнее там! Не повредите статую!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718300302
+					],
+					"speakerTitle": "Ван Пинъань"
+				},
+				{
+					"id": 718300302,
+					"content": "Похоже, мы тут надолго задержимся с этим строительством...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ван Пинъань"
+				}
+			]
+		}
+	]
+}

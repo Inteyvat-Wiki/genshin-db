@@ -1,0 +1,878 @@
+{
+	"id": 72170,
+	"type": "WQ",
+	"name": "Los Superchefs: los buceadores",
+	"description": "Parece que algo les ha sucedido a los Superchefs...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		72169
+	],
+	"steps": [
+		{
+			"id": 7217001,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7217001,
+						0
+					],
+					"talkId": 7217001
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7217007,
+						0
+					],
+					"talkId": 7217007
+				}
+			]
+		},
+		{
+			"id": 7217002,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Recolecta un alga fresca",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7217003,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Entrega el alga fresca a Xudong",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7217002,
+						0
+					],
+					"talkId": 7217002
+				}
+			]
+		},
+		{
+			"id": 7217004,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Xudong",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7217003,
+						0
+					],
+					"talkId": 7217003
+				}
+			]
+		},
+		{
+			"id": 7217005,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7217001,
+			"completionStepIds": [
+				7217001
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7217001",
+							"2"
+						],
+						"stepId": 7217001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7217005",
+							"2"
+						],
+						"stepId": 7217005,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_COMMON",
+			"trigger": {
+				"objectNames": [
+					"Xudong"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721700101,
+					"content": "No podemos bajar así...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700102
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700102,
+					"content": "¿Qué ocurre?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721700103
+					]
+				},
+				{
+					"id": 721700103,
+					"content": "#Viajer{F#a}{M#o}, ¡nos encontramos de nuevo! En estos momentos estamos intentando averiguar cómo... sumergirnos en las aguas que tenemos delante.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700104
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700104,
+					"content": "Vamos por algunas algas frescas para hacer una comida conocida como “onigiri”.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700105,
+						721700107
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700105,
+					"content": "¿No pueden conseguirlas en la orilla?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721700106
+					]
+				},
+				{
+					"id": 721700106,
+					"content": "Sí, pero las algas de ahí no son muy frescas y si se usan para cocinar, siempre falta “algo”.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700109
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700109,
+					"content": "Pregunté por ahí y los lugareños dicen que aquí crecen algas de buena calidad.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700110
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700110,
+					"content": "Pero cuando llegamos hoy, nos encontramos con que está inundado completamente con agua de mar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700111
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700111,
+					"content": "Peor aún, ninguno de nosotros sabe bucear, así que solo podemos quedarnos aquí a mirar el paisaje...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700112
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700112,
+					"content": "¿Hay algún mecanismo relacionado cerca?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721700113
+					]
+				},
+				{
+					"id": 721700113,
+					"content": "¡Allí hay uno! Pero...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700114
+					],
+					"speakerTitle": "Julie"
+				},
+				{
+					"id": 721700114,
+					"content": "... Está atrapado en esa barrera otra vez, así que no podemos entrar...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700115
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700115,
+					"content": "*Suspira*, sigamos intentándolo hasta que logremos resolverlo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700116
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700116,
+					"content": "#Viajer{F#a}{M#o}, si sabes cómo resolver este problema, dínoslo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700117
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700117,
+					"content": "Lo mejor sería que tú nos trajeras las algas directamente...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700118
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700118,
+					"content": "¿Sr. Xudong?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700119
+					],
+					"speakerTitle": "Parvaneh"
+				},
+				{
+					"id": 721700119,
+					"content": "*Ejem*, ¡recibirás una buena recompensa si puedes traernos directamente las algas! ¡Añadiré un festín de onigiri como incentivo adicional!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700120
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700120,
+					"content": "No creo que se pueda hacer un festín con onigiri...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700121
+					],
+					"speakerTitle": "Parvaneh"
+				},
+				{
+					"id": 721700121,
+					"content": "Vamos, solo tendríamos que hacer más cantidad... Bueno, sigamos buscando una solución.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700107,
+					"content": "¿Es necesario sumergirse?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721700108
+					]
+				},
+				{
+					"id": 721700108,
+					"content": "Las algas que se encuentran en la orilla del mar no suelen ser tan frescas. Siempre falta algo en el sabor de los platos que se preparan con ellas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700109
+					],
+					"speakerTitle": "Xudong"
+				}
+			]
+		},
+		{
+			"id": 7217002,
+			"completionStepIds": [
+				7217003
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7217003",
+							"2"
+						],
+						"stepId": 7217003,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Xudong"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721700201,
+					"content": "#Viajer{F#a}{M#o}, ¿ya tienes las algas?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700202
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700202,
+					"content": "¡Estas son! ¡Muchas gracias!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700203
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700203,
+					"content": "Bueno, es hora de hacer ese plato que llaman... onigiri, ¿no? Escuché que es un plato bastante fácil de hacer...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700204
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700204,
+					"content": "Muy bien, espera mientras preparo la comida. Va a tardar un poco.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xudong"
+				}
+			]
+		},
+		{
+			"id": 7217003,
+			"completionStepIds": [
+				7217004
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7217004",
+							"2"
+						],
+						"stepId": 7217004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Xudong"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721700301,
+					"content": "Algas... pescado... y arroz.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700302
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700302,
+					"content": "Debería ser así...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700303
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700303,
+					"content": "¡Así está bien! ¡Aquí están los onigiri!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700304
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700304,
+					"content": "Qué increíblemente... sencillo. Bueno, tomaré uno. No creo que pueda comer más...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700305
+					],
+					"speakerTitle": "Parvaneh"
+				},
+				{
+					"id": 721700305,
+					"content": "Bueno, yo digo que todo es bueno mientras tenga buen gusto. ¡Yo tomaré este!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700306
+					],
+					"speakerTitle": "Julie"
+				},
+				{
+					"id": 721700306,
+					"content": "#Esta porción es tuya, viajer{F#a}{M#o}. Y, por supuesto, aquí tienes una copia de la receta.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700307
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700307,
+					"content": "Ese onigiri parece la cosa más sencilla del mundo, pero hay una técnica específica para hacerlo bien.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700308
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700308,
+					"content": "Bueno, yo también debería comer un poco. Todo ese trabajo me dio hambre...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700309
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700309,
+					"content": "Oye, Parvaneh, ¿no habías dicho que solo podrías con uno? ¡Deja un poco para mí, vamos!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xudong"
+				}
+			]
+		},
+		{
+			"id": 7217004,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7217002",
+							"2"
+						],
+						"stepId": 7217002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7217005",
+							"2"
+						],
+						"stepId": 7217005,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Xudong",
+					"Parvaneh",
+					"Julie"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721700401,
+					"content": "¿Tendremos que bucear para recolectarlas...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700402
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700402,
+					"content": "¿No podemos ir a otro sitio? ¿De verdad tienen que ser estas algas?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700403
+					],
+					"speakerTitle": "Parvaneh"
+				},
+				{
+					"id": 721700403,
+					"content": "¿Por qué tiene que estar ese mecanismo dentro de la barrera otra vez?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Julie"
+				}
+			]
+		},
+		{
+			"id": 7217005,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7217002",
+							"2"
+						],
+						"stepId": 7217002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7217005",
+							"3"
+						],
+						"stepId": 7217005,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Xudong",
+					"Parvaneh",
+					"Julie"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721700501,
+					"content": "Las algas de esta zona son muy buenas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700502
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700502,
+					"content": "Más que recolectar algas, esto es arrancarlas...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700503
+					],
+					"speakerTitle": "Parvaneh"
+				},
+				{
+					"id": 721700503,
+					"content": "Si usáramos un cuchillo pequeño, las sacaríamos todas muy rápido.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Julie"
+				}
+			]
+		},
+		{
+			"id": 7217006,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7217003",
+							"2"
+						],
+						"stepId": 7217003,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7217004",
+							"2"
+						],
+						"stepId": 7217004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Julie",
+					"Parvaneh"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721700601,
+					"content": "Humm... Por casualidad no habrá ruinas debajo de este lugar, ¿verdad?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700602
+					],
+					"speakerTitle": "Julie"
+				},
+				{
+					"id": 721700602,
+					"content": "¿Ru-ruinas? Bueno, sería genial que las hubiera...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Parvaneh"
+				}
+			]
+		},
+		{
+			"id": 7217007,
+			"completionStepIds": [
+				7217001
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7217001",
+							"2"
+						],
+						"stepId": 7217001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7217005",
+							"3"
+						],
+						"stepId": 7217005,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_COMMON",
+			"trigger": {
+				"objectNames": [
+					"Xudong"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721700701,
+					"content": "Parece que esa área de ahí abajo está inundada...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700702
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700702,
+					"content": "Sí, y las marcas de agua son bastante perceptibles. Este lugar estuvo inundado hace poco.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700703
+					],
+					"speakerTitle": "Julie"
+				},
+				{
+					"id": 721700703,
+					"content": "¿Pero por qué se iría el agua de repente?...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700704
+					],
+					"speakerTitle": "Julie"
+				},
+				{
+					"id": 721700704,
+					"content": "Uf, este sitio está lleno de agua. Se me van a calar los zapatos.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700705
+					],
+					"speakerTitle": "Parvaneh"
+				},
+				{
+					"id": 721700705,
+					"content": "Bueno, olvídalo. Recojamos algunas algas lo más rápidamente posible.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700706
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700706,
+					"content": "¿Qué hacen aquí?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721700707
+					]
+				},
+				{
+					"id": 721700707,
+					"content": "#¿Eh? ¡Vaya! Nos volvemos a encontrar, viajer{F#a}{M#o}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700708
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700708,
+					"content": "Bajamos a recoger algunas algas para hacer una comida llamada “onigiri”, pero fue bastante difícil... Ahora tengo los zapatos empapados.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700709
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700709,
+					"content": "#Pero no hablemos de eso. Viajer{F#a}{M#o}, ¿podrías ayudarnos a conseguir unas pocas algas más?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700710
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700710,
+					"content": "Parece que el área de más abajo se inundó no hace mucho tiempo y, aunque ya no hay tanta agua, quién sabe cuando volverá a inundarse otra vez.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700711
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700711,
+					"content": "Creo que lo mejor sería recolectar lo más rápido posible algunas algas más.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700712,
+						721700715
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700712,
+					"content": "No hay problema.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721700713
+					]
+				},
+				{
+					"id": 721700713,
+					"content": "#Contamos contigo, viajer{F#a}{M#o}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700714
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700714,
+					"content": "Cuando tengas todas las algas, tráemelas, por favor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700715,
+					"content": "¿Por qué no las recogen en el mar?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721700716
+					]
+				},
+				{
+					"id": 721700716,
+					"content": "Podríamos hacerlo, pero las algas del mar no son tan frescas. Siempre falta algo de sabor cuando hacemos algún plato con ellas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700717
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700717,
+					"content": "#La calidad de las algas debería ser mucho mejor en este sitio. Pero necesitaremos tu ayuda, viajer{F#a}{M#o}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721700718
+					],
+					"speakerTitle": "Xudong"
+				},
+				{
+					"id": 721700718,
+					"content": "Cuando tengas todas las algas, tráemelas, por favor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xudong"
+				}
+			]
+		}
+	]
+}

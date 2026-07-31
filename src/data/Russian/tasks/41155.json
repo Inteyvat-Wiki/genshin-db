@@ -1,0 +1,352 @@
+{
+	"id": 41155,
+	"type": "EQ",
+	"name": "Охотник Экспресс",
+	"description": "Особый заказ ждёт своей доставки в «Хорошем охотнике»...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 4115501,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Сарой",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4115501,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 4115502,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отнесите еду Усердному Силио",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4115502,
+						0
+					],
+					"talkId": 4115502
+				}
+			]
+		},
+		{
+			"id": 4115503,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Усердным Силио",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4115506,
+						0
+					],
+					"talkId": 4115506
+				}
+			]
+		},
+		{
+			"id": 4115504,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4115504,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 4115501,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115501",
+							"2"
+						],
+						"stepId": 4115501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Сара"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411550101,
+					"content": "Сейчас же доставлю.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411550102
+					]
+				},
+				{
+					"id": 411550102,
+					"content": "Замечательно. Спасибо!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411550103
+					],
+					"speakerTitle": "Сара"
+				},
+				{
+					"id": 411550103,
+					"content": "Следи за безопасностью, <color=#00E1FFFF>чтобы никто на тебя там не напал. И не бегай слишком быстро</color>, не то еда развалится.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411550104
+					],
+					"speakerTitle": "Сара"
+				},
+				{
+					"id": 411550104,
+					"content": "Постарайся побыстрее, а то если остынет, то будет невкусно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Сара"
+				}
+			]
+		},
+		{
+			"id": 4115502,
+			"completionStepIds": [
+				4115502
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115501",
+							"3"
+						],
+						"stepId": 4115501,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Усердный Силио"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411550201,
+					"content": "Есть хочется...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Усердный Силио"
+				}
+			]
+		},
+		{
+			"id": 4115503,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115501",
+							"2"
+						],
+						"stepId": 4115501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Сара"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411550301,
+					"content": "#Я слышал{F#а}, что есть особый заказ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411550302
+					]
+				},
+				{
+					"id": 411550302,
+					"content": "Да, Силио опять заказал рыбный шашлычок, а потом пошёл в логово Ужаса Бури. Помоги, пожалуйста, побыстрее доставить.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411550303
+					],
+					"speakerTitle": "Сара"
+				},
+				{
+					"id": 411550303,
+					"content": "Если на рыбный шашлычок <color=#00E1FFFF>попадут какие-нибудь странные элементы</color>, то он и сам станет странным на вкус.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Сара"
+				}
+			]
+		},
+		{
+			"id": 4115504,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115501",
+							"2"
+						],
+						"stepId": 4115501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Сара"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411550401,
+					"content": "Мне некогда.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411550402
+					]
+				},
+				{
+					"id": 411550402,
+					"content": "Ну ладно... Вдруг ещё кто-нибудь согласится.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Сара"
+				}
+			]
+		},
+		{
+			"id": 4115505,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115501",
+							"2"
+						],
+						"stepId": 4115501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Усердный Силио"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411550501,
+					"content": "Есть хочу...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Усердный Силио"
+				}
+			]
+		},
+		{
+			"id": 4115506,
+			"completionStepIds": [
+				4115503
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115503",
+							"2"
+						],
+						"stepId": 4115503,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Усердный Силио"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411550601,
+					"content": "Вот ваш заказ.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411550602
+					]
+				},
+				{
+					"id": 411550602,
+					"content": "Ах, как хорошо! Наконец смогу уйти из этой дыры.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Усердный Силио"
+				}
+			]
+		}
+	]
+}

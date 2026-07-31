@@ -1,0 +1,580 @@
+{
+	"id": 72149,
+	"type": "WQ",
+	"name": "\"Heart of Watatsumi\"",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "The Moon-Bathed Deep",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_RANK_ZERO_WQ",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		72145,
+		72146,
+		72147,
+		72148
+	],
+	"steps": [
+		{
+			"id": 7214901,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Return to Sangonomiya Shrine and talk to Tsuyuko",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7214902,
+						0
+					],
+					"talkId": 7214902
+				}
+			]
+		},
+		{
+			"id": 7214902,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Open the gate to the \"Heart of Watatsumi\"",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7214903,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to the \"Heart\"",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7214904,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Break the final seal",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7214905,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Obtain the Key of the Deep",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7214906,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Tsuyuko",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7214903,
+						0
+					],
+					"talkId": 7214903
+				}
+			]
+		},
+		{
+			"id": 7214907,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7214901,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7214901,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214904",
+							"3"
+						],
+						"stepId": 7214904,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214905",
+							"2"
+						],
+						"stepId": 7214905,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tsuyuko"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721490101,
+					"content": "(Miss Tsuyuko seems to be thinking about something, so perhaps this is not the time to disturb her.)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tsuyuko"
+				}
+			]
+		},
+		{
+			"id": 7214902,
+			"completionStepIds": [
+				7214901
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214901",
+							"2"
+						],
+						"stepId": 7214901,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tsuyuko",
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721490201,
+					"content": "#Welcome back, {NICKNAME}. Is there something I can do for you?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490202
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490202,
+					"content": "So, about your commission...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490203
+					]
+				},
+				{
+					"id": 721490203,
+					"content": "We got the four Spirit Pearls!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490204
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 721490204,
+					"content": "Is that so? I knew I could count on you, thank you very much! Then, we are only one step away from unlocking the final seal of the \"heart.\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490205
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490205,
+					"content": "Sorry, I have to ask you both to come along with me — I hope you don't mind.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490206
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490206,
+					"content": "#Since we're already here, a little more's no biggie! Right, {NICKNAME}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490207,
+						721490208
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 721490207,
+					"content": "Alright.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490209
+					]
+				},
+				{
+					"id": 721490209,
+					"content": "There's no time to lose. Let's head off!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490208,
+					"content": "I'm fine with it.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490209
+					]
+				}
+			]
+		},
+		{
+			"id": 7214903,
+			"completionStepIds": [
+				7214906
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214905",
+							"3"
+						],
+						"stepId": 7214905,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214906",
+							"2"
+						],
+						"stepId": 7214906,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tsuyuko",
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721490301,
+					"content": "Hmm...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490302
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490302,
+					"content": "Miss Tsuyuko...?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490303
+					]
+				},
+				{
+					"id": 721490303,
+					"content": "Oh— Sorry, I was quite lost in thought just then.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490304
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490304,
+					"content": "Thanks to your help, we have the Key of the Moon-bathed Deep in hand.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490305
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490305,
+					"content": "The Key of the Moon-shaved what now? ...And what is that, anyway?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490306
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 721490306,
+					"content": "Haha, just call it the \"Key of the Deep.\" We're not going to insist that outlanders use all the proper names for every last thing.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490307
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490307,
+					"content": "This is something we will need to open the entrance to Enkanomiya. It was forged from the very spilled blood of our Omikami...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490308
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490308,
+					"content": "...Or at least, that's what the legends say.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490309
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490309,
+					"content": "Oh...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490310
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 721490310,
+					"content": "Curiouser and curiouser...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490311
+					]
+				},
+				{
+					"id": 721490311,
+					"content": "Haha! It isn't mysterious at all! In fact, it's just the opposite.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490312
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490312,
+					"content": "Well, now we just need to report to the Divine Priestess, await her approval, and then wait for the spirit vein flow to be correct...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490313
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490313,
+					"content": "And then, we can head down to Enkanomiya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490314
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490314,
+					"content": "Wait, then what did we do all this for?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490315
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 721490315,
+					"content": "Well, it's not as if you gained nothing during this journey, right?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490316
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490316,
+					"content": "I mean... You've secured the lasting friendship of the Sangonomiya Shrine! Watatsumi Island will welcome you back any time!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490317
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490317,
+					"content": "How about something a bit more concrete than that?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490318
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 721490318,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490319
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490319,
+					"content": "The records do say that the Spirit Pearls will answer the summons of someone pure, and that the Key will only come together for one whose heart is as clear as the waters themselves.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490320
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490320,
+					"content": "I don't generally believe what those texts say, but I do believe that you can turn Watatsumi Island's situation around.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490321
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490321,
+					"content": "Well then, when the time comes to go down to Enkanomiya...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490322,
+						721490323
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490322,
+					"content": "We'll meet again then, huh?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490325
+					]
+				},
+				{
+					"id": 721490325,
+					"content": "Well then, see you.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490323,
+					"content": "You'll draw another fortune slip?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490324
+					]
+				},
+				{
+					"id": 721490324,
+					"content": "Hehe, my fortune slip luck is pretty good. I'm certain that we'll meet again.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490325
+					],
+					"speakerTitle": "Tsuyuko"
+				}
+			]
+		},
+		{
+			"id": 7214904,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214907",
+							"2"
+						],
+						"stepId": 7214907,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7214901"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721490401,
+					"content": "A strange, phosphorescent seal, upon which the symbol of a fish has been graven...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Seal of the \"Heart\""
+				}
+			]
+		}
+	]
+}

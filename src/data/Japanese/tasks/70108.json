@@ -1,0 +1,395 @@
+{
+	"id": 70108,
+	"type": "WQ",
+	"name": "雪山再踏査",
+	"description": "ビーコンをいくつか置いたものの、数量が足りないため、アイスターは雪山の高さを測ることができなかった。正確な数字を得るには、雪山の頂にビーコンを置くしか術がない。彼女はそれを協力してくれる人を探している…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		70104,
+		70141
+	],
+	"steps": [
+		{
+			"id": 7010801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "アイスターと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7010801,
+						0
+					],
+					"talkId": 7010801
+				}
+			]
+		},
+		{
+			"id": 7010802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "踏査用ビーコンを雪山の山頂に置く",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7010803,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "パイモンと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7010802,
+						0
+					],
+					"talkId": 7010802
+				}
+			]
+		},
+		{
+			"id": 7010804,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "アイスターに報告する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7010803,
+						0
+					],
+					"talkId": 7010803
+				}
+			]
+		},
+		{
+			"id": 7010805,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "手紙をサイリュスに届ける",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7010804,
+						0
+					],
+					"talkId": 7010804
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7010802,
+			"completionStepIds": [
+				7010803
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7010803",
+							"2"
+						],
+						"stepId": 7010803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"パイモン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 701080201,
+					"content": "うぅ…こ、これでいいだろう…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080202
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 701080202,
+					"content": "さ、寒い…早く降りようぜ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "パイモン"
+				}
+			]
+		},
+		{
+			"id": 7010803,
+			"completionStepIds": [
+				7010804
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7010804",
+							"2"
+						],
+						"stepId": 7010804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"アイスター"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 701080301,
+					"content": "ビーコンを設置してくれた？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080302
+					],
+					"speakerTitle": "アイスター"
+				},
+				{
+					"id": 701080302,
+					"content": "置いたよ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						701080303
+					]
+				},
+				{
+					"id": 701080303,
+					"content": "よかった、ありがとう。これで雪山の高さを観測できるよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080304
+					],
+					"speakerTitle": "アイスター"
+				},
+				{
+					"id": 701080304,
+					"content": "あ、そうだ。君への報酬はサイリュスさんに用意してもらったよ。城内に取りに行ってね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080305
+					],
+					"speakerTitle": "アイスター"
+				},
+				{
+					"id": 701080305,
+					"content": "それと、ついでにこの手紙をサイリュスさんに渡してくれないかな。雪山に入る探検隊がいたら知らせてくれる約束をしてくれたんだけど、何も連絡がないんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080306
+					],
+					"speakerTitle": "アイスター"
+				},
+				{
+					"id": 701080306,
+					"content": "壊れたビーコンを修理したら、設置するためにもう一回雪山に入らなきゃ。雪山で観測しなければいけないものは、まだたくさんあるんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "アイスター"
+				}
+			]
+		},
+		{
+			"id": 7010804,
+			"completionStepIds": [
+				7010805
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7010805",
+							"2"
+						],
+						"stepId": 7010805,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"サイリュス"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 701080401,
+					"content": "やあ、何か用か？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080402
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 701080402,
+					"content": "#{PLAYERAVATAR#SEXPRO[INFO_MALE_PRONOUN_BOYSECOND|INFO_FEMALE_PRONOUN_GIRLSECOND]}宛ての手紙がある。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						701080403
+					]
+				},
+				{
+					"id": 701080403,
+					"content": "手紙？あぁ…彼女からか。さては、探検隊についてのことだな…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080404
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 701080404,
+					"content": "はあ、俺にはどうしようもできないさ。今、危険な雪山に行きたがる探検隊は少ないんだ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080405
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 701080405,
+					"content": "あとで返信を書いて、状況を説明する。届けてくれてありがとうな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080406
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 701080406,
+					"content": "おっと、この前の手紙で君に報酬を準備するように言われていたんだ。受け取ってくれ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080407
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 701080407,
+					"content": "それと…腕が立つ君には余計な忠告かもしれないが、雪山で探索する時は気を付けろよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080410
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 701080410,
+					"content": "はあ、雪山…機会があれば、俺も自ら探検隊を率いて登ってみたいものだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "サイリュス"
+				}
+			]
+		},
+		{
+			"id": 7010805,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7010803",
+							"2"
+						],
+						"stepId": 7010803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"アイスター"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 701080501,
+					"content": "ビーコンを山頂に置いてくれれば、誤差がかなり小さくなるはず…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "アイスター"
+				}
+			]
+		},
+		{
+			"id": 7010806,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7010805",
+							"2"
+						],
+						"stepId": 7010805,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"アイスター"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 701080601,
+					"content": "はあ、いつになれば雪山に入れるのか…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "アイスター"
+				}
+			]
+		}
+	]
+}

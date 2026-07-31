@@ -1,0 +1,352 @@
+{
+	"id": 41157,
+	"type": "EQ",
+	"name": "Свежий заказ",
+	"description": "Особый заказ ждёт своей доставки в ресторане «Народный выбор»...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 4115701,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с шеф-поваром Мао",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4115701,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 4115702,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отнесите еду любопытному Цзы Жую",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4115702,
+						0
+					],
+					"talkId": 4115702
+				}
+			]
+		},
+		{
+			"id": 4115703,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с любопытным Цзы Жуем",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4115706,
+						0
+					],
+					"talkId": 4115706
+				}
+			]
+		},
+		{
+			"id": 4115704,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4115704,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 4115701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115701",
+							"2"
+						],
+						"stepId": 4115701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Шеф-повар Мао"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411570101,
+					"content": "Хорошо. Я быстро.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411570102
+					]
+				},
+				{
+					"id": 411570102,
+					"content": "Ну, рассчитываю на тебя.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411570103
+					],
+					"speakerTitle": "Шеф-повар Мао"
+				},
+				{
+					"id": 411570103,
+					"content": "Осторожно в каменном лесу. Как бы кто недобрый не напал.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Шеф-повар Мао"
+				}
+			]
+		},
+		{
+			"id": 4115702,
+			"completionStepIds": [
+				4115702
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115701",
+							"3"
+						],
+						"stepId": 4115701,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Любопытный Цзы Жуй"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411570201,
+					"content": "Ну почему ещё не доставили, столько времени прошло...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Любопытный Цзы Жуй"
+				}
+			]
+		},
+		{
+			"id": 4115703,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115701",
+							"2"
+						],
+						"stepId": 4115701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Шеф-повар Мао"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411570301,
+					"content": "#Я слышал{F#а}, что есть особый заказ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411570302
+					]
+				},
+				{
+					"id": 411570302,
+					"content": "Да, тот парень Цзы Жуй заказал яичный суп из лотоса. Похоже, он пошёл куда-то в каменный лес Гуюнь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411570303
+					],
+					"speakerTitle": "Шеф-повар Мао"
+				},
+				{
+					"id": 411570303,
+					"content": "Молодёжь постоянно лезет в какие-то дурацкие места. Куда катится Ли Юэ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411570304
+					],
+					"speakerTitle": "Шеф-повар Мао"
+				},
+				{
+					"id": 411570304,
+					"content": "Как бы то ни было, можешь доставить его заказ? <color=#00E1FFFF>Ты только не летай</color>, пожалуйста, а то расплескается.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Шеф-повар Мао"
+				}
+			]
+		},
+		{
+			"id": 4115704,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115701",
+							"2"
+						],
+						"stepId": 4115701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Шеф-повар Мао"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411570401,
+					"content": "Мне некогда.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411570402
+					]
+				},
+				{
+					"id": 411570402,
+					"content": "Бывает. Может, ещё кто-нибудь сможет...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Шеф-повар Мао"
+				}
+			]
+		},
+		{
+			"id": 4115705,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115701",
+							"2"
+						],
+						"stepId": 4115701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Любопытный Цзы Жуй"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411570501,
+					"content": "Что-то мне кажется, я зря сюда пришёл...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Любопытный Цзы Жуй"
+				}
+			]
+		},
+		{
+			"id": 4115706,
+			"completionStepIds": [
+				4115703
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115703",
+							"2"
+						],
+						"stepId": 4115703,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Любопытный Цзы Жуй"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411570601,
+					"content": "Вот ваш заказ.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411570602
+					]
+				},
+				{
+					"id": 411570602,
+					"content": "Огромное спасибо! Сейчас поем и сразу пойду обратно в Ли Юэ.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Любопытный Цзы Жуй"
+				}
+			]
+		}
+	]
+}

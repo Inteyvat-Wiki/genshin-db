@@ -1,0 +1,405 @@
+{
+	"id": 74087,
+	"type": "WQ",
+	"name": "Geh zum „Wohnheim des Instituts“ und hole den Anker.",
+	"description": "Du bist zum neuen Standort des Forschungsinstituts Fontaine gekommen, wo du auf Raimondo und Choiseul getroffen bist, die sich gemeinsam mit den verschiedenen Angelegenheiten des Forschungsinstituts befassen. Nach einer langatmigen und ermüdenden Unterhaltung wurdest du damit beauftragt, Nacker zu eskortieren, während er die letzten beiden Anker zurückholt.",
+	"unlockDescription": "",
+	"chapter": "Chronik des Forschungsinstituts Fontaine",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_RANK_ZERO_WQ",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		74053
+	],
+	"steps": [
+		{
+			"id": 7408701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Geh zum „Wohnheim des Forschungsinstituts“.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7408701,
+						0
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					4844.94,
+					463.96,
+					3947.899
+				],
+				"pointId": 5010
+			}
+		},
+		{
+			"id": 7408702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Nacker.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7408702,
+						0
+					],
+					"talkId": 7408702
+				}
+			]
+		},
+		{
+			"id": 7408703,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Hole den „Überwachungsanker“.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					4857.841,
+					463.96,
+					3954.217
+				],
+				"pointId": 5013
+			}
+		},
+		{
+			"id": 7408704,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		}
+	],
+	"talks": [
+		{
+			"id": 7408702,
+			"completionStepIds": [
+				7408702
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7408702",
+							"2"
+						],
+						"stepId": 7408702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Chronie",
+					"Nacker"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							4843.428,
+							463.96,
+							3948.845
+						],
+						"pointId": 6298
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							4843.122,
+							463.99,
+							3947.16
+						],
+						"pointId": 6299
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							4846.795,
+							463.96,
+							3947.191
+						],
+						"pointId": 6300
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							4844.405,
+							463.96,
+							3949.864
+						],
+						"pointId": 6301
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 740870201,
+					"content": "Haben die Forscher hier ihre Freizeit verbracht? Ist das überhaupt menschenwürdig? Hat das Forschungsinstitut Fontaine jemals daran gedacht, die Renovierung dieses Ortes zu einer Priorität zu machen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						740870202
+					],
+					"speakerTitle": "Chronie"
+				},
+				{
+					"id": 740870202,
+					"content": "Hier muss es einen „Überwachungsanker“ geben. Wie Fräulein Chronie gerade bemerkt hat, gibt es einen dringenden Bedarf, diesen Ort zu renovieren. Und die Menge der Energiespeicher ist begrenzt, oder anders gesagt, es gibt Versorgungsengpässe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						740870203
+					],
+					"speakerTitle": "Nacker"
+				},
+				{
+					"id": 740870203,
+					"content": "#Während ich meine Fragerunde mit Fräulein Chronie habe, bitte ich dich, {NICKNAME}, den „Überwachungsanker“ zurückzuholen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Nacker"
+				}
+			]
+		},
+		{
+			"id": 7408703,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7408702",
+							"3"
+						],
+						"stepId": 7408702,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Nacker",
+					"Chronie"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 740870301,
+					"content": "Im Gegensatz zu anderen Bereichen, wurde das „Wohnheim“ nicht sehr stark von der Explosion beeinträchtigt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						740870302
+					],
+					"speakerTitle": "Nacker"
+				},
+				{
+					"id": 740870302,
+					"content": "Wohnheim? Aber hier gibt es ja nicht einmal ein Bett, wie sollen sich die Forscher denn da ausruhen? Sie können doch nicht auf Stühlen schlafen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						740870303
+					],
+					"speakerTitle": "Chronie"
+				},
+				{
+					"id": 740870303,
+					"content": "Fräulein Chronie, dein Verständnis von „ausruhen“ unterscheidet sich von dem „Ausruhen“, dessen Forscher bedürfen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						740870304
+					],
+					"speakerTitle": "Nacker"
+				},
+				{
+					"id": 740870304,
+					"content": "Wenn ein Forscher des Forschungsinstituts Fontaine sagt, er müsse sich ausruhen, dann meint er eigentlich, dass er sein Gehirn für einen Moment abschalten möchte.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						740870305
+					],
+					"speakerTitle": "Nacker"
+				},
+				{
+					"id": 740870305,
+					"content": "Dann kommt er hierher, spielt Klavier, liest Belletristik und trinkt zwei Gläschen, wenn es denn sein muss.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						740870306
+					],
+					"speakerTitle": "Nacker"
+				},
+				{
+					"id": 740870306,
+					"content": "Ähm ... Aber könnte sich das Gehirn bei einem Schläfchen denn nicht besser ausruhen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						740870307
+					],
+					"speakerTitle": "Chronie"
+				},
+				{
+					"id": 740870307,
+					"content": "Das stimmt schon. Aber für uns Forscher bedeutet der Schlaf eine zu große Zeitverschwendung.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						740870308
+					],
+					"speakerTitle": "Nacker"
+				},
+				{
+					"id": 740870308,
+					"content": "Schlaf soll auch eine Zeitverschwendung sein? Das ist eine notwendige Ruheperiode!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						740870309
+					],
+					"speakerTitle": "Chronie"
+				},
+				{
+					"id": 740870309,
+					"content": "Schlaf kann unsere wissenschaftlichen Gedankengänge vollkommen unterbrechen. Das ist mit der Forschungsarbeit überhaupt nicht vereinbar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						740870310,
+						740870311
+					],
+					"speakerTitle": "Nacker"
+				},
+				{
+					"id": 740870310,
+					"content": "(Weiter lauschen ...)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						740870312
+					]
+				},
+				{
+					"id": 740870312,
+					"content": "Meinst du das ernst? Was unterbrochen wird, wenn du nicht schläfst, wird dein Leben sein.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						740870313
+					],
+					"speakerTitle": "Chronie"
+				},
+				{
+					"id": 740870313,
+					"content": "Das ist nicht wahr, das Institut hatte früher eine hervorragende Krankenversicherung, um sicherzustellen, dass der gesundheitliche Zustand jedes Forschers keine Probleme hervorruft.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						740870314
+					],
+					"speakerTitle": "Nacker"
+				},
+				{
+					"id": 740870314,
+					"content": "Das ist doch deswegen kein Grund, nicht zu schlafen, oder doch?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						740870315
+					],
+					"speakerTitle": "Chronie"
+				},
+				{
+					"id": 740870315,
+					"content": "Außerdem ... Kommen doch die Forscher hierher, um einen Moment ihr Gehirn auszuruhen, oder? Dann werden doch ihre wissenschaftlichen Gedankengänge auch unterbrochen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						740870316
+					],
+					"speakerTitle": "Chronie"
+				},
+				{
+					"id": 740870316,
+					"content": "Das stimmt nicht. Ich sagte, das Gehirn für eine kurze Zeit abschalten, aber tatsächlich denken sie instinktiv weiter an akademische Angelegenheiten.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						740870317
+					],
+					"speakerTitle": "Nacker"
+				},
+				{
+					"id": 740870317,
+					"content": "Es ist wie auf dem Meer, selbst wenn die Wellen auf der Oberfläche für einen Augenblick verschwunden sind, gibt es immer noch stumme Strömungen in der Tiefe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						740870318
+					],
+					"speakerTitle": "Nacker"
+				},
+				{
+					"id": 740870318,
+					"content": "Manchmal ist die Strömung sogar viel stärker, als die Wellen auf der Oberfläche.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						740870319
+					],
+					"speakerTitle": "Nacker"
+				},
+				{
+					"id": 740870319,
+					"content": "Ich verstehe, du meinst, wenn ein Forscher des Forschungsinstituts Fontaine in einer Forschung steckt, dann bleibt ihm nichts anderes übrig, als weiterzuforschen, und darf nicht schlafen, richtig?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						740870320
+					],
+					"speakerTitle": "Chronie"
+				},
+				{
+					"id": 740870320,
+					"content": "Das ist eine tendenziöse Aussage. Wenn sie wirklich schlafen müssen, dann können sie doch nach Hause gehen und dort schlafen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						740870321
+					],
+					"speakerTitle": "Nacker"
+				},
+				{
+					"id": 740870321,
+					"content": "Das heißt also, wenn sich ein Forscher vom Forschungsinstitut Fontaine im Forschungsinstitut Fontaine befindet, dann bleibt ihm nichts anderes übrig, als weiterzuforschen, und darf nicht schlafen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						740870322
+					],
+					"speakerTitle": "Chronie"
+				},
+				{
+					"id": 740870322,
+					"content": "Deine rhetorischen Fähigkeiten sind erstaunlich, Fräulein Chronie.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Nacker"
+				},
+				{
+					"id": 740870311,
+					"content": "(Ich lausche lieber nicht weiter ...)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,185 @@
+{
+	"id": 70704,
+	"type": "WQ",
+	"name": "康纳的酿酒材料需求",
+	"description": "晨曦酒庄的康纳需要三份烈焰花花蕊。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "将三份烈焰花花蕊交给康纳",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070401,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070402,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "与康纳对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070402,
+						0
+					],
+					"talkId": 7070402
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070401,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070401",
+							"2"
+						],
+						"stepId": 7070401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070401"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"康纳"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707040101,
+					"content": "关于烈焰花花蕊…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707040102
+					]
+				},
+				{
+					"id": 707040102,
+					"content": "没错，是我发布的委托，你来得还挺快的…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707040103
+					],
+					"speakerTitle": "康纳"
+				},
+				{
+					"id": 707040103,
+					"content": "怎么样，三份烈焰花花蕊，你已经搜集齐了吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707040104,
+						707040105
+					],
+					"speakerTitle": "康纳"
+				},
+				{
+					"id": 707040104,
+					"content": "搜集齐了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707040105,
+					"content": "还没有。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707040106
+					]
+				},
+				{
+					"id": 707040106,
+					"content": "那你搜集齐了之后，就快点拿来给我吧，我还等着用来酿酒呢。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "康纳"
+				}
+			]
+		},
+		{
+			"id": 7070402,
+			"completionStepIds": [
+				7070402
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070402",
+							"2"
+						],
+						"stepId": 7070402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"康纳"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707040201,
+					"content": "好的，这些就足够了。这些东西给你，谢谢你帮忙。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707040202
+					],
+					"speakerTitle": "康纳"
+				},
+				{
+					"id": 707040202,
+					"content": "虽然不知道用这种材料酿出来的酒够不够特别…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707040203
+					],
+					"speakerTitle": "康纳"
+				},
+				{
+					"id": 707040203,
+					"content": "但是，酿酒的过程一定会让我印象很深刻…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "康纳"
+				}
+			]
+		}
+	]
+}

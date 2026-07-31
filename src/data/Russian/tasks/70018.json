@@ -1,0 +1,333 @@
+{
+	"id": 70018,
+	"type": "WQ",
+	"name": "Взаимная выгода?",
+	"description": "Вы с Эллой Маск идёте беседовать с хиличурлами. Станет ли это началом новой дружбы?..",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5024,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70015
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7001801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с хиличурлом",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7001801,
+						0
+					],
+					"talkId": 7001801
+				}
+			]
+		},
+		{
+			"id": 7001802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте предмет хиличурлу",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7001803,
+						0
+					],
+					"talkId": 7001803
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7001803,
+						0
+					],
+					"talkId": 7001803
+				}
+			]
+		},
+		{
+			"id": 7001803,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7001803,
+						0
+					],
+					"talkId": 7001803
+				}
+			]
+		},
+		{
+			"id": 7001804,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7001804,
+						0
+					],
+					"talkId": 7001804
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7001801,
+			"completionStepIds": [
+				7001801
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7001801",
+							"2"
+						],
+						"stepId": 7001801,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Хиличурл",
+					"Элла Маск"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700180101,
+					"content": "Yaya! Dala!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700180102
+					],
+					"speakerTitle": "Хиличурл"
+				},
+				{
+					"id": 700180102,
+					"content": "Mimi muhe gusha, <color=#00E1FFFF>gusha celi boya</color>!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700180103
+					],
+					"speakerTitle": "Хиличурл"
+				},
+				{
+					"id": 700180103,
+					"content": "Он что-то от нас хочет... Давайте выясним, что ему надо.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Элла Маск"
+				}
+			]
+		},
+		{
+			"id": 7001802,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7001802",
+							"2"
+						],
+						"stepId": 7001802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7001802"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Хиличурл"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700180201,
+					"content": "<color=#00E1FFFF>Gusha celi boya</color>!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700180202
+					],
+					"speakerTitle": "Хиличурл"
+				},
+				{
+					"id": 700180202,
+					"content": "(Это оно?)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7001803,
+			"completionStepIds": [
+				7001802,
+				7001803
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7001803",
+							"2"
+						],
+						"stepId": 7001803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Хиличурл",
+					"Элла Маск"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700180301,
+					"content": "Mosi mita! Tomo, valo!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700180302
+					],
+					"speakerTitle": "Хиличурл"
+				},
+				{
+					"id": 700180302,
+					"content": "Mosi mita!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						700180303
+					]
+				},
+				{
+					"id": 700180303,
+					"content": "Так вот оно что.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700180304
+					],
+					"speakerTitle": "Элла Маск"
+				},
+				{
+					"id": 700180304,
+					"content": "Du odomu tomo dala?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700180305
+					],
+					"speakerTitle": "Элла Маск"
+				},
+				{
+					"id": 700180305,
+					"content": "Du Wei dala? Mito nye! Yeye beru mi tomo!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700180306
+					],
+					"speakerTitle": "Хиличурл"
+				},
+				{
+					"id": 700180306,
+					"content": "Он не знает, но мы можем спросить его друзей.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700180307
+					],
+					"speakerTitle": "Элла Маск"
+				},
+				{
+					"id": 700180307,
+					"content": "Идём тогда?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Элла Маск"
+				}
+			]
+		},
+		{
+			"id": 7001804,
+			"completionStepIds": [
+				7001804
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7001804",
+							"2"
+						],
+						"stepId": 7001804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Хиличурл"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700180401,
+					"content": "Nye, Mani nye!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700180402
+					],
+					"speakerTitle": "Хиличурл"
+				},
+				{
+					"id": 700180402,
+					"content": "Кажется, неправильно...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

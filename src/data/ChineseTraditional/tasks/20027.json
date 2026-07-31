@@ -1,0 +1,223 @@
+{
+	"id": 20027,
+	"type": "IQ",
+	"name": "圓滾滾的大團騷亂！",
+	"description": "史萊姆突然在晨曦酒莊出現，在酒莊附近的特納似乎被捲入其中…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2002701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "前去查看詳情",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "消滅史萊姆",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002703,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "與特納對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002701,
+						0
+					],
+					"talkId": 2002701
+				}
+			]
+		},
+		{
+			"id": 2002704,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往異常地點",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002705,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "用「風」驅散塵埃",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002706,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "消滅全部史萊姆",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2002701,
+			"completionStepIds": [
+				2002703
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002702",
+							"3"
+						],
+						"stepId": 2002702,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"特納"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200270101,
+					"content": "#謝謝，謝謝{F#妳}{M#你}，{NICKNAME}…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270102
+					],
+					"speakerTitle": "特納"
+				},
+				{
+					"id": 200270102,
+					"content": "我本來是想去看看葡萄藤的情況，結果卻撞上這倒楣事…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270103
+					],
+					"speakerTitle": "特納"
+				},
+				{
+					"id": 200270103,
+					"content": "#唉，請{F#妳}{M#你}別告訴我兒子，他是城裡的西風騎士。他平時工作肯定也很辛苦吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270104
+					],
+					"speakerTitle": "特納"
+				},
+				{
+					"id": 200270104,
+					"content": "我這個老頭子的一點小麻煩，就不要讓他再煩心了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270105
+					],
+					"speakerTitle": "特納"
+				},
+				{
+					"id": 200270105,
+					"content": "但是最近，酒莊附近總是會出現史萊姆，我每天都在擔心葡萄藤會被史萊姆給毀了，睡也睡不好。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270106
+					],
+					"speakerTitle": "特納"
+				},
+				{
+					"id": 200270106,
+					"content": "如果你們有空的話，就幫我老頭子一個忙，再去周圍看看，把史萊姆都趕走，別讓它們再來破壞了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270107,
+						200270108
+					],
+					"speakerTitle": "特納"
+				},
+				{
+					"id": 200270107,
+					"content": "沒問題。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200270109
+					]
+				},
+				{
+					"id": 200270109,
+					"content": "太好了，我總算能休息一下了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "特納"
+				},
+				{
+					"id": 200270108,
+					"content": "還有別的事。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200270110
+					]
+				},
+				{
+					"id": 200270110,
+					"content": "#唉，本來說我自己來也行…但是老頭子我真的動不了了，年輕人，{F#妳}{M#你}就幫幫我吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "特納"
+				}
+			]
+		}
+	]
+}

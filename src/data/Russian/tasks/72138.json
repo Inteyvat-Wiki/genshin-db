@@ -1,0 +1,1093 @@
+{
+	"id": 72138,
+	"type": "WQ",
+	"name": "Лечение на острове",
+	"description": "Целитель Ясумото находится на острове Ясиори и, похоже, остро нуждается в помощи...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		1025
+	],
+	"steps": [
+		{
+			"id": 7213801,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7213801,
+						0
+					],
+					"talkId": 7213801
+				}
+			]
+		},
+		{
+			"id": 7213802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Соберите 12 порций травы наку",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7213802,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7213803,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Дождитесь вечера следующего дня и поговорите с Ясумото в промежуток с 18:00 до 21:00",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						1,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7213804,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Ясумото",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7213807,
+						0
+					],
+					"talkId": 7213807
+				}
+			]
+		},
+		{
+			"id": 7213805,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Защитите Ясумото",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7213806,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Ясумото",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7213805,
+						0
+					],
+					"talkId": 7213805
+				}
+			]
+		},
+		{
+			"id": 7213807,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Ясумото",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7213803,
+						0
+					],
+					"talkId": 7213803
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7213801,
+			"completionStepIds": [
+				7213801
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7213801",
+							"2"
+						],
+						"stepId": 7213801,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_COMMON",
+			"trigger": {
+				"objectNames": [
+					"Ясумото"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721380101,
+					"content": "УХ ТЫ! Я... совсем не подозрительная личность. Я всего лишь местный врач!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380102
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380102,
+					"content": "Если не верите мне, я могу отвести вас к себе домой. Если вам что-то нужно - берите. Только отпустите меня!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380103
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380103,
+					"content": "Или отведите меня к вашему генералу, господину Кудзё! Он меня знает!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380104,
+						721380105
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380104,
+					"content": "Возможно, вышло недоразумение...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721380106
+					]
+				},
+				{
+					"id": 721380106,
+					"content": "Эй? Вы не похожи на поданного сёгуната... или Сангономии.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380107
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380107,
+					"content": "#Вы... чужестран{F#ка}{M#ец}? Что вы здесь делаете?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380108,
+						721380109
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380108,
+					"content": "Наверное, ты прав...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721380110
+					]
+				},
+				{
+					"id": 721380110,
+					"content": "Но в любом случае вам лучше поскорее отсюда убраться. На острове Ясиори сейчас очень опасно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380111
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380111,
+					"content": "Пока нет намёков на то, что Татаригами исчезнет. В ближайшее время комиссия Тэнрё не собирается выводить войска.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380112
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380112,
+					"content": "Остров больше не пригоден для жилья, не говоря уж об осмотре достопримечательностей.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380113
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380113,
+					"content": "#Если ты чужестран{F#ка}{M#ец}, сбежавш{F#ая}{M#ий} от ареста комиссара, иди на запад.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380144
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380144,
+					"content": "В комиссии Тэнрё неизвестным беженцам не рады. Но тебя могут забрать с собой пираты.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380114,
+						721380115
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380114,
+					"content": "А что случилось на острове?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721380116
+					]
+				},
+				{
+					"id": 721380116,
+					"content": "#Хм-м... А ты сам{F#а} посуди. Посмотри, что горожане и люди из Сангономии сделали с нами!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380117
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380117,
+					"content": "Сначала был взрыв в Татарасуне. В ту ночь небо окрасилось в странные цвета...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380140
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380140,
+					"content": "Многие мои родственники и друзья потеряли работу и сейчас живут в бедности. Многие другие были тяжело ранены и по возвращении домой выглядели ужасно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380141
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380141,
+					"content": "Многим моим друзьям... не удалось уйти.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380118
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380118,
+					"content": "А потом люди из Сангономии разрушили обереги, которые подавляли останки Змея. Поднялся Татаригами, и все спешно покинули остров.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380119
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380119,
+					"content": "Также распространяются странные болезни. Многие местные жители тяжело заболели.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380142
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380142,
+					"content": "Боюсь, что это лишь вопрос времени, пока это не распространится на лагеря обеих армий.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380143
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380143,
+					"content": "Где я?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721380120
+					]
+				},
+				{
+					"id": 721380120,
+					"content": "Именно здесь добывали кристаллы, используемые при выплавке нефритовой стали для Инадзумы. До тех пор, пока залежи кристаллов не иссякли бы, мы могли жить припеваючи, не страдая от притеснений городского люда.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380121
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380121,
+					"content": "А теперь? На острове едва найдёшь хоть одну живую душу... Я имею в виду, такую, как я, говорящую на человеческом языке.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380122
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380122,
+					"content": "Почему же ты не уедешь?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721380123
+					]
+				},
+				{
+					"id": 721380123,
+					"content": "Ты думаешь, я не хочу уехать? Этот молодой господин из комиссии Тэнрё ранее меня пригласил... Он всё ещё должен быть в армии и командовать битвами.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380124
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380124,
+					"content": "«У тебя есть познания в медицине, и ты отличаешься от обычных людей. На острове тебе оставаться опасно. Почему бы тебе не стать моим медиком? Я могу направить тебя к отцу».",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380145
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380145,
+					"content": "По крайней мере, так он сказал.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380125
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380125,
+					"content": "До войны лечить члена комиссии было большой честью, о которой я, сельский врач, и мечтать не мог.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380126
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380126,
+					"content": "Но теперь... Надо полагать, что у члена комиссии не было бы недостатка в хороших докторах. А как насчёт острова Ясиори? Я единственный врач, на которого здесь могут положиться пациенты.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380127
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380127,
+					"content": "Поэтому я не уеду. Я не стану лечить ни одну из воюющих сторон. Мой единственный враг - Татаригами.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380128
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380128,
+					"content": "Я могу тебе чем-нибудь помочь?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721380129
+					]
+				},
+				{
+					"id": 721380129,
+					"content": "Ничем... По правде сказать, мне нужна помощь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380130
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380130,
+					"content": "Мне нужна кое-какая особая флора, чтобы изготовить средство для лечения странных болезней. Я не знаю, что из этого выйдет... Но попробовать никогда не помешает.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380131
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380131,
+					"content": "Но... флора заражена Татаригами, и растёт она обычно в опасных местах.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380146
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380146,
+					"content": "Разделенные рекой и морем, преследуемые монстрами повсюду, и вторжение Татаригами здесь также особенно сильно...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380132
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380132,
+					"content": "С моими храбростью и способностями справиться с этой задачей будет непросто.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380133
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380133,
+					"content": "И как доктор, я не смею идти на такой риск, как сбор флоры. Я вынужден использовать медленное консервативное лечение... Прошло столько времени, а я всё ещё не могу испытать ни одно новое назначение.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380134
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380134,
+					"content": "#Чужестран{F#ка}{M#ец}, вижу, у тебя при себе планер. По всему видать, ты опытн{F#ая}{M#ый} путешественни{F#ца}{M#к}. Тебе такие опасности по плечу.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380135
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380135,
+					"content": "Так что надеюсь, что ты поможешь мне собрать нужные ингредиенты на тех участках.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380136
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380136,
+					"content": "Когда соберёшь флору, приходи ко мне сюда. О награде не беспокойся. У меня остались кое-какие сбережения.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380137
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380137,
+					"content": "И хотя это поручение от незнакомца, я надеюсь, вы мне не откажете. Заранее большое вам спасибо.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380138
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380138,
+					"content": "#Да, и будь осторож{F#на}{M#ен} в пути.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380115,
+					"content": "У тебя удручённый вид.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721380116
+					]
+				},
+				{
+					"id": 721380109,
+					"content": "Долгая история...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721380110
+					]
+				},
+				{
+					"id": 721380105,
+					"content": "Как-то подозрительно...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721380106
+					]
+				}
+			]
+		},
+		{
+			"id": 7213802,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7213802",
+							"2"
+						],
+						"stepId": 7213802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7213802"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ясумото"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721380201,
+					"content": "А, вот и ты.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380202
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380202,
+					"content": "#Ты собрал{F#а} травы, о которых я говорил?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ясумото"
+				}
+			]
+		},
+		{
+			"id": 7213803,
+			"completionStepIds": [
+				7213807
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7213807",
+							"2"
+						],
+						"stepId": 7213807,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7213802",
+							"3"
+						],
+						"stepId": 7213802,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ясумото"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721380301,
+					"content": "Да, да, стебель и листья в целости и сохранности. А растения по-прежнему свежие... Спасибо тебе большое.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380302
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380302,
+					"content": "Это всё, да?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721380303
+					]
+				},
+				{
+					"id": 721380303,
+					"content": "Да, этого достаточно. Теперь я могу начать исследования новых лекарств.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380304
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380304,
+					"content": "Спасибо тебе ещё раз за труд. Вот обещанная награда. Надеюсь, этого достаточно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380305
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380305,
+					"content": "#Кстати, чужестран{F#ка}{M#ец}...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380306
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380306,
+					"content": "Да, прости меня. Я доставил тебе столько неприятностей, но до сих пор не знаю, как тебя зовут.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380307
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380307,
+					"content": "#Меня зовут {NICKNAME}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721380308
+					]
+				},
+				{
+					"id": 721380308,
+					"content": "#{NICKNAME}, если захочешь снова помочь мне, возвращайся попозже.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380309
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380309,
+					"content": "Само собой, я справедливо тебя награжу. Ха-ха.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ясумото"
+				}
+			]
+		},
+		{
+			"id": 7213804,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7213804",
+							"2"
+						],
+						"stepId": 7213804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7213803",
+							"3"
+						],
+						"stepId": 7213803,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ясумото"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721380401,
+					"content": "#Спасибо, {NICKNAME}. Сожалею, что доставил тебе столько хлопот.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380402,
+						721380403
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380402,
+					"content": "Ничего, пустяки.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721380404
+					]
+				},
+				{
+					"id": 721380404,
+					"content": "Всё в порядке.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380405
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380405,
+					"content": "#{NICKNAME}, тебя не затруднит...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380406
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380406,
+					"content": "Говори начистоту.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721380407
+					]
+				},
+				{
+					"id": 721380407,
+					"content": "#{NICKNAME}, не мог бы я проверить на тебе эффективность лекарства?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380408
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380408,
+					"content": "Новый состав пока нестабилен, и нет никакой возможности предвидеть наихудшие последствия.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380409
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380409,
+					"content": "Поэтому я надеюсь, что кто-то может стать свидетелем моего успеха... или взять на себя последствия.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380410
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380410,
+					"content": "Хорошо.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 721380403,
+					"content": "Пустяки.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721380404
+					]
+				}
+			]
+		},
+		{
+			"id": 7213805,
+			"completionStepIds": [
+				7213806
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7213806",
+							"2"
+						],
+						"stepId": 7213806,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ясумото"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721380501,
+					"content": "#Фух... Фух... Сердце того и гляди выскочит из груди. Спасибо, что спас{F#ла} мне жизнь. Я этого не забуду.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380502
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380502,
+					"content": "Это обычное явление. Существ, инфицированных Татаригами, бессознательно влечёт к злополучному источнику.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380503
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380503,
+					"content": "Поскольку состав пропитан большим количеством энергии Татаригами, привлекать их - обычное явление.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380504
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380504,
+					"content": "Ну, я хочу сказать, что теперь я знаю, как улучшить состав.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380505
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380505,
+					"content": "Но на последнюю неудачу я потратил несколько свежих растений. И чтобы продолжить испытания состава, мне нужны ещё травы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380506
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380506,
+					"content": "#В будущем путешествии, {NICKNAME}, пожалуйста, обращай внимание на травы, которые будут встречаться тебе на острове. Просто оставляй их в бамбуковой корзине перед домом.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380511
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380511,
+					"content": "Как и обещал, я дам вам награду. Но боюсь, вам придётся немного подождать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380507
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380507,
+					"content": "#{NICKNAME}, это ничего, что ты занят{F#а}. Возможно, мне удастся найти для помощи кого-то другого.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380508,
+						721380509
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380508,
+					"content": "Так точно.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721380510
+					]
+				},
+				{
+					"id": 721380510,
+					"content": "#До свидания, путешественни{F#ца}{M#к} {NICKNAME}. Надеюсь, ты без приключений доберёшься до острова Ясиори.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380509,
+					"content": "Конечно, я этим займусь.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721380510
+					]
+				}
+			]
+		},
+		{
+			"id": 7213806,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7213802",
+							"3"
+						],
+						"stepId": 7213802,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7213807",
+							"2"
+						],
+						"stepId": 7213807,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ясумото"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721380601,
+					"content": "Большое спасибо тебе за помощь. Но прошу тебя, на острове Ясиори будь начеку... Находиться там небезопасно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ясумото"
+				}
+			]
+		},
+		{
+			"id": 7213807,
+			"completionStepIds": [
+				7213804
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ясумото"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721380701,
+					"content": "Бр-р-ра-гх!!! Проклятье... ха... ха...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380702,
+						721380703
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380702,
+					"content": "С тобой всё в порядке?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721380704
+					]
+				},
+				{
+					"id": 721380704,
+					"content": "Что ж... Кхм, на вкус горькое, и у меня язык онемел. Местный паралич, должно быть, вызван Татаригами.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380705
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380705,
+					"content": "На вкус ужасно. Но думаю, опасного ничего нет.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380706
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380706,
+					"content": "На наблюдение за эффектами лекарства может уйти много времени. Я не знаю... Эй?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721380707
+					],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380707,
+					"content": "#Они... Они идут к нам! {NICKNAME}! Избавься от них!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ясумото"
+				},
+				{
+					"id": 721380703,
+					"content": "Выглядит не очень...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721380704
+					]
+				}
+			]
+		}
+	]
+}

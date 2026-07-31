@@ -1,0 +1,688 @@
+{
+	"id": 20007,
+	"type": "IQ",
+	"name": "Notreparatur",
+	"description": "Allan wird bei einer Lieferung von Jagdbeute nach Mondstadt von Hilichurlen angegriffen. Er und seine Waren sind in großer Gefahr ...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2000701,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Vernichte alle Monster.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000702,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Allan.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000707,
+						0
+					],
+					"talkId": 2000707
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000708,
+						0
+					],
+					"talkId": 2000708
+				}
+			]
+		},
+		{
+			"id": 2000703,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sammle das Holz.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100306,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000704,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Gib Allan die stabilen Bretter.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000703,
+						0
+					],
+					"talkId": 2000703
+				}
+			]
+		},
+		{
+			"id": 2000705,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Vernichte alle Monster.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000706,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Allan.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000709,
+						0
+					],
+					"talkId": 2000709
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000710,
+						0
+					],
+					"talkId": 2000710
+				}
+			]
+		},
+		{
+			"id": 2000707,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sammle ein Seil.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100308,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000708,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Gib Allan das Seil.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000706,
+						0
+					],
+					"talkId": 2000706
+				}
+			]
+		},
+		{
+			"id": 2000709,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sieh dir die Details an.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1127,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2000701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000701",
+							"3"
+						],
+						"stepId": 2000701,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000702",
+							"2"
+						],
+						"stepId": 2000702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Allan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070101,
+					"content": "#Danke! Vielen Dank, {NICKNAME}! Ich dachte schon, die Eier wären ausgegangen ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070102
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070102,
+					"content": "Auf dem Wagen ist alles, was die Jäger mit harter Arbeit erbeutet haben. Draff will, dass ich ihn nach Mondstadt befördere.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070103
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070103,
+					"content": "Ich bin zwar kein guter Jäger ... Aber eine Warenlieferung sollte ich ja noch hinkriegen. Zumindest dachte ich das ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070104
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070104,
+					"content": "Fast hätte ich alles versaut. Plötzlich wurde ich überfallen. Die waren sicher auf die Beute aus. Aber du kamst ja zur richtigen Zeit.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070105
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070105,
+					"content": "Ähm, ich trau mich kaum zu fragen ... Mein Wagen ist während des Überfalls kaputtgegangen. Um hier wegzukommen, muss er aber repariert werden.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070106
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070106,
+					"content": "In den Wäldern ringsum gibt es sicher genügend Material, das ich dafür nehmen kann. Die Beute befindet sich aber noch auf dem Wagen. Ich befürchte, dass sie nicht sicher ist, wenn ich einfach weggehe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070107
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070107,
+					"content": "Wenn es nicht zu viel verlangt ist, bitte ich dich, mir ein <color=#00E1FFFF>stabiles Brett</color> zu bringen. Geht das?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Allan"
+				}
+			]
+		},
+		{
+			"id": 2000702,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000703",
+							"2"
+						],
+						"stepId": 2000703,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Allan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070201,
+					"content": "Ich muss nur ein paar Stellen reparieren, damit ich es bis nach Mondstadt schaffe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070202
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070202,
+					"content": "In den Wäldern ringsum gibt es sicher passendes Holz.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Allan"
+				}
+			]
+		},
+		{
+			"id": 2000703,
+			"completionStepIds": [
+				2000704
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000704",
+							"2"
+						],
+						"stepId": 2000704,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Allan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070301,
+					"content": "Das müsste reichen. Es sollte nicht lange dauern ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070302
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070302,
+					"content": "#Oh nein, {F#Reisende}{M#Reisender}! Sie sind wieder hier!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Allan"
+				}
+			]
+		},
+		{
+			"id": 2000704,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000705",
+							"3"
+						],
+						"stepId": 2000705,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000706",
+							"2"
+						],
+						"stepId": 2000706,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Allan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070401,
+					"content": "Ich bin dir zu großem Dank verpflichtet! Diese Kerle sind wirklich hartnäckig. Was ist denn an der Beute der Jäger so anziehen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070402
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070402,
+					"content": "Draff ist ein wahrhaft guter Jäger. Er erlegt nur das beste Wild. Wenn ich nur so ein toller Jäger wie er sein könnte ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070403
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070403,
+					"content": "Aber zuerst sollte ich den Wagen in die Stadt fahren.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070404
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070404,
+					"content": "#Es tut mir schrecklich leid, {F#Reisende}{M#Reisender}! Ich war fast fertig mit der Reparatur, als mir noch ein kleiner Teil kaputtging.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070405
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070405,
+					"content": "Wenn ich länger hierbleibe, wird es nur noch gefährlicher. Ich muss die Stelle reparieren. Auf dem Wagen hätte ein Seil sein sollen. Diese Hilichurle müssen es gestohlen haben.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070406
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070406,
+					"content": "#{F#Reisende}{M#Reisender}, würdest du mir bitte ein <color=#00E1FFFF>Seil</color> suchen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Allan"
+				}
+			]
+		},
+		{
+			"id": 2000705,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000707",
+							"2"
+						],
+						"stepId": 2000707,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Allan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070501,
+					"content": "In den Wäldern solltest du Seile finden.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Allan"
+				}
+			]
+		},
+		{
+			"id": 2000706,
+			"completionStepIds": [
+				2000708
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000707",
+							"3"
+						],
+						"stepId": 2000707,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000708",
+							"2"
+						],
+						"stepId": 2000708,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Allan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070601,
+					"content": "Das müsste reichen. Die Konstruktion sieht zwar etwas wackelig aus. Aber solange sie mich nach Mondstadt bringt, ist das in Ordnung.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070602
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070602,
+					"content": "Danke dir! Dann kann ich endlich losfahren. Schau mal in Quellingen vorbei. Da können wir einen zusammen trinken.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070603
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070603,
+					"content": "... solange du nicht wie Daff trinkst.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Allan"
+				}
+			]
+		},
+		{
+			"id": 2000707,
+			"completionStepIds": [
+				2000702
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Allan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070701,
+					"content": "Ja, ich mach das für dich.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200070702
+					]
+				},
+				{
+					"id": 200070702,
+					"content": "Wundervoll! Dann werde ich hier auf dich warten. Bitte mach nicht zu lange, sonst kommen diese Kerle wieder ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Allan"
+				}
+			]
+		},
+		{
+			"id": 2000708,
+			"completionStepIds": [
+				2000702
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Allan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070801,
+					"content": "Eine dringende Angelegenheit wartet auf mich.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200070802
+					]
+				},
+				{
+					"id": 200070802,
+					"content": "Nein! Vielleicht sind diese Kerle noch in der Nähe. Hilf mir bitte noch dieses eine Mal, damit ich hier abhauen kann!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Allan"
+				}
+			]
+		},
+		{
+			"id": 2000709,
+			"completionStepIds": [
+				2000706
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Allan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070901,
+					"content": "Kein Problem.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200070902
+					]
+				},
+				{
+					"id": 200070902,
+					"content": "Dankeschön! In den Wäldern wirst du sicher fündig.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Allan"
+				}
+			]
+		},
+		{
+			"id": 2000710,
+			"completionStepIds": [
+				2000706
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Allan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200071001,
+					"content": "Ich habe noch zu tun.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200071002
+					]
+				},
+				{
+					"id": 200071002,
+					"content": "Das ist wirklich meine allerletzte Bitte. Ich brauche nur noch das Seil und dann kann ich verschwinden. Ich bitte dich!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Allan"
+				}
+			]
+		}
+	]
+}

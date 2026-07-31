@@ -1,0 +1,430 @@
+{
+	"id": 20006,
+	"type": "IQ",
+	"name": "Yiyecek Teslimatı",
+	"description": "Avcının Yeri, müşteri isteklerini yerine getirmek için paket servis hizmeti veriyor ama popüler bir yer olması nedeniyle siparişleri yetiştiremiyorlar. Sara yardım edecek birini arıyor.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2000601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Avcının Yeri'nde Sara ile konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sara ile konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000601,
+						0
+					],
+					"talkId": 2000601
+				}
+			]
+		},
+		{
+			"id": 2000603,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000602,
+						0
+					],
+					"talkId": 2000602
+				}
+			]
+		},
+		{
+			"id": 2000604,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Yemeği Neşeli Orlean'a götür.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000602,
+						0
+					],
+					"talkId": 2000602
+				}
+			]
+		},
+		{
+			"id": 2000605,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000602,
+						0
+					],
+					"talkId": 2000602
+				}
+			]
+		},
+		{
+			"id": 2000606,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Yemeği Neşeli Orlean'a götür.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000607,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Baş belası bodurlopları yen.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000610,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Ücreti Sara'ya restoranda teslim et.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000604,
+						0
+					],
+					"talkId": 2000604
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2000601,
+			"completionStepIds": [
+				2000602
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000601",
+							"3"
+						],
+						"stepId": 2000601,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000602",
+							"2"
+						],
+						"stepId": 2000602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200060101,
+					"content": "Paket servis siparişi",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060102
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060102,
+					"content": "Avcının Yeri'ne hoş geldiniz... Ah, merhaba Gezgin! Tam vaktinde geldin!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060103
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060103,
+					"content": "Üzgünüm, aç olduğunu biliyorum ama senden bir şey isteyebilir miyim?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060104
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060104,
+					"content": "Pınarköy'den Bayan Orlean bir <color=#00E1FFFF>Karamelize Soslu Rosto</color> siparişi verdi fakat Pınarköy şu sıralar bodurlop kaynıyor...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060105
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060105,
+					"content": "O yüzden oraya tek başıma gitmeye cesaret edemem... Acaba benim için bu siparişi <color=#00E1FFFF>Pınarköy'deki Orlean'a</color> götürebilir misin?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060106,
+						200060107
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060106,
+					"content": "Tabii, ama...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200060108
+					]
+				},
+				{
+					"id": 200060108,
+					"content": "Geri döndüğünde seni sıcacık ve lezzetli bir yemek bekliyor olacak!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060109
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060109,
+					"content": "Sana güveniyorum!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060107,
+					"content": "Buraya sadece yemek yemeye gelmiştim, açlıktan ölüyorum!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200060110
+					]
+				},
+				{
+					"id": 200060110,
+					"content": "İstediğimi yaptıktan sonra sana Avcının Yeri'nin özel menüsünden bir şeyler ısmarlarım! Şimdiden teşekkürler.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		},
+		{
+			"id": 2000602,
+			"completionStepIds": [
+				2000603,
+				2000604,
+				2000605
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000607",
+							"3"
+						],
+						"stepId": 2000607,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000604",
+							"2"
+						],
+						"stepId": 2000604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Neşeli Orlean"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200060201,
+					"content": "Teşekkürler! Ah şu baş belası bodurloplar yok mu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060202
+					],
+					"speakerTitle": "Neşeli Orlean"
+				},
+				{
+					"id": 200060202,
+					"content": "Kan şekerim bu kadar düşük olmasaydı onlara gününü gösterirdim...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060203
+					],
+					"speakerTitle": "Neşeli Orlean"
+				},
+				{
+					"id": 200060203,
+					"content": "Yemeğiniz, hanımefendi.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200060204
+					]
+				},
+				{
+					"id": 200060204,
+					"content": "Mis gibi havuç ve et kokuyor... Yemeğim daha erken gelmiş olsaydı ve o bodurloplarla tok karnına savaşmış olsaydım günlerini gösterirdim!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060205
+					],
+					"speakerTitle": "Neşeli Orlean"
+				},
+				{
+					"id": 200060205,
+					"content": "Olan oldu artık. Yemeğin ücretini Sara'ya götürürseniz sevinirim.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Neşeli Orlean"
+				}
+			]
+		},
+		{
+			"id": 2000604,
+			"completionStepIds": [
+				2000610
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000604",
+							"3"
+						],
+						"stepId": 2000604,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000610",
+							"2"
+						],
+						"stepId": 2000610,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200060401,
+					"content": "Yemek ücretini teslim et.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060402
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060402,
+					"content": "Gelmişsin! Teslimatı yaptın mı?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060403
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060403,
+					"content": "İşte ücreti.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200060404
+					]
+				},
+				{
+					"id": 200060404,
+					"content": "Bir bakayım... Tamamdır, teşekkürler!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060405
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060405,
+					"content": "Al bakalım, bu <color=#00E1FFFF>Karışık Yengeçli Güveç (Lezzetli)</color> senin için. Fırından şimdi çıktı, soğumadan ye.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		}
+	]
+}

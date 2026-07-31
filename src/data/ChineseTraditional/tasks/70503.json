@@ -1,0 +1,562 @@
+{
+	"id": 70503,
+	"type": "WQ",
+	"name": "堅冰，易溶於酒",
+	"description": "「嘖，怎麼勞倫斯家的人也在這裡喝酒…真是…」 「咳咳，你還是少說兩句吧。好歹人家也是騎士團的人…」",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70508,
+		70509
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "與盧卡對話，進入酒館",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050302,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "為優菈調製指定飲品",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050302,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050303,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "將飲品交給優菈",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050302,
+						0
+					],
+					"talkId": 7050302
+				}
+			]
+		},
+		{
+			"id": 7050304,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "與優菈對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050301,
+						0
+					],
+					"talkId": 7050301
+				}
+			]
+		},
+		{
+			"id": 7050305,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往吧檯並完成營業準備",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050301,
+			"completionStepIds": [
+				7050304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050304",
+							"2"
+						],
+						"stepId": 7050304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050302",
+							"2"
+						],
+						"stepId": 7050302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"優菈"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705030101,
+					"content": "小杯遠礁浮沫…謝謝。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030102,
+						705030103
+					],
+					"speakerTitle": "優菈"
+				},
+				{
+					"id": 705030102,
+					"content": "優菈？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030104
+					]
+				},
+				{
+					"id": 705030104,
+					"content": "我…我沒事…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030105
+					],
+					"speakerTitle": "優菈"
+				},
+				{
+					"id": 705030105,
+					"content": "唔…優菈的樣子不太對勁，是來之前就喝了不少酒嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030106
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030106,
+					"content": "我記得遠礁浮沫是用咖啡泡的。喝完酒之後喝咖啡，哇，肚子會不會爆炸啊。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030107
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030107,
+					"content": "為了肚子著想，端上去之前，偷偷幫她兌點水吧！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030103,
+					"content": "妳怎麼了？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030104
+					]
+				}
+			]
+		},
+		{
+			"id": 7050302,
+			"completionStepIds": [
+				7050303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050303",
+							"2"
+						],
+						"stepId": 7050303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"優菈"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705030238,
+					"content": "按派蒙的說法在咖啡裡兌了水…",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": []
+				},
+				{
+					"id": 705030201,
+					"content": "味道…不錯…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030202
+					],
+					"speakerTitle": "優菈"
+				},
+				{
+					"id": 705030202,
+					"content": "哇，兌了那麼多水都沒察覺，優菈果然喝多了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030203
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030203,
+					"content": "#酒保，再來…等、等等，怎麼是{F#妳}{M#你}們？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030204,
+						705030205
+					],
+					"speakerTitle": "優菈"
+				},
+				{
+					"id": 705030204,
+					"content": "正巧在體驗酒保…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030206
+					]
+				},
+				{
+					"id": 705030205,
+					"content": "現在才發現嗎…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030206
+					]
+				},
+				{
+					"id": 705030206,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030207
+					],
+					"speakerTitle": "優菈"
+				},
+				{
+					"id": 705030207,
+					"content": "不好意思。剛剛從貓尾酒館過來，喝得可能稍微多了一些…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030208,
+						705030209
+					],
+					"speakerTitle": "優菈"
+				},
+				{
+					"id": 705030208,
+					"content": "有什麼煩心事嗎？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030210
+					]
+				},
+				{
+					"id": 705030209,
+					"content": "陪妳聊聊吧。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030210
+					]
+				},
+				{
+					"id": 705030210,
+					"content": "對啊。一個人喝悶酒多孤單，還是說出來，大家一起聊聊比較開心！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030211
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030211,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030212
+					],
+					"speakerTitle": "優菈"
+				},
+				{
+					"id": 705030212,
+					"content": "的確只有一個人喝。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030213
+					],
+					"speakerTitle": "優菈"
+				},
+				{
+					"id": 705030213,
+					"content": "只要在蒙德，無論到哪個酒館都不受待見。今天難得心情好，想喝上幾杯，最後又被指指點點…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030214
+					],
+					"speakerTitle": "優菈"
+				},
+				{
+					"id": 705030214,
+					"content": "#{NICKNAME}，{F#妳}{M#你}是怎麼交到那麼多朋友的呢？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030215
+					],
+					"speakerTitle": "優菈"
+				},
+				{
+					"id": 705030215,
+					"content": "#大家談論{F#妳}{M#你}時，語氣中總是很憧憬，臉上還帶著笑容。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030216
+					],
+					"speakerTitle": "優菈"
+				},
+				{
+					"id": 705030216,
+					"content": "而我，哪怕只是提到我的姓氏，都會…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030217
+					],
+					"speakerTitle": "優菈"
+				},
+				{
+					"id": 705030217,
+					"content": "別這樣想。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030218
+					]
+				},
+				{
+					"id": 705030218,
+					"content": "出生在勞倫斯家族不是優菈自己能決定的事。但我們又不在乎這些，我們認識的優菈是個很好的人哦！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030219
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030219,
+					"content": "不過優菈就是不坦率，總愛裝作記仇，把自己溫柔的一面藏起來…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030220
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030220,
+					"content": "喂，誰說是裝作…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030221,
+						705030222
+					],
+					"speakerTitle": "優菈"
+				},
+				{
+					"id": 705030221,
+					"content": "除了我們以外…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030223
+					]
+				},
+				{
+					"id": 705030222,
+					"content": "也會有更多的人認可優菈…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030223
+					]
+				},
+				{
+					"id": 705030223,
+					"content": "真的嗎？我喝醉了都不敢這麼想…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030224
+					],
+					"speakerTitle": "優菈"
+				},
+				{
+					"id": 705030224,
+					"content": "那麼久以來，哪怕加入了西風騎士團，大家都還…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030225
+					],
+					"speakerTitle": "優菈"
+				},
+				{
+					"id": 705030225,
+					"content": "「風向是會轉變的。」",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030226
+					]
+				},
+				{
+					"id": 705030226,
+					"content": "哦！那個賣唱的，也說過這種有道理的話啊。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030227
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030227,
+					"content": "優菈，妳就繼續按妳的方式前進吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030228
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030228,
+					"content": "總有一天，妳會改變大家對勞倫斯家族的印象！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030229
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030229,
+					"content": "要耐心哦。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030230
+					]
+				},
+				{
+					"id": 705030230,
+					"content": "#嗯，謝謝{F#妳}{M#你}們…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030231
+					],
+					"speakerTitle": "優菈"
+				},
+				{
+					"id": 705030231,
+					"content": "我，我…咳！就聊到這裡吧，我先回去了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030232
+					],
+					"speakerTitle": "優菈"
+				},
+				{
+					"id": 705030232,
+					"content": "要送送妳嗎？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030233
+					]
+				},
+				{
+					"id": 705030233,
+					"content": "不必。我現在不能想別的事…得好好記住這些話，回去趕緊寫在紙上…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030234
+					],
+					"speakerTitle": "優菈"
+				},
+				{
+					"id": 705030234,
+					"content": "喝醉後的優菈，比平時坦率了不少。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030235
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030235,
+					"content": "但沒有聽到那句標誌性的話，總感覺缺了點什麼。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030236
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030236,
+					"content": "啊！等她酒醒之後，會不會氣鼓鼓地威脅我們要把今天的事全部忘掉？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030237
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030237,
+					"content": "說不定呢。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

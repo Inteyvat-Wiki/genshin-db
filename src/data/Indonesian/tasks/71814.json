@@ -1,0 +1,507 @@
+{
+	"id": 71814,
+	"type": "WQ",
+	"name": "Mengambil Giok di Laut",
+	"description": "Terdapat puing-puing Jade Chamber yang mengapung setelah bertabrakan dengan benda lain di dalam laut, dan Kun dari Millelith sedang mencari orang untuk membersihkan puing-puing itu...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		11032
+	],
+	"steps": [
+		{
+			"id": 7181401,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		},
+		{
+			"id": 7181402,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bersihkan kotak-kotak yang mengapung di utara dermaga",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7181403,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bersihkan kotak-kotak yang mengapung di selatan dermaga",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7181404,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Laporkan kembali ke Kun",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7181403,
+						0
+					],
+					"talkId": 7181403
+				}
+			]
+		},
+		{
+			"id": 7181405,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Berikan kotak kepada Baiwen",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7181404,
+						0
+					],
+					"talkId": 7181404
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7181407,
+						0
+					],
+					"talkId": 7181407
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7181402,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"11015",
+							"0"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181402",
+							"2"
+						],
+						"stepId": 7181402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181403",
+							"2"
+						],
+						"stepId": 7181403,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181404",
+							"2"
+						],
+						"stepId": 7181404,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181405",
+							"2"
+						],
+						"stepId": 7181405,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kun"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718140201,
+					"content": "Ah, Jade Chamber yang begitu indah, kini berlalu begitu saja...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kun"
+				}
+			]
+		},
+		{
+			"id": 7181403,
+			"completionStepIds": [
+				7181404
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181404",
+							"2"
+						],
+						"stepId": 7181404,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kun"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718140301,
+					"content": "Apakah kalian sudah selesai membersihkan?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140302
+					],
+					"speakerTitle": "Kun"
+				},
+				{
+					"id": 718140302,
+					"content": "Kami menemukan barang-barang ini...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718140303
+					]
+				},
+				{
+					"id": 718140303,
+					"content": "Ya. Mora ini untuk kalian, jumlahnya tidak terlalu banyak, anggap saja sebagai hadiah imbalanmu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140304
+					],
+					"speakerTitle": "Kun"
+				},
+				{
+					"id": 718140304,
+					"content": "Aku tidak tahu kotak apa ini. Kalau tidak kamu coba bawa ke Baiwen saja.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140305
+					],
+					"speakerTitle": "Kun"
+				},
+				{
+					"id": 718140305,
+					"content": "Dia bekerja di Yuehai Pavilion, mungkin dia tahu ini apa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kun"
+				}
+			]
+		},
+		{
+			"id": 7181404,
+			"completionStepIds": [
+				7181405
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181405",
+							"2"
+						],
+						"stepId": 7181405,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"11015",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Baiwen"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718140401,
+					"content": "Halo, apakah ada yang bisa dibantu?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140402
+					],
+					"speakerTitle": "Baiwen"
+				},
+				{
+					"id": 718140402,
+					"content": "Aku menemukan ini di laut...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718140403
+					]
+				},
+				{
+					"id": 718140403,
+					"content": "Oh, coba kulihat.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140404
+					],
+					"speakerTitle": "Baiwen"
+				},
+				{
+					"id": 718140404,
+					"content": "Tidak salah lagi, ini adalah barang Jade Chamber.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140405
+					],
+					"speakerTitle": "Baiwen"
+				},
+				{
+					"id": 718140405,
+					"content": "Barang ini adalah...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718140406
+					]
+				},
+				{
+					"id": 718140406,
+					"content": "Buku-buku dan dokumen yang belum diperiksa. Tidak disangka kondisinya masih bagus.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140407
+					],
+					"speakerTitle": "Baiwen"
+				},
+				{
+					"id": 718140407,
+					"content": "Yang pasti, bisa menemukan semua benda ini benar-benar menghemat waktu. Apalagi dengan keadaan seperti ini, pekerjaan tidak ada habisnya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140408
+					],
+					"speakerTitle": "Baiwen"
+				},
+				{
+					"id": 718140408,
+					"content": "Oh, benar juga, terima kasih karena sudah membawanya ke sini. Ini untukmu, anggap saja sebagai tanda terima kasih.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Baiwen"
+				}
+			]
+		},
+		{
+			"id": 7181407,
+			"completionStepIds": [
+				7181405
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181405",
+							"2"
+						],
+						"stepId": 7181405,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"11015",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Baiwen"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718140701,
+					"content": "Halo, apakah ada yang bisa dibantu?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140702
+					],
+					"speakerTitle": "Baiwen"
+				},
+				{
+					"id": 718140702,
+					"content": "Aku memungut ini di laut ....",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718140703
+					]
+				},
+				{
+					"id": 718140703,
+					"content": "Hmmm? Coba kulihat.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140704
+					],
+					"speakerTitle": "Baiwen"
+				},
+				{
+					"id": 718140704,
+					"content": "Tidak salah lagi, ini adalah barang dari Jade Chamber.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140705
+					],
+					"speakerTitle": "Baiwen"
+				},
+				{
+					"id": 718140705,
+					"content": "Apa bisa lebih spesifik lagi?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718140706
+					]
+				},
+				{
+					"id": 718140706,
+					"content": "Isinya adalah beberapa buku dan dokumen yang belum diperiksa. Tidak disangka kondisinya masih bagus.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140707
+					],
+					"speakerTitle": "Baiwen"
+				},
+				{
+					"id": 718140707,
+					"content": "Sebenarnya sudah cukup terlambat, tapi terima kasih sudah membawanya kepada kami. Silakan ambil ini sebagai tanda terima kasih.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Baiwen"
+				}
+			]
+		},
+		{
+			"id": 7181408,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"11015",
+							"1"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181402",
+							"2"
+						],
+						"stepId": 7181402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181403",
+							"2"
+						],
+						"stepId": 7181403,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181404",
+							"2"
+						],
+						"stepId": 7181404,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181405",
+							"2"
+						],
+						"stepId": 7181405,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kun"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718140801,
+					"content": "Ah, Jade Chamber ... tak kusangka benar-benar bisa dibangun ulang lagi ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kun"
+				}
+			]
+		}
+	]
+}

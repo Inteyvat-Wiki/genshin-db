@@ -1,0 +1,455 @@
+{
+	"id": 20036,
+	"type": "IQ",
+	"name": "Levado pelo Vento",
+	"description": "A Glory está com saudades de seu namorado que saiu para uma jornada faz um longo tempo. Ela está procurando uma maneira de enviar sua mensagem para ele.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2003601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Vá e fale com a Glory",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com Glory",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003601,
+						0
+					],
+					"talkId": 2003601
+				}
+			]
+		},
+		{
+			"id": 2003603,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Encontre três Sementes de Dandelion",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						2003603,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003604,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Entregue as Sementes de Dandelion para Glory",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003602,
+						0
+					],
+					"talkId": 2003602
+				}
+			]
+		},
+		{
+			"id": 2003605,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Vá para o topo da Estátua do Arconte Anemo e disperse as Sementes de Dandelion",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_INTERACT_GADGET",
+					"rawParams": [
+						70710009,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003606,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com Glory",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003603,
+						0
+					],
+					"talkId": 2003603
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2003601,
+			"completionStepIds": [
+				2003602
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003601",
+							"3"
+						],
+						"stepId": 2003601,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003602",
+							"2"
+						],
+						"stepId": 2003602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Glory"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200360101,
+					"content": "...Vamos, Godwin... Por que você está demorando tanto?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360102
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360102,
+					"content": "Olá...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360103
+					]
+				},
+				{
+					"id": 200360103,
+					"content": "Eu conheço essa voz... É a voz do Viajante de longe? Graças ao Arconte Anemo, com certeza o vento está aqui para guiá-lo neste lugar. Tenho um pedido para você.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360104
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360104,
+					"content": "Meu, erm... Namorado, Godwin, ele está nos Cavaleiros de Favonius. Ele deixou a cidade anos atrás e nunca retornou.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360105
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360105,
+					"content": "Eu nunca ouvi nenhuma palavra dele desde que ele foi embora.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360106
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360106,
+					"content": "Estou muito preocupada com ele. Pobre Godwin, e se ele se encontrar com aqueles Hilichurls malditos? Ou, se ele tiver se machucado na guerra com a Ordem do Abismo? E... E, agora que ele está longe por tanto tempo e acabar gostando de uma daquelas cavaleiras charmosas...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360107
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360107,
+					"content": "Des... desculpe! Eu me deixei levar pelos meus sentimentos. Minha mãe sempre disse que os Dandelions podem carregar os desejos dos corações das pessoas para um lugar distante.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360108
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360108,
+					"content": "Então, o meu pedido é... Você poderia coletar três sementes de dandelion na Origem do Vento para mim?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360109,
+						200360110
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360109,
+					"content": "Sem problemas.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360111
+					]
+				},
+				{
+					"id": 200360111,
+					"content": "Muito obrigada! Que o Arconte Anemo o proteja.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360110,
+					"content": "Ainda tenho outro assunto para tratar.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360112
+					]
+				},
+				{
+					"id": 200360112,
+					"content": "Espere! Por favor, me ajude! Isso certamente vai ser moleza para um Viajante como você...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Glory"
+				}
+			]
+		},
+		{
+			"id": 2003602,
+			"completionStepIds": [
+				2003604
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003602",
+							"3"
+						],
+						"stepId": 2003602,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_PACK_HAVE_ITEM",
+						"rawParams": [
+							"100057",
+							"3"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003604",
+							"2"
+						],
+						"stepId": 2003604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Glory"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200360201,
+					"content": "Você voltou! Você trouxe minhas sementes de dandelion?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360202
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360202,
+					"content": "Sim. Sim, estou com elas bem aqui.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360203
+					]
+				},
+				{
+					"id": 200360203,
+					"content": "Obrigada! Você pode por favor colocar nas minhas mãos? Eu não consigo enxergar, eu iria acabar as perdendo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360204
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360204,
+					"content": "Isso é suficiente?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360205
+					]
+				},
+				{
+					"id": 200360205,
+					"content": "Você poderia colocá-las nas minhas mãos? É a única maneira que posso saber.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360206
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360206,
+					"content": "Isso é o suficiente. Agora contarei a elas tudo que quero falar para Godwin...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360207
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360207,
+					"content": "Err... cubra seus ouvidos, por favor. Nada de espiar! Estas são palavras particulares compartilhadas entre amantes. Você sabe... *risadinha* Você deve ter tido uma experiência similar antes?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360208
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360208,
+					"content": "Está bem. Agora leve isso para o topo da estátua do Arconte Anemo e solte-as ao vento. O Grande Arconte se encarregará do resto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360209
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360209,
+					"content": "Espero que Ele as guie até o Godwin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Glory"
+				}
+			]
+		},
+		{
+			"id": 2003603,
+			"completionStepIds": [
+				2003606
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003606",
+							"2"
+						],
+						"stepId": 2003606,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Glory"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200360301,
+					"content": "Você fez isso?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360302
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360302,
+					"content": "Estava ventando muito lá em cima...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360303
+					]
+				},
+				{
+					"id": 200360303,
+					"content": "Ótimo, é isso que queremos. É por isso que as sementes de dandelion podem voar tão longe...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360304
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360304,
+					"content": "Talvez elas realmente cheguem até o Godwin e transmitir tudo o que queremos.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360305
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360305,
+					"content": "Me dê a sua mão... Aqui, pegue isso como agradecimento.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360306
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360306,
+					"content": "Ainda tem muita coisa que eu queria dizer ao Godwin. Talvez eu precise da sua ajuda novamente no futuro.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Glory"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,167 @@
+{
+	"id": 71705,
+	"type": "WQ",
+	"name": "言笑の食材のリクエスト",
+	"description": "望舒旅館の言笑はソーセージを2つ必要としている。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "ソーセージを言笑に2つ渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170501,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "言笑と会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170502,
+						0
+					],
+					"talkId": 7170502
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170501,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170501",
+							"2"
+						],
+						"stepId": 7170501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170501"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"言笑"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717050101,
+					"content": "ソーセージについて…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717050102
+					]
+				},
+				{
+					"id": 717050102,
+					"content": "ああ、俺が出した依頼だ。ソーセージを2本持って来てくれたのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717050103,
+						717050104
+					],
+					"speakerTitle": "言笑"
+				},
+				{
+					"id": 717050103,
+					"content": "準備できた。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717050104,
+					"content": "まだ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717050105
+					]
+				},
+				{
+					"id": 717050105,
+					"content": "なら早く持って来てくれ。客が料理を待ってるんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "言笑"
+				}
+			]
+		},
+		{
+			"id": 7170502,
+			"completionStepIds": [
+				7170502
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170502",
+							"2"
+						],
+						"stepId": 7170502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"言笑"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717050201,
+					"content": "うん…なかなかいいソーセージだ。これだけあれば足りるだろう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717050202
+					],
+					"speakerTitle": "言笑"
+				},
+				{
+					"id": 717050202,
+					"content": "報酬だ、持っていけ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "言笑"
+				}
+			]
+		}
+	]
+}

@@ -31,7 +31,13 @@ function clearObject(obj) {
 }
 
 function normalizeStr(str) { return str.normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
-function makeFileName(str) { return normalizeStr(str).toLowerCase().replace(/[^a-z]/g,''); }
+function makeFileName(str) {
+	return normalizeStr(str)
+		.toLowerCase()
+		.replace(/[^a-z0-9\s]+/g, '')
+		.replace(/\s+/g, '_')
+		.replace(/^_+|_+$/g, '');
+}
 
 let checkExistingImageBlacklist;
 

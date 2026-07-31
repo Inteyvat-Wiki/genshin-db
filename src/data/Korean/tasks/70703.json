@@ -1,0 +1,167 @@
+{
+	"id": 70703,
+	"type": "WQ",
+	"name": "코너의 주조 재료 의뢰",
+	"description": "다운 와이너리의 코너는 민들레 씨앗이 3개 필요하다",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "코너에게 민들레 씨앗 3개 건네기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "코너와 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070302,
+						0
+					],
+					"talkId": 7070302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070301",
+							"2"
+						],
+						"stepId": 7070301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070301"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"코너"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707030101,
+					"content": "민들레 씨앗에 대해…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707030102
+					]
+				},
+				{
+					"id": 707030102,
+					"content": "내 의뢰를 봤구나? 어때, 민들레 씨앗 3개를 모아왔니?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707030103,
+						707030104
+					],
+					"speakerTitle": "코너"
+				},
+				{
+					"id": 707030103,
+					"content": "모아왔어요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707030104,
+					"content": "아직이요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707030105
+					]
+				},
+				{
+					"id": 707030105,
+					"content": "아직이구나…. 다 모으면 빨리 좀 가져다줘, 급하게 술 빚는 데 써야 하거든",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "코너"
+				}
+			]
+		},
+		{
+			"id": 7070302,
+			"completionStepIds": [
+				7070302
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070302",
+							"2"
+						],
+						"stepId": 7070302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"코너"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707030201,
+					"content": "음… 이 정도면 한동안은 충분하겠어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707030202
+					],
+					"speakerTitle": "코너"
+				},
+				{
+					"id": 707030202,
+					"content": "도와줘서 고마워, 이것들을 받아줘",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "코너"
+				}
+			]
+		}
+	]
+}

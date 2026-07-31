@@ -1,0 +1,388 @@
+{
+	"id": 1002,
+	"type": "AQ",
+	"name": "惊变",
+	"description": "典仪吉时，仙驾如约而至。然而当云散霞收，落在香案上打翻了供品的，却是毫无生气的神躯。全场陷入迷茫与混乱，七星下令搜捕刺客。你难以洗清嫌疑，不得不在逃离过程中接受了愚人众执行官「公子」的帮助，按照他的指引，前往仙人隐居的「绝云间」…",
+	"unlockDescription": "",
+	"chapter": "浮世浮生千岩间",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		1008,
+		1009,
+		1003
+	],
+	"prevMainQuestList": [
+		1000
+	],
+	"steps": [
+		{
+			"id": 100201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "绝云间遇仙",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1160,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 100202,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "（test）与仙人对话$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						100202,
+						0
+					],
+					"talkId": 100202
+				}
+			]
+		},
+		{
+			"id": 100203,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "对话中创建怪物（隐藏）$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						100203,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 100204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "仙人加持下的战斗",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 100205,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "自动与仙人对话（隐藏）$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						100205,
+						0
+					],
+					"talkId": 100205
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 100202,
+			"completionStepIds": [
+				100202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"100202",
+							"2"
+						],
+						"stepId": 100202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"派蒙"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 10020201,
+					"content": "尔是何人，因何擅闯「绝云间」？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020202,
+						10020203
+					],
+					"speakerTitle": "削月筑阳真君"
+				},
+				{
+					"id": 10020202,
+					"content": "我受人之托…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10020203
+					]
+				},
+				{
+					"id": 10020203,
+					"content": "请您看看这个…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10020204
+					]
+				},
+				{
+					"id": 10020204,
+					"content": "「百无禁忌箓」…多年不见这东西了，原来凡人手中还有残余。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020205
+					],
+					"speakerTitle": "削月筑阳真君"
+				},
+				{
+					"id": 10020205,
+					"content": "我乃三眼五显仙人，削月筑阳真君。旅者，说出你的来意。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020206
+					],
+					"speakerTitle": "削月筑阳真君"
+				},
+				{
+					"id": 10020206,
+					"content": "其实…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020207
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 10020207,
+					"content": "是刺客！他们居然潜逃到了这里！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020208
+					],
+					"speakerTitle": "千岩军教头"
+				},
+				{
+					"id": 10020208,
+					"content": "头儿，我们已经太深入「绝云间」了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020209
+					],
+					"speakerTitle": "千岩军士兵"
+				},
+				{
+					"id": 10020209,
+					"content": "这…没法子，捉拿刺客是头等大事，硬着头皮也要上啊！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020210
+					],
+					"speakerTitle": "千岩军教头"
+				},
+				{
+					"id": 10020210,
+					"content": "…滋扰清境。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020211
+					],
+					"speakerTitle": "削月筑阳真君"
+				},
+				{
+					"id": 10020211,
+					"content": "送走他们，莫要杀生。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "削月筑阳真君"
+				}
+			]
+		},
+		{
+			"id": 100205,
+			"completionStepIds": [
+				100205
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"100205",
+							"2"
+						],
+						"stepId": 100205,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"削月筑阳真君"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 10020501,
+					"content": "那么，重归正题——旅者，说出你的来意。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020502
+					],
+					"speakerTitle": "削月筑阳真君"
+				},
+				{
+					"id": 10020502,
+					"content": "其实…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020503
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 10020503,
+					"content": "岂有此理…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020504
+					],
+					"speakerTitle": "削月筑阳真君"
+				},
+				{
+					"id": 10020504,
+					"content": "岂有此理！！！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020505
+					],
+					"speakerTitle": "削月筑阳真君"
+				},
+				{
+					"id": 10020505,
+					"content": "璃月七星…实在令人失望。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020506
+					],
+					"speakerTitle": "削月筑阳真君"
+				},
+				{
+					"id": 10020506,
+					"content": "「请仙典仪」上，如何能有人行刺帝君…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020507
+					],
+					"speakerTitle": "削月筑阳真君"
+				},
+				{
+					"id": 10020507,
+					"content": "帝君遇刺之后…又如何能将嫌疑推给观礼凡民？！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020508
+					],
+					"speakerTitle": "削月筑阳真君"
+				},
+				{
+					"id": 10020508,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020509
+					],
+					"speakerTitle": "削月筑阳真君"
+				},
+				{
+					"id": 10020509,
+					"content": "旅者，你受诬为刺客的冤情，我也已然知晓。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020510
+					],
+					"speakerTitle": "削月筑阳真君"
+				},
+				{
+					"id": 10020510,
+					"content": "此事我心已有判断。然我独断，或有差错，尚需知会众仙。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020511
+					],
+					"speakerTitle": "削月筑阳真君"
+				},
+				{
+					"id": 10020511,
+					"content": "去吧。拿着你的「百无禁忌箓」，为我去传口信。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020512,
+						10020513
+					],
+					"speakerTitle": "削月筑阳真君"
+				},
+				{
+					"id": 10020512,
+					"content": "我该去找谁呢？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10020513
+					]
+				},
+				{
+					"id": 10020513,
+					"content": "我该去哪里呢？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10020514
+					]
+				},
+				{
+					"id": 10020514,
+					"content": "理水叠山真君、留云借风真君，这两位常在此间，但你未必有缘相遇——随缘即可。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020515
+					],
+					"speakerTitle": "削月筑阳真君"
+				},
+				{
+					"id": 10020515,
+					"content": "还有一位降魔大圣、护法夜叉。去往「望舒客栈」，或可觅其踪迹。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "削月筑阳真君"
+				}
+			]
+		}
+	]
+}

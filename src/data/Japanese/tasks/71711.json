@@ -1,0 +1,176 @@
+{
+	"id": 71711,
+	"type": "WQ",
+	"name": "ジェリーのモンドグルメメモリー",
+	"description": "璃月港のジェリーは午後のパンケーキを2つ必要としている。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7171101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "午後のパンケーキをジェリーに2つ渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7171101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7171102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "ジェリーと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7171102,
+						0
+					],
+					"talkId": 7171102
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7171101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7171101",
+							"2"
+						],
+						"stepId": 7171101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7171101"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ジェリー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717110101,
+					"content": "午後のパンケーキについて…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717110102
+					]
+				},
+				{
+					"id": 717110102,
+					"content": "それは僕の依頼だ。午後のパンケーキを2人前持って来てくれたのかい？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717110103,
+						717110104
+					],
+					"speakerTitle": "ジェリー"
+				},
+				{
+					"id": 717110103,
+					"content": "準備できた。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717110104,
+					"content": "まだ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717110105
+					]
+				},
+				{
+					"id": 717110105,
+					"content": "準備が出来たらすぐに持って来てくれ。午後のパンケーキ…久しく食べていなかったんだ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ジェリー"
+				}
+			]
+		},
+		{
+			"id": 7171102,
+			"completionStepIds": [
+				7171102
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7171102",
+							"2"
+						],
+						"stepId": 7171102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ジェリー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717110201,
+					"content": "このパンケーキの香りは素晴らしい。よーく味わわなければね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717110202
+					],
+					"speakerTitle": "ジェリー"
+				},
+				{
+					"id": 717110202,
+					"content": "そうだ、杏仁豆腐を買って食べ比べしよう…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717110203
+					],
+					"speakerTitle": "ジェリー"
+				},
+				{
+					"id": 717110203,
+					"content": "おっと！忘れるところだったよ。お礼にこれを受け取ってくれ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ジェリー"
+				}
+			]
+		}
+	]
+}

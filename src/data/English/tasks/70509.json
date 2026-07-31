@@ -1,0 +1,550 @@
+{
+	"id": 70509,
+	"type": "WQ",
+	"name": "Untainted Autumn Frost",
+	"description": "\"Is the white-haired lady passing by an adeptus from Liyue?\" \"I can't tell. Can you?\" \"Me, neither...\"",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70503,
+		70508
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050901,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Luka and enter the tavern",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050901,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050902,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Mix Shenhe the specified drink",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050902,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050903,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Give the drink to Shenhe",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050902,
+						0
+					],
+					"talkId": 7050902
+				}
+			]
+		},
+		{
+			"id": 7050904,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Shenhe",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050901,
+						0
+					],
+					"talkId": 7050901
+				}
+			]
+		},
+		{
+			"id": 7050905,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Head to the counter and get ready to open for business",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7050305,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050901,
+			"completionStepIds": [
+				7050904
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050904",
+							"2"
+						],
+						"stepId": 7050904,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050902",
+							"2"
+						],
+						"stepId": 7050902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Shenhe"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705090101,
+					"content": "#Hello, {NICKNAME}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090102
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090102,
+					"content": "Hi there! Paimon would be more surprised to see you if we hadn't already seen a bunch of our friends...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090103
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090103,
+					"content": "Huh!? Wait, you're Shenhe! This is a surprise!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090104
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090104,
+					"content": "This place isn't easy to find. Angel's Share... The name doesn't exactly roll off the tongue.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090105
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090105,
+					"content": "Mr. Zhongli was kind enough to help me with directions. I'm thankful.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090106
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090106,
+					"content": "You needed help with directions?... Wait, you came all this way just for a drink?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090107
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090107,
+					"content": "That's right.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090108
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090108,
+					"content": "Because... we're friends.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090109
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090109,
+					"content": "What would you like?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090110
+					]
+				},
+				{
+					"id": 705090110,
+					"content": "Here's the menu!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090111
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090111,
+					"content": "Boreal Watch... Hmm, Boreal? As in a cold climate?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090112
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090112,
+					"content": "Well, Boreal Watch here probably is referring to the Wolf of the North. So yeah, you could say it's cold.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090113
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090113,
+					"content": "Caramel Pinecone... How could that be a drink?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090114
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090114,
+					"content": "Oh, Paimon's tried that one. It's actually caramel flavored coffee. \"Pinecone\" just refers to the color!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090115
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090115,
+					"content": "Huh...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090116
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090116,
+					"content": "These names are confusing. I can't make sense of any of these.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090117
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090117,
+					"content": "I'll leave it up to you. As long as it's something that tastes like Qingxin or Violetgrass.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090118
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090118,
+					"content": "Those medicinal herbs don't grow around here. If you want something bitter, then it'd have to be coffee...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090119
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090119,
+					"content": "How about something sweet instead?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090120
+					]
+				},
+				{
+					"id": 705090120,
+					"content": "Fine.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090121
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090121,
+					"content": "That's a good idea. You've practiced the adepti arts long enough. It's time for something new!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090122
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090122,
+					"content": "Let's make Shenhe a Snow-Covered Kiss! It sounds like a perfect fit for her.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 7050902,
+			"completionStepIds": [
+				7050903
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050903",
+							"2"
+						],
+						"stepId": 7050903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Shenhe"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705090201,
+					"content": "Hmm, it's sweet and smooth. Not bitter at all. What is it?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090202
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090202,
+					"content": "It's called a Snow-Covered Kiss! Whisk milk until it froths, and then gently pour it over some juice. It looks like it's covered by a layer of snow.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090203
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090203,
+					"content": "Don't ask why it's called a kiss, though... Paimon doesn't get it either. It's probably just a gimmick to get it to sell better!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090204
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090204,
+					"content": "A gimmick?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090205
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090205,
+					"content": "Uh, Paimon's just guessing... Maybe it's more of a romantic description!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090206
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090206,
+					"content": "Romantic?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090207
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090207,
+					"content": "Uhh... It's hard to explain! Stop making Paimon come up with things.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090208,
+						705090209
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090208,
+					"content": "The milky foam doesn't have much taste to it...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090210
+					]
+				},
+				{
+					"id": 705090210,
+					"content": "Mm-hmm, that's right.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090211,
+						705090212
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090211,
+					"content": "The moment you taste the sweetness of the juice...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090213
+					]
+				},
+				{
+					"id": 705090213,
+					"content": "...Oh.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090214
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090214,
+					"content": "I see. I seem to understand now.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090215
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090215,
+					"content": "Oh? Really?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090216
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090216,
+					"content": "But wait, why is Paimon the one who's confused now!?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090217
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090217,
+					"content": "Occasionally, I chew on divine herbs as I wander about in the mountains. I have witnessed the moment a new sprout breaks through the soil.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090218
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090218,
+					"content": "The elation in my heart then does bear a resemblance to what I'm experiencing now.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090219
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090219,
+					"content": "#Thank you for helping me understand these obscure names, {NICKNAME}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090220
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090220,
+					"content": "I might need your help again sometime in the future.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090212,
+					"content": "Like a sprout pushing through the ice to give you a kiss...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090213
+					]
+				},
+				{
+					"id": 705090209,
+					"content": "It's kind of like snow on the mountains...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090210
+					]
+				}
+			]
+		}
+	]
+}

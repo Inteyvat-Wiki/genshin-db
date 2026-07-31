@@ -1,0 +1,746 @@
+{
+	"id": 451,
+	"type": "LQ",
+	"name": "Lãnh Thổ Lang Lãnh",
+	"description": "Bạn và Paimon quyết định đi đến Lang Lãnh, nơi ít người của Mondstadt, và tuyệt nhiên không biết gì về những mối nguy hiểm ẩn nấp trong khu vực sinh thái nguyên thủy này.",
+	"unlockDescription": "",
+	"chapter": "Ý Nghĩa Của Lupical",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		452
+	],
+	"prevMainQuestList": [
+		396,
+		485
+	],
+	"steps": [
+		{
+			"id": 45101,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đi đến Lang Lãnh",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1051,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45102,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Nói chuyện với Paimon",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						45101,
+						0
+					],
+					"talkId": 45101
+				}
+			]
+		},
+		{
+			"id": 45103,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Tiêu diệt Slime",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45104,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Cảm ơn người thiếu niên đã giúp đỡ",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						45103,
+						0
+					],
+					"talkId": 45103
+				}
+			]
+		},
+		{
+			"id": 45105,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Nhận đủ thịt rừng",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100061,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						45105,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45106,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đem 3 miếng thịt rừng đưa cho Razor",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						45106,
+						0
+					],
+					"talkId": 45106
+				}
+			]
+		},
+		{
+			"id": 45107,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Nói chuyện với Paimon",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						45107,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45108,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Thông báo săn bắt",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						45108,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45109,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Đi đến Lang Lãnh",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						45109,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 45101,
+			"completionStepIds": [
+				45102
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45107",
+							"2"
+						],
+						"stepId": 45107,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510101,
+					"content": "Đây gọi là Lang Lãnh, nghe nói người dân Mondstadt rất ít khi đến đây...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510102
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510102,
+					"content": "Tuy rằng ở gần Mondstadt, nhưng nơi đây là rừng nguyên sinh, là một nơi tuân theo luật rừng.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510103
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510103,
+					"content": "Đến Slime cũng to lớn như vậy!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510104
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510104,
+					"content": "Nhìn xem, lớn... đùng như vậy.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510105
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510105,
+					"content": "...Chúng nó tấn công rồi! Hãy chuẩn bị!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 45103,
+			"completionStepIds": [
+				45104
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45104",
+							"2"
+						],
+						"stepId": 45104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Razor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510301,
+					"content": "Cám... Cám ơn bạn. Bầy sói của Lang Lãnh đến rồi! Mau trốn đi!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510303
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510303,
+					"content": "Đừng sợ. Sói là bạn. Nhưng, các bạn là ai?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510304
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510304,
+					"content": "Chúng tôi chỉ là nhà lữ hành thông thường...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510305
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510305,
+					"content": "Không thông thường, các bạn. Nhưng, có mùi quen thuộc.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510306
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510306,
+					"content": "Mùi quen thuộc?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510307
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510307,
+					"content": "Đội Kỵ Sĩ, phải không? Trong Đội Kỵ Sĩ có bạn.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510308,
+						4510309
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510308,
+					"content": "Bạn tên là gì?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						4510310
+					]
+				},
+				{
+					"id": 4510310,
+					"content": "Tôi là Razor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510311
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510311,
+					"content": "Bạn cũng là người của Đội Kỵ Sĩ Tây Phong à?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510312
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510312,
+					"content": "Không có quan hệ gì với Đội Kỵ Sĩ.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510314
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510314,
+					"content": "À há...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510315
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510315,
+					"content": "Bầy sói... là thế nào?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						4510316
+					]
+				},
+				{
+					"id": 4510316,
+					"content": "A... bầy sói, là người nhà.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510317
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510317,
+					"content": "Người nhà?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510318
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510318,
+					"content": "Người nhà. Nuôi tôi lớn, là gia đình cùng tôi lớn lên.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510319
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510319,
+					"content": "Hình như trong này có câu chuyện rất phức tạp...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510320
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510320,
+					"content": "Họ đang trách tôi. Vì để giúp các bạn, mai phục bị bại lộ. Không bắt được heo rừng.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510321
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510321,
+					"content": "#Vậy thì... Để {NICKNAME} bắt heo rừng giúp đi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510322
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510322,
+					"content": "#{NICKNAME} cũng lợi hại lắm.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510323
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510323,
+					"content": "Tôi, tôi thấy không cần đâu. Mỗi lần Đội Kỵ Sĩ ra tay, đàn sói đều bị đói bụng...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510324
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510324,
+					"content": "Đừng khách sáo. Các bạn cứ đợi tin tốt của chúng tôi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510309,
+					"content": "Bạn cũng là người của Đội Kỵ Sĩ à?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						4510313
+					]
+				},
+				{
+					"id": 4510313,
+					"content": "Tôi là Razor. Không có quan hệ với Đội Kỵ Sĩ.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510314
+					],
+					"speakerTitle": "Razor"
+				}
+			]
+		},
+		{
+			"id": 45105,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45105",
+							"2"
+						],
+						"stepId": 45105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Razor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510501,
+					"content": "A, các bạn thật sự muốn giúp sao...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510502
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510502,
+					"content": "Đàn sói tự có cách, hữu dụng hơn. Nhưng mà bẫy vẫn rất tươi ngon.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510503
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510503,
+					"content": "Sau khi bố trí xong, đuổi heo rừng rơi vào, phải không.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510504
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510504,
+					"content": "Sẽ không nổ chứ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Razor"
+				}
+			]
+		},
+		{
+			"id": 45106,
+			"completionStepIds": [
+				45106
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45106",
+							"2"
+						],
+						"stepId": 45106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PACK_HAVE_ITEM",
+						"rawParams": [
+							"100061",
+							"3"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Razor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510601,
+					"content": "Xem, chúng tôi làm được rồi!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510602
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510602,
+					"content": "Cám ơn các bạn. Nhưng...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510603
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510603,
+					"content": "Nhưng mà nếu chúng tôi tự làm, có thể bắt 5,6 con. Có sói tối nay bị đói rồi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510604
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510604,
+					"content": "À há...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510605
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510605,
+					"content": "Đừng để ý, cảm ơn các bạn.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510606
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510606,
+					"content": "Các bạn so với cô gái màu đỏ của Đội Kỵ Sĩ, trông có vẽ rất nóng ấy, lợi hại hơn nhiều.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510607
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510607,
+					"content": "Nếu cô ấy ra tay, có thể ngọn núi sẽ cháy lên. Heo, một con cũng không bắt được.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510608
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510608,
+					"content": "Tôi phải đi rồi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510609
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510609,
+					"content": "Gần đây nơi đây không an toàn. Các bạn phải cẩn thận, tự bảo vệ bản thân.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510610
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510610,
+					"content": "Thật là một người đặc biệt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510611
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510611,
+					"content": "Anh ấy nhắc đến người bạn trong Đội Kỵ Sĩ. Màu đỏ, cô gái rất nóng...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510612
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510612,
+					"content": "#{NICKNAME}, bạn nghĩ đến ai?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 45107,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45106",
+							"2"
+						],
+						"stepId": 45106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_NUM_LESS_THAN",
+						"rawParams": [
+							"100061",
+							"3"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Razor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510501,
+					"content": "A, các bạn thật sự muốn giúp sao...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510502
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510502,
+					"content": "Đàn sói tự có cách, hữu dụng hơn. Nhưng mà bẫy vẫn rất tươi ngon.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510503
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510503,
+					"content": "Sau khi bố trí xong, đuổi heo rừng rơi vào, phải không.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510504
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510504,
+					"content": "Sẽ không nổ chứ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Razor"
+				}
+			]
+		}
+	]
+}

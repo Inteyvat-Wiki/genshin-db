@@ -1,0 +1,583 @@
+{
+	"id": 20026,
+	"type": "IQ",
+	"name": "Food Delivery",
+	"description": "Good Hunter has a delivery service in order to fulfill customers' requests, but due to its popularity, the service is heavily understaffed. Sara is looking for someone to lend a hand.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2002601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Sara at Good Hunter",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Sara",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002601,
+						0
+					],
+					"talkId": 2002601
+				}
+			]
+		},
+		{
+			"id": 2002603,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Find two Bird Eggs",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100062,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002604,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Collect the completed meals",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002602,
+						0
+					],
+					"talkId": 2002602
+				}
+			]
+		},
+		{
+			"id": 2002605,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Deliver the food to Ernest",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002603,
+						0
+					],
+					"talkId": 2002603
+				}
+			]
+		},
+		{
+			"id": 2002606,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Bridge",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002603,
+						0
+					],
+					"talkId": 2002603
+				}
+			]
+		},
+		{
+			"id": 2002607,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Find Ernest",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002603,
+						0
+					],
+					"talkId": 2002603
+				}
+			]
+		},
+		{
+			"id": 2002608,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Give the fee to Sara",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002604,
+						0
+					],
+					"talkId": 2002604
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2002601,
+			"completionStepIds": [
+				2002602
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002601",
+							"3"
+						],
+						"stepId": 2002601,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002602",
+							"2"
+						],
+						"stepId": 2002602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200260101,
+					"content": "Order for delivery",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260102
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260102,
+					"content": "Hey, Traveler! What's happening—",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260103
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260103,
+					"content": "...Oh, you're just here to eat, you say?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260104
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260104,
+					"content": "I understand, really I do... But I promise you I will make you the best meal you ever tasted if you just lend me a hand first.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260105
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260105,
+					"content": "Ernest from the Dawn Winery often orders food from here to pair with his wine, and his orders always come with special requests.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260106
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260106,
+					"content": "This time he wants <color=#00E1FFFF>Fried Radish Balls</color> but with egg added in. Unfortunately, I'm fresh out of eggs!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260107
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260107,
+					"content": "So if you could just go ahead and grab me a couple of Bird Eggs, that would be great.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260108,
+						200260111
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260108,
+					"content": "If you insist...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200260109
+					]
+				},
+				{
+					"id": 200260109,
+					"content": "There must be plenty of Bird Eggs around Windrise.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260110
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260110,
+					"content": "I appreciate it!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260111,
+					"content": "I only came here to eat; I'm starving!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200260112
+					]
+				},
+				{
+					"id": 200260112,
+					"content": "There must be plenty of Bird Eggs around Windrise.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260113
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260113,
+					"content": "Once you've done what I ask, I'll treat you to something from the Good Hunter special menu! Much obliged.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		},
+		{
+			"id": 2002602,
+			"completionStepIds": [
+				2002604
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002603",
+							"3"
+						],
+						"stepId": 2002603,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002604",
+							"2"
+						],
+						"stepId": 2002604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200260201,
+					"content": "I come bearing ingredients.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200260202
+					]
+				},
+				{
+					"id": 200260202,
+					"content": "That'll do it. One moment...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260203
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260203,
+					"content": "It's ready! Now, get these <color=#00E1FFFF>Fried Radish Balls</color> to Ernest, pronto!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260204
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260204,
+					"content": "...Don't give me that look, I know you're famished.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260205
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260205,
+					"content": "There'll be a special Good Hunter surprise waiting for you when you get back!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		},
+		{
+			"id": 2002603,
+			"completionStepIds": [
+				2002605,
+				2002606,
+				2002607
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002604",
+							"3"
+						],
+						"stepId": 2002604,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002607",
+							"2"
+						],
+						"stepId": 2002607,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ernest"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200260301,
+					"content": "Your meal, sir.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200260302
+					]
+				},
+				{
+					"id": 200260302,
+					"content": "Aha! My <color=#00E1FFFF>Fried Radish Balls</color>... and prepared just as I requested!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260303
+					],
+					"speakerTitle": "Ernest"
+				},
+				{
+					"id": 200260303,
+					"content": "Mmm... Yes, the addition of eggs does indeed do wonders for the texture and aroma.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260304
+					],
+					"speakerTitle": "Ernest"
+				},
+				{
+					"id": 200260304,
+					"content": "Oh yeah! I know what I'm doing when it comes to food. *mwah!*",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260305
+					],
+					"speakerTitle": "Ernest"
+				},
+				{
+					"id": 200260305,
+					"content": "Oh, and this is for you. Many thanks!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ernest"
+				}
+			]
+		},
+		{
+			"id": 2002604,
+			"completionStepIds": [
+				2002608
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002607",
+							"3"
+						],
+						"stepId": 2002607,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002608",
+							"2"
+						],
+						"stepId": 2002608,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200260401,
+					"content": "Deliver meal fee",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260402
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260402,
+					"content": "You're back! Did you make the delivery?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260403
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260403,
+					"content": "Here's the fee.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200260404
+					]
+				},
+				{
+					"id": 200260404,
+					"content": "Let's see... Excellent! Thank you.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260405
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260405,
+					"content": "Here, this <color=#00E1FFFF>Crab, Ham & Veggie Bake</color> is for you. It's fresh out of the oven, eat it while it's hot.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		},
+		{
+			"id": 2002607,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002607",
+							"3"
+						],
+						"stepId": 2002607,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002608",
+							"2"
+						],
+						"stepId": 2002608,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ernest"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200260701,
+					"content": "Mmm... Yes, that rich eggy aroma just hits you straight away, but it's not overpowering thanks to the freshness of the carrot. I've missed my calling, should have been a chef!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ernest"
+				}
+			]
+		}
+	]
+}

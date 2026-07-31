@@ -1,0 +1,190 @@
+{
+	"id": 21023,
+	"type": "WQ",
+	"name": "Tindakan Sementara",
+	"description": "Tangga di Wangshu Inn sepertinya sedang bermasalah dan tidak dapat digunakan untuk sementara, sekarang masalahnya adalah bagaimana cara naik ke atas...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2102301,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102301,
+						0
+					],
+					"talkId": 2102301
+				}
+			]
+		},
+		{
+			"id": 2102302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Naiki elevator",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2102303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Huai'an",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102302,
+						0
+					],
+					"talkId": 2102302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2102302,
+			"completionStepIds": [
+				2102303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102303",
+							"2"
+						],
+						"stepId": 2102303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102301",
+							"3"
+						],
+						"stepId": 2102301,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Huai'an"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210230201,
+					"content": "Kita harus segera memperbaiki tangga itu secepatnya...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230202
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230202,
+					"content": "Apakah kamu adalah penjaga penginapan?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210230203
+					]
+				},
+				{
+					"id": 210230203,
+					"content": "Benar, apakah ada yang bisa dibantu?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230204
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230204,
+					"content": "Seseorang di bawah menitipkan paket ini untukmu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230205
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 210230205,
+					"content": "Oh, ini pasti paket yang dikirim tamu untukku. Kenapa Zhen Qiang tidak memberikannya sendiri?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230206
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230206,
+					"content": "Masih ada paket yang harus dia terima? Hah, dia pasti merasa repot dan malas harus naik turun lift...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230207
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230207,
+					"content": "Maaf, kamu adalah tamu kami dan tangga sedang rusak sekarang. Aku sedang mencari cara untuk memperbaikinya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230208
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230208,
+					"content": "Maaf sudah merepotkanmu membawa paket ini ke atas untukku. Ambillah ini sebagai tanda terima kasihku.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230209
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230209,
+					"content": "Awalnya ini aku siapkan untuk Zhen Qiang, tapi karena dia menyuruhmu mengantarkannya, jadi kamu yang berhak mendapatkannya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230210
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230210,
+					"content": "Baiklah, aku akan bersiap untuk memperbaiki tangga. Silakan melihat-lihat penginapan, dan cari aku kalau kamu butuh sesuatu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Huai'an"
+				}
+			]
+		}
+	]
+}

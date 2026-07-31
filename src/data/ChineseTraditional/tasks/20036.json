@@ -1,0 +1,455 @@
+{
+	"id": 20036,
+	"type": "IQ",
+	"name": "願風帶走思念",
+	"description": "雙目失明的葛蘿麗思念著遠遊的男友，正在尋找傳遞自己心願的方式…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2003601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往詢問葛蘿麗",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "與葛蘿麗對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003601,
+						0
+					],
+					"talkId": 2003601
+				}
+			]
+		},
+		{
+			"id": 2003603,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "尋找三份蒲公英籽",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						2003603,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003604,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "將蒲公英籽交給葛蘿麗",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003602,
+						0
+					],
+					"talkId": 2003602
+				}
+			]
+		},
+		{
+			"id": 2003605,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往風神像頂端播撒蒲公英籽",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_INTERACT_GADGET",
+					"rawParams": [
+						70710009,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003606,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "與葛蘿麗對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003603,
+						0
+					],
+					"talkId": 2003603
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2003601,
+			"completionStepIds": [
+				2003602
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003601",
+							"3"
+						],
+						"stepId": 2003601,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003602",
+							"2"
+						],
+						"stepId": 2003602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"葛蘿麗"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200360101,
+					"content": "…古德溫…到底什麼時候能回來呢…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360102
+					],
+					"speakerTitle": "葛蘿麗"
+				},
+				{
+					"id": 200360102,
+					"content": "妳好…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360103
+					]
+				},
+				{
+					"id": 200360103,
+					"content": "這個聲音…是遠方來的旅行者嗎？感謝風神大人，一定是他的風將您帶來的…請您聽聽我的請求吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360104
+					],
+					"speakerTitle": "葛蘿麗"
+				},
+				{
+					"id": 200360104,
+					"content": "我的…唔，男朋友，西風騎士古德溫離開蒙德城已經很久了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360105
+					],
+					"speakerTitle": "葛蘿麗"
+				},
+				{
+					"id": 200360105,
+					"content": "這麼久了，我一直沒有收到他的消息。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360106
+					],
+					"speakerTitle": "葛蘿麗"
+				},
+				{
+					"id": 200360106,
+					"content": "我很擔心古德溫。他要和那些難纏的丘丘人，還有他和我說過的深淵教團戰鬥，要是他受了傷怎麼辦，而且離開那麼久，要是他遇見了哪位溫柔的女騎士…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360107
+					],
+					"speakerTitle": "葛蘿麗"
+				},
+				{
+					"id": 200360107,
+					"content": "抱，抱歉！我，我自顧自說太多了！我聽我母親說，蒲公英能夠帶著人們的思念，被風一直帶到很遠。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360108
+					],
+					"speakerTitle": "葛蘿麗"
+				},
+				{
+					"id": 200360108,
+					"content": "所以我的請求是…能不能請您幫我去風起地搜集三份蒲公英籽？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360109,
+						200360110
+					],
+					"speakerTitle": "葛蘿麗"
+				},
+				{
+					"id": 200360109,
+					"content": "沒問題。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360111
+					]
+				},
+				{
+					"id": 200360111,
+					"content": "太感謝您了，願風神保佑您。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "葛蘿麗"
+				},
+				{
+					"id": 200360110,
+					"content": "還有別的事。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360112
+					]
+				},
+				{
+					"id": 200360112,
+					"content": "等一下！求您了，對您這樣的旅行者來說，這肯定只是舉手之勞…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "葛蘿麗"
+				}
+			]
+		},
+		{
+			"id": 2003602,
+			"completionStepIds": [
+				2003604
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003602",
+							"3"
+						],
+						"stepId": 2003602,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_PACK_HAVE_ITEM",
+						"rawParams": [
+							"100057",
+							"3"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003604",
+							"2"
+						],
+						"stepId": 2003604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"葛蘿麗"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200360201,
+					"content": "您回來了，蒲公英搜集到了嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360202
+					],
+					"speakerTitle": "葛蘿麗"
+				},
+				{
+					"id": 200360202,
+					"content": "已經搜集好了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360203
+					]
+				},
+				{
+					"id": 200360203,
+					"content": "謝謝您，請您把蒲公英籽放在我手上，好嗎？我看不見，怕把它們都弄撒了",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360204
+					],
+					"speakerTitle": "葛蘿麗"
+				},
+				{
+					"id": 200360204,
+					"content": "這些夠了嗎？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360205
+					]
+				},
+				{
+					"id": 200360205,
+					"content": "請您先把蒲公英籽放在我手上吧，這樣我才能感受一下它們…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360206
+					],
+					"speakerTitle": "葛蘿麗"
+				},
+				{
+					"id": 200360206,
+					"content": "這些就夠了，我要把想和古德溫說的話都告訴它們才行…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360207
+					],
+					"speakerTitle": "葛蘿麗"
+				},
+				{
+					"id": 200360207,
+					"content": "唔——請您捂住耳朵，別偷聽，這是戀人之間的悄悄話哦。您肯定也…嘻嘻，您有過這種體驗嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360208
+					],
+					"speakerTitle": "葛蘿麗"
+				},
+				{
+					"id": 200360208,
+					"content": "好啦。請您帶著這些蒲公英籽去風神像上，然後把它們灑在風中，讓風神大人帶走它們吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360209
+					],
+					"speakerTitle": "葛蘿麗"
+				},
+				{
+					"id": 200360209,
+					"content": "希望風神大人，能夠把它們帶到古德溫身邊。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "葛蘿麗"
+				}
+			]
+		},
+		{
+			"id": 2003603,
+			"completionStepIds": [
+				2003606
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003606",
+							"2"
+						],
+						"stepId": 2003606,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"葛蘿麗"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200360301,
+					"content": "您已經完成了嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360302
+					],
+					"speakerTitle": "葛蘿麗"
+				},
+				{
+					"id": 200360302,
+					"content": "頂上的風真大…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360303
+					]
+				},
+				{
+					"id": 200360303,
+					"content": "這樣子才好，能讓蒲公英飛得更遠。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360304
+					],
+					"speakerTitle": "葛蘿麗"
+				},
+				{
+					"id": 200360304,
+					"content": "這樣子，古德溫說不定就能收到，我對他說的話了吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360305
+					],
+					"speakerTitle": "葛蘿麗"
+				},
+				{
+					"id": 200360305,
+					"content": "您伸出手來吧，讓我能碰到…請拿好了，這些謝禮是給您的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360306
+					],
+					"speakerTitle": "葛蘿麗"
+				},
+				{
+					"id": 200360306,
+					"content": "我還有很多話想要和古德溫說，之後，說不定也要多多麻煩您啦。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "葛蘿麗"
+				}
+			]
+		}
+	]
+}

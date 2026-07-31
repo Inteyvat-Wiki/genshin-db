@@ -1,0 +1,167 @@
+{
+	"id": 74657,
+	"type": "WQ",
+	"name": "La sollecitazione di Galathée",
+	"description": "A Galathée servono 10 boccette di sale.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7465701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dai 10 boccette di sale a Galathée",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7465701,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7465702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Galathée",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7465702,
+						0
+					],
+					"talkId": 7465702
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7465701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465701",
+							"2"
+						],
+						"stepId": 7465701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7465701"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Galathée"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746570101,
+					"content": "A proposito del sale...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746570102
+					]
+				},
+				{
+					"id": 746570102,
+					"content": "Ciao. Sei qui per discutere della fornitura di sale?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746570103
+					],
+					"speakerTitle": "Galathée"
+				},
+				{
+					"id": 746570103,
+					"content": "Quindi avrai un sacco di sale pronto, vero?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746570106,
+						746570104
+					],
+					"speakerTitle": "Galathée"
+				},
+				{
+					"id": 746570106,
+					"content": "Il sale è pronto.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 746570104,
+					"content": "Non ancora.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746570105
+					]
+				},
+				{
+					"id": 746570105,
+					"content": "Non possiamo stare senza sale. Ogni volta che la nostra nave salpa, dobbiamo accumulare abbastanza sale per il viaggio.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Galathée"
+				}
+			]
+		},
+		{
+			"id": 7465702,
+			"completionStepIds": [
+				7465702
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465702",
+							"2"
+						],
+						"stepId": 7465702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Galathée"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746570201,
+					"content": "#La quantità attuale ci basterà per un piccolo viaggio. Tu sembri abbastanza affidabile. Se avessi bisogno in futuro, sarai {F#la prima}{M#il primo} che contatterò.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Galathée"
+				}
+			]
+		}
+	]
+}

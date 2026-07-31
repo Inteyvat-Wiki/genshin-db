@@ -1,0 +1,241 @@
+{
+	"id": 20028,
+	"type": "IQ",
+	"name": "เจ้าก้อนกลมจอมยุ่ง",
+	"description": "อยู่ ๆ ก็มี Slime โผล่มาที่ Springvale และดูเหมือนว่า Morrow จอมขี้ขลาดจะถูกล้อมเอาไว้...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2002801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "ไปข้างหน้าเพื่อตรวจสอบรายละเอียด",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "จัดการ Slime",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002803,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "คุยกับ Morrow จอมขี้ขลาด",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002801,
+						0
+					],
+					"talkId": 2002801
+				}
+			]
+		},
+		{
+			"id": 2002804,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "มุ่งสู่บริเวณที่ผิดปกติ",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002805,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "ใช้ \"ลม\" พัดฝุ่นให้กระจาย",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002806,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "จัดการกับ Slime ทั้งหมด",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2002801,
+			"completionStepIds": [
+				2002803
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002802",
+							"3"
+						],
+						"stepId": 2002802,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Morrow จอมขี้ขลาด"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200280101,
+					"content": "#ขอบคุณนะ {NICKNAME}...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280102
+					],
+					"speakerTitle": "Morrow จอมขี้ขลาด"
+				},
+				{
+					"id": 200280102,
+					"content": "แม้จะเป็นนายพราน...แต่ก็จนปัญญากับ Slime พวกนี้",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280103
+					],
+					"speakerTitle": "Morrow จอมขี้ขลาด"
+				},
+				{
+					"id": 200280103,
+					"content": "ถูกเจ้าพวกนี้คอยกวน การล่าครั้งนี้ไม่ได้อะไรติดมือไปซะแล้ว",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280104
+					],
+					"speakerTitle": "Morrow จอมขี้ขลาด"
+				},
+				{
+					"id": 200280104,
+					"content": "หวังว่านายพรานคนอื่นจะไม่โชคร้ายเหมือนฉันนะ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280105
+					],
+					"speakerTitle": "Morrow จอมขี้ขลาด"
+				},
+				{
+					"id": 200280105,
+					"content": "จริงสิ พูดถึงเรื่องนี้ ขอเชิญเธอไปรอบ ๆ นี้หน่อยได้มั้ย?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280106
+					],
+					"speakerTitle": "Morrow จอมขี้ขลาด"
+				},
+				{
+					"id": 200280106,
+					"content": "ไม่รู้ว่าฉันเข้าใจผิดไปเองรึเปล่า รอบ ๆ เมืองนี้...มี Slime มากขึ้นเรื่อย ๆ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280107
+					],
+					"speakerTitle": "Morrow จอมขี้ขลาด"
+				},
+				{
+					"id": 200280107,
+					"content": "เธอลองไปดูข้างหน้านั่นเถอะ ถ้ายังมี Slime อยู่ล่ะก็ ช่วยจัดการพวกมันทีนะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280108,
+						200280109
+					],
+					"speakerTitle": "Morrow จอมขี้ขลาด"
+				},
+				{
+					"id": 200280108,
+					"content": "ไม่มีปัญหา",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200280110
+					]
+				},
+				{
+					"id": 200280110,
+					"content": "งั้นก็ช่วยหน่อยนะ ฉังเองก็จะกลับไปรายงานกับคุณ Draff",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280111
+					],
+					"speakerTitle": "Morrow จอมขี้ขลาด"
+				},
+				{
+					"id": 200280111,
+					"content": "หวังว่าเขาจะยังไม่เมานะ จะได้ฟังฉันรู้เรื่องหน่อย...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Morrow จอมขี้ขลาด"
+				},
+				{
+					"id": 200280109,
+					"content": "ยังมีเรื่องอื่นต้องทำน่ะ",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200280112
+					]
+				},
+				{
+					"id": 200280112,
+					"content": "แต่ว่าคนที่สามารถแก้ปัญหาเหล่านี้ได้มีแค่เธอเท่านั้น เพื่อ Springvale ขอร้องล่ะนะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Morrow จอมขี้ขลาด"
+				}
+			]
+		}
+	]
+}

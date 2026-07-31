@@ -1,0 +1,185 @@
+{
+	"id": 71700,
+	"type": "WQ",
+	"name": "Давай сделаем венок!",
+	"description": "Чан Чан из Ли Юэ хочет три цветка шелковицы.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте Чан Чан три цветка шелковицы",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170001,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170002,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Чан Чан",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170002,
+						0
+					],
+					"talkId": 7170002
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170001,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170001",
+							"2"
+						],
+						"stepId": 7170001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170001"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Чан Чан"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717000101,
+					"content": "Насчёт шелковицы...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717000102
+					]
+				},
+				{
+					"id": 717000102,
+					"content": "А? Ты про ту заявку, которую я заполняла? Ух ты, действительно сработало...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717000103
+					],
+					"speakerTitle": "Чан Чан"
+				},
+				{
+					"id": 717000103,
+					"content": "#Ты уже собрал{F#а} три цветка шелковицы?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717000104,
+						717000105
+					],
+					"speakerTitle": "Чан Чан"
+				},
+				{
+					"id": 717000104,
+					"content": "Да.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717000105,
+					"content": "Пока ещё нет.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717000106
+					]
+				},
+				{
+					"id": 717000106,
+					"content": "Ага... Ну тогда приноси поскорее, как соберёшь. Хочу венок сплести.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Чан Чан"
+				}
+			]
+		},
+		{
+			"id": 7170002,
+			"completionStepIds": [
+				7170002
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170002",
+							"2"
+						],
+						"stepId": 7170002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Чан Чан"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717000201,
+					"content": "Этих шелковиц как раз хватит. Скоро у меня будет красивый венок!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717000202
+					],
+					"speakerTitle": "Чан Чан"
+				},
+				{
+					"id": 717000202,
+					"content": "Спасибо. Это тебе в благодарность.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717000203
+					],
+					"speakerTitle": "Чан Чан"
+				},
+				{
+					"id": 717000203,
+					"content": "Вот папа обрадуется, когда его увидит...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Чан Чан"
+				}
+			]
+		}
+	]
+}

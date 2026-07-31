@@ -1,0 +1,920 @@
+{
+	"id": 376,
+	"type": "AQ",
+	"name": "逃亡",
+	"description": "あなたはウェンティ新計画を完璧にこなしたが、天空のライアーを手にする直前、見知らぬ人物がそれを奪い取った。その物音で守衛に気付かれてしまい、あなたたちは大聖堂から逃げ出すしかなかった。",
+	"unlockDescription": "",
+	"chapter": "涙のない明日のために",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		377
+	],
+	"prevMainQuestList": [
+		375
+	],
+	"steps": [
+		{
+			"id": 37601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "大聖堂から出る",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1031,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "風域を利用して大聖堂から離れる",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1070,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37603,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37604,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "酒場に隠れる",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_ROOM",
+					"rawParams": [
+						1009,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37605,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "ディルックの質問に答える",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37604,
+						0
+					],
+					"talkId": 37604
+				}
+			]
+		},
+		{
+			"id": 37606,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "酒場の上の階に隠れる",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1034,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37607,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37606,
+						0
+					],
+					"talkId": 37606
+				}
+			]
+		},
+		{
+			"id": 37608,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "ディルックと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37607,
+						0
+					],
+					"talkId": 37607
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 37604,
+			"completionStepIds": [
+				37605
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37604",
+							"3"
+						],
+						"stepId": 37604,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37605",
+							"2"
+						],
+						"stepId": 37605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ディルック"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3760401,
+					"content": "ディルック様、こちらが今週の帳面です。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760402
+					],
+					"speakerTitle": "チャールズ"
+				},
+				{
+					"id": 3760402,
+					"content": "今度の風災、やはり影響が大きい。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760403
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760403,
+					"content": "早く収まるといいですね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760404
+					],
+					"speakerTitle": "チャールズ"
+				},
+				{
+					"id": 3760404,
+					"content": "オーナー、えっと…人が少ないところないかな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760405
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3760405,
+					"content": "二階なら、人は少ないが。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760406
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760406,
+					"content": "しかし、君は吟遊詩人だろう？賑わっている場所の方がいいと思うが。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760407
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760407,
+					"content": "あははっ、演奏はまた今度やらせてもらうよ。先に二階に行くね、また後で！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760408
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3760408,
+					"content": "彼らを見張ってくれ。あの詩人はあやしい。僕は状況を聞いてくる。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760409
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760409,
+					"content": "えっと…誰にですか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760410
+					],
+					"speakerTitle": "チャールズ"
+				},
+				{
+					"id": 3760410,
+					"content": "モンドの「警備員」たちにだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ディルック"
+				}
+			]
+		},
+		{
+			"id": 37605,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37606",
+							"2"
+						],
+						"stepId": 37606,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ディルック"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3760411,
+					"content": "二階に行かないのか？急いでいるみたいだが。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ディルック"
+				}
+			]
+		},
+		{
+			"id": 37606,
+			"completionStepIds": [
+				37607
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37606",
+							"3"
+						],
+						"stepId": 37606,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37607",
+							"2"
+						],
+						"stepId": 37607,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ディルック"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3760601,
+					"content": "あっ、ディルック様、泥棒を見かけませんでした？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760602
+					],
+					"speakerTitle": "アート"
+				},
+				{
+					"id": 3760602,
+					"content": "何があったんだ？こんなに人を出して。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760603
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760603,
+					"content": "ディルック様はご存知ないのですか？泥棒二人が、天空のライアーを盗もうとしたんです！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760604
+					],
+					"speakerTitle": "マイルズ"
+				},
+				{
+					"id": 3760604,
+					"content": "ほう？それは珍しい。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760605
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760605,
+					"content": "ええ、天空のライアーは風神様の宝物、これほど貴重な文化財を——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760606
+					],
+					"speakerTitle": "マイルズ"
+				},
+				{
+					"id": 3760606,
+					"content": "金にならないものを盗むバカがいるとはな、うちの酒蔵を狙ったほうがまだ儲かると思うが。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760607
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760607,
+					"content": "…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760608
+					],
+					"speakerTitle": "アート"
+				},
+				{
+					"id": 3760608,
+					"content": "ああ、話が逸れたな。金髪と緑色の二人はあっちに行ったようだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760609
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760609,
+					"content": "かしこまりました。ディルック様、ありがとうございます！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "マイルズ"
+				}
+			]
+		},
+		{
+			"id": 37607,
+			"completionStepIds": [
+				37608
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37607",
+							"3"
+						],
+						"stepId": 37607,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37608",
+							"2"
+						],
+						"stepId": 37608,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ディルック"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3760701,
+					"content": "今日はどれにしようかな…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760702
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3760702,
+					"content": "カウンターから取った酒を置け。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760703
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760703,
+					"content": "…冷たいのでいいかな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760704
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3760704,
+					"content": "そろそろ、僕の質問に答えてもらおうか。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760705
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760705,
+					"content": "まずは飲ませてよ、ちゃんと払うからさ…僕の詩で。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760706
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3760706,
+					"content": "金の問題ではない。それに、君はまだ酒を飲める歳ではないだろう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760707
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760708,
+					"content": "まずはこちらの質問に答えてほしい。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3760709
+					]
+				},
+				{
+					"id": 3760710,
+					"content": "この人は誰？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3760711
+					]
+				},
+				{
+					"id": 3760707,
+					"content": "それなら安心して、ボクが酒を嗜み始めたのは、君がまだ——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760708,
+						3760710
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3760709,
+					"content": "うん？「この人は誰」って顔してるね？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760711
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3760711,
+					"content": "こちらは<color=#00E1FFFF>ディルック</color>、酒場のオーナーの…そのさらに上のオーナーだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760712
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3760712,
+					"content": "彼は有名人だよ。ちなみに、ボクは彼のワイナリーの蒲公英酒が大好きなんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760713
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3760713,
+					"content": "いつもはグラス売りでしか買えないけどね…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760714
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3760714,
+					"content": "衛兵から泥棒の話を聞いた。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760715
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760715,
+					"content": "先に言っておくと、天空のライアーを盗む度胸は気に入った。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760716
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760716,
+					"content": "君たちがバカだとしても、かなり珍しいタイプのバカだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760717
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760717,
+					"content": "盗んでない、真犯人は他にいるぞ——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760718
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 3760718,
+					"content": "こちらは騎士団のスーパールーキーだよ、モンドの秘宝を盗むなんてありえないよ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760719
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3760719,
+					"content": "スーパールーキー…？ああ、君が。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760720
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760721,
+					"content": "そんなには。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3760723
+					]
+				},
+				{
+					"id": 3760722,
+					"content": "一回演奏を聞いただけだ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3760723
+					]
+				},
+				{
+					"id": 3760720,
+					"content": "君は、あの吟遊詩人と仲が良いのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760721,
+						3760722
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760723,
+					"content": "ふむ…旅人の君が、モンドの危機を救ってくれたとは。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760724
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760724,
+					"content": "君のような人材が騎士団に入るなど、もったいない。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760725
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760725,
+					"content": "西風騎士団は…風魔龍の件に関してずっと臆病で、それでいて効率も悪い。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760726
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760726,
+					"content": "外交面も<color=#00E1FFFF>「ファデュイ」</color>に対して弱い上に保守的だ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760727
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760727,
+					"content": "ちっ…いい。この話はしたくないんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760728
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760728,
+					"content": "ディルックは西風騎士団が好きじゃないみたいだね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760729
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3760729,
+					"content": "目指す道が違うだけだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760730
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760730,
+					"content": "モンドに対して、僕は僕なりの期待を持っている…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760731
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760731,
+					"content": "それで質問に答えてもらおう。なぜ天空のライアーを盗もうとした？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760732
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760732,
+					"content": "本当に知りたいの？騎士団関連のトラブルに巻き込まれるかもしれないよ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760733
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3760733,
+					"content": "ふん、トラブルは怖くないさ。僕自身が、その騎士団にとってトラブルの種だからね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760734
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760734,
+					"content": "じゃあ、真実の物語を演奏したら、信じてくれる？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760735
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3760735,
+					"content": "状況次第で判断する。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760736
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760736,
+					"content": "じゃあ——演奏のお代はくれるかい？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760737
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3760737,
+					"content": "報酬は5モラから天空のライアー、君の物語次第だ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760738
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760738,
+					"content": "いいね。もう一曲追加しようか——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760739
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3760739,
+					"content": "先ほどの叙事詩は、一体…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760740
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760740,
+					"content": "これは重大な秘密のはずだ、なぜ僕に見せた？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760741
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760741,
+					"content": "なぜだろうね？うん、風向きが変わろうとしてるからだろうね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760742
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3760742,
+					"content": "——どうかな？ディルック？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760743
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3760743,
+					"content": "面白い。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760744
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760744,
+					"content": "少し時間をくれ。情報をまとめよう…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760745
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760745,
+					"content": "異邦人、君は騎士団の肩書きがあるから疑われていない。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760746
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760746,
+					"content": "指名手配には金髪としか書れていないから、衛兵は君のところに来ないはずだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760747
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760747,
+					"content": "しかし、吟遊詩人…君は酒場から出ないほうがいい。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760748
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760748,
+					"content": "それなら問題ないさ！ボクは酒場が大好きだからね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760749
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3760749,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760750
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 3760750,
+					"content": "では夜、酒場の営業が終わった後、ここで合流しよう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760751
+					],
+					"speakerTitle": "ディルック"
+				},
+				{
+					"id": 4820221,
+					"content": "わたしが<color=#00E1FFFF>マークしたルート</color>通り、ゴールまで飛んでね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820222
+					],
+					"speakerTitle": "アンバー"
+				}
+			]
+		}
+	]
+}

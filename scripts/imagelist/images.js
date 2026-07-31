@@ -1,9 +1,20 @@
 // this script will compile all the image names together into a giant list for analysis
 const design = require('../../src/design.json');
 const fs = require('fs');
+const path = require('path');
+const missingImageData = new Set();
 
 function getImageData(folder) {
-	return require(`../../src/data/image/${folder}.json`);
+	const imagepath = path.join(__dirname, '../../src/data/image', `${folder}.json`);
+	if (!fs.existsSync(imagepath)) {
+		if (!missingImageData.has(folder)) {
+			console.warn(`[imagelist] Missing image data for "${folder}": ${imagepath}`);
+			missingImageData.add(folder);
+		}
+		return {};
+	}
+
+	return require(imagepath);
 }
 
 function getImageList(folders) {

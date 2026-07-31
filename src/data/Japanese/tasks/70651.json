@@ -1,0 +1,187 @@
+{
+	"id": 70651,
+	"type": "WQ",
+	"name": "採掘の道",
+	"description": "郊外で鉱石を集めることが簡単ではない…たぶん、モンド城の鍛冶師ワーグナーが鉱石を集めるコツを知っているかもしれない…",
+	"unlockDescription": "この任務をクリアすると「採鉱地検索」が開放されます",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_GUIDE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7065101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "ワーグナーと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7065102,
+						0
+					],
+					"talkId": 7065102
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7065103,
+						0
+					],
+					"talkId": 7065103
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7065104,
+						0
+					],
+					"talkId": 7065104
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7065101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7065101",
+							"2"
+						],
+						"stepId": 7065101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ワーグナー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706510101,
+					"content": "むっ、どうやら鉱石が足りないようだ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706510102
+					],
+					"speakerTitle": "ワーグナー"
+				},
+				{
+					"id": 706510102,
+					"content": "鉱石集めに関して…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						706510103
+					]
+				},
+				{
+					"id": 706510103,
+					"content": "鉱石？何か作るつもりか？武器か？それとも鎧なのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706510104
+					],
+					"speakerTitle": "ワーグナー"
+				},
+				{
+					"id": 706510104,
+					"content": "もし鉱石を集めたいなら、俺はいい場所を知っているぞ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706510105
+					],
+					"speakerTitle": "ワーグナー"
+				},
+				{
+					"id": 706510105,
+					"content": "だが鉱石にも色々ある。一般的に使われている鉄の塊。扱いやすい白鉄の塊。優れた品質の水晶の塊…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706510106
+					],
+					"speakerTitle": "ワーグナー"
+				},
+				{
+					"id": 706510106,
+					"content": "それと魔晶の塊と呼ばれる鉱物だ。品質もよく、とても上等なものをつくれる。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ワーグナー"
+				}
+			]
+		},
+		{
+			"id": 7065102,
+			"completionStepIds": [
+				7065101
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_NOT_HAVE_BLOSSOM_TALK",
+						"rawParams": []
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7065101",
+							"2"
+						],
+						"stepId": 7065101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ワーグナー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706510201,
+					"content": "ただ魔晶の塊は加工が難しい。そいつを鍛造の材料にするなら、他にもいくつもの補助材料が必要だ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706510202
+					],
+					"speakerTitle": "ワーグナー"
+				},
+				{
+					"id": 706510202,
+					"content": "俺はさっき野外から帰ってきた。鉱物は既に取られていたみたいだから、今は何も見つからないだろう…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706510203
+					],
+					"speakerTitle": "ワーグナー"
+				},
+				{
+					"id": 706510203,
+					"content": "ふむ…こうしよう。しばらくしたらまた来てくれ。鉱物が取れる位置を、お前の地図にマークしといてやるよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ワーグナー"
+				}
+			]
+		}
+	]
+}

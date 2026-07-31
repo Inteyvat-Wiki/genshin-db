@@ -1,0 +1,352 @@
+{
+	"id": 41157,
+	"type": "EQ",
+	"name": "Livraison spéciale : Restaurant Wanmin",
+	"description": "Le Restaurant Wanmin a besoin de livrer une commande spéciale...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 4115701,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez au chef Mao.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4115701,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 4115702,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Livrez le plat à Zirui le curieux.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4115702,
+						0
+					],
+					"talkId": 4115702
+				}
+			]
+		},
+		{
+			"id": 4115703,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Zirui le curieux.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4115706,
+						0
+					],
+					"talkId": 4115706
+				}
+			]
+		},
+		{
+			"id": 4115704,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4115704,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 4115701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115701",
+							"2"
+						],
+						"stepId": 4115701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Chef Mao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411570101,
+					"content": "D'accord, j'y vais.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411570102
+					]
+				},
+				{
+					"id": 411570102,
+					"content": "Je compte sur vous.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411570103
+					],
+					"speakerTitle": "Chef Mao"
+				},
+				{
+					"id": 411570103,
+					"content": "#Soyez {M#vigilant}{F#vigilante} dans la Forêt de pierre de Guyun. Ne vous faites pas attaquer.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Chef Mao"
+				}
+			]
+		},
+		{
+			"id": 4115702,
+			"completionStepIds": [
+				4115702
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115701",
+							"3"
+						],
+						"stepId": 4115701,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Zirui le curieux"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411570201,
+					"content": "Pourquoi ça met autant de temps à arriver...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Zirui le curieux"
+				}
+			]
+		},
+		{
+			"id": 4115703,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115701",
+							"2"
+						],
+						"stepId": 4115701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Chef Mao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411570301,
+					"content": "Il paraît qu'il y a une commande spéciale...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411570302
+					]
+				},
+				{
+					"id": 411570302,
+					"content": "Oui, un jeune homme au nom de Zirui a commandé des œufs et graines de lotus à la vapeur. Il devrait être dans la Forêt de pierre de Guyun à l'heure actuelle.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411570303
+					],
+					"speakerTitle": "Chef Mao"
+				},
+				{
+					"id": 411570303,
+					"content": "Pourquoi tous les jeunes se rendent-ils à cet endroit lugubre ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411570304
+					],
+					"speakerTitle": "Chef Mao"
+				},
+				{
+					"id": 411570304,
+					"content": "Peu importe. Pourriez-vous le livrer ? Et ne <color=#00E1FFFF>planez pas sur le trajet</color>, sinon tout se renversera.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Chef Mao"
+				}
+			]
+		},
+		{
+			"id": 4115704,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115701",
+							"2"
+						],
+						"stepId": 4115701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Chef Mao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411570401,
+					"content": "J'ai autre chose à faire...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411570402
+					]
+				},
+				{
+					"id": 411570402,
+					"content": "Dommage. Je vais voir si quelqu'un d'autre peut s'en occuper...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Chef Mao"
+				}
+			]
+		},
+		{
+			"id": 4115705,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115701",
+							"2"
+						],
+						"stepId": 4115701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Zirui le curieux"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411570501,
+					"content": "Je crois que je ne devrais pas être ici...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Zirui le curieux"
+				}
+			]
+		},
+		{
+			"id": 4115706,
+			"completionStepIds": [
+				4115703
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115703",
+							"2"
+						],
+						"stepId": 4115703,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Zirui le curieux"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411570601,
+					"content": "Voici votre commande.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411570602
+					]
+				},
+				{
+					"id": 411570602,
+					"content": "Merci ! Je rentre direct à Liyue dès que je finis de manger.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Zirui le curieux"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,696 @@
+{
+	"id": 71809,
+	"type": "WQ",
+	"name": "도시에 바치는 시",
+	"description": "리월항의 그 사건은 잠잠해졌지만, 그로 인해 이 도시에 변화가 생기기 시작했다. 시인 청주는 시를 지어 이러한 변화를 발견하려 한다…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		1025
+	],
+	"steps": [
+		{
+			"id": 7180901,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		},
+		{
+			"id": 7180902,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "남쪽 부두 근처에서 시의 영감 찾기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1183,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180903,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "「불복려」 근처에서 시의 영감 찾기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1184,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180904,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "옥경대로 근처에서 시의 영감 찾기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1185,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180905,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "옥경대 사람들과 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180902,
+						0
+					],
+					"talkId": 7180902
+				}
+			]
+		},
+		{
+			"id": 7180906,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "옥경대 사람들과 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180903,
+						0
+					],
+					"talkId": 7180903
+				}
+			]
+		},
+		{
+			"id": 7180907,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7180907,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180908,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7180908,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180909,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "청주에게 보고하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180904,
+						0
+					],
+					"talkId": 7180904
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7180902,
+			"completionStepIds": [
+				7180905
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180905",
+							"2"
+						],
+						"stepId": 7180905,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"호재"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718090201,
+					"content": "다행이야, 다행이야….",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090202
+					],
+					"speakerTitle": "호재"
+				},
+				{
+					"id": 718090202,
+					"content": "뭐가 다행이에요?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090203
+					]
+				},
+				{
+					"id": 718090203,
+					"content": "오, 여행자구나. 일전에 시내에서 큰일이 벌어졌잖아?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090204
+					],
+					"speakerTitle": "호재"
+				},
+				{
+					"id": 718090204,
+					"content": "다행히, 그 일이 있고 나선 잠잠했어. 무엇보다도… 시내에 있는 음식점들 모두 정상 영업 중이지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090205
+					],
+					"speakerTitle": "호재"
+				},
+				{
+					"id": 718090205,
+					"content": "아니었다면, 그 많고 맛있는 음식들을 못 먹었을 거야…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090206
+					],
+					"speakerTitle": "호재"
+				},
+				{
+					"id": 718090206,
+					"content": "먹을 것 때문이군요…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090207
+					]
+				},
+				{
+					"id": 718090207,
+					"content": "우습게 보지 마. 음식은 그곳이 좋은 곳인지 나쁜 곳인지 판단할 수 있는 가장 확실한 방법이라구",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090208
+					],
+					"speakerTitle": "호재"
+				},
+				{
+					"id": 718090208,
+					"content": "아… 말하다 보니 또 배가 고프네, 뭘 좀 먹으러 가봐야겠어…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "호재"
+				}
+			]
+		},
+		{
+			"id": 7180903,
+			"completionStepIds": [
+				7180906
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180906",
+							"2"
+						],
+						"stepId": 7180906,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"범가 어르신"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718090301,
+					"content": "이 연극은 들으면 들을수록 이해가 안 가니…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090302
+					],
+					"speakerTitle": "범가 어르신"
+				},
+				{
+					"id": 718090302,
+					"content": "왜 그러세요?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090303
+					]
+				},
+				{
+					"id": 718090303,
+					"content": "여행자구나, 이 「화유다관」에서 또 새로운 연극을 몇 편 시작했다네",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090304
+					],
+					"speakerTitle": "범가 어르신"
+				},
+				{
+					"id": 718090304,
+					"content": "새로운 연극으로… 시끌벅적하긴 하지만, 난 도통 이해가 안 돼. 근데 젊은이들은 의외로 다들 좋아하더군",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090305
+					],
+					"speakerTitle": "범가 어르신"
+				},
+				{
+					"id": 718090305,
+					"content": "그래서 좋다는 건가요?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090306
+					]
+				},
+				{
+					"id": 718090306,
+					"content": "글쎄… 물론 난 옛날 연극들을 좋아하긴 하네. 오랫동안 들어왔기도 하고 말이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090307
+					],
+					"speakerTitle": "범가 어르신"
+				},
+				{
+					"id": 718090307,
+					"content": "하지만 지금은 리월항 모든 게 변하고 있으니 새 연극이 나오는 것도 당연하지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090308
+					],
+					"speakerTitle": "범가 어르신"
+				},
+				{
+					"id": 718090308,
+					"content": "휴, 그래도 변화가 너무 빨라. 옛날 연극은 공연한지도 오래됐고, 암왕제군도 모르겠고… 됐네, 말을 말자고",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "범가 어르신"
+				}
+			]
+		},
+		{
+			"id": 7180904,
+			"completionStepIds": [
+				7180909
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180909",
+							"2"
+						],
+						"stepId": 7180909,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"청주"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718090401,
+					"content": "수확이 좀 있었나요?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090402
+					],
+					"speakerTitle": "청주"
+				},
+				{
+					"id": 718090402,
+					"content": "제법 있었어요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090403
+					]
+				},
+				{
+					"id": 718090403,
+					"content": "엇? 빨리 말해줘요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090404
+					],
+					"speakerTitle": "청주"
+				},
+				{
+					"id": 718090404,
+					"content": "남쪽 부두에 개가 참 많더라구요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090405
+					]
+				},
+				{
+					"id": 718090405,
+					"content": "오, 좋네요. 삶의 정취가 가득해요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090406
+					],
+					"speakerTitle": "청주"
+				},
+				{
+					"id": 718090406,
+					"content": "「불복려」 주변에 참새가 많았어요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090407
+					]
+				},
+				{
+					"id": 718090407,
+					"content": "참새라, 음… 평화로운 모습이니 시의 소재로 딱이네요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090408
+					],
+					"speakerTitle": "청주"
+				},
+				{
+					"id": 718090408,
+					"content": "어떤 사람들은 먹는 것에만 신경을 쓰죠…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090409
+					]
+				},
+				{
+					"id": 718090409,
+					"content": "그것도 틀린 건 아니죠. 먹는 건 가장 중요한 일이잖아요. 특히… 이 리월에서는요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090410
+					],
+					"speakerTitle": "청주"
+				},
+				{
+					"id": 718090410,
+					"content": "그것도 흥미롭네요. 일단 적죠. 시의 소재가 될 수도 있으니까요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090411
+					],
+					"speakerTitle": "청주"
+				},
+				{
+					"id": 718090411,
+					"content": "변화가 너무 빠르다고 느끼는 사람이 있더라구요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090412
+					]
+				},
+				{
+					"id": 718090412,
+					"content": "음… 그렇게 느끼는 것도 정상이죠. 지금의 리월은 날마다 새로워지고 있어요. 저도 적응이 안 되는 것들이 있으니…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090413
+					],
+					"speakerTitle": "청주"
+				},
+				{
+					"id": 718090413,
+					"content": "다만 이건 좀 광범위한 주제라서 시 한 편으론 부족할 것 같네요…. 그래도 일단 적어야겠어요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090414
+					],
+					"speakerTitle": "청주"
+				},
+				{
+					"id": 718090414,
+					"content": "이 정도면 충분해요. 역시 당신에게 부탁하길 잘했네요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090415
+					],
+					"speakerTitle": "청주"
+				},
+				{
+					"id": 718090415,
+					"content": "다음 시집에 신작을 몇 편 더할 수도 있겠어요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090416
+					],
+					"speakerTitle": "청주"
+				},
+				{
+					"id": 718090416,
+					"content": "맞다, 이런 세속적인 거 말고… 이거도 받아주세요, 제 성의예요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090417
+					],
+					"speakerTitle": "청주"
+				},
+				{
+					"id": 718090417,
+					"content": "다음 시집이 출판되면, 이걸로 사인된 책을 교환할 수 있어요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "청주"
+				}
+			]
+		},
+		{
+			"id": 7180906,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180905",
+							"3"
+						],
+						"stepId": 7180905,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180908",
+							"2"
+						],
+						"stepId": 7180908,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180909",
+							"2"
+						],
+						"stepId": 7180909,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"호재"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718090601,
+					"content": "말을 하다보니 또 허기가 지잖아…. 뭘 먹을까…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "호재"
+				}
+			]
+		},
+		{
+			"id": 7180907,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180906",
+							"3"
+						],
+						"stepId": 7180906,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180908",
+							"2"
+						],
+						"stepId": 7180908,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180909",
+							"2"
+						],
+						"stepId": 7180909,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"범가 어르신"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718090701,
+					"content": "휴, 성 안은 너무 빨리 변해…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "범가 어르신"
+				}
+			]
+		},
+		{
+			"id": 7180910,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180902",
+							"2"
+						],
+						"stepId": 7180902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180903",
+							"2"
+						],
+						"stepId": 7180903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180904",
+							"2"
+						],
+						"stepId": 7180904,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180908",
+							"2"
+						],
+						"stepId": 7180908,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"청주"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718091001,
+					"content": "지금의 리월은… 정말 완전히 변했어요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "청주"
+				}
+			]
+		}
+	]
+}

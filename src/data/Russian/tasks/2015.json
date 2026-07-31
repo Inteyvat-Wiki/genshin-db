@@ -1,0 +1,1001 @@
+{
+	"id": 2015,
+	"type": "AQ",
+	"name": "Глаза Порчи",
+	"description": "Глаза Порчи - секретное оружие, которое в итоге спасло жизни бойцов сопротивления. После смерти своего боевого товарища Тэппэя вы с трудом сдерживаете гнев против Фатуи.",
+	"unlockDescription": "",
+	"chapter": "Всевидящий бог, бренный мир",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		2016
+	],
+	"prevMainQuestList": [
+		2014
+	],
+	"steps": [
+		{
+			"id": 201501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Сангономией Кокоми",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						201501,
+						0
+					],
+					"talkId": 201501
+				}
+			]
+		},
+		{
+			"id": 201502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Найдите место производства Глаз Порчи",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						201502,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 201503,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Войдите на фабрику Глаз Порчи",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_DUNGEON",
+					"rawParams": [
+						1119,
+						398
+					]
+				}
+			]
+		},
+		{
+			"id": 201504,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Найдите на фабрике злодея, стоящего за производством",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 201505,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Найдите на фабрике злодея, стоящего за производством",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						201504,
+						0
+					],
+					"talkId": 201504
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						201505,
+						0
+					],
+					"talkId": 201505
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 201501,
+			"completionStepIds": [
+				201501
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"201501",
+							"2"
+						],
+						"stepId": 201501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Сангономия Кокоми",
+					"Горо"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 20150101,
+					"content": "#{NICKNAME}, как дела Тэппэя?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150102,
+						20150103
+					],
+					"speakerTitle": "Сангономия Кокоми"
+				},
+				{
+					"id": 20150102,
+					"content": "Как мы могли упустить?..",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150104
+					]
+				},
+				{
+					"id": 20150104,
+					"content": "...Я приказала забрать все Глаза Порчи.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150105
+					],
+					"speakerTitle": "Сангономия Кокоми"
+				},
+				{
+					"id": 20150105,
+					"content": "У большинства упадок сил, но ничего серьёзного.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150106
+					],
+					"speakerTitle": "Сангономия Кокоми"
+				},
+				{
+					"id": 20150106,
+					"content": "Но вот некоторые...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150107
+					],
+					"speakerTitle": "Сангономия Кокоми"
+				},
+				{
+					"id": 20150107,
+					"content": "Ваше превосходительство, я собираюсь открыть отдельный полевой госпиталь, чтобы следить за их состоянием.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150108
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 20150108,
+					"content": "Солдаты протестуют против запрета. Они знают, что такое Глаза Порчи, но всё равно намерены использовать их.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150109
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 20150109,
+					"content": "Поручаю разобраться с этой ситуацией тебе. Мне необходимо на передовую.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150110
+					],
+					"speakerTitle": "Сангономия Кокоми"
+				},
+				{
+					"id": 20150110,
+					"content": "Такая неудача не может не сказаться на боевом духе войска. Если сёгун воспользуется сумятицей и нападёт, все наши труды пойдут прахом.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150111
+					],
+					"speakerTitle": "Сангономия Кокоми"
+				},
+				{
+					"id": 20150111,
+					"content": "#{NICKNAME}, что ты думаешь на этот счёт?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150112
+					],
+					"speakerTitle": "Сангономия Кокоми"
+				},
+				{
+					"id": 20150112,
+					"content": "Я остановлю Фатуи.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150113
+					]
+				},
+				{
+					"id": 20150113,
+					"content": "Нет, это слишком опасно!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150114
+					],
+					"speakerTitle": "Сангономия Кокоми"
+				},
+				{
+					"id": 20150114,
+					"content": "Указ Сакоку всё ещё в силе. Это значит, что их Глаза Порчи сделали в Инадзуме.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150115
+					],
+					"speakerTitle": "Сангономия Кокоми"
+				},
+				{
+					"id": 20150115,
+					"content": "Для организации такого производства требуется много рабочих рук, и без местной поддержки они бы этого сделать не смогли.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150116
+					],
+					"speakerTitle": "Сангономия Кокоми"
+				},
+				{
+					"id": 20150116,
+					"content": "Чтобы остановить их, нужно разрушить фабрику, на которой производятся Глаза Порчи. Но она непременно хорошо охраняется...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150117
+					],
+					"speakerTitle": "Сангономия Кокоми"
+				},
+				{
+					"id": 20150117,
+					"content": "В одиночку отправляться слишком опасно. Возьми с собой солдат...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150118
+					],
+					"speakerTitle": "Сангономия Кокоми"
+				},
+				{
+					"id": 20150118,
+					"content": "На это нет времени.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150119
+					]
+				},
+				{
+					"id": 20150119,
+					"content": "Ваше превосходительство, Глаза Порчи отбирались у солдат второпях, и Фатуи не могли этого не заметить.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150120
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 20150120,
+					"content": "Пока мы будем собирать войска, они узнают о наших планах и скроются.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150121
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 20150121,
+					"content": "Верно... секундочку...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150122
+					],
+					"speakerTitle": "Сангономия Кокоми"
+				},
+				{
+					"id": 20150122,
+					"content": "Пока изымались Глаза Порчи, я кое-что придумала. Фабрика наверняка крупная, в отдалённом месте, но достаточно близко к дороге, чтобы могли подвозить сырьё...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150123
+					],
+					"speakerTitle": "Сангономия Кокоми"
+				},
+				{
+					"id": 20150123,
+					"content": "Таких мест не так уж много. Если учесть те места, где солдаты получили Глаза Порчи, то, вероятнее всего, фабрика находится в горах у побережья <color=#00E1FFFF>Ясиори</color>.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150124
+					],
+					"speakerTitle": "Сангономия Кокоми"
+				},
+				{
+					"id": 20150124,
+					"content": "#Я не стану тебя останавливать. Просто будь {F#осторожна}{M#осторожен}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150125
+					],
+					"speakerTitle": "Сангономия Кокоми"
+				},
+				{
+					"id": 20150125,
+					"content": "Мы уже потеряли немало отличных бойцов. Не хотелось бы потерять и тебя.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150126
+					],
+					"speakerTitle": "Сангономия Кокоми"
+				},
+				{
+					"id": 20150126,
+					"content": "Нам пора.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150127
+					]
+				},
+				{
+					"id": 20150127,
+					"content": "Что? То есть на <color=#00E1FFFF>фабрику Глаз Порчи</color>?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150128
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 20150128,
+					"content": "...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150129
+					]
+				},
+				{
+					"id": 20150129,
+					"content": "#Ты серьёзно? Ты хорошо {F#подумала}{M#подумал}? Ладно...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 20150103,
+					"content": "Ему вдруг стало намного хуже.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150104
+					]
+				}
+			]
+		},
+		{
+			"id": 201504,
+			"completionStepIds": [
+				201505
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"201505",
+							"2"
+						],
+						"stepId": 201505,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"50001",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Сказитель"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 20150401,
+					"content": "Тебе всё-таки удалось найти это место. Мои поздравления.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150402
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150402,
+					"content": "Кхе. Мы только встретились, а ты уже словно смерти моей желаешь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150403,
+						20150404
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150403,
+					"content": "Вы изготавливаете Глаза Порчи...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150405
+					]
+				},
+				{
+					"id": 20150405,
+					"content": "О, так вот в чём дело.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150406
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150406,
+					"content": "Думаю, случилось небольшое недоразумение. Я понимаю, как это может выглядеть со стороны, но я просто выполняю приказы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150407
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150407,
+					"content": "#Руковожу этой операцией вовсе не я. Ты ведь весьма {F#сильна}{M#силён}, верно? Тогда чего ждёшь, вперёд!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150408
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150408,
+					"content": "#Эх, ты... из-за каких-то пустяков выходишь из себя. Да ты {F#изменилась}{M#изменился}... ты слабеешь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150409
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150409,
+					"content": "Никакие это не пустяки...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150410
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 20150410,
+					"content": "Ну а что тогда? Так устроен мир. Человеческая жизнь - что тот сорняк.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150411
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150411,
+					"content": "Они всё равно бы умерли, хоть с Глазом Порчи, хоть без него. С ним они хотя бы смогли воплотить свои надежды в жизнь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150412
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150412,
+					"content": "Ты хоть понимаешь, насколько для нас ценна Охота на Глаза Бога? На её осуществление ушло немало сил. Естественно, этот указ нам крайне выгоден.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150413
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150413,
+					"content": "Но теперь наш тяжёлый труд начал окупать себя. Сей вражду, и рынок для Глаз Порчи готов. Пусть сила приманивает слабых, которые её жаждут...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150414
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150414,
+					"content": "За скромную цену они почувствуют себя на вершине мира. Жизнь в обмен на безграничную силу... Выгодная сделка, не находишь?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150415
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150415,
+					"content": "Значит, указ об Охоте вышел из-за Фатуи? Так с самого начала это всё были вы...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150416
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 20150416,
+					"content": "Извне Инадзума кажется неприступной, но внутри... это страна возможностей. Немного усилий и мы разрушим её изнутри.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150417
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150417,
+					"content": "В вечности время простирается очень далеко, но каждое мгновение становится донельзя хрупким.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150418
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150418,
+					"content": "Взять, к примеру, вашего друга из сопротивления. Ему уже не помочь. Он безнадёжен.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150419
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150419,
+					"content": "Как пузырёк на воде. Прекрасен, но неуклонно идёт к разрушению.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150420
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150420,
+					"content": "Чем больше они теряют, тем больше они Глазами Порчи дорожат, а немощность подхлёстывает их к борьбе! Ха-ха-ха, вот так комедия, да?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150421,
+						20150422
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150421,
+					"content": "Не смей глумиться над Тэппэем...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150423
+					]
+				},
+				{
+					"id": 20150423,
+					"content": "#{NICKNAME}, остынь, а?..",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 20150422,
+					"content": "Он вовсе не немощный!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150423
+					]
+				},
+				{
+					"id": 20150404,
+					"content": "Вы даёте Глаза Порчи сопротивлению...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150405
+					]
+				}
+			]
+		},
+		{
+			"id": 201505,
+			"completionStepIds": [
+				201505
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"201505",
+							"2"
+						],
+						"stepId": 201505,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"50001",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Сказитель"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 20150401,
+					"content": "Тебе всё-таки удалось найти это место. Мои поздравления.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150402
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150502,
+					"content": "Значит, ты один из Предвестников Фатуи... как Синьора и Чайльд?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150503
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 20150503,
+					"content": "Синьора? Чайльд? Хм... не знал, что вы знакомы с моими двумя самыми неблагонадёжными коллегами.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150504
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150504,
+					"content": "#Номер шесть из Предвестников Фатуи, Сказитель, собственной персоной. Рад знакомству, {F#прославленная путешественница}{M#прославленный путешественник}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150505
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150506,
+					"content": "Вы изготавливаете Глаза Порчи...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150508
+					]
+				},
+				{
+					"id": 20150507,
+					"content": "Вы даёте Глаза Порчи сопротивлению...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150508
+					]
+				},
+				{
+					"id": 20150505,
+					"content": "Как же сегодня много посетителей. Чем обязан такой чести?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150506,
+						20150507
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150508,
+					"content": "О, так вот в чём дело.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150509
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150406,
+					"content": "Думаю, случилось небольшое недоразумение. Я понимаю, как это может выглядеть со стороны, но я просто выполняю приказы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150407
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150407,
+					"content": "#Руковожу этой операцией вовсе не я. Ты ведь весьма {F#сильна}{M#силён}, верно? Тогда чего ждёшь, вперёд!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150408
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150511,
+					"content": "#Эх, ты... из-за каких-то пустяков выходишь из себя. Не ожидал, что ты окажешься {F#такой слабой}{M#таким слабым}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150512
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150409,
+					"content": "Никакие это не пустяки...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150410
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 20150410,
+					"content": "Ну а что тогда? Так устроен мир. Человеческая жизнь - что тот сорняк.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150411
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150411,
+					"content": "Они всё равно бы умерли, хоть с Глазом Порчи, хоть без него. С ним они хотя бы смогли воплотить свои надежды в жизнь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150412
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150412,
+					"content": "Ты хоть понимаешь, насколько для нас ценна Охота на Глаза Бога? На её осуществление ушло немало сил. Естественно, этот указ нам крайне выгоден.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150413
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150413,
+					"content": "Но теперь наш тяжёлый труд начал окупать себя. Сей вражду, и рынок для Глаз Порчи готов. Пусть сила приманивает слабых, которые её жаждут...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150414
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150414,
+					"content": "За скромную цену они почувствуют себя на вершине мира. Жизнь в обмен на безграничную силу... Выгодная сделка, не находишь?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150415
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150415,
+					"content": "Значит, указ об Охоте вышел из-за Фатуи? Так с самого начала это всё были вы...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150416
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 20150416,
+					"content": "Извне Инадзума кажется неприступной, но внутри... это страна возможностей. Немного усилий и мы разрушим её изнутри.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150417
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150417,
+					"content": "В вечности время простирается очень далеко, но каждое мгновение становится донельзя хрупким.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150418
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150418,
+					"content": "Взять, к примеру, вашего друга из сопротивления. Ему уже не помочь. Он безнадёжен.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150419
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150419,
+					"content": "Как пузырёк на воде. Прекрасен, но неуклонно идёт к разрушению.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150420
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150421,
+					"content": "Не смей глумиться над Тэппэем...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150423
+					]
+				},
+				{
+					"id": 20150422,
+					"content": "Он вовсе не немощный!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150423
+					]
+				},
+				{
+					"id": 20150420,
+					"content": "Чем больше они теряют, тем больше они Глазами Порчи дорожат, а немощность подхлёстывает их к борьбе! Ха-ха-ха, вот так комедия, да?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150421,
+						20150422
+					],
+					"speakerTitle": "Сказитель"
+				},
+				{
+					"id": 20150423,
+					"content": "#{NICKNAME}, остынь, а?..",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				}
+			]
+		},
+		{
+			"id": 201552,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"201501",
+							"2"
+						],
+						"stepId": 201501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"201502",
+							"2"
+						],
+						"stepId": 201502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Тэппэй"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 20155201,
+					"content": "Дыхание Тэппэя слабеет...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				}
+			]
+		},
+		{
+			"id": 201553,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 20155325,
+					"content": "Ситуация с гражданской войной в Инадзуме неясна. Чем дольше продлится этот конфликт, тем выгоднее для нас...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20155326
+					],
+					"speakerTitle": "Объявление в зале"
+				},
+				{
+					"id": 20155326,
+					"content": "Чтобы усугубить зависимость сопротивления от Глаз Порчи, сильнее раздуть огни войны и укрепить решимость командиров сторон продолжать сражаться...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20155327
+					],
+					"speakerTitle": "Объявление в зале"
+				},
+				{
+					"id": 20155327,
+					"content": "Я сим призываю всех товарищей оказывать всяческое содействие офицеру флота 2-го класса Натану в подавлении надежд сил Сангономии на быструю победу...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20155328
+					],
+					"speakerTitle": "Объявление в зале"
+				},
+				{
+					"id": 20155328,
+					"content": "В случае непредвиденных обстоятельств помогите офицеру флота 2-го класса Натану бежать, а также заставьте молчать всех, кто знает о проникновении Фатуи в их ряды!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20155329
+					],
+					"speakerTitle": "Объявление в зале"
+				},
+				{
+					"id": 20155329,
+					"content": "Помните, что эта миссия имеет решающее значение в обеспечении поставок Глаз Порчи. Не упускайте ни одну мелочь!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Объявление в зале"
+				}
+			]
+		}
+	]
+}

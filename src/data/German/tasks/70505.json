@@ -1,0 +1,521 @@
+{
+	"id": 70505,
+	"type": "WQ",
+	"name": "Edler Wein von gestern",
+	"description": "„Gerade eben habe ich gesehen, wie Diluc in aller Eile die Taverne betrat.“ „Oh? Wird Diluc heute persönlich Getränke mischen? Das kann ich mir nicht entgehen lassen ... Kommt, helft mir auf.“",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70504
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Luka und betritt die Taverne.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050501,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050502,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Stell für Diluc das bestimmte Getränk her.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050502,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050503,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Gib Diluc das Getränk.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050502,
+						0
+					],
+					"talkId": 7050502
+				}
+			]
+		},
+		{
+			"id": 7050504,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Diluc.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050501,
+						0
+					],
+					"talkId": 7050501
+				}
+			]
+		},
+		{
+			"id": 7050505,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Geh zu der Bar und bereite dich auf die Wirtsarbeit vor.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7050406,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050501,
+			"completionStepIds": [
+				7050504
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050504",
+							"2"
+						],
+						"stepId": 7050504,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050502",
+							"2"
+						],
+						"stepId": 7050502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Diluc"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705050101,
+					"content": "Diluc! Wie selten! Hast du heute einfach nichts zu tun gehabt?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050102
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705050102,
+					"content": "Was soll das heißen, es gibt nichts zu tun? Ich habe von deiner Teilzeittätigkeit als Wirt erfahren und wollte mal sehen, wie deine Arbeit lief.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050103
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050103,
+					"content": "Das geht aber gut rum!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050104
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705050104,
+					"content": "#{NICKNAME}, wie ist es, Wirt zu sein?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050105
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050105,
+					"content": "Wir haben gerade erst begonnen ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705050106
+					]
+				},
+				{
+					"id": 705050106,
+					"content": "Ja, du fragst zu früh, wir haben gerade erst begonnen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050107
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705050107,
+					"content": "Ich will nur von deinem ersten Eindruck wissen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050108
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050108,
+					"content": "Aufgeregt? Oder beunruhigt? Wenn du etwas fühlst, sag es einfach.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050109,
+						705050110
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050109,
+					"content": "Es ist ... etwas Neues ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705050111
+					]
+				},
+				{
+					"id": 705050111,
+					"content": "Oh, ich verstehe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050112
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050112,
+					"content": "Willst du Paimon nicht fragen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050113
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705050113,
+					"content": "Paimons erstes Gefühl ist, dass es gut schmeckt!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050114
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705050114,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050115
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050115,
+					"content": "Ich freue mich für dich.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050116
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050116,
+					"content": "Könntest du mir bitte einen Sonnenuntergang im Tal machen? Die Größe ist egal.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050117
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050117,
+					"content": "Alles klar, einen Moment.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705050118
+					]
+				},
+				{
+					"id": 705050118,
+					"content": "Keine Eile.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050110,
+					"content": "Etwas unorganisiert ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705050111
+					]
+				}
+			]
+		},
+		{
+			"id": 7050502,
+			"completionStepIds": [
+				7050503
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050503",
+							"2"
+						],
+						"stepId": 7050503,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Diluc"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705050201,
+					"content": "... Schmeckt ziemlich gut.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050202
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050202,
+					"content": "Es sind vor allem die Zutaten, die gut sind! Solange das Obst frisch ist, wird es auch ohne Zusatz süß sein.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050203
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705050203,
+					"content": "Danken wir also dem Land von Mondstadt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050204
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050204,
+					"content": "Sonnenuntergang im Tal, das erste Getränk, das ich je gemischt habe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050205
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050205,
+					"content": "Da ich damals noch sehr jung war, legte mir mein Vater einige Zutaten vor, die ich selbst ausprobieren sollte.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050206
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050206,
+					"content": "Keine Anfragen oder Hinweise, hauptsächlich um zu sehen, wie viel Kreativität in mir steckt, denke ich.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050207
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050207,
+					"content": "Am Ende habe ich einen Saft wie diesen gemacht.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050208
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050208,
+					"content": "Warum?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050209
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705050209,
+					"content": "Auch mein Vater war überrascht. Aber ich habe damals nicht über andere Faktoren nachgedacht, ich wusste nur, dass der Saft süß war.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050210
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050210,
+					"content": "Im Nachhinein betrachtet, war das eine naive und kurzsichtige Auffassung ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050211
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050211,
+					"content": "Nein, ich glaube nicht.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705050212
+					]
+				},
+				{
+					"id": 705050212,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050213,
+						705050214
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050213,
+					"content": "Für ihn war es bestimmt gut.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705050215
+					]
+				},
+				{
+					"id": 705050215,
+					"content": "Ich habe das nicht so gesehen ... schließlich hat mein Vater damals nichts gesagt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050216
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050216,
+					"content": "Aber ich danke dir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050217
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050217,
+					"content": "Außerdem möchte ich dir etwas mit auf den Weg geben.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050218
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050218,
+					"content": "Womöglich wäre es besser zu warten, bis du mehr Erfahrung als Wirt hast, bevor ich es dir gebe. Mit deinen Fähigkeiten wirst du in der Lage sein, die Arbeit gut zu erledigen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050219
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050219,
+					"content": "Paimon wird für Motivation sorgen!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050220
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705050220,
+					"content": "Nun, ich freue mich auf die Ergebnisse eurer Arbeit. Ich werde mich dann verabschieden.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050221
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 705050221,
+					"content": "Komm doch mal wieder vorbei!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705050214,
+					"content": "Er muss es auch köstlich gefunden haben.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705050215
+					]
+				}
+			]
+		}
+	]
+}

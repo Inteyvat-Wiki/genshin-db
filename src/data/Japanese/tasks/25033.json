@@ -1,0 +1,966 @@
+{
+	"id": 25033,
+	"type": "IQ",
+	"name": "竜と山",
+	"description": "「こだまの子」の集落で、トゥラテがあることについて悩んでいる…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2503301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "トゥラテと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2503301,
+						0
+					],
+					"talkId": 2503301
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2503307,
+						0
+					],
+					"talkId": 2503307
+				}
+			]
+		},
+		{
+			"id": 2503302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "山頂まで登る",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					-1933.558,
+					281.741,
+					7950.873
+				],
+				"pointId": 8625
+			}
+		},
+		{
+			"id": 2503303,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2503304,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "トゥラテと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2503302,
+						0
+					],
+					"talkId": 2503302
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2503303,
+						0
+					],
+					"talkId": 2503303
+				}
+			]
+		},
+		{
+			"id": 2503305,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2503305,
+						0
+					],
+					"talkId": 2503305
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						2503304,
+						3
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					-1930.341,
+					280.743,
+					7950.652
+				],
+				"pointId": 8626
+			}
+		}
+	],
+	"talks": [
+		{
+			"id": 2503301,
+			"completionStepIds": [
+				2503301
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2503301",
+							"2"
+						],
+						"stepId": 2503301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_VAR_EQUAL",
+						"rawParams": [
+							"0",
+							"0",
+							"25033"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"トゥラテ"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							-1907.845,
+							173.275,
+							8019.369
+						],
+						"pointId": 350400180
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							-1910.978,
+							173.792,
+							8019.911
+						],
+						"pointId": 350400181
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 250330101,
+					"content": "いい子、いい子。お腹いっぱいになった？訓練できそう？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330102
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330102,
+					"content": "キュ、キュー、キュキュー！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330103
+					],
+					"speakerTitle": "チーカ"
+				},
+				{
+					"id": 250330103,
+					"content": "へへっ、元気いっぱいだ！じゃあ、今日も頑張ろっか！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330104
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330104,
+					"content": "一緒に頑張る！",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						250330106
+					]
+				},
+				{
+					"id": 250330106,
+					"content": "#ん？あっ、こんにちは、{M#お兄ちゃん}{F#お姉ちゃん}！今、山登りの訓練をしてるんだ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330107
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330107,
+					"content": "キュー！キュー！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330108
+					],
+					"speakerTitle": "チーカ"
+				},
+				{
+					"id": 250330108,
+					"content": "キュー、キュー…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330109,
+						250330112
+					],
+					"speakerTitle": "チーカ"
+				},
+				{
+					"id": 250330109,
+					"content": "訓練の調子はどう？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						250330110
+					]
+				},
+				{
+					"id": 250330110,
+					"content": "うーん…前よりもだいぶ高いところまで登れてるから、「よくなってる」よ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330111
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330111,
+					"content": "ただ、山を登る時の動きがちょっと不慣れな感じってだけで…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330116
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330116,
+					"content": "#{M#お兄ちゃん}{F#お姉ちゃん}、もう一度お手本を見せてくれる？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330117,
+						250330121
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330117,
+					"content": "いいよ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						250330118
+					]
+				},
+				{
+					"id": 250330118,
+					"content": "#ありがとう！今度こそちゃんと{M#お兄ちゃん}{F#お姉ちゃん}の動きを覚えるからね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330119
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330119,
+					"content": "チーカもちゃんと見とくんだよ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330120
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330120,
+					"content": "キュッ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330123
+					],
+					"speakerTitle": "チーカ"
+				},
+				{
+					"id": 250330123,
+					"content": "#それじゃあ、よろしくね、{M#お兄ちゃん}{F#お姉ちゃん}！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330124
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330124,
+					"content": "僕たちは下から見て、タイムを測るから。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330125
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330125,
+					"content": "キュー、キュー…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "チーカ"
+				},
+				{
+					"id": 250330121,
+					"content": "今度こそちゃんと見て覚えてね。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						250330122
+					]
+				},
+				{
+					"id": 250330122,
+					"content": "もちろん。チーカと二人で目を凝らして、絶対にどんな動きも見逃さないよ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330123
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330112,
+					"content": "着々と元気になってるみたいだね。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						250330113
+					]
+				},
+				{
+					"id": 250330113,
+					"content": "もちろん！僕はチーカの世話が上手だってお母さんも言ってた。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330114
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330114,
+					"content": "チーカはすごく成長したよ！前よりもずっと高いところまで登れるようになったんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330115
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330115,
+					"content": "ただ、山を登る時の動きがちょっと不慣れな感じってだけで…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330116
+					],
+					"speakerTitle": "トゥラテ"
+				}
+			]
+		},
+		{
+			"id": 2503302,
+			"completionStepIds": [
+				2503304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2503304",
+							"2"
+						],
+						"stepId": 2503304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2503303",
+							"4"
+						],
+						"stepId": 2503303,
+						"stateName": "QUEST_STATE_FAILED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"トゥラテ"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							-1907.845,
+							173.275,
+							8019.369
+						],
+						"pointId": 350400180
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							-1910.978,
+							173.792,
+							8019.911
+						],
+						"pointId": 350400181
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 250330201,
+					"content": "すごい、すごいよ！マイタと同じくらい速いんだね！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330202,
+						250330203
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330202,
+					"content": "ちょっとミスった…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						250330204
+					]
+				},
+				{
+					"id": 250330204,
+					"content": "#僕やチーカより全然速いよ…{M#お兄ちゃん}{F#お姉ちゃん}はもう十分速いと思う！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330205
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330205,
+					"content": "#はぁ…{M#お兄ちゃん}{F#お姉ちゃん}に追いつくまで、まだまだたくさん訓練しないといけないね…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330206
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330206,
+					"content": "キュー、キュー…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330207,
+						250330208
+					],
+					"speakerTitle": "チーカ"
+				},
+				{
+					"id": 250330207,
+					"content": "がんばれ、チーカ！",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						250330209
+					]
+				},
+				{
+					"id": 250330209,
+					"content": "キュッ！？キュー、キュー…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330210
+					],
+					"speakerTitle": "チーカ"
+				},
+				{
+					"id": 250330210,
+					"content": "いい子いい子。がんばればきっと強くなれるってヤワルのおじちゃんも言ってたよ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330211
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330211,
+					"content": "キュー…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330212
+					],
+					"speakerTitle": "チーカ"
+				},
+				{
+					"id": 250330212,
+					"content": "#{M#お兄ちゃん}{F#お姉ちゃん}、助けてくれてありがとう。はい、この果物あげるよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330213
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330213,
+					"content": "さっきチーカが採ってきたばっかりなんだ。前よりだいぶ速くなったんだよ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330214
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330214,
+					"content": "#えへへ、{M#お兄ちゃん}{F#お姉ちゃん}がいいお手本を見せてくれたおかげだよ！チーカ、すっごく成長したんだ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330215
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330215,
+					"content": "キュー、キューッ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330216
+					],
+					"speakerTitle": "チーカ"
+				},
+				{
+					"id": 250330216,
+					"content": "それじゃあ、僕たちはそろそろ集落に戻ってマイタに会いに行くよ。はぁ…いるといいんだけど…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330208,
+					"content": "二人ならできる！",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						250330209
+					]
+				},
+				{
+					"id": 250330203,
+					"content": "もっと速く登れる。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						250330204
+					]
+				}
+			]
+		},
+		{
+			"id": 2503303,
+			"completionStepIds": [
+				2503304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2503304",
+							"2"
+						],
+						"stepId": 2503304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2503303",
+							"3"
+						],
+						"stepId": 2503303,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"トゥラテ"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							-1907.845,
+							173.275,
+							8019.369
+						],
+						"pointId": 350400180
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							-1910.978,
+							173.792,
+							8019.911
+						],
+						"pointId": 350400181
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 250330301,
+					"content": "すごい！でも、やっぱりどうやって登ってるのかよく見えなかった…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330302
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330302,
+					"content": "#はぁ…{M#お兄ちゃん}{F#お姉ちゃん}に追いつくまで、まだまだたくさん訓練しないといけないね…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330303
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330303,
+					"content": "キュー、キュー…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330304,
+						250330305
+					],
+					"speakerTitle": "チーカ"
+				},
+				{
+					"id": 250330304,
+					"content": "がんばれ、チーカ！",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						250330306
+					]
+				},
+				{
+					"id": 250330306,
+					"content": "キュッ！？キュー、キュー…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330307
+					],
+					"speakerTitle": "チーカ"
+				},
+				{
+					"id": 250330307,
+					"content": "いい子いい子。がんばればきっと強くなれるってヤワルのおじちゃんも言ってたよ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330308
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330308,
+					"content": "キュー…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330309
+					],
+					"speakerTitle": "チーカ"
+				},
+				{
+					"id": 250330309,
+					"content": "#{M#お兄ちゃん}{F#お姉ちゃん}、手伝ってくれてありがとう。はい、この果物あげるよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330310
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330310,
+					"content": "さっきチーカが採ってきたばっかりなんだ。前よりだいぶ速くなったんだよ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330311
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330311,
+					"content": "#えへへ、{M#お兄ちゃん}{F#お姉ちゃん}がいいお手本を見せてくれたおかげだよ！チーカ、すっごく成長したんだ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330312
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330312,
+					"content": "キュー、キュー！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330313
+					],
+					"speakerTitle": "チーカ"
+				},
+				{
+					"id": 250330313,
+					"content": "それじゃあ、僕たちはそろそろ集落に戻ってマイタに会いに行くよ。はぁ…いるといいんだけど…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330305,
+					"content": "二人ならできる！",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						250330306
+					]
+				}
+			]
+		},
+		{
+			"id": 2503304,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2503302",
+							"2"
+						],
+						"stepId": 2503302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"トゥラテ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 250330401,
+					"content": "それじゃあ、お願い。僕たちは下でタイムを測るから。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						250330402
+					],
+					"speakerTitle": "トゥラテ"
+				},
+				{
+					"id": 250330402,
+					"content": "キュー…キュー…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "チーカ"
+				}
+			]
+		},
+		{
+			"id": 2503305,
+			"completionStepIds": [
+				2503305
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2503305",
+							"2"
+						],
+						"stepId": 2503305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"パイモン"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							-1930.341,
+							280.743,
+							7950.652
+						],
+						"pointId": 8626
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							-1928.912,
+							280.291,
+							7950.401
+						],
+						"pointId": 8627
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 250330501,
+					"content": "",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "パイモン"
+				}
+			]
+		},
+		{
+			"id": 2503306,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2503302",
+							"2"
+						],
+						"stepId": 2503302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_IN_VEHICLE_BY_FEATURETAG",
+						"rawParams": [
+							"30010"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"チーカ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 250330601,
+					"content": "山、高い…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "チーカ"
+				}
+			]
+		},
+		{
+			"id": 2503307,
+			"completionStepIds": [
+				2503301
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2503301",
+							"2"
+						],
+						"stepId": 2503301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_VAR_EQUAL",
+						"rawParams": [
+							"0",
+							"1",
+							"25033"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"トゥラテ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 250330701,
+					"content": "それじゃあ、お願い。僕たちは下で観察して、タイムを測るから。",
+					"roleType": "TALK_ROLE_NONE",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

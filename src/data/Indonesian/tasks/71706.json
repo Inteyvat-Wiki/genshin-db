@@ -1,0 +1,167 @@
+{
+	"id": 71706,
+	"type": "WQ",
+	"name": "Pilihan Smiley",
+	"description": "Smiley Yanxiao dari Wangshu Inn membutuhkan dua Ham.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Berikan dua Ham kepada Smiley Yanxiao",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Smiley Yanxiao",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170602,
+						0
+					],
+					"talkId": 7170602
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170601,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170601",
+							"2"
+						],
+						"stepId": 7170601,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170601"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Yanxiao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717060101,
+					"content": "Tentang Ham...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717060102
+					]
+				},
+				{
+					"id": 717060102,
+					"content": "Hm? Ah, maksudmu komisi yang kutulis. Jadi bagaimana, apa kamu sudah menyiapkan dua Ham tersebut?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717060103,
+						717060104
+					],
+					"speakerTitle": "Yanxiao"
+				},
+				{
+					"id": 717060103,
+					"content": "Ya, sudah siap.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717060104,
+					"content": "Masih belum...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717060105
+					]
+				},
+				{
+					"id": 717060105,
+					"content": "Kalau begitu kalau sudah siap nanti tolong bawakan Ham itu padaku segera. Aku ingin mencoba masakan baru...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Yanxiao"
+				}
+			]
+		},
+		{
+			"id": 7170602,
+			"completionStepIds": [
+				7170602
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170602",
+							"2"
+						],
+						"stepId": 7170602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Yanxiao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717060201,
+					"content": "Hm, kualitas Ham ini bagus juga, seharusnya cukup.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717060202
+					],
+					"speakerTitle": "Yanxiao"
+				},
+				{
+					"id": 717060202,
+					"content": "Ini imbalanmu, sesuai janjiku.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Yanxiao"
+				}
+			]
+		}
+	]
+}

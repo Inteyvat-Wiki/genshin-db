@@ -1,0 +1,580 @@
+{
+	"id": 72149,
+	"type": "WQ",
+	"name": "「海祇之心」",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "月浴之渊",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_RANK_ZERO_WQ",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		72145,
+		72146,
+		72147,
+		72148
+	],
+	"steps": [
+		{
+			"id": 7214901,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "返回珊瑚宫与露子对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7214902,
+						0
+					],
+					"talkId": 7214902
+				}
+			]
+		},
+		{
+			"id": 7214902,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "打开「海祇之心」的大门",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7214903,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "进入「心」之所在",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7214904,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "解除最后的封印",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7214905,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "获取「渊之钥」",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7214906,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "与露子对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7214903,
+						0
+					],
+					"talkId": 7214903
+				}
+			]
+		},
+		{
+			"id": 7214907,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)海神之心大门交付$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7214901,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7214901,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214904",
+							"3"
+						],
+						"stepId": 7214904,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214905",
+							"2"
+						],
+						"stepId": 7214905,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"露子"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721490101,
+					"content": "（露子小姐似乎在思考着什么，或许这时不应该打扰她。）",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "露子"
+				}
+			]
+		},
+		{
+			"id": 7214902,
+			"completionStepIds": [
+				7214901
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214901",
+							"2"
+						],
+						"stepId": 7214901,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"露子",
+					"派蒙"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721490201,
+					"content": "#欢迎回来，{NICKNAME}。请问有什么事吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490202
+					],
+					"speakerTitle": "露子"
+				},
+				{
+					"id": 721490202,
+					"content": "关于你的委托…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490203
+					]
+				},
+				{
+					"id": 721490203,
+					"content": "我们已经取得四颗「御灵珠」啦！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490204
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 721490204,
+					"content": "这样吗？真是太可靠了，非常感谢！那么接下来距离解开最后的「心」之封印就只有一步之遥了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490205
+					],
+					"speakerTitle": "露子"
+				},
+				{
+					"id": 721490205,
+					"content": "接下来还要辛苦两位随我一同前去，希望您不要介意。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490206
+					],
+					"speakerTitle": "露子"
+				},
+				{
+					"id": 721490206,
+					"content": "#既然都到这里了，我们也不在乎多走两步路啦！对吧，{NICKNAME}？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490207,
+						721490208
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 721490207,
+					"content": "好吧。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490209
+					]
+				},
+				{
+					"id": 721490209,
+					"content": "那么事不宜迟，我们现在就出发吧！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "露子"
+				},
+				{
+					"id": 721490208,
+					"content": "我没什么所谓。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490209
+					]
+				}
+			]
+		},
+		{
+			"id": 7214903,
+			"completionStepIds": [
+				7214906
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214905",
+							"3"
+						],
+						"stepId": 7214905,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214906",
+							"2"
+						],
+						"stepId": 7214906,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"露子",
+					"派蒙"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721490301,
+					"content": "嗯…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490302
+					],
+					"speakerTitle": "露子"
+				},
+				{
+					"id": 721490302,
+					"content": "露子小姐…？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490303
+					]
+				},
+				{
+					"id": 721490303,
+					"content": "啊，抱歉，刚刚太入神了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490304
+					],
+					"speakerTitle": "露子"
+				},
+				{
+					"id": 721490304,
+					"content": "多谢你们的帮助，终于取得「月浴渊之钥」了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490305
+					],
+					"speakerTitle": "露子"
+				},
+				{
+					"id": 721490305,
+					"content": "「余哕鱼圆只月」…好拗口…那是什么啊？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490306
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 721490306,
+					"content": "哈哈，简称「渊之钥」就好，我们不会强求外国人的读音准确与否的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490307
+					],
+					"speakerTitle": "露子"
+				},
+				{
+					"id": 721490307,
+					"content": "这是打开渊下宫入口的必备之物，由大御神大人身上流出的血铸结而成…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490308
+					],
+					"speakerTitle": "露子"
+				},
+				{
+					"id": 721490308,
+					"content": "至少传说是这样的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490309
+					],
+					"speakerTitle": "露子"
+				},
+				{
+					"id": 721490309,
+					"content": "哦…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490310
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 721490310,
+					"content": "玄之又玄呢…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490311
+					]
+				},
+				{
+					"id": 721490311,
+					"content": "一点也不玄啦，恰恰相反…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490312
+					],
+					"speakerTitle": "露子"
+				},
+				{
+					"id": 721490312,
+					"content": "接下来要上报现人神巫女大人，等她批准，再等灵脉的流动正确…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490313
+					],
+					"speakerTitle": "露子"
+				},
+				{
+					"id": 721490313,
+					"content": "之后，就可以进入渊下宫了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490314
+					],
+					"speakerTitle": "露子"
+				},
+				{
+					"id": 721490314,
+					"content": "所以你在支使我们做什么啦！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490315
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 721490315,
+					"content": "你们这趟又不是全无收获！对吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490316
+					],
+					"speakerTitle": "露子"
+				},
+				{
+					"id": 721490316,
+					"content": "比如…你们收获了珊瑚宫官方长久的友谊！海祇岛今后会一直欢迎你们的！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490317
+					],
+					"speakerTitle": "露子"
+				},
+				{
+					"id": 721490317,
+					"content": "什么啦！说得像真的一样！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490318
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 721490318,
+					"content": "…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490319
+					],
+					"speakerTitle": "露子"
+				},
+				{
+					"id": 721490319,
+					"content": "记载中有说，「御灵珠」只会应正直纯良之辈的召唤，「月浴渊之钥」也只会为心灵清澈如水之人凝聚。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490320
+					],
+					"speakerTitle": "露子"
+				},
+				{
+					"id": 721490320,
+					"content": "虽然我不总是相信那些文书，但我相信您能给海祇岛带来转机。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490321
+					],
+					"speakerTitle": "露子"
+				},
+				{
+					"id": 721490321,
+					"content": "那么，待下渊下宫之刻到来…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490322,
+						721490323
+					],
+					"speakerTitle": "露子"
+				},
+				{
+					"id": 721490322,
+					"content": "我们后会有期。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490325
+					]
+				},
+				{
+					"id": 721490325,
+					"content": "那么，再见啦。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "露子"
+				},
+				{
+					"id": 721490323,
+					"content": "你会再求一次签？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490324
+					]
+				},
+				{
+					"id": 721490324,
+					"content": "呵呵，我签运很好的。我们一定还会再见面。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490325
+					],
+					"speakerTitle": "露子"
+				}
+			]
+		},
+		{
+			"id": 7214904,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214907",
+							"2"
+						],
+						"stepId": 7214907,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7214901"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721490401,
+					"content": "散发着磷光的奇妙封印，上面的图案是一条鱼…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "「心」之封印"
+				}
+			]
+		}
+	]
+}

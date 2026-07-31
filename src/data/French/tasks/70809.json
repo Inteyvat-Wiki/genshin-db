@@ -1,0 +1,534 @@
+{
+	"id": 70809,
+	"type": "WQ",
+	"name": "",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		70077
+	],
+	"steps": [
+		{
+			"id": 7080901,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080902,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7080903,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7080903,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7080902,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7080904,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080903,
+						0
+					],
+					"talkId": 7080903
+				}
+			]
+		},
+		{
+			"id": 7080905,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6180115,
+						0
+					],
+					"talkId": 6180115
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6180116,
+						0
+					],
+					"talkId": 6180116
+				}
+			]
+		},
+		{
+			"id": 7080906,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080905,
+						0
+					],
+					"talkId": 7080905
+				}
+			]
+		},
+		{
+			"id": 7080907,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080904,
+						0
+					],
+					"talkId": 7080904
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7080901,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7080902"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080902",
+							"2"
+						],
+						"stepId": 7080902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7007711",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Uchida Kotaro"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708090101,
+					"content": "C'est ça que tu cherches ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7080902,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7080903"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080903",
+							"2"
+						],
+						"stepId": 7080903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7007711",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lohen"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708090201,
+					"content": "Je l'ai trouvé dans un nid d'oiseau...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7080903,
+			"completionStepIds": [
+				7080904
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080904",
+							"2"
+						],
+						"stepId": 7080904,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							3048.129,
+							237.658,
+							-131.896
+						],
+						"pointId": 16753
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							3048.092,
+							237.511,
+							-133.307
+						],
+						"pointId": 16779
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 708090301,
+					"content": "(Il y a beaucoup de morceaux de papier éparpillés dans le nid, et on dirait qu'il y a quelques mots brouillons écrits dessus...)",
+					"roleType": "TALK_ROLE_NEED_CLICK_BLACK_SCREEN",
+					"nextDialogs": [
+						708090302
+					]
+				},
+				{
+					"id": 708090302,
+					"content": "Ils auraient déchiré ces papiers pour fabriquer leur nid ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090303
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 708090303,
+					"content": "Il y a quelque chose d'écrit dessus. Et si on essayait de les assembler pour voir ce que ça dit ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090304
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 708090304,
+					"content": "On va devoir le faire nous-mêmes...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708090305
+					]
+				},
+				{
+					"id": 708090305,
+					"content": "#Tu n'es pas {F#curieuse}{M#curieux} ? C'est peut-être une carte au trésor !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090306
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 708090306,
+					"content": "Sous les insistances de Paimon, la note est finalement reconstituée...",
+					"roleType": "TALK_ROLE_NEED_CLICK_BLACK_SCREEN",
+					"nextDialogs": [
+						708090307
+					]
+				},
+				{
+					"id": 708090307,
+					"content": "Voyons voir... C'est...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090308
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 708090308,
+					"content": "C'est... une sorte de plan criminel ?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090309,
+						708090311
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 708090309,
+					"content": "Qui pourrait bien laisser son plan criminel se faire emporter par un oiseau ?!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708090310
+					]
+				},
+				{
+					"id": 708090310,
+					"content": "Mais... Dans les romans, ce genre de choses arrive tout le temps ! Un plan parfait qui échoue au moment où on s'y attend le moins...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090313
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 708090313,
+					"content": "Et si on allait à la taverne du coin pour nous renseigner ? Peut-être que quelqu'un a entendu parler d'un complot criminel ou quelque chose du genre...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 708090311,
+					"content": "Dans le doute, mieux vaut prévenir que guérir...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708090312
+					]
+				},
+				{
+					"id": 708090312,
+					"content": "T—Tu as raison... Si quelqu'un prévoit vraiment de commettre un crime, ce sera trop tard le regretter après coup !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090313
+					],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 7080904,
+			"completionStepIds": [
+				7080907
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080907",
+							"2"
+						],
+						"stepId": 7080907,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Uchida Kotaro"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708090401,
+					"content": "C'est... C'est... mon modus operandi !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090402
+					],
+					"speakerTitle": "Uchida Kotaro"
+				},
+				{
+					"id": 708090402,
+					"content": "#{NICKNAME} ! Il vient de tout avouer !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090403
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 708090403,
+					"content": "Ah ! Ne vous méprenez pas, s'il vous plaît. C'est une intrigue que je comptais inclure dans mon prochain roman. Elle m'est venue à l'esprit pendant que je buvais un verre.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090404
+					],
+					"speakerTitle": "Uchida Kotaro"
+				},
+				{
+					"id": 708090404,
+					"content": "Quand je me suis réveillé et que j'ai vu que la page avait disparu, j'ai pensé que ce n'était qu'un rêve lié à l'alcool.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090405
+					],
+					"speakerTitle": "Uchida Kotaro"
+				},
+				{
+					"id": 708090405,
+					"content": "En tout cas, merci beaucoup de m'avoir aidé à la récupérer ! Je devrais pouvoir publier mon roman sans problème maintenant. Quand je l'aurai terminé, je vous ferai cadeau d'un exemplaire ! Dédicacé, bien sûr !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Uchida Kotaro"
+				}
+			]
+		},
+		{
+			"id": 7080905,
+			"completionStepIds": [
+				7080906
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080906",
+							"2"
+						],
+						"stepId": 7080906,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lohen"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708090501,
+					"content": "Oh ? Intéressant, voyons voir... Hm, je mettrais un six pour la créativité, mais peut-être un quatre pour sa possibilité de réalisation...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090502
+					],
+					"speakerTitle": "Lohen"
+				},
+				{
+					"id": 708090502,
+					"content": "C'est... un plan criminel ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090503
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 708090503,
+					"content": "Haha. En fait, j'ai quitté mon poste à la hâte parce que j'ai entendu dire que quelqu'un ici était en train d'élaborer un « plan criminel » des plus étranges.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090504
+					],
+					"speakerTitle": "Lohen"
+				},
+				{
+					"id": 708090504,
+					"content": "... Mais après avoir vu cette feuille de notes, je comprends mieux comment ces rumeurs ont commencé.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090505
+					],
+					"speakerTitle": "Lohen"
+				},
+				{
+					"id": 708090505,
+					"content": "Je vais remettre ce « plan criminel » à l'Ordre de Favonius. Si vous avez le temps, passez me voir à la base. Vous y trouverez peut-être quelque chose d'intéressant.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Lohen"
+				}
+			]
+		}
+	]
+}

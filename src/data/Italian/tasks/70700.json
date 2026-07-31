@@ -1,0 +1,176 @@
+{
+	"id": 70700,
+	"type": "WQ",
+	"name": "Il tè speciale di Helen",
+	"description": "Helen di Mondstadt ha bisogno di 10 Fiordolci.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Consegna 10 Fiordolci a Helen",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070001,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070002,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Helen",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070002,
+						0
+					],
+					"talkId": 7070002
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070001,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070001",
+							"2"
+						],
+						"stepId": 7070001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070001"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Helen"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707000101,
+					"content": "Riguardo a quei Fiordolci...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707000102
+					]
+				},
+				{
+					"id": 707000102,
+					"content": "Oh, hai visto l'incarico che ho affisso? Finalmente qualcuno disponibile ad aiutare.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707000103
+					],
+					"speakerTitle": "Helen"
+				},
+				{
+					"id": 707000103,
+					"content": "Hai raccolto i 10 Fiordolci?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707000104,
+						707000105
+					],
+					"speakerTitle": "Helen"
+				},
+				{
+					"id": 707000104,
+					"content": "Ecco qui.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707000105,
+					"content": "Non ancora.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707000106
+					]
+				},
+				{
+					"id": 707000106,
+					"content": "Capisco... Allora potresti portarmeli in fretta, una volta raccolti? Ho paura che la mia gola continui a peggiorare...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Helen"
+				}
+			]
+		},
+		{
+			"id": 7070002,
+			"completionStepIds": [
+				7070002
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070002",
+							"2"
+						],
+						"stepId": 7070002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Helen"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707000201,
+					"content": "Grazie mille. Per favore, prendi questo come segno della mia gratitudine.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707000202
+					],
+					"speakerTitle": "Helen"
+				},
+				{
+					"id": 707000202,
+					"content": "Li metterò in infusione nel tè. Con un po' di fortuna, la mia gola dovrebbe migliorare...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Helen"
+				}
+			]
+		}
+	]
+}

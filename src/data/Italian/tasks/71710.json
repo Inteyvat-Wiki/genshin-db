@@ -1,0 +1,167 @@
+{
+	"id": 71710,
+	"type": "WQ",
+	"name": "La nostalgia gastronomica di Geri",
+	"description": "Geri ha bisogno di 3 ciotole di zuppa vegetariana di ravanelli.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7171001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Consegna 3 porzioni di zuppa vegetariana di ravanelli a Geri",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7171001,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7171002,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Geri",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7171002,
+						0
+					],
+					"talkId": 7171002
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7171001,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7171001",
+							"2"
+						],
+						"stepId": 7171001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7171001"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Geri"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717100101,
+					"content": "Riguardo alla zuppa vegetariana di ravanelli...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717100102
+					]
+				},
+				{
+					"id": 717100102,
+					"content": "Sì, è quello che avevo chiesto. Hai già preparato le 3 ciotole di zuppa vegetariana di ravanelli?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717100103,
+						717100104
+					],
+					"speakerTitle": "Geri"
+				},
+				{
+					"id": 717100103,
+					"content": "Sì, ecco qui.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717100104,
+					"content": "Non ancora...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717100105
+					]
+				},
+				{
+					"id": 717100105,
+					"content": "Va bene, allora portamele appena sono pronte. Sicuramente anche mia sorella ne vorrà un po'.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Geri"
+				}
+			]
+		},
+		{
+			"id": 7171002,
+			"completionStepIds": [
+				7171002
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7171002",
+							"2"
+						],
+						"stepId": 7171002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Geri"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717100201,
+					"content": "Mmm, che profumo. Proprio come la ricordavo...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717100202
+					],
+					"speakerTitle": "Geri"
+				},
+				{
+					"id": 717100202,
+					"content": "Grazie infinite. Questi sono per te. Mi gusterò ogni cucchiaiata!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Geri"
+				}
+			]
+		}
+	]
+}

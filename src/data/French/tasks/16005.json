@@ -1,0 +1,91 @@
+{
+	"id": 16005,
+	"type": "LQ",
+	"name": "Intermède : Pause",
+	"description": "Le livre ne donne aucun nouvel indice. Vous décidez de vous reposer un moment avant de revoir Durin...",
+	"unlockDescription": "",
+	"chapter": "La magie connue sous le nom de narration",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1600501,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1600501,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1600502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Attendez que le livre révèle des indices pour le prochain chapitre.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TIME_VAR_PASS_DAY",
+					"rawParams": [
+						16005,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1600031,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1600502",
+							"2"
+						],
+						"stepId": 1600502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Durin"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 160003101,
+					"content": "Tante Alice nous a dit que nous pouvions retourner à tout moment dans le monde de l'histoire.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						160003102
+					],
+					"speakerTitle": "Durin"
+				},
+				{
+					"id": 160003102,
+					"content": "Si vous souhaitez y retourner, venez me voir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Durin"
+				}
+			]
+		}
+	]
+}

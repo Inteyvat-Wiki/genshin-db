@@ -1,0 +1,167 @@
+{
+	"id": 72713,
+	"type": "WQ",
+	"name": "Des ingrédients pour Murakami",
+	"description": "Murakami, de l'Île de Narukami, aimerait récupérer 15 plants de menthe.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7271301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Donnez 15 plants de menthe à Murakami.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7271301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7271302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Murakami.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7271302,
+						0
+					],
+					"talkId": 7271302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7271301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271301",
+							"2"
+						],
+						"stepId": 7271301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7271301"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Murakami"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727130101,
+					"content": "La menthe...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727130102
+					]
+				},
+				{
+					"id": 727130102,
+					"content": "De la menthe... Oui, c'est ce dont j'ai besoin... Avec de la menthe, je pourrais créer de toutes nouvelles saveurs...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727130103
+					],
+					"speakerTitle": "Murakami"
+				},
+				{
+					"id": 727130103,
+					"content": "Je suppose que vous avez accepté ma mission ? Dans ce cas, je suppose que vous avez aussi 15 menthes pour moi...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727130106,
+						727130104
+					],
+					"speakerTitle": "Murakami"
+				},
+				{
+					"id": 727130106,
+					"content": "Les voilà.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 727130104,
+					"content": "Pas encore.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727130105
+					]
+				},
+				{
+					"id": 727130105,
+					"content": "Eh bien, apportez-les-moi quand vous les aurez.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Murakami"
+				}
+			]
+		},
+		{
+			"id": 7271302,
+			"completionStepIds": [
+				7271302
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271302",
+							"2"
+						],
+						"stepId": 7271302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Murakami"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727130201,
+					"content": "Super, alors il est temps pour moi de créer de nouveaux plats ! ... Ah, mais d'abord, il est temps de vous payer. J'ai presque oublié !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Murakami"
+				}
+			]
+		}
+	]
+}

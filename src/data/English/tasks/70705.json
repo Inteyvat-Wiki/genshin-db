@@ -1,0 +1,167 @@
+{
+	"id": 70705,
+	"type": "WQ",
+	"name": "Connor's Brew",
+	"description": "The Dawn Winery's Connor requires three Mist Flower Corollas.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Give three Mist Flower Corollas to Connor",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070501,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Connor",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070502,
+						0
+					],
+					"talkId": 7070502
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070501,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070501",
+							"2"
+						],
+						"stepId": 7070501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070501"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707050101,
+					"content": "A little bird told me that someone wants Mist Flower Corollas...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707050102
+					]
+				},
+				{
+					"id": 707050102,
+					"content": "Ah, you must have seen that commission of mine. So, do you have those three Mist Flower Corollas handy?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707050103,
+						707050104
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707050103,
+					"content": "Here they are.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707050104,
+					"content": "Not yet.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707050105
+					]
+				},
+				{
+					"id": 707050105,
+					"content": "Please hurry, then. I'm due to use them to brew up some wine.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Connor"
+				}
+			]
+		},
+		{
+			"id": 7070502,
+			"completionStepIds": [
+				7070502
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070502",
+							"2"
+						],
+						"stepId": 7070502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707050201,
+					"content": "My, my... These Mist Flower Corollas are of fine quality indeed.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707050202
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707050202,
+					"content": "Please, take these — consider them a token of my appreciation.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Connor"
+				}
+			]
+		}
+	]
+}

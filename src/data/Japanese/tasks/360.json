@@ -1,0 +1,226 @@
+{
+	"id": 360,
+	"type": "AQ",
+	"name": "そよ風と共に",
+	"description": "少女の名前はアンバー、偵察騎士の彼女はモンドまで案内すると提案してきた。しかしその前に、まずはモンド城外に出現したヒルチャールを倒さなければならない、それが彼女の今回の任務である。",
+	"unlockDescription": "",
+	"chapter": "風を捕まえる異邦人",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		356
+	],
+	"prevMainQuestList": [
+		354
+	],
+	"steps": [
+		{
+			"id": 36001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "ヒルチャールを倒す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 36003,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "付近のヒルチャール拠点を片付ける",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 36004,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "アンバーと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						36001,
+						0
+					],
+					"talkId": 36001
+				}
+			]
+		},
+		{
+			"id": 36005,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "モンド城へ進み続ける",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1024,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 36001,
+			"completionStepIds": [
+				36004
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"36004",
+							"2"
+						],
+						"stepId": 36004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"アンバー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3600101,
+					"content": "ふぅ、楽勝楽勝～。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600102
+					],
+					"speakerTitle": "アンバー"
+				},
+				{
+					"id": 3600102,
+					"content": "でも、あんたも戦えるなんて思わなかった…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600103
+					],
+					"speakerTitle": "アンバー"
+				},
+				{
+					"id": 3600103,
+					"content": "支援ありがとう。ねぇ、戦ってどう思った？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600104,
+						3600105
+					],
+					"speakerTitle": "アンバー"
+				},
+				{
+					"id": 3600104,
+					"content": "楽勝。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3600106
+					]
+				},
+				{
+					"id": 3600106,
+					"content": "なんでこんなところに「ヒルチャール」が現れるんだ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600107
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 3600107,
+					"content": "こういうヤツらは普通、都市から離れたところに巣を作るよな？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600108
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 3600108,
+					"content": "そうね、本来だったら荒野にいるはずね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600109
+					],
+					"speakerTitle": "アンバー"
+				},
+				{
+					"id": 3600109,
+					"content": "でも最近、風魔龍が頻繁に出現するようになって、キャラバンのルートに影響があったの。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600110
+					],
+					"speakerTitle": "アンバー"
+				},
+				{
+					"id": 3600110,
+					"content": "暴風が発生する度に怪我人も多数出るし…騎士団はその被害から守らなくちゃいけなくてね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600111
+					],
+					"speakerTitle": "アンバー"
+				},
+				{
+					"id": 3600111,
+					"content": "だから、こいつらの活動範囲もだんだん城の方に？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600112
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 3600112,
+					"content": "そう。でも、今日また一つ巣を片付けられたから進展はあったわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600113
+					],
+					"speakerTitle": "アンバー"
+				},
+				{
+					"id": 3600113,
+					"content": "さあ、わたしについてきて！真面目で優秀な騎士が、あんたたちを城まで守ってあげる。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "アンバー"
+				},
+				{
+					"id": 3600105,
+					"content": "まあまあ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3600106
+					]
+				}
+			]
+		}
+	]
+}

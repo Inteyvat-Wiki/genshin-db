@@ -1,0 +1,299 @@
+{
+	"id": 20011,
+	"type": "IQ",
+	"name": "Blocked?",
+	"description": "Anthony set off from Mondstadt towards Springvale to find medicine for his sister Anna, but was set upon by hilichurls along the way. Defeat the hilichurls and save Anthony.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2001101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go check the details",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001102,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Defeat the nearby enemies",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Defeat all opponents and destroy the roadblocks",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Anthony",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001103,
+						0
+					],
+					"talkId": 2001103
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2001101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001102",
+							"2"
+						],
+						"stepId": 2001102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Anthony"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200110101,
+					"content": "Help! Heeeeelp!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Anthony"
+				}
+			]
+		},
+		{
+			"id": 2001102,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001102",
+							"3"
+						],
+						"stepId": 2001102,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001103",
+							"2"
+						],
+						"stepId": 2001103,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Anthony"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200110201,
+					"content": "Whew. Thanks, Traveler...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110202
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110202,
+					"content": "But there's this roadblock here. I can't get through.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110203
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110203,
+					"content": "Haha... I would be able to sort this myself if the hilichurls hadn't just beaten the living daylights out of me. I'm aching all over!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110204
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110204,
+					"content": "But at least these medicinal herbs I gathered for Anna are still in good condition.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110205
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110205,
+					"content": "I'm sorry... I know this is asking a lot after what you've done for me already, but could you get rid of the roadblock for me?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110206,
+						200110207
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110206,
+					"content": "Sure.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200110208
+					]
+				},
+				{
+					"id": 200110208,
+					"content": "Thank you! I'm going to take a much-needed rest in the meantime...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110207,
+					"content": "I'm on a tight schedule, sorry.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200110209
+					]
+				},
+				{
+					"id": 200110209,
+					"content": "But Anna is waiting for me at home... Please, I really need your help.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Anthony"
+				}
+			]
+		},
+		{
+			"id": 2001103,
+			"completionStepIds": [
+				2001104
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001104",
+							"2"
+						],
+						"stepId": 2001104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Anthony"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200110301,
+					"content": "Now the way ahead is clear. Thanks, Traveler.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110302
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110302,
+					"content": "Anna's illness never fully goes away. But since we don't have much money, I often come here and gather what medicinal herbs I can.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110303
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110303,
+					"content": "I managed to get the herbs I was looking for, but then that bunch started attacking me out of nowhere. You got here just in time to save me.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110304
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110304,
+					"content": "This is for you. I make tea for Anna with it all the time, it helps with her coughing.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110305
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110305,
+					"content": "You seem like the outdoors type too. Make sure you look after yourself.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Anthony"
+				}
+			]
+		}
+	]
+}

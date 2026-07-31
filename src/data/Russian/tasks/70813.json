@@ -1,0 +1,188 @@
+{
+	"id": 70813,
+	"type": "WQ",
+	"name": "Держи вора!",
+	"description": "Буря миновала, и Сайрус, глава Гильдии искателей приключений, планирует наконец разобраться с Похитителями сокровищ.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		20603
+	],
+	"steps": [
+		{
+			"id": 7081301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Сайрусом",
+			"finishConditions": []
+		},
+		{
+			"id": 7081302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Зачистите лагерь Похитителей сокровищ у винокурни «Рассвет»",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7081303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Зачистите лагерь Похитителей сокровищ",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7081304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Сайрусом",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7081305,
+						0
+					],
+					"talkId": 7081305
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7081304,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081302",
+							"2"
+						],
+						"stepId": 7081302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081303",
+							"2"
+						],
+						"stepId": 7081303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Сайрус"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708130401,
+					"content": "Ох уж эти Похитители сокровищ... Вредные и назойливые, как крысы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Сайрус"
+				}
+			]
+		},
+		{
+			"id": 7081305,
+			"completionStepIds": [
+				7081304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081304",
+							"2"
+						],
+						"stepId": 7081304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Сайрус"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708130501,
+					"content": "С возвращением! Тебе удалось зачистить лагеря Похитителей сокровищ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708130502
+					],
+					"speakerTitle": "Сайрус"
+				},
+				{
+					"id": 708130502,
+					"content": "С ними всеми покончено.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708130503
+					]
+				},
+				{
+					"id": 708130503,
+					"content": "Как я и говорил, для тебя это просто детская забава, почётный рыцарь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708130504
+					],
+					"speakerTitle": "Сайрус"
+				},
+				{
+					"id": 708130504,
+					"content": "В упорстве этим Похитителям сокровищ точно не откажешь... Пока все прятались от бури, они посмели войти в город и начать красть.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708130505
+					],
+					"speakerTitle": "Сайрус"
+				},
+				{
+					"id": 708130505,
+					"content": "Их бы энергию, да в правильное русло...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Сайрус"
+				}
+			]
+		}
+	]
+}

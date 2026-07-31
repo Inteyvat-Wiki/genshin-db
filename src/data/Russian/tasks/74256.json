@@ -1,0 +1,181 @@
+{
+	"id": 74256,
+	"type": "WQ",
+	"name": "Повторное приглашение на чай: Фурина",
+	"description": "Отправляйтесь к оперному театру «Эпиклез», поставьте чайный столик и, усадив Сандроне, устройте чаепитие в компании Фурины...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		74249
+	],
+	"steps": [
+		{
+			"id": 7425601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отправляйтесь к фонтану возле оперного театра «Эпиклез», чтобы начать чаепитие",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7425601,
+						0
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					3460.074,
+					459,
+					3674.878
+				],
+				"pointId": 17345
+			}
+		},
+		{
+			"id": 7425602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отправляйтесь к фонтану возле оперного театра «Эпиклез», чтобы начать чаепитие",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7425602,
+						0
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					3460.074,
+					459,
+					3674.878
+				],
+				"pointId": 17345
+			}
+		},
+		{
+			"id": 7425603,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Наслаждайтесь чаепитием",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LEAVE_SCENE_RANGE",
+					"rawParams": [
+						3,
+						50
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7425601,
+						0
+					],
+					"talkId": 7425601
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						1,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7425601,
+			"completionStepIds": [
+				7425603
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7425603",
+							"2"
+						],
+						"stepId": 7425603,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Фурина"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							3476.404,
+							458.999,
+							3682.143
+						],
+						"pointId": 17346
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							3475.383,
+							459.015,
+							3678.759
+						],
+						"pointId": 17347
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 742490201,
+					"content": "Ах! Сколько ни наслаждайся неспешным послеобеденным чаепитием, оно никогда не надоест.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						742490202,
+						742490203
+					],
+					"speakerTitle": "Фурина"
+				},
+				{
+					"id": 742490202,
+					"content": "(Посидим ещё немного.)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						742490204
+					],
+					"speakerTitle": "Марионетка"
+				},
+				{
+					"id": 742490204,
+					"content": "Эх... Время радости так быстротечно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Фурина"
+				},
+				{
+					"id": 742490203,
+					"content": "Думаю, чаепитие пора заканчивать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						742490204
+					],
+					"speakerTitle": "Марионетка"
+				}
+			]
+		}
+	]
+}

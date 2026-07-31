@@ -1,0 +1,581 @@
+{
+	"id": 71803,
+	"type": "WQ",
+	"name": "Множество дел Гильдии искателей приключений",
+	"description": "Мисс Лань переживает из-за поручений Гильдии искателей приключений...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		1025
+	],
+	"steps": [
+		{
+			"id": 7180301,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		},
+		{
+			"id": 7180302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Одолейте лавачурла с каменным панцирем",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180303,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с милым котёнком",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180303,
+						0
+					],
+					"talkId": 7180303
+				}
+			]
+		},
+		{
+			"id": 7180305,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте Дымка мисс Лань",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180304,
+						0
+					],
+					"talkId": 7180304
+				}
+			]
+		},
+		{
+			"id": 7180306,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180305,
+						0
+					],
+					"talkId": 7180305
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7180302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180301",
+							"3"
+						],
+						"stepId": 7180301,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мисс Лань"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718030201,
+					"content": "<color=#00E1FFFF>Дымок</color>... Описание, конечно, очень подробное, но найти кота в чистом поле будет непросто...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Мисс Лань"
+				}
+			]
+		},
+		{
+			"id": 7180303,
+			"completionStepIds": [
+				7180304
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180304",
+							"2"
+						],
+						"stepId": 7180304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Дымок"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718030301,
+					"content": "Мяу...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030302
+					],
+					"speakerTitle": "Дымок"
+				},
+				{
+					"id": 718030302,
+					"content": "Э? Откуда здесь котик? Неужели это он мяукал?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030303
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718030303,
+					"content": "Мяу... мяу...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030304,
+						718030308
+					],
+					"speakerTitle": "Дымок"
+				},
+				{
+					"id": 718030304,
+					"content": "Серый котик...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030305
+					]
+				},
+				{
+					"id": 718030305,
+					"content": "Серенький котик... Потерялся за городом...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030306
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718030306,
+					"content": "А! Мисс Лань упоминала поручение о поиске серого кота. Может быть, это он? Кажется, его звали Дымок или что-то такое...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030307
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718030307,
+					"content": "Кто бы мог подумать, что он здесь... Неужели он всё время тут прятался?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030311
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718030311,
+					"content": "Из-за лавачурла никто здесь не искал... А он тоже испугался и просто спрятался.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030312
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718030312,
+					"content": "Хорошо, что мы пришли, а то бы он тут долго ждал.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030313
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718030313,
+					"content": "Мяу... мяу-мяу!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030314,
+						718030317
+					],
+					"speakerTitle": "Дымок"
+				},
+				{
+					"id": 718030314,
+					"content": "Мяу... мяу...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030315
+					]
+				},
+				{
+					"id": 718030315,
+					"content": "Эй, ты чего? Так тебя он тоже не понимает...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030316
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718030316,
+					"content": "Давай отнесём его к мисс Лань, а она передаст его хозяевам.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030319
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718030319,
+					"content": "Мяу... Мяу! Мяу!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030320,
+						718030322
+					],
+					"speakerTitle": "Дымок"
+				},
+				{
+					"id": 718030320,
+					"content": "Мяу... Мяу! Мяу!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030321
+					]
+				},
+				{
+					"id": 718030321,
+					"content": "Сколько ты за ним не повторяй, он всё равно тебя не поймёт! Давай отнесём его побыстрее.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718030322,
+					"content": "Кажется, он согласен.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030323
+					]
+				},
+				{
+					"id": 718030323,
+					"content": "А откуда ты... Ладно. Давай просто отнесём его поскорее.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718030317,
+					"content": "Давай отнесём к Лань...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030318
+					]
+				},
+				{
+					"id": 718030318,
+					"content": "Ага, ничего другого не остаётся. Отнесём ей, а она передаст хозяевам.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030319
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718030308,
+					"content": "Неужели это Дымок...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030309
+					]
+				},
+				{
+					"id": 718030309,
+					"content": "Серенький котик... Потерялся за городом...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030310
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718030310,
+					"content": "А! Мисс Лань упоминала это поручение! А он тут, оказывается... Неужели всё это время тут рядом прятался?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030311
+					],
+					"speakerTitle": "Паймон"
+				}
+			]
+		},
+		{
+			"id": 7180304,
+			"completionStepIds": [
+				7180305
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180305",
+							"2"
+						],
+						"stepId": 7180305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мисс Лань"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718030401,
+					"content": "#Ты одолел{F#а} лавачурла с каменным панцирем?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030402,
+						718030404
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 718030402,
+					"content": "Конечно.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030403
+					]
+				},
+				{
+					"id": 718030403,
+					"content": "Спасибо. Выполнение такого задания покажет всем, на что способна Гильдия...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 718030404,
+					"content": "Конечно. А ещё мы нашли Дымка...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030405
+					]
+				},
+				{
+					"id": 718030405,
+					"content": "Спасибо... Что?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Мисс Лань"
+				}
+			]
+		},
+		{
+			"id": 7180305,
+			"completionStepIds": [
+				7180306
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_QUEST_VAR_EQUAL",
+						"rawParams": [
+							"1",
+							"1",
+							"71803"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мисс Лань"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718030501,
+					"content": "Мяу, мяу... Мяу?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030502
+					],
+					"speakerTitle": "Дымок"
+				},
+				{
+					"id": 718030502,
+					"content": "Эта кошка...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030503
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 718030503,
+					"content": "Возможно, Дымок.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030504
+					]
+				},
+				{
+					"id": 718030504,
+					"content": "Подожди, сейчас я достану поручение и мы сравним описание.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030505
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 718030505,
+					"content": "Сейчас посмотрим...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030506
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 718030506,
+					"content": "Почти всё совпадает... Похоже, что это действительно кот из поручения.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030508
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 718030508,
+					"content": "Вот хозяева обрадуются.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030509
+					]
+				},
+				{
+					"id": 718030509,
+					"content": "Хах... И вот, сделав круг, мы опять вернулись к поиску пропавших котов.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030510
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 718030510,
+					"content": "Вот уж не знаешь, что сказать...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030511
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 718030511,
+					"content": "Я сообщу заказчикам о выполнении их поручений. Спасибо. Вот твоя награда.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030512
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 718030512,
+					"content": "Похоже, что хозяева кота переехали. Понадобится время, чтобы с ними связаться.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030513
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 718030513,
+					"content": "Я позабочусь о нём, пока хозяева не придут.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030514
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 718030514,
+					"content": "Мяу-мяу, мяу!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Дымок"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,176 @@
+{
+	"id": 70706,
+	"type": "WQ",
+	"name": "Заветное желание Тимми",
+	"description": "Тимми из Мондштадта нужны десять порций пшеницы.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте Тимми 10 порций пшеницы",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Тимми",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070602,
+						0
+					],
+					"talkId": 7070602
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070601,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070601",
+							"2"
+						],
+						"stepId": 7070601,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070601"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Тимми"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707060101,
+					"content": "Насчёт пшеницы...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707060102
+					]
+				},
+				{
+					"id": 707060102,
+					"content": "Ты по поводу поручения?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707060103
+					],
+					"speakerTitle": "Тимми"
+				},
+				{
+					"id": 707060103,
+					"content": "#Ты {M#принёс}{F#принесла} десять пучков пшеницы?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707060104,
+						707060105
+					],
+					"speakerTitle": "Тимми"
+				},
+				{
+					"id": 707060104,
+					"content": "Да, вот они.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707060105,
+					"content": "Пока ещё нет.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707060106
+					]
+				},
+				{
+					"id": 707060106,
+					"content": "Ну как соберёшь - приходи.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Тимми"
+				}
+			]
+		},
+		{
+			"id": 7070602,
+			"completionStepIds": [
+				7070602
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070602",
+							"2"
+						],
+						"stepId": 7070602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Тимми"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707060201,
+					"content": "Этого хватит. Спасибо за помощь. Возьми вот.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707060202
+					],
+					"speakerTitle": "Тимми"
+				},
+				{
+					"id": 707060202,
+					"content": "Целых десять пучков... Можно сделать что-то вкусное.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Тимми"
+				}
+			]
+		}
+	]
+}

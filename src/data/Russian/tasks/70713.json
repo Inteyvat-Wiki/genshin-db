@@ -1,0 +1,185 @@
+{
+	"id": 70713,
+	"type": "WQ",
+	"name": "Мясоеды и Брук",
+	"description": "Брук из Спрингвейла нужны шесть кусков сырого мяса.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7071301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте Брук шесть кусков сырого мяса",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7071301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7071302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Брук",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7071302,
+						0
+					],
+					"talkId": 7071302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7071301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071301",
+							"2"
+						],
+						"stepId": 7071301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7071301"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Брук"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707130101,
+					"content": "Насчёт сырого мяса...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707130102
+					]
+				},
+				{
+					"id": 707130102,
+					"content": "#А, ты увидел{F#а} моё поручение.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707130103
+					],
+					"speakerTitle": "Брук"
+				},
+				{
+					"id": 707130103,
+					"content": "#Уже, наверное, и шесть кусков сырого мяса {M#принёс}{F#принесла}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707130104,
+						707130105
+					],
+					"speakerTitle": "Брук"
+				},
+				{
+					"id": 707130104,
+					"content": "Конечно.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707130105,
+					"content": "Пока ещё нет.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707130106
+					]
+				},
+				{
+					"id": 707130106,
+					"content": "Ну ты неси скорее, пожалуйста, я работаю над новыми рецептами.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Брук"
+				}
+			]
+		},
+		{
+			"id": 7071302,
+			"completionStepIds": [
+				7071302
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071302",
+							"2"
+						],
+						"stepId": 7071302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Брук"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707130201,
+					"content": "О! Мясо-то отличное!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707130202
+					],
+					"speakerTitle": "Брук"
+				},
+				{
+					"id": 707130202,
+					"content": "Спасибо. За помощь полагается награда.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707130203
+					],
+					"speakerTitle": "Брук"
+				},
+				{
+					"id": 707130203,
+					"content": "Когда придумаю новое блюдо, то обязательно тебя позову.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Брук"
+				}
+			]
+		}
+	]
+}

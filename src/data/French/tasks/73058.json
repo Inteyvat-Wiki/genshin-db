@@ -1,0 +1,484 @@
+{
+	"id": 73058,
+	"type": "WQ",
+	"name": "Les symboles d'Aragaru",
+	"description": "Vous avez aidé Aragaru à battre les Érémites dans la Grotte de Chatrakam, mais le but de ces derniers semble lié à une amitié qu'Aragaru a oubliée...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		73032
+	],
+	"steps": [
+		{
+			"id": 7305801,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7305802,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Aragaru.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7305801,
+						0
+					],
+					"talkId": 7305801
+				}
+			]
+		},
+		{
+			"id": 7305803,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Examinez les camps des Érémites.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7305805,
+						0
+					],
+					"talkId": 7305805
+				}
+			]
+		},
+		{
+			"id": 7305804,
+			"order": 10,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Aragaru.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7305802,
+						0
+					],
+					"talkId": 7305802
+				}
+			]
+		},
+		{
+			"id": 7305805,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Examinez les camps des Érémites.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133315008,
+						8015
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7305803,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7305806,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Examinez les camps des Érémites.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133315008,
+						8026
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7305803,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7305807,
+			"order": 30,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		},
+		{
+			"id": 7305808,
+			"order": 9,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7305804,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7305809,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7305801,
+			"completionStepIds": [
+				7305802
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7305802",
+							"2"
+						],
+						"stepId": 7305802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Aragaru",
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 730580101,
+					"content": "#{M#Nara doré}{F#Nara dorée}, Blanche-volante, je suis content de vous revoir !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580102
+					],
+					"speakerTitle": "Aragaru"
+				},
+				{
+					"id": 730580102,
+					"content": "Oups, dis bonjour la prochaine fois que tu apparais à l'improviste ! J'ai été surprise encore une fois !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580103,
+						730580104
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 730580103,
+					"content": "#On n'est pas des {M#méchants}{F#méchantes}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730580105
+					]
+				},
+				{
+					"id": 730580105,
+					"content": "#Hmph... Vous avez raison... Dans ce cas, {M#nara doré}{F#nara dorée} et Blanche-volante qui ne ressemblent pas à des {M#méchants}{F#méchantes}, pourriez-vous m'aider à nouveau ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580106
+					],
+					"speakerTitle": "Aragaru"
+				},
+				{
+					"id": 730580106,
+					"content": "#Avec plaisir, appelle-moi {NICKNAME}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730580107
+					]
+				},
+				{
+					"id": 730580107,
+					"content": "Je suis Paimon, n'oublie pas mon nom cette fois-ci !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580108
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 730580108,
+					"content": "Cette fois-ci ? Euh... *tousse* Je suis Aragaru !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580109
+					],
+					"speakerTitle": "Aragaru"
+				},
+				{
+					"id": 730580109,
+					"content": "#Nous étions ici avec toi, mais tu l'as oublié... Bref, c'est compliqué ! {NICKNAME}, on lui raconte ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580110
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 730580110,
+					"content": "Vous racontez à Aragaru votre aventure en détail.",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": [
+						730580111
+					]
+				},
+				{
+					"id": 730580111,
+					"content": "Vraiment ? ... Je ne me souviens pas, mais pour une raison que j'ignore, j'ai l'impression que je peux vous faire confiance... En plus, vous avez la fleur que j'ai donnée, je peux sentir sa présence.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580112
+					],
+					"speakerTitle": "Aragaru"
+				},
+				{
+					"id": 730580112,
+					"content": "Ah ! Les méchants naras ont installé des camps. Voyons ce qu'ils y ont laissé ! Peut-être qu'on pourra découvrir ce qu'ils mijotent !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Aragaru"
+				},
+				{
+					"id": 730580104,
+					"content": "Nous avons chassé les méchants pour toi.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730580105
+					]
+				}
+			]
+		},
+		{
+			"id": 7305802,
+			"completionStepIds": [
+				7305804
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7305804",
+							"2"
+						],
+						"stepId": 7305804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Aragaru",
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 730580201,
+					"content": "Vous avez découvert quelque chose ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580202
+					],
+					"speakerTitle": "Aragaru"
+				},
+				{
+					"id": 730580202,
+					"content": "Hum... On a juste trouvé des ordres vagues et une fleur séchée !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580203
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 730580203,
+					"content": "Oh ! Je peux l'avoir ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580204
+					],
+					"speakerTitle": "Aragaru"
+				},
+				{
+					"id": 730580204,
+					"content": "Ça vient de chez les méchants. Tu n'as pas peur de te faire empoisonner ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580205
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 730580205,
+					"content": "Ne vous inquiétez pas, j'ai vu cette fleur... et je pense connaître cette personne... Pourriez-vous me la donner ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580206
+					],
+					"speakerTitle": "Aragaru"
+				},
+				{
+					"id": 730580206,
+					"content": "La voilà.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730580207
+					]
+				},
+				{
+					"id": 730580207,
+					"content": "#Merci, nara {NICKNAME} et Blanche-volante !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580208
+					],
+					"speakerTitle": "Aragaru"
+				},
+				{
+					"id": 730580208,
+					"content": "Aragaru emporte la fleur séchée à la Forêt de Mawtiyima...",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7305804,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7305803",
+							"2"
+						],
+						"stepId": 7305803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Aragaru"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 730580401,
+					"content": "Allons vois les camps des méchants naras ! On va sûrement découvrir ce qu'ils font ici !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580402
+					],
+					"speakerTitle": "Aragaru"
+				},
+				{
+					"id": 730580402,
+					"content": "Comment peux-tu savoir si quelqu'un est méchant ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730580403
+					]
+				},
+				{
+					"id": 730580403,
+					"content": "#Eh bien, je ne peux pas vraiment l'expliquer, mais nara {NICKNAME} et Blanche-volante ne sont pas des {M#méchants}{F#méchantes}, c'est sûr ! Aragaru a confiance en {M#eux}{F#elles} !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Aragaru"
+				}
+			]
+		},
+		{
+			"id": 7305805,
+			"completionStepIds": [
+				7305803
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7305803",
+							"2"
+						],
+						"stepId": 7305803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7305803",
+							"3"
+						],
+						"stepId": 7305803,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": []
+		}
+	]
+}

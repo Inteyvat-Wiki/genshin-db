@@ -1,0 +1,370 @@
+{
+	"id": 19031,
+	"type": "LQ",
+	"name": "Đột Nhiên Khó Chịu",
+	"description": "Bạn và Chongyun đã thuận lợi vào trong hội trường Đại Hội Thi Gan, nhưng chỉ tìm thấy một nửa tung tích của yêu tà, Chongyun đột nhiên cảm thấy dương khí trong người đang sôi sục, không thể không ngừng lại nghỉ ngơi. Để giúp cho thể chất của Chongyun không bị mất khống chế, bạn vội vàng đi tìm thứ có thể áp chế dương khí...",
+	"unlockDescription": "",
+	"chapter": "Nhật Ký Tìm Kiếm Yêu Tà",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		19032,
+		19035
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1903101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						103601,
+						1903109
+					]
+				}
+			]
+		},
+		{
+			"id": 1903102,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Tìm mật của Hoa Lừa Dối Băng Giá",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_CLEAR_GROUP_MONSTER",
+					"rawParams": [
+						133102915,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1903103,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Tìm dịch của Slime Băng",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_CLEAR_GROUP_MONSTER",
+					"rawParams": [
+						133102916,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1903104,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Trò chuyện với nhân viên công tác",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1903102,
+						0
+					],
+					"talkId": 1903102
+				}
+			]
+		},
+		{
+			"id": 1903105,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						103601,
+						1903110
+					]
+				}
+			]
+		},
+		{
+			"id": 1903106,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Trò chuyện với nhân viên công tác",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1903102,
+						0
+					],
+					"talkId": 1903102
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1903101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1903105",
+							"3"
+						],
+						"stepId": 1903105,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Chongyun"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 190310101,
+					"content": "Xin lỗi, lại gây thêm phiền phức cho bạn nữa rồi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190310102
+					],
+					"speakerTitle": "Chongyun"
+				},
+				{
+					"id": 190310102,
+					"content": "Khi thu thập nguyên liệu, hãy cẩn thận.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Chongyun"
+				}
+			]
+		},
+		{
+			"id": 1903102,
+			"completionStepIds": [
+				1903104,
+				1903106
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1903104",
+							"2"
+						],
+						"stepId": 1903104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1903106",
+							"2"
+						],
+						"stepId": 1903106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Fu San'er"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 1903102101,
+					"content": "Đi ở đây một mình nguy hiểm lắm!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102102
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102102,
+					"content": "Vì bạn không biết được sẽ gặp phải người gì, hoặc là, có phải người hay không?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102103,
+						1903102104
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102103,
+					"content": "...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102105
+					]
+				},
+				{
+					"id": 1903102105,
+					"content": "Hừ hừ, không ngờ bạn khá bình tĩnh đó. Tục ngữ có câu, đi lại bên hồ thì làm gì không ướt giày.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102106
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102106,
+					"content": "Đi lại ở nơi âm u quỷ dị này không chừng sẽ nhìn thấy những thứ không nên thấy đấy.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102107
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102107,
+					"content": "Chỉ cần nhìn thấy, nó sẽ biến thành ác mộng, đeo bám theo bạn suốt đời suốt kiếp!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102108,
+						1903102109
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102108,
+					"content": "Hả, vậy sao?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102110
+					]
+				},
+				{
+					"id": 1903102110,
+					"content": "Không đúng, sao bạn bình tĩnh thế, người bình thường nghe tôi nói được một nửa là bị dọa cho chạy mất dép rồi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102111,
+						1903102114
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102111,
+					"content": "Vì trông bạn chỉ là một người thường thôi.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102112
+					]
+				},
+				{
+					"id": 1903102112,
+					"content": "Tuy nói vậy, nhưng thủ thuật hóa trang thành ma quỷ điêu luyện, chính là lợi dụng tâm lý sợ hãi của đối phương để tạo ra bầu không khí khủng khiếp.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102113
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102113,
+					"content": "Còn về tôi là người thế nào, thì không quan trọng.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102117
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102117,
+					"content": "Cho nên với những người không tin vào ma quỷ như bạn, thì tôi có dùng cách gì để hù dọa cũng vô ích thôi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102118
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102118,
+					"content": "Tôi thấy bạn chỉ đang tìm lý do để lười biếng.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102119
+					]
+				},
+				{
+					"id": 1903102119,
+					"content": "Đừng nói vậy mà, được rồi, tôi phải đi tìm những kẻ nhát gan khác.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102120
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102120,
+					"content": "Bạn cũng nhanh trở về tìm bạn đồng hành của mình đi, coi chừng đã bị dọa chết khiếp rồi đó.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102114,
+					"content": "Các bạn không có đồ hóa trang sao?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102115
+					]
+				},
+				{
+					"id": 1903102115,
+					"content": "Có thì có, nhưng mặc vào nóng quá...thủ thuật hóa trang thành ma quỷ điêu luyện, chính là lợi dụng tâm lý sợ hãi của đối phương để tạo ra bầu không khí khủng khiếp.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102116
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102116,
+					"content": "Còn về tôi là người thế nào, thì không quan trọng.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102117
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102109,
+					"content": "Không hiểu lắm, cho hỏi bạn có việc gì không?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102110
+					]
+				},
+				{
+					"id": 1903102104,
+					"content": "Xin chào.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102105
+					]
+				}
+			]
+		}
+	]
+}

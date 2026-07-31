@@ -1,0 +1,583 @@
+{
+	"id": 20026,
+	"type": "IQ",
+	"name": "Entrega de comida",
+	"description": "El Buen Cazador tiene un servicio de entrega para satisfacer las solicitudes de sus clientes, pero debido a su popularidad, el servicio no cuenta con suficiente personal. Sara está buscando a alguien que le eche una mano.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2002601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dirígete a El Buen Cazador y habla con Sara",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Sara",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002601,
+						0
+					],
+					"talkId": 2002601
+				}
+			]
+		},
+		{
+			"id": 2002603,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Encuentra dos huevos",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100062,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002604,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Recoge el plato terminado",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002602,
+						0
+					],
+					"talkId": 2002602
+				}
+			]
+		},
+		{
+			"id": 2002605,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Lleva la entrega a Ernest",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002603,
+						0
+					],
+					"talkId": 2002603
+				}
+			]
+		},
+		{
+			"id": 2002606,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Chiaoxi",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002603,
+						0
+					],
+					"talkId": 2002603
+				}
+			]
+		},
+		{
+			"id": 2002607,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Encuentra a Ernest",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002603,
+						0
+					],
+					"talkId": 2002603
+				}
+			]
+		},
+		{
+			"id": 2002608,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dale el dinero a Sara",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002604,
+						0
+					],
+					"talkId": 2002604
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2002601,
+			"completionStepIds": [
+				2002602
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002601",
+							"3"
+						],
+						"stepId": 2002601,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002602",
+							"2"
+						],
+						"stepId": 2002602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200260101,
+					"content": "¿Alguien pidió comida?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260102
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260102,
+					"content": "#¡Hola, viajer{F#a}{M#o}! Llegas en buen momen...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260103
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260103,
+					"content": "Oh, ¿dices que estás aquí para comer?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260104
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260104,
+					"content": "Entiendo, de verdad que sí... Pero te prometo que te prepararé la mejor comida que hayas probado si me echas una mano primero.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260105
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260105,
+					"content": "Ernest, del Viñedo del Amanecer, a menudo pide comida de aquí para acompañar su vino, y sus pedidos siempre vienen con solicitudes especiales.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260106
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260106,
+					"content": "Esta vez quiere <color=#00E1FFFF>albóndigas de rábano fritas</color> pero con huevo extra. ¡Desafortunadamente, se nos acabaron los huevos!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260107
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260107,
+					"content": "Así que, si pudieras ir por unos cuantos huevos de pájaro, sería genial.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260108,
+						200260111
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260108,
+					"content": "Si tanto insistes...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200260109
+					]
+				},
+				{
+					"id": 200260109,
+					"content": "Debe haber muchos alrededor de Levantaviento.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260110
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260110,
+					"content": "¡Lo aprecio mucho!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260111,
+					"content": "Solo vine a comer. ¡Muero de hambre!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200260112
+					]
+				},
+				{
+					"id": 200260112,
+					"content": "Debe haber muchos alrededor de Levantaviento.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260113
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260113,
+					"content": "Una vez que hayas hecho lo que te pedí, ¡te invitaré algo del menú especial de El Buen Cazador! Es lo menos que puedo hacer.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		},
+		{
+			"id": 2002602,
+			"completionStepIds": [
+				2002604
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002603",
+							"3"
+						],
+						"stepId": 2002603,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002604",
+							"2"
+						],
+						"stepId": 2002604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200260201,
+					"content": "Traje los ingredientes.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200260202
+					]
+				},
+				{
+					"id": 200260202,
+					"content": "Con eso es suficiente. Un segundo...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260203
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260203,
+					"content": "¡Esta listo! Ahora, ¡lleva estas <color=#00E1FFFF>albóndigas de rábano fritas</color> a Ernest, pronto!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260204
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260204,
+					"content": "... No me mires de esa manera, sé que estás muriendo de hambre.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260205
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260205,
+					"content": "¡Habrá una sorpresa especial de parte de El Buen Cazador esperándote cuando regreses!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		},
+		{
+			"id": 2002603,
+			"completionStepIds": [
+				2002605,
+				2002606,
+				2002607
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002604",
+							"3"
+						],
+						"stepId": 2002604,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002607",
+							"2"
+						],
+						"stepId": 2002607,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ernest"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200260301,
+					"content": "Su comida, señor.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200260302
+					]
+				},
+				{
+					"id": 200260302,
+					"content": "¡Ajá! Mis <color=#00E1FFFF>albóndigas de rábano fritas</color>... ¡y preparadas como lo pedí!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260303
+					],
+					"speakerTitle": "Ernest"
+				},
+				{
+					"id": 200260303,
+					"content": "Sí, el huevo hace maravillas con la textura y el aroma.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260304
+					],
+					"speakerTitle": "Ernest"
+				},
+				{
+					"id": 200260304,
+					"content": "¡Oh sí! Sé lo que hago cuando se trata de comida. *¡Ñam!*",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260305
+					],
+					"speakerTitle": "Ernest"
+				},
+				{
+					"id": 200260305,
+					"content": "Ah, y esto es para ti. ¡Muchas gracias!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ernest"
+				}
+			]
+		},
+		{
+			"id": 2002604,
+			"completionStepIds": [
+				2002608
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002607",
+							"3"
+						],
+						"stepId": 2002607,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002608",
+							"2"
+						],
+						"stepId": 2002608,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200260401,
+					"content": "Vengo a pagar la cuenta.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260402
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260402,
+					"content": "¡Estás de vuelta! ¿Hiciste la entrega?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260403
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260403,
+					"content": "Aquí está tu dinero.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200260404
+					]
+				},
+				{
+					"id": 200260404,
+					"content": "Veamos... ¡Excelente! Gracias.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260405
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260405,
+					"content": "Ten, es un <color=#00E1FFFF>asado mar y montaña</color> de parte de la casa. Está recién salido del horno, ¡así que cómelo mientras esté caliente!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		},
+		{
+			"id": 2002607,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002607",
+							"3"
+						],
+						"stepId": 2002607,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002608",
+							"2"
+						],
+						"stepId": 2002608,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ernest"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200260701,
+					"content": "Mmm... Sí, ese delicioso aroma a huevo es intenso, pero no es abrumador gracias a la frescura de la zanahoria. Me equivoqué de vocación, ¡debí haber sido chef!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ernest"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,191 @@
+{
+	"id": 21020,
+	"type": "WQ",
+	"name": "Share Not Your Treasures",
+	"description": "A worn letter found in a basement guarded by a Ruin Guard. It was written by a treasure hunter who believes that the Guili Plains is home to a bonfire that grants wishes.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2102000,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Quest start",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102000,
+						0
+					],
+					"talkId": 2102000
+				}
+			]
+		},
+		{
+			"id": 2102010,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Light the bonfire",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2102020,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Defeat the opponents",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2102021,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Read the text",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102020,
+						0
+					],
+					"talkId": 2102020
+				}
+			]
+		},
+		{
+			"id": 2102022,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Find the treasure's location",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2102000,
+			"completionStepIds": [
+				2102000
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102000",
+							"2"
+						],
+						"stepId": 2102000,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210200001,
+					"content": "\"...I guess this is where greed gets you. When you want it all and you don't know when to stop. If I'd just called it a day when I'd found the buried treasure and hadn't insisted on going to that stupid wishy-washy bonfire... I never would have triggered the mechanism and got myself trapped here by that awful monster. Now I can't get out.\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210200002
+					],
+					"speakerTitle": "Worn Letter"
+				},
+				{
+					"id": 210200002,
+					"content": "\"Anyone who's got what it takes to take him down, go and make a wish at that bonfire. Any old thing will do. I'll help by, uh... rooting for you. Heh.\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Worn Letter"
+				}
+			]
+		},
+		{
+			"id": 2102020,
+			"completionStepIds": [
+				2102021
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102021",
+							"2"
+						],
+						"stepId": 2102021,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102022",
+							"2"
+						],
+						"stepId": 2102022,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210202001,
+					"content": "\"...This whole thing about the bonfire granting wishes is utter nonsense! Though, the treasures buried underneath are genuine... Boss said I should leave the slip of paper where I found it and just wait nearby — people are bound to fall for it, and as soon as the fire lights up... Hehehe. A very lucrative stroke of genius this one...\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210202002
+					],
+					"speakerTitle": "Scribbled Notes"
+				},
+				{
+					"id": 210202002,
+					"content": "\"...That said, there's more treasure here than I can move all in one go. Boss says I should first bury it on the <color=#00E1FFFF>highest peak in Cuijue Slope</color>. There's a big old withered tree on top of the mountain, I'm sure she can't miss it...\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Scribbled Notes"
+				}
+			]
+		}
+	]
+}

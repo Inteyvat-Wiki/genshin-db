@@ -1,0 +1,190 @@
+{
+	"id": 21023,
+	"type": "WQ",
+	"name": "Passage encombré",
+	"description": "Les escaliers de l'Auberge Wangshu sont interdits de passage. Comment monter à l'étage, voilà un problème épineux.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2102301,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102301,
+						0
+					],
+					"talkId": 2102301
+				}
+			]
+		},
+		{
+			"id": 2102302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Montez dans l'ascenseur.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2102303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Huai'an.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102302,
+						0
+					],
+					"talkId": 2102302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2102302,
+			"completionStepIds": [
+				2102303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102303",
+							"2"
+						],
+						"stepId": 2102303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102301",
+							"3"
+						],
+						"stepId": 2102301,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Huai'an"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210230201,
+					"content": "Il faut vraiment réparer ces escaliers...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230202
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230202,
+					"content": "C'est vous le patron ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210230203
+					]
+				},
+				{
+					"id": 210230203,
+					"content": "C'est moi, je peux vous aider ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230204
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230204,
+					"content": "J'ai quelque chose à vous remettre ; quelqu'un en bas nous a demandé de vous l'apporter.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230205
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 210230205,
+					"content": "Ah, ça doit venir d'un client. Zhen Qiang n'a pas voulu monter ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230206
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230206,
+					"content": "Il doit encore réceptionner les marchandises ? Ah, il n'arrête pas de se plaindre qu'il passe son temps à monter et descendre... Quel fainéant celui-là.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230207
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230207,
+					"content": "#Vous êtes {M#un client}{F#une cliente}, veuillez accepter mes excuses... Cet escalier a vraiment choisi le pire moment pour se casser, croyez-moi. J'étais justement en train de réfléchir à comment le réparer.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230208
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230208,
+					"content": "Merci pour le coup de main. Tenez, ce n'est pas grand-chose.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230209
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230209,
+					"content": "J'avais préparé ça pour Zhen Qiang, mais puisque ce fainéant s'est désisté, c'est normal que ça vous revienne !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230210
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230210,
+					"content": "Bon, et maintenant, je vais aller trouver un moyen de réparer ces satanés escaliers. N'hésitez pas à visiter l'auberge et à venir me voir si vous avez des questions !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Huai'an"
+				}
+			]
+		}
+	]
+}

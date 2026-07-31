@@ -1,0 +1,1191 @@
+{
+	"id": 1014,
+	"type": "AQ",
+	"name": "Mise en vase",
+	"description": "Après avoir sélectionné les baumes voulus par le Souverain de la Roche, vous vous voyez confier une nouvelle mission par Zhongli. Vous devez vous rendre à la Terrasse Yujing à la recherche de son amie Madame Ping, qui devrait avoir en sa possession la cloche purificatrice dont vous avez besoin. Étonnamment, Zhongli ne semble guère enclin à revoir cette vieille amie...",
+	"unlockDescription": "",
+	"chapter": "Adieu à l'Exuvia",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		1013
+	],
+	"prevMainQuestList": [
+		1012
+	],
+	"steps": [
+		{
+			"id": 101401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Madame Ping.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						101401,
+						0
+					],
+					"talkId": 101401
+				}
+			]
+		},
+		{
+			"id": 101402,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Cherchez la cloche purificatrice.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_DUNGEON",
+					"rawParams": [
+						11,
+						175
+					]
+				}
+			]
+		},
+		{
+			"id": 101403,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Madame Ping.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						101403,
+						0
+					],
+					"talkId": 101403
+				}
+			]
+		},
+		{
+			"id": 101404,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Déposez la cloche purificatrice ainsi que les baumes.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						101404,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 101405,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_INTERACT_GADGET",
+					"rawParams": [
+						71700099,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 101406,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Approchez-vous de la théière.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						101406,
+						0
+					],
+					"talkId": 101406
+				}
+			]
+		},
+		{
+			"id": 101407,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						101404,
+						0
+					],
+					"talkId": 101404
+				}
+			]
+		},
+		{
+			"id": 101408,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 101401,
+			"completionStepIds": [
+				101401
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"101401",
+							"2"
+						],
+						"stepId": 101401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Madame Ping"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 10140101,
+					"content": "Le monde n'est que changement...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140102,
+						10140105
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140102,
+					"content": "Bonjour.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10140103
+					]
+				},
+				{
+					"id": 10140103,
+					"content": "#Bonjour {M#jeune homme}{F#jeune femme}, vous êtes {M#venu}{F#venue} apprécier les fleurs ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140104
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140104,
+					"content": "Quel dommage... Vous venez au mauvais moment : les lys vernis se sont déjà fanés...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140107
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140107,
+					"content": "Pourquoi donc se sont-ils fanés ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140108
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10140108,
+					"content": "Les gens de mon âge ont pour coutume de dire que les lys vernis sont capables de lire dans le cœur des hommes.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140109
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140109,
+					"content": "Si ce qu'ils entendent leur plaît, comme le rire ou les chansons, alors ils poussent à merveille.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140110
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140110,
+					"content": "Mais à l'inverse, s'ils ont entendu trop de choses déplaisantes, comme par exemple les calomnies ou les insultes, alors ils dépérissent à vue d'œil.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140111
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140111,
+					"content": "... Et ils ont ressenti l'atmosphère actuelle de Liyue...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140112
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10140112,
+					"content": "C'est exact. Les rumeurs sur la mort du Souverain de la Roche sont un événement d'importance. On en parle partout.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140113
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140113,
+					"content": "Certains disent qu'il s'agit d'une conspiration des Fatui, d'autres que « la chose dans l'océan » s'est réveillée... Et certains disent même que tout cela n'est qu'une invention des Sept Étoiles.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140114
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140114,
+					"content": "Ce port est une bombe à retardement. Une étincelle suffirait pour qu'il implose.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140115
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140115,
+					"content": "Enfin, trêve de bavardages. Je ne suis plus toute jeune, et je radote... Que cherchez-vous donc ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140116,
+						10140121
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140116,
+					"content": "Nous aimerions emprunter votre cloche purificatrice...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10140117
+					]
+				},
+				{
+					"id": 10140117,
+					"content": "Ah, cette vieille chose... Je m'en rappelle, oui... Ça doit être quelque part par ici, mais où ? Ma mémoire ne fonctionne plus aussi bien qu'avant...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140118
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140118,
+					"content": "Un vieil ami avait l'habitude de la porter avec lui quand j'étais jeune...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140119
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140119,
+					"content": "Il a vu que je passais mon temps à l'admirer, et a fini par me l'offrir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140120
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140120,
+					"content": "Mais il m'avait prévenue à l'époque que si jamais quelqu'un venait à vouloir l'emprunter, alors je devrais m'en défaire.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140127
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140127,
+					"content": "Après tant d'années, je ne sais pas combien de fois cette cloche a été empruntée.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140128
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140128,
+					"content": "Mais cela fait déjà un long moment que personne n'est venu la réclamer...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140129
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140129,
+					"content": "Ah, je suis une vieille chose, j'ai bien peur qu'il ne vous faille patienter un peu avant que je ne puisse remettre la main dessus.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140130,
+						10140133
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140130,
+					"content": "Nous pouvons chercher nous-même, vous savez.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10140131
+					]
+				},
+				{
+					"id": 10140131,
+					"content": "#Absolument. Tenez, laissez-nous vous raccompagner chez vous, puis nous reviendrons chercher {M#tous les deux}{F#toutes les deux}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140132
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10140132,
+					"content": "Et... Hum, on peut vous aider si vous avez des tâches à nous confier !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140135
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10140135,
+					"content": "Soyez sans crainte. Je suis sûre que la cloche est rangée pas loin, ne vous en faites pas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140136
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140136,
+					"content": "Hein ? Vous habitez près d'ici, grand-mère ? Mais c'est la Terrasse Yujing, ça doit coûter un bras !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140137
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10140137,
+					"content": "Haha, une vieille femme telle que moi est bien incapable de s'offrir un logement décent en ville. Vous voyez cette théière ? Tous mes biens se trouvent à l'intérieur.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140138
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140138,
+					"content": "... Comment vous faites ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140139,
+						10140140,
+						10140143
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10140139,
+					"content": "Vous voulez dire que la clé de votre maison est à l'intérieur ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10140146
+					]
+				},
+				{
+					"id": 10140146,
+					"content": "Haha... Ce que je voulais dire, mes enfants, c'est que la cloche se trouve à l'intérieur. Si vous la voulez, jetez-y un œil par vous-même.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140140,
+					"content": "La cloche est tout ce que vous possédez ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10140141
+					]
+				},
+				{
+					"id": 10140141,
+					"content": "Hé, un peu de manières !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140142
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10140142,
+					"content": "Et même si c'est le cas, c'est... c'est une cloche très précieuse ! N'est-ce pas ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140146
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10140143,
+					"content": "Paimon, va jeter un œil à l'intérieur de la théière.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10140144
+					]
+				},
+				{
+					"id": 10140144,
+					"content": "Je ne rentrerai jamais !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140145
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10140145,
+					"content": "#Et puis en quel honneur devrais-je rentrer dedans ? Tu ne peux pas soulever le couvercle et regarder toi-même, {M#gros fainéant}{F#grosse fainéante} !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140146
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10140133,
+					"content": "#Je suis {M#expert}{F#experte} en recherche d'objets perdus !",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10140134
+					]
+				},
+				{
+					"id": 10140134,
+					"content": "La belle affaire...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140135
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10140121,
+					"content": "Nous aimerions vous emprunter quelque chose...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10140122
+					]
+				},
+				{
+					"id": 10140122,
+					"content": "Quelque chose ? ... Oh, vous voulez dire la cloche purificatrice ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140123
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140123,
+					"content": "Je ne vois rien d'autre que vous autres jeunes pourriez vouloir emprunter.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140124
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140124,
+					"content": "Mais elle ne m'appartient pas ; elle appartient à un vieil ami qui avait l'habitude de la porter.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140125
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140125,
+					"content": "J'aimais les belles choses, quand j'étais plus jeune... J'ai passé mon temps à la lui demander.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140126
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140126,
+					"content": "Il n'a pas réussi à me faire lâcher prise, et a donc fini par céder et me l'offrir. Mais il m'avait prévenue à l'époque que si jamais quelqu'un venait à vouloir l'emprunter, je devrais m'en défaire.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140127
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140105,
+					"content": "Qu'est-ce qu'il y a ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10140106
+					]
+				},
+				{
+					"id": 10140106,
+					"content": "Oh ce n'est rien, pardonnez-moi. C'est juste que voir les lys fanés m'attriste.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140107
+					],
+					"speakerTitle": "Madame Ping"
+				}
+			]
+		},
+		{
+			"id": 101402,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"101406",
+							"2"
+						],
+						"stepId": 101406,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Madame Ping"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 10140201,
+					"content": "#Mes enfants, n'êtes-vous donc pas {M#pressés}{F#pressées} de trouver la cloche ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140202
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140202,
+					"content": "Mais faites attention ; cela fait un moment que je n'ai pas fait le ménage...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140203
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140203,
+					"content": "Vous portez de si jolis vêtements ; prenez garde à ne pas les salir !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Madame Ping"
+				}
+			]
+		},
+		{
+			"id": 101403,
+			"completionStepIds": [
+				101403
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"101403",
+							"2"
+						],
+						"stepId": 101403,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Madame Ping"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 10140301,
+					"content": "Vous l'avez trouvé si vite... Vous êtes plutôt rapides.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140302,
+						10140305,
+						10140308
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140302,
+					"content": "Vous êtes une Adepte ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10140303
+					]
+				},
+				{
+					"id": 10140303,
+					"content": "Cela fait fort longtemps que je n'ai pas entendu ce mot.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140304
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140304,
+					"content": "Je pense que vous connaissez déjà la réponse à cette question, n'est-ce pas ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140312
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140312,
+					"content": "Ah... J'ai l'impression d'avoir compris et de ne rien comprendre en même temps. Enfin... Vous allez nous laisser la cloche comme ça ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140313
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10140313,
+					"content": "Je veux dire... Vous ne trouvez pas ça bizarre vous, que l'on vienne chercher la cloche juste après l'affaire du Souverain de la Roche...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140314
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10140314,
+					"content": "Allons. Le Port de Liyue a une longue histoire derrière lui ; et a vu le départ de nombreux Adeptes à travers le temps.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140315
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140315,
+					"content": "Mais une chose est sûre : c'est que nous avons toujours procédé au rituel de l'ascension avant de faire quoi que ce soit d'autre.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140316
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140316,
+					"content": "Crier sur tous les toits vouloir retrouver le coupable, mais ignorer le rituel... Pour moi, c'est le monde à l'envers.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140317
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140317,
+					"content": "J'ai eu le temps de réfléchir, et il m'est avis que si vous venez aujourd'hui demander la cloche, c'est qu'enfin un de mes vieux amis s'est décidé à organiser la cérémonie.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140318
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140318,
+					"content": "Et dans ce cas, comment pourrais-je vous la refuser ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140319,
+						10140322
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140319,
+					"content": "Et si votre « vieil ami » ne vous la rend pas ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10140320
+					]
+				},
+				{
+					"id": 10140320,
+					"content": "Ne pas me la rendre ? Hahaha ! Ceux qui ne me rendent pas la cloche s'exposent à la visite d'une vieille femme !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140321
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140321,
+					"content": "Qui plus est, cela fait toujours plaisir de visiter les amis, boire un verre en discutant...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140326
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140326,
+					"content": "#Allez, maintenant que vous avez obtenu ce pour quoi vous étiez {M#venus}{F#venues}, ne perdez pas de temps et rentrez vite.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140327
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140327,
+					"content": "Ah, et rendez-moi un service : faites passer le message suivant à celui qui vous envoie :",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140328
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140328,
+					"content": "Qu'il vienne boire le thé à l'occasion. Je n'ai guère de possessions, mais j'ai toujours de quoi servir le thé.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140329
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140329,
+					"content": "Pas de problème, on s'en charge ! Et merci !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10140322,
+					"content": "Puis-je la garder ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10140323
+					]
+				},
+				{
+					"id": 10140323,
+					"content": "Hé ! Quel culot ! La cloche est à grand-mère ! On est censé rendre ce qu'on emprunte !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140324
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10140324,
+					"content": "#La garder ? Haha, vous êtes du genre {M#direct}{F#directe} ! Très bien, si vous la voulez tant, prenez-la.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140325
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140325,
+					"content": "Mais je dois vous prévenir : cette cloche a facilement le mal du pays, et qui sait si elle ne rentrera pas ici un jour.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140326
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140305,
+					"content": "Vous êtes une des Sept Étoiles de Liyue !",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10140306
+					]
+				},
+				{
+					"id": 10140306,
+					"content": "Les Sept Étoiles, vous dites ? Cela fait bien longtemps qu'elles ne laissent ni moi ni mes amis aider.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140307
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140307,
+					"content": "Mais cet organisme s'en sort bien sans nous ; quant à nous, nos vieux os apprécient de ne plus avoir à travailler.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140312
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140308,
+					"content": "Vous ne faites tout de même pas partie des Fatui ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10140309
+					]
+				},
+				{
+					"id": 10140309,
+					"content": "Hahaha ! Qu'est-ce qui vous fait croire cela ? Vous avez une imagination débordante, mon enfant !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140310
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140310,
+					"content": "Une vieille dame comme moi n'a guère l'énergie de s'occuper de ces étrangers.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140311
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10140311,
+					"content": "Mais qu'ils deviennent un problème, et je ferai ce que je dois faire.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140312
+					],
+					"speakerTitle": "Madame Ping"
+				}
+			]
+		},
+		{
+			"id": 101404,
+			"completionStepIds": [
+				101407
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"101404",
+							"2"
+						],
+						"stepId": 101404,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Zhongli"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 10140401,
+					"content": "Ainsi donc, voici la cloche purificatrice... Elle est très bien conservée.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140402
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 10140402,
+					"content": "Sortons aussi les baumes que nous avons préparés plus tôt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140403,
+						10140405
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 10140403,
+					"content": "Vous connaissez Madame Ping ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10140404
+					]
+				},
+				{
+					"id": 10140404,
+					"content": "Bien sûr. Comment aurais-je pu savoir que la cloche purificatrice lui appartenait autrement ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140407
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 10140407,
+					"content": "Vous ne nous dites pas tout... Il y a visiblement des sujets que vous ne voulez pas aborder, alors on n'insistera pas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140408
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10140408,
+					"content": "Ah oui ! La grand-mère nous a demandé de vous transmettre un message :",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140409
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10140409,
+					"content": "« Qu'il vienne boire le thé à l'occasion. Je n'ai guère de possessions, mais j'ai toujours de quoi servir le thé. »",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140410
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10140410,
+					"content": "Hahaha, voilà un ton qui ne te sied guère ! Mais le fait est que son nécessaire à thé est d'excellente qualité ; le thé qui en sort est on ne peut plus parfumé...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140411
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 10140411,
+					"content": "Quand l'occasion se présentera, j'y passerai avec du bon thé, cela va sans dire.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140412
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 10140412,
+					"content": "Bien ! C'est quoi la suite ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140413
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10140413,
+					"content": "La suite... Nous allons à présent aller chercher des <color=#00E1FFFF>cerfs-volants</color>.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140414
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 10140414,
+					"content": "Ohhh, des cerfs-volants ? On va vraiment aller faire voler des cerfs-volants ? C'est la pause, c'est ça ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140415
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10140415,
+					"content": "Haha, bien sûr que non. On dit que ce sont des jouets d'enfant, mais ils revêtent une tout autre signification dans les cérémonies de Liyue.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140416
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 10140416,
+					"content": "Je vous expliquerai plus tard. Pour l'instant, la prochaine tâche qui requiert notre attention est l'achat de ces cerfs-volants.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140417
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 10140417,
+					"content": "Oh, bien sûr... De plus en plus bizarre...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10140405,
+					"content": "Vous êtes un Adepte ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10140406
+					]
+				},
+				{
+					"id": 10140406,
+					"content": "Un Adepte...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140407
+					],
+					"speakerTitle": "Zhongli"
+				}
+			]
+		},
+		{
+			"id": 101406,
+			"completionStepIds": [
+				101406
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"101406",
+							"2"
+						],
+						"stepId": 101406,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 10140601,
+					"content": "",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10140602
+					],
+					"speakerTitle": "Toucher la théière"
+				},
+				{
+					"id": 10140602,
+					"content": "",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Toucher la théière"
+				}
+			]
+		},
+		{
+			"id": 101410,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"101404",
+							"2"
+						],
+						"stepId": 101404,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Madame Ping"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 10141001,
+					"content": "Ah, rien n'arrête ces vieux amis.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10141002
+					],
+					"speakerTitle": "Madame Ping"
+				},
+				{
+					"id": 10141002,
+					"content": "*soupir* J'espère juste qu'ils ne vont pas créer de problème...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Madame Ping"
+				}
+			]
+		}
+	]
+}

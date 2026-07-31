@@ -1,0 +1,167 @@
+{
+	"id": 74657,
+	"type": "WQ",
+	"name": "Yêu Cầu Về Muối Của Galathee",
+	"description": "Galathee cần 10 lọ muối.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7465701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đưa 10 lọ muối cho Galathee",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7465701,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7465702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Nói chuyện với Galathee",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7465702,
+						0
+					],
+					"talkId": 7465702
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7465701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465701",
+							"2"
+						],
+						"stepId": 7465701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7465701"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Galathee"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746570101,
+					"content": "Về muối...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746570102
+					]
+				},
+				{
+					"id": 746570102,
+					"content": "Xin chào, bạn đây đến để bàn bạc về chuyện cung cấp muối ăn đúng không?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746570103
+					],
+					"speakerTitle": "Galathee"
+				},
+				{
+					"id": 746570103,
+					"content": "Vậy chắc hẳn là bạn đã chuẩn bị rất nhiều muối rồi nhỉ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746570106,
+						746570104
+					],
+					"speakerTitle": "Galathee"
+				},
+				{
+					"id": 746570106,
+					"content": "Chuẩn bị xong rồi.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 746570104,
+					"content": "Vẫn chưa.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746570105
+					]
+				},
+				{
+					"id": 746570105,
+					"content": "Không đủ muối ăn là không được. Thuyền chúng tôi đi vận chuyển khắp nơi, mỗi lần đều phải chuẩn bị sẵn rất nhiều muối.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Galathee"
+				}
+			]
+		},
+		{
+			"id": 7465702,
+			"completionStepIds": [
+				7465702
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465702",
+							"2"
+						],
+						"stepId": 7465702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Galathee"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746570201,
+					"content": "Có lẽ số lượng này đủ cho chúng tôi dùng trong một chuyến đi ngắn rồi. Rất uy tín, sau này có nhu cầu về mảng này thì tôi sẽ ưu tiên liên lạc với bạn.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Galathee"
+				}
+			]
+		}
+	]
+}

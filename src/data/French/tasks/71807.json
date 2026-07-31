@@ -1,0 +1,172 @@
+{
+	"id": 71807,
+	"type": "WQ",
+	"name": "Le compagnon de Changchang",
+	"description": "Changchang, du Port de Liyue, cherche quelqu'un pour l'aider à nourrir son petit chiot...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		1025
+	],
+	"steps": [
+		{
+			"id": 7180701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Changchang.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Nourrissez le chiot avec un morceau de volaille.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180703,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Faites votre rapport à Changchang.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180703,
+						0
+					],
+					"talkId": 7180703
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7180702,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180702",
+							"2"
+						],
+						"stepId": 7180702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Changchang"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718070201,
+					"content": "J'espère que le chiot n'est pas mort de faim...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Changchang"
+				}
+			]
+		},
+		{
+			"id": 7180703,
+			"completionStepIds": [
+				7180703
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180703",
+							"2"
+						],
+						"stepId": 7180703,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Changchang"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718070301,
+					"content": "C'est bon ? Tu l'as nourri ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718070302
+					],
+					"speakerTitle": "Changchang"
+				},
+				{
+					"id": 718070302,
+					"content": "Il est sans doute rassasié.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718070303
+					]
+				},
+				{
+					"id": 718070303,
+					"content": "#T'es {M#génial}{F#géniale} ! Merci beaucoup !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718070304
+					],
+					"speakerTitle": "Changchang"
+				},
+				{
+					"id": 718070304,
+					"content": "Voilà un petit cadeau pour te remercier !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718070305
+					],
+					"speakerTitle": "Changchang"
+				},
+				{
+					"id": 718070305,
+					"content": "Papy devrait m'emmener voir le chiot bientôt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Changchang"
+				}
+			]
+		}
+	]
+}

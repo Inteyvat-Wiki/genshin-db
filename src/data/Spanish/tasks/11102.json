@@ -1,0 +1,913 @@
+{
+	"id": 11102,
+	"type": "LQ",
+	"name": "La purificación del mal",
+	"description": "El poder de exorcismo de Ladrón de Estrellas proviene del Sello del Permiso. Después de un imprevisto, se dirigen a donde huyeron los Hilichurls malvados...",
+	"unlockDescription": "",
+	"chapter": "El sueño de la mariposa",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		11103
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1110201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Usa la Visión Elemental para rastrear a los Hilichurls malvados",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1110201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1110202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Xiao",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1110202,
+						0
+					],
+					"talkId": 1110202
+				}
+			]
+		},
+		{
+			"id": 1110203,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dirígete a la Caverna del karma",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_DUNGEON",
+					"rawParams": [
+						1102,
+						173
+					]
+				}
+			]
+		},
+		{
+			"id": 1110204,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1110204,
+						0
+					],
+					"talkId": 1110204
+				}
+			]
+		},
+		{
+			"id": 1110205,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1110206,
+						0
+					],
+					"talkId": 1110206
+				}
+			]
+		},
+		{
+			"id": 1110206,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Derrota a los Hilichurls malvados reunidos en la caverna",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1110207,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1110202,
+			"completionStepIds": [
+				1110202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110202",
+							"2"
+						],
+						"stepId": 1110202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Xiao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111020201,
+					"content": "#Son ustedes... Aún l{F#as}{M#os} recuerdo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020202
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020202,
+					"content": "Estaba deshaciéndome de estos seres corrompidos por el mal. Parece que les he traído problemas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020203
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020203,
+					"content": "(Humm... Qué extraño, él nunca suele ser tan cortés. ¿Qué le pasa?...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020204
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020204,
+					"content": "Estabas aquí luchando contra demonios, ¿por qué dices que nos traes problemas?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020205
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020205,
+					"content": "Porque las mutaciones que sufrieron estos monstruos provienen de mí. O, para ser más exactos, del karma que he acumulado.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020206
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020206,
+					"content": "Mutaciones, karma... ¿Quiere decir que...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020207,
+						111020208
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020207,
+					"content": "Todo eso se menciona en «Yakshas: los guardianes Adeptus».",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020209
+					]
+				},
+				{
+					"id": 111020209,
+					"content": "¡Claro!... Recuerdo que a Xiao también lo llaman “el Guardián Yaksha”.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020210
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020210,
+					"content": "Entonces... quiere decir que...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020211
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020211,
+					"content": "Pobre Xiao...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020212
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020212,
+					"content": "¿...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020213,
+						111020214
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020213,
+					"content": "Leímos sobre tu pasado en un libro.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020215
+					]
+				},
+				{
+					"id": 111020215,
+					"content": "Ya veo, se refieren a ese libro de ficción escrito por eruditos hace unos cuantos siglos.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020216
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020216,
+					"content": "¡Hum! Nada es eterno, y toda existencia es sufrimiento. Los Yakshas nunca hemos necesitado la simpatía ni las lágrimas de nadie.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020217
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020217,
+					"content": "Mis compañeros fallecidos considerarían sus lágrimas como una mancha sobre su legado.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020218
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020218,
+					"content": "Oh, vaya... Paimon lo siente...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020219
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020219,
+					"content": "No importa. Justo iba de camino a despejar una caverna demoniaca, así que nuestros caminos se separan aquí.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020220
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020220,
+					"content": "¡E-espera! ¡Llévanos contigo! Podríamos ayudarte.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020221
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020221,
+					"content": "No es necesario. Estoy acostumbrado a luchar solo. De todos modos, encargarme de esas mutaciones es mi responsabilidad.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020222
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020222,
+					"content": "¡Al menos deja que vayamos contigo como forma de disculpa de Paimon! ¿Sí?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020223
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020223,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020224
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020224,
+					"content": "Está bien, vengan.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020214,
+					"content": "Hace poco leímos un libro llamado «Yakshas: los guardianes Adeptus».",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020215
+					]
+				},
+				{
+					"id": 111020208,
+					"content": "¿Xiao es el último de los Yakshas?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020209
+					]
+				}
+			]
+		},
+		{
+			"id": 1110204,
+			"completionStepIds": [
+				1110204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110204",
+							"2"
+						],
+						"stepId": 1110204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111020401,
+					"content": "¡Este lugar le pone a Paimon la piel de gallina!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020402
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020402,
+					"content": "Usaré un ritual conocido como “Azote de todos los males” para limpiar el karma de este lugar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020403
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020403,
+					"content": "#Mantengan la calma cueste lo que cueste y no dejen que {F#las}{M#los} afecten los malvados pensamientos de las deidades que fueron derrotadas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xiao"
+				}
+			]
+		},
+		{
+			"id": 1110206,
+			"completionStepIds": [
+				1110205
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110205",
+							"2"
+						],
+						"stepId": 1110205,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111020601,
+					"content": "Hicimos bien en venir. Muchas criaturas se habían doblegado ante la influencia demoniaca. Si hubiéramos llegado más tarde, las consecuencias habrían sido inimaginables.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020602
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020602,
+					"content": "Por cierto, ¿qué pasa con ese “Ladrón de Estrellas” que mencionaron?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020603
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020603,
+					"content": "Oh, ¡Paimon te lo contará todo!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020604
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020604,
+					"content": "“Un Adeptus que concede deseos”... Y pensar que hay personas que creen en tales mentiras...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020605
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020605,
+					"content": "Tú eres un Adeptus, Xiao. ¿Puedes conceder deseos?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020606
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020606,
+					"content": "En el Liyue de antaño, nadie nos pediría a los Adeptus deseos inmerecidos.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020607
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020607,
+					"content": "Lo que los antepasados de Liyue necesitaban era fuerza para defender la tierra donde vivían.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020608
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020608,
+					"content": "Ehmm... Pero un Adeptus que cumple deseos es más atractivo para la gente de esta era.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020609
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020609,
+					"content": "No importa lo débiles que sean las personas de esta época, yo solo sigo la voluntad original de Rex Lapis.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020610
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020610,
+					"content": "Ups... Creo que Paimon habló sin pensarlo otra vez...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020611
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020611,
+					"content": "¡Ah, cierto! ¡Ese Adeptus impostor usa un Sello del Permiso para ahuyentar a los demonios!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020612
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020612,
+					"content": "¿En serio? ¡Hum! Qué insensato... Exorcizar demonios sin exterminarlos... No es de extrañar que se hayan reunido tantos.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020613
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020613,
+					"content": "Si esto sigue así, las cosas podrían escaparse incluso de mi control. Tendremos que quitarle el Sello.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020614,
+						111020615
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020614,
+					"content": "¿Es suficiente con quitárselo?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020616
+					]
+				},
+				{
+					"id": 111020616,
+					"content": "¡Exactamente lo que Paimon estaba pensando! ¡Tenemos que mostrarle a ese estafador lo que pasa por querer engañarnos!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020617
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020617,
+					"content": "#Y da la casualidad de que tenemos un verdadero Adeptus con nosotr{F#as}{M#os}. Con Xiao a nuestro lado, ¡ese Ladrón de Estrellas no se atreverá a seguir fingiendo!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020618
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020618,
+					"content": "No. Yo solo mato demonios, no mortales.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020619
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020619,
+					"content": "¡Nadie está hablando de matar a alguien!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020620
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020620,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020621
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020621,
+					"content": "Sería bueno para Liyue si pudiéramos convencerlo de que abandonara ese mal hábito.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020622
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020622,
+					"content": "Poseo una técnica llamada “Sonambulismo”. Normalmente se usa para separar el alma del cuerpo con el fin de poder meditar mientras se sueña.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020623
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020623,
+					"content": "Pero también se puede usar para llamar a los espíritus de otras personas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020624
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020624,
+					"content": "Guau, ¡es verdadera magia adéptica!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020625,
+						111020626
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020625,
+					"content": "¿Algo así como una visión dentro de un sueño?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020627
+					]
+				},
+				{
+					"id": 111020627,
+					"content": "Esta técnica necesita hacerse por medio de un ritual. Por favor, ayúdenme a conseguir... un incensario, siete lámparas ceremoniales y cosas que sirvan para enfriar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020628
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020628,
+					"content": "Para enfriar... ¿quizás sirvan unas flores heladas?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020629
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020629,
+					"content": "Pero un incensario y siete lámparas no son cosas que se puedan encontrar en la naturaleza.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020630
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020630,
+					"content": "¿Conoces las dos estatuas de Yakshas que hay junto a una ruta comercial en la parte sur de la Cordillera Tianheng?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020631
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020631,
+					"content": "Los antepasados de Liyue construyeron santuarios en ella para honrar a los Yakshas. Deberían poder encontrar objetos ceremoniales allí.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020632
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020632,
+					"content": "Una vez que los encuentren, reúnanse conmigo en las estatuas de los Yakshas al caer la noche y les enseñaré cómo usar mi técnica.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020626,
+					"content": "Seguro que eso le dará un buen susto.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020627
+					]
+				},
+				{
+					"id": 111020615,
+					"content": "Me encargaré de que aprenda la lección.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020616
+					]
+				}
+			]
+		},
+		{
+			"id": 1110220,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110201",
+							"2"
+						],
+						"stepId": 1110201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hombre creyente"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111022001,
+					"content": "Maestro de las Estrellas fracasó... ¿Tal vez no se encuentra bien el día de hoy?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Hombre creyente"
+				}
+			]
+		},
+		{
+			"id": 1110221,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110201",
+							"2"
+						],
+						"stepId": 1110201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Mujer creyente"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111022101,
+					"content": "¿Qué pasó? Menos mal que estaban ustedes dos...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Mujer creyente"
+				}
+			]
+		},
+		{
+			"id": 1110222,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110201",
+							"2"
+						],
+						"stepId": 1110201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Comerciante creyente"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111022201,
+					"content": "No me puedo creer que Maestro de las Estrellas no fuera capaz de vencer a esos Hilichurls con su poder...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Comerciante creyente"
+				}
+			]
+		},
+		{
+			"id": 1110223,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110201",
+							"2"
+						],
+						"stepId": 1110201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ladrón de Estrellas"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111022301,
+					"content": "Es solo que no me encuentro bien. Por favor, no vayan diciéndolo por ahí...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ladrón de Estrellas"
+				}
+			]
+		},
+		{
+			"id": 1110224,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110203",
+							"2"
+						],
+						"stepId": 1110203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Xiao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111022401,
+					"content": "Terminen sus preparativos antes de entrar. No podemos ignorar a esos monstruos por mucho tiempo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xiao"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,167 @@
+{
+	"id": 74652,
+	"type": "WQ",
+	"name": "미르너의 버터 의뢰",
+	"description": "미르너는 버터 3개가 필요하다",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7465201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "미르너에게 버터 3개 건네주기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7465201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7465202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "미르너와 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7465202,
+						0
+					],
+					"talkId": 7465202
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7465201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465201",
+							"2"
+						],
+						"stepId": 7465201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7465201"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"미르너"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746520101,
+					"content": "버터에 대해…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746520102
+					]
+				},
+				{
+					"id": 746520102,
+					"content": "빵을 먹고 싶을 때마다 버터가 부족해서, 버터를 갖고 다니는 게 좋겠단 생각을 하게 됐어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746520103
+					],
+					"speakerTitle": "미르너"
+				},
+				{
+					"id": 746520103,
+					"content": "버터는 가져온 거지?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746520106,
+						746520104
+					],
+					"speakerTitle": "미르너"
+				},
+				{
+					"id": 746520106,
+					"content": "준비됐어요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 746520104,
+					"content": "아직이요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746520105
+					]
+				},
+				{
+					"id": 746520105,
+					"content": "제법 많은 양이 필요하니까, 준비되면 한 번에 줘",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "미르너"
+				}
+			]
+		},
+		{
+			"id": 7465202,
+			"completionStepIds": [
+				7465202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465202",
+							"2"
+						],
+						"stepId": 7465202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"미르너"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746520201,
+					"content": "고마워! 버터, 나의 버터… 버터가 없다면 차라리 빵을 안 먹는 게 나아",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "미르너"
+				}
+			]
+		}
+	]
+}

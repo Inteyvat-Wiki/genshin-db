@@ -1,0 +1,272 @@
+{
+	"id": 20012,
+	"type": "IQ",
+	"name": "Eine Straßensperre?",
+	"description": "Myrana wird bei einem lang ersehnten Spaziergang von Hilichurlen umzingelt, nachdem sie auf dem Weg zur Taverne auf eine Straßensperre gestoßen ist. Vernichte die Hilichurle und rette Myrana.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2001201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sieh dir die Details an.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001202,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Besiege die Monster in der Nähe.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001203,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Vernichte alle Monster und zerstöre die Straßensperre.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Myrana.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001203,
+						0
+					],
+					"talkId": 2001203
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2001201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001202",
+							"2"
+						],
+						"stepId": 2001202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Panische Myrana"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200120101,
+					"content": "Bitte hilf mir schnell!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Panische Myrana"
+				}
+			]
+		},
+		{
+			"id": 2001202,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001202",
+							"3"
+						],
+						"stepId": 2001202,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001203",
+							"2"
+						],
+						"stepId": 2001203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Panische Myrana"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200120201,
+					"content": "#Danke, {F#Reisende}{M#Reisender}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200120202
+					],
+					"speakerTitle": "Panische Myrana"
+				},
+				{
+					"id": 200120202,
+					"content": "Herrje, Monster und Straßensperren ... Zu Hause habe ich immer so viel zu tun. Wenn ich dann mal rauskomme, passiert gleich sowas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200120203
+					],
+					"speakerTitle": "Panische Myrana"
+				},
+				{
+					"id": 200120203,
+					"content": "Tut mir leid, aber könntest du diese Straßensperre gleich mit beseitigen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200120204,
+						200120205
+					],
+					"speakerTitle": "Panische Myrana"
+				},
+				{
+					"id": 200120204,
+					"content": "In Ordnung.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200120206
+					]
+				},
+				{
+					"id": 200120206,
+					"content": "Vielen Dank! Ich hoffe, dass meine beiden Kleinen einmal genauso gutherzig werden wie du!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Panische Myrana"
+				},
+				{
+					"id": 200120205,
+					"content": "Ich habe noch zu tun.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200120207
+					]
+				},
+				{
+					"id": 200120207,
+					"content": "Ach, bitte! Das geht doch ganz fix.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Panische Myrana"
+				}
+			]
+		},
+		{
+			"id": 2001203,
+			"completionStepIds": [
+				2001204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001204",
+							"2"
+						],
+						"stepId": 2001204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Panische Myrana"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200120301,
+					"content": "#Vielen Dank, {F#Reisende}{M#Reisender}!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200120302
+					],
+					"speakerTitle": "Panische Myrana"
+				},
+				{
+					"id": 200120302,
+					"content": "Erzähl aber bitte keinem, dass ich hier auf Ärger gestoßen bin. Sonst bekomm ich wieder eine Standpauke von meinem Mann.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200120303
+					],
+					"speakerTitle": "Panische Myrana"
+				},
+				{
+					"id": 200120303,
+					"content": "Du brauchst mich gar nicht so anzugucken. Warte nur, bis du verheiratet bist. Dann wird selbst ein Spaziergang zu einem Luxus. Deswegen zählt jede Sekunde.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200120304
+					],
+					"speakerTitle": "Panische Myrana"
+				},
+				{
+					"id": 200120304,
+					"content": "Hier, das ist für dich. Davon habe ich einige auf dem Weg gesammelt. Sich selbst etwas zu kochen, ist viel billiger, als es beim Hirschjäger zu kaufen. Man muss doch sehen, wo man bleibt!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Panische Myrana"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,214 @@
+{
+	"id": 20008,
+	"type": "IQ",
+	"name": "まるい群れ騒動！",
+	"description": "スライムが突然モンド城の埠頭に出現した。埠頭付近にいるアーサーが巻き込まれているようだ…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2000801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "埠頭で詳細を確認する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "スライムを倒す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000803,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "アーサーと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000801,
+						0
+					],
+					"talkId": 2000801
+				}
+			]
+		},
+		{
+			"id": 2000804,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "怪しいところに行く",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000805,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "「風」で埃を払う",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000806,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "全てのスライムを倒す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2000801,
+			"completionStepIds": [
+				2000803
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000802",
+							"3"
+						],
+						"stepId": 2000802,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"アーサー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200080101,
+					"content": "助けてくれてありがとう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080102
+					],
+					"speakerTitle": "アーサー"
+				},
+				{
+					"id": 200080102,
+					"content": "このスライムたちが急に出てきて、まさかここにいると思わなかったから逃げそびれたんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080103
+					],
+					"speakerTitle": "アーサー"
+				},
+				{
+					"id": 200080103,
+					"content": "父さんには言わないでよ。最近スライムたちが凶暴だから家にいろって言われてたんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080104
+					],
+					"speakerTitle": "アーサー"
+				},
+				{
+					"id": 200080104,
+					"content": "しかもスライムはモンド城周辺に出現し始めただろう。もう家に何日もいたから退屈で、今日はこっそり抜け出したんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080105
+					],
+					"speakerTitle": "アーサー"
+				},
+				{
+					"id": 200080105,
+					"content": "もしよければだけど、この先に行ってみてくれないかな。スライムがいたら、倒してほしいんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080106,
+						200080107
+					],
+					"speakerTitle": "アーサー"
+				},
+				{
+					"id": 200080106,
+					"content": "分かった。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200080108
+					]
+				},
+				{
+					"id": 200080108,
+					"content": "やった！やっと安心して遊べるぞ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "アーサー"
+				},
+				{
+					"id": 200080107,
+					"content": "他に急用がある。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200080109
+					]
+				},
+				{
+					"id": 200080109,
+					"content": "で、でも父さんには言えないんだ…頼めるのは君だけだよ、頼む！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "アーサー"
+				}
+			]
+		}
+	]
+}

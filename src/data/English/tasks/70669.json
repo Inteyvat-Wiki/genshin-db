@@ -1,0 +1,280 @@
+{
+	"id": 70669,
+	"type": "WQ",
+	"name": "Ascension Challenge IV",
+	"description": "The Genius Invokation TCG Society has determined that you are qualified for the Ascension Challenge. Win the Challenge and become a Legend player! We hope you will have fun with Genius Invokation TCG!",
+	"unlockDescription": "Complete this quest to begin the Genius Invokation TCG Player Ascension Challenge",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_GUIDE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7066901,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LEAVE_SCENE",
+					"rawParams": [
+						79999,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7066902,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to The Cat's Tail",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7066901,
+						0
+					],
+					"talkId": 7066901
+				}
+			]
+		},
+		{
+			"id": 7066903,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Finish Ascension Challenge duel with Prince",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GCG_LEVEL_WIN",
+					"rawParams": [
+						20004,
+						1
+					]
+				}
+			]
+		},
+		{
+			"id": 7066904,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Prince",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7066902,
+						0
+					],
+					"talkId": 7066902
+				}
+			]
+		},
+		{
+			"id": 7066905,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GCG_LEVEL_WIN",
+					"rawParams": [
+						20004,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7066901,
+			"completionStepIds": [
+				7066902
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066902",
+							"2"
+						],
+						"stepId": 7066902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066903",
+							"2"
+						],
+						"stepId": 7066903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Prince"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706660101,
+					"content": "I'm here for the Ascension Challenge!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						706660102
+					]
+				},
+				{
+					"id": 706660102,
+					"content": "Meow... (Hmm? Here for the Ascension Challenge? I see... You are indeed qualified for the challenge. Alright...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706660103
+					],
+					"speakerTitle": "Prince"
+				},
+				{
+					"id": 706660103,
+					"content": "\"I'll have Shuyun set up the challenge for you immediately. Do be careful!\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Prince"
+				}
+			]
+		},
+		{
+			"id": 7066902,
+			"completionStepIds": [
+				7066904
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066904",
+							"2"
+						],
+						"stepId": 7066904,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Prince"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706690201,
+					"content": "Meow! (How wonderful! Congratulations on completing the Ascension Challenge. You're now a Legend player!)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706690202
+					],
+					"speakerTitle": "Prince"
+				},
+				{
+					"id": 706690202,
+					"content": "Meow... (A Legend player, what an admirable title...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706690203
+					],
+					"speakerTitle": "Prince"
+				},
+				{
+					"id": 706690203,
+					"content": "(I hope you'll keep honing your technique and become a great player who lives up to this grand title!)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706690204
+					],
+					"speakerTitle": "Prince"
+				},
+				{
+					"id": 706690204,
+					"content": "(It might be a bit redundant to say this at this point, but still...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706690205
+					],
+					"speakerTitle": "Prince"
+				},
+				{
+					"id": 706690205,
+					"content": "#({NICKNAME}, may the fun be with you in the world of Genius Invokation TCG!)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Prince"
+				}
+			]
+		},
+		{
+			"id": 7066903,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066904",
+							"0"
+						],
+						"stepId": 7066904,
+						"stateName": "QUEST_STATE_NONE"
+					},
+					{
+						"type": "QUEST_COND_GCG_WORLD_CHALLENGE_RESULT",
+						"rawParams": [
+							"-1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Prince"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706660301,
+					"content": "Meow... (How unfortunate... Try to be extra careful next time and perhaps make some adjustments to your deck before your next attempt.)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706660302
+					],
+					"speakerTitle": "Prince"
+				},
+				{
+					"id": 706660302,
+					"content": "(I believe you are capable of completing this challenge.)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Prince"
+				}
+			]
+		}
+	]
+}

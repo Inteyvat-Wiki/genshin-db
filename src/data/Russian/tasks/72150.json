@@ -1,0 +1,1823 @@
+{
+	"id": 72150,
+	"type": "WQ",
+	"name": "Чудесное растение глубин",
+	"description": "Может ли реликтовое растение из морских глубин предсказать судьбу?",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		1025
+	],
+	"steps": [
+		{
+			"id": 7215001,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)和NPC对话，获取特殊容器$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7215001,
+						0
+					],
+					"talkId": 7215001
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7215004,
+						0
+					],
+					"talkId": 7215004
+				}
+			]
+		},
+		{
+			"id": 7215002,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отправляйтесь в святилище Ватацуми",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7215003,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Соберите «воду исполнения желаний»",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7215004,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Комаки",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7215002,
+						0
+					],
+					"talkId": 7215002
+				}
+			]
+		},
+		{
+			"id": 7215005,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отправляйтесь в пещеру, о которой рассказала Комаки",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7215006,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Соберите «воду ясности»",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7215007,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Комаки",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7215003,
+						0
+					],
+					"talkId": 7215003
+				}
+			]
+		},
+		{
+			"id": 7215008,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Вовремя вернитесь в деревню",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7215009,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)隐藏任务发瓶子$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7215001,
+			"completionStepIds": [
+				7215001
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7215001",
+							"2"
+						],
+						"stepId": 7215001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_COMMON",
+			"trigger": {
+				"objectNames": [
+					"Комаки"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721500101,
+					"content": "Здравствуй. Судя по твоему виду, ты не с этого острова, да?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500102,
+						721500103
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500102,
+					"content": "Да.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500104
+					]
+				},
+				{
+					"id": 721500104,
+					"content": "#Ты, наверное, {M#путешественник}{F#путешественница}, да? Тогда... не хочешь ли остановиться здесь ненадолго и погадать на дорогу?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500105
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500105,
+					"content": "Э? Погадать на дорогу?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500106,
+						721500107
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500106,
+					"content": "Погадать на дорогу?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500108
+					]
+				},
+				{
+					"id": 721500108,
+					"content": "Ха-ха, не надо так волноваться. Прошу прощения, это было несколько внезапно с моей стороны...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500109
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500109,
+					"content": "Я всего лишь хотела сказать, что святилище Ватацуми в нашей деревне Боро весьма чудодейственное. Поэтому решила пригласить вас погадать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500110
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500110,
+					"content": "Я не имела в виду, что вам непременно грозит опасность.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500111
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500111,
+					"content": "Да и возможно ли выразить столь простыми словами хитросплетение судеб, что ждёт нас впереди. Хе-хе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500112
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500112,
+					"content": "Так значит просто гадание... Какое облегчение!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500113
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500113,
+					"content": "А сколько стоит?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500114
+					]
+				},
+				{
+					"id": 721500114,
+					"content": "Хе-хе, ничего не стоит. Не берём деньги за такое...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500115
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500115,
+					"content": "Если бы люди, которые следят за святилищами, брали с путешественников деньги за желания, это встревожило бы дух Омиками.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500116
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500116,
+					"content": "Вы ведь всего лишь смертные. Как можем мы наживаться на желаниях других людей?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500117
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500117,
+					"content": "А, вот оно как.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500118
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500118,
+					"content": "Так что, не хотите погадать?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500119
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500119,
+					"content": "Можно попробовать.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500120
+					]
+				},
+				{
+					"id": 721500120,
+					"content": "Ха-ха, спасибо.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500121
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500121,
+					"content": "В такое время везде неспокойно, и деревенская молодёжь вся работает в других местах. Вид таких молодых людей, как вы, наполняет моё старое сердце радостью.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500122
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500122,
+					"content": "А то, что вы, чужаки, с уважением относитесь к традициям острова Ватацуми - ещё большая редкость. Это замечательно, ха-ха...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500123
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500123,
+					"content": "Ладно, хватит болтать. Про гадание...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500124
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500124,
+					"content": "Но пока мы не начали, не могли бы вы мне кое с чем помочь?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500125
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500125,
+					"content": "Э? Всё-таки деньги надо?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500126
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500126,
+					"content": "Хе-хе, нет... Просто послушайте.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500127
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500127,
+					"content": "Чудодейственность святилища в деревне Боро проистекает из растущей здесь «волшебной травы пучин».",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500128
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500128,
+					"content": "Как понятно из названия, это растение раньше росло на дне океана. Оттуда пришли и наши предки.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500129
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500129,
+					"content": "Тысячи лет назад праотцы нашей деревни перенесли эту траву с морского дна на сушу и очень бережно ухаживали за ней.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500130
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500130,
+					"content": "Под защитой поколений жителей деревни волшебная трава пережила войны, природные бедствия и даже великое горе мученической смерти нашего Омиками.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500131
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500131,
+					"content": "Поскольку это глубоководное растение, для жизни ему требуется постоянный приток воды.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500132
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500132,
+					"content": "А ещё оно испускает бледное свечение, ведь обычно оно растёт в кромешной тьме.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500133
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500133,
+					"content": "По тому, как переливается свет, мы судим, исполнится ли желание. А секрет здесь в источнике воды.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500134
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500134,
+					"content": "Хе-хе, молодые жрицы постоянно сомневаются в надёжности ритуала гадания. Им кажется, что народные обряды недостаточно формальные, что они распространяют предрассудки и всё такое...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500135
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500135,
+					"content": "Им больше нравятся ясные и простые для понимания теории, а не легенды, которые постепенно обращаются в прах, пока старики передают их из уст в уста.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500136
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500136,
+					"content": "Но всё же... мудрость стариков, мудрость поколений...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500137
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500137,
+					"content": "Может быть, её и нельзя обобщить в какую-то стройную теорию, но в ней всё равно содержится истина, которой нельзя пренебрегать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500138
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500138,
+					"content": "Об источнике воды...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500139
+					]
+				},
+				{
+					"id": 721500139,
+					"content": "Источник воды?.. А! Хе-хе, да... Прошу прощения, с возрастом я стала болтливой...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500140
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500140,
+					"content": "Чтобы вырастить волшебную траву, нужно взять воду из Пруда подношений на этом острове. Ведь в этой воде содержатся «желания».",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500141
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500141,
+					"content": "Вода правда может содержать желания?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500142
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500142,
+					"content": "Хе-хе, конечно. Желания всех людей собираются в этом пруду и растворяются в воде. Прямо как мёд.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500143
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500143,
+					"content": "Человеческим глазом этого не увидеть, но можно почувствовать по густоте и сладости воды.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500144
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500144,
+					"content": "То же и с памятью, и с верой... Все они следуют этому принципу.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500145
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500145,
+					"content": "#И ещё. Если пойдёшь за водой - будь {M#осторожен}{F#осторожна}... Сила желаний быстро растворится в воздухе, как только ты отойдёшь от Пруда подношений.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500146
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500146,
+					"content": "Прямо как мечты исчезают в потоке лет...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500147
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500147,
+					"content": "Увядание желаний тоже можно определить по весу и на ощупь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500148
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500148,
+					"content": "Ого...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500149
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500149,
+					"content": "О...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500150
+					]
+				},
+				{
+					"id": 721500150,
+					"content": "Хе-хе, прошу прощения, я опять отвлеклась...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500151
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500151,
+					"content": "Одним словом, не задерживайтесь, когда наберёте воду, и возвращайтесь как можно скорее.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500152
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500152,
+					"content": "Иначе сила желаний полностью выветрится, и волшебная трава не получит необходимые питательные вещества...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500153
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500153,
+					"content": "Когда закончишь, напомни мне ещё раз... Понадобится ещё одно действие, чтобы напитать волшебную траву и обеспечить действенность гадания.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500154
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500154,
+					"content": "Столько дел! Неужели жрицы тебе не помогают?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500155
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500155,
+					"content": "Эх... Молодые жрицы считают, что это очень хлопотно, воротят нос от таких древних традиций, мало кто соглашается помочь...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500156
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500156,
+					"content": "Я вижу, что свечение волшебной травы затухает с каждым днём... Но никого это не тревожит так, как меня.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500157
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500157,
+					"content": "Ну, хлопот тут и правда по горло...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500158
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500158,
+					"content": "Можно понять отношение жриц...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500159
+					]
+				},
+				{
+					"id": 721500159,
+					"content": "Так вы поможете мне набрать воды?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500160
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500160,
+					"content": "Мы поможем.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500161
+					]
+				},
+				{
+					"id": 721500161,
+					"content": "Ну тогда спасибо вам огромное.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500107,
+					"content": "Меня ждёт опасность?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500108
+					]
+				},
+				{
+					"id": 721500103,
+					"content": "Здравствуй, бабуля.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500104
+					]
+				}
+			]
+		},
+		{
+			"id": 7215002,
+			"completionStepIds": [
+				7215004
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7215003",
+							"3"
+						],
+						"stepId": 7215003,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7215004",
+							"2"
+						],
+						"stepId": 7215004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Комаки",
+					"Паймон"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721500201,
+					"content": "Вы вернулись.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500202
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500202,
+					"content": "Мы принесли, что ты просила.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500203
+					]
+				},
+				{
+					"id": 721500203,
+					"content": "Чистая вода из Пруда подношений. Свежая!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500204
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500204,
+					"content": "Большое вам спасибо. Я сразу же полью ей волшебную траву.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500205
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500205,
+					"content": "На чём я остановилась в тот раз... Ах да, нужно ещё кое-что сделать, чтобы волшебная трава засияла ещё ярче.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500206
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500206,
+					"content": "Только в среде, богатой Гидро, листья волшебной травы полностью раскрываются и могут проявить весь цвет «желаний».",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500207
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500207,
+					"content": "Если вкратце... На севере есть пещера, вода там содержит Гидро как раз в тех же пропорциях, что естественная среда волшебной травы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500208
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500208,
+					"content": "Но в разных местах пещеры концентрация тоже разная... Лучше всего подходит кристально прозрачный Гидро.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500209
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500209,
+					"content": "Но если он помутнеет... Например, если его потревожит какое-нибудь существо, то будет уже трудно...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500210
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500210,
+					"content": "Ох, в моём возрасте я уже и сама не понимаю, что говорю...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500211
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500211,
+					"content": "Когда увидите, то сами всё поймёте, хе-хе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500212
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500212,
+					"content": "Пещера тесно связана с тайной предков нашей деревни. Но, к сожалению, из-за войны мало кто из молодёжи ходит туда, чтобы подпитать волшебную траву.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500213
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500213,
+					"content": "Ох... Говоря о молодых людях... Надеюсь, что вы вернётесь в целостности...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500214
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500214,
+					"content": "Ах да, ребятки. Если пойдёте туда за водой, то будьте очень осторожны.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500215
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500215,
+					"content": "Не беспокойся, бабуля!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500216,
+						721500217
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500216,
+					"content": "#Я буду {M#внимателен}{F#внимательна}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500218
+					]
+				},
+				{
+					"id": 721500218,
+					"content": "Хорошо, хорошо... Спасибо вам большое.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500217,
+					"content": "Не волнуйтесь.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500218
+					]
+				}
+			]
+		},
+		{
+			"id": 7215003,
+			"completionStepIds": [
+				7215007
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7215006",
+							"3"
+						],
+						"stepId": 7215006,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7215007",
+							"2"
+						],
+						"stepId": 7215007,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Комаки",
+					"Паймон"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721500301,
+					"content": "А, это вы. Проходите, отдыхайте.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500302
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500302,
+					"content": "Бабушка Комаки, мы принесли воду, о которой вы говорили.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500303
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500303,
+					"content": "Это ведь «идеальная вода», о которой вы говорили?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500304
+					]
+				},
+				{
+					"id": 721500304,
+					"content": "Да, и её как раз достаточно. Спасибо за ваши труды.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500305
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500305,
+					"content": "Хе-хе, посмотрите на неё...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500306
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500306,
+					"content": "Судя по сиянию травы... Следующий год будет мирный и богатый.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500307
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500307,
+					"content": "О... Как вы поняли?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500308
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500308,
+					"content": "Сияние волшебной травы зависит от влажности воды и питательности людских желаний.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500309
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500309,
+					"content": "Этот свет воплощает желания. Чем прекрасней желания, тем живее свет, тем больше надежды на будущее.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500310
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500310,
+					"content": "Ведь каждый мечтает, чтобы завтра было лучше?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500311
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500311,
+					"content": "Надо только, чтобы у каждого было желание сделать что-то, чтобы улучшить свою жизнь...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500312
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500312,
+					"content": "По сравнению с этим меркнут все трудности войны.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500313
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500313,
+					"content": "Эм... А это как-то связано с её действенностью?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500314
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500314,
+					"content": "Конечно. Ведь так гласит древняя мудрость.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500315
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500315,
+					"content": "Желания побуждают людей к действию. А результаты действий утверждают их желания.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500316
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500316,
+					"content": "Пока мы сохраняем мирную жизнь, пока мы защищаем свои надежды от серости дней...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500317
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500317,
+					"content": "Предсказания волшебной травы всегда будут действенными.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500318,
+						721500319
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500318,
+					"content": "Похоже на попытки как-то рационально обосновать суеверия...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500320
+					]
+				},
+				{
+					"id": 721500320,
+					"content": "Хе-хе, молодёжь, когда-нибудь и вы поймёте...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500321
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500321,
+					"content": "Кстати, сила желаний в воде ещё продержится пару дней, если хотите, то можете прийти ещё погадать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500319,
+					"content": "...но в этом есть логика...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500320
+					]
+				}
+			]
+		},
+		{
+			"id": 7215004,
+			"completionStepIds": [
+				7215001
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7215001",
+							"2"
+						],
+						"stepId": 7215001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214901",
+							"3"
+						],
+						"stepId": 7214901,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_COMMON",
+			"trigger": {
+				"objectNames": [
+					"Комаки"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721500401,
+					"content": "Здравствуй. Судя по твоему виду, ты не с этого острова, да?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500402,
+						721500403
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500402,
+					"content": "Да.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500404
+					]
+				},
+				{
+					"id": 721500404,
+					"content": "#Ты, наверное, {M#путешественник}{F#путешественница}, да? Тогда... не хочешь ли остановиться здесь ненадолго и погадать на дорогу?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500405
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500405,
+					"content": "Э? Погадать на дорогу?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500406,
+						721500407
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500406,
+					"content": "Погадать на дорогу?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500408
+					]
+				},
+				{
+					"id": 721500408,
+					"content": "Ха-ха, не надо так волноваться. Прошу прощения, это было несколько внезапно с моей стороны...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500409
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500409,
+					"content": "Я всего лишь хотела сказать, что святилище Ватацуми в нашей деревне Боро весьма чудодейственное. Поэтому решила пригласить вас погадать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500410
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500410,
+					"content": "Я не имела в виду, что вам непременно грозит опасность.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500411
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500411,
+					"content": "Да и возможно ли выразить столь простыми словами хитросплетение судеб, что ждёт нас впереди. Хе-хе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500412
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500412,
+					"content": "Так значит просто гадание... Какое облегчение!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500413
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500413,
+					"content": "А сколько стоит?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500414
+					]
+				},
+				{
+					"id": 721500414,
+					"content": "Хе-хе, ничего не стоит. Не берём деньги за такое...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500415
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500415,
+					"content": "Если бы люди, которые следят за святилищами, брали с путешественников деньги за желания, это встревожило бы дух Омиками.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500416
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500416,
+					"content": "Вы ведь всего лишь смертные. Как можем мы наживаться на желаниях других людей?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500417
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500417,
+					"content": "А, вот оно как.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500418
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500418,
+					"content": "Так что, не хотите погадать?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500419
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500419,
+					"content": "Можно попробовать.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500420
+					]
+				},
+				{
+					"id": 721500420,
+					"content": "Ха-ха, спасибо.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500421
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500421,
+					"content": "В такое время везде неспокойно, и деревенская молодёжь вся работает в других местах. Вид таких молодых людей, как вы, наполняет моё старое сердце радостью.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500422
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500422,
+					"content": "А то, что вы, чужаки, с уважением относитесь к традициям острова Ватацуми - ещё большая редкость. Это замечательно, ха-ха...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500423
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500423,
+					"content": "Ладно, хватит болтать. Про гадание...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500424
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500424,
+					"content": "Но пока мы не начали, не могли бы вы мне кое с чем помочь?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500425
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500425,
+					"content": "Э? Всё-таки деньги надо?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500426
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500426,
+					"content": "Хе-хе, нет... Просто послушайте.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500427
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500427,
+					"content": "Чудодейственность святилища в деревне Боро проистекает из растущей здесь «волшебной травы пучин».",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500428
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500428,
+					"content": "Как понятно из названия, это растение раньше росло на дне океана. Оттуда пришли и наши предки.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500429
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500429,
+					"content": "Тысячи лет назад праотцы нашей деревни перенесли эту траву с морского дна на сушу и очень бережно ухаживали за ней.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500430
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500430,
+					"content": "Под защитой поколений жителей деревни волшебная трава пережила войны, природные бедствия и даже великое горе мученической смерти нашего Омиками.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500431
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500431,
+					"content": "Поскольку это глубоководное растение, для жизни ему требуется постоянный приток воды.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500432
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500432,
+					"content": "А ещё оно испускает бледное свечение, ведь обычно оно растёт в кромешной тьме.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500433
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500433,
+					"content": "По тому, как переливается свет, мы судим, исполнится ли желание. А секрет здесь в источнике воды.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500434
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500434,
+					"content": "Хе-хе, молодые жрицы постоянно сомневаются в надёжности ритуала гадания. Им кажется, что народные обряды недостаточно формальные, что они распространяют предрассудки и всё такое...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500435
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500435,
+					"content": "Им больше нравятся ясные и простые для понимания теории, а не легенды, которые постепенно обращаются в прах, пока старики передают их из уст в уста.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500436
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500436,
+					"content": "Но всё же... мудрость стариков, мудрость поколений...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500437
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500437,
+					"content": "Может быть, её и нельзя обобщить в какую-то стройную теорию, но в ней всё равно содержится истина, которой нельзя пренебрегать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500438
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500438,
+					"content": "Об источнике воды...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500439
+					]
+				},
+				{
+					"id": 721500439,
+					"content": "Источник воды?.. А! Хе-хе, да... Прошу прощения, с возрастом я стала болтливой...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500440
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500440,
+					"content": "Чтобы вырастить волшебную траву, нужно взять воду из Пруда подношений на этом острове. Ведь в этой воде содержатся «желания».",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500441
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500441,
+					"content": "Вода правда может содержать желания?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500442
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500442,
+					"content": "Хе-хе, конечно. Желания всех людей собираются в этом пруду и растворяются в воде. Прямо как мёд.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500443
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500443,
+					"content": "Человеческим глазом этого не увидеть, но можно почувствовать по густоте и сладости воды.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500444
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500444,
+					"content": "То же и с памятью, и с верой... Все они следуют этому принципу.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500445
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500445,
+					"content": "#И ещё. Если пойдёшь за водой - будь {M#осторожен}{F#осторожна}... Сила желаний быстро растворится в воздухе, как только ты отойдёшь от Пруда подношений.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500446
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500446,
+					"content": "Прямо как мечты исчезают в потоке лет...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500447
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500447,
+					"content": "Увядание желаний тоже можно определить по весу и на ощупь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500448
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500448,
+					"content": "Ого...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500449
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500449,
+					"content": "А...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500450
+					]
+				},
+				{
+					"id": 721500450,
+					"content": "Хе-хе, прошу прощения, я опять отвлеклась...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500451
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500451,
+					"content": "Одним словом, не задерживайтесь, когда наберёте воду, и возвращайтесь как можно скорее.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500452
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500452,
+					"content": "Иначе сила желаний полностью выветрится, и волшебная трава не получит необходимые питательные вещества...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500453
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500453,
+					"content": "Когда закончишь, напомни мне ещё раз... Понадобится ещё одно действие, чтобы напитать волшебную траву и обеспечить действенность гадания.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500454
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500454,
+					"content": "Столько дел! Неужели жрицы тебе не помогают?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500455
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500455,
+					"content": "Эх... Молодые жрицы считают, что это очень хлопотно, воротят нос от таких древних традиций, мало кто соглашается помочь...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500456
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500456,
+					"content": "Вы не про Цуюко, случаем?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500457
+					]
+				},
+				{
+					"id": 721500457,
+					"content": "О да, это молодая жрица из святилища Сангономии уж точно смотрит на стариков свысока!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500458
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500458,
+					"content": "О, вы с ней встречались?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500459
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500459,
+					"content": "Ха-ха, эта девушка... Очень способная, но разве что...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500460
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500460,
+					"content": "Хе-хе... Не буду говорить. Рано или поздно молодёжь всё равно научится уважать суть, которую содержат старые легенды.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500461
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500461,
+					"content": "Эм... Чего? Паймон не поняла.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500462
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500462,
+					"content": "Я вижу, что свечение волшебной травы затухает с каждым днём... Но никого это не тревожит так, как меня.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500463
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500463,
+					"content": "Ну, хлопот тут и правда по горло...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500464
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 721500464,
+					"content": "Можно понять отношение жриц...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500465
+					]
+				},
+				{
+					"id": 721500465,
+					"content": "Так вы поможете мне набрать воды?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721500466
+					],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500466,
+					"content": "Мы поможем.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500467
+					]
+				},
+				{
+					"id": 721500467,
+					"content": "Ну тогда спасибо вам огромное.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Комаки"
+				},
+				{
+					"id": 721500407,
+					"content": "Меня ждёт опасность?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500408
+					]
+				},
+				{
+					"id": 721500403,
+					"content": "Здравствуй, бабуля.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721500404
+					]
+				}
+			]
+		},
+		{
+			"id": 7215005,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7215001",
+							"3"
+						],
+						"stepId": 7215001,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Комаки"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721500501,
+					"content": "Интересно, как там предсказание в этом году...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Комаки"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,562 @@
+{
+	"id": 70503,
+	"type": "WQ",
+	"name": "Лёд растворяется в вине",
+	"description": "«Ик, почему Лоуренс тоже здесь пьёт... Какая невезуха...» «Хм... Думай, что говоришь. Она одна из рыцарей, в конце концов...»",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70508,
+		70509
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Лукой и войдите в таверну",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050302,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Приготовьте Эоле напиток",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050302,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050303,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте напиток Эоле",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050302,
+						0
+					],
+					"talkId": 7050302
+				}
+			]
+		},
+		{
+			"id": 7050304,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Эолой",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050301,
+						0
+					],
+					"talkId": 7050301
+				}
+			]
+		},
+		{
+			"id": 7050305,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отправляйтесь к стойке и подготовьтесь к началу работы",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050301,
+			"completionStepIds": [
+				7050304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050304",
+							"2"
+						],
+						"stepId": 7050304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050302",
+							"2"
+						],
+						"stepId": 7050302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Эола"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705030101,
+					"content": "Маленькую Пену дальнего рифа, пожалуйста.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030102,
+						705030103
+					],
+					"speakerTitle": "Эола"
+				},
+				{
+					"id": 705030102,
+					"content": "Эола?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030104
+					]
+				},
+				{
+					"id": 705030104,
+					"content": "Я... я в порядке.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030105
+					],
+					"speakerTitle": "Эола"
+				},
+				{
+					"id": 705030105,
+					"content": "Хм, что-то не так с Эолой. Она что, уже пришла сюда пьяная?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030106
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705030106,
+					"content": "В Пене дальнего рифа содержится кофе. Не заболит ли живот от кофе после спиртного?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030107
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705030107,
+					"content": "Ради её животика разбавим напиток водой!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705030103,
+					"content": "Что случилось?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030104
+					]
+				}
+			]
+		},
+		{
+			"id": 7050302,
+			"completionStepIds": [
+				7050303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050303",
+							"2"
+						],
+						"stepId": 7050303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Эола"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705030238,
+					"content": "По совету Паймон вы добавляете воду в кофе...",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": []
+				},
+				{
+					"id": 705030201,
+					"content": "Довольно неплохо...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030202
+					],
+					"speakerTitle": "Эола"
+				},
+				{
+					"id": 705030202,
+					"content": "Ого! Она даже не заметила, что мы туда бухнули воды. Сколько же она выпила?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030203
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705030203,
+					"content": "Наливай, бармен... А? Т-так это вы?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030204,
+						705030205
+					],
+					"speakerTitle": "Эола"
+				},
+				{
+					"id": 705030204,
+					"content": "Мы учимся барменскому искусству...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030206
+					]
+				},
+				{
+					"id": 705030205,
+					"content": "Ты только сейчас нас заметила?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030206
+					]
+				},
+				{
+					"id": 705030206,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030207
+					],
+					"speakerTitle": "Эола"
+				},
+				{
+					"id": 705030207,
+					"content": "Ну извините. Я только пришла из «Кошкиного хвоста». Перебрала маленько...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030208,
+						705030209
+					],
+					"speakerTitle": "Эола"
+				},
+				{
+					"id": 705030208,
+					"content": "У тебя что-то случилось?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030210
+					]
+				},
+				{
+					"id": 705030209,
+					"content": "#Всегда {M#готов}{F#готова} выслушать.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030210
+					]
+				},
+				{
+					"id": 705030210,
+					"content": "Так грустно пить в одиночестве. Поговори с нами - и тебе станет лучше!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030211
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705030211,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030212
+					],
+					"speakerTitle": "Эола"
+				},
+				{
+					"id": 705030212,
+					"content": "Я всегда пью в одиночестве.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030213
+					],
+					"speakerTitle": "Эола"
+				},
+				{
+					"id": 705030213,
+					"content": "В тавернах Мондштадта мне не рады. У меня было такое хорошее настроение сегодня, хотелось пропустить пару-тройку стаканчиков, но они так и не оставили меня в покое...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030214
+					],
+					"speakerTitle": "Эола"
+				},
+				{
+					"id": 705030214,
+					"content": "#{NICKNAME}, откуда у тебя столько друзей?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030215
+					],
+					"speakerTitle": "Эола"
+				},
+				{
+					"id": 705030215,
+					"content": "Когда речь заходит о тебе, в словах звучит надежда, а лица озаряются улыбкой.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030216
+					],
+					"speakerTitle": "Эола"
+				},
+				{
+					"id": 705030216,
+					"content": "Но только в разговоре промелькнёт моя фамилия...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030217
+					],
+					"speakerTitle": "Эола"
+				},
+				{
+					"id": 705030217,
+					"content": "Эй, не говори так.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030218
+					]
+				},
+				{
+					"id": 705030218,
+					"content": "Не ты выбирала родиться в клане Лоуренсов. И какое нам до того дело, ведь та Эола, которую мы знаем, - прекрасный человек!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030219
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705030219,
+					"content": "Но ты не желаешь открыться. Всегда притворяешься злюкой и скрываешь свою доброту...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030220
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705030220,
+					"content": "Эй, кто сказал, что я притворяюсь?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030221,
+						705030222
+					],
+					"speakerTitle": "Эола"
+				},
+				{
+					"id": 705030221,
+					"content": "Другие примут тебя, Эола...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030223
+					]
+				},
+				{
+					"id": 705030222,
+					"content": "Эола, однажды тебя примут многие...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030223
+					]
+				},
+				{
+					"id": 705030223,
+					"content": "Думаешь? Даже пьяной мне сложновато поверить...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030224
+					],
+					"speakerTitle": "Эола"
+				},
+				{
+					"id": 705030224,
+					"content": "Я так давно стала рыцарем Фавониус, но все ещё...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030225
+					],
+					"speakerTitle": "Эола"
+				},
+				{
+					"id": 705030225,
+					"content": "«Ветра меняют своё направление».",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030226
+					]
+				},
+				{
+					"id": 705030226,
+					"content": "Точно! Тот бродяжка-бард сказал что-то такое же умное.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030227
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705030227,
+					"content": "Просто будь собой, Эола... И двигайся вперёд.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030228
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705030228,
+					"content": "Однажды ты заставишь всех изменить отношение к клану Лоуренс!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030229
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705030229,
+					"content": "Просто наберись терпения.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030230
+					]
+				},
+				{
+					"id": 705030230,
+					"content": "Угу, спасибо...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030231
+					],
+					"speakerTitle": "Эола"
+				},
+				{
+					"id": 705030231,
+					"content": "Я... кхм... Мне пора.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030232
+					],
+					"speakerTitle": "Эола"
+				},
+				{
+					"id": 705030232,
+					"content": "Тебя проводить?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030233
+					]
+				},
+				{
+					"id": 705030233,
+					"content": "Не нужно. Просто сейчас не могу думать ни о чём другом, пока не запишу эти слова на бумаге...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030234
+					],
+					"speakerTitle": "Эола"
+				},
+				{
+					"id": 705030234,
+					"content": "После пары-тройки стаканчиков Эола куда более откровенна.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030235
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705030235,
+					"content": "Но мне кажется, что без её фирменных слов о мести чего-то не хватает.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030236
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705030236,
+					"content": "Ой-ой... Как думаешь, она придёт завтра поутру угрожать нам, чтобы мы забыли, что произошло сегодня?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030237
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705030237,
+					"content": "Хм, кто знает.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

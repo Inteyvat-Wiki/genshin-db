@@ -1,0 +1,176 @@
+{
+	"id": 71701,
+	"type": "WQ",
+	"name": "Herboriste en détresse",
+	"description": "Gui l'herboriste, de Liyue, aurait besoin de 3 fleurs de Qingxin.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Donnez 3 fleurs de Qinxing à Gui l'herboriste.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Gui l'herboriste.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170102,
+						0
+					],
+					"talkId": 7170102
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170101",
+							"2"
+						],
+						"stepId": 7170101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170101"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Gui l'herboriste"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717010101,
+					"content": "Les fleurs de Qingxin...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717010102
+					]
+				},
+				{
+					"id": 717010102,
+					"content": "Ah, vous avez donc vu mon annonce ? Je suis ravi que vous me proposiez votre aide.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717010103
+					],
+					"speakerTitle": "Gui l'herboriste"
+				},
+				{
+					"id": 717010103,
+					"content": "Vous avez réussi à trouver ces trois fleurs de Qingxin ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717010104,
+						717010105
+					],
+					"speakerTitle": "Gui l'herboriste"
+				},
+				{
+					"id": 717010104,
+					"content": "Voici pour vous.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717010105,
+					"content": "Pas encore...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717010106
+					]
+				},
+				{
+					"id": 717010106,
+					"content": "Revenez vite me voir dès que vous les aurez trouvées, alors. Nous avons des gens à soigner.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Gui l'herboriste"
+				}
+			]
+		},
+		{
+			"id": 7170102,
+			"completionStepIds": [
+				7170102
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170102",
+							"2"
+						],
+						"stepId": 7170102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Gui l'herboriste"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717010201,
+					"content": "Merci bien, elles feront l'affaire. Prenez ceci en récompense.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717010202
+					],
+					"speakerTitle": "Gui l'herboriste"
+				},
+				{
+					"id": 717010202,
+					"content": "Il faut que je ramène ces fleurs au plus vite, nos clients comptent sur nous.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Gui l'herboriste"
+				}
+			]
+		}
+	]
+}

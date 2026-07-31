@@ -1,0 +1,920 @@
+{
+	"id": 376,
+	"type": "AQ",
+	"name": "逃亡",
+	"description": "你幾乎完美地執行了溫迪的計畫，眼看天空之琴即將到手，一個陌生人突然出現拿走了天空之琴。而你們的動靜也驚動了守衛，一行人只得倉皇逃出大教堂。",
+	"unlockDescription": "",
+	"chapter": "為了沒有眼淚的明天",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		377
+	],
+	"prevMainQuestList": [
+		375
+	],
+	"steps": [
+		{
+			"id": 37601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "逃出大教堂",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1031,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "通過風場，遠離大教堂",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1070,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37603,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "失敗回滾",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37604,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "躲進酒館",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_ROOM",
+					"rawParams": [
+						1009,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37605,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "回答迪盧克的質問",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37604,
+						0
+					],
+					"talkId": 37604
+				}
+			]
+		},
+		{
+			"id": 37606,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "躲到酒館的樓上",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1034,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37607,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "等待衛兵離去",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37606,
+						0
+					],
+					"talkId": 37606
+				}
+			]
+		},
+		{
+			"id": 37608,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "與迪盧克對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37607,
+						0
+					],
+					"talkId": 37607
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 37604,
+			"completionStepIds": [
+				37605
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37604",
+							"3"
+						],
+						"stepId": 37604,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37605",
+							"2"
+						],
+						"stepId": 37605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"迪盧克"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3760401,
+					"content": "迪盧克老爺，這週的帳面就是這樣了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760402
+					],
+					"speakerTitle": "查爾斯"
+				},
+				{
+					"id": 3760402,
+					"content": "這次風災，對生意的影響果然很大。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760403
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760403,
+					"content": "希望這段時間早點過去吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760404
+					],
+					"speakerTitle": "查爾斯"
+				},
+				{
+					"id": 3760404,
+					"content": "老闆，我們…想要一個，稍微隱蔽點的地方。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760405
+					],
+					"speakerTitle": "溫迪"
+				},
+				{
+					"id": 3760405,
+					"content": "要說隱蔽的話，二樓人少。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760406
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760406,
+					"content": "但你不是吟遊詩人嗎？不如選個熱鬧的位置吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760407
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760407,
+					"content": "啊哈哈，收費演出就等下次吧。我們先上去了，一會見~！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760408
+					],
+					"speakerTitle": "溫迪"
+				},
+				{
+					"id": 3760408,
+					"content": "看好他們。那個詩人很可疑，我要去問問情況。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760409
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760409,
+					"content": "呃…問誰？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760410
+					],
+					"speakerTitle": "查爾斯"
+				},
+				{
+					"id": 3760410,
+					"content": "蒙德城的「保全」們。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "迪盧克"
+				}
+			]
+		},
+		{
+			"id": 37605,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37606",
+							"2"
+						],
+						"stepId": 37606,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"迪盧克"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3760411,
+					"content": "還不上二樓嗎？看你們明明很急的樣子。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "迪盧克"
+				}
+			]
+		},
+		{
+			"id": 37606,
+			"completionStepIds": [
+				37607
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37606",
+							"3"
+						],
+						"stepId": 37606,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37607",
+							"2"
+						],
+						"stepId": 37607,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"迪盧克"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3760601,
+					"content": "啊，迪盧克老爺，你看到那兩個小偷了嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760602
+					],
+					"speakerTitle": "奧特"
+				},
+				{
+					"id": 3760602,
+					"content": "發生了什麼，怎麼出動了這麼多人？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760603
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760603,
+					"content": "迪盧克老爺沒聽說嗎？有兩個小偷，居然打起了天空之琴的主意！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760604
+					],
+					"speakerTitle": "邁爾斯"
+				},
+				{
+					"id": 3760604,
+					"content": "哦？真是奇了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760605
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760605,
+					"content": "是吧。天空之琴可是風神他老人家親手彈過的寶物，這樣珍貴的文化財產——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760606
+					],
+					"speakerTitle": "邁爾斯"
+				},
+				{
+					"id": 3760606,
+					"content": "居然有人會傻到偷一件賣不出去的東西，還不如偷我家酒窖划算。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760607
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760607,
+					"content": "…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760608
+					],
+					"speakerTitle": "奧特"
+				},
+				{
+					"id": 3760608,
+					"content": "啊，抱歉離題了。那一黃一綠的兩個人，好像往那邊去了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760609
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760609,
+					"content": "好的好的。謝謝迪盧克老爺！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "邁爾斯"
+				}
+			]
+		},
+		{
+			"id": 37607,
+			"completionStepIds": [
+				37608
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37607",
+							"3"
+						],
+						"stepId": 37607,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37608",
+							"2"
+						],
+						"stepId": 37608,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"迪盧克"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3760701,
+					"content": "今天想喝…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760702
+					],
+					"speakerTitle": "溫迪"
+				},
+				{
+					"id": 3760702,
+					"content": "把從櫃子後面摸來的酒給我放下。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760703
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760703,
+					"content": "…想喝冰一點的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760704
+					],
+					"speakerTitle": "溫迪"
+				},
+				{
+					"id": 3760704,
+					"content": "好了，你們該好好回答一下我的問題了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760705
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760705,
+					"content": "先讓我喝完，我會付帳的啦…嗯，用表演抵債。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760706
+					],
+					"speakerTitle": "溫迪"
+				},
+				{
+					"id": 3760706,
+					"content": "不是錢的問題，你看起來還沒到能買酒的年紀。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760707
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760708,
+					"content": "不如先回答我的問題。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3760709
+					]
+				},
+				{
+					"id": 3760710,
+					"content": "這是哪位？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3760711
+					]
+				},
+				{
+					"id": 3760707,
+					"content": "這你可以放心，我喝酒的時候你還在——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760708,
+						3760710
+					],
+					"speakerTitle": "溫迪"
+				},
+				{
+					"id": 3760709,
+					"content": "#{F#妳}{M#你}想問「這是哪位」，對嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760711
+					],
+					"speakerTitle": "溫迪"
+				},
+				{
+					"id": 3760711,
+					"content": "想必這位就是<color=#00E1FFFF>迪盧克</color>老爺，酒館老闆背後的…大老闆。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760712
+					],
+					"speakerTitle": "溫迪"
+				},
+				{
+					"id": 3760712,
+					"content": "是很有名的人呢。順帶一提，我很喜歡他家出品的蒲公英酒。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760713
+					],
+					"speakerTitle": "溫迪"
+				},
+				{
+					"id": 3760713,
+					"content": "雖然大部分時間我只買得起散裝的…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760714
+					],
+					"speakerTitle": "溫迪"
+				},
+				{
+					"id": 3760714,
+					"content": "我剛從衛兵那裡聽說小偷的事。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760715
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760715,
+					"content": "先說明一下，你們居然敢去偷天空之琴，我很欣賞。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760716
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760716,
+					"content": "就算你們是傻子，那也是千年少見的傻子了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760717
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760717,
+					"content": "不是我們偷的啦！真犯人另有其人——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760718
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 3760718,
+					"content": "這位可是騎士團的當紅新人，怎麼會去偷蒙德的聖物呢？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760719
+					],
+					"speakerTitle": "溫迪"
+				},
+				{
+					"id": 3760719,
+					"content": "#當紅新人…？啊，原來就是{F#妳}{M#你}啊。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760720
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760721,
+					"content": "其實也沒那麼熟。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3760723
+					]
+				},
+				{
+					"id": 3760722,
+					"content": "只是聽過一場演奏的關係。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3760723
+					]
+				},
+				{
+					"id": 3760720,
+					"content": "#怎麼，{F#妳}{M#你}和那個吟遊詩人是熟人嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760721,
+						3760722
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760723,
+					"content": "嗯…身為旅行者，卻願意對危難中的蒙德伸出援手。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760724
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760724,
+					"content": "這樣的人，加入騎士團太可惜了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760725
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760725,
+					"content": "西風騎士團…在風魔龍問題上一直畏首畏尾，效率低下。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760726
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760726,
+					"content": "外交上對<color=#00E1FFFF>「愚人眾」</color>也是弱勢又保守。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760727
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760727,
+					"content": "嘖…算了，我也不想多提這個話題。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760728
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760728,
+					"content": "看來迪盧克老爺非常不喜歡西風騎士團呢。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760729
+					],
+					"speakerTitle": "溫迪"
+				},
+				{
+					"id": 3760729,
+					"content": "道路不同罷了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760730
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760730,
+					"content": "我對蒙德這座城市，有我自己的期許…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760731
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760731,
+					"content": "那麼回答我的問題吧。你們為什麼要偷走天空之琴？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760732
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760732,
+					"content": "你真的想知道嗎？可能會捲入與騎士團有關的麻煩哦？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760733
+					],
+					"speakerTitle": "溫迪"
+				},
+				{
+					"id": 3760733,
+					"content": "…呵。我不怕麻煩，我本人就是騎士團的麻煩。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760734
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760734,
+					"content": "那麼，如果我來演奏真實的故事，你會相信我嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760735
+					],
+					"speakerTitle": "溫迪"
+				},
+				{
+					"id": 3760735,
+					"content": "視情況而定，我會作出判斷。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760736
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760736,
+					"content": "那麼——你會付我演出的賞額嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760737
+					],
+					"speakerTitle": "溫迪"
+				},
+				{
+					"id": 3760737,
+					"content": "報酬從5摩拉到天空之琴，視你的故事而定。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760738
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760738,
+					"content": "很好。我就再追加一場吧——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760739
+					],
+					"speakerTitle": "溫迪"
+				},
+				{
+					"id": 3760739,
+					"content": "剛才的敘事詩，究竟是…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760740
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760740,
+					"content": "這是重要的秘密。為什麼讓我知道這些？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760741
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760741,
+					"content": "為什麼呢？嗯，也許是因為風的流向正在變化吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760742
+					],
+					"speakerTitle": "溫迪"
+				},
+				{
+					"id": 3760742,
+					"content": "——怎麼樣，迪盧克老爺？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760743
+					],
+					"speakerTitle": "溫迪"
+				},
+				{
+					"id": 3760743,
+					"content": "有趣。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760744
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760744,
+					"content": "給我一些時間，我可以想辦法牽線搭橋…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760745
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760745,
+					"content": "#異鄉人，{F#妳}{M#你}似乎是因為騎士團的身分，沒有遭到懷疑。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760746
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760746,
+					"content": "#通緝令上寫的特徵只是金髮，衛兵應該不會找上{F#妳}{M#你}。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760747
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760747,
+					"content": "但吟遊詩人，你最好還是不要離開酒館了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760748
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760748,
+					"content": "沒問題！我喜歡酒館。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760749
+					],
+					"speakerTitle": "溫迪"
+				},
+				{
+					"id": 3760749,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760750
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 3760750,
+					"content": "那麼，晚上酒館打烊以後，我們在這裡再會。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760751
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 4820221,
+					"content": "#按照我給{F#妳}{M#你}<color=#00E1FFFF>標記好的路線</color>，一路平穩地飛到終點吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820222
+					],
+					"speakerTitle": "安柏"
+				}
+			]
+		}
+	]
+}

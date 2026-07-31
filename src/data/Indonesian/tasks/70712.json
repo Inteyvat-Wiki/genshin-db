@@ -1,0 +1,176 @@
+{
+	"id": 70712,
+	"type": "WQ",
+	"name": "Studi Flora Chloris",
+	"description": "Chloris membutuhkan tiga Cecilia.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7071201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Berikan tiga bunga Cecilia kepada Chloris",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7071201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7071202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Chloris",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7071202,
+						0
+					],
+					"talkId": 7071202
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7071201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071201",
+							"2"
+						],
+						"stepId": 7071201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7071201"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Chloris"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707120101,
+					"content": "Tentang Cecilia...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707120102
+					]
+				},
+				{
+					"id": 707120102,
+					"content": "Eh? Ah, kamu pasti melihat komisiku ya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707120103
+					],
+					"speakerTitle": "Chloris"
+				},
+				{
+					"id": 707120103,
+					"content": "Apa kamu sudah mengumpulkan tiga bunga Cecilia?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707120104,
+						707120105
+					],
+					"speakerTitle": "Chloris"
+				},
+				{
+					"id": 707120104,
+					"content": "Sudah dikumpulkan.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707120105,
+					"content": "Masih belum.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707120106
+					]
+				},
+				{
+					"id": 707120106,
+					"content": "Oke, setelah kamu mengumpulkan semuanya, tolong segera bawa padaku secepatnya, aku menunggunya karena akan digunakan untuk penelitianku.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Chloris"
+				}
+			]
+		},
+		{
+			"id": 7071202,
+			"completionStepIds": [
+				7071202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071202",
+							"2"
+						],
+						"stepId": 7071202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Chloris"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707120201,
+					"content": "Hmm... sepertinya segini sudah cukup untuk penelitianku.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707120202
+					],
+					"speakerTitle": "Chloris"
+				},
+				{
+					"id": 707120202,
+					"content": "Mohon terimalah ini. Terima kasih telah membantuku.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Chloris"
+				}
+			]
+		}
+	]
+}

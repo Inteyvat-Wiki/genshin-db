@@ -1,0 +1,919 @@
+{
+	"id": 20518,
+	"type": "IQ",
+	"name": "Поручение «того господина»",
+	"description": "После того как с делом Джиллианы было покончено, Вэл сообщила, что у «того господина» есть новое поручение...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2051801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Вэл",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2051801,
+						0
+					],
+					"talkId": 2051801
+				}
+			]
+		},
+		{
+			"id": 2051802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Пройдите к указанной точке",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2051803,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Победите Похитителей сокровищ",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2051804,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Вернитесь к Вэл",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2051802,
+						0
+					],
+					"talkId": 2051802
+				}
+			]
+		},
+		{
+			"id": 2051805,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2051803,
+						0
+					],
+					"talkId": 2051803
+				}
+			]
+		},
+		{
+			"id": 2051806,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Вернитесь к Вэл",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2051804,
+						0
+					],
+					"talkId": 2051804
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2051801,
+			"completionStepIds": [
+				2051801
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2051801",
+							"2"
+						],
+						"stepId": 2051801,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Вэл"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 205180101,
+					"content": "Вот так встреча. Как поживаешь?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180102
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180102,
+					"content": "Да, ещё кое-что. Дела у Джиллианы ни шатко ни валко. Хорошие вести - из Мондштадта она ещё не уехала...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180103
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180103,
+					"content": "А плохие - она рассказала о своей ситуации сестре Виктории, но та до сих пор ничего не предприняла.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180104
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180104,
+					"content": "Нам лишь остаётся ждать, чем всё это кончится.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180105
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180105,
+					"content": "...Что это ты собираешься делать?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						205180106
+					]
+				},
+				{
+					"id": 205180106,
+					"content": "Зачем ты так смотришь на меня, словно на какого-нибудь злодея? Я тебе вообще-то намекаю, как помочь ей.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180107
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180107,
+					"content": "Вернёмся к делу. Обращаюсь я к тебе потому, что с прошлого раза остались нерешённые проблемы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180108
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180108,
+					"content": "#Проще говоря, Похитителей сокровищ ты победил{F#а}, но в то же время позволил{F#а} им обнаружить Джиллиану.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180109
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180109,
+					"content": "Похитители сокровищ предателей не жалуют. Насколько я знаю, у Мондштадта обнаружили их следы, причём их самих не видел никто.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180110
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180110,
+					"content": "Боюсь, они пришли, чтобы устроить Джиллиане неприятности, а заодно возместить потери. Они очень опасны, и мы просим тебя дать им отпор.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180111,
+						205180113,
+						205180115
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180111,
+					"content": "Разве это не ваша обязанность?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						205180112
+					]
+				},
+				{
+					"id": 205180112,
+					"content": "#Ай, я тоже получила приказ. Но, видишь ли, один господин настоял, чтобы этим делом занял{F#ась}{M#ся} именно ты.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180121
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180121,
+					"content": "Не переживай, на этот раз тебя будет ожидать солидная награда.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180122
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180122,
+					"content": "Тот господин предоставил более чем достаточно моры, так что платить из собственного кармана, как в прошлый раз, мне не придётся... Точно, позволь мне отметить местоположение этих Похитителей сокровищ на твоей карте.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180123
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180123,
+					"content": "Это, пожалуй, всё. Защитишь Джиллиану, Рудольфа, Лили и Мондштадт, получишь много моры. Дело за тобой, так что постарайся.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180113,
+					"content": "#Так ты хочешь, чтобы я всё сделал{F#а} сам{F#а}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						205180114
+					]
+				},
+				{
+					"id": 205180114,
+					"content": "Ну что ты, не надо так грубо. Да и в бою ты куда сильнее меня.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180121
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180115,
+					"content": "Этим должны заняться Ордо Фавониус.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						205180116
+					]
+				},
+				{
+					"id": 205180116,
+					"content": "Это правда, но тот господин считает, что чем меньше людей будет знать о ситуации Джиллианы, тем лучше.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180117
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180117,
+					"content": "Кроме того, он к этому делу привлекать рыцарей не желает. Всё-таки их методы крайне неделикатны, и часто они заходят слишком далеко.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180118
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180118,
+					"content": "Взять, например, исполнительного старину Хоффмана. Если он услышит, что у Мондштадта объявились Похитители сокровищ, то тут же поднимет на уши весь орден.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180119
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180119,
+					"content": "Ну а если рыцари выступят во всём своём обмундировании, Похитители сокровищ тут же разделятся и удерут кто куда, что сведёт весь план избавиться от них на нет.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180120
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180120,
+					"content": "Поэтому мы вынуждены просить тебя расправиться с ними в одиночку.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180121
+					],
+					"speakerTitle": "Вэл"
+				}
+			]
+		},
+		{
+			"id": 2051802,
+			"completionStepIds": [
+				2051804
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2051804",
+							"2"
+						],
+						"stepId": 2051804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Вэл"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 205180201,
+					"content": "#Ты так быстро справил{F#ась}{M#ся}? Впечатляет. Теперь понятно, почему ты тому господину так нравишься.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180202,
+						205180204
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180202,
+					"content": "Где деньги?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						205180203
+					]
+				},
+				{
+					"id": 205180203,
+					"content": "А ты всё-таки бука. Награда твоя здесь. Но ты и меня пойми, я человек подневольный.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180204,
+					"content": "Я ценю твою доброту.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						205180205
+					]
+				},
+				{
+					"id": 205180205,
+					"content": "Взаимно. Вот, забери награду. И ещё... С тобой приятно работать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Вэл"
+				}
+			]
+		},
+		{
+			"id": 2051803,
+			"completionStepIds": [
+				2051805
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2051805",
+							"2"
+						],
+						"stepId": 2051805,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Хоффман"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 205180301,
+					"content": "Ну и прячьтесь себе, Похитители сокровищ! На глаза мне не попадайтесь, не то... Да куда же вы все подевались?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180302
+					],
+					"speakerTitle": "Хоффман"
+				},
+				{
+					"id": 205180302,
+					"content": "Я знаю, где они прячутся.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						205180303
+					]
+				},
+				{
+					"id": 205180303,
+					"content": "Вы? Откуда у вас... Кто сделал такие подробные отметки на вашей карте? Вэл? Вот это поворот...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180304
+					],
+					"speakerTitle": "Хоффман"
+				},
+				{
+					"id": 205180304,
+					"content": "Это очень далёко от места, которое мы обнаружили ранее. Чего добиваются эти Похитители сокровищ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180305
+					],
+					"speakerTitle": "Хоффман"
+				},
+				{
+					"id": 205180305,
+					"content": "Пожалуйста, позволь мне их переписать... Готово. Я отправлю людей проверить эти места. Если там и правда окажутся Похитители сокровищ, мы отправимся туда и перебьём их.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180306
+					],
+					"speakerTitle": "Хоффман"
+				},
+				{
+					"id": 205180306,
+					"content": "Ещё раз благодарю тебя за твой подвиг во имя Мондштадта! На этот раз ни один Похититель сокровищ не уйдёт от нас!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Хоффман"
+				}
+			]
+		},
+		{
+			"id": 2051804,
+			"completionStepIds": [
+				2051806
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2051806",
+							"2"
+						],
+						"stepId": 2051806,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Вэл"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 205180401,
+					"content": "#Ты так быстро справил{F#ась}{M#ся}? Впечатляет. Теперь понятно, почему тот господин предпочитает доверять дела именно тебе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180402
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180402,
+					"content": "Теперь этим занимаются рыцари Ордо Фавониус.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						205180403
+					]
+				},
+				{
+					"id": 205180403,
+					"content": "Эй, разве я не говорила, что если они возьмутся за это дело, то от них могут быть неприятности?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180404
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180404,
+					"content": "А ты умеешь перекладывать свою работу на других. К счастью, тот господин учёл и такой ход событий, поэтому у меня готов запасной план.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180405
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180405,
+					"content": "Об остальном не беспокойся. Эх, а сейчас мне нужно пойти и кое-что уладить...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180406
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180406,
+					"content": "Но, по словам того господина, твои действия могут привести к любопытным последствиям.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180407
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180407,
+					"content": "В конце концов, было бы слишком очевидным, если бы о передвижениях Похитителей сокровищ донесла я. А господину тому иметь дело непосредственно с рыцарями не с руки.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180408
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180408,
+					"content": "Это тебе. Пожалуйста, прими эту, как выразился тот господин, небольшую награду за перемену течения ветра.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Вэл"
+				}
+			]
+		},
+		{
+			"id": 2051805,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2051802",
+							"2"
+						],
+						"stepId": 2051802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2051803",
+							"2"
+						],
+						"stepId": 2051803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Вэл"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 205180501,
+					"content": "#Всё ещё готовишься? Ладно. Выдвигайся, как только будешь готов{F#а}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180502,
+						205180506
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180502,
+					"content": "Кто всё-таки этот господин такой?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						205180503
+					]
+				},
+				{
+					"id": 205180503,
+					"content": "Сказать я тебе этого не могу, как ты меня ни расспрашивай. Таковы реалии нашей работы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180504
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180504,
+					"content": "Если даже мы какие-либо из сведений и раскрываем, так только потому, что это нужно нам.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180505
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180505,
+					"content": "Вот, пораскинь мозгами: что из сказанного мною ранее подходит под эту категорию?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180506,
+					"content": "Какова ваша цель?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						205180507
+					]
+				},
+				{
+					"id": 205180507,
+					"content": "Цель... Чего добивается тот господин, я разгадать не смогла. Но наверняка он тоже желает защитить Мондштадт.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180508
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180508,
+					"content": "Скажем так... В столь важных делах он согласно своему увлечению действовать не станет.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180509
+					],
+					"speakerTitle": "Вэл"
+				},
+				{
+					"id": 205180509,
+					"content": "Так, стоп. Мне и задумываться о таком не стоит...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Вэл"
+				}
+			]
+		},
+		{
+			"id": 2051806,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2051802",
+							"2"
+						],
+						"stepId": 2051802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2051803",
+							"2"
+						],
+						"stepId": 2051803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2051804",
+							"2"
+						],
+						"stepId": 2051804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Джиллиана"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 205180601,
+					"content": "Ты... Чем я могу тебе помочь?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180602
+					],
+					"speakerTitle": "Джиллиана"
+				},
+				{
+					"id": 205180602,
+					"content": "Я всё ещё ожидаю ответа сестры Виктории.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180603
+					],
+					"speakerTitle": "Джиллиана"
+				},
+				{
+					"id": 205180603,
+					"content": "То происшествие... Я готов к его последствиям, какими бы они ни были.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Джиллиана"
+				}
+			]
+		},
+		{
+			"id": 2051807,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2051806",
+							"2"
+						],
+						"stepId": 2051806,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Джиллиана"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 205180701,
+					"content": "Ты... Чем я могу тебе помочь?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180702
+					],
+					"speakerTitle": "Джиллиана"
+				},
+				{
+					"id": 205180702,
+					"content": "Я всё ещё ожидаю ответа сестры Виктории.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						205180703
+					],
+					"speakerTitle": "Джиллиана"
+				},
+				{
+					"id": 205180703,
+					"content": "То происшествие... Я готов к его последствиям, какими бы они ни были.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Джиллиана"
+				}
+			]
+		},
+		{
+			"id": 2051808,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2051806",
+							"2"
+						],
+						"stepId": 2051806,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2051804",
+							"2"
+						],
+						"stepId": 2051804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Хоффман"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 205180801,
+					"content": "Похитители сокровищ осмелились подойти к Мондштадту... Какая дерзость!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Хоффман"
+				}
+			]
+		},
+		{
+			"id": 2051809,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2051801",
+							"2"
+						],
+						"stepId": 2051801,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2051803",
+							"2"
+						],
+						"stepId": 2051803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Хоффман"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 205180901,
+					"content": "Ну и прячьтесь себе, Похитители сокровищ! На глаза мне не попадайтесь, не то... Да куда же вы все подевались?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Хоффман"
+				}
+			]
+		}
+	]
+}

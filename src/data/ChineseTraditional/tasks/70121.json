@@ -1,0 +1,223 @@
+{
+	"id": 70121,
+	"type": "WQ",
+	"name": "覆雪之國",
+	"description": "#在雪山之中，{F#妳}{M#你}找到了一份奇怪的日誌，上面似乎記載著某個王國的秘密。也許，營地裡會有人知道和這本日誌有關的線索…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7012101,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100693,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100645,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100692,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7012102,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7012101,
+						0
+					],
+					"talkId": 7012101
+				}
+			]
+		},
+		{
+			"id": 7012103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "回到大本營，向學者詢問和日誌有關的線索",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7012102,
+						0
+					],
+					"talkId": 7012102
+				}
+			]
+		},
+		{
+			"id": 7012104,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100692,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100693,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100645,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7012105,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往「陽面的營地」尋找日誌",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100693,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7012106,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往「密室」尋找日誌",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100645,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7012107,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "將收集到的日誌交給史蒂文斯",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7012103,
+						0
+					],
+					"talkId": 7012103
+				}
+			]
+		},
+		{
+			"id": 7012109,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往「西南面的遺蹟地窖」尋找日誌",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100692,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7012101,
+			"completionStepIds": [
+				7012102
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7012102",
+							"2"
+						],
+						"stepId": 7012102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"派蒙"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 701210101,
+					"content": "咦？這是什麼？是一本…日誌？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701210102
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 701210102,
+					"content": "看起來，好像是以前在這裡考察的人留下的記錄…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701210103
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 701210103,
+					"content": "#{NICKNAME}，可能有人對這些…嗯，歷史記錄感興趣，我們去問問吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				}
+			]
+		}
+	]
+}

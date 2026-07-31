@@ -1,0 +1,223 @@
+{
+	"id": 20027,
+	"type": "IQ",
+	"name": "포동포동한 대규모 폭동!",
+	"description": "슬라임이 갑자기 다운 와이너리에서 출현했다. 와이너리 근처의 터너도 휘말린 듯하다…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2002701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "상세내용 확인하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "슬라임 처치하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002703,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "터너와 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002701,
+						0
+					],
+					"talkId": 2002701
+				}
+			]
+		},
+		{
+			"id": 2002704,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "이상 정황이 있는 곳으로 가기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002705,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "「바람」으로 먼지 제거하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002706,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "모든 슬라임 처치하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2002701,
+			"completionStepIds": [
+				2002703
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002702",
+							"3"
+						],
+						"stepId": 2002702,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"터너"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200270101,
+					"content": "#정말 고마워, {NICKNAME}…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270102
+					],
+					"speakerTitle": "터너"
+				},
+				{
+					"id": 200270102,
+					"content": "포도 넝쿨이 어떤지 보러 가려고 했는데, 이런 재수 없는 일이 생길 줄이야…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270103
+					],
+					"speakerTitle": "터너"
+				},
+				{
+					"id": 200270103,
+					"content": "윽, 내 아들에게는 말하지 말아줘. 그 아이는 성의 페보니우스 기사야. 평소에도 일하느라 힘들 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270104
+					],
+					"speakerTitle": "터너"
+				},
+				{
+					"id": 200270104,
+					"content": "아비가 돼서 이런 사소한 일로 아들을 걱정시키면 안 되지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270105
+					],
+					"speakerTitle": "터너"
+				},
+				{
+					"id": 200270105,
+					"content": "하지만 최근 와이너리 근처에 슬라임이 자꾸 나타나고 있어. 슬라임이 포도 넝쿨을 망칠까 봐 걱정이 돼서 잠도 안 와",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270106
+					],
+					"speakerTitle": "터너"
+				},
+				{
+					"id": 200270106,
+					"content": "시간이 된다면 이 늙은이 좀 도와줘. 다시 가서 주위에 슬라임을 쫓아내줘. 놈들이 다시 와서 망치지 못하게",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270107,
+						200270108
+					],
+					"speakerTitle": "터너"
+				},
+				{
+					"id": 200270107,
+					"content": "알겠어요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200270109
+					]
+				},
+				{
+					"id": 200270109,
+					"content": "다행이다. 이제 좀 쉴 수 있겠어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "터너"
+				},
+				{
+					"id": 200270108,
+					"content": "다른 일이 있어서요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200270110
+					]
+				},
+				{
+					"id": 200270110,
+					"content": "하, 원래는 나 혼자로도 괜찮은데…. 이 늙은이가 몸을 움직일 수가 있어야지, 젊은이, 나 좀 도와주게.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "터너"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,167 @@
+{
+	"id": 74658,
+	"type": "WQ",
+	"name": "앙투완의 짐승고기 의뢰",
+	"description": "앙투완은 짐승고기 8개가 필요하다",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7465801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "앙투완에게 짐승고기 8개 건네주기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7465801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7465802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "앙투완과 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7465802,
+						0
+					],
+					"talkId": 7465802
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7465801,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465801",
+							"2"
+						],
+						"stepId": 7465801,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7465801"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"앙투완"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746580101,
+					"content": "짐승고기에 대해…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746580102
+					]
+				},
+				{
+					"id": 746580102,
+					"content": "후아… 내 구세주, 드디어 왔구나",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746580103
+					],
+					"speakerTitle": "앙투완"
+				},
+				{
+					"id": 746580103,
+					"content": "짐승고기는 다 준비한 거지? 이리 줘. 어서 바게트에게 음식을 만들어 주고 쉬어야겠어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746580106,
+						746580104
+					],
+					"speakerTitle": "앙투완"
+				},
+				{
+					"id": 746580106,
+					"content": "준비됐어요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 746580104,
+					"content": "아직요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746580105
+					]
+				},
+				{
+					"id": 746580105,
+					"content": "조금만 빨리 가져다줄 수 있을까? 너무 힘들어서 빨리 쉬러 가고 싶거든",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "앙투완"
+				}
+			]
+		},
+		{
+			"id": 7465802,
+			"completionStepIds": [
+				7465802
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465802",
+							"2"
+						],
+						"stepId": 7465802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"앙투완"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746580201,
+					"content": "#고마워, {NICKNAME}. 다음 끼니는 맛있는 걸 먹을 수 있겠네",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "앙투완"
+				}
+			]
+		}
+	]
+}

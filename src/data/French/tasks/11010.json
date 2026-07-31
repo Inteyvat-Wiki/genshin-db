@@ -1,0 +1,1609 @@
+{
+	"id": 11010,
+	"type": "LQ",
+	"name": "Rencontre au-delà des mers",
+	"description": "Vous vous préparez avec Paimon à enquêter sur des ruines près de la Passe de Lingju...",
+	"unlockDescription": "",
+	"chapter": "Mobilisation",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		11011
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1101001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Renseignez-vous sur la situation auprès des Millelithes.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1101001,
+						0
+					],
+					"talkId": 1101001
+				}
+			]
+		},
+		{
+			"id": 1101002,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Examinez la piste du Gardien des ruines.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1101002,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1101003,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Éliminez le Gardien des ruines.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1101003,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1101004,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Continuez d'explorer les environs.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1101002,
+						0
+					],
+					"talkId": 1101002
+				}
+			]
+		},
+		{
+			"id": 1101005,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Rendez-vous à la Banque du Nord.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_ROOM",
+					"rawParams": [
+						1033,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_PRESENT_AT_SPECIFIC_SCENE",
+					"rawParams": [
+						1033,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1101006,
+			"order": 10,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Tartaglia.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1101003,
+						0
+					],
+					"talkId": 1101003
+				}
+			]
+		},
+		{
+			"id": 1101007,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Examinez la piste du Gardien des ruines.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1101007,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1101008,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Examinez la piste du Gardien des ruines.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1101008,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1101009,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Paimon.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1101005,
+						0
+					],
+					"talkId": 1101005
+				}
+			]
+		},
+		{
+			"id": 1101010,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1101001,
+			"completionStepIds": [
+				1101001
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1101001",
+							"2"
+						],
+						"stepId": 1101001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Daipai"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110100101,
+					"content": "#Prudence, {M#voyageur}{F#voyageuse}. Les promenades ne sont guère indiquées, en ce moment.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100102
+					],
+					"speakerTitle": "Daipai"
+				},
+				{
+					"id": 110100102,
+					"content": "Ah ? Il est arrivé quelque chose ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100103
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100103,
+					"content": "Oui. Aussi inhabituel que cela puisse paraître, on nous a informés de la présence de Gardiens des ruines dans la zone – même s'ils n'ont rien à y faire.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100104
+					],
+					"speakerTitle": "Daipai"
+				},
+				{
+					"id": 110100104,
+					"content": "Le sergent a envoyé quelqu'un mener l'enquête sur la raison de leur apparition. Les créatures ont juste quitté leurs ruines, apparemment.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100105
+					],
+					"speakerTitle": "Daipai"
+				},
+				{
+					"id": 110100105,
+					"content": "Quelqu'un est responsable de leur réveil ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100106
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100106,
+					"content": "Difficile à dire. Nous n'en savons que très peu pour l'instant.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100107
+					],
+					"speakerTitle": "Daipai"
+				},
+				{
+					"id": 110100107,
+					"content": "Qui plus est, ces ruines sont un lieu sinistre. On entend parfois des sons plus qu'étranges en parvenir...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100108
+					],
+					"speakerTitle": "Daipai"
+				},
+				{
+					"id": 110100108,
+					"content": "Sans l'aval du commandement, nous ne pouvons pas encore y pénétrer et mener l'enquête.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100109,
+						110100110
+					],
+					"speakerTitle": "Daipai"
+				},
+				{
+					"id": 110100109,
+					"content": "Prudence est mère de sureté, en effet.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100113
+					]
+				},
+				{
+					"id": 110100113,
+					"content": "Enfin... La meilleure stratégie pour l'instant est d'augmenter le nombre de patrouilles, et d'éviter qu'il n'arrive quelque chose aux civils.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100114
+					],
+					"speakerTitle": "Daipai"
+				},
+				{
+					"id": 110100114,
+					"content": "C'est vrai qu'un Gardien des ruines peut être sacrément dangereux pour quelqu'un d'ordinaire...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100115
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100115,
+					"content": "Je peux aider ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100116
+					]
+				},
+				{
+					"id": 110100116,
+					"content": "Voilà qui est très aimable de votre part, mais... Je préfère vous savoir en sécurité. Le jeu n'en vaut pas la chandelle.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100117
+					],
+					"speakerTitle": "Daipai"
+				},
+				{
+					"id": 110100117,
+					"content": "#{NICKNAME} est très {M#fort}{F#forte}, pas de souci à se faire.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100118,
+						110100120
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100118,
+					"content": "Je ferai attention, promis.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100119
+					]
+				},
+				{
+					"id": 110100119,
+					"content": "Ah...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100122
+					],
+					"speakerTitle": "Daipai"
+				},
+				{
+					"id": 110100122,
+					"content": "Dans ce cas...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100123
+					],
+					"speakerTitle": "Daipai"
+				},
+				{
+					"id": 110100123,
+					"content": "J'ai repéré des traces de Gardien des ruines sur les <color=#00E1FFFF>hauteurs</color>. Mais j'ai dû m'occuper d'aller prévenir les gens du coin ensuite et je n'ai pas encore suivi la piste.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100124
+					],
+					"speakerTitle": "Daipai"
+				},
+				{
+					"id": 110100124,
+					"content": "On commence par là alors ? Pas de problème !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100125
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100125,
+					"content": "#Durs comme le roc, puissants comme la montagne. Vous avez mes remerciements, {M#voyageur}{F#voyageuse}. Retrouvons-nous plus tard.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Daipai"
+				},
+				{
+					"id": 110100120,
+					"content": "J'en bats dix comme vous sans problème.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100121
+					]
+				},
+				{
+					"id": 110100121,
+					"content": "Haha, la confiance de la jeunesse...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100122
+					],
+					"speakerTitle": "Daipai"
+				},
+				{
+					"id": 110100110,
+					"content": "Pas vraiment efficace, tout ça.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100111
+					]
+				},
+				{
+					"id": 110100111,
+					"content": "Comment, qu'avez-vous dit ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100112
+					],
+					"speakerTitle": "Daipai"
+				},
+				{
+					"id": 110100112,
+					"content": "Hé, on dirait Diluc parlant des chevaliers de l'Ordre...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100113
+					],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 1101002,
+			"completionStepIds": [
+				1101004
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1101004",
+							"2"
+						],
+						"stepId": 1101004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Teucer"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110100201,
+					"content": "Hé, viens voir ! Il est tellement grand, c'est pas génial ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100202
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100202,
+					"content": "Hé, drôle d'allure pour un enfant.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100203
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100203,
+					"content": "C'est la première fois que j'en vois un d'aussi près, et toi ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100204,
+						110100206
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100204,
+					"content": "C'est un Gardien des ruines éteint.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100205
+					]
+				},
+				{
+					"id": 110100205,
+					"content": "Hein, un « Gardien des ruines » ? Mais non ! C'est un Qu'un-œil !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100208
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100208,
+					"content": "« Qu'un-œil » ? C'est mignon comme nom. On les appelle aussi comme ça ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100209
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100209,
+					"content": "Oui. C'est mon frère qui me l'a dit, c'est un vendeur de jouets ! Exactement ce genre de jouets !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100210
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100210,
+					"content": "Il travaille à l'Institut pour la recherche en jouets en ce moment. C'est de là-bas que sortent les Qu'un-œil.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100211
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100211,
+					"content": "Tu dois sûrement aimer les jouets, non ? C'est un modèle qui vient de sortir qui vole à côté de toi ? J'en ai jamais vu qui vole et parle en même temps ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100212,
+						110100214
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100212,
+					"content": "Paimon est réelle, tout comme le Gardien des ruines...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100213
+					]
+				},
+				{
+					"id": 110100213,
+					"content": "Hé, je ne suis pas un jouet !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100216
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100216,
+					"content": "Salutations, avez-vous trouvé quelque chose... Oh, un enfant ? ... Qu'est-ce qu'il se passe ici ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100217
+					],
+					"speakerTitle": "Daipai"
+				},
+				{
+					"id": 110100217,
+					"content": "Une rencontre qu'on vient de faire.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100218
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100218,
+					"content": "Ah, mais il faut faire attention. C'est dangereux par ici mon garçon. Il y a des machines à tuer dans les environs.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100219
+					],
+					"speakerTitle": "Daipai"
+				},
+				{
+					"id": 110100219,
+					"content": "Des « machines à tuer » ? Vous voulez dire comme ça ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100220
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100220,
+					"content": "Exactement. Celle-là aussi est très dangereuse. Si jamais elle s'active...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100221
+					],
+					"speakerTitle": "Daipai"
+				},
+				{
+					"id": 110100221,
+					"content": "Mais non, c'est pas des machines à tuer ! Les Qu'un-œil sont les défenseurs de la justice, vous avez pas le droit de parler comme ça !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100222
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100222,
+					"content": "Les « Qu'un-quoi » ? « Qu'un-œil » ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100223
+					],
+					"speakerTitle": "Daipai"
+				},
+				{
+					"id": 110100223,
+					"content": "Le monsieur dit du mal des Qu'un-œil, c'est sûr que c'est un méchant. Il ne faut pas lui parler.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100224
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100224,
+					"content": "Allons, je voulais juste...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100225,
+						110100226
+					],
+					"speakerTitle": "Daipai"
+				},
+				{
+					"id": 110100225,
+					"content": "Il ne vous écoute plus...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100227
+					]
+				},
+				{
+					"id": 110100227,
+					"content": "Ah, je n'ai jamais su y faire avec les enfants...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100228
+					],
+					"speakerTitle": "Daipai"
+				},
+				{
+					"id": 110100228,
+					"content": "Faites ce que vous avez à faire, on s'occupe de sa sécurité !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100229
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100229,
+					"content": "Bon, on n'a guère le choix... Je continue à patrouiller par ici dans ce cas, ramenez-le quelque part de sûr. La zone est trop dangereuse.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100230
+					],
+					"speakerTitle": "Daipai"
+				},
+				{
+					"id": 110100230,
+					"content": "Super ! Le Qu'un-œil a encore fait peur à un méchant !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100231,
+						110100232
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100231,
+					"content": "Comment tu t'appelles, petit ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100233
+					]
+				},
+				{
+					"id": 110100233,
+					"content": "Je m'appelle Teucer ! J'ai fait tout le voyage depuis Snezhnaya pour retrouver mon frère, mais tout seul pas facile de le retrouver...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100234
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100234,
+					"content": "Tu es venu de Snezhnaya !?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100235
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100235,
+					"content": "Oh, d'ailleurs j'ai failli oublier. Tiens !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100236
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100236,
+					"content": "Hein ? C'est lourd, qu'est-ce que c'est ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100237
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100237,
+					"content": "Oh !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100238,
+						110100239
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100238,
+					"content": "Des moras !",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100240
+					]
+				},
+				{
+					"id": 110100240,
+					"content": "C'est mon frère qui m'a dit d'en avoir sur moi. Il m'a dit qu'en les donnant à des gens bien, ils prendraient soin de moi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100241
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100241,
+					"content": "Ton frère a raison... Cependant, il est difficile de croire que tu as fait tout ce chemin avec juste des moras sur toi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100242
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100242,
+					"content": "On dirait bien que quelqu'un est issu d'une famille plutôt riche... C'est si rentable que ça la vente de jouets ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100243,
+						110100244
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100243,
+					"content": "J'accepte l'offre !",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100245
+					]
+				},
+				{
+					"id": 110100245,
+					"content": "Oh, vraiment ? Merci, je savais que tu étais quelqu'un de bien !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100246
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100246,
+					"content": "D'accord, alors on fait un marché !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100247
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100247,
+					"content": "Promesse faite, promesse due, oublie-la et ta langue gèlera !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100248
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100248,
+					"content": "Indéniablement une comptine de Snezhnaya...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100249
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100249,
+					"content": "Enfin, il s'agit juste de faire un peu de baby-sitting... Mais où est-ce qu'on va trouver son frère ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100250,
+						110100252
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100250,
+					"content": "Quelque part lié à Snezhnaya...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100251
+					]
+				},
+				{
+					"id": 110100251,
+					"content": "Un endroit lié à Snezhnaya... Oh, pourquoi ne pas aller voir à la <color=#00E1FFFF>Banque du Nord</color> ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100254
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100254,
+					"content": "Je vais enfin revoir mon frère !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100252,
+					"content": "La <color=#00E1FFFF>Banque du Nord</color> ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100253
+					]
+				},
+				{
+					"id": 110100253,
+					"content": "Bonne idée ! Allons jeter un œil !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100254
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100244,
+					"content": "J'accepte (et je rendrai les moras à ton frère...)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100245
+					]
+				},
+				{
+					"id": 110100239,
+					"content": "Plein de moras !",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100240
+					]
+				},
+				{
+					"id": 110100232,
+					"content": "Où sont tes parents ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100233
+					]
+				},
+				{
+					"id": 110100226,
+					"content": "Mieux vaut que je m'en charge...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100227
+					]
+				},
+				{
+					"id": 110100214,
+					"content": "Oui, ça en jette hein ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100215
+					]
+				},
+				{
+					"id": 110100215,
+					"content": "Hé ! Pourquoi tout le monde parle toujours de moi comme si j'étais un truc bizarre !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100216
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100206,
+					"content": "Fais attention. C'est très dangereux.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100207
+					]
+				},
+				{
+					"id": 110100207,
+					"content": "C'est vrai ça ! Les Qu'un-œil sont super forts ! Tous les méchants se font battre à chaque fois.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100208
+					],
+					"speakerTitle": "Teucer"
+				}
+			]
+		},
+		{
+			"id": 1101003,
+			"completionStepIds": [
+				1101006
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1101006",
+							"2"
+						],
+						"stepId": 1101006,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tartaglia"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110100301,
+					"content": "Pardon, Votre Excellence, mais c'est impossible, comment...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100302
+					],
+					"speakerTitle": "Ekaterina"
+				},
+				{
+					"id": 110100302,
+					"content": "Juste une fois, allons, ça ne fait rien !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100303
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100303,
+					"content": "Tiens ? Il est là lui aussi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100304
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100304,
+					"content": "Hé, c'est moi ! Je t'ai retrouvé, mon frère !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100305
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100305,
+					"content": "Cette voix... Teucer ! C'est bien toi !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100306
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100306,
+					"content": "Hahaha... Tu me fais une visite surprise, frérot ? Je ne pensais pas te revoir avant mon retour à Snezhnaya...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100307
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100307,
+					"content": "Comment vont les frère et sœur ? Tonia, et Anthon... Tout va bien pour eux ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100308
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100308,
+					"content": "Tu leur manques... Tonia prie tous les jours avant le dîner pour que rien ne t'arrive.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100309
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100309,
+					"content": "... Attends, Teucer ! Comment tu as fait pour arriver jusqu'ici ? Personne ne m'a prévenu...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100310
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100310,
+					"content": "Oh, euh... J'ai vu un navire qui avait l'air de vendre des jouets, je me suis dit que tu étais peut-être à bord...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100311
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100311,
+					"content": "Puis après être descendu, j'ai marché et marché et marché, puis j'ai vu le Qu'un-œil !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100312
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100312,
+					"content": "#Le Qu'un-œil s'est même débarrassé d'un méchant ! Après, j'ai suivi {M#le gentil monsieur}{F#la gentille dame} jusqu'ici...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100313,
+						110100315
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100313,
+					"content": "Tu es un passager clandestin !",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100314
+					]
+				},
+				{
+					"id": 110100314,
+					"content": "#Sans oublier que... Teucer est le petit frère de Tartaglia ! Tartaglia, {NICKNAME} !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100316
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100316,
+					"content": "Dans ce cas, pas de remords à avoir pour l'argent !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100317
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100317,
+					"content": "C'est très dangereux ce que tu as fait, frérot. Je suis vraiment content de te voir, mais promets-moi de ne pas retenter ce genre d'aventure, d'accord ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100318
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100318,
+					"content": "D'accord, promis... Je voulais pas te mettre en colère...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100319
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100319,
+					"content": "Mais non, je ne suis pas fâché. Je me fais juste du souci pour toi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100320
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100320,
+					"content": "#Il aurait pu t'arriver tout et n'importe quoi si tu n'étais pas tombé sur ces deux... {M#amis}{F#amies}. Tu les as {M#remerciés}{F#remerciées} j'espère ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100321
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100321,
+					"content": "Ben oui ! Je sais qu'il faut remercier.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100322
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100322,
+					"content": "Vous avez enfin remarqué qu'on était là...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100323
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100323,
+					"content": "Hahaha, toutes mes excuses, la famille avant tout. Pardon pour mes manières.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100324
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100324,
+					"content": "Et puis, nos récents... différends mis à part, reconnaissons-le : on s'entend plutôt bien, qu'en dites-vous ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100325,
+						110100326
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100325,
+					"content": "On essaye de sauver les apparences ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100327
+					]
+				},
+				{
+					"id": 110100327,
+					"content": "Allons, allons. Vous et moi n'avons été que de simples pions dans cette histoire. Quant à savoir qui perd ou qui gagne... Je préfère laisser cela à ceux qui jouent la partie.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100328
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100328,
+					"content": "Je suis beaucoup plus intéressé de savoir qui de nous gagne ou perd en combat singulier.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100329
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100329,
+					"content": "Quoi, vous avez envie de vous prendre une autre raclée ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100330
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100330,
+					"content": "Ah ! Je m'améliore à chaque seconde. Vous n'aurez pas autant de chance la prochaine fois.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100331,
+						110100332
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100331,
+					"content": "J'ai progressé, moi aussi.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100333
+					]
+				},
+				{
+					"id": 110100333,
+					"content": "Hé, hé, doucement là... Vous allez pas vous battre quand même ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100334
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100334,
+					"content": "Hahaha... Non, pas cette fois. On ne voudrait pas donner le mauvais exemple, n'est-ce pas ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100335
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100335,
+					"content": "Vous battre ? Pourquoi ? Vous êtes pas amis ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100336
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100336,
+					"content": "#Mais non, mais non... {NICKNAME}, merci d'avoir veillé sur mon frère. Il compte beaucoup pour moi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100337,
+						110100338
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100337,
+					"content": "Je garde mon œil sur vous.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100339
+					]
+				},
+				{
+					"id": 110100339,
+					"content": "Euh, j'étais en train de penser à quelque chose...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100340
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100340,
+					"content": "Teucer a bien dit que son frère vendait des jouets, je n'ai pas rêvé hein ? Vous n'êtes pas plutôt un Exécuteur des F...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100341
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100341,
+					"content": "Euh, hum... Oui, à ce sujet...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100342
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100342,
+					"content": "Chut, écoutez, je lui ai juste dit ça pour qu'il soit fier de moi. Après tout, pour un enfant, « vendeur » de jouets doit être le meilleur travail imaginable, non ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100343
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100343,
+					"content": "Je ne veux pas que ma famille ait quoi que ce soit à voir avec les Fatui, pour être honnête... Ou avec certains... aspects de Snezhnaya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100344
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100344,
+					"content": "Mon autre frère et ma sœur sont assez âgés et savent que je travaille pour la Tsarine, mais Teucer est le plus jeune, et à ses yeux...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100345
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100345,
+					"content": "Hum, disons que je suis un représentant en jouets de Snezhnaya envoyé à l'étranger, et actuellement posté à l'Institut pour la recherche en jouets...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100346
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100346,
+					"content": "Oh oui, c'est vrai ! Mon frère c'est le plus fort ! C'est le meilleur ami du Qu'un-œil !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100347
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100347,
+					"content": "Ne parlez de rien de tout ça devant Teucer. S'il vous plaît...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100348
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100348,
+					"content": "Ah, Ekaterina, je m'en vais de ce pas m'occuper de ce recouvrement de dette.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100349
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100349,
+					"content": "Il n'a pas attendu pour prendre la poudre d'escampette !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100350
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100350,
+					"content": "Mais n'est-ce pas un peu hum... inapproprié de vous occuper de ce... genre d'activité pour le moment ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100351
+					],
+					"speakerTitle": "Ekaterina"
+				},
+				{
+					"id": 110100351,
+					"content": "Un pari est un pari. Celui qui perd contre un Usurier doit être prêt à... faire un peu d'exercice.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100352
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100352,
+					"content": "Tu vas repartir vendre des jouets ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100353
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100353,
+					"content": "#Eh oui. J'aimerais bien passer plus de temps avec toi, frérot, mais j'ai peur que le devoir m'appelle. Mais je suis sûr que {NICKNAME} sera d'accord pour te tenir compagnie, tu ne crois pas ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100354
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100354,
+					"content": "Continuer le baby-sitting pour vous ?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100355
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100355,
+					"content": "#Chouette ! J'aime bien {M#ce monsieur}{F#cette madame}. On a passé un marché en plus !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100356
+					],
+					"speakerTitle": "Teucer"
+				},
+				{
+					"id": 110100356,
+					"content": "Visiblement, Teucer vous apprécie. Et puis vous avez passé un marché, à ce que je vois.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100357,
+						110100358
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100357,
+					"content": "C'est une offensive partagée, c'est ça...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100359
+					]
+				},
+				{
+					"id": 110100359,
+					"content": "Excellent. Tenez, mettons qu'il s'agisse de votre rétribution pour services accordés. Amenez Teucer faire le tour de Liyue.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100360
+					],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100360,
+					"content": "Je serai du côté de la rivière dans la <color=#00E1FFFF>Ravine Qingxu</color>, si jamais quelque chose arrive. Sur ce, à bientôt !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tartaglia"
+				},
+				{
+					"id": 110100358,
+					"content": "Nous allons le faire. Pour Teucer.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100359
+					]
+				},
+				{
+					"id": 110100338,
+					"content": "Se faire du souci pour la famille, je comprends.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100339
+					]
+				},
+				{
+					"id": 110100332,
+					"content": "#Je suis {F#prête}{M#prêt}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100333
+					]
+				},
+				{
+					"id": 110100326,
+					"content": "Tsss... Vous osez dire...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100327
+					]
+				},
+				{
+					"id": 110100315,
+					"content": "Teucer est le frère de Tartaglia, qui l'eût cru ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110100316
+					]
+				}
+			]
+		},
+		{
+			"id": 1101005,
+			"completionStepIds": [
+				1101009
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1101009",
+							"2"
+						],
+						"stepId": 1101009,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110100501,
+					"content": "Pfiou... Un problème en moins.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110100502
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110100502,
+					"content": "Cherchons dans le coin. Il y en a peut-être d'autres...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 1101006,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1101001",
+							"3"
+						],
+						"stepId": 1101001,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Daipai"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110100601,
+					"content": "Je vais reprendre mes patrouilles. On se retrouve plus tard.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Daipai"
+				}
+			]
+		}
+	]
+}

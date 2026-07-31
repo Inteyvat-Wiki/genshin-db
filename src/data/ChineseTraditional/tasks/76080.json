@@ -1,0 +1,378 @@
+{
+	"id": 76080,
+	"type": "WQ",
+	"name": "",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		76102
+	],
+	"steps": [
+		{
+			"id": 7608001,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7608002,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7608001,
+						0
+					],
+					"talkId": 7608001
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7608004,
+						0
+					],
+					"talkId": 7608004
+				}
+			]
+		},
+		{
+			"id": 7608003,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7608004,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7608002,
+						0
+					],
+					"talkId": 7608002
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7608005,
+						0
+					],
+					"talkId": 7608005
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7608001,
+			"completionStepIds": [
+				7608002
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7608002",
+							"2"
+						],
+						"stepId": 7608002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PLAYER_CURRENT_AVATAR",
+						"rawParams": [
+							"10000120",
+							"0",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							1654.928,
+							201.022,
+							10187.78
+						],
+						"pointId": 13641
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 760800101,
+					"content": "等等，裂隙的裡面有什麼東西在掙扎，那種氣息…不是狂獵。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760800102
+					],
+					"speakerTitle": "菲林斯"
+				},
+				{
+					"id": 760800102,
+					"content": "解開狂獵的禁錮看看，或許是被狂獵抓住的無辜生靈。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "菲林斯"
+				}
+			]
+		},
+		{
+			"id": 7608002,
+			"completionStepIds": [
+				7608004
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7608004",
+							"2"
+						],
+						"stepId": 7608004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_VAR_EQUAL",
+						"rawParams": [
+							"0",
+							"1",
+							"76080"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							1674.143,
+							200.171,
+							10263.78
+						],
+						"pointId": 13643
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 760800201,
+					"content": "希汐島上向來少有狂獵肆虐，狂獵似乎畏懼著月亮的力量，不敢靠近。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760800202
+					],
+					"speakerTitle": "菲林斯"
+				},
+				{
+					"id": 760800202,
+					"content": "好了，已經護送月靈回到希汐島了，希望它下次不要再落入險境。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "菲林斯"
+				}
+			]
+		},
+		{
+			"id": 7608003,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7608002",
+							"2"
+						],
+						"stepId": 7608002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 760800301,
+					"content": "（即便魔物已經散去，黑暗依然未褪，要解決這裡的問題，或許需要對狂獵有瞭解的專業人士協助。）",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "觀察"
+				}
+			]
+		},
+		{
+			"id": 7608004,
+			"completionStepIds": [
+				7608002
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7608002",
+							"2"
+						],
+						"stepId": 7608002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PLAYER_CURRENT_AVATAR",
+						"rawParams": [
+							"10000127",
+							"0",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							1654.928,
+							201.022,
+							10187.78
+						],
+						"pointId": 13641
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 760800401,
+					"content": "等等，有什麼東西被困在裂隙裡面了嗎…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760800402
+					],
+					"speakerTitle": "葉洛亞"
+				},
+				{
+					"id": 760800402,
+					"content": "別害怕，我現在就救你出來。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "葉洛亞"
+				}
+			]
+		},
+		{
+			"id": 7608005,
+			"completionStepIds": [
+				7608004
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7608004",
+							"2"
+						],
+						"stepId": 7608004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_VAR_EQUAL",
+						"rawParams": [
+							"0",
+							"2",
+							"76080"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							1674.143,
+							200.171,
+							10263.78
+						],
+						"pointId": 13643
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 760800501,
+					"content": "到這裡應該就安全了吧，月亮的力量守護著這裡，連狂獵也不敢靠近。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760800502
+					],
+					"speakerTitle": "葉洛亞"
+				},
+				{
+					"id": 760800502,
+					"content": "好啦，小傢伙。可別再被狂獵抓住了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "葉洛亞"
+				}
+			]
+		}
+	]
+}

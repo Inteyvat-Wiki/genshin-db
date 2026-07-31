@@ -1,0 +1,167 @@
+{
+	"id": 71704,
+	"type": "WQ",
+	"name": "Hierbas medicinales para el Herborista Gui",
+	"description": "El Herborista Gui, de Liyue, necesita 10 mentas.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Entrégale 10 mentas al Herborista Gui",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170401,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170402,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con el Herborista Gui",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170402,
+						0
+					],
+					"talkId": 7170402
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170401,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170401",
+							"2"
+						],
+						"stepId": 7170401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170401"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Herborista Gui"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717040101,
+					"content": "Sobre la menta...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717040102
+					]
+				},
+				{
+					"id": 717040102,
+					"content": "Ah, viste mi encargo, ¿cierto? Bueno, ¿y tienes las 10 mentas que quería?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717040103,
+						717040104
+					],
+					"speakerTitle": "Herborista Gui"
+				},
+				{
+					"id": 717040103,
+					"content": "Sí.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717040104,
+					"content": "Hummm, no.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717040105
+					]
+				},
+				{
+					"id": 717040105,
+					"content": "Cuando las hayas recogido, tráemelas rápido, por favor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Herborista Gui"
+				}
+			]
+		},
+		{
+			"id": 7170402,
+			"completionStepIds": [
+				7170402
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170402",
+							"2"
+						],
+						"stepId": 7170402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Herborista Gui"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717040201,
+					"content": "Una, dos, tres... Sí, con estas será suficiente.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717040202
+					],
+					"speakerTitle": "Herborista Gui"
+				},
+				{
+					"id": 717040202,
+					"content": "Toma, esto es para ti. Gracias por tu ayuda.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Herborista Gui"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,316 @@
+{
+	"id": 75113,
+	"type": "WQ",
+	"name": "",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		75046
+	],
+	"steps": [
+		{
+			"id": 7511301,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7511301,
+						0
+					],
+					"talkId": 7511301
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7511302,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_GLOBAL_VAR_EQUAL",
+					"rawParams": [
+						7511301,
+						0
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					-2414.682,
+					219.929,
+					9752.246
+				],
+				"pointId": 10659
+			}
+		},
+		{
+			"id": 7511303,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7511304,
+						0
+					],
+					"talkId": 7511304
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7511301,
+			"completionStepIds": [
+				7511301
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_B_OR_ETCAND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7511301",
+							"2"
+						],
+						"stepId": 7511301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7511302",
+							"0"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7511302",
+							"2"
+						],
+						"stepId": 7511302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7511302",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"우루밤바"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 751130101,
+					"content": "마음씨 착한 용사 친구, 네 덕분에 어린 용들이 모두 무사할 수 있었어! 정말 고마워!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130106
+					],
+					"speakerTitle": "우루밤바"
+				},
+				{
+					"id": 751130106,
+					"content": "너처럼 착하고 용감한 사람이라면 나 우루밤바가 「용사의 도전」 훈련을 무료로 도와줄게!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130104,
+						751130105
+					],
+					"speakerTitle": "우루밤바"
+				},
+				{
+					"id": 751130104,
+					"content": "바로 시작하죠!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 751130105,
+					"content": "잠깐 준비 좀 할게요…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7511302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7511302",
+							"2"
+						],
+						"stepId": 7511302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7511302",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"우루밤바"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 751130201,
+					"content": "결정했다면 생각은 그만하고, 전력을 다하는 거야!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "우루밤바"
+				}
+			]
+		},
+		{
+			"id": 7511304,
+			"completionStepIds": [
+				7511303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7511303",
+							"2"
+						],
+						"stepId": 7511303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"우루밤바"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							-2396.456,
+							225.299,
+							9765.566
+						],
+						"pointId": 10657
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							-2400.91,
+							224.938,
+							9765.562
+						],
+						"pointId": 10889
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							-2400.619,
+							225.076,
+							9766.605
+						],
+						"pointId": 10890
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 751130401,
+					"content": "와, 이렇게 좋은 성적을 낼 줄은 몰랐는걸! 내가 널 얕본 것 같네",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130402
+					],
+					"speakerTitle": "우루밤바"
+				},
+				{
+					"id": 751130402,
+					"content": "정성껏 준비한 도전 상품이 갑자기 나타난 낯선 이의 차지가 되다니… 이건 정말…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130403
+					],
+					"speakerTitle": "우루밤바"
+				},
+				{
+					"id": 751130403,
+					"content": "한 편의 두루마리 속 영웅담 같은걸!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130405
+					],
+					"speakerTitle": "우루밤바"
+				},
+				{
+					"id": 751130405,
+					"content": "어쩌면 너도 언젠가 두루마리에 이름을 남길 영웅이 될지도 모르지! 음… 가능성 있어!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130406
+					],
+					"speakerTitle": "우루밤바"
+				},
+				{
+					"id": 751130406,
+					"content": "영웅 친구, 같이 기념사진 한 장 어때? 나중에 이게 내 자랑거리가 될지도 모르잖아!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "우루밤바"
+				}
+			]
+		}
+	]
+}

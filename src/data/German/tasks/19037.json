@@ -1,0 +1,159 @@
+{
+	"id": 19037,
+	"type": "LQ",
+	"name": "Nachdem der Vorhang gefallen ist",
+	"description": "Yun Jin hat sich auf der Suche nach Inspiration an einen gefährlichen Ort verirrt und wäre ohne dein Eingreifen in Schwierigkeiten geraten. Als Dankeschön willigt sie ein, dich nach ihrem Auftritt zu treffen.",
+	"unlockDescription": "",
+	"chapter": "Theater der Gefühle",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		19038,
+		19040
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1903701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Warte auf das Ende der Aufführung, bevor ihr euch trefft (20 bis 23 Uhr am nächsten Tag).",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						1,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1903702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Geh zum Teehaus Heyu, um Yun Jin zu finden.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						106401,
+						1903701
+					]
+				}
+			]
+		},
+		{
+			"id": 1903703,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Geh auf die erste Etage vom Teehaus Heyu.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1903703,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1903704,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit der Journalistin.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						106401,
+						19037021
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						106401,
+						19037022
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1903751,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1903702",
+							"2"
+						],
+						"stepId": 1903702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1903703",
+							"2"
+						],
+						"stepId": 1903703,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Shiyun",
+					"Boyi"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 190375101,
+					"content": "Ooh, Fräulein Yun ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190375102
+					],
+					"speakerTitle": "Shiyun"
+				},
+				{
+					"id": 190375102,
+					"content": "Was ist unser Ansatzpunkt hier ... hmm ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190375103
+					],
+					"speakerTitle": "Boyi"
+				},
+				{
+					"id": 190375103,
+					"content": "Der Auftritt von Fräulein Yun war unglaublich! Besonders der Bändertanz. Hast du ihn gesehen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190375104
+					],
+					"speakerTitle": "Shiyun"
+				},
+				{
+					"id": 190375104,
+					"content": "Äh, ja, klar habe ich das ... aber wie soll ich das in einen Artikel einbauen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Boyi"
+				}
+			]
+		}
+	]
+}

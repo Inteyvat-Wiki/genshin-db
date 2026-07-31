@@ -1,0 +1,1055 @@
+{
+	"id": 71802,
+	"type": "WQ",
+	"name": "承仙所託",
+	"description": "奧藏山上，仙跡縹緲…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		1016,
+		1009
+	],
+	"steps": [
+		{
+			"id": 7180201,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "供奉「美味的珍珠翡翠白玉湯」",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						1103509,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7180203,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往雲中仙居尋找圖紙",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100583,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180204,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "將圖紙交給「留雲借風真君」",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180205,
+						0
+					],
+					"talkId": 7180205
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180212,
+						0
+					],
+					"talkId": 7180212
+				}
+			]
+		},
+		{
+			"id": 7180205,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		},
+		{
+			"id": 7180206,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "將圖紙送至「留雲借風真君」面前",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180202,
+						0
+					],
+					"talkId": 7180202
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180213,
+						0
+					],
+					"talkId": 7180213
+				}
+			]
+		},
+		{
+			"id": 7180207,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "拜見「留雲借風真君」",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180203,
+						0
+					],
+					"talkId": 7180203
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180210,
+						0
+					],
+					"talkId": 7180210
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7180202,
+			"completionStepIds": [
+				7180206
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180206",
+							"2"
+						],
+						"stepId": 7180206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"留雲借風真君"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718020201,
+					"content": "不錯，確實是我造「雲中仙居」時所著的圖紙。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020202
+					],
+					"speakerTitle": "留雲借風真君"
+				},
+				{
+					"id": 718020202,
+					"content": "您到底拿這圖紙…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020203
+					]
+				},
+				{
+					"id": 718020203,
+					"content": "#{F#妳}{M#你}怎麼還在問？算了，看在{F#妳}{M#你}供奉於我的份上…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020204
+					],
+					"speakerTitle": "留雲借風真君"
+				},
+				{
+					"id": 718020204,
+					"content": "我聽說，這璃月港裡的凡人也造了一座能浮於空中的樓閣「群玉閣」。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020205
+					],
+					"speakerTitle": "留雲借風真君"
+				},
+				{
+					"id": 718020205,
+					"content": "我還聽人說，凡人只憑大小，就斷定這「群玉閣」舉世無雙。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020206
+					],
+					"speakerTitle": "留雲借風真君"
+				},
+				{
+					"id": 718020206,
+					"content": "哼，真是凡人眼界，不識得仙家巧妙。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020207
+					],
+					"speakerTitle": "留雲借風真君"
+				},
+				{
+					"id": 718020207,
+					"content": "區區「群玉閣」…本仙略展機巧，就讓它黯然失色！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020208
+					],
+					"speakerTitle": "留雲借風真君"
+				},
+				{
+					"id": 718020208,
+					"content": "您是…不服氣？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020209
+					]
+				},
+				{
+					"id": 718020209,
+					"content": "#不服氣？{F#妳}{M#你}說什麼怪話，本仙只是可憐凡人不識得仙家巧妙，被一些凡間拙技蒙了眼目。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020210
+					],
+					"speakerTitle": "留雲借風真君"
+				},
+				{
+					"id": 718020210,
+					"content": "長此以往，只怕凡間機關之術要走上歧途，本仙是準備親自點撥他們一番罷了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020211
+					],
+					"speakerTitle": "留雲借風真君"
+				},
+				{
+					"id": 718020211,
+					"content": "#好了，此事已了，{F#妳}{M#你}們趕緊離開吧，莫再擾本仙的清淨。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "留雲借風真君"
+				}
+			]
+		},
+		{
+			"id": 7180203,
+			"completionStepIds": [
+				7180207
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180207",
+							"2"
+						],
+						"stepId": 7180207,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718020301,
+					"content": "有什麼事，快點說，還有諸多事宜等著本仙去籌備，莫要再耽誤時間了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020302
+					],
+					"speakerTitle": "叩訪仙府"
+				},
+				{
+					"id": 718020302,
+					"content": "只是向您問好。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020303
+					]
+				},
+				{
+					"id": 718020303,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020304
+					],
+					"speakerTitle": "叩訪仙府"
+				},
+				{
+					"id": 718020304,
+					"content": "#{F#妳}{M#你}們倒是新奇…不為許願，只是想問個好？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020305
+					],
+					"speakerTitle": "叩訪仙府"
+				},
+				{
+					"id": 718020305,
+					"content": "#罷了，隨{F#妳}{M#你}們的願吧，凡人的心思，我向來是懶得揣測的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020306
+					],
+					"speakerTitle": "叩訪仙府"
+				},
+				{
+					"id": 718020306,
+					"content": "#如果{F#妳}{M#你}們真的如此之閒，不如就來幫本仙個忙怎麼樣？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020307
+					],
+					"speakerTitle": "叩訪仙府"
+				},
+				{
+					"id": 718020307,
+					"content": "昔日，我研習機關術略有小成時，曾造了一座「雲中仙居」浮於空中。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020308
+					],
+					"speakerTitle": "叩訪仙府"
+				},
+				{
+					"id": 718020308,
+					"content": "#這「雲中仙居」以浮生石為材，輔以萬般機巧，最妙的是其中…算了，和{F#妳}{M#你}們說了{F#妳}{M#你}們也不懂。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020309
+					],
+					"speakerTitle": "叩訪仙府"
+				},
+				{
+					"id": 718020309,
+					"content": "我在造好「雲中仙居」之後，也把圖紙留在了上面。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020310
+					],
+					"speakerTitle": "叩訪仙府"
+				},
+				{
+					"id": 718020310,
+					"content": "本仙在上面略施封印，本來想的是有緣者得之，但這麼久了，封印也沒被觸動過。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020311
+					],
+					"speakerTitle": "叩訪仙府"
+				},
+				{
+					"id": 718020311,
+					"content": "#本仙也懶得將這圖紙放在那了，{F#妳}{M#你}們就幫我去「雲中仙居」把這圖紙拿回來吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020312,
+						718020314
+					],
+					"speakerTitle": "叩訪仙府"
+				},
+				{
+					"id": 718020312,
+					"content": "我知道了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020313
+					]
+				},
+				{
+					"id": 718020313,
+					"content": "#{F#妳}{M#你}倒是爽快，那就快去吧。拿到了就送進洞府來，本仙就在洞府裡等著{F#妳}{M#你}們。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "叩訪仙府"
+				},
+				{
+					"id": 718020314,
+					"content": "您拿這圖紙做什麼？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020315
+					]
+				},
+				{
+					"id": 718020315,
+					"content": "#我自有用意，和{F#妳}{M#你}說了{F#妳}{M#你}也不明白。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020316
+					],
+					"speakerTitle": "叩訪仙府"
+				},
+				{
+					"id": 718020316,
+					"content": "#快去吧。拿到了就送進洞府來，本仙就在洞府裡等著{F#妳}{M#你}們。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "叩訪仙府"
+				}
+			]
+		},
+		{
+			"id": 7180204,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180203",
+							"2"
+						],
+						"stepId": 7180203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718020401,
+					"content": "#{F#妳}{M#你}們還沒拿到圖紙嗎？就在「雲中仙居」上…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020402
+					],
+					"speakerTitle": "叩訪仙府"
+				},
+				{
+					"id": 718020402,
+					"content": "咦，她怎麼知道我們還沒拿到圖紙的…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020403
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 718020403,
+					"content": "那圖紙是本仙親著，在不在近前本仙難道不知道嗎？快點去拿圖紙吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "叩訪仙府"
+				}
+			]
+		},
+		{
+			"id": 7180205,
+			"completionStepIds": [
+				7180204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180204",
+							"2"
+						],
+						"stepId": 7180204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718020501,
+					"content": "#看來{F#妳}{M#你}們拿到圖紙了，行了，快點進來把圖紙送過來吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "叩訪仙府"
+				}
+			]
+		},
+		{
+			"id": 7180210,
+			"completionStepIds": [
+				7180207
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180207",
+							"2"
+						],
+						"stepId": 7180207,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1103509",
+							"3"
+						],
+						"stepId": 1103509,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718021001,
+					"content": "絕雲訪仙，絕非易事。汝等來此叩訪…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021002
+					],
+					"speakerTitle": "叩訪仙府",
+					"speakerSubtitle": "…聲音似乎不太對？"
+				},
+				{
+					"id": 718021002,
+					"content": "嗚哇！她、她不是已經去璃月港了嗎？難道是又悄悄回來了？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021003
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 718021003,
+					"content": "感覺…聲音不太對？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021004
+					]
+				},
+				{
+					"id": 718021004,
+					"content": "那個…仙君，我們是擔心有人去妳家偷東西，沒有打擾妳的意思…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021005
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 718021005,
+					"content": "…本仙有善務一件，如能妥善處之，便可入得仙府。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021006,
+						718021007
+					],
+					"speakerTitle": "叩訪仙府",
+					"speakerSubtitle": "…聲音似乎不太對？"
+				},
+				{
+					"id": 718021006,
+					"content": "自顧自地說下去了…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021008
+					]
+				},
+				{
+					"id": 718021008,
+					"content": "#欸？{F#妳}{M#你}是說，現在和我們說話的不是留雲真君，而是她留下的機關？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021009
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 718021009,
+					"content": "昔日，我研習機關術略有小成時，曾造了一座「雲中仙居」浮於空中。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021010
+					],
+					"speakerTitle": "叩訪仙府",
+					"speakerSubtitle": "…聲音似乎不太對？"
+				},
+				{
+					"id": 718021010,
+					"content": "「雲中仙居」善成後，本仙念在仙緣難得，便將圖紙留於其上，有緣者自取之。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021011
+					],
+					"speakerTitle": "叩訪仙府",
+					"speakerSubtitle": "…聲音似乎不太對？"
+				},
+				{
+					"id": 718021011,
+					"content": "#{F#妳}{M#你}且去取來圖紙，再入仙府詳述。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021012
+					],
+					"speakerTitle": "叩訪仙府",
+					"speakerSubtitle": "…聲音似乎不太對？"
+				},
+				{
+					"id": 718021012,
+					"content": "仙君？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021013
+					]
+				},
+				{
+					"id": 718021013,
+					"content": "留雲真君？閒…閒雲小姐？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021014
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 718021014,
+					"content": "#{F#妳}{M#你}且去取來圖紙，了此善務，再入仙府詳述。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021015
+					],
+					"speakerTitle": "叩訪仙府",
+					"speakerSubtitle": "…聲音似乎不太對？"
+				},
+				{
+					"id": 718021015,
+					"content": "完全不理我們嘛…還是自顧自地說個沒完…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021016,
+						718021017
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 718021016,
+					"content": "絕對是機關。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021018
+					]
+				},
+				{
+					"id": 718021018,
+					"content": "可是，通常守衛洞府的不應該是那種…會砰砰砰打人的機關嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021019,
+						718021020
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 718021019,
+					"content": "也許她有自己的考量吧。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021021
+					]
+				},
+				{
+					"id": 718021021,
+					"content": "不然我們去把那個圖紙拿到手，然後再進洞府看看吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021022
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 718021022,
+					"content": "嘿嘿，我也有點好奇她到底在洞府裡放了什麼機關。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 718021020,
+					"content": "有點在意那個圖紙…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021021
+					]
+				},
+				{
+					"id": 718021017,
+					"content": "開始複述最後一句了呢…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021018
+					]
+				},
+				{
+					"id": 718021007,
+					"content": "難道這聲音是什麼機關…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021008
+					]
+				}
+			]
+		},
+		{
+			"id": 7180211,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180203",
+							"2"
+						],
+						"stepId": 7180203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1103509",
+							"3"
+						],
+						"stepId": 1103509,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718021101,
+					"content": "昔日，我研習機關術略有小成時，曾造了一座「雲中仙居」浮於空中。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021102
+					],
+					"speakerTitle": "叩訪仙府",
+					"speakerSubtitle": "…聲音似乎不太對？"
+				},
+				{
+					"id": 718021102,
+					"content": "「雲中仙居」善成後，本仙念在仙緣難得，便將圖紙留於其上，有緣者自取之。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021103
+					],
+					"speakerTitle": "叩訪仙府",
+					"speakerSubtitle": "…聲音似乎不太對？"
+				},
+				{
+					"id": 718021103,
+					"content": "#{F#妳}{M#你}且去取來圖紙，再入仙府詳述。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "叩訪仙府",
+					"speakerSubtitle": "…聲音似乎不太對？"
+				}
+			]
+		},
+		{
+			"id": 7180212,
+			"completionStepIds": [
+				7180204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180204",
+							"2"
+						],
+						"stepId": 7180204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1103509",
+							"3"
+						],
+						"stepId": 1103509,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718021201,
+					"content": "能取來圖紙，確有仙緣。上前來見吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "叩訪仙府",
+					"speakerSubtitle": "…聲音似乎不太對？"
+				}
+			]
+		},
+		{
+			"id": 7180213,
+			"completionStepIds": [
+				7180206
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180206",
+							"2"
+						],
+						"stepId": 7180206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1103509",
+							"3"
+						],
+						"stepId": 1103509,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718021301,
+					"content": "…這是什麼，一張桌子上面…放了一個匣子。周圍什麼都沒有。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021302,
+						718021303
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 718021302,
+					"content": "是仙人桌子。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021304
+					]
+				},
+				{
+					"id": 718021304,
+					"content": "#能到達此地，本仙已知{F#妳}{M#你}本心…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021305
+					],
+					"speakerTitle": "留雲借風真君…？"
+				},
+				{
+					"id": 718021305,
+					"content": "又說話了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021306
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 718021306,
+					"content": "記述所願，納入匣內。本仙自會定奪。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021307
+					],
+					"speakerTitle": "留雲借風真君…？"
+				},
+				{
+					"id": 718021307,
+					"content": "…履難歷險，矢志不移，心志堅韌實為難得。這些寶貨可自取走。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021308
+					],
+					"speakerTitle": "留雲借風真君…？"
+				},
+				{
+					"id": 718021308,
+					"content": "好欸！嘿嘿，我就知道仙君不會讓我們白跑嘛。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021309
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 718021309,
+					"content": "不過，這個聲音說「記述所願，納入匣內」…是要我們把願望寫下來放進匣子裡？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021310,
+						718021311
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 718021310,
+					"content": "還是不要隨便向仙人許願啦…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021312
+					]
+				},
+				{
+					"id": 718021312,
+					"content": "好吧…也對，要是我們有什麼事，直接去找留…閒雲小姐商量就好了，嘿嘿。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021313
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 718021313,
+					"content": "那我們就把圖紙放進匣子裡，然後離開這裡吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021314
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 718021314,
+					"content": "但周圍空蕩蕩的，什麼也沒有。應該是真君把東西都拿走了吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021315
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 718021315,
+					"content": "這些機關是為了應對什麼情況呢…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021316
+					]
+				},
+				{
+					"id": 718021316,
+					"content": "我也不明白…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021317
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 718021317,
+					"content": "總之，等我們下次見到真君的時候，再向她問問洞府的事吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 718021311,
+					"content": "向熟人許願，總覺得…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021312
+					]
+				},
+				{
+					"id": 718021303,
+					"content": "和仙人匣子。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021304
+					]
+				}
+			]
+		}
+	]
+}

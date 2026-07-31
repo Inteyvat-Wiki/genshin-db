@@ -1,0 +1,158 @@
+{
+	"id": 72717,
+	"type": "WQ",
+	"name": "Kozues Bitte um Eisen",
+	"description": "Kozue von der Insel Narukami möchte 10 Brocken Eisen haben.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7271701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Gib Kozue zehn Brocken Eisen.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7271701,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7271702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Kozue.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7271702,
+						0
+					],
+					"talkId": 7271702
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7271701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271701",
+							"2"
+						],
+						"stepId": 7271701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7271701"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kozue"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727170101,
+					"content": "Interesse an Eisenbrocken?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727170102
+					]
+				},
+				{
+					"id": 727170102,
+					"content": "Bist du wegen meines Auftrags hier? Wenn ja, dann hast du die 10 Brocken Eisen sicher schon parat, oder?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727170105,
+						727170103
+					],
+					"speakerTitle": "Kozue"
+				},
+				{
+					"id": 727170105,
+					"content": "Hier sind sie.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 727170103,
+					"content": "Noch nicht.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727170104
+					]
+				},
+				{
+					"id": 727170104,
+					"content": "Na gut, wenn du sie hast, bring sie mir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kozue"
+				}
+			]
+		},
+		{
+			"id": 7271702,
+			"completionStepIds": [
+				7271702
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271702",
+							"2"
+						],
+						"stepId": 7271702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kozue"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727170201,
+					"content": "Hm ... Ja, das sind genau 10. Ich werde sie Taroumaru bringen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kozue"
+				}
+			]
+		}
+	]
+}

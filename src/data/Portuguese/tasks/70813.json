@@ -1,0 +1,188 @@
+{
+	"id": 70813,
+	"type": "WQ",
+	"name": "Pega ladrão!",
+	"description": "A tempestade acabou de terminar, e Cyrus da Guilda de Aventureiros está planejando lançar um ataque ofensivo contra os Ladrões de Tesouro...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		20603
+	],
+	"steps": [
+		{
+			"id": 7081301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com Cyrus",
+			"finishConditions": []
+		},
+		{
+			"id": 7081302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Derrote os Ladrões de Tesouro próximo a Adega do Alvorecer",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7081303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Derrote os Ladrões de Tesouro posicionados nos acampamentos",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7081304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com Cyrus",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7081305,
+						0
+					],
+					"talkId": 7081305
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7081304,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081302",
+							"2"
+						],
+						"stepId": 7081302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081303",
+							"2"
+						],
+						"stepId": 7081303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708130401,
+					"content": "Hunf, estes Ladrões de Tesouro... Que bando de ratos persistentes eles são.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		},
+		{
+			"id": 7081305,
+			"completionStepIds": [
+				7081304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081304",
+							"2"
+						],
+						"stepId": 7081304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708130501,
+					"content": "Então, você já eliminou os acampamentos dos monstros?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708130502
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708130502,
+					"content": "Acabei com todos.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708130503
+					]
+				},
+				{
+					"id": 708130503,
+					"content": "#Você é incrível, foi muito fácil para você, {M#Cavaleiro}{F#Cavaleira} Honorável.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708130504
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708130504,
+					"content": "Hmm, os Ladrões de Tesouro são mesmo resilientes. Eles até vieram para roubar os tesouros quando todo mundo está fugindo da tempestade.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708130505
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708130505,
+					"content": "Se pudessem fazer algo legal com essa \"resiliência\".",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		}
+	]
+}

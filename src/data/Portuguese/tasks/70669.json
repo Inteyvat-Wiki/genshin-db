@@ -1,0 +1,280 @@
+{
+	"id": 70669,
+	"type": "WQ",
+	"name": "Desafio de Ascensão IV",
+	"description": "#A Associação de Jogadores do Chamado Sagrado dos Sete determinou que você está qualificad{F#a}{M#o} para o Desafio de Ascensão. Vença o Desafio e se torne {F#uma}{M#um} Jogad{F#ora}{M#or} Lendári{F#a}{M#o}! Esperamos que você se divirta com o Chamado Sagrado dos Sete!",
+	"unlockDescription": "Conclua esta missão para avançar o Nível de Jogador do Chamado Sagrado dos Sete",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_GUIDE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7066901,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LEAVE_SCENE",
+					"rawParams": [
+						79999,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7066902,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Vá para a Cauda do Gato",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7066901,
+						0
+					],
+					"talkId": 7066901
+				}
+			]
+		},
+		{
+			"id": 7066903,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Termine o duelo de Desafio de Ascensão com o Príncipe",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GCG_LEVEL_WIN",
+					"rawParams": [
+						20004,
+						1
+					]
+				}
+			]
+		},
+		{
+			"id": 7066904,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com o Príncipe",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7066902,
+						0
+					],
+					"talkId": 7066902
+				}
+			]
+		},
+		{
+			"id": 7066905,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GCG_LEVEL_WIN",
+					"rawParams": [
+						20004,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7066901,
+			"completionStepIds": [
+				7066902
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066902",
+							"2"
+						],
+						"stepId": 7066902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066903",
+							"2"
+						],
+						"stepId": 7066903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"\"O Príncipe\""
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706660101,
+					"content": "Iniciar Desafio de Ascensão",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						706660102
+					]
+				},
+				{
+					"id": 706660102,
+					"content": "#Miau... (Ei, veio para o julgamento de avanço de nível de jogador? Bem, {NICKNAME} realmente tem as qualificações necessárias para o desafio.)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706660103
+					],
+					"speakerTitle": "\"O Príncipe\""
+				},
+				{
+					"id": 706660103,
+					"content": "\"Então, vou pedir a Shuyun que prepare as cartas para o julgamento. Tenha cuidado...\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "\"O Príncipe\""
+				}
+			]
+		},
+		{
+			"id": 7066902,
+			"completionStepIds": [
+				7066904
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066904",
+							"2"
+						],
+						"stepId": 7066904,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"\"O Príncipe\""
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706690201,
+					"content": "#Miau! (Incrível! Parabéns por passar no julgamento e avançar seu nível de jogador! Agora você se tornou {M#um jogador}{F#uma jogadora} lendári{F#a}{M#o}!)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706690202
+					],
+					"speakerTitle": "\"O Príncipe\""
+				},
+				{
+					"id": 706690202,
+					"content": "#Miau... (Jogad{F#ora}{M#or} Lendári{F#ora}{M#or} é um título impressionante...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706690203
+					],
+					"speakerTitle": "\"O Príncipe\""
+				},
+				{
+					"id": 706690203,
+					"content": "#(Espero que você continue sempre aperfeiçoando a sua técnica para se tornar {M#um jogador digno}{F#uma jogadora digna} do título de \"Lendári{F#a}{M#o}\", {NICKNAME}!)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706690204
+					],
+					"speakerTitle": "\"O Príncipe\""
+				},
+				{
+					"id": 706690204,
+					"content": "(Talvez seja redundante falar isso mais uma vez, mas...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706690205
+					],
+					"speakerTitle": "\"O Príncipe\""
+				},
+				{
+					"id": 706690205,
+					"content": "#({NICKNAME}, divirta-se com o Chamado Sagrado dos Sete!)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "\"O Príncipe\""
+				}
+			]
+		},
+		{
+			"id": 7066903,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066904",
+							"0"
+						],
+						"stepId": 7066904,
+						"stateName": "QUEST_STATE_NONE"
+					},
+					{
+						"type": "QUEST_COND_GCG_WORLD_CHALLENGE_RESULT",
+						"rawParams": [
+							"-1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"\"O Príncipe\""
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706660301,
+					"content": "#Miau... (Bem, {NICKNAME}... tenha mais cuidado. É melhor se preparar bem antes de desafiar, ok?)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706660302
+					],
+					"speakerTitle": "\"O Príncipe\""
+				},
+				{
+					"id": 706660302,
+					"content": "(Eu acredito que você já seja capaz de completar o julgamento.)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "\"O Príncipe\""
+				}
+			]
+		}
+	]
+}

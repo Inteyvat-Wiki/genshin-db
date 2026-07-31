@@ -1,0 +1,299 @@
+{
+	"id": 20011,
+	"type": "IQ",
+	"name": "Esta rua está bloqueada?",
+	"description": "Anthony partiu de Mondstadt em direção ao Vale Termal para encontrar remédios para sua irmã Anna, mas foi perseguido por Hilichurls ao longo do caminho. Derrote os Hilichurls e salve Anthony.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2001101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Vá conferir os detalhes",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001102,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Eliminar os monstros ao redor.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Eliminar todos os monstros e destruir o obstáculo.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Falar com o Anthony",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001103,
+						0
+					],
+					"talkId": 2001103
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2001101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001102",
+							"2"
+						],
+						"stepId": 2001102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Anthony"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200110101,
+					"content": "Socorro! Por favor!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Anthony"
+				}
+			]
+		},
+		{
+			"id": 2001102,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001102",
+							"3"
+						],
+						"stepId": 2001102,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001103",
+							"2"
+						],
+						"stepId": 2001103,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Anthony"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200110201,
+					"content": "Obrigado, Viajante!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110202
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110202,
+					"content": "Mas tem esse bloqueio aqui. Eu não consigo atravessar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110203
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110203,
+					"content": "Hahaha... Eu conseguiria resolver isso sozinho se não fosse por alguns Hilichurls. Agora o meu corpo todo dói.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110204
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110204,
+					"content": "Pelo menos as ervas medicinais que eu peguei para a Anna ainda estão em boas condições.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110205
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110205,
+					"content": "Sinto muito... Eu sei que estou pedindo demais, depois de você ter me ajudado também, mas você poderia tirar aquele bloqueio de pedras para mim?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110206,
+						200110207
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110206,
+					"content": "Sem problemas.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200110208
+					]
+				},
+				{
+					"id": 200110208,
+					"content": "Obrigado! Agora vou descansar um pouco...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110207,
+					"content": "Eu ainda tenho outras coisas para fazer, sinto muito.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200110209
+					]
+				},
+				{
+					"id": 200110209,
+					"content": "Mas a Ana ainda está à minha espera em casa... Por favor, eu realmente preciso da sua ajuda.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Anthony"
+				}
+			]
+		},
+		{
+			"id": 2001103,
+			"completionStepIds": [
+				2001104
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001104",
+							"2"
+						],
+						"stepId": 2001104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Anthony"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200110301,
+					"content": "Agora pode ir... Obrigado, viajante.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110302
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110302,
+					"content": "Não temos muito dinheiro, e a doença da Anna não teve melhora, por isso eu sempre venho cá recolher ervas medicinais.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110303
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110303,
+					"content": "Eu consegui pegar as ervas que eu estava à procura, mas então aquele grupo começou a me atacar de algum lugar. Você veio bem a tempo para me salvar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110304
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110304,
+					"content": "Isso é para você. Eu fiz um chá para a Anna, vai ajudar a melhorar a tosse dela.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110305
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110305,
+					"content": "Você parece uma pessoa que gosta de sair. Tenha cuidado.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Anthony"
+				}
+			]
+		}
+	]
+}

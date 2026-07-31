@@ -1,0 +1,167 @@
+{
+	"id": 72713,
+	"type": "WQ",
+	"name": "Murakami Yemek Yapıyor",
+	"description": "Narukami Adası'ndan Murakami 15 adet Nane istiyor.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7271301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Murakami'ye on beş adet Nane ver.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7271301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7271302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Murakami ile konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7271302,
+						0
+					],
+					"talkId": 7271302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7271301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271301",
+							"2"
+						],
+						"stepId": 7271301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7271301"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Murakami"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727130101,
+					"content": "Naneye mi ihtiyacın var?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727130102
+					]
+				},
+				{
+					"id": 727130102,
+					"content": "Evet, evet naneye ihtiyacım var. Nane sayesinde yepyeni lezzetler yaratabilirim.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727130103
+					],
+					"speakerTitle": "Murakami"
+				},
+				{
+					"id": 727130103,
+					"content": "Sanırım görev ilanımı görüp kabul ettin. Kabul ettiysen 15 adet Naneyi de getirdiğini düşünüyorum.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727130106,
+						727130104
+					],
+					"speakerTitle": "Murakami"
+				},
+				{
+					"id": 727130106,
+					"content": "Doğru tahmin ettiniz efendim.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 727130104,
+					"content": "Henüz getirmedim.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727130105
+					]
+				},
+				{
+					"id": 727130105,
+					"content": "Ah tamam, sorun yok. Hepsini topladığında bana getir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Murakami"
+				}
+			]
+		},
+		{
+			"id": 7271302,
+			"completionStepIds": [
+				7271302
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271302",
+							"2"
+						],
+						"stepId": 7271302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Murakami"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727130201,
+					"content": "Harika, artık yeni yemek tarifleri oluşturabilirim. Tabii önce sana yardımlarının karşılığını vermem gerekiyor, neredeyse unutuyordum!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Murakami"
+				}
+			]
+		}
+	]
+}

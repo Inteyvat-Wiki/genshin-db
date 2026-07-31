@@ -1,0 +1,502 @@
+{
+	"id": 19132,
+	"type": "LQ",
+	"name": "手順通りに",
+	"description": "きちんと組まれたスケジュールに沿って、まずは凝光を起こそう。",
+	"unlockDescription": "",
+	"chapter": "玉閣に来たし帰客",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		19133,
+		19134
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1913201,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "凝光と会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						102701,
+						201
+					]
+				}
+			]
+		},
+		{
+			"id": 1913202,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "凝光と共に朝食を食べる",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						102701,
+						202
+					]
+				}
+			]
+		},
+		{
+			"id": 1913203,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "瀾陽のところに礼装を取りに行く",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1913204,
+						0
+					],
+					"talkId": 1913204
+				}
+			]
+		},
+		{
+			"id": 1913204,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "礼装を凝光に渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						1913204,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1913205,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "凝光と会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						102701,
+						203
+					]
+				}
+			]
+		},
+		{
+			"id": 1913206,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "琉璃亭に行って、食事会に参加する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						102701,
+						20401
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						102701,
+						20402
+					]
+				}
+			]
+		},
+		{
+			"id": 1913207,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "次の日の朝まで待つ（7時~8時）",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						1,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1913208,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "凝光を呼び起こす",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1913209,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						1913204,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1913203,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"99902",
+							"2"
+						],
+						"stepId": 99902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"凝光"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191320301,
+					"content": "",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "凝光"
+				}
+			]
+		},
+		{
+			"id": 1913204,
+			"completionStepIds": [
+				1913203
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1913203",
+							"2"
+						],
+						"stepId": 1913203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"瀾陽"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191320401,
+					"content": "こんにちは、何かご用ですか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191320402
+					],
+					"speakerTitle": "瀾陽"
+				},
+				{
+					"id": 191320402,
+					"content": "凝光の服を取りに来た。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						191320403
+					]
+				},
+				{
+					"id": 191320403,
+					"content": "あ、はい、お聞きしております。すぐにお持ちしますので、少々お待ちください。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191320404
+					],
+					"speakerTitle": "瀾陽"
+				},
+				{
+					"id": 191320404,
+					"content": "長いこと待って、ようやく瀾陽が戻ってきた。",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": [
+						191320405
+					]
+				},
+				{
+					"id": 191320405,
+					"content": "こちらになります。凝光様にお渡しください。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191320406
+					],
+					"speakerTitle": "瀾陽"
+				},
+				{
+					"id": 191320406,
+					"content": "かなり時間が掛かってたね。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						191320407
+					]
+				},
+				{
+					"id": 191320407,
+					"content": "ええ、この部屋には衣服だけでなく、あらゆる種類の工芸品や玉器など、収蔵品がたくさんあるんです…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191320408
+					],
+					"speakerTitle": "瀾陽"
+				},
+				{
+					"id": 191320408,
+					"content": "その上、最近は凝光様の意向で室内の配置換えを行っており、部屋が少々散らかっております。ですので、部屋の中を行き来するのも大変な状況でして。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191320409,
+						191320410
+					],
+					"speakerTitle": "瀾陽"
+				},
+				{
+					"id": 191320409,
+					"content": "（確かに収蔵品が多すぎる気がする…）",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						191320411
+					]
+				},
+				{
+					"id": 191320411,
+					"content": "それでは、こちらの服はあなたにお任せしますね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "瀾陽"
+				},
+				{
+					"id": 191320410,
+					"content": "（これもお金持ち特有の悩みなのだろう。）",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						191320411
+					]
+				}
+			]
+		},
+		{
+			"id": 1913205,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1913204",
+							"2"
+						],
+						"stepId": 1913204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"1913204"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"凝光"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191320501,
+					"content": "服は持ってきたかしら？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "凝光"
+				}
+			]
+		},
+		{
+			"id": 1913211,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1913204",
+							"2"
+						],
+						"stepId": 1913204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"瀾陽"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191321101,
+					"content": "お手数ですが、この服を凝光様のところまでお願いします。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "瀾陽"
+				}
+			]
+		},
+		{
+			"id": 1913212,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"99902",
+							"3"
+						],
+						"stepId": 99902,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"瀾陽"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191321201,
+					"content": "",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "瀾陽"
+				}
+			]
+		},
+		{
+			"id": 1913214,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1913206",
+							"2"
+						],
+						"stepId": 1913206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"鴻如"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191321401,
+					"content": "既に準備は整っております、ごゆっくりどうぞ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "鴻如"
+				}
+			]
+		},
+		{
+			"id": 1913215,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"99902",
+							"3"
+						],
+						"stepId": 99902,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"鴻如"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191321501,
+					"content": "またのお越しをお待ちしております。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "鴻如"
+				}
+			]
+		}
+	]
+}

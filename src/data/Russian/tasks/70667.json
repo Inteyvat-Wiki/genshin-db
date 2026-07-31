@@ -1,0 +1,289 @@
+{
+	"id": 70667,
+	"type": "WQ",
+	"name": "Испытание возвышения II",
+	"description": "Ассоциация игроков в «Священный призыв семерых» одобрила вашу кандидатуру для участия в испытании возвышения. Чтобы пройти испытание и стать Экспертом, вам нужно выиграть эту партию! Пусть «Священный призыв семерых» подарит вам настоящую радость!",
+	"unlockDescription": "Завершите текущее задание, чтобы начать Испытание возвышения «Священного призыва семерых»",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_GUIDE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7066701,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отправляйтесь в таверну «Кошкин хвост»",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7066701,
+						0
+					],
+					"talkId": 7066701
+				}
+			]
+		},
+		{
+			"id": 7066702,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Сыграйте партию с Принцем, чтобы получить возвышение",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GCG_LEVEL_WIN",
+					"rawParams": [
+						20002,
+						1
+					]
+				}
+			]
+		},
+		{
+			"id": 7066703,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Принцем",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7066702,
+						0
+					],
+					"talkId": 7066702
+				}
+			]
+		},
+		{
+			"id": 7066704,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LEAVE_SCENE",
+					"rawParams": [
+						79999,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7066705,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GCG_LEVEL_WIN",
+					"rawParams": [
+						20002,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7066701,
+			"completionStepIds": [
+				7066701
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066701",
+							"2"
+						],
+						"stepId": 7066701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066702",
+							"2"
+						],
+						"stepId": 7066702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Принц"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706660101,
+					"content": "Я здесь, чтобы пройти испытание возвышения!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						706660102
+					]
+				},
+				{
+					"id": 706660102,
+					"content": "#Мяу... (Хм?.. Испытание возвышения? Да, {NICKNAME} вполне досто{F#йна}{M#ин} пройти испытание. Тогда...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706660103
+					],
+					"speakerTitle": "Принц"
+				},
+				{
+					"id": 706660103,
+					"content": "«Тогда пусть Шу Юнь приготовит всё, что нужно для испытания. Только помни об осторожности...»",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Принц"
+				}
+			]
+		},
+		{
+			"id": 7066702,
+			"completionStepIds": [
+				7066703
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066703",
+							"2"
+						],
+						"stepId": 7066703,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Принц"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706670201,
+					"content": "Мяу! (Ура, поздравляю! Испытание возвышения пройдено! Теперь ты Эксперт!)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706670202
+					],
+					"speakerTitle": "Принц"
+				},
+				{
+					"id": 706670202,
+					"content": "«Это значит, что ты можешь бросить вызов большему числу игроков... Да, раз ты теперь Эксперт, я напомню: ты можешь оставить свой вызов на Доске приглашений...»",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706670203
+					],
+					"speakerTitle": "Принц"
+				},
+				{
+					"id": 706670203,
+					"content": "Мяу... (Любой соперник, который захочет с тобой сразиться, сможет сорвать твой вызов с доски. Хм, иногда бывает очень занятно вступать в дуэль с соперником, о котором ничего не знаешь...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706670204
+					],
+					"speakerTitle": "Принц"
+				},
+				{
+					"id": 706670204,
+					"content": "«В конце концов, игра в карты - отличный способ завязать новые знакомства».",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706680204
+					],
+					"speakerTitle": "Принц"
+				},
+				{
+					"id": 706680204,
+					"content": "Мяу! (Прости, я отвлёкся!.. Что ж, на правах Эксперта ты можешь купить несколько карт с невероятно красивым дизайном...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706670205
+					],
+					"speakerTitle": "Принц"
+				},
+				{
+					"id": 706670205,
+					"content": "#«{NICKNAME}, не забывай, зачем ты играешь в эту игру. И пусть \"Священный призыв семерых\" подарит тебе настоящую радость!»",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Принц"
+				}
+			]
+		},
+		{
+			"id": 7066703,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066703",
+							"0"
+						],
+						"stepId": 7066703,
+						"stateName": "QUEST_STATE_NONE"
+					},
+					{
+						"type": "QUEST_COND_GCG_WORLD_CHALLENGE_RESULT",
+						"rawParams": [
+							"-1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Принц"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706660301,
+					"content": "#Мяу... ({NICKNAME}, как жаль... В другой раз не торопись, сначала приведи в порядок колоду, а потом уже приступай к испытанию.)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706660302
+					],
+					"speakerTitle": "Принц"
+				},
+				{
+					"id": 706660302,
+					"content": "«Уверен, ты справишься с этим испытанием...»",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Принц"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,1055 @@
+{
+	"id": 71802,
+	"type": "WQ",
+	"name": "An Adeptal Summons",
+	"description": "Atop Mt. Aocang, you find traces of an adeptus...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		1016,
+		1009
+	],
+	"steps": [
+		{
+			"id": 7180201,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Offer the Delicious Jewelry Soup",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						1103509,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7180203,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to the adeptus' abode and search for the blueprints",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100583,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180204,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Give the blueprints to Cloud Retainer",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180205,
+						0
+					],
+					"talkId": 7180205
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180212,
+						0
+					],
+					"talkId": 7180212
+				}
+			]
+		},
+		{
+			"id": 7180205,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		},
+		{
+			"id": 7180206,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Place the blueprints before Cloud Retainer",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180202,
+						0
+					],
+					"talkId": 7180202
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180213,
+						0
+					],
+					"talkId": 7180213
+				}
+			]
+		},
+		{
+			"id": 7180207,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Visit Cloud Retainer",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180203,
+						0
+					],
+					"talkId": 7180203
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180210,
+						0
+					],
+					"talkId": 7180210
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7180202,
+			"completionStepIds": [
+				7180206
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180206",
+							"2"
+						],
+						"stepId": 7180206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cloud Retainer"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718020201,
+					"content": "These are indeed the blueprints for my Dwelling in the Clouds. One is most pleased.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020202
+					],
+					"speakerTitle": "Cloud Retainer"
+				},
+				{
+					"id": 718020202,
+					"content": "You still haven't said what you're gonna—",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020203
+					]
+				},
+				{
+					"id": 718020203,
+					"content": "Must you continue to question me? *sigh* Very well, considering you did make an offering...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020204
+					],
+					"speakerTitle": "Cloud Retainer"
+				},
+				{
+					"id": 718020204,
+					"content": "One has heard of a certain Jade Chamber that hangs in the air above Liyue, built by mortal hands.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020205
+					],
+					"speakerTitle": "Cloud Retainer"
+				},
+				{
+					"id": 718020205,
+					"content": "One has also heard that mortals value size above all else, and have on this basis proceeded to declare that said chamber is without parallel in all the world.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020206
+					],
+					"speakerTitle": "Cloud Retainer"
+				},
+				{
+					"id": 718020206,
+					"content": "Hmph! Such are the limits of mortal comprehension, that they fail to fathom the ingenuity of the adepti.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020207
+					],
+					"speakerTitle": "Cloud Retainer"
+				},
+				{
+					"id": 718020207,
+					"content": "Jade Chamber my foot! A glimpse at the most trivial of my mechanical accomplishments would reveal the Jade Chamber to be an utterly tedious and mundane piece of work...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020208
+					],
+					"speakerTitle": "Cloud Retainer"
+				},
+				{
+					"id": 718020208,
+					"content": "Sore loser much...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020209
+					]
+				},
+				{
+					"id": 718020209,
+					"content": "Nonsense! I am no loser, nor am I afflicted with sores... I merely pity the foolish! These mortals, blind to adepti ingenuity, bedazzled by the crudest of craftsmanship...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020210
+					],
+					"speakerTitle": "Cloud Retainer"
+				},
+				{
+					"id": 718020210,
+					"content": "I fear that this will cause mechanics among mortals to develop in a woefully mistaken direction. It falls to me to point them down the right path.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020211
+					],
+					"speakerTitle": "Cloud Retainer"
+				},
+				{
+					"id": 718020211,
+					"content": "The matter at hand is concluded. Leave at once.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cloud Retainer"
+				}
+			]
+		},
+		{
+			"id": 7180203,
+			"completionStepIds": [
+				7180207
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180207",
+							"2"
+						],
+						"stepId": 7180207,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718020301,
+					"content": "State your business at once! One has a myriad matters to which one must attend. Waste not the valuable time of an adeptus!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020302
+					],
+					"speakerTitle": "Visit the adeptus' abode"
+				},
+				{
+					"id": 718020302,
+					"content": "Just wanted to see how you're doing...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020303
+					]
+				},
+				{
+					"id": 718020303,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020304
+					],
+					"speakerTitle": "Visit the adeptus' abode"
+				},
+				{
+					"id": 718020304,
+					"content": "Your business is a novel one... You simply came to wish me well, and not to fulfill a wish of some other nature?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020305
+					],
+					"speakerTitle": "Visit the adeptus' abode"
+				},
+				{
+					"id": 718020305,
+					"content": "Very well, so be it! Mortal minds work in mysterious ways... I have no interest in attempting to understand them.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020306
+					],
+					"speakerTitle": "Visit the adeptus' abode"
+				},
+				{
+					"id": 718020306,
+					"content": "Since you are so demonstrably idle at present... Would you care to do me a small favor?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020307
+					],
+					"speakerTitle": "Visit the adeptus' abode"
+				},
+				{
+					"id": 718020307,
+					"content": "Once upon a time, when I had made a modest breakthrough in my mechanical studies, I built for myself a Dwelling in the Clouds suspended in the air.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020308
+					],
+					"speakerTitle": "Visit the adeptus' abode"
+				},
+				{
+					"id": 718020308,
+					"content": "This Dwelling in the Clouds was built principally from plaustrite, supported by a multitude of other ingenious features... In fact, its most marvelous feature of all was, was... Never mind, you would not understand even if I explained it.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020309
+					],
+					"speakerTitle": "Visit the adeptus' abode"
+				},
+				{
+					"id": 718020309,
+					"content": "After construction of the Dwelling in the Clouds was complete, I left the blueprints there.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020310
+					],
+					"speakerTitle": "Visit the adeptus' abode"
+				},
+				{
+					"id": 718020310,
+					"content": "I also added a seal, thinking that one of true affinity with the blueprints might eventually obtain them. But no — to this day, the seal stands.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020311
+					],
+					"speakerTitle": "Visit the adeptus' abode"
+				},
+				{
+					"id": 718020311,
+					"content": "It now seems a needless bother to me to have the blueprints stored there. Perhaps you can retrieve them from the Dwelling in the Clouds for me.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020312,
+						718020314
+					],
+					"speakerTitle": "Visit the adeptus' abode"
+				},
+				{
+					"id": 718020312,
+					"content": "Sure!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020313
+					]
+				},
+				{
+					"id": 718020313,
+					"content": "Such enthusiasm. Then do not delay, deliver them to my abode when you have found them, for that is where I shall be waiting for you.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Visit the adeptus' abode"
+				},
+				{
+					"id": 718020314,
+					"content": "What are you gonna do with it?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020315
+					]
+				},
+				{
+					"id": 718020315,
+					"content": "Naturally, I have my reasons. But please, do not presume that you could scrutinize an idea conceived in the mind of an adeptus.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020316
+					],
+					"speakerTitle": "Visit the adeptus' abode"
+				},
+				{
+					"id": 718020316,
+					"content": "Delay no further. Deliver them to my abode when you have found them, for that is where I shall be waiting for you.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Visit the adeptus' abode"
+				}
+			]
+		},
+		{
+			"id": 7180204,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180203",
+							"2"
+						],
+						"stepId": 7180203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718020401,
+					"content": "You still have not obtained the blueprints? But they are right there, in the Dwelling in the Clouds...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020402
+					],
+					"speakerTitle": "Visit the adeptus' abode"
+				},
+				{
+					"id": 718020402,
+					"content": "Ugh, how'd she know we hadn't fetched them yet?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020403
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718020403,
+					"content": "Those blueprints are a work of my own hand, should I not be able to sense when they are in my presence? Now, fetch them forthwith!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Visit the adeptus' abode"
+				}
+			]
+		},
+		{
+			"id": 7180205,
+			"completionStepIds": [
+				7180204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180204",
+							"2"
+						],
+						"stepId": 7180204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718020501,
+					"content": "I see you have obtained the blueprints. Now, hand them to me forthwith!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Visit the adeptus' abode"
+				}
+			]
+		},
+		{
+			"id": 7180210,
+			"completionStepIds": [
+				7180207
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180207",
+							"2"
+						],
+						"stepId": 7180207,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1103509",
+							"3"
+						],
+						"stepId": 1103509,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718021001,
+					"content": "To seek the adepti in Jueyun is no mean feat. Still, you have come forth...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021002
+					],
+					"speakerTitle": "Visit the adeptus' abode",
+					"speakerSubtitle": "Somewhat Distorted Voice?"
+				},
+				{
+					"id": 718021002,
+					"content": "Whoa! D—Didn't she already go to Liyue Harbor? Did she sneak back here while we weren't looking?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021003
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021003,
+					"content": "Her voice... doesn't sound quite right.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021004
+					]
+				},
+				{
+					"id": 718021004,
+					"content": "Uh, so, we were just worried that someone might steal stuff from your place. We didn't mean to disturb you.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021005
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021005,
+					"content": "...One has a task you might perform. Perform it well, and access to one's abode shall be granted.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021006,
+						718021007
+					],
+					"speakerTitle": "Visit the adeptus' abode",
+					"speakerSubtitle": "Somewhat Distorted Voice?"
+				},
+				{
+					"id": 718021006,
+					"content": "She's just talking to herself at this point...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021008
+					]
+				},
+				{
+					"id": 718021008,
+					"content": "Err, so you mean that this isn't her we're talking to, but some sorta machine she left behind?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021009
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021009,
+					"content": "Once upon a time, when one had made a modest breakthrough in my mechanical studies, one built for oneself a Dwelling in the Clouds suspended in the air.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021010
+					],
+					"speakerTitle": "Visit the adeptus' abode",
+					"speakerSubtitle": "Somewhat Distorted Voice?"
+				},
+				{
+					"id": 718021010,
+					"content": "And when said Dwelling was completed, one thought upon the rarity of meeting an adeptus, and there one left the blueprint, for some fated person to take them.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021011
+					],
+					"speakerTitle": "Visit the adeptus' abode",
+					"speakerSubtitle": "Somewhat Distorted Voice?"
+				},
+				{
+					"id": 718021011,
+					"content": "Retrieve the blueprint before entering one's abode once more. We shall speak more at that time.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021012
+					],
+					"speakerTitle": "Visit the adeptus' abode",
+					"speakerSubtitle": "Somewhat Distorted Voice?"
+				},
+				{
+					"id": 718021012,
+					"content": "Err, Lady Adeptus?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021013
+					]
+				},
+				{
+					"id": 718021013,
+					"content": "Cloud Retainer? Xian... Err, Ms. Xianyun...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021014
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021014,
+					"content": "Retrieve the blueprint to complete this task, and then one's abode once more. We shall speak more at that time.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021015
+					],
+					"speakerTitle": "Visit the adeptus' abode",
+					"speakerSubtitle": "Somewhat Distorted Voice?"
+				},
+				{
+					"id": 718021015,
+					"content": "On and on she goes, without paying attention to us at all, huh?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021016,
+						718021017
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021016,
+					"content": "Definitely a machine.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021018
+					]
+				},
+				{
+					"id": 718021018,
+					"content": "But aren't abode machine guards usually the... punchier sort?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021019,
+						718021020
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021019,
+					"content": "She might have her considerations.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021021
+					]
+				},
+				{
+					"id": 718021021,
+					"content": "Well, why don't we go get it and then come back and look inside the abode?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021022
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021022,
+					"content": "Hehe, Paimon's kinda curious about what machine she's left in there, too.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021020,
+					"content": "I'm a bit concerned about that blueprint...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021021
+					]
+				},
+				{
+					"id": 718021017,
+					"content": "It's started to repeat the last line...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021018
+					]
+				},
+				{
+					"id": 718021007,
+					"content": "Could the voice be coming from some sort of device...?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021008
+					]
+				}
+			]
+		},
+		{
+			"id": 7180211,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180203",
+							"2"
+						],
+						"stepId": 7180203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1103509",
+							"3"
+						],
+						"stepId": 1103509,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718021101,
+					"content": "Once upon a time, when one had made a modest breakthrough in my mechanical studies, one built for oneself a Dwelling in the Clouds suspended in the air.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021102
+					],
+					"speakerTitle": "Visit the adeptus' abode",
+					"speakerSubtitle": "Somewhat Distorted Voice?"
+				},
+				{
+					"id": 718021102,
+					"content": "And when said Dwelling was completed, one thought upon the rarity of meeting an adeptus, and there one left the blueprint, for some fated person to take them.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021103
+					],
+					"speakerTitle": "Visit the adeptus' abode",
+					"speakerSubtitle": "Somewhat Distorted Voice?"
+				},
+				{
+					"id": 718021103,
+					"content": "Retrieve the blueprint before entering one's abode once more. We shall speak more at that time.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Visit the adeptus' abode",
+					"speakerSubtitle": "Somewhat Distorted Voice?"
+				}
+			]
+		},
+		{
+			"id": 7180212,
+			"completionStepIds": [
+				7180204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180204",
+							"2"
+						],
+						"stepId": 7180204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1103509",
+							"3"
+						],
+						"stepId": 1103509,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718021201,
+					"content": "The blueprints you have retrieved, adeptal fate you have received. Come hither and seek your audience.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Visit the adeptus' abode",
+					"speakerSubtitle": "Somewhat Distorted Voice?"
+				}
+			]
+		},
+		{
+			"id": 7180213,
+			"completionStepIds": [
+				7180206
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180206",
+							"2"
+						],
+						"stepId": 7180206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1103509",
+							"3"
+						],
+						"stepId": 1103509,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718021301,
+					"content": "...Errr, what is this? It's a table... and a box on top of it, and nothing else anywhere!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021302,
+						718021303
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021302,
+					"content": "It's an adeptal table.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021304
+					]
+				},
+				{
+					"id": 718021304,
+					"content": "You have reached this place, and one knows already your heart...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021305
+					],
+					"speakerTitle": "Cloud Retainer...?"
+				},
+				{
+					"id": 718021305,
+					"content": "Uh, it's talking again!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021306
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021306,
+					"content": "Pen down your wish, and consign it to the chest. One shall make the final decision.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021307
+					],
+					"speakerTitle": "Cloud Retainer...?"
+				},
+				{
+					"id": 718021307,
+					"content": "Dangers you have braved with an unwavering will — a rare gift indeed. Take, then, these treasures with you.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021308
+					],
+					"speakerTitle": "Cloud Retainer...?"
+				},
+				{
+					"id": 718021308,
+					"content": "Woohoo! Hehe, Paimon knew you wouldn't let us come away empty-handed!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021309
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021309,
+					"content": "Still, this voice says, \"Pen down your wish, and consign it to the chest.\" Guess we just write our wish down and put it in?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021310,
+						718021311
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021310,
+					"content": "Best not to make a wish to the adepti willy-nilly...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021312
+					]
+				},
+				{
+					"id": 718021312,
+					"content": "Yeah, that's right. We could just go to... Ms. Xianyun directly if something came up, hehe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021313
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021313,
+					"content": "In that case, let's just put the blueprint in and leave, shall we?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021314
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021314,
+					"content": "This place sure is empty, though. Guess she must've taken everything with her.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021315
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021315,
+					"content": "What sort of situation were these devices made for, anyway...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021316
+					]
+				},
+				{
+					"id": 718021316,
+					"content": "Paimon doesn't know either...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021317
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021317,
+					"content": "But we can just ask her about her abode the next time we meet.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021311,
+					"content": "Making a wish to someone you know feels a bit...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021312
+					]
+				},
+				{
+					"id": 718021303,
+					"content": "And an adeptal box.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021304
+					]
+				}
+			]
+		}
+	]
+}

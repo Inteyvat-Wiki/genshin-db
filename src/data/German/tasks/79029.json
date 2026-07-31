@@ -1,0 +1,480 @@
+{
+	"id": 79029,
+	"type": "WQ",
+	"name": "Schatzhinweis – Zwillingsinsel",
+	"description": "Geh in die Nähe des Riffs der Zwillingsinsel und sieh nach, ob die Piraten etwas hinterlassen haben, das mit der Spur des Schatzes zu tun hat ...",
+	"unlockDescription": "",
+	"chapter": "Schatzsuche der vier Riffe",
+	"showType": "QUEST_SHOW",
+	"activityId": 5084,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		79020
+	],
+	"steps": [
+		{
+			"id": 7902901,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Begib dich zum Riff nahe der Zwillingsinsel.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7902901,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7902906,
+						2
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7902906,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7902902,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Suche in der Umgebung nach einem Hinweis zum Schatz.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6800285,
+						0
+					],
+					"talkId": 6800285
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7902906,
+						2
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7902906,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7902903,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Kapitän Nachtrabe.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6800286,
+						0
+					],
+					"talkId": 6800286
+				}
+			]
+		},
+		{
+			"id": 7902904,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Durchquere nach Kapitän Nachtrabes Anweisungen den Nebel.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7902904,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7902905,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Suche auf der Insel nach einem Hinweis zum versteckten Schatz.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101771,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101760,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7902906,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Hilf Kapitän Nachtrabe, die Hilichurle loszuwerden.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7902907,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Erstatte Kapitän Nachtrabe Bericht.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6800288,
+						0
+					],
+					"talkId": 6800288
+				}
+			]
+		},
+		{
+			"id": 7902908,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6800285,
+						0
+					],
+					"talkId": 6800285
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7902901,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7902902",
+							"2"
+						],
+						"stepId": 7902902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7902908",
+							"2"
+						],
+						"stepId": 7902908,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kapitän Nachtrabe"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790290101,
+					"content": "Ist das dort eine Statue?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290102
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790290102,
+					"content": "*seufz*",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290103
+					],
+					"speakerTitle": "Kapitän Nachtrabe"
+				},
+				{
+					"id": 790290103,
+					"content": "Hallo, warum seufzt du vor dieser Höhle?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290112
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790290112,
+					"content": "Ich lebe seit Kurzem in dieser Höhle ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290113
+					],
+					"speakerTitle": "Kapitän Nachtrabe"
+				},
+				{
+					"id": 790290113,
+					"content": "In so einer Höhle!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290114
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790290114,
+					"content": "Was soll ich machen! Plötzlich taucht auf der Insel eine Gruppe Schauspieler auf, sie sind so laut, dass ich nicht einmal schlafen kann ... Ich kann nirgendwo anders hin, wenigstens ist es hier ruhig.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290104
+					],
+					"speakerTitle": "Kapitän Nachtrabe"
+				},
+				{
+					"id": 790290104,
+					"content": "Dann wieder! Plötzlich kam eine Bande von Hilichurle und sie besetzten mein Lager, also kann ich hier nur im kalten Wind stehen!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290105
+					],
+					"speakerTitle": "Kapitän Nachtrabe"
+				},
+				{
+					"id": 790290105,
+					"content": "Ach, ich schwöre feierlich, wenn mir nur jemand helfen könnte, würde ich ihm sagen ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290106
+					],
+					"speakerTitle": "Kapitän Nachtrabe"
+				},
+				{
+					"id": 790290106,
+					"content": "Was würdest du ihm denn sagen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290107
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790290107,
+					"content": "Ich würde ihm sagen, wo man einen Hinweis auf den legendären Piratenschatz finden kann, auch wenn ich nur einen der vier Teile davon kenne.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290108
+					],
+					"speakerTitle": "Kapitän Nachtrabe"
+				},
+				{
+					"id": 790290108,
+					"content": "Einer der vier Teile?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290109
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790290109,
+					"content": "Ihr scheint wohl auch nach dem Schatz zu suchen. Wie klingt das, ihr helft mir mit den Hilichurle da drinnen und ich sage euch, wo ihr den Hinweis findet?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290110
+					],
+					"speakerTitle": "Kapitän Nachtrabe"
+				},
+				{
+					"id": 790290110,
+					"content": "Man sagt, wenn man die vier Hinweise hat, findet man den Schatz, den die Piraten einst hier zurückgelassen haben.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290111
+					],
+					"speakerTitle": "Kapitän Nachtrabe"
+				},
+				{
+					"id": 790290111,
+					"content": "Nun, abgemacht!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 7902902,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7902903",
+							"2"
+						],
+						"stepId": 7902903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kapitän Nachtrabe"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790290201,
+					"content": "Also, bist du bereit?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290202
+					],
+					"speakerTitle": "Kapitän Nachtrabe"
+				},
+				{
+					"id": 790290202,
+					"content": "Ich werde vorausgehen und euch auf den Riffen die richtige Richtung zeigen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290203
+					],
+					"speakerTitle": "Kapitän Nachtrabe"
+				},
+				{
+					"id": 790290203,
+					"content": "Also, siehst du diesen Fels dort? Ihr müsst zuerst dorthin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kapitän Nachtrabe"
+				}
+			]
+		},
+		{
+			"id": 7902907,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7902906",
+							"2"
+						],
+						"stepId": 7902906,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kapitän Nachtrabe"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790290701,
+					"content": "Und, habt ihr euch um die Hilichurle da drinnen gekümmert?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kapitän Nachtrabe"
+				}
+			]
+		},
+		{
+			"id": 7902908,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7902907",
+							"2"
+						],
+						"stepId": 7902907,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kapitän Nachtrabe"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790290801,
+					"content": "Ihr habt die Hilichurle aufgeräumt? Ich bin euch unendlich dankbar!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290802
+					],
+					"speakerTitle": "Kapitän Nachtrabe"
+				},
+				{
+					"id": 790290802,
+					"content": "Kommt, ich zeige euch, wie ihr durch den Nebel über der See kommt und den Hinweis finden könnt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290803
+					],
+					"speakerTitle": "Kapitän Nachtrabe"
+				},
+				{
+					"id": 790290803,
+					"content": "Wenn ihr bereit seid, kommt zu mir auf die andere Seite des Riffs!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kapitän Nachtrabe"
+				}
+			]
+		}
+	]
+}

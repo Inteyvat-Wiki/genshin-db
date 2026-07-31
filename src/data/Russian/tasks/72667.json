@@ -1,0 +1,126 @@
+{
+	"id": 72667,
+	"type": "WQ",
+	"name": "Пополнение запаса наживки",
+	"description": "У вас кончилась наживка из блескушки, сходите к Кудзирай Момидзи, чтобы сделать новую.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5041,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		72663
+	],
+	"steps": [
+		{
+			"id": 7266701,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "等待玩家饵料数低于1$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ITEM_LESS_THAN",
+					"rawParams": [
+						111027,
+						1
+					]
+				}
+			]
+		},
+		{
+			"id": 7266702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Кудзирай Момидзи",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7266701,
+						0
+					],
+					"talkId": 7266701
+				}
+			]
+		},
+		{
+			"id": 7266703,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "回滚任务$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						111027,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7266701,
+			"completionStepIds": [
+				7266702
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7266702",
+							"2"
+						],
+						"stepId": 7266702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_NUM_LESS_THAN",
+						"rawParams": [
+							"111027",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Кудзирай Момидзи"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 726670102,
+					"content": "У меня закончилась наживка из блескушки.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						726670103
+					]
+				},
+				{
+					"id": 726670103,
+					"content": "#А? Хорошо, что ты тогда так много ингредиентов {M#принёс}{F#принесла} - я про запас наделала.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						726670104
+					],
+					"speakerTitle": "Кудзирай Момидзи"
+				},
+				{
+					"id": 726670104,
+					"content": "Вот, держи. Если опять закончится, но приходи ещё.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Кудзирай Момидзи"
+				}
+			]
+		}
+	]
+}

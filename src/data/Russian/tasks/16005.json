@@ -1,0 +1,91 @@
+{
+	"id": 16005,
+	"type": "LQ",
+	"name": "Интерлюдия: Перерыв",
+	"description": "В книге пока нет новых подсказок. Вы решаете немного отдохнуть, прежде чем снова встретиться с Дурином...",
+	"unlockDescription": "",
+	"chapter": "Магия повествования",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1600501,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1600501,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1600502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Дождитесь подсказок магической книги для следующей главы",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TIME_VAR_PASS_DAY",
+					"rawParams": [
+						16005,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1600031,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1600502",
+							"2"
+						],
+						"stepId": 1600502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Дурин"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 160003101,
+					"content": "По словам тёти Алисы, мы в любой момент можем вернуться в мир той истории.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						160003102
+					],
+					"speakerTitle": "Дурин"
+				},
+				{
+					"id": 160003102,
+					"content": "#Если {NICKNAME} и Паймон захотят вернуться туда ещё раз, обращайтесь ко мне.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Дурин"
+				}
+			]
+		}
+	]
+}

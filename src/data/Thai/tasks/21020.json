@@ -1,0 +1,191 @@
+{
+	"id": 21020,
+	"type": "WQ",
+	"name": "สมบัติข้าใครอย่าแตะ",
+	"description": "มีจดหมายเปื่อย ๆ ฉบับหนึ่งอยู่ในห้องใต้ดินที่มี Ruin Guard เฝ้าอยู่ นักล่าสมบัติซึ่งเป็นผู้เขียนนั้นเชื่อว่าบนที่ราบ Guili Plains แห่งนี้ มีกองไฟที่สามารถเติมเต็มความปรารถนาได้อยู่...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2102000,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "การเริ่มต้นของเควสต์",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102000,
+						0
+					],
+					"talkId": 2102000
+				}
+			]
+		},
+		{
+			"id": 2102010,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "จุดกองไฟ",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2102020,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "กำจัดศัตรู",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2102021,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "อ่านข้อความ",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102020,
+						0
+					],
+					"talkId": 2102020
+				}
+			]
+		},
+		{
+			"id": 2102022,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "ตามหาสถานที่ซ่อนสมบัติ",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2102000,
+			"completionStepIds": [
+				2102000
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102000",
+							"2"
+						],
+						"stepId": 2102000,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210200001,
+					"content": "\"...นี่ล่ะมั้งที่เค้าเรียกกันว่า \"ไม่รู้จักพอ\" ถ้าฉันแค่เอาสมบัติในห้องใต้ดินนี้ออกไป โดยไม่คิดที่จะไปขอพรกับกองไฟบ้าอะไรนั่น ฉันก็จะไม่ไปแตะถูกกลไกและถูกเจ้ายักษ์นั่นขวางไว้ที่นี่... ฉันออกไปไม่ได้ซะแล้ว\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210200002
+					],
+					"speakerTitle": "Worn Letter"
+				},
+				{
+					"id": 210200002,
+					"content": "\"ถ้าใครสามารถโค่นเจ้ายักษ์นั่นได้ล่ะก็ ไปขอพรอะไรกับกองไฟก็ได้เลย เหอะ ๆ ฉันจะ... ให้พรแก่เธอเอง!\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Worn Letter"
+				}
+			]
+		},
+		{
+			"id": 2102020,
+			"completionStepIds": [
+				2102021
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102021",
+							"2"
+						],
+						"stepId": 2102021,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102022",
+							"2"
+						],
+						"stepId": 2102022,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210202001,
+					"content": "\"...กองไฟที่สามารถเติมเต็มความปรารถนาอะไรกัน เรื่องไร้สาระทั้งนั้น! แต่ว่าสมบัติที่อยู่ข้างใต้ของกองไฟนั่นเป็นของจริงทั้งนั้น... เจ๊ใหญ่บอกว่าให้ทิ้งกระดาษโน้ตนั่นไว้ที่เดิม ส่วนพวกเราก็ให้รออยู่ที่ข้าง ๆ กองไฟนี้ แล้วเดี๋ยวจะมีคนมาติดกับเอง ขอแค่ให้กองไฟนั้นลุกไหม้ หึหึหึ ช่างเป็นข้อตกลงที่เยี่ยมจริง ๆ\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210202002
+					],
+					"speakerTitle": "บันทึกลายมือหวัด ๆ"
+				},
+				{
+					"id": 210202002,
+					"content": "\"...แต่ว่า สมบัติตั้งมากมายขนาดนี้จะแบกยังไงก็ไม่ไหว เจ๊ใหญ่บอกว่าให้ฝังมันไว้ที่<color=#00E1FFFF>ยอดเขาที่สูงที่สุดของ Cuijue Slope</color> ก่อน ที่ยอดเขานั่นจะมีต้นไม้อยู่ต้นนึง คิดว่าเจ๊ใหญ่น่าจะหาเจอได้ง่าย ๆ ล่ะนะ...\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "บันทึกลายมือหวัด ๆ"
+				}
+			]
+		}
+	]
+}

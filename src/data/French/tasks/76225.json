@@ -1,0 +1,181 @@
+{
+	"id": 76225,
+	"type": "WQ",
+	"name": "Réinvitation au goûteron : Columbina",
+	"description": "Rendez-vous dans la Demeure dissimulée, installez votre table à thé et invitez Sandrone à s'asseoir. Ensuite, préparez-vous à savourer un thé en compagnie de Columbina...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		76182
+	],
+	"steps": [
+		{
+			"id": 7622501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Rendez-vous dans la Demeure dissimulée pour commencer le goûteron.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7622501,
+						0
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					2658.658,
+					334.922,
+					4654.793
+				],
+				"pointId": 17424
+			}
+		},
+		{
+			"id": 7622502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Rendez-vous dans la Demeure dissimulée pour commencer le goûteron.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7622502,
+						0
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					2658.658,
+					334.922,
+					4654.793
+				],
+				"pointId": 17424
+			}
+		},
+		{
+			"id": 7622503,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Profitez du thé.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LEAVE_SCENE_RANGE",
+					"rawParams": [
+						3,
+						40
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7622501,
+						0
+					],
+					"talkId": 7622501
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						1,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7622501,
+			"completionStepIds": [
+				7622503
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7622503",
+							"2"
+						],
+						"stepId": 7622503,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Columbina"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							2656.132,
+							335.936,
+							4662.848
+						],
+						"pointId": 17425
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							2658.756,
+							335.938,
+							4662.404
+						],
+						"pointId": 17426
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 762250101,
+					"content": "Merci pour le thé, Sandrone. J'apprécie les moments passés en ta compagnie.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762250102,
+						762250103
+					],
+					"speakerTitle": "Columbina"
+				},
+				{
+					"id": 762250102,
+					"content": "(Rester encore ici un moment.)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762250104
+					],
+					"speakerTitle": "Sandrone"
+				},
+				{
+					"id": 762250104,
+					"content": "Dis-moi... Tu m'inviteras encore la prochaine fois, n'est-ce pas ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Columbina"
+				},
+				{
+					"id": 762250103,
+					"content": "L'heure du thé est terminée.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762250104
+					],
+					"speakerTitle": "Sandrone"
+				}
+			]
+		}
+	]
+}

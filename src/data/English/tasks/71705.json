@@ -1,0 +1,167 @@
+{
+	"id": 71705,
+	"type": "WQ",
+	"name": "Smiley's Selections",
+	"description": "Wangshu Inn's Smiley Yanxiao needs two Sausages.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Give two Sausages to Smiley Yanxiao",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170501,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Smiley Yanxiao",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170502,
+						0
+					],
+					"talkId": 7170502
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170501,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170501",
+							"2"
+						],
+						"stepId": 7170501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170501"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Smiley Yanxiao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717050101,
+					"content": "About Sausage...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717050102
+					]
+				},
+				{
+					"id": 717050102,
+					"content": "Yes, I've just posted a commission for some. Have you already prepared two Sausages?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717050103,
+						717050104
+					],
+					"speakerTitle": "Smiley Yanxiao"
+				},
+				{
+					"id": 717050103,
+					"content": "Yes, here they are.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717050104,
+					"content": "No, not yet.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717050105
+					]
+				},
+				{
+					"id": 717050105,
+					"content": "Well, time's ticking and I've got food to prepare. Bring them to me as soon as they're ready, I've got customers waiting.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Smiley Yanxiao"
+				}
+			]
+		},
+		{
+			"id": 7170502,
+			"completionStepIds": [
+				7170502
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170502",
+							"2"
+						],
+						"stepId": 7170502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Smiley Yanxiao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717050201,
+					"content": "Hmm, these aren't half bad... and should be just enough for what I'm making.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717050202
+					],
+					"speakerTitle": "Smiley Yanxiao"
+				},
+				{
+					"id": 717050202,
+					"content": "Here's your payment, as promised.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Smiley Yanxiao"
+				}
+			]
+		}
+	]
+}

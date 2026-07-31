@@ -1,0 +1,617 @@
+{
+	"id": 70506,
+	"type": "WQ",
+	"name": "蒲公英、薔薇、風車アスター",
+	"description": "「あのジン団長も酒場に？いったい何が起きてるんだ？」 「慌てるな、なにせジン団長だぜ。もし深刻な問題が起こってたら、それを放って酒場になんか行かないだろう。」",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70507
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "ルカと会話し、酒場に入る",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050602,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "リサに指定ドリンクを作る",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050602,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050603,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "ジンに指定ドリンクを作る",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050603,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050604,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "ドリンクをリサとジンに渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050602,
+						0
+					],
+					"talkId": 7050602
+				}
+			]
+		},
+		{
+			"id": 7050605,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "リサとジンに話しかける",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050601,
+						0
+					],
+					"talkId": 7050601
+				}
+			]
+		},
+		{
+			"id": 7050606,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "カウンターに行って、営業の準備をする",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050601,
+			"completionStepIds": [
+				7050605
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050605",
+							"2"
+						],
+						"stepId": 7050605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050602",
+							"2"
+						],
+						"stepId": 7050602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050603",
+							"2"
+						],
+						"stepId": 7050603,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"リサ",
+					"ジン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705060101,
+					"content": "あら、可愛い子ちゃんじゃない。会えて嬉しいわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060102
+					],
+					"speakerTitle": "リサ"
+				},
+				{
+					"id": 705060102,
+					"content": "まさか、こんなところで会うとはな。私もリサと同じ気持ちだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060103
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 705060103,
+					"content": "もう「こんなところ」だなんて…酒場は体を休めて、楽しむにはぴったりの場所なのよ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060104
+					],
+					"speakerTitle": "リサ"
+				},
+				{
+					"id": 705060104,
+					"content": "はぁ、可愛い子ちゃんには想像できないでしょうね。わたくしがどれほど苦労して、仕事に追われているジンを椅子から立ち上がらせたことか。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060105
+					],
+					"speakerTitle": "リサ"
+				},
+				{
+					"id": 705060105,
+					"content": "それに、まだ来たばかりなのに、ジンったらもう心配した表情をしているし…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060106
+					],
+					"speakerTitle": "リサ"
+				},
+				{
+					"id": 705060106,
+					"content": "リサ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060107
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 705060107,
+					"content": "騎士団は事務仕事が多いからね…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060108
+					]
+				},
+				{
+					"id": 705060108,
+					"content": "そうだな。ジン団長は代理団長だし、騎士団のことが心配になるのも仕方ないよな！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060109
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705060109,
+					"content": "でも、せっかく来たんだから…楽しんでけよ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060110
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705060110,
+					"content": "ほら、こいつに美味しいドリンクを作ってもらえ。飲めばきっと気分も明るくなるぞ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060111
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705060111,
+					"content": "気分転換にちょうどいいと思う。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060112
+					]
+				},
+				{
+					"id": 705060112,
+					"content": "はぁ、息抜きの仕方を学ばなきゃいけないのはジンだけよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060113
+					],
+					"speakerTitle": "リサ"
+				},
+				{
+					"id": 705060113,
+					"content": "可愛い子ちゃん、ロマンティックオードを一杯いただけるかしら。サイズはミディアムで、甘めにしてちょうだい。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060114
+					],
+					"speakerTitle": "リサ"
+				},
+				{
+					"id": 705060114,
+					"content": "ジンは？何にする？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060115
+					],
+					"speakerTitle": "リサ"
+				},
+				{
+					"id": 705060115,
+					"content": "ああ…私はコーヒーでいい。同じミディアムサイズで頼む。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060116
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 705060116,
+					"content": "ジン団長、普段からコーヒーばっかり飲んでるし、たまには他のにしたらどうだ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060117
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705060117,
+					"content": "ありがとう。だがやはり、眠気を覚ますようなものが飲みたいんだ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060118
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 705060118,
+					"content": "分かった、少し待ってて。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060119
+					]
+				},
+				{
+					"id": 705060119,
+					"content": "ああ、頼む。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ジン"
+				}
+			]
+		},
+		{
+			"id": 7050602,
+			"completionStepIds": [
+				7050604
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050604",
+							"2"
+						],
+						"stepId": 7050604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"リサ",
+					"ジン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705060201,
+					"content": "あら…この甘さ、ちょうどいいわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060202
+					],
+					"speakerTitle": "リサ"
+				},
+				{
+					"id": 705060202,
+					"content": "ああ、コーヒーもコクがあって、苦味もちょうどいい。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060203
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 705060203,
+					"content": "満足してもらえてよかった。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060204
+					]
+				},
+				{
+					"id": 705060204,
+					"content": "…リサが言ったことを、私も理解はしているんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060205
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 705060205,
+					"content": "え？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060206
+					],
+					"speakerTitle": "リサ"
+				},
+				{
+					"id": 705060206,
+					"content": "最近、自分の足りない点をよく反省することがある。仕事の効率も能力も…あらゆる面で改善の余地があると。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060207
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 705060207,
+					"content": "私のストレスが、きっと知らない間にリサにも影響を与えてしまっていたんだろう…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060208
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 705060208,
+					"content": "全然分かってないんじゃないかな…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060209
+					]
+				},
+				{
+					"id": 705060209,
+					"content": "えっ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060210
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 705060210,
+					"content": "そうね。ほら、可愛い子ちゃんだって分かっているみたいよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060211
+					],
+					"speakerTitle": "リサ"
+				},
+				{
+					"id": 705060211,
+					"content": "あなたがあまりにも疲れた顔をしていたから、一緒にお酒やお茶を飲んで、楽しいことで息抜きをしようと思っただけ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060212
+					],
+					"speakerTitle": "リサ"
+				},
+				{
+					"id": 705060212,
+					"content": "それなのに、ここでもあなたは仕事のことばかり考えているんだもの。そんなんじゃ、わたくしだって悲しくなるわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060213
+					],
+					"speakerTitle": "リサ"
+				},
+				{
+					"id": 705060213,
+					"content": "ずっと気を張り詰めていたら、いつか倒れてしまうわよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060214
+					],
+					"speakerTitle": "リサ"
+				},
+				{
+					"id": 705060214,
+					"content": "その通り。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060215
+					]
+				},
+				{
+					"id": 705060215,
+					"content": "#{NICKNAME}、君もそう思うのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060216
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 705060216,
+					"content": "はぁ、どうやら…息抜きすることを学ぶのが、私にとって一番の課題のようだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060217
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 705060217,
+					"content": "璃月には「一張一弛」という言葉がある。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060218
+					]
+				},
+				{
+					"id": 705060218,
+					"content": "ああ！仕事をする時はしっかり仕事をして、休む時にはゆっくり休む。わかりやすく言えば、おまえら二人を足して二で割ったような感じがちょうどいいな！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060219
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705060219,
+					"content": "変な例え…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060220
+					]
+				},
+				{
+					"id": 705060220,
+					"content": "ふふっ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060221
+					],
+					"speakerTitle": "リサ"
+				},
+				{
+					"id": 705060221,
+					"content": "な、なるほど…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060222
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 705060222,
+					"content": "ありがとう。酒場は飲み物を飲むだけでなく、気分まで明るくしてくれる場所だったのだな。だから、リサとガイアは酒場が好きなんだろう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060223
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 705060223,
+					"content": "ええ、そうね。でもそれは、バーテンダーが誰かにもよるわよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060224
+					],
+					"speakerTitle": "リサ"
+				},
+				{
+					"id": 705060224,
+					"content": "今日は可愛い子ちゃんのおかげで、ジンを説得できたわ。あなたの口がとても上手だからでしょうね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060225,
+						705060226
+					],
+					"speakerTitle": "リサ"
+				},
+				{
+					"id": 705060225,
+					"content": "そんなことない。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060227
+					]
+				},
+				{
+					"id": 705060227,
+					"content": "ふふっ、それじゃあ、わたくしたちはこれで。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060228
+					],
+					"speakerTitle": "リサ"
+				},
+				{
+					"id": 705060228,
+					"content": "機会があれば、またここに来て息抜きをしようと思う。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060229
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 705060229,
+					"content": "ああ！じゃあな！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705060226,
+					"content": "役に立てたなら良かった。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060227
+					]
+				}
+			]
+		}
+	]
+}

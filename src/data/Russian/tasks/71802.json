@@ -1,0 +1,1055 @@
+{
+	"id": 71802,
+	"type": "WQ",
+	"name": "Подношение Адептам",
+	"description": "На горе Аоцан вы замечаете следы Адепта...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		1016,
+		1009
+	],
+	"steps": [
+		{
+			"id": 7180201,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Предложить вкусный суп из украшений",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						1103509,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7180203,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Направляйтесь в Облачную обитель и найдите чертежи",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100583,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180204,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте чертежи Хранителю Облаков",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180205,
+						0
+					],
+					"talkId": 7180205
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180212,
+						0
+					],
+					"talkId": 7180212
+				}
+			]
+		},
+		{
+			"id": 7180205,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		},
+		{
+			"id": 7180206,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Расположите чертежи перед Хранителем Облаков",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180202,
+						0
+					],
+					"talkId": 7180202
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180213,
+						0
+					],
+					"talkId": 7180213
+				}
+			]
+		},
+		{
+			"id": 7180207,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Посетите Хранителя Облаков",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180203,
+						0
+					],
+					"talkId": 7180203
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180210,
+						0
+					],
+					"talkId": 7180210
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7180202,
+			"completionStepIds": [
+				7180206
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180206",
+							"2"
+						],
+						"stepId": 7180206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Хранитель Облаков"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718020201,
+					"content": "Это действительно чертежи Облачной обители. Неплохо.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020202
+					],
+					"speakerTitle": "Хранитель Облаков"
+				},
+				{
+					"id": 718020202,
+					"content": "Ты не договорила...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020203
+					]
+				},
+				{
+					"id": 718020203,
+					"content": "У тебя ещё остались вопросы... Эх, ладно, учитывая твои подношения...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020204
+					],
+					"speakerTitle": "Хранитель Облаков"
+				},
+				{
+					"id": 718020204,
+					"content": "Я слышала, в Ли Юэ есть Нефритовый дворец, который парит над землёй. И его построили простые смертные.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020205
+					],
+					"speakerTitle": "Хранитель Облаков"
+				},
+				{
+					"id": 718020205,
+					"content": "Я также слышала, смертные превыше всего ставят размер. Руководствуясь этими варварскими принципами, они утверждают, что их творению нет равных.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020206
+					],
+					"speakerTitle": "Хранитель Облаков"
+				},
+				{
+					"id": 718020206,
+					"content": "Пф... Ограниченные смертные никогда не смогут познать всю глубину изобретательности Адептов.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020207
+					],
+					"speakerTitle": "Хранитель Облаков"
+				},
+				{
+					"id": 718020207,
+					"content": "Нефритовый дворец! На фоне моего самого простейшего механического изобретения, эта постройка будет выглядеть скучно и примитивно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020208
+					],
+					"speakerTitle": "Хранитель Облаков"
+				},
+				{
+					"id": 718020208,
+					"content": "Ты... Просто завидуешь?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020209
+					]
+				},
+				{
+					"id": 718020209,
+					"content": "Завидую? Кому? Простым смертным?! Ха-ха-ха! Они достойны лишь моего сожаления. Смертные слепы к таланту Адептов.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020210
+					],
+					"speakerTitle": "Хранитель Облаков"
+				},
+				{
+					"id": 718020210,
+					"content": "Я опасаюсь, что подобные примитивные воззрения могут повести развитие смертных по ложному пути. Я считаю своим долгом, указать им истинную дорогу.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020211
+					],
+					"speakerTitle": "Хранитель Облаков"
+				},
+				{
+					"id": 718020211,
+					"content": "Разговор окончен. Оставь меня. Сейчас же.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Хранитель Облаков"
+				}
+			]
+		},
+		{
+			"id": 7180203,
+			"completionStepIds": [
+				7180207
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180207",
+							"2"
+						],
+						"stepId": 7180207,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718020301,
+					"content": "Что тебе нужно? Отвечай, живо! Не трать драгоценное время Адепта попусту!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020302
+					],
+					"speakerTitle": "Обитель Адепта"
+				},
+				{
+					"id": 718020302,
+					"content": "#Я лишь хотел{F#а} узнать, как у вас дела?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020303
+					]
+				},
+				{
+					"id": 718020303,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020304
+					],
+					"speakerTitle": "Обитель Адепта"
+				},
+				{
+					"id": 718020304,
+					"content": "#Эм... Это что-то новенькое. Ты просто приш{F#ла}{M#ёл} проведать меня? Ты не собираешься загадывать желание или что-то в этом духе?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020305
+					],
+					"speakerTitle": "Обитель Адепта"
+				},
+				{
+					"id": 718020305,
+					"content": "Отлично! Пусть будет так. Что творится в головах у простых смертных?.. Я даже не буду пытаться понять.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020306
+					],
+					"speakerTitle": "Обитель Адепта"
+				},
+				{
+					"id": 718020306,
+					"content": "Если у тебя так много свободного времени... Не окажешь ли мне одну услугу?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020307
+					],
+					"speakerTitle": "Обитель Адепта"
+				},
+				{
+					"id": 718020307,
+					"content": "Я добилась значительных успехов в изучении механики и смогла построить себе Облачную обитель, парящую в небе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020308
+					],
+					"speakerTitle": "Обитель Адепта"
+				},
+				{
+					"id": 718020308,
+					"content": "Эта Облачная обитель построена в основном из камня, который смертные называют плаустритом. Обитель была наполнена механизмами, столь изощрёнными, что я могла бы говорить об их устройстве целый день.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020309
+					],
+					"speakerTitle": "Обитель Адепта"
+				},
+				{
+					"id": 718020309,
+					"content": "Когда строительство Обители было завершено, я оставила чертежи там.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020310
+					],
+					"speakerTitle": "Обитель Адепта"
+				},
+				{
+					"id": 718020310,
+					"content": "Я запечатала Обитель в надежде, что кто-то достойный однажды сможет забрать чертежи. Но и по сей день чертежи хранятся под печатью.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020311
+					],
+					"speakerTitle": "Обитель Адепта"
+				},
+				{
+					"id": 718020311,
+					"content": "Я больше не вижу нужды хранить чертежи в обители. Может быть, у тебя получится принести их мне.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020312,
+						718020314
+					],
+					"speakerTitle": "Обитель Адепта"
+				},
+				{
+					"id": 718020312,
+					"content": "Хорошо.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020313
+					]
+				},
+				{
+					"id": 718020313,
+					"content": "Мне нравится твой энтузиазм. Не задерживайся, пожалуйста. Я буду ждать твоего возвращения.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Обитель Адепта"
+				},
+				{
+					"id": 718020314,
+					"content": "Зачем вам нужны чертежи?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020315
+					]
+				},
+				{
+					"id": 718020315,
+					"content": "У меня есть на это свои причины. Но, пожалуйста, не думай, что ты сможешь понять замыслы Адептов.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020316
+					],
+					"speakerTitle": "Обитель Адепта"
+				},
+				{
+					"id": 718020316,
+					"content": "Поспеши. Доставь чертежи в моё обиталище. Я буду ждать тебя.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Обитель Адепта"
+				}
+			]
+		},
+		{
+			"id": 7180204,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180203",
+							"2"
+						],
+						"stepId": 7180203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718020401,
+					"content": "#Ты до сих пор не получил{F#а} чертежи? Они в Облачной обители.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020402
+					],
+					"speakerTitle": "Обитель Адепта"
+				},
+				{
+					"id": 718020402,
+					"content": "Эм... А откуда она знает, что у нас ещё нет чертежей?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020403
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718020403,
+					"content": "Я смогла создать эти чертежи. Думаешь, я не смогу почувствовать их приближение? Принеси мне чертежи и не задерживайся!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Обитель Адепта"
+				}
+			]
+		},
+		{
+			"id": 7180205,
+			"completionStepIds": [
+				7180204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180204",
+							"2"
+						],
+						"stepId": 7180204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718020501,
+					"content": "Вы принесли чертежи. Скорей же отдайте их мне!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Обитель Адепта"
+				}
+			]
+		},
+		{
+			"id": 7180210,
+			"completionStepIds": [
+				7180207
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180207",
+							"2"
+						],
+						"stepId": 7180207,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1103509",
+							"3"
+						],
+						"stepId": 1103509,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718021001,
+					"content": "Нелегко найти Адептов в Заоблачном пределе. И всё же вы пришли сюда...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021002
+					],
+					"speakerTitle": "Обитель Адепта",
+					"speakerSubtitle": "...Но голос не тот?"
+				},
+				{
+					"id": 718021002,
+					"content": "Ох! А она р-разве не в гавани Ли Юэ? Неужели успела вернуться?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021003
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718021003,
+					"content": "Но... Голос не тот?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021004
+					]
+				},
+				{
+					"id": 718021004,
+					"content": "Эм... Мы волновались, что к тебе кто-то пробрался. Мы не хотели тебя беспокоить...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021005
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718021005,
+					"content": "...Доброжелатель, что исполнит поручение бессмертного, да войдёт в обитель Адепта.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021006,
+						718021007
+					],
+					"speakerTitle": "Обитель Адепта",
+					"speakerSubtitle": "...Но голос не тот?"
+				},
+				{
+					"id": 718021006,
+					"content": "Она как будто вообще нас не слышит...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021008
+					]
+				},
+				{
+					"id": 718021008,
+					"content": "Что? Хочешь сказать, с нами сейчас говорит не Хранитель Облаков, а её механизм?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021009
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718021009,
+					"content": "В прошлом я добилась значительных успехов в изучении механики и смогла построить себе Облачную обитель, парящую в небе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021010
+					],
+					"speakerTitle": "Обитель Адепта",
+					"speakerSubtitle": "...Но голос не тот?"
+				},
+				{
+					"id": 718021010,
+					"content": "Завершив Облачную обитель, я задумалась о непостижимости пути Адепта и оставила чертежи тому, кому предначертано их отыскать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021011
+					],
+					"speakerTitle": "Обитель Адепта",
+					"speakerSubtitle": "...Но голос не тот?"
+				},
+				{
+					"id": 718021011,
+					"content": "Найдите чертежи и возвращайтесь в обитель Адепта. Поговорим позже.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021012
+					],
+					"speakerTitle": "Обитель Адепта",
+					"speakerSubtitle": "...Но голос не тот?"
+				},
+				{
+					"id": 718021012,
+					"content": "Госпожа Адепт?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021013
+					]
+				},
+				{
+					"id": 718021013,
+					"content": "Хранитель Облаков? Г-госпожа Сянь Юнь?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021014
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718021014,
+					"content": "Найдите чертежи, исполните поручение и возвращайтесь в обитель Адепта.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021015
+					],
+					"speakerTitle": "Обитель Адепта",
+					"speakerSubtitle": "...Но голос не тот?"
+				},
+				{
+					"id": 718021015,
+					"content": "Совершенно нас не слышит, всё продолжает о своём...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021016,
+						718021017
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718021016,
+					"content": "Это точно механизм.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021018
+					]
+				},
+				{
+					"id": 718021018,
+					"content": "Но разве охранные механизмы обители не должны... отгонять людей силой или что-то такое?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021019,
+						718021020
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718021019,
+					"content": "Наверное, у неё на то свои соображения.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021021
+					]
+				},
+				{
+					"id": 718021021,
+					"content": "Давай тогда заберём их, а потом вернёмся в обитель.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021022
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718021022,
+					"content": "Хе-хе, Паймон даже любопытно стало, что за механизм она там поставила.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718021020,
+					"content": "Меня заинтересовали те чертежи...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021021
+					]
+				},
+				{
+					"id": 718021017,
+					"content": "Начала повторяться...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021018
+					]
+				},
+				{
+					"id": 718021007,
+					"content": "Наверное, голос какого-то механизма...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021008
+					]
+				}
+			]
+		},
+		{
+			"id": 7180211,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180203",
+							"2"
+						],
+						"stepId": 7180203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1103509",
+							"3"
+						],
+						"stepId": 1103509,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718021101,
+					"content": "В прошлом я добилась значительных успехов в изучении механики и смогла построить себе Облачную обитель, парящую в небе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021102
+					],
+					"speakerTitle": "Обитель Адепта",
+					"speakerSubtitle": "...Но голос не тот?"
+				},
+				{
+					"id": 718021102,
+					"content": "Завершив Облачную обитель, я задумалась о непостижимости пути Адепта и оставила чертежи тому, кому предначертано их отыскать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021103
+					],
+					"speakerTitle": "Обитель Адепта",
+					"speakerSubtitle": "...Но голос не тот?"
+				},
+				{
+					"id": 718021103,
+					"content": "Найдите чертежи и возвращайтесь в обитель Адепта. Поговорим позже.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Обитель Адепта",
+					"speakerSubtitle": "...Но голос не тот?"
+				}
+			]
+		},
+		{
+			"id": 7180212,
+			"completionStepIds": [
+				7180204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180204",
+							"2"
+						],
+						"stepId": 7180204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1103509",
+							"3"
+						],
+						"stepId": 1103509,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718021201,
+					"content": "Тот, кто получил чертежи, благословлён Адептом. Выйди же вперёд.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Обитель Адепта",
+					"speakerSubtitle": "...Но голос не тот?"
+				}
+			]
+		},
+		{
+			"id": 7180213,
+			"completionStepIds": [
+				7180206
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180206",
+							"2"
+						],
+						"stepId": 7180206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1103509",
+							"3"
+						],
+						"stepId": 1103509,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718021301,
+					"content": "Что это? Стол, а на нём... Какая-то шкатулка. Вокруг ничего больше нет.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021302,
+						718021303
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718021302,
+					"content": "Это стол Адепта.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021304
+					]
+				},
+				{
+					"id": 718021304,
+					"content": "Коль ты здесь, то Адепту ведомо, что у тебя на сердце...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021305
+					],
+					"speakerTitle": "Хранитель Облаков?"
+				},
+				{
+					"id": 718021305,
+					"content": "Заговорила!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021306
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718021306,
+					"content": "Запиши своё желание и оставь внутри. Я приму решение.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021307
+					],
+					"speakerTitle": "Хранитель Облаков?"
+				},
+				{
+					"id": 718021307,
+					"content": "...Тяжела дорога приключений и редко у кого хватает духа твёрдо стоять на своём и не сворачивать с пути. Возьми эти сокровища.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021308
+					],
+					"speakerTitle": "Хранитель Облаков?"
+				},
+				{
+					"id": 718021308,
+					"content": "Вау! Хе-хе, Паймон знала, что госпожа Адепт не отпустит нас с пустыми руками.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021309
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718021309,
+					"content": "Голос сказал: «Запиши своё желание и оставь внутри». Это значит, что нам нужно записать желание и положить в шкатулку?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021310,
+						718021311
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718021310,
+					"content": "С Адептами и желаниями стоит быть осторожнее...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021312
+					]
+				},
+				{
+					"id": 718021312,
+					"content": "Ладно... Если нам что-то понадобится, мы можем пойти к Хра... госпоже Сянь Юнь и договориться, хе-хе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021313
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718021313,
+					"content": "Тогда давай положим в шкатулку чертежи и пойдём отсюда.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021314
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718021314,
+					"content": "Но тут пусто, ничего нет. Наверное, Хранитель Облаков всё забрала.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021315
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718021315,
+					"content": "А для чего вообще нужен был этот механизм...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021316
+					]
+				},
+				{
+					"id": 718021316,
+					"content": "Я тоже не знаю.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021317
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718021317,
+					"content": "Ладно, при встрече спросим про эту обитель.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 718021311,
+					"content": "Загадывать желание кому-то знакомому, это так...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021312
+					]
+				},
+				{
+					"id": 718021303,
+					"content": "Это шкатулка Адепта.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021304
+					]
+				}
+			]
+		}
+	]
+}

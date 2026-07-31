@@ -1,0 +1,912 @@
+{
+	"id": 72803,
+	"type": "WQ",
+	"name": "O Archon, Have I Done Right?",
+	"description": "The shrine that Shouta has been giving sincere offerings to has stopped giving him replies. He seeks you out for help...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7280301,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7280301,
+						0
+					],
+					"talkId": 7280301
+				}
+			]
+		},
+		{
+			"id": 7280302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to the shrine outside the city",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7280302,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7280303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Defeat all the Treasure Hoarders",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7280303,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7280304,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Help Shouta find out the reason",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7280302,
+						0
+					],
+					"talkId": 7280302
+				}
+			]
+		},
+		{
+			"id": 7280306,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Ask for Kouichi's opinion",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7280304,
+						0
+					],
+					"talkId": 7280304
+				}
+			]
+		},
+		{
+			"id": 7280307,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Ask for Yayoi Nanatsuki's opinion",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7280305,
+						0
+					],
+					"talkId": 7280305
+				}
+			]
+		},
+		{
+			"id": 7280308,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7280309,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7280309,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7280302,
+			"completionStepIds": [
+				7280304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7280304",
+							"2"
+						],
+						"stepId": 7280304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sarcastic Treasure Hoarder"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 728030201,
+					"content": "You thieves! The deity isn't replying to me because you stole all my offerings!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030202
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030202,
+					"content": "Offerings? Are you talking about the things that were placed beside the shrine? Please, we wouldn't want those things even if you gifted them to us!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030203
+					],
+					"speakerTitle": "Sarcastic Treasure Hoarder"
+				},
+				{
+					"id": 728030203,
+					"content": "Also, if you're offering that kind of rubbish to the shrine, it'd be funny if the deity replied to you at all!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030204
+					],
+					"speakerTitle": "Sarcastic Treasure Hoarder"
+				},
+				{
+					"id": 728030204,
+					"content": "Wh—What did you say!? My offerings aren't rubbish!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030205
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030205,
+					"content": "Forget it, we don't have the time to play around with you!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030207
+					],
+					"speakerTitle": "Sarcastic Treasure Hoarder"
+				},
+				{
+					"id": 728030207,
+					"content": "M—My offerings aren't rubbish...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030208
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030208,
+					"content": "Can you tell us your wishes?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030209
+					]
+				},
+				{
+					"id": 728030209,
+					"content": "Fine... Since things have turned out like this, I guess my wish won't be granted anyway...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030210
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030210,
+					"content": "My two wishes are simple. My first wish is that I don't want to take exams anymore! If I don't have to take exams, then I won't be scolded.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030211
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030211,
+					"content": "The other one is... I wish that the meanie at school will stop bullying me...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030212,
+						728030214
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030212,
+					"content": "I also dislike exams.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030213
+					]
+				},
+				{
+					"id": 728030213,
+					"content": "Right! Exams are dreadful... But that meanie makes me even more uncomfortable...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030216
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030216,
+					"content": "She saw me many times while I was making a wish at the shrine. When she overheard me saying I don't want to take exams, she went to my teachers and asked for my results.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030217
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030217,
+					"content": "From then on, she'd always tell me that my time is better spent paying attention in class rather than praying to a shrine. She also said if I'm that naggy, even deities will get impatient.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030218
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030218,
+					"content": "She even said that I'm being... really pathetic.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030219
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030219,
+					"content": "Well, it's not good to depend on the deity too much.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030220
+					]
+				},
+				{
+					"id": 728030220,
+					"content": "But when the adults face hardship, they always make offerings at the shrine...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030221,
+						728030222
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030221,
+					"content": "They're only making a wish.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030223
+					]
+				},
+				{
+					"id": 728030223,
+					"content": "Hmm... I don't get it... I thought everyone gave offerings to the shrines to ask for the god's help?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030224
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030224,
+					"content": "Let's go ask someone else.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030225
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030225,
+					"content": "Hmmm... Okay. Either way, my wishes won't be granted now...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030222,
+					"content": "In the end, they still have to solve their problems themselves.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030223
+					]
+				},
+				{
+					"id": 728030214,
+					"content": "Meanie?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030215
+					]
+				},
+				{
+					"id": 728030215,
+					"content": "She's a person that's in my class. Sh—she's totally unreasonable!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030216
+					],
+					"speakerTitle": "Shouta"
+				}
+			]
+		},
+		{
+			"id": 7280304,
+			"completionStepIds": [
+				7280306
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7280306",
+							"2"
+						],
+						"stepId": 7280306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kouichi"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 728030401,
+					"content": "Hello, what can I help you with?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030402
+					],
+					"speakerTitle": "Kouichi"
+				},
+				{
+					"id": 728030402,
+					"content": "About the offerings at the shrine...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030403
+					]
+				},
+				{
+					"id": 728030403,
+					"content": "Oh... The shrines... I've been there a few times as well.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030404
+					],
+					"speakerTitle": "Kouichi"
+				},
+				{
+					"id": 728030404,
+					"content": "Hehe, I want the deity's blessings so that after I grow up, I can go to the outside world and see what it's like.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030405
+					],
+					"speakerTitle": "Kouichi"
+				},
+				{
+					"id": 728030405,
+					"content": "However, at the end of the day, the offerings are only a form of prayer. I still need to work hard.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030406
+					],
+					"speakerTitle": "Kouichi"
+				},
+				{
+					"id": 728030406,
+					"content": "My parents told me if I want to travel, I must earn enough money first...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030407
+					],
+					"speakerTitle": "Kouichi"
+				},
+				{
+					"id": 728030407,
+					"content": "Yeah, as long as you have the deity's blessings, your dreams will come true!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030408
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030408,
+					"content": "I can't say that for sure. After all, if I really did go to the outside world, I don't think Inazuma's deities would be able to protect me.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030409
+					],
+					"speakerTitle": "Kouichi"
+				},
+				{
+					"id": 728030409,
+					"content": "My parents used to say that giving offerings to the deities is just getting some peace of mind. If you want to fulfill your wishes, then it still depends on how much hard work you put in.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030410
+					],
+					"speakerTitle": "Kouichi"
+				},
+				{
+					"id": 728030410,
+					"content": "I can't really explain things that well. If you guys want to know more, then have a talk with Nanatsuki. She's quite knowledgeable in these things.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030411
+					],
+					"speakerTitle": "Kouichi"
+				},
+				{
+					"id": 728030411,
+					"content": "Hmm... C'mon, let's go find Nanatsuki...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Shouta"
+				}
+			]
+		},
+		{
+			"id": 7280305,
+			"completionStepIds": [
+				7280307
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7280307",
+							"2"
+						],
+						"stepId": 7280307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Yayoi Nanatsuki"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 728030501,
+					"content": "Shouta? Why do you look so upset? Did someone bully you?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030502
+					],
+					"speakerTitle": "Yayoi Nanatsuki"
+				},
+				{
+					"id": 728030502,
+					"content": "Nanatsuki, you must know how everyone in the city gives offerings to the shrine to ask for blessings from the deities, right?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030503
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030503,
+					"content": "As long as we put our heart into our offerings and make it so that the deities have a reason to reply, then any wish can be granted... right?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030504
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030504,
+					"content": "Huh? Why are you mentioning this all of a sudden... did something happen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030505
+					],
+					"speakerTitle": "Yayoi Nanatsuki"
+				},
+				{
+					"id": 728030505,
+					"content": "It's like this...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030507
+					]
+				},
+				{
+					"id": 728030507,
+					"content": "Shouta... You went so eagerly to the shrine because of something like this...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030508
+					],
+					"speakerTitle": "Yayoi Nanatsuki"
+				},
+				{
+					"id": 728030508,
+					"content": "Yup! I wholeheartedly gave my offerings to the deity. However, those offerings kept on getting stolen... I thought the deity would blame me for this and won't watch over me anymore...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030509
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030509,
+					"content": "Silly child... Don't worry, that deity won't get mad at you for something small like this...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030510
+					],
+					"speakerTitle": "Yayoi Nanatsuki"
+				},
+				{
+					"id": 728030510,
+					"content": "Re—really? That's good...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030511
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030511,
+					"content": "But in the same way, that deity probably won't help someone just because of some offerings.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030512
+					],
+					"speakerTitle": "Yayoi Nanatsuki"
+				},
+				{
+					"id": 728030512,
+					"content": "Eh?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030513
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030513,
+					"content": "The reason people give offerings and ask for blessings isn't that they want their wish to be granted. Rather, those people gave their offerings to build a firm base for their confidence.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030514
+					],
+					"speakerTitle": "Yayoi Nanatsuki"
+				},
+				{
+					"id": 728030514,
+					"content": "Confidence?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030515
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030515,
+					"content": "\"As we've already told our wishes to the deity, we must try our best to make those wishes come true.\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030516
+					],
+					"speakerTitle": "Yayoi Nanatsuki"
+				},
+				{
+					"id": 728030516,
+					"content": "\"With the deity watching over us, if we put in the effort, we'll succeed for sure.\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030517
+					],
+					"speakerTitle": "Yayoi Nanatsuki"
+				},
+				{
+					"id": 728030517,
+					"content": "With that kind of confidence, people are then willing to give it their all to fulfill their wishes. That's the reason why everyone gives offerings to the shrines.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030518
+					],
+					"speakerTitle": "Yayoi Nanatsuki"
+				},
+				{
+					"id": 728030518,
+					"content": "At the end of the day... It's people that move the world. If we pray to deities and take no action, even if a deity wanted to help, it still won't know what it should do.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030519
+					],
+					"speakerTitle": "Yayoi Nanatsuki"
+				},
+				{
+					"id": 728030519,
+					"content": "B—but when I gave offerings to the shrine before, that deity always directly helped me!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030520
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030520,
+					"content": "That time with the fire, that mister who wanted to become stronger, and that comic book of mine...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030521,
+						728030522
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030521,
+					"content": "(He's still talking about the deities...)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030523
+					]
+				},
+				{
+					"id": 728030523,
+					"content": "Hmmm... You're right. It seems like that deity has a direct way of fulfilling wishes.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030524
+					],
+					"speakerTitle": "Yayoi Nanatsuki"
+				},
+				{
+					"id": 728030524,
+					"content": "But, but... Not only did the exams not disappear, but that bully is still there. She still nags me every day about doing my school work...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030525
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030525,
+					"content": "Hmm, wait a minute. That person who's bullying you, what's her name? When did she appear?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030526
+					],
+					"speakerTitle": "Yayoi Nanatsuki"
+				},
+				{
+					"id": 728030526,
+					"content": "She... She's... called... eh? What's her name again...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030527
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030527,
+					"content": "I think she entered school at the same time as me... No, no, I think a bit earlier... or was it later?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030528
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030528,
+					"content": "Weird... Why can't I remember anything? The only thing that I can remember is a girl telling me to study...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030529
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030529,
+					"content": "Hmmm, it seems like that deity has responded to your wishes again, and is currently helping you conquer your dislike for exams.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030530
+					],
+					"speakerTitle": "Yayoi Nanatsuki"
+				},
+				{
+					"id": 728030530,
+					"content": "You mean that girl? The one who bullies me all the time? The deity sent her to force me to study!?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030531
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030531,
+					"content": "Noooo! I don't want to study, I don't want to take exams!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030532
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030532,
+					"content": "Waaaah! She's here again. She's right over there. She's coming over from the other side of the street!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030533,
+						728030534
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030533,
+					"content": "Where?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030535
+					]
+				},
+				{
+					"id": 728030535,
+					"content": "Can't you see her!? She's coming over with a huge pile of exam papers! Waaah! I don't wanna take an exaaaam!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030536
+					],
+					"speakerTitle": "Shouta"
+				},
+				{
+					"id": 728030536,
+					"content": "It seems like that deity is very dedicated.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030537,
+						728030538
+					],
+					"speakerTitle": "Yayoi Nanatsuki"
+				},
+				{
+					"id": 728030537,
+					"content": "That deity does things at its own pace...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030539
+					]
+				},
+				{
+					"id": 728030539,
+					"content": "However, under that deity's personal supervision, that child should be able to successfully pass his exams.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030540
+					],
+					"speakerTitle": "Yayoi Nanatsuki"
+				},
+				{
+					"id": 728030540,
+					"content": "After all, I guess even deities can't stand that child's constant nagging...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030541
+					],
+					"speakerTitle": "Yayoi Nanatsuki"
+				},
+				{
+					"id": 728030541,
+					"content": "Huh? Wait. Why are there leaves on the road? They weren't here before...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Yayoi Nanatsuki"
+				},
+				{
+					"id": 728030538,
+					"content": "It doesn't feel like something a deity would do...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030539
+					]
+				},
+				{
+					"id": 728030534,
+					"content": "I can't see anything.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030535
+					]
+				},
+				{
+					"id": 728030522,
+					"content": "(They are on completely different wavelengths...)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030523
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,1964 @@
+{
+	"id": 10500,
+	"type": "LQ",
+	"name": "Астрология и соглашение на 50 лет",
+	"description": "Вы с Паймон покидаете Ли Юэ и отправляетесь на поиски приключений...",
+	"unlockDescription": "",
+	"chapter": "Что говорят звёзды этого мира",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		10501
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1050001,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Узнайте, что хочет девушка, которая вас остановила",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1050001,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1050002,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Узнайте, что хочет девушка, которая вас остановила",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1050001,
+						0
+					],
+					"talkId": 1050001
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1050009,
+						0
+					],
+					"talkId": 1050009
+				}
+			]
+		},
+		{
+			"id": 1050003,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отведите Мону попрощаться с мистером Чжу",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1050002,
+						0
+					],
+					"talkId": 1050002
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1050008,
+						0
+					],
+					"talkId": 1050008
+				}
+			]
+		},
+		{
+			"id": 1050004,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Приманите слаймов и найдите кольцо мистера Чжу",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_INTERACT_GADGET",
+					"rawParams": [
+						70300052,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1050005,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Одолейте слаймов и заберите кольцо",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1050006,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Верните кольцо мистеру Чжу",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1050003,
+						0
+					],
+					"talkId": 1050003
+				}
+			]
+		},
+		{
+			"id": 1050007,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Покиньте Ли Юэ",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1050008,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Паймон",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1050007,
+						0
+					],
+					"talkId": 1050007
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1050001,
+			"completionStepIds": [
+				1050002
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050002",
+							"2"
+						],
+						"stepId": 1050002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мона"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000101,
+					"content": "Откуда вы знаете?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000102
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000102,
+					"content": "Откуда? Я профессиональный астролог.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000103
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000103,
+					"content": "Если у вас нет ко мне других вопросов, то нам пора отправляться.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000104,
+						105000105
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000104,
+					"content": "У нас к тебе куча вопросов!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000106
+					]
+				},
+				{
+					"id": 105000106,
+					"content": "Ох... Хорошо, я постараюсь быть терпеливее и всё объяснить.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000107
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000107,
+					"content": "Я Астрологист Мона Мегистус. Забывать чужие имена я считаю глубочайшей невежливостью, поэтому разрешаю называть меня просто Мона.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000108
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000108,
+					"content": "Я ищу кое-какую шкатулку здесь в Мондштадте по поручению своей наставницы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000109
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000109,
+					"content": "Эта шкатулка была частью спора между ней и её подругой 50 лет назад. Но сейчас она уже очень стара и с трудом двигается, поэтому ей пришлось доверить это поручение мне.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000110
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000110,
+					"content": "А какое отношение эта шкатулка имеет к нам? Для чего мы тебе нужны?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000111
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000111,
+					"content": "Для того чтобы справиться со стражем этой шкатулки.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000112
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000112,
+					"content": "Моя наставница и её подруга всю жизнь боролись за первенство в эзотерических науках, но никто не стал победителем. Раздобыв эту шкатулку, я смогу доказать, что я сильнее моей наставницы!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000113,
+						105000115
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000113,
+					"content": "Значит, ты просто хочешь доказать свои силы...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000114
+					]
+				},
+				{
+					"id": 105000114,
+					"content": "Кхм-кхм! Между прочим, я хочу доказать силу и статус астрологии.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000117
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000117,
+					"content": "Но благодаря своим предсказаниям я узнала, что подруга моей наставницы покинула Мондштадт и оставила свою ученицу охранять шкатулку.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000118
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000118,
+					"content": "Наверняка эта ученица тоже превзошла свою наставницу, как и я. Поэтому я должна быть осторожна.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000119
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000119,
+					"content": "Мне нужно было увеличить свои шансы на победу. Хорошенько подумав, я вспомнила о тебе!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000120,
+						105000122
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000120,
+					"content": "Но я ничего не понимаю в астрологии.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000121
+					]
+				},
+				{
+					"id": 105000121,
+					"content": "#Нет, вопрос в том, как тебе на ум мог{F#ла} прийти {NICKNAME}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000123
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000123,
+					"content": "Знания, которые мне передала моя наставница, должны передаваться дальше.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000124
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000124,
+					"content": "Если я приведу на встречу своего собственного ученика, это будет означать, что я профессиональнее неё.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000125
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000125,
+					"content": "А ты - герой Мондштадта, почти мне ровня. Поэтому...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000126,
+						105000127
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000126,
+					"content": "Я отказываюсь.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000128
+					]
+				},
+				{
+					"id": 105000128,
+					"content": "Ну же, тебя никто не просит становиться моим учеником. Просто притворись и всё.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000129
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000129,
+					"content": "Ты не пожалеешь, если пойдёшь со мной. В этом есть кое-что и для тебя.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000130
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000130,
+					"content": "Обмен опытом с этим учеником позволит мне точнее предсказать твою судьбу.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000131
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000131,
+					"content": "Я смогу видеть даже самое далёкое и туманное будущее, у меня появятся ответы на все твои вопросы о родных и богах.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000132
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000132,
+					"content": "Тогда нам не нужно будет обыскивать каждый город. Так намного быстрее!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000133,
+						105000134
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000133,
+					"content": "Хорошо, неплохие условия.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000135
+					]
+				},
+				{
+					"id": 105000135,
+					"content": "Хе-хе, мудрое решение. Пойдём!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000136
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000136,
+					"content": "Но перед тем, как отправиться на встречу, я хочу кое-куда заглянуть.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000134,
+					"content": "Ну что ж... Придётся подыграть.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000135
+					]
+				},
+				{
+					"id": 105000127,
+					"content": "#Когда это я стал{F#а} твоим учеником?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000128
+					]
+				},
+				{
+					"id": 105000122,
+					"content": "Как ты могла вспомнить обо мне?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000123
+					]
+				},
+				{
+					"id": 105000115,
+					"content": "В общем, хочешь, чтобы тебя признали.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000116
+					]
+				},
+				{
+					"id": 105000116,
+					"content": "Нет! Я же говорю, хочу доказать силу и статус астрологии!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000117
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000105,
+					"content": "Первый вопрос - кто вы?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000106
+					]
+				}
+			]
+		},
+		{
+			"id": 1050002,
+			"completionStepIds": [
+				1050003
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050003",
+							"2"
+						],
+						"stepId": 1050003,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"46622",
+							"3"
+						],
+						"stepId": 46622,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мистер Чжу"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000201,
+					"content": "(Неудивительно, что у гостиницы в таком месте нет клиентов...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000202
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000202,
+					"content": "Мона, ты как раз вовремя! Скажи, по дороге сюда тебе не попадалось никакое нефритовое кольцо?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000203
+					],
+					"speakerTitle": "Мистер Чжу"
+				},
+				{
+					"id": 105000203,
+					"content": "Нефритовое кольцо? Нет, такого мы не видели.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000204
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000204,
+					"content": "Ох, плохи мои дела... Это кольцо - подарок моей матери. Вот я отвернулся на секунду, и его проглотил слайм!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000205
+					],
+					"speakerTitle": "Мистер Чжу"
+				},
+				{
+					"id": 105000205,
+					"content": "Что? Ох, доверьте это Моне, её астрология мигом...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000206
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000206,
+					"content": "Ни в коем случае! К силе звёзд можно взывать только чтобы разглядеть истину или наблюдать судьбу. Астрология не для таких обыденных вещей.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000207
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000207,
+					"content": "Но разве ты не говорила, что хозяин этой гостиницы всегда был очень добр к тебе?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000208
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000208,
+					"content": "Это вопрос духовности и чести. Если астролог будет считать, что с помощью астрологии можно решить все проблемы, то очень скоро силы космоса покинут его.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000209
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000209,
+					"content": "Его предсказания перестанут направлять, а взгляд больше не сможет пронзить туман грядущего. Принципы есть принципы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000210
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000210,
+					"content": "Обладать такими способностями и не зарабатывать этим. Какая жалость...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000211
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000211,
+					"content": "Ох... Если вы согласитесь помочь, я не пожалею расстаться с двадцатью тысячами моры.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000212
+					],
+					"speakerTitle": "Мистер Чжу"
+				},
+				{
+					"id": 105000212,
+					"content": "Двадцать тысяч!..",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000213,
+						105000214
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000213,
+					"content": "Ты в порядке?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000215
+					]
+				},
+				{
+					"id": 105000215,
+					"content": "Ах, эм... Ничего. Я просто подумала, как же повезёт тому, кто найдёт это кольцо. Двадцать тысяч моры за просто так.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000216,
+						105000217
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000216,
+					"content": "А как же «вопрос чести астролога»?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000218
+					]
+				},
+				{
+					"id": 105000218,
+					"content": "Кхм. Да. Само собой. Но всё же... Учитывая, что дела с гостиницей идут плохо... Должно быть, это и впрямь дорогое кольцо, раз хозяин готов заплатить за него такую сумму.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000219
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000219,
+					"content": "Уйти просто так - некрасиво. Мы должны помочь. Возможно, у нас получится справиться и без помощи звёзд.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000220
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000220,
+					"content": "Ох, только не говори, чтобы мы...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000221
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000221,
+					"content": "#{NICKNAME}! Я поручаю это задание тебе! Это будет твоим первым поручением от твоего наставника.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000222,
+						105000223
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000222,
+					"content": "Ничего не поделать...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000224
+					]
+				},
+				{
+					"id": 105000224,
+					"content": "Хм... Если кольцо проглотил слайм, то мы могли бы собрать всех слаймов в округе с помощью элементальной приманки!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000225
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000225,
+					"content": "Ты же ведь помнишь? Такая приманка, которую мы помогали делать для Дилюка?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000226
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000226,
+					"content": "И... Хе-хе, Паймон таскала немножко приманки в своём кармашке всё это время!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000227,
+						105000229
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000227,
+					"content": "Молодчина, Паймон!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000228
+					]
+				},
+				{
+					"id": 105000228,
+					"content": "Лучше Паймон напарника не бывает, правда?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000231
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000231,
+					"content": "Похоже, у вас уже есть план.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000232
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000232,
+					"content": "Ага! Мы мигом вернёмся!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000229,
+					"content": "Неужели ты такая жадная?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000230
+					]
+				},
+				{
+					"id": 105000230,
+					"content": "Эй, ну не цепляйся за мелочи!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000231
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000223,
+					"content": "Опять вся работа свалилась на меня...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000224
+					]
+				},
+				{
+					"id": 105000217,
+					"content": "Помнишь? «Принципы есть принципы»...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000218
+					]
+				},
+				{
+					"id": 105000214,
+					"content": "На тебе лица нет.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000215
+					]
+				}
+			]
+		},
+		{
+			"id": 1050003,
+			"completionStepIds": [
+				1050006
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050006",
+							"2"
+						],
+						"stepId": 1050006,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мистер Чжу"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000301,
+					"content": "Вот оно! Вот оно колечко! Я уж боялся, что никогда больше его не увижу!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000302
+					],
+					"speakerTitle": "Мистер Чжу"
+				},
+				{
+					"id": 105000302,
+					"content": "Вам правда удалось найти его! Спасибо!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000303
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000303,
+					"content": "Мистер Чжу, вам следует внимательнее следить за своими вещами. В следующий раз судьба может быть не столь благосклонна.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000304
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000304,
+					"content": "Да, вы правы... Я бы не смог без стыда взглянуть в глаза своей семье, ведь это уже 253-е кольцо, которое мне дарит мама.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000305,
+						105000306,
+						105000307
+					],
+					"speakerTitle": "Мистер Чжу"
+				},
+				{
+					"id": 105000305,
+					"content": "...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000308
+					]
+				},
+				{
+					"id": 105000308,
+					"content": "Ох, вы, наверное, неправильно меня поняли. Наша семья владеет тремя нефритовыми шахтами, и для того, чтобы я поскорее нашёл себе невесту, моя мать подготовила огромное количество украшений.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000309
+					],
+					"speakerTitle": "Мистер Чжу"
+				},
+				{
+					"id": 105000309,
+					"content": "Наверное, их там больше пятисот.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000310
+					],
+					"speakerTitle": "Мистер Чжу"
+				},
+				{
+					"id": 105000310,
+					"content": "Тогда зачем вы решили открыть гостиницу в таком месте?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000311
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000311,
+					"content": "Ну, унаследовав слишком рано семейный бизнес, мне стало очень скучно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000312
+					],
+					"speakerTitle": "Мистер Чжу"
+				},
+				{
+					"id": 105000312,
+					"content": "В общем, я вам премного благодарен. Вот ваши обещанные двадцать тысяч моры.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000313
+					],
+					"speakerTitle": "Мистер Чжу"
+				},
+				{
+					"id": 105000313,
+					"content": "Что вы...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000314
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000314,
+					"content": "Я приму эту награду с большим удовольствием!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000315,
+						105000316
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000315,
+					"content": "Это было быстро!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000317
+					]
+				},
+				{
+					"id": 105000317,
+					"content": "Но ведь всю работу сделали мы!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000318
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000318,
+					"content": "Ученикам положено вести себя достойно, а не присваивать заслуги своего наставника.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000319,
+						105000321
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000319,
+					"content": "Наверное, ты права...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000320
+					]
+				},
+				{
+					"id": 105000320,
+					"content": "#Ты что, {NICKNAME}? Мы же согласились только на то, что подыграем!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000323
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000323,
+					"content": "Именно поэтому вам необходимо начать привыкать к этой роли. Если я не переоцениваю своего соперника, то она раскусит вас в два счёта.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000324
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000324,
+					"content": "*Живот урчит*",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000325
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000325,
+					"content": "Ох...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000326
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000326,
+					"content": "Что это за урчание?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000327
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000327,
+					"content": "Ох, прости меня. Наверное, ты не ела уже несколько дней. Я забыл, что у тебя не было...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000328
+					],
+					"speakerTitle": "Мистер Чжу"
+				},
+				{
+					"id": 105000328,
+					"content": "Аааааааа! Тссс! Да-да-да, у меня не было проблем! Да! Забыли!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000329
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000329,
+					"content": "Так! Я внезапно поняла, что мои любимые ученики очень хорошо справились со своим заданием, поэтому на эти деньги я угощу вас чем-нибудь вкусненьким!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000330
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000330,
+					"content": "К северу отсюда есть <color=#00E1FFFF>постоялый двор «Ваншу»</color>. Я слышала, там восхитительно готовят. Идёмте вместе попробуем.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000331
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000331,
+					"content": "И не нужно меня благодарить. Я всего лишь хороший и добрый наставник!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000332
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000332,
+					"content": "Она сказала, что угостит нас едой?! Я не ослышалась?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000333,
+						105000335
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000333,
+					"content": "«Давай пойдём за ней!» Не благодари...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000334
+					]
+				},
+				{
+					"id": 105000334,
+					"content": "Давай пойдём за ней! За вкусной едой!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000335,
+					"content": "«Она такая хорошая!» Твои мысли вслух...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000336
+					]
+				},
+				{
+					"id": 105000336,
+					"content": "Она такая хорошая! Хе-хе, давайте быстрее пойдём есть!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000321,
+					"content": "Мы твои ученики всего лишь понарошку.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000322
+					]
+				},
+				{
+					"id": 105000322,
+					"content": "Вот именно!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000323
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000316,
+					"content": "Даже Паймон так не может!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000317
+					]
+				},
+				{
+					"id": 105000306,
+					"content": "...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000308
+					]
+				},
+				{
+					"id": 105000307,
+					"content": ".........",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000308
+					]
+				}
+			]
+		},
+		{
+			"id": 1050005,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050004",
+							"2"
+						],
+						"stepId": 1050004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мистер Чжу"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000501,
+					"content": "Спасибо вам большое. Это кольцо очень важно для меня.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Мистер Чжу"
+				}
+			]
+		},
+		{
+			"id": 1050006,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050004",
+							"2"
+						],
+						"stepId": 1050004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мона"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000601,
+					"content": "Это твоё первое задание, не провали его.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000602
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000602,
+					"content": "Но если оно действительно окажется для тебя слишком сложным... Что ж, тогда я помогу тебе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Мона"
+				}
+			]
+		},
+		{
+			"id": 1050007,
+			"completionStepIds": [
+				1050008
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050008",
+							"2"
+						],
+						"stepId": 1050008,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Паймон"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000701,
+					"content": "Вот оно! То самое кольцо!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000702
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000702,
+					"content": "Красивое. Паймон уверена, за него можно получить много денег...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000703
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000703,
+					"content": "О, Паймон ничего такого не задумала! Давай поскорее вернём кольцо <color=#00E1FFFF>мистеру Чжу</color>!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				}
+			]
+		},
+		{
+			"id": 1050008,
+			"completionStepIds": [
+				1050003
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050003",
+							"2"
+						],
+						"stepId": 1050003,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мистер Чжу"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000201,
+					"content": "(Неудивительно, что у гостиницы в таком месте нет клиентов...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000202
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000202,
+					"content": "Мона, ты как раз вовремя! Скажи, по дороге сюда тебе не попадалось никакое нефритовое кольцо?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000203
+					],
+					"speakerTitle": "Мистер Чжу"
+				},
+				{
+					"id": 105000203,
+					"content": "Нефритовое кольцо? Нет, такого мы не видели.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000204
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000204,
+					"content": "Ох, плохи мои дела... Это кольцо - подарок моей матери. Вот я отвернулся на секунду, и его проглотил слайм!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000205
+					],
+					"speakerTitle": "Мистер Чжу"
+				},
+				{
+					"id": 105000205,
+					"content": "Что? Ох, доверьте это Моне, её астрология мигом...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000206
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000206,
+					"content": "Ни в коем случае! К силе звёзд можно взывать только чтобы разглядеть истину или наблюдать судьбу. Астрология не для таких обыденных вещей.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000207
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000207,
+					"content": "Но разве ты не говорила, что хозяин этой гостиницы всегда был очень добр к тебе?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000208
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000208,
+					"content": "Это вопрос духовности и чести. Если астролог будет считать, что с помощью астрологии можно решить все проблемы, то очень скоро силы космоса покинут его.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000209
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000209,
+					"content": "Его предсказания перестанут направлять, а взгляд больше не сможет пронзить туман грядущего. Принципы есть принципы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000210
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000210,
+					"content": "Обладать такими способностями и не зарабатывать этим. Какая жалость...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000211
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000211,
+					"content": "Ох... Если вы согласитесь помочь, я не пожалею расстаться с двадцатью тысячами моры.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000212
+					],
+					"speakerTitle": "Мистер Чжу"
+				},
+				{
+					"id": 105000213,
+					"content": "Ты в порядке?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000215
+					]
+				},
+				{
+					"id": 105000214,
+					"content": "На тебе лица нет.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000215
+					]
+				},
+				{
+					"id": 105000212,
+					"content": "Двадцать тысяч!..",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000213,
+						105000214
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000216,
+					"content": "А как же «вопрос чести астролога»?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000218
+					]
+				},
+				{
+					"id": 105000217,
+					"content": "Помнишь? «Принципы есть принципы»...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000218
+					]
+				},
+				{
+					"id": 105000215,
+					"content": "Ах, эм... Ничего. Я просто подумала, как же повезёт тому, кто найдёт это кольцо. Двадцать тысяч моры за просто так.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000216,
+						105000217
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000218,
+					"content": "Кхм. Да. Само собой. Но всё же... Учитывая, что дела с гостиницей идут плохо... Должно быть, это и впрямь дорогое кольцо, раз хозяин готов заплатить за него такую сумму.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000219
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000219,
+					"content": "Уйти просто так - некрасиво. Мы должны помочь. Возможно, у нас получится справиться и без помощи звёзд.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000220
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000220,
+					"content": "Ох, только не говори, чтобы мы...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000221
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000222,
+					"content": "Ничего не поделать...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000224
+					]
+				},
+				{
+					"id": 105000223,
+					"content": "Опять вся работа свалилась на меня...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000224
+					]
+				},
+				{
+					"id": 105000221,
+					"content": "#{NICKNAME}! Я поручаю это задание тебе! Это будет твоим первым поручением от твоего наставника.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000222,
+						105000223
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000224,
+					"content": "Хм... Если кольцо проглотил слайм, то мы могли бы собрать всех слаймов в округе с помощью элементальной приманки!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000225
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000825,
+					"content": "Знаешь, что это? В винокурне «Рассвет» случайно сделали такую вместо вина.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000826
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000826,
+					"content": "Она очень привлекает слаймов, но её рецепт держится в секрете.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000827
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000227,
+					"content": "Молодчина, Паймон!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000228
+					]
+				},
+				{
+					"id": 105000229,
+					"content": "Неужели ты такая жадная?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000230
+					]
+				},
+				{
+					"id": 105000226,
+					"content": "И... Хе-хе, Паймон таскала немножко приманки в своём кармашке всё это время!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000227,
+						105000229
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000228,
+					"content": "Лучше Паймон напарника не бывает, правда?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000231
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000230,
+					"content": "Эй, ну не цепляйся за мелочи!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000231
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000231,
+					"content": "Похоже, у вас уже есть план.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000232
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000232,
+					"content": "Ага! Мы мигом вернёмся!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				}
+			]
+		},
+		{
+			"id": 1050009,
+			"completionStepIds": [
+				1050002
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050002",
+							"2"
+						],
+						"stepId": 1050002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"50001",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мона"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000902,
+					"content": "Давно не виделись.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000904
+					]
+				},
+				{
+					"id": 105000903,
+					"content": "Ты Мона!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000904
+					]
+				},
+				{
+					"id": 105000901,
+					"content": "Ну как? Моя способность ясно видеть сквозь пелену будущего не пробудила в вас никаких воспоминаний?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000902,
+						105000903
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000904,
+					"content": "Да, Паймон помнит! Ты тот самый астролог!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000905
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000905,
+					"content": "Да, это я, Астрологист Мона Мегистус.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000906
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000906,
+					"content": "В этот раз я хочу, чтобы вы пошли со мной в Мондштадт за одной шкатулкой, которая принадлежит моей наставнице.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000907
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000109,
+					"content": "Эта шкатулка была частью спора между ней и её подругой 50 лет назад. Но сейчас она уже очень стара и с трудом двигается, поэтому ей пришлось доверить это поручение мне.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000110
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000110,
+					"content": "А какое отношение эта шкатулка имеет к нам? Для чего мы тебе нужны?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000111
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000111,
+					"content": "Для того чтобы справиться со стражем этой шкатулки.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000112
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000911,
+					"content": "Значит, ты просто хочешь доказать свои силы...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000912
+					]
+				},
+				{
+					"id": 105000913,
+					"content": "В общем, хочешь, чтобы тебя признали.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000914
+					]
+				},
+				{
+					"id": 105000112,
+					"content": "Моя наставница и её подруга всю жизнь боролись за первенство в эзотерических науках, но никто не стал победителем. Раздобыв эту шкатулку, я смогу доказать, что я сильнее моей наставницы!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000113,
+						105000115
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000114,
+					"content": "Кхм-кхм! Между прочим, я хочу доказать силу и статус астрологии.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000117
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000116,
+					"content": "Нет! Я же говорю, хочу доказать силу и статус астрологии!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000117
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000117,
+					"content": "Но благодаря своим предсказаниям я узнала, что подруга моей наставницы покинула Мондштадт и оставила свою ученицу охранять шкатулку.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000118
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000118,
+					"content": "Наверняка эта ученица тоже превзошла свою наставницу, как и я. Поэтому я должна быть осторожна.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000119
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000918,
+					"content": "Но я ничего не понимаю в астрологии.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000919
+					]
+				},
+				{
+					"id": 105000920,
+					"content": "Как ты могла вспомнить обо мне?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000921
+					]
+				},
+				{
+					"id": 105000119,
+					"content": "Мне нужно было увеличить свои шансы на победу. Хорошенько подумав, я вспомнила о тебе!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000120,
+						105000122
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000121,
+					"content": "#Нет, вопрос в том, как тебе на ум мог{F#ла} прийти {NICKNAME}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000123
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000123,
+					"content": "Знания, которые мне передала моя наставница, должны передаваться дальше.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000124
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000124,
+					"content": "Если я приведу на встречу своего собственного ученика, это будет означать, что я профессиональнее неё.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000125
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000924,
+					"content": "Я отказываюсь.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000926
+					]
+				},
+				{
+					"id": 105000925,
+					"content": "#Когда это я стал{F#а} твоим учеником?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000926
+					]
+				},
+				{
+					"id": 105000125,
+					"content": "А ты - герой Мондштадта, почти мне ровня. Поэтому...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000126,
+						105000127
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000128,
+					"content": "Ну же, тебя никто не просит становиться моим учеником. Просто притворись и всё.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000129
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000129,
+					"content": "Ты не пожалеешь, если пойдёшь со мной. В этом есть кое-что и для тебя.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000130
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000130,
+					"content": "Обмен опытом с этим учеником позволит мне точнее предсказать твою судьбу.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000131
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000131,
+					"content": "Я смогу видеть даже самое далёкое и туманное будущее, у меня появятся ответы на все твои вопросы о родных и богах.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000132
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000133,
+					"content": "Хорошо, неплохие условия.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000135
+					]
+				},
+				{
+					"id": 105000134,
+					"content": "Ну что ж... Придётся подыграть.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000135
+					]
+				},
+				{
+					"id": 105000132,
+					"content": "Тогда нам не нужно будет обыскивать каждый город. Так намного быстрее!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000133,
+						105000134
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 105000135,
+					"content": "Хе-хе, мудрое решение. Пойдём!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000136
+					],
+					"speakerTitle": "Мона"
+				},
+				{
+					"id": 105000136,
+					"content": "Но перед тем, как отправиться на встречу, я хочу кое-куда заглянуть.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Мона"
+				}
+			]
+		}
+	]
+}

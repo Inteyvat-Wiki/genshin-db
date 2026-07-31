@@ -1,0 +1,702 @@
+{
+	"id": 20601,
+	"type": "WQ",
+	"name": "チャンス到来？",
+	"description": "暴風の中、冒険者協会のサイリュスはなぜか闘志満々のようだ…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		357,
+		309
+	],
+	"steps": [
+		{
+			"id": 2060101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "サイリュスと会話する",
+			"finishConditions": []
+		},
+		{
+			"id": 2060102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "ジャックの行方を探す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2060103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "ジャックの行方を探す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2060104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "囲まれたジャックを助ける",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2060105,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "ジャックと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2060105,
+						0
+					],
+					"talkId": 2060105
+				}
+			]
+		},
+		{
+			"id": 2060106,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "拠点を片付ける",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2060107,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "サイリュスと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2060107,
+						0
+					],
+					"talkId": 2060107
+				}
+			]
+		},
+		{
+			"id": 2060108,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2060106,
+						0
+					],
+					"talkId": 2060106
+				}
+			]
+		},
+		{
+			"id": 2060109,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "サイリュスと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2060108,
+						0
+					],
+					"talkId": 2060108
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2060104,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060101",
+							"3"
+						],
+						"stepId": 2060101,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_NOT_RECEIVE",
+						"rawParams": [
+							"2060107",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"サイリュス"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010401,
+					"content": "ベネットのやつはどこに行ってしまったんだ…こんな時、トラブルだけはやめてくれよ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "サイリュス"
+				}
+			]
+		},
+		{
+			"id": 2060105,
+			"completionStepIds": [
+				2060105
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060105",
+							"2"
+						],
+						"stepId": 2060105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ジャック"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010501,
+					"content": "っ、いたたっ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010502
+					],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 206010502,
+					"content": "ありがとう、戻れないかと思ったよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010503
+					],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 206010503,
+					"content": "どうしたの？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010504
+					]
+				},
+				{
+					"id": 206010504,
+					"content": "ああ、かすり傷だよ…うっ！か、かすり傷だから問題ないさ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010505
+					],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 206010505,
+					"content": "ヒルチャールがこの先にある拠点に集まっているのに気付いて、何かまずいと思って尾行したんだけど。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010506
+					],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 206010506,
+					"content": "…近付きすぎたせいで、気付かれてしまったんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010507
+					],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 206010507,
+					"content": "僕のことよりも、この先にいるヒルチャールを倒してほしいんだ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010508
+					],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 206010508,
+					"content": "どんどん数が増えていて、きっと何かを企んでるに違いない！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010509
+					],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 206010509,
+					"content": "僕は…僕はちゃんと自分自身を守るよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ジャック"
+				}
+			]
+		},
+		{
+			"id": 2060106,
+			"completionStepIds": [
+				2060108
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060108",
+							"2"
+						],
+						"stepId": 2060108,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ジャック"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010601,
+					"content": "もうあの拠点を片付いたんだね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010602
+					],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 206010602,
+					"content": "そうだよ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010603
+					]
+				},
+				{
+					"id": 206010603,
+					"content": "さすが君、強いなぁ。僕も君みたいに優秀だったらいいのに…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010604
+					],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 206010604,
+					"content": "僕も悪龍を倒し、世界を救う伝説を残したんだ。結局ヒルチャールにすら勝てないけどね…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010605
+					],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 206010605,
+					"content": "あのさ…すごく申し訳ないけど、君に頼みたいことがあるんだ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010606
+					],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 206010606,
+					"content": "実は今回僕が千風の神殿を調査しに来たのは、もうすぐ「冒険ランク評定」だからだ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010607
+					],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 206010607,
+					"content": "このタイミングで実力を見せることができたら、きっと評定もスムーズにいくと思ったんだけど。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010608
+					],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 206010608,
+					"content": "まさか実力を見せるどころか、怪我してしまうなんて。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010609
+					],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 206010609,
+					"content": "た、頼む！僕の惨状をサイリュスさんに言わないでもらえないかな？「冒険ランク評定」に響いたらまずいんだ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010610,
+						206010612
+					],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 206010610,
+					"content": "分かった…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010611
+					]
+				},
+				{
+					"id": 206010611,
+					"content": "ありがとう！これからはちゃんと気を付けるようにするよ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 206010612,
+					"content": "それはよくないよ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010613
+					]
+				},
+				{
+					"id": 206010613,
+					"content": "よくないのは分かってるし、「冒険者は自分に正直にいるべき」ってサイリュスさんもよく言うけど…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010614
+					],
+					"speakerTitle": "ジャック"
+				},
+				{
+					"id": 206010614,
+					"content": "でも…はあ、いいや、サイリュスさんが本気で怒らないといいんだけど…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ジャック"
+				}
+			]
+		},
+		{
+			"id": 2060107,
+			"completionStepIds": [
+				2060107
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060108",
+							"2"
+						],
+						"stepId": 2060108,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"サイリュス"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010701,
+					"content": "おかえり。ジャックも戻ったよ、足を怪我したみたいだが…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010702
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 206010702,
+					"content": "一体何があったんだ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010703
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 206010703,
+					"content": "ジャックは油断して怪我した…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010704
+					]
+				},
+				{
+					"id": 206010704,
+					"content": "やっぱ俺の予想通りだな、はあ…普段彼に言ったことは何も覚えてないんだな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010705
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 206010705,
+					"content": "実力を証明したい気持ちも分からなくはないが…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010706
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 206010706,
+					"content": "まあいい、この件は把握した。あとでジャックとも話してみるよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010707
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 206010707,
+					"content": "これは冒険の報酬として、君に渡すよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "サイリュス"
+				}
+			]
+		},
+		{
+			"id": 2060108,
+			"completionStepIds": [
+				2060109
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060109",
+							"2"
+						],
+						"stepId": 2060109,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"サイリュス"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010801,
+					"content": "おかえり。ジャックも戻ったよ、足を怪我したみたいだが…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010802
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 206010802,
+					"content": "一体何があったんだ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010803,
+						206010807
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 206010803,
+					"content": "ジャックは勇敢に戦った。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010804
+					]
+				},
+				{
+					"id": 206010804,
+					"content": "一緒に戦ったのか？彼の怪我した理由はそれだったんだ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010805
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 206010805,
+					"content": "はあ、勇敢なのはいいことだが…もう少し落ち着いてほしい。なにせ、生き残れる冒険者こそが冒険者だ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010806
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 206010806,
+					"content": "旅人、君とジャックの勇気を褒めるよ。これは冒険の報酬として君に渡す。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 206010807,
+					"content": "ジャックは油断して怪我した…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010808
+					]
+				},
+				{
+					"id": 206010808,
+					"content": "やっぱ俺の予想通りだな、はあ…普段彼に言ったことは何も覚えてないんだな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010809
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 206010809,
+					"content": "実力を証明したい気持ちも分からなくはないが…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010810
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 206010810,
+					"content": "まあいい、この件は把握した。あとでジャックとも話してみるよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010811
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 206010811,
+					"content": "これは冒険の報酬として、君に渡すよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "サイリュス"
+				}
+			]
+		},
+		{
+			"id": 2060109,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060109",
+							"2"
+						],
+						"stepId": 2060109,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ジャック"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206011001,
+					"content": "はあ、僕の「冒険ランク評定」に響かないといいんだけど…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206011002
+					],
+					"speakerTitle": "ジャック"
+				}
+			]
+		}
+	]
+}

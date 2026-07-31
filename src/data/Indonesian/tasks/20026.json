@@ -1,0 +1,583 @@
+{
+	"id": 20026,
+	"type": "IQ",
+	"name": "Mengantar Makanan",
+	"description": "Good Hunter menyediakan jasa antar makanan untuk pesanan-pesanan pelanggan, tetapi karena ketenaran restoran tersebut, mereka tidak pernah punya cukup pegawai! Sara sedang mencari seseorang untuk membantu mereka.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2002601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Sara di Good Hunter",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Sara",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002601,
+						0
+					],
+					"talkId": 2002601
+				}
+			]
+		},
+		{
+			"id": 2002603,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Temukan dua Bird Egg",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100062,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002604,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Ambil masakan yang sudah selesai",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002602,
+						0
+					],
+					"talkId": 2002602
+				}
+			]
+		},
+		{
+			"id": 2002605,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002603,
+						0
+					],
+					"talkId": 2002603
+				}
+			]
+		},
+		{
+			"id": 2002606,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002603,
+						0
+					],
+					"talkId": 2002603
+				}
+			]
+		},
+		{
+			"id": 2002607,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Temukan Ernest",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002603,
+						0
+					],
+					"talkId": 2002603
+				}
+			]
+		},
+		{
+			"id": 2002608,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Berikan uang kepada Sara",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002604,
+						0
+					],
+					"talkId": 2002604
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2002601,
+			"completionStepIds": [
+				2002602
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002601",
+							"3"
+						],
+						"stepId": 2002601,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002602",
+							"2"
+						],
+						"stepId": 2002602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200260101,
+					"content": "Pesanan untuk dikirim",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260102
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260102,
+					"content": "Hai, Pengembara! Kamu datang di saat yang tepat...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260103
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260103,
+					"content": "Oh? Ternyata kamu hanya datang untuk makan...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260104
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260104,
+					"content": "A-Aku mengerti, tapi tolonglah bantu aku, aku janji akan memberikan makanan paling lezat untukmu sebagai gantinya!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260105
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260105,
+					"content": "Ernest dari Dawn Winery sering memesan makanan untuk dipasangkan dengan wine, tapi dia selalu menambahkan permintaan khusus dalam pesanannya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260106
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260106,
+					"content": "Kali ini dia meminta <color=#00E1FFFF>Fried Radish Ball</color> dengan tambahan telur, tapi telur kami habis.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260107
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260107,
+					"content": "Jadi, tolong bantulah aku mencari dua butir Bird Egg.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260108,
+						200260111
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260108,
+					"content": "Baiklah, tapi...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200260109
+					]
+				},
+				{
+					"id": 200260109,
+					"content": "Seharusnya di Windrise ada banyak Bird Egg.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260110
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260110,
+					"content": "Terima kasih banyak!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260111,
+					"content": "Aku hanya datang untuk makan, aku kelaparan!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200260112
+					]
+				},
+				{
+					"id": 200260112,
+					"content": "Seharusnya di Windrise ada banyak Bird Egg.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260113
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260113,
+					"content": "Setelah kamu pulang, aku akan mentraktirmu menu spesial dari Good Hunter! Tolong ya!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		},
+		{
+			"id": 2002602,
+			"completionStepIds": [
+				2002604
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002603",
+							"3"
+						],
+						"stepId": 2002603,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002604",
+							"2"
+						],
+						"stepId": 2002604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200260201,
+					"content": "Ini bahan-bahannya.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200260202
+					]
+				},
+				{
+					"id": 200260202,
+					"content": "Oke, bahan-bahannya sudah cukup. Tunggu sebentar...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260203
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260203,
+					"content": "Sudah siap, sekarang tolong antarkan <color=#00E1FFFF>Fried Radish Ball</color> ini kepada Ernest.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260204
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260204,
+					"content": "Jangan menatapku seperti itu, aku tahu kamu lapar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260205
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260205,
+					"content": "Waktu kamu pulang nanti, aku akan sediakan masakan spesial dari Good Hunter untukmu!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		},
+		{
+			"id": 2002603,
+			"completionStepIds": [
+				2002605,
+				2002606,
+				2002607
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002604",
+							"3"
+						],
+						"stepId": 2002604,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002607",
+							"2"
+						],
+						"stepId": 2002607,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ernest"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200260301,
+					"content": "Ini makanan pesananmu.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200260302
+					]
+				},
+				{
+					"id": 200260302,
+					"content": "Ah! <color=#00E1FFFF>Fried Radish Ball</color> spesialku!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260303
+					],
+					"speakerTitle": "Ernest"
+				},
+				{
+					"id": 200260303,
+					"content": "Hmm... ternyata benar, dengan ditambah telur, aroma dan rasanya menjadi lebih enak.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260304
+					],
+					"speakerTitle": "Ernest"
+				},
+				{
+					"id": 200260304,
+					"content": "Hahaha, seleraku memang yang terbaik!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260305
+					],
+					"speakerTitle": "Ernest"
+				},
+				{
+					"id": 200260305,
+					"content": "Oh iya, ini bayarannya, terima kasih ya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ernest"
+				}
+			]
+		},
+		{
+			"id": 2002604,
+			"completionStepIds": [
+				2002608
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002607",
+							"3"
+						],
+						"stepId": 2002607,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002608",
+							"2"
+						],
+						"stepId": 2002608,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200260401,
+					"content": "Berikan uang pesanan",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260402
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260402,
+					"content": "Kamu sudah kembali, apakah pengirimannya berjalan dengan baik?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260403
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260403,
+					"content": "Ini uangnya.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200260404
+					]
+				},
+				{
+					"id": 200260404,
+					"content": "Coba kuhitung... benar, terima kasih banyak!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200260405
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200260405,
+					"content": "Ini adalah <color=#00E1FFFF>Crab, Ham & Veggie Bake</color> untukmu. Baru saja dibuat, makanlah selagi panas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		},
+		{
+			"id": 2002607,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002607",
+							"3"
+						],
+						"stepId": 2002607,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002608",
+							"2"
+						],
+						"stepId": 2002608,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ernest"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200260701,
+					"content": "Hmm... Aroma telurnya benar-benar harum, sempurna sekali jika dipadu dengan wortel seperti ini. Aku memang hebat dalam hal makanan.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ernest"
+				}
+			]
+		}
+	]
+}

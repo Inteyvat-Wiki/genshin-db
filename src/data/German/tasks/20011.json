@@ -1,0 +1,299 @@
+{
+	"id": 20011,
+	"type": "IQ",
+	"name": "Eine Straßensperre?",
+	"description": "Anthony wird auf seinem Weg zu seiner Schwester Anna von Mondstadt nach Quellingen zum Überbringen ihrer Medizin von Hilichurlen umzingelt, nachdem er auf eine Straßensperre gestoßen ist. Vernichte die Hilichurle und rette Anthony.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2001101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sieh dir die Details an.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001102,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Besiege die Monster in der Nähe.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Vernichte alle Monster und zerstöre die Straßensperre.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Anthony.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001103,
+						0
+					],
+					"talkId": 2001103
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2001101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001102",
+							"2"
+						],
+						"stepId": 2001102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Anthony"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200110101,
+					"content": "Bitte hilf mir schnell!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Anthony"
+				}
+			]
+		},
+		{
+			"id": 2001102,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001102",
+							"3"
+						],
+						"stepId": 2001102,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001103",
+							"2"
+						],
+						"stepId": 2001103,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Anthony"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200110201,
+					"content": "#Danke, {F#Reisende}{M#Reisender} ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110202
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110202,
+					"content": "Aber hier ist noch eine Sperre, daran komme ich nicht vorbei.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110203
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110203,
+					"content": "Hahaha, ich habe es auch allein geschafft ... Dafür habe ich es mit den Hilichurlen zu tun bekommen. Mir tut immer noch alles weh.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110204
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110204,
+					"content": "Aber wenigstens sind die Heilkräuter, die ich für Anna gesammelt habe, noch in Ordnung ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110205
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110205,
+					"content": "Es tut mir wirklich leid nach allem, was du schon getan hast. Aber könntest du diese Straßensperre noch aus dem Weg räumen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110206,
+						200110207
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110206,
+					"content": "Kein Problem.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200110208
+					]
+				},
+				{
+					"id": 200110208,
+					"content": "Danke! Ich werde mich solange ausruhen ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110207,
+					"content": "Ich habe noch etwas Dringendes vor.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200110209
+					]
+				},
+				{
+					"id": 200110209,
+					"content": "Anna wartet aber noch zu Hause auf mich. Würdest du mir bitte helfen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Anthony"
+				}
+			]
+		},
+		{
+			"id": 2001103,
+			"completionStepIds": [
+				2001104
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001104",
+							"2"
+						],
+						"stepId": 2001104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Anthony"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200110301,
+					"content": "#Jetzt kann man den Weg wieder benutzen. Danke, {F#Reisende}{M#Reisender}!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110302
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110302,
+					"content": "Wir haben nicht viel Geld und Anna geht es einfach nicht besser. Deswegen komme ich oft her, um Heilkräuter zu pflücken.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110303
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110303,
+					"content": "Ich habe die Kräuter gesammelt. Dann haben mich diese Kerle angegriffen. Gut, dass du in der Nähe warst.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110304
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110304,
+					"content": "Hier, das ist für dich. Daraus mache ich Anna oft Tee. Das hilft gegen ihren Husten.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200110305
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200110305,
+					"content": "Du bist auch oft draußen, nicht wahr? Pass bitte gut auf dich auf.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Anthony"
+				}
+			]
+		}
+	]
+}

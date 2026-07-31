@@ -1,0 +1,581 @@
+{
+	"id": 71803,
+	"type": "WQ",
+	"name": "Hiệp Hội Nhà Mạo Hiểm Nhiều Việc",
+	"description": "Lan có vẻ như đang đầu đầu về một số ủy thác...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		1025
+	],
+	"steps": [
+		{
+			"id": 7180301,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		},
+		{
+			"id": 7180302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đánh bại Vua Mũ Đá Hilichurl",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180303,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Giao lưu với chú mèo kỳ lạ",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180303,
+						0
+					],
+					"talkId": 7180303
+				}
+			]
+		},
+		{
+			"id": 7180305,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Mang Ash cho Lan",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180304,
+						0
+					],
+					"talkId": 7180304
+				}
+			]
+		},
+		{
+			"id": 7180306,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180305,
+						0
+					],
+					"talkId": 7180305
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7180302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180301",
+							"3"
+						],
+						"stepId": 7180301,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718030201,
+					"content": "<color=#00E1FFFF>Ash</color>... miêu tả đặc điểm rất chi tiết, nhưng lạc mất nơi hoang dã, chắc chắn không dễ tìm rồi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Lan"
+				}
+			]
+		},
+		{
+			"id": 7180303,
+			"completionStepIds": [
+				7180304
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180304",
+							"2"
+						],
+						"stepId": 7180304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ash"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718030301,
+					"content": "Meo..",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030302
+					],
+					"speakerTitle": "Ash"
+				},
+				{
+					"id": 718030302,
+					"content": "Í? Sao lại có mèo con ở đây, lẽ nào tiếng kêu ban nãy là của nó?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030303
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030303,
+					"content": "Meo... meo...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030304,
+						718030308
+					],
+					"speakerTitle": "Ash"
+				},
+				{
+					"id": 718030304,
+					"content": "Mèo con màu xám...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030305
+					]
+				},
+				{
+					"id": 718030305,
+					"content": "Mèo con màu xám... đi lạc bên ngoài...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030306
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030306,
+					"content": "A! Trước kia Lan nhắc đến một uỷ thác tìm mèo... lẽ nào nó chính là con mèo đó? Hình như tên Ash...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030307
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030307,
+					"content": "Không ngờ lại tìm thấy nó ở đây... lẽ nào nó trốn gần đây suốt?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030311
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030311,
+					"content": "Vì có Vua Mũ Đá Hilichurl ở đây nên không ai dám qua tìm nó... nó cũng không dám ra ngoài, đành trốn ở đây.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030312
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030312,
+					"content": "May mà chúng ta đến, nếu không chẳng biết nó còn phải ở đây đến bao giờ.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030313
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030313,
+					"content": "Meo... meo meo!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030314,
+						718030317
+					],
+					"speakerTitle": "Ash"
+				},
+				{
+					"id": 718030314,
+					"content": "Meo... meo...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030315
+					]
+				},
+				{
+					"id": 718030315,
+					"content": "Ấy, bạn đang làm gì thế, như vậy nó cũng không hiểu nhỉ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030316
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030316,
+					"content": "Chúng ta đem nó về cho Lan là được, bảo cô ấy trả Ash cho người uỷ thác.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030319
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030319,
+					"content": "Meo...Meo! Meo!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030320,
+						718030322
+					],
+					"speakerTitle": "Ash"
+				},
+				{
+					"id": 718030320,
+					"content": "Meo...Meo! Meo!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030321
+					]
+				},
+				{
+					"id": 718030321,
+					"content": "Bạn có bắt chước nó thì nó cũng không nghe hiểu! Chúng ta mau đưa nó về đi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030322,
+					"content": "Hình như nó cũng trả lời rồi.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030323
+					]
+				},
+				{
+					"id": 718030323,
+					"content": "Sao bạn nghe hiểu được... Bỏ đi, chúng ta mau đưa nó về đi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030317,
+					"content": "Mang nó về cho Lan đi...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030318
+					]
+				},
+				{
+					"id": 718030318,
+					"content": "Ừm, cũng chỉ có thể làm vậy. Mang Ash về cho Lan, bảo Lan trả cho người uỷ thác.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030319
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030308,
+					"content": "Lẽ nào nó chính là Ash",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030309
+					]
+				},
+				{
+					"id": 718030309,
+					"content": "Mèo con màu xám... đi lạc bên ngoài...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030310
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030310,
+					"content": "A! Là uỷ thác trước kia Lan nhắc đến, không ngờ phát hiện nó ở đây... lẽ nào nó trốn gần đây suốt?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030311
+					],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 7180304,
+			"completionStepIds": [
+				7180305
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180305",
+							"2"
+						],
+						"stepId": 7180305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718030401,
+					"content": "Bạn đánh bại Vua Mũ Đá Hilichurl chưa?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030402,
+						718030404
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030402,
+					"content": "Đã đánh bại nó rồi.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030403
+					]
+				},
+				{
+					"id": 718030403,
+					"content": "Vất vả rồi, hoàn thành uỷ thác này chắc có thể chứng minh thực lực của hiệp hội...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030404,
+					"content": "Đã đánh bại rồi, còn tìm thấy Ash...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030405
+					]
+				},
+				{
+					"id": 718030405,
+					"content": "Bạn vất vả rồi... Cái gì?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Lan"
+				}
+			]
+		},
+		{
+			"id": 7180305,
+			"completionStepIds": [
+				7180306
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_QUEST_VAR_EQUAL",
+						"rawParams": [
+							"1",
+							"1",
+							"71803"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718030501,
+					"content": "Meo meo...meo?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030502
+					],
+					"speakerTitle": "Ash"
+				},
+				{
+					"id": 718030502,
+					"content": "Con mèo này là...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030503
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030503,
+					"content": "Có lẽ là Ash.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030504
+					]
+				},
+				{
+					"id": 718030504,
+					"content": "Chờ chút, tôi lấy uỷ thác đó ra xem, đối chiếu một chút đặc điểm.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030505
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030505,
+					"content": "Tôi xem xem...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030506
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030506,
+					"content": "Đa phần đều khớp... xem ra nó đúng là con mèo cần tìm trong uỷ thác.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030508
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030508,
+					"content": "Người uỷ thác sẽ rất vui.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030509
+					]
+				},
+				{
+					"id": 718030509,
+					"content": "Hic... vòng vèo một hồi, lại quay về uỷ thác tìm mèo này.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030510
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030510,
+					"content": "Thật là không biết nói gì hơn...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030511
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030511,
+					"content": "Tôi sẽ báo cáo hai uỷ thác này với người uỷ thác, bạn vất vả rồi, đây là thù lao, bạn nhận lấy nhé.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030512
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030512,
+					"content": "Nhưng uỷ thác tìm mèo kia... người uỷ thác hình như đã chuyển nhà rồi, liên lạc với họ chắc cũng cần chút thời gian.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030513
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030513,
+					"content": "Trước khi người uỷ thác qua đây, nhóc con này do tôi chăm sóc tạm vậy.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030514
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030514,
+					"content": "Meo meo, meo!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ash"
+				}
+			]
+		}
+	]
+}

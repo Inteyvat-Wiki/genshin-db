@@ -1,0 +1,176 @@
+{
+	"id": 71708,
+	"type": "WQ",
+	"name": "Hangfengs Bitte um Eisen",
+	"description": "Hanfeng aus dem Dorf Qingce benötigt zehn Brocken Eisen.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bringe Hanfeng zehn Brocken Eisen.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Hanfeng.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170802,
+						0
+					],
+					"talkId": 7170802
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170801,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170801",
+							"2"
+						],
+						"stepId": 7170801,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170801"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hanfeng die kalte Klinge"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717080101,
+					"content": "Wegen der Eisenbrocken ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717080102
+					]
+				},
+				{
+					"id": 717080102,
+					"content": "Richtig, richtig ... Mein Auftrag. Hast du zehn Brocken Eisen dabei?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717080103,
+						717080104
+					],
+					"speakerTitle": "Hanfeng die kalte Klinge"
+				},
+				{
+					"id": 717080103,
+					"content": "Hier sind sie.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717080104,
+					"content": "Nein, ich arbeite dran ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717080105
+					]
+				},
+				{
+					"id": 717080105,
+					"content": "Oh, dann lass mich nicht zu lange warten. Je früher ich meine Werkzeuge reparieren kann, desto schneller kann ich weiterarbeiten.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Hanfeng die kalte Klinge"
+				}
+			]
+		},
+		{
+			"id": 7170802,
+			"completionStepIds": [
+				7170802
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170802",
+							"2"
+						],
+						"stepId": 7170802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hanfeng die kalte Klinge"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717080201,
+					"content": "Diese Brocken Eisen sollten ausreichen, um meine Werkzeuge zu reparieren.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717080202
+					],
+					"speakerTitle": "Hanfeng die kalte Klinge"
+				},
+				{
+					"id": 717080202,
+					"content": "#Ich kann dir gar nicht genug danken. Hier, die sind für dich, {M#junger Mann}{F#junge Dame}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717080203
+					],
+					"speakerTitle": "Hanfeng die kalte Klinge"
+				},
+				{
+					"id": 717080203,
+					"content": "Hoffentlich sind meine Fähigkeiten nicht zu eingerostet.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Hanfeng die kalte Klinge"
+				}
+			]
+		}
+	]
+}

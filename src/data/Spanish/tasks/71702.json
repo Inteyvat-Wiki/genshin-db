@@ -1,0 +1,167 @@
+{
+	"id": 71702,
+	"type": "WQ",
+	"name": "Hierbas medicinales para el Herborista Gui",
+	"description": "El Herborista Gui, de Liyue, necesita 3 campanitas de cristal.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Entrégale 3 campanitas de cristal al Herborista Gui",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con el Herborista Gui",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170202,
+						0
+					],
+					"talkId": 7170202
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170201",
+							"2"
+						],
+						"stepId": 7170201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170201"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Herborista Gui"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717020101,
+					"content": "Sobre las campanitas de cristal...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717020102
+					]
+				},
+				{
+					"id": 717020102,
+					"content": "Oh, debes haber visto mi encargo. Llegas justo a tiempo. ¿Ya tienes las 3 campanitas de cristal que quería?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717020103,
+						717020104
+					],
+					"speakerTitle": "Herborista Gui"
+				},
+				{
+					"id": 717020103,
+					"content": "Sí.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717020104,
+					"content": "Hummm, no.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717020105
+					]
+				},
+				{
+					"id": 717020105,
+					"content": "Cuando las hayas recogido, tráemelas rápido, por favor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Herborista Gui"
+				}
+			]
+		},
+		{
+			"id": 7170202,
+			"completionStepIds": [
+				7170202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170202",
+							"2"
+						],
+						"stepId": 7170202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Herborista Gui"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717020201,
+					"content": "A ver... Son de muy buena calidad. Con estas bastará.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717020202
+					],
+					"speakerTitle": "Herborista Gui"
+				},
+				{
+					"id": 717020202,
+					"content": "Toma, esto es para ti. Gracias por venir hasta aquí.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Herborista Gui"
+				}
+			]
+		}
+	]
+}

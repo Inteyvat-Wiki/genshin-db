@@ -1,0 +1,167 @@
+{
+	"id": 74652,
+	"type": "WQ",
+	"name": "Масло для Мюрн",
+	"description": "Мюрн нужны 3 порции сливочного масла.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7465201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте Мюрн 3 порции сливочного масла",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7465201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7465202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Мюрн",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7465202,
+						0
+					],
+					"talkId": 7465202
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7465201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465201",
+							"2"
+						],
+						"stepId": 7465201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7465201"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мюрн"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746520101,
+					"content": "Тебе нужно сливочное масло?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746520102
+					]
+				},
+				{
+					"id": 746520102,
+					"content": "Всякий раз, когда я хочу съесть хлеб, мне никогда не дают достаточно масла, чтобы намазать его на хлеб. Думаю, мне следует приносить масло с собой.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746520103
+					],
+					"speakerTitle": "Мюрн"
+				},
+				{
+					"id": 746520103,
+					"content": "#Ты {F#принесла}{M#принёс} масло?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746520106,
+						746520104
+					],
+					"speakerTitle": "Мюрн"
+				},
+				{
+					"id": 746520106,
+					"content": "Вот твоё масло.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 746520104,
+					"content": "Ещё нет.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746520105
+					]
+				},
+				{
+					"id": 746520105,
+					"content": "Мне нужно много масла и я буду ждать, сколько потребуется.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Мюрн"
+				}
+			]
+		},
+		{
+			"id": 7465202,
+			"completionStepIds": [
+				7465202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465202",
+							"2"
+						],
+						"stepId": 7465202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мюрн"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746520201,
+					"content": "Потрясающе! О, масло, моё масло... Лучше уж вообще не есть хлеб, чем есть его без масла.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Мюрн"
+				}
+			]
+		}
+	]
+}

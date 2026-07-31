@@ -1,0 +1,294 @@
+{
+	"id": 20005,
+	"type": "IQ",
+	"name": "Kayıp Anahtar",
+	"description": "Mallara eşlik eden Wyatt içmeye bayılır. Fakat, çok içtikten sonra anahtarını kaybetti. Anahtarını bulup ona geri götürmek için ayak izlerini takip etmeye çalış.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2000501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Wyatt ile konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000501,
+						0
+					],
+					"talkId": 2000501
+				}
+			]
+		},
+		{
+			"id": 2000502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Anahtarı bulmak için Element Görüşünü kullan.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000504,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Anahtarı Wyatt'a ver.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000504,
+						0
+					],
+					"talkId": 2000504
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2000501,
+			"completionStepIds": [
+				2000501
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000501",
+							"2"
+						],
+						"stepId": 2000501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Wyatt"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200050101,
+					"content": "Gezgin! Tam zamanında geldin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200050102
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200050102,
+					"content": "Geçen gece bu malları şehre taşımak için yolda giderken gözüme birkaç parlak küre takıldı.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200050103
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200050103,
+					"content": "Ç-Çok içtim ve... İlgimi çektiler, anlarsın ya. Kontrol etmek için yanlarına gittiğimde büyük bir bodurlop grubu olduğunu fark ettim. Hatta beni çok fena benzettiler.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200050104
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200050104,
+					"content": "Panikleyip kaçtım ama yolumu kaybettim. Arabamı yeniden bulmam saatler sürdü. Bu sabah da <color=#00E1FFFF>anahtarımın</color> kaybolduğunu fark ettim...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200050105
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200050105,
+					"content": "Aramama yardım eder misin? Buralarda bir yerlerde olsa gerek... Burnumun dibindeymiş gibi hissediyorum.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200050106,
+						200050108
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200050106,
+					"content": "Tamam.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200050107
+					]
+				},
+				{
+					"id": 200050107,
+					"content": "Harika! Burası çok büyük bir alan, nereden aramaya başlayacağımı bile bilmiyorum.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200050108,
+					"content": "Halletmem gereken acil bir işim var.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200050109
+					]
+				},
+				{
+					"id": 200050109,
+					"content": "Burası çok büyük bir alan. Nereden aramaya başlayacağımı bilmiyorum. Lütfen, bana yalnızca sen yardım edebilirsin!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Wyatt"
+				}
+			]
+		},
+		{
+			"id": 2000502,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000501",
+							"3"
+						],
+						"stepId": 2000501,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000502",
+							"2"
+						],
+						"stepId": 2000502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Wyatt"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200050201,
+					"content": "Anahtarımı buldun mu?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200050202
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200050202,
+					"content": "Ne yazık ki hayır.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200050203
+					]
+				},
+				{
+					"id": 200050203,
+					"content": "Gerçekten de çok büyük bir alan... İyi şanslar!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Wyatt"
+				}
+			]
+		},
+		{
+			"id": 2000504,
+			"completionStepIds": [
+				2000504
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000502",
+							"3"
+						],
+						"stepId": 2000502,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Wyatt"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200050401,
+					"content": "Anahtarı bulabildin mi?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200050402
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200050402,
+					"content": "Bu anahtarı buldum, senin mi?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200050403
+					]
+				},
+				{
+					"id": 200050403,
+					"content": "Evet! Anahtarım buydu. Böyle bir şeyin tekrar yaşanmasına izin veremem... Gerçekten içme alışkanlığımı dizginlemem gerek.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200050404
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200050404,
+					"content": "Bunları da al. Yardımın için teşekkürler.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Wyatt"
+				}
+			]
+		}
+	]
+}

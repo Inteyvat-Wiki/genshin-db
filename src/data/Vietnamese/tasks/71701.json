@@ -1,0 +1,176 @@
+{
+	"id": 71701,
+	"type": "WQ",
+	"name": "Nguyên liệu thuốc Gui cần",
+	"description": "Gui tại Liyue cần 3 đóa Thanh Tâm.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đưa 3 Thanh Tâm giao cho Gui",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Nói chuyện với Gui",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170102,
+						0
+					],
+					"talkId": 7170102
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170101",
+							"2"
+						],
+						"stepId": 7170101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170101"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Gui"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717010101,
+					"content": "Về Thanh Tâm...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717010102
+					]
+				},
+				{
+					"id": 717010102,
+					"content": "A, bạn nhìn thấy uỷ thác của tôi đúng không. Tốt quá, coi như có người giúp rồi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717010103
+					],
+					"speakerTitle": "Gui"
+				},
+				{
+					"id": 717010103,
+					"content": "Sao rồi, bạn đã tìm đủ ba bông Thanh Tâm chưa?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717010104,
+						717010105
+					],
+					"speakerTitle": "Gui"
+				},
+				{
+					"id": 717010104,
+					"content": "Tìm đủ rồi.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717010105,
+					"content": "Vẫn chưa...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717010106
+					]
+				},
+				{
+					"id": 717010106,
+					"content": "Vậy sau khi tìm đủ, hãy mau mang qua đây, còn có bệnh nhân chờ dùng nữa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Gui"
+				}
+			]
+		},
+		{
+			"id": 7170102,
+			"completionStepIds": [
+				7170102
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170102",
+							"2"
+						],
+						"stepId": 7170102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Gui"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717010201,
+					"content": "Chất lượng ba bông Thanh Tâm này không tồi. Những thứ này bạn hãy nhận lấy nhé, cảm ơn nhiều.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717010202
+					],
+					"speakerTitle": "Gui"
+				},
+				{
+					"id": 717010202,
+					"content": "Tôi phải mau đem số Thanh Tâm này qua đó, còn có bệnh nhân đang chờ dùng kìa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Gui"
+				}
+			]
+		}
+	]
+}

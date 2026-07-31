@@ -1,0 +1,297 @@
+{
+	"id": 20743,
+	"type": "WQ",
+	"name": "Problèmes logistiques",
+	"description": "Le Domaine de l'Aurore a beaucoup souffert de la tempête. Elzer essaye tant bien que mal de faire redémarrer les affaires...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		384
+	],
+	"steps": [
+		{
+			"id": 2074301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Elzer.",
+			"finishConditions": []
+		},
+		{
+			"id": 2074302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Débarrassez les routes des monstres et des obstacles qui s'y trouvent.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2074303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Débarrassez les routes des monstres et des obstacles qui s'y trouvent.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2074304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Débarrassez les routes des monstres et des obstacles qui s'y trouvent.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2074305,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						207430201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2074306,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Elzer.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2074320,
+						0
+					],
+					"talkId": 2074320
+				}
+			]
+		},
+		{
+			"id": 2074307,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2074302,
+						0
+					],
+					"talkId": 2074302
+				}
+			]
+		},
+		{
+			"id": 2074308,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						207430801,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2074310,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2074305",
+							"2"
+						],
+						"stepId": 2074305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Elzer"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 207431001,
+					"content": "Comment annoncer à maître Diluc que les affaires du Domaine sont à l'arrêt...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207431002
+					],
+					"speakerTitle": "Elzer"
+				},
+				{
+					"id": 207431002,
+					"content": "#{M#Voyageur}{F#Voyageuse}, est-ce que vous pourriez en toucher un mot à maître Diluc si vous le croisez ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207431003
+					],
+					"speakerTitle": "Elzer"
+				},
+				{
+					"id": 207431003,
+					"content": "Il ne s'occupe jamais du commerce de son propre domaine...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Elzer"
+				}
+			]
+		},
+		{
+			"id": 2074320,
+			"completionStepIds": [
+				2074306
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2074306",
+							"2"
+						],
+						"stepId": 2074306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Elzer"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 207432001,
+					"content": "Vous en avez déjà fini avec les routes ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207432002
+					],
+					"speakerTitle": "Elzer"
+				},
+				{
+					"id": 207432002,
+					"content": "C'est fait.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						207432003
+					]
+				},
+				{
+					"id": 207432003,
+					"content": "Excellent ! Les affaires vont pouvoir reprendre !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207432004
+					],
+					"speakerTitle": "Elzer"
+				},
+				{
+					"id": 207432004,
+					"content": "Il faudrait d'abord en parler à maître Diluc, mais...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207432005
+					],
+					"speakerTitle": "Elzer"
+				},
+				{
+					"id": 207432005,
+					"content": "J'ignore où il se trouve. J'ai demandé à tout le monde au Domaine, et personne ne sait où il s'est fourré.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207432006
+					],
+					"speakerTitle": "Elzer"
+				},
+				{
+					"id": 207432006,
+					"content": "Adelinde a bien dit qu'il était « parti s'occuper d'affaires personnelles », mais n'a rien voulu me dire de plus. En tout cas elle n'avait pas l'air particulièrement inquiète.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207432007
+					],
+					"speakerTitle": "Elzer"
+				},
+				{
+					"id": 207432007,
+					"content": "*soupir* Enfin, tant pis. Il faudra que j'attende son retour pour lui faire mon rapport.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Elzer"
+				}
+			]
+		}
+	]
+}

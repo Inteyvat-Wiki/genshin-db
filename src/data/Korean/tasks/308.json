@@ -1,0 +1,606 @@
+{
+	"id": 308,
+	"type": "AQ",
+	"name": "페이지 속의 스파크",
+	"description": "리사가 여행자 일행과 함께 남풍 사자의 사당 수색을 담당한다",
+	"unlockDescription": "",
+	"chapter": "바람 잡는 이방인",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		306,
+		307
+	],
+	"prevMainQuestList": [
+		358
+	],
+	"steps": [
+		{
+			"id": 30800,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "비경 입구에서 리사와 만나기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1042,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 30801,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "리사와 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						30811,
+						0
+					],
+					"talkId": 30811
+				}
+			]
+		},
+		{
+			"id": 30802,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "비경 진입하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_DUNGEON",
+					"rawParams": [
+						1003,
+						22
+					]
+				}
+			]
+		},
+		{
+			"id": 30803,
+			"order": 10,
+			"listShowType": "QUEST_SHOW",
+			"description": "비경 깊숙한 곳 탐색하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_DESTROY_GADGET",
+					"rawParams": [
+						70300016,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 30804,
+			"order": 12,
+			"listShowType": "QUEST_SHOW",
+			"description": "비경 나가기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_MY_WORLD",
+					"rawParams": [
+						3,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 30807,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "학습 지점1 도착",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1057,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 30808,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "학습 지점2 도착",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1058,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 30809,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "학습 지점3 도착",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1059,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 30810,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "리사와 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						30812,
+						0
+					],
+					"talkId": 30812
+				},
+				{
+					"type": "QUEST_CONTENT_DESTROY_GADGET",
+					"rawParams": [
+						70300016,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 30811,
+			"order": 9,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "던전 실패",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FAIL_DUNGEON",
+					"rawParams": [
+						1003,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 30812,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "학습 지점4 도착",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 30814,
+			"order": 11,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "리사와 대화",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						30814,
+						0
+					],
+					"talkId": 30814
+				},
+				{
+					"type": "QUEST_CONTENT_ENTER_MY_WORLD",
+					"rawParams": [
+						3,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 30811,
+			"completionStepIds": [
+				30801
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"30801",
+							"2"
+						],
+						"stepId": 30801,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"리사"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3081101,
+					"content": "어머, 귀염둥이",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081102
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 3081102,
+					"content": "이렇게 위험한 일도 도와주려고? 진짜 감동이야!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081103
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 3081103,
+					"content": "모르는 게 있으면 나한테 물어봐, 다 알려줄 테니까!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081104,
+						3081108
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 3081104,
+					"content": "도서관 사서면 주로 무슨 일을 하는 거죠?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3081105
+					]
+				},
+				{
+					"id": 3081105,
+					"content": "좋은 질문이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081106
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 3081106,
+					"content": "기본적으로 몸이랑 머리 쓰는 걸 제외한 일이라고 봐도 무방할 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081107
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 3081107,
+					"content": "몸이랑 머리 쓰는 걸 제외하면 어떤 일이 남아있다는 거야!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081111
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 3081111,
+					"content": "그러니까 너희들도 나만 믿으면 돼",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 3081108,
+					"content": "왜 도서관 사서가 유적에…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3081109
+					]
+				},
+				{
+					"id": 3081109,
+					"content": "좋은 질문이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081110
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 3081110,
+					"content": "정답은… 당연히 진이 날 신임하기 때문이지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081111
+					],
+					"speakerTitle": "리사"
+				}
+			]
+		},
+		{
+			"id": 30812,
+			"completionStepIds": [
+				30810
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"30810",
+							"2"
+						],
+						"stepId": 30810,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"리사"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3081201,
+					"content": "이제부터 진지하게 임해야겠어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "리사"
+				}
+			]
+		},
+		{
+			"id": 30813,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"30802",
+							"2"
+						],
+						"stepId": 30802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"리사"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3081301,
+					"content": "문밖에 있는 것만으로 원소의 난류로 인한 초조함이 느껴져…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081302
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 3081302,
+					"content": "서둘러 이 사당을 되찾고 돌아가서 푹 쉬자",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "리사"
+				}
+			]
+		},
+		{
+			"id": 30814,
+			"completionStepIds": [
+				30814
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"30814",
+							"2"
+						],
+						"stepId": 30814,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"리사"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3081401,
+					"content": "동풍의 용, 남풍의 사자, 북풍의 늑대, 서풍의 매…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081402
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 3081402,
+					"content": "그들이 바로 몬드를 지키는 수호자이자 바람의 신 「바르바토스」의 권속이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081403
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 3081403,
+					"content": "드발린——풍마룡의 이름이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081404
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 3081404,
+					"content": "사람들에게 마룡이라고 불리기 전에는 「바람 사신수」의 「동풍의 용」이었어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081405
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 3081405,
+					"content": "이게 바로 드발린이 나머지 셋의 힘을 빌릴 수밖에 없었던 이유지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081406
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 3081406,
+					"content": "드발린은 처음부터 「자기 자신」을 불태우고 있었어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081407,
+						3081408
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 3081407,
+					"content": "대체 왜…?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3081409
+					]
+				},
+				{
+					"id": 3081409,
+					"content": "아마도… 「원한」 때문인 것 같아",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081410
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 3081410,
+					"content": "원한…?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081411
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 3081411,
+					"content": "몬드에 대한 원한…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081412
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 3081412,
+					"content": "원한에 눈이 멀어 마룡으로 변한 거야…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081413
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 3081413,
+					"content": "「바람 사신수」 중 하나면서 갑자기 왜…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081414
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 3081414,
+					"content": "지켜야 할 도시에 원한을 가지게 된 거야?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081415
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 3081415,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081416
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 3081416,
+					"content": "몬드 출신으로 말을 꺼내기 어렵네…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3081417
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 3081417,
+					"content": "이걸 가지고 가서 읽어 봐…. 이게 100년 전에 발생했던 일이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 3081408,
+					"content": "도대체 왜 이렇게까지 하는 거죠?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3081409
+					]
+				}
+			]
+		}
+	]
+}

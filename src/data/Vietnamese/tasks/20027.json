@@ -1,0 +1,223 @@
+{
+	"id": 20027,
+	"type": "IQ",
+	"name": "Vật Nhiễu Loạn Tròn Quay!",
+	"description": "Slime đột nhiên xuất hiện ở Tửu Trang Dawn, Tunner ở gần tửu trang hình như bị cuốn vào chuyện này...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2002701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đi xem tình hình",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Tiêu diệt Slime",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002703,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Nói chuyện với Tunner",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002701,
+						0
+					],
+					"talkId": 2002701
+				}
+			]
+		},
+		{
+			"id": 2002704,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đến địa điểm bất thường",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002705,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dùng \"Phong\" giải tán bụi",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002706,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Tiêu diệt toàn bộ Slime",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2002701,
+			"completionStepIds": [
+				2002703
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002702",
+							"3"
+						],
+						"stepId": 2002702,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tunner"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200270101,
+					"content": "#Cảm ơn, cảm ơn {NICKNAME}...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270102
+					],
+					"speakerTitle": "Tunner"
+				},
+				{
+					"id": 200270102,
+					"content": "Vốn dĩ ông định đi xem tình hình dây nho, kết quả là lại gặp chuyện xui xẻo này...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270103
+					],
+					"speakerTitle": "Tunner"
+				},
+				{
+					"id": 200270103,
+					"content": "Ừm, đừng nói cho con trai ông biết, nó là kỵ sĩ Tây Phong trong thành. Bình thường công việc của nó chắc là rất vất vả.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270104
+					],
+					"speakerTitle": "Tunner"
+				},
+				{
+					"id": 200270104,
+					"content": "Rắc rối nhỏ này của lão già, thì đừng làm phiền nó nữa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270105
+					],
+					"speakerTitle": "Tunner"
+				},
+				{
+					"id": 200270105,
+					"content": "Nhưng mà gần đây, gần tửu trang thường xuất hiện Slime, mỗi ngày ông đều lo lắng dây nho có bị Slime phá hoại không, ngủ cũng không yên được.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270106
+					],
+					"speakerTitle": "Tunner"
+				},
+				{
+					"id": 200270106,
+					"content": "Nếu bạn trẻ có thời gian, hãy giúp lão già này một việc, đi xung quanh xem, đuổi Slime đi, đừng để bọn chúng đến phá hoại nữa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270107,
+						200270108
+					],
+					"speakerTitle": "Tunner"
+				},
+				{
+					"id": 200270107,
+					"content": "Không thành vấn đề.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200270109
+					]
+				},
+				{
+					"id": 200270109,
+					"content": "Tốt quá, ông có thể nghỉ ngơi một chút rồi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tunner"
+				},
+				{
+					"id": 200270108,
+					"content": "Còn có việc khác.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200270110
+					]
+				},
+				{
+					"id": 200270110,
+					"content": "Hức, vốn dĩ muốn nói tự ông làm cũng được... Nhưng ông thực sự không nhấc chân lên được, người trẻ tuổi, cháu hãy giúp ông đi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tunner"
+				}
+			]
+		}
+	]
+}

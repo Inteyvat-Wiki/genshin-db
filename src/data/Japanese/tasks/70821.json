@@ -1,0 +1,274 @@
+{
+	"id": 70821,
+	"type": "WQ",
+	"name": "風の後のお宝",
+	"description": "トワリンが浄化された後、風龍廃墟に入れるようになった。ワーグナーはそこで貴重な水晶鉱を探したいようだ…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		396
+	],
+	"steps": [
+		{
+			"id": 7082101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "ワーグナーと会話する",
+			"finishConditions": []
+		},
+		{
+			"id": 7082102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "風龍廃墟で水晶鉱を探す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1177,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "風龍廃墟で水晶鉱を探す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1181,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "風龍廃墟で水晶鉱を探す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1182,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082105,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "水晶の塊を3つ入手する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101003,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082106,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "水晶の塊をワーグナーに渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7082102,
+						0
+					],
+					"talkId": 7082102
+				}
+			]
+		},
+		{
+			"id": 7082107,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7082107,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082108,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7082108,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7082102,
+			"completionStepIds": [
+				7082106
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082106",
+							"2"
+						],
+						"stepId": 7082106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ワーグナー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708210201,
+					"content": "どうだ？水晶は取れたか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708210202
+					],
+					"speakerTitle": "ワーグナー"
+				},
+				{
+					"id": 708210202,
+					"content": "取れたよ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708210203
+					]
+				},
+				{
+					"id": 708210203,
+					"content": "どれどれ、ふむ、悪くないな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708210204
+					],
+					"speakerTitle": "ワーグナー"
+				},
+				{
+					"id": 708210204,
+					"content": "これは謝礼だ、受け取ってくれ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708210205
+					],
+					"speakerTitle": "ワーグナー"
+				},
+				{
+					"id": 708210205,
+					"content": "どうやら風龍廃墟の暴風は確かに消えたんだな…俺も時間を作って行かないと…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ワーグナー"
+				}
+			]
+		},
+		{
+			"id": 7082106,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082102",
+							"2"
+						],
+						"stepId": 7082102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082103",
+							"2"
+						],
+						"stepId": 7082103,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082104",
+							"2"
+						],
+						"stepId": 7082104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082105",
+							"2"
+						],
+						"stepId": 7082105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ワーグナー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708210601,
+					"content": "鉱石について…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708210602
+					]
+				},
+				{
+					"id": 708210602,
+					"content": "残った仕事がまだたくさんある、もう少し気合を入れないとな…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ワーグナー"
+				}
+			]
+		}
+	]
+}

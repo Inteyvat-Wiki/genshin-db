@@ -34,41 +34,41 @@ const genshindb = require('genshin-db');
 
 ```js
 [
-  'Aether',             'Aino',             'Albedo',
-  'Alhaitham',          'Aloy',             'Amber',
-  'Arataki Itto',       'Arlecchino',       'Baizhu',
-  'Barbara',            'Beidou',           'Bennett',
-  'Candace',            'Charlotte',        'Chasca',
-  'Chevreuse',          'Chiori',           'Chongyun',
-  'Citlali',            'Clorinde',         'Collei',
-  'Columbina',          'Cyno',             'Dahlia',
-  'Dehya',              'Diluc',            'Diona',
-  'Dori',               'Durin',            'Emilie',
-  'Escoffier',          'Eula',             'Faruzan',
-  'Fischl',             'Flins',            'Freminet',
-  'Furina',             'Gaming',           'Ganyu',
-  'Gorou',              'Hu Tao',           'Iansan',
-  'Ifa',                'Illuga',           'Ineffa',
-  'Jahoda',             'Jean',             'Kachina',
-  'Kaedehara Kazuha',   'Kaeya',            'Kamisato Ayaka',
-  'Kamisato Ayato',     'Kaveh',            'Keqing',
-  'Kinich',             'Kirara',           'Klee',
-  'Kujou Sara',         'Kuki Shinobu',     'Lan Yan',
-  'Lauma',              'Layla',            'Lisa',
-  'Lumine',             'Lynette',          'Lyney',
-  'Manekin',            'Manekina',         'Mavuika',
-  'Mika',               'Mona',             'Mualani',
-  'Nahida',             'Navia',            'Nefer',
-  'Neuvillette',        'Nilou',            'Ningguang',
-  'Noelle',             'Ororon',           'Qiqi',
-  'Raiden Shogun',      'Razor',            'Rosaria',
-  'Sangonomiya Kokomi', 'Sayu',             'Sethos',
-  'Shenhe',             'Shikanoin Heizou', 'Sigewinne',
-  'Skirk',              'Sucrose',          'Tartaglia',
-  'Thoma',              'Tighnari',         'Varesa',
-  'Varka',              'Venti',            'Wanderer',
-  'Wriothesley',
-  ... 15 more items
+  'Aether',           'Aino',          'Albedo',
+  'Alhaitham',        'Aloy',          'Amber',
+  'Arataki Itto',     'Arlecchino',    'Baizhu',
+  'Barbara',          'Beidou',        'Bennett',
+  'Candace',          'Charlotte',     'Chasca',
+  'Chevreuse',        'Chiori',        'Chongyun',
+  'Citlali',          'Clorinde',      'Collei',
+  'Columbina',        'Cyno',          'Dahlia',
+  'Dehya',            'Diluc',         'Diona',
+  'Dori',             'Durin',         'Emilie',
+  'Escoffier',        'Eula',          'Faruzan',
+  'Fischl',           'Flins',         'Freminet',
+  'Furina',           'Gaming',        'Ganyu',
+  'Gorou',            'Hu Tao',        'Iansan',
+  'Ifa',              'Illuga',        'Ineffa',
+  'Jahoda',           'Jean',          'Kachina',
+  'Kaedehara Kazuha', 'Kaeya',         'Kamisato Ayaka',
+  'Kamisato Ayato',   'Kaveh',         'Keqing',
+  'Kinich',           'Kirara',        'Klee',
+  'Kujou Sara',       'Kuki Shinobu',  'Lan Yan',
+  'Lauma',            'Layla',         'Linnea',
+  'Lisa',             'Lohen',         'Lumine',
+  'Lynette',          'Lyney',         'Manekin',
+  'Manekina',         'Mavuika',       'Mika',
+  'Mona',             'Mualani',       'Nahida',
+  'Navia',            'Nefer',         'Neuvillette',
+  'Nicole',           'Nilou',         'Ningguang',
+  'Noelle',           'Ororon',        'Prune',
+  'Qiqi',             'Raiden Shogun', 'Razor',
+  'Rosaria',          'Sandrone',      'Sangonomiya Kokomi',
+  'Sayu',             'Sethos',        'Shenhe',
+  'Shikanoin Heizou', 'Sigewinne',     'Skirk',
+  'Sucrose',          'Tartaglia',     'Thoma',
+  'Tighnari',
+  ... 20 more items
 ]
 ```
 
@@ -158,7 +158,7 @@ const genshindb = require('genshin-db');
   },
   url: undefined,
   stats: [Function (anonymous)],
-  version: '1.2'
+  version: ''
 }
 ```
 
@@ -298,7 +298,7 @@ const genshindb = require('genshin-db');
   },
   url: undefined,
   stats: [Function (anonymous)],
-  version: '1.0'
+  version: ''
 }
 ```
 
@@ -388,7 +388,7 @@ const genshindb = require('genshin-db');
   },
   url: undefined,
   stats: [Function (anonymous)],
-  version: '1.0'
+  version: ''
 }
 ```
 
@@ -478,7 +478,7 @@ const genshindb = require('genshin-db');
   },
   url: undefined,
   stats: [Function (anonymous)],
-  version: '1.1'
+  version: ''
 }
 ```
 
@@ -568,7 +568,7 @@ const genshindb = require('genshin-db');
   },
   url: undefined,
   stats: [Function (anonymous)],
-  version: '1.0'
+  version: ''
 }
 ```
 
@@ -577,7 +577,7 @@ const genshindb = require('genshin-db');
 <summary>genshindb.characters('<b>arrowhead', { matchCategories: true }</b>)</summary>
 
 ```js
-[ 'Amber', 'Collei', 'Dahlia', 'Diona', 'Fischl' ]
+[ 'Amber', 'Collei', 'Dahlia', 'Diona', 'Fischl', 'Lohen' ]
 ```
 
 </details>
@@ -594,6 +594,8 @@ const genshindb = require('genshin-db');
   options: {
     dumpResult: true,
     matchNames: true,
+    matchFilenames: false,
+    matchFilenameOnly: false,
     matchAltNames: true,
     matchAliases: false,
     matchCategories: true,
@@ -603,8 +605,8 @@ const genshindb = require('genshin-db');
     v4Props: false,
     v4PropsOnly: false
   },
-  filename: [ 'amber', 'collei', 'dahlia', 'diona', 'fischl' ],
-  result: [ 'アンバー', 'コレイ', 'ダリア', 'ディオナ', 'フィッシュル' ]
+  filename: [ 'amber', 'collei', 'dahlia', 'diona', 'fischl', 'lohen' ],
+  result: [ 'アンバー', 'コレイ', 'ダリア', 'ディオナ', 'フィッシュル', 'ローエン' ]
 }
 ```
 
@@ -628,15 +630,15 @@ const genshindb = require('genshin-db');
 
 ```js
 [
-  'Amber',   'Arlecchino',
-  'Bennett', 'Chevreuse',
-  'Dehya',   'Diluc',
-  'Durin',   'Gaming',
-  'Hu Tao',  'Klee',
-  'Lyney',   'Mavuika',
-  'Thoma',   'Xiangling',
-  'Xinyan',  'Yanfei',
-  'Yoimiya'
+  'Amber',     'Arlecchino',
+  'Bennett',   'Chevreuse',
+  'Dehya',     'Diluc',
+  'Durin',     'Gaming',
+  'Hu Tao',    'Klee',
+  'Lyney',     'Mavuika',
+  'Nicole',    'Thoma',
+  'Xiangling', 'Xinyan',
+  'Yanfei',    'Yoimiya'
 ]
 ```
 
@@ -763,41 +765,41 @@ const genshindb = require('genshin-db');
 
 ```js
 [
-  'Aino',               'Albedo',             'Alhaitham',
-  'Aloy',               'Amber',              'Arataki Itto',
-  'Arlecchino',         'Baizhu',             'Barbara',
-  'Beidou',             'Bennett',            'Candace',
-  'Charlotte',          'Chasca',             'Chevreuse',
-  'Chiori',             'Chongyun',           'Citlali',
-  'Clorinde',           'Collei',             'Columbina',
-  'Cyno',               'Dahlia',             'Dehya',
-  'Diluc',              'Diona',              'Dori',
-  'Durin',              'Emilie',             'Escoffier',
-  'Eula',               'Faruzan',            'Fischl',
-  'Flins',              'Freminet',           'Furina',
-  'Gaming',             'Ganyu',              'Gorou',
-  'Hu Tao',             'Iansan',             'Ifa',
-  'Illuga',             'Ineffa',             'Jahoda',
-  'Jean',               'Kachina',            'Kaedehara Kazuha',
-  'Kaeya',              'Kamisato Ayaka',     'Kamisato Ayato',
-  'Kaveh',              'Keqing',             'Kinich',
-  'Kirara',             'Klee',               'Kujou Sara',
-  'Kuki Shinobu',       'Lan Yan',            'Lauma',
-  'Layla',              'Lisa',               'Lynette',
-  'Lyney',              'Manekin',            'Manekina',
-  'Mavuika',            'Mika',               'Mona',
-  'Mualani',            'Nahida',             'Navia',
-  'Nefer',              'Neuvillette',        'Nilou',
-  'Ningguang',          'Noelle',             'Ororon',
-  'Qiqi',               'Raiden Shogun',      'Razor',
-  'Rosaria',            'Sangonomiya Kokomi', 'Sayu',
-  'Sethos',             'Shenhe',             'Shikanoin Heizou',
-  'Sigewinne',          'Skirk',              'Sucrose',
-  'Tartaglia',          'Thoma',              'Tighnari',
-  'Traveler (Anemo)',   'Traveler (Cryo)',    'Traveler (Dendro)',
-  'Traveler (Electro)', 'Traveler (Geo)',     'Traveler (Hydro)',
-  'Traveler (Pyro)',
-  ... 20 more items
+  'Aino',               'Albedo',           'Alhaitham',
+  'Aloy',               'Amber',            'Arataki Itto',
+  'Arlecchino',         'Baizhu',           'Barbara',
+  'Beidou',             'Bennett',          'Candace',
+  'Charlotte',          'Chasca',           'Chevreuse',
+  'Chiori',             'Chongyun',         'Citlali',
+  'Clorinde',           'Collei',           'Columbina',
+  'Cyno',               'Dahlia',           'Dehya',
+  'Diluc',              'Diona',            'Dori',
+  'Durin',              'Emilie',           'Escoffier',
+  'Eula',               'Faruzan',          'Fischl',
+  'Flins',              'Freminet',         'Furina',
+  'Gaming',             'Ganyu',            'Gorou',
+  'Hu Tao',             'Iansan',           'Ifa',
+  'Illuga',             'Ineffa',           'Jahoda',
+  'Jean',               'Kachina',          'Kaedehara Kazuha',
+  'Kaeya',              'Kamisato Ayaka',   'Kamisato Ayato',
+  'Kaveh',              'Keqing',           'Kinich',
+  'Kirara',             'Klee',             'Kujou Sara',
+  'Kuki Shinobu',       'Lan Yan',          'Lauma',
+  'Layla',              'Linnea',           'Lisa',
+  'Lohen',              'Lynette',          'Lyney',
+  'Manekin',            'Manekina',         'Mavuika',
+  'Mika',               'Mona',             'Mualani',
+  'Nahida',             'Navia',            'Nefer',
+  'Neuvillette',        'Nicole',           'Nilou',
+  'Ningguang',          'Noelle',           'Ororon',
+  'Prune',              'Qiqi',             'Raiden Shogun',
+  'Razor',              'Rosaria',          'Sandrone',
+  'Sangonomiya Kokomi', 'Sayu',             'Sethos',
+  'Shenhe',             'Shikanoin Heizou', 'Sigewinne',
+  'Skirk',              'Sucrose',          'Tartaglia',
+  'Thoma',              'Tighnari',         'Traveler (Anemo)',
+  'Traveler (Cryo)',
+  ... 25 more items
 ]
 ```
 
@@ -1162,7 +1164,7 @@ const genshindb = require('genshin-db');
     filename_passive2: 'UI_Talent_S_Ningguang_06',
     filename_passive3: 'UI_Talent_Collect_Ore'
   },
-  version: '1.0'
+  version: ''
 }
 ```
 
@@ -1612,7 +1614,15 @@ const genshindb = require('genshin-db');
 <summary>genshindb.talents('<b>arrowhead', { matchCategories: true }</b>)</summary>
 
 ```js
-[ 'Amber', 'Collei', 'Dahlia', 'Diona', 'Fischl', 'Traveler (Geo)' ]
+[
+  'Amber',
+  'Collei',
+  'Dahlia',
+  'Diona',
+  'Fischl',
+  'Lohen',
+  'Traveler (Geo)'
+]
 ```
 
 </details>
@@ -1676,7 +1686,7 @@ const genshindb = require('genshin-db');
     filename_c6: 'UI_Talent_S_Ambor_04',
     filename_constellation: 'Eff_UI_Talent_Ambor'
   },
-  version: '1.0'
+  version: ''
 }
 ```
 
@@ -1755,7 +1765,7 @@ const genshindb = require('genshin-db');
     filename_constellation: 'Eff_UI_Talent_PlayerBoy_Rock',
     filename_constellation2: 'Eff_UI_Talent_PlayerGirl_Rock'
   },
-  version: '1.0'
+  version: ''
 }
 ```
 
@@ -1768,31 +1778,33 @@ const genshindb = require('genshin-db');
 
 ```js
 [
+  'A Teaspoon of Transcendence',
+  'A Thousand Blazing Suns',
+  'A Thousand Floating Dreams',
   'Absolution',
   'Akuoumaru',
   'Alley Hunter',
   'Amenoma Kageuchi',
   "Amos' Bow",
+  "Angelos' Heptades",
   "Apprentice's Notes",
   'Aqua Simulacra',
   'Aquila Favonia',
   'Ash-Graven Drinking Horn',
   "Astral Vulture's Crimson Plumage",
   'Athame Artis',
-  'A Thousand Blazing Suns',
-  'A Thousand Floating Dreams',
   'Azurelight',
   'Ballad of the Boundless Blue',
   'Ballad of the Fjords',
   'Beacon of the Reed Sea',
   "Beginner's Protector",
+  'Black Tassel',
   'Blackcliff Agate',
   'Blackcliff Longsword',
   'Blackcliff Pole',
   'Blackcliff Slasher',
   'Blackcliff Warbow',
   'Blackmarrow Lantern',
-  'Black Tassel',
   'Bloodsoaked Ruins',
   'Bloodtainted Greatsword',
   'Calamity of Eshu',
@@ -1811,6 +1823,7 @@ const genshindb = require('genshin-db');
   'Deathmatch',
   'Debate Club',
   'Dialogues of the Desert Sages',
+  'Disaster and Remorse',
   'Dodoco Tales',
   "Dragon's Bane",
   'Dragonspine Spear',
@@ -1844,9 +1857,10 @@ const genshindb = require('genshin-db');
   'Fractured Halo',
   'Freedom-Sworn',
   'Frostbearer',
-  'Fruitful Hook',
   'Fruit of Fulfillment',
+  'Fruitful Hook',
   'Gest of the Mighty Wolf',
+  'Golden Frostbound Oath',
   'Hakushin Ring',
   'Halberd',
   'Hamayumi',
@@ -1864,11 +1878,7 @@ const genshindb = require('genshin-db');
   'Key of Khaj-Nisut',
   "King's Squire",
   'Kitain Cross Spear',
-  'Lightbearing Moonshard',
-  'Light of Foliar Incision',
-  "Lion's Roar",
-  'Lithic Blade',
-  ... 133 more items
+  ... 137 more items
 ]
 ```
 
@@ -2009,7 +2019,7 @@ const genshindb = require('genshin-db');
     filename_gacha: 'UI_Gacha_EquipIcon_Catalyst_Fourwinds'
   },
   stats: [Function (anonymous)],
-  version: '1.0'
+  version: ''
 }
 ```
 
@@ -2105,18 +2115,18 @@ const genshindb = require('genshin-db');
 
 ```js
 [
-  "Apprentice's Notes",     'Aquila Favonia',
-  'Athame Artis',           'Cinnabar Spindle',
-  'Cool Steel',             'Dull Blade',
-  'Favonius Codex',         'Favonius Sword',
-  'Ferrous Shadow',         'Magic Guide',
-  'Mitternachts Waltz',     'Pocket Grimoire',
-  'Raven Bow',              'Royal Grimoire',
-  'Royal Longsword',        'Silver Sword',
-  'Snow-Tombed Starsilver', 'Song of Broken Pines',
-  'The Alley Flash',        'The Bell',
-  'The Stringless',         'The Viridescent Hunt',
-  'Wolf-Fang'
+  "Apprentice's Notes",   'Aquila Favonia',
+  'Athame Artis',         'Cinnabar Spindle',
+  'Cool Steel',           'Disaster and Remorse',
+  'Dull Blade',           'Favonius Codex',
+  'Favonius Sword',       'Ferrous Shadow',
+  'Magic Guide',          'Mitternachts Waltz',
+  'Pocket Grimoire',      'Raven Bow',
+  'Royal Grimoire',       'Royal Longsword',
+  'Silver Sword',         'Snow-Tombed Starsilver',
+  'Song of Broken Pines', 'The Alley Flash',
+  'The Bell',             'The Stringless',
+  'The Viridescent Hunt', 'Wolf-Fang'
 ]
 ```
 
@@ -2207,7 +2217,7 @@ const genshindb = require('genshin-db');
   dropDomainId: 4231,
   daysOfWeek: [ 'Wednesday', 'Saturday', 'Sunday' ],
   fullDescription: 'Poetry is the soul of the land of the wind. Poetry is the manifestations of the will to encourage. In the dark days, the gales in the streets and alleyways whisper words of fury, like the battle drums, like the low rumbling before the storm.',
-  sources: [ 'Placeholder - Craftable Amount: {0}' ],
+  sources: [],
   images: { filename_icon: 'UI_ItemIcon_104308' },
   version: ''
 }
@@ -2228,7 +2238,7 @@ const genshindb = require('genshin-db');
   fullDescription: '',
   sources: [],
   images: { filename_icon: 'UI_ItemIcon_115018' },
-  version: undefined
+  version: ''
 }
 ```
 
@@ -2247,6 +2257,7 @@ const genshindb = require('genshin-db');
   'Blazing Axehead Fish',
   'Blazing Heartfeather Bass',
   'Brown Shirakodai',
+  'Cerulean Doppeldrake',
   'Common Axehead Fish',
   'Crystalfish',
   'Dawncatcher',
@@ -2317,10 +2328,7 @@ const genshindb = require('genshin-db');
   typeText: 'Character Level-Up Material',
   rarity: 5,
   fullDescription: "The Dragon of the East's physical form is beautiful and transparent. Both trade winds and tornadoes will work in his name. The winds move as his companion, his voice, and his freedom. His enemies are the thousands who stand against the wind.",
-  sources: [
-    'Lv. 70+ Stormterror Challenge Reward',
-    'Obtained from the Crafting Bench Conversion Tab'
-  ],
+  sources: [],
   images: { filename_icon: 'UI_ItemIcon_113005' },
   version: ''
 }
@@ -2409,23 +2417,23 @@ const genshindb = require('genshin-db');
 
 ```js
 [
-  'Ajilenakh Nut',   'Almond',       'Bacon',           'Bamboo Shoot',
-  'Berry',           'Bird Egg',     'Butter',          'Cabbage',
-  'Carrot',          'Cheese',       'Chenyu Adeptea',  'Chilled Meat',
-  'Coffee Beans',    'Crab',         'Crab Roe',        'Cream',
-  'Dried Fish',      'Eel Meat',     'Fermented Juice', 'Fish',
-  'Flour',           'Fowl',         'Glabrous Beans',  'Grainfruit',
-  'Ham',             'Harra Fruit',  'Jam',             'Lakkaberry',
-  'Lavender Melon',  'Lotus Head',   'Marcotte',        'Matsutake',
-  'Midsommar Berry', 'Milk',         'Mint',            'Mushroom',
-  'Mysterious Meat', 'Onion',        'Pepper',          'Pinecone',
-  'Potato',          'Radish',       'Raw Meat',        'Red Berryshroom',
-  'Rice',            'Rye',          'Rye Flour',       'Salt',
-  'Sausage',         'Seagrass',     'Shrimp Meat',     'Silver Lotus',
-  'Smetana',         'Smoked Fish',  'Smoked Fowl',     'Snapdragon',
-  'Spice',           'Spinel Fruit', 'Sugar',           'Sumeru Rose',
-  'Sweet Flower',    'Tidalga',      'Tofu',            'Tomato',
-  'Wheat',           'Zaytun Peach'
+  'Ajilenakh Nut',   'Almond',          'Bacon',           'Bamboo Shoot',
+  'Berry',           'Bird Egg',        'Butter',          'Cabbage',
+  'Carrot',          'Cheese',          'Chenyu Adeptea',  'Chilled Meat',
+  'Coffee Beans',    'Crab',            'Crab Roe',        'Cream',
+  'Dried Fish',      'Eel Meat',        'Fermented Juice', 'Fish',
+  'Flour',           'Fowl',            'Glabrous Beans',  'Grainfruit',
+  'Ham',             'Harra Fruit',     'Jam',             'Lakkaberry',
+  'Lavender Melon',  'Lotus Head',      'Marcotte',        'Matsutake',
+  'Midsommar Berry', 'Milk',            'Mint',            'Mushroom',
+  'Mysterious Meat', 'Onion',           'Pepper',          'Pinecone',
+  'Potato',          'Radish',          'Raw Meat',        'Red Berryshroom',
+  'Rice',            'Rye',             'Rye Flour',       'Salt',
+  'Sausage',         'Seagrass',        'Shrimp Meat',     'Silver Lotus',
+  'Smetana',         'Smoked Fish',     'Smoked Fowl',     'Snapdragon',
+  'Spice',           'Spinel Fruit',    'Sugar',           'Sumeru Rose',
+  'Sweet Flower',    'Tidalga',         'Tofu',            'Tomato',
+  'Wheat',           'Windrest Flower', 'Zaytun Peach'
 ]
 ```
 
@@ -2434,17 +2442,19 @@ const genshindb = require('genshin-db');
 <summary>genshindb.materials('<b>liyue', { matchCategories: true }</b>)</summary>
 
 ```js
-[
-  'Clearwater Jade',
-  'Cor Lapis',
-  'Glaze Lily',
-  'Jueyun Chili',
-  'Noctilucous Jade',
-  'Qingxin',
-  'Silk Flower',
-  'Starconch',
-  'Violetgrass'
-]
+{
+  id: 107007,
+  name: 'Liyue Shrine of Depths Key',
+  sortRank: 410011,
+  description: 'A key that can break the seal on the ancient Shrines of Depths scattered around Liyue.\n' +
+    'These Shrines of Depths sealed themselves off when the civilization that built them was lost. Keys lost deep within domains are able to break the seals. Or perhaps that, for a moment, these keys help the seals to forget all that they have lost.',
+  category: 'CONSUME',
+  typeText: 'Adventure Item',
+  fullDescription: '',
+  sources: [],
+  images: { filename_icon: 'UI_ItemIcon_107007' },
+  version: ''
+}
 ```
 
 </details>
@@ -2585,7 +2595,7 @@ const genshindb = require('genshin-db');
     filename_goblet: 'UI_RelicIcon_15018_1',
     filename_circlet: 'UI_RelicIcon_15018_3'
   },
-  version: '1.5'
+  version: ''
 }
 ```
 
@@ -2629,7 +2639,7 @@ const genshindb = require('genshin-db');
     filename_buff: 'UI_Buff_Item_Atk_Add',
     filename_icon: 'UI_ItemIcon_108123'
   },
-  version: '1.0'
+  version: ''
 }
 ```
 
@@ -2659,8 +2669,8 @@ const genshindb = require('genshin-db');
   "Hot Spring O'Clock",
   'Jade Parcels',
   'Lucky Snow Delight',
-  "Meat-Lover's Feast",
   "Meat Lovers' Mushroom Pizza",
+  "Meat-Lover's Feast",
   'Mini Asha Pockets',
   'Moon Pie',
   'Mystique Soup',
@@ -2720,15 +2730,16 @@ const genshindb = require('genshin-db');
   'Guhua Fish & Lamb Soup',
   'Haggis',
   'Halvamazd',
+  'Harbor Fish Burger',
   'Heat-Quelling Soup',
   'Jade Fruit Soup',
   'Jewelry Soup',
-  'Lakkaberry Krumkakes',
   'La Lettre a Focalors',
+  'Lakkaberry Krumkakes',
   'Lotus Flower Crisp',
   'Minty Fruit Tea',
-  'Moonlit Mirage',
   'Moon Pie',
+  'Moonlit Mirage',
   'Mushroom Hodgepodge',
   'Pass the Luck',
   '"Pour la Justice"',
@@ -2810,7 +2821,7 @@ const genshindb = require('genshin-db');
     filename_buff: 'UI_Buff_Item_Atk_CritRate',
     filename_icon: 'UI_ItemIcon_108058'
   },
-  version: '1.0'
+  version: ''
 }
 ```
 
@@ -2933,6 +2944,10 @@ const genshindb = require('genshin-db');
   'Domain of Blessing: Desert Citadel II',
   'Domain of Blessing: Desert Citadel III',
   'Domain of Blessing: Desert Citadel IV',
+  'Domain of Blessing: Flower Feast I',
+  'Domain of Blessing: Flower Feast II',
+  'Domain of Blessing: Flower Feast III',
+  'Domain of Blessing: Flower Feast IV',
   'Domain of Blessing: Harmony I',
   'Domain of Blessing: Harmony II',
   'Domain of Blessing: Harmony III',
@@ -3153,6 +3168,7 @@ const genshindb = require('genshin-db');
   'Hydro Hypostasis',
   'Hydro Tulpa',
   'Icewind Suite',
+  'Il Dottore',
   'Iniquitous Baptist',
   'Jadeplume Terrorshroom',
   'Knuckle Duckle',
@@ -3186,6 +3202,7 @@ const genshindb = require('genshin-db');
   'The Game Before the Gate',
   'The Knave',
   'Thunder Manifestation',
+  'Watcher: Fallen Vigil',
   'Wayward Hermetic Spiritspeaker'
 ]
 ```
@@ -3214,7 +3231,7 @@ const genshindb = require('genshin-db');
     filename_sideIcon: 'UI_AvatarIcon_Side_AmborCostumeWic'
   },
   url: undefined,
-  version: '2.5'
+  version: ''
 }
 ```
 
@@ -3261,7 +3278,7 @@ const genshindb = require('genshin-db');
     filename_icon: 'UI_FlycloakIcon_Thunderclap',
     filename_gacha: 'UI_Gacha_FlycloakIcon_Thunderclap'
   },
-  version: '2.0'
+  version: ''
 }
 ```
 
@@ -3283,7 +3300,7 @@ const genshindb = require('genshin-db');
   countType: 'COUNT_TYPE_NONE',
   sortOrder: 11015,
   images: { filename_icon: 'UI_AnimalIcon_DogPrick_02' },
-  version: '1.0'
+  version: ''
 }
 ```
 
@@ -3302,7 +3319,7 @@ const genshindb = require('genshin-db');
   countType: 'COUNT_TYPE_CAPTURE',
   sortOrder: 10026,
   images: { filename_icon: 'UI_AnimalIcon_Pigeon_Beak' },
-  version: '3.0'
+  version: ''
 }
 ```
 
@@ -3320,9 +3337,9 @@ const genshindb = require('genshin-db');
   'Anemo Crystalfly',
   'Atapetra Conch',
   'Black King Pigeon',
-  'Bluecrown Finch',
   'Blue Frog',
   'Blue Horned Lizard',
+  'Bluecrown Finch',
   'Bluethunder Weasel',
   'Blunthorn Rhino',
   'Boot Weasel',
@@ -3330,6 +3347,7 @@ const genshindb = require('genshin-db');
   'Brown Deer',
   'Burgundy Umbrellafinch',
   'Cacaua Goat',
+  'Camelhorn Deer',
   'Capybara',
   'Chestnut Goat',
   'Chestnut Hunting Hound',
@@ -3337,8 +3355,8 @@ const genshindb = require('genshin-db');
   'Cinderneck Stork',
   'Coral Butterfly',
   'Crimson Finch',
-  'Crimsonflank Pigeon',
   'Crimson Fox',
+  'Crimsonflank Pigeon',
   'Crow',
   'Crowned Eagle',
   'Cryo Crystalfly',
@@ -3351,6 +3369,7 @@ const genshindb = require('genshin-db');
   'Dusky Goat',
   'Electro Crystalfly',
   'Emerald Finch',
+  'Etherwing Moth',
   'Flatcrest Fulmar',
   'Flowcurrent Bird',
   'Fluff-Fleece Goat',
@@ -3380,12 +3399,12 @@ const genshindb = require('genshin-db');
   'Puffin',
   'Pyro Crystalfly',
   'Quicksand Eel',
-  'Redbill Pelican',
-  'Redcrown Finch',
-  'Red-Finned Unagi',
   'Red Flamingo',
   'Red Horned Lizard',
   'Red Tailed Lizard',
+  'Redbill Pelican',
+  'Redcrown Finch',
+  'Red-Finned Unagi',
   'Red-Tailed Weasel',
   'Rock Crab',
   'Sacred Ibis',
@@ -3393,10 +3412,10 @@ const genshindb = require('genshin-db');
   'Scarab',
   'Shroomboar',
   'Slate Umbrellafinch',
-  'Snowboar',
   'Snow Finch',
   'Snow Fox',
   'Snow Weasel',
+  'Snowboar',
   'Snow-Winged Goose',
   'Squirrel',
   'Subdetection Unit',
@@ -3405,10 +3424,11 @@ const genshindb = require('genshin-db');
   'Sunset Loach',
   'Thick-Feathered Ruffed Pheasant',
   'Thornback Gecko',
-  'Violetgold Angler Gull',
   'Violet Ibis',
+  'Violetgold Angler Gull',
   'Viridian Fantail Pigeon',
-  'White Pigeon'
+  'White Pigeon',
+  'Windvigil Angler Gull'
 ]
 ```
 
@@ -3464,9 +3484,9 @@ const genshindb = require('genshin-db');
 
 ```js
 [
-  "Adeptus's Realm of Repose",
   'A Drop in the Ocean',
   'A Home in the Hills',
+  "Adeptus's Realm of Repose",
   'Ancient Pact',
   'Beyond the Chasm',
   "Bishui's Twilight Luster",
@@ -4326,79 +4346,7 @@ const genshindb = require('genshin-db');
       voicefile: null
     }
   ],
-  version: {
-    '3100': '',
-    '3101': '',
-    '3102': '',
-    '3103': '',
-    '3104': '',
-    '3105': '',
-    '3106': '',
-    '3107': '',
-    '3108': '',
-    '3109': '',
-    '3110': '',
-    '3111': '',
-    '3112': '',
-    '3113': '',
-    '3114': '',
-    '3115': '',
-    '3116': '',
-    '3117': '',
-    '3118': '',
-    '3119': '',
-    '3120': '',
-    '3121': '',
-    '3122': '',
-    '3123': '',
-    '3124': '',
-    '3125': '',
-    '3126': '',
-    '3127': '',
-    '3128': '',
-    '3129': '',
-    '3130': '',
-    '3131': '',
-    '3132': '',
-    '3133': '',
-    '3134': '',
-    '3135': '',
-    '3136': '',
-    '3137': '',
-    '3138': '',
-    '3139': '',
-    '3140': '',
-    '3141': '',
-    '3142': '',
-    '3143': '',
-    '3144': '',
-    '3145': '',
-    '3146': '',
-    '3147': '',
-    '3148': '',
-    '3149': '',
-    '3150': '',
-    '3151': '',
-    '3152': '',
-    '3153': '',
-    '3154': '',
-    '3155': '',
-    '3156': '',
-    '3157': '',
-    '3158': '',
-    '3159': '',
-    '3160': '',
-    '3161': '',
-    '3162': '',
-    '3163': '',
-    '3164': '',
-    '3165': '',
-    '3166': '',
-    '3167': '',
-    '3168': '',
-    '3169': '',
-    '3170': ''
-  }
+  version: ''
 }
 ```
 

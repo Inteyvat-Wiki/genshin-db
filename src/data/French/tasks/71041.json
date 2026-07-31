@@ -1,0 +1,827 @@
+{
+	"id": 71041,
+	"type": "WQ",
+	"name": "Nouvelle rencontre... et neutralisation des bandits",
+	"description": "Vous tombez sur des Pilleurs de trésors en vous aventurant dans les profondeurs du Gouffre. Pas question de les laisser faire ce qu'ils veulent ici...",
+	"unlockDescription": "",
+	"chapter": "Voyage au centre du Gouffre",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_RANK_ZERO_WQ",
+	"suggestTrackMainQuestList": [
+		71040,
+		71037
+	],
+	"prevMainQuestList": [
+		71037
+	],
+	"steps": [
+		{
+			"id": 7104101,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Rendez-vous au deuxième camp occupé.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7104102,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Éliminez les Pilleurs de trésors dans le camp de mineurs.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7104103,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Rendez-vous au camp occupé par des Pilleurs de trésors.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7104104,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Éliminez les Pilleurs de trésors dans le camp de mineurs.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7104107,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Clitopho.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7104101,
+						0
+					],
+					"talkId": 7104101
+				}
+			]
+		},
+		{
+			"id": 7104108,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sauvez la personne emprisonnée par les Pilleurs de trésors.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7104109,
+			"order": 10,
+			"listShowType": "QUEST_SHOW",
+			"description": "Examinez le canon géant au fond des tunnels.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7104103,
+						0
+					],
+					"talkId": 7104103
+				}
+			]
+		},
+		{
+			"id": 7104110,
+			"order": 11,
+			"listShowType": "QUEST_SHOW",
+			"description": "Rendez-vous à l'entrepôt dans lequel les boulets de canon sont stockés.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7104111,
+			"order": 12,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Zhiqiong.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7104104,
+						0
+					],
+					"talkId": 7104104
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7104101,
+			"completionStepIds": [
+				7104107
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7104107",
+							"2"
+						],
+						"stepId": 7104107,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Clitopho",
+					"Zhiqiong",
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 710410101,
+					"content": "Pfiou ! Merci. Vous m'avez sauvé la vie...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410102
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410102,
+					"content": "Attendez... Je vous reconnais ! Vous êtes ce Toclipho qu'on a vu dans la mine !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410103
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410103,
+					"content": "Euh, quoi ? Non ! Ce n'est pas... Je... Je ne vends pas de faux médicaments ! Je suis Clitopho, oui, mais pas celui qui est dans le commerce de produits pharmaceutiques. Ah non, ça pas question !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410104
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410104,
+					"content": "Hein. Donc les médicaments que vous vendiez étaient faux ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710410105
+					]
+				},
+				{
+					"id": 710410105,
+					"content": "Quoi ? Non ! Impossible ! Les médicaments que je vends sont cent pour cent authentiques ! Je veux dire, vous avez vu l'effet sur les mineurs ! Ils en ont bu et ils se sont sentis beaucoup mieux d'un coup !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410106
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410106,
+					"content": "Mais ne venez-vous pas de dire que vous n'étiez pas dans le commerce de produits pharmaceutiques ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410107
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410107,
+					"content": "Ah, euh... C'est vrai, c'est là que j'ai arrêté de vendre des médicaments. Tout s'est terminé quand ce... Quand ce Toclipho a vendu des contrefaçons sous une fausse identité !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410108
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410108,
+					"content": "Il a vendu de faux médicaments sous un faux nom et a ruiné ma réputation ! C'est ça. C'est pour cette raison que j'ai renoncé à vendre des médicaments pour toujours !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410109
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410109,
+					"content": "Et juste au moment où j'allais changer de carrière, j'ai été capturé par cette bande de Pilleurs de trésors...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410110
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410110,
+					"content": "Ce charlatan est vraiment méprisable...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410111
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410111,
+					"content": "Oui, il faut être sacrément tordu pour vouloir jouer de tels tours à ceux qui sont dans le même métier que vous !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410112
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 710410112,
+					"content": "#C'était quoi déjà le faux nom de ce «{NON_BREAK_SPACE}Toclipho{NON_BREAK_SPACE}»{NON_BREAK_SPACE}?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710410113
+					]
+				},
+				{
+					"id": 710410113,
+					"content": "Clitopho !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410114
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410114,
+					"content": "Euh. Non, attendez. Clitopho n'est pas un faux nom. C'est un vrai nom...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410115
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410115,
+					"content": "Est-ce que ça ne fait pas de « Toclipho » un faux nom ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410116
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 710410116,
+					"content": "Non... Attendez, oui. Oui. Il a pris mon nom, donc maintenant « Clitopho » est un faux nom. C'est clair, non ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410117
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410117,
+					"content": "Oh... Donc « Toclipho » est devenu un vrai nom.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410118
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 710410118,
+					"content": "Comme c'est dommage...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710410119
+					]
+				},
+				{
+					"id": 710410119,
+					"content": "Qu'est-ce qui est dommage ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410120
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410120,
+					"content": "Vous avez presque tout avoué sans qu'on ait à vous le demander.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410121
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410121,
+					"content": "Emmenons-le. Les Millelithes auront certainement des questions à lui poser.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410122
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410122,
+					"content": "Ou alors on peut s'occuper de lui ici.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710410123
+					]
+				},
+				{
+					"id": 710410123,
+					"content": "Quoi ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410124
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410124,
+					"content": "Hé ! Ce n'est pas le moment de faire ce genre de blagues.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410125
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410125,
+					"content": "Héhé, hihi. Moi, je trouve ça drôle.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410126
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 710410126,
+					"content": "Mais vous ne riez pas. Et non, ce n'est pas drôle du tout !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410127,
+						710410130
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410127,
+					"content": "Vous avez raison. On va passer aux choses sérieuses.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710410128
+					]
+				},
+				{
+					"id": 710410128,
+					"content": "A—Attends ! On n'a pas le temps pour un interrogatoire !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410129
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410129,
+					"content": "Je ne sais pas pour toi, mais convoyer un Pilleur de trésors en panique ne m'enchante pas plus que ça. Ramenons-le d'abord au camp.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410131
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410131,
+					"content": "Hé, hé, hé ! Emmenez-moi avec vous, vous voulez bien ? Je vous serai utile ! Je veux dire, comme vous pouvez le voir... J'ai été chassé des Pilleurs de trésors...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410132
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410132,
+					"content": "Je suis à nouveau un citoyen modèle, vous savez ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410133
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410133,
+					"content": "Oh, alors c'est comme ça que vous voyez le « citoyen modèle », vous ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410134
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 710410134,
+					"content": "Et quelles sont vos compétences exactement ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410135
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410135,
+					"content": "Je peux... fabriquer des explosifs ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410136
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410136,
+					"content": "Vous voulez dire des faux médicaments...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410137
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 710410137,
+					"content": "Non, non. Il a dit des explosifs !",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710410138
+					]
+				},
+				{
+					"id": 710410138,
+					"content": "Et vos explosifs ne sont pas faux non plus ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410139
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410139,
+					"content": "Non, c'est pour de vrai cette fois !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410140
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410140,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410141
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410141,
+					"content": "... Je n'ai pas la permission de vous intégrer dans l'équipe. Ça sera à Jinwu de décider ce que l'on fera de vous, mais mon petit doigt me dit qu'elle laissera les Millelithes se charger de votre cas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410142
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410142,
+					"content": "On va garder un œil sur vous. Aucun Pilleur de trésors n'est digne de confiance, encore moins ceux qui vendent de faux remèdes...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410143
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410143,
+					"content": "Oh allez, j'ai arrêté !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410144
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410144,
+					"content": "Oh, ça, on sait ! On y va ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 710410130,
+					"content": "On ne peut pas vous donner tort.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710410131
+					]
+				}
+			]
+		},
+		{
+			"id": 7104103,
+			"completionStepIds": [
+				7104109
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7104109",
+							"2"
+						],
+						"stepId": 7104109,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Clitopho",
+					"Paimon",
+					"Zhiqiong"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 710410301,
+					"content": "Le mécanisme de verrouillage n'a pas encore rouillé. Il y a des traces de lubrifiant, comme si quelqu'un l'avait entretenu après la fermeture de la mine.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410302
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410302,
+					"content": "La culasse est également intacte... Seule la sécurité est restée verrouillée.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410303
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410303,
+					"content": "Qu'est-ce qu'il raconte ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410304
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 710410304,
+					"content": "Les tunnels devant nous ont été scellés avec de gros rochers quand les mineurs ont été évacués... On dirait que c'est là qu'on va devoir utiliser le canon à nouveau.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410305
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410305,
+					"content": "Mais sans munition, un canon, quelle que soit sa taille, est inutile. Il faut en trouver.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410306
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410306,
+					"content": "Hmpf, pas la peine de le rappeler, monsieur Je-sais-tout.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410307
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410307,
+					"content": "Il y a un dépôt à côté qui devrait contenir des munitions pour le canon. Avec de la chance, tout n'a pas été récupéré quand les mineurs ont été renvoyés chez eux...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410308
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410308,
+					"content": "Allons dans cette direction, alors.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710410309
+					]
+				},
+				{
+					"id": 710410309,
+					"content": "Allons-y.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Clitopho"
+				}
+			]
+		},
+		{
+			"id": 7104104,
+			"completionStepIds": [
+				7104111
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7104111",
+							"2"
+						],
+						"stepId": 7104111,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Zhiqiong",
+					"Clitopho",
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 710410401,
+					"content": "C'est là. *tousse* Argh, la porte est verrouillée.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410402
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410402,
+					"content": "On dirait qu'on va devoir utiliser deux clés à la fois pour ouvrir la porte... Oh, pourquoi faut-il que les gens de Liyue rendent les choses si compliquées...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410403
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410403,
+					"content": "Oh, arrêtez avec vos bavardages inutiles... Vous voyez cet avis collé sur la porte ? Au moins, ça veut dire qu'on pourra trouver des munitions à l'intérieur.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410404
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410404,
+					"content": "Eh bien, c'est une chose de trouver des munitions, mais encore faut-il que les détonateurs aient été bien conservés. On ferait mieux de ne pas se faire trop d'illusions.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410405
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410405,
+					"content": "Oh, super. On a un optimiste parmi nous. Arrêtez avec votre discours de lâcheur, vous voulez bien ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410406
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410406,
+					"content": "... D'ailleurs, pourquoi on devrait écouter les objections d'un Pilleur de trésors après tout ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410407,
+						710410408
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410407,
+					"content": "Clitopho n'a pas tort, cependant...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710410409
+					]
+				},
+				{
+					"id": 710410409,
+					"content": "Exactement ! Arrêtez de vous disputer tous les deux, d'accord ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410410
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 710410410,
+					"content": "Hmpf, d'accord. Continuons. Peut-être que Jinwu sait comment ouvrir cette porte.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410411
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410411,
+					"content": "On va avoir du boulot. Il va falloir activer le dispositif de signalisation pour débloquer la culasse.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410412
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410412,
+					"content": "Jinwu a dit qu'il devrait y avoir un point d'observation en surplomb d'où l'escouade de démolition peut observer le canon et ajuster le signal, de façon à le déverrouiller à distance.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410408,
+					"content": "Dans tous les cas, il faut d'abord qu'on ouvre cette porte.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710410409
+					]
+				}
+			]
+		}
+	]
+}

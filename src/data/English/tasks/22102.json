@@ -1,0 +1,338 @@
+{
+	"id": 22102,
+	"type": "IQ",
+	"name": "Business in a Marsh",
+	"description": "Huai'an can't stop worrying about the roaming monsters near Wangshu Inn...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2210201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Huai'an",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2210201,
+						0
+					],
+					"talkId": 2210201
+				}
+			]
+		},
+		{
+			"id": 2210202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Clear out nearby monsters",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2210203,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Report back to Huai'an",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2210203,
+						0
+					],
+					"talkId": 2210203
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2210201,
+			"completionStepIds": [
+				2210201
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2210201",
+							"2"
+						],
+						"stepId": 2210201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Huai'an"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 221020101,
+					"content": "This is becoming an absolute nightmare...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020102
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 221020102,
+					"content": "What's wrong?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						221020103
+					]
+				},
+				{
+					"id": 221020103,
+					"content": "I haven't slept properly in days... See the dark circles under my eyes?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020104
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 221020104,
+					"content": "Have you met any of the guests? They're a handful, to say the least. A brand-new crisis with each one. One of them actually jumped from the top of the building. A building this high. What were they thinking!?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020105
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 221020105,
+					"content": "But never mind that. Right now, I'm waiting on a food delivery from the city, it should be here soon.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020106
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 221020106,
+					"content": "There are monsters on the road though, and they're sure to stir up trouble. Could I trouble you to get rid of them for me?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020107,
+						221020108
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 221020107,
+					"content": "Okay.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						221020109
+					]
+				},
+				{
+					"id": 221020109,
+					"content": "Thanks.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 221020108,
+					"content": "It's like this place is cursed...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						221020110
+					]
+				},
+				{
+					"id": 221020110,
+					"content": "Well... When your doors are open to travelers from all over the world, expect a world's worth of baggage... That's what I like to say.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020111
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 221020111,
+					"content": "We can manage though. It's just an inn that's a bit further out and a bit busier than most.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020112
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 221020112,
+					"content": "I appreciate your help. Thanks, and good luck.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Huai'an"
+				}
+			]
+		},
+		{
+			"id": 2210202,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2210201",
+							"3"
+						],
+						"stepId": 2210201,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2210202",
+							"2"
+						],
+						"stepId": 2210202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Huai'an"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 221020201,
+					"content": "How's it coming along? All clear?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020202
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 221020202,
+					"content": "Not yet.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						221020203
+					]
+				},
+				{
+					"id": 221020203,
+					"content": "Okay, please be as quick as you can. The chef has run out of supplies.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020204
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 221020204,
+					"content": "I could go and sort it myself if it came to it, but that's a last resort.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Huai'an"
+				}
+			]
+		},
+		{
+			"id": 2210203,
+			"completionStepIds": [
+				2210203
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2210202",
+							"3"
+						],
+						"stepId": 2210202,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2210203",
+							"2"
+						],
+						"stepId": 2210203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Huai'an"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 221020301,
+					"content": "How's it coming along? All clear?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020302
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 221020302,
+					"content": "All clear.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						221020303
+					]
+				},
+				{
+					"id": 221020303,
+					"content": "Great. Thanks a lot.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020304
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 221020304,
+					"content": "Here's your payment. If you're ever in the area again, feel free to stop by anytime.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Huai'an"
+				}
+			]
+		}
+	]
+}

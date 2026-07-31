@@ -1,0 +1,167 @@
+{
+	"id": 72712,
+	"type": "WQ",
+	"name": "Sandens Bitte um Ressourcen",
+	"description": "Sanden von der Insel Narukami möchte 5 elektrisierte Kristalle haben.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7271201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Gib Sanden fünf elektrisierte Kristalle.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7271201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7271202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Sanden.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7271202,
+						0
+					],
+					"talkId": 7271202
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7271201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271201",
+							"2"
+						],
+						"stepId": 7271201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7271201"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sanden"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727120101,
+					"content": "Bist du der mit den elektrisierten Kristallen?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727120102
+					]
+				},
+				{
+					"id": 727120102,
+					"content": "Oh, du hast wohl von dem Auftrag gehört, den ich veröffentlicht habe?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727120103
+					],
+					"speakerTitle": "Sanden"
+				},
+				{
+					"id": 727120103,
+					"content": "Hast du denn schon 5 elektrisierte Kristalle?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727120106,
+						727120104
+					],
+					"speakerTitle": "Sanden"
+				},
+				{
+					"id": 727120106,
+					"content": "Ich habe sie hier.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 727120104,
+					"content": "Noch nicht.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727120105
+					]
+				},
+				{
+					"id": 727120105,
+					"content": "Gut, bring sie mir einfach, sobald du sie hast.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sanden"
+				}
+			]
+		},
+		{
+			"id": 7271202,
+			"completionStepIds": [
+				7271202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271202",
+							"2"
+						],
+						"stepId": 7271202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sanden"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727120201,
+					"content": "Danke, ich kann jetzt mit der Herstellung von Farben beginnen. Bitte nimm dies als Lohn für deine Mühen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sanden"
+				}
+			]
+		}
+	]
+}

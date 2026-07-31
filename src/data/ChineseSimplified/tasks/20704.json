@@ -1,0 +1,599 @@
+{
+	"id": 20704,
+	"type": "WQ",
+	"name": "帮萍奶奶种花$UNRELEASED",
+	"description": "在园林散步的老人，似乎很喜欢花草，但是她和旅行者时候，最近不知道是谁经常会把花直接给摘走，弄得她想赏花都没得赏了。$UNRELEASED",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2070401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "与萍姥姥谈话$UNRELEASED",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2070405,
+						0
+					],
+					"talkId": 2070405
+				}
+			]
+		},
+		{
+			"id": 2070402,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "帮萍姥姥在播种璃月百合花$UNRELEASED",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2070403,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "回去向萍姥姥报告$UNRELEASED",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2070407,
+						0
+					],
+					"talkId": 2070407
+				}
+			]
+		},
+		{
+			"id": 2070404,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "击败史莱姆，取得5个水史莱姆的精华液$UNRELEASED",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100527,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2070405,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "给璃月百合浇灌精华液$UNRELEASED",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2070406,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "判断TALK3是否完成$UNRELEASED$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2070403,
+						0
+					],
+					"talkId": 2070403
+				}
+			]
+		},
+		{
+			"id": 2070407,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "判断TALK4是否完成$UNRELEASED$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2070404,
+						0
+					],
+					"talkId": 2070404
+				}
+			]
+		},
+		{
+			"id": 2070408,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "向萍姥姥汇报$UNRELEASED",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2070408,
+						0
+					],
+					"talkId": 2070408
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2070402,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2070401",
+							"2"
+						],
+						"stepId": 2070401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"萍姥姥"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 207040201,
+					"content": "(test) 好的姥姥$UNRELEASED",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						207040202
+					]
+				},
+				{
+					"id": 207040202,
+					"content": "(test) 咦？这不是琉璃百合的种子嘛？这不是璃月这边很稀有、很贵重的花$UNRELEASED",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						207040203
+					]
+				},
+				{
+					"id": 207040203,
+					"content": "(test) 姥姥，这还不得挑一个良辰吉日来种么？$UNRELEASED",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						207040204
+					]
+				},
+				{
+					"id": 207040204,
+					"content": "(test) 这哪是什么名贵的话，最开始，荻花州里可全都是琉璃百合，有很多年轻人会去那里唱歌跳舞$UNRELEASED",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207040205
+					],
+					"speakerTitle": "萍姥姥"
+				},
+				{
+					"id": 207040205,
+					"content": "(test) 只不过在一场战争之后，荻花州被洪水淹没，琉璃百合几乎都被毁了$UNRELEASED",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207040206
+					],
+					"speakerTitle": "萍姥姥"
+				},
+				{
+					"id": 207040206,
+					"content": "(test) 现在，失去了荻花州的琉璃百合，也只能在玉京台里种了。$UNRELEASED",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "萍姥姥"
+				}
+			]
+		},
+		{
+			"id": 2070403,
+			"completionStepIds": [
+				2070406
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2070401",
+							"2"
+						],
+						"stepId": 2070401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"萍姥姥"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 207040301,
+					"content": "(test) 姥姥怎么会有璃月百合的种子呀？$UNRELEASED",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						207040302
+					]
+				},
+				{
+					"id": 207040302,
+					"content": "(test) 我这个老婆子活了这么久，总会留着一些老东西嘛嘿嘿嘿$UNRELEASED",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 2070404,
+			"completionStepIds": [
+				2070407
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2070401",
+							"2"
+						],
+						"stepId": 2070401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"萍姥姥"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 207040401,
+					"content": "(test) 姥姥现在种璃月百合是为什么什么嘛？$UNRELEASED",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						207040402
+					]
+				},
+				{
+					"id": 207040402,
+					"content": "(test) 也许有一天，我的那些离开璃月港很久的老朋友会从远方回来$UNRELEASED",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207040403
+					],
+					"speakerTitle": "萍姥姥"
+				},
+				{
+					"id": 207040403,
+					"content": "(test) 那时候，他们也会想看看他们熟悉的花吧$UNRELEASED",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "萍姥姥"
+				}
+			]
+		},
+		{
+			"id": 2070405,
+			"completionStepIds": [
+				2070401
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2070401",
+							"2"
+						],
+						"stepId": 2070401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"萍姥姥"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 207040501,
+					"content": "(test) 姥姥！没问题！就交给我吧$UNRELEASED",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						207040502
+					]
+				},
+				{
+					"id": 207040502,
+					"content": "(test) 那就麻烦你了$UNRELEASED",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 2070406,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2070401",
+							"2"
+						],
+						"stepId": 2070401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"萍姥姥"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 207040601,
+					"content": "(test) 姥姥，我今天有点忙，咱们改天吧$UNRELEASED",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						207040602
+					]
+				},
+				{
+					"id": 207040602,
+					"content": "(test) 孩子，快去忙吧$UNRELEASED",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "萍姥姥"
+				}
+			]
+		},
+		{
+			"id": 2070407,
+			"completionStepIds": [
+				2070403
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2070403",
+							"2"
+						],
+						"stepId": 2070403,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"萍姥姥"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 207040701,
+					"content": "(test) 姥姥，我把种子都种好啦，但他们好像还没发芽$UNRELEASED",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						207040702
+					]
+				},
+				{
+					"id": 207040702,
+					"content": "(test) 孩子，为了让他发芽，你还得帮我做件事$UNRELEASED",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207040703
+					],
+					"speakerTitle": "萍姥姥"
+				},
+				{
+					"id": 207040703,
+					"content": "(test) 时过境迁，现在的天气里琉璃百合不是那么容易活下来，所以需要一点水史莱姆的凝液，才能让他们焕发生机$UNRELEASED",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207040704
+					],
+					"speakerTitle": "萍姥姥"
+				},
+				{
+					"id": 207040704,
+					"content": "(test) 在山的另一头的池塘旁，有一个史莱姆巢穴，去那里找一点史莱姆凝液，给种子浇上吧$UNRELEASED",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207040705
+					],
+					"speakerTitle": "萍姥姥"
+				},
+				{
+					"id": 207040705,
+					"content": "(test) 这个我可太拿手了，交给我吧姥姥$UNRELEASED",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 2070408,
+			"completionStepIds": [
+				2070408
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2070405",
+							"3"
+						],
+						"stepId": 2070405,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"萍姥姥"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 207040801,
+					"content": "(test) 姥姥，我回来啦，璃月百合的种子也成功发芽了！$UNRELEASED",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						207040802
+					]
+				},
+				{
+					"id": 207040802,
+					"content": "(test) 干得好孩子，这下琉璃百合就能茁壮生长了！$UNRELEASED",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "萍姥姥"
+				}
+			]
+		},
+		{
+			"id": 2070409,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2070402",
+							"2"
+						],
+						"stepId": 2070402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"萍姥姥"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 207040901,
+					"content": "(test) 希望某一天璃月也能开满璃月百合呀$UNRELEASED",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "萍姥姥"
+				}
+			]
+		},
+		{
+			"id": 2070410,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2070405",
+							"2"
+						],
+						"stepId": 2070405,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2070404",
+							"2"
+						],
+						"stepId": 2070404,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"萍姥姥"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 207041001,
+					"content": "(test) 璃月百合虽然娇嫩，但也是生命力很强的花朵呀$UNRELEASED",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "萍姥姥"
+				}
+			]
+		}
+	]
+}

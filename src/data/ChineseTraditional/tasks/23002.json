@@ -1,0 +1,955 @@
+{
+	"id": 23002,
+	"type": "IQ",
+	"name": "御用在他鄉",
+	"description": "一位來自稻妻的「遠國御用」正在勤奮工作…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2300201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "與範兵衛對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2300201,
+						0
+					],
+					"talkId": 2300201
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2300205,
+						0
+					],
+					"talkId": 2300205
+				}
+			]
+		},
+		{
+			"id": 2300202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往採摘蘑菇",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						2300202,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101955,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2300203,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "採摘蘑菇",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101955,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2300204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "將蘑菇帶給範兵衛",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						2300201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2300205,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "與範兵衛對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2300203,
+						0
+					],
+					"talkId": 2300203
+				}
+			]
+		},
+		{
+			"id": 2300206,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "與範兵衛對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2300204,
+						0
+					],
+					"talkId": 2300204
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2300201,
+			"completionStepIds": [
+				2300201
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2300201",
+							"2"
+						],
+						"stepId": 2300201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"23002",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"範兵衛"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230020101,
+					"content": "這家店的蘑菇品質看來還可以，先放在採購名單上好了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020102
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020102,
+					"content": "範兵衛？這個名字好熟悉啊，好像在哪聽人提起過…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020103,
+						230020104
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 230020103,
+					"content": "難、難道是之前踏鞴砂那個…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020105
+					]
+				},
+				{
+					"id": 230020105,
+					"content": "嗚哇！他是那個拖拖拉拉，把「御影爐心」弄得一團糟的傢伙！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020106,
+						230020107
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 230020106,
+					"content": "他應該是來做「遠國御用」的…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020108
+					]
+				},
+				{
+					"id": 230020108,
+					"content": "原來他真的來須彌了啊，我還以為那個「遠國御用」是開玩笑的呢…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020109
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 230020109,
+					"content": "咦？金髮…旁邊飄著一個小東西…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020110
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020110,
+					"content": "您難道就是那位「旅行者」嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020111,
+						230020112
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020111,
+					"content": "沒錯，就是我。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020114
+					]
+				},
+				{
+					"id": 230020114,
+					"content": "哈哈，果然是您，陽介寫信過來的時候提到過您。他說是您和澤維爾先生一起處理了「御影爐心」。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020115
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020115,
+					"content": "唉，我真是慚愧啊，在您和澤維爾先生修理「御影爐心」的時候，我居然被文書工作給絆住了手腳…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020116
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020116,
+					"content": "文書工作比「御影爐心」還重要嗎…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020117
+					]
+				},
+				{
+					"id": 230020117,
+					"content": "你工作的重點完全就錯了吧！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020118
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 230020118,
+					"content": "您看您說的。如果不做好文書工作，怎麼有序地推進「御影爐心」的維修工作呢？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020119
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020119,
+					"content": "您瞧，疏散周邊人員、準備修理物資、調動修理人員，還要協調各方的生產需求…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020120
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020120,
+					"content": "如果沒有文書支援，這些事就都會亂成一鍋粥了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020121
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020121,
+					"content": "果然和虎之助說的一樣…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020122
+					]
+				},
+				{
+					"id": 230020122,
+					"content": "真是名不虛傳啊…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020123
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 230020123,
+					"content": "虎之助…那位先生就是那種根本不在意文書工作的人，和他一起工作，總是會有很多額外的工作量。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020124
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020124,
+					"content": "不過，現在我已經不再分管「御影爐心」了，現在我正在須彌做「遠國御用」，主管蘑菇貿易啦。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020125
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020125,
+					"content": "嗯…旅行者，您的事蹟我已經聽陽介說過了，我覺得…您是一個非常可靠的人。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020126
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020126,
+					"content": "如果您願意的話，能幫我一個忙嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020127
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020127,
+					"content": "我目前正在尋找一個穩定可靠的蘑菇供應商，也在這裡找了很多商家。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020128
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020128,
+					"content": "他們給我拿來的蘑菇樣本都是一些刻意挑選出來的好貨…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020129
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020129,
+					"content": "我覺得，必須要去他們的蘑菇產地直接看看蘑菇品質，以此來衡量他們供貨時的貨物品質。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020130
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020130,
+					"content": "但如您所見，我實在是沒有野外勘察的經驗，獨自進林的話，只怕凶多吉少。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020131
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020131,
+					"content": "所以，我想請您幫我去林子裡採集一下蘑菇，然後拿回來給我。您看…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020132,
+						230020133
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020132,
+					"content": "倒也不是不行…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020134
+					]
+				},
+				{
+					"id": 230020134,
+					"content": "您答應我了？太好了！報酬的事您放心，我已經準備好了文書。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020135
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020135,
+					"content": "您看這裡，對，先看這份文書，這是雇傭文書，還有酬勞計算，這份是義務告知和保密協議，噢對了，還有那片蘑菇產地的地圖…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020136
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020136,
+					"content": "和範兵衛一起仔細地查看了所有文書，深感疲憊…",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": [
+						230020137
+					]
+				},
+				{
+					"id": 230020137,
+					"content": "很好，這樣所有文書您都已經知悉了。我會先送報幕府，得到回執之後，再和您達成正式雇傭關係。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020138
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020138,
+					"content": "但在那之前，我會先自掏腰包支付您的酬勞。畢竟採購蘑菇這件事不能耽擱。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020139
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020139,
+					"content": "當然啦，這件事我也會總結成文書向幕府備案，畢竟您的酬勞也需要報稅。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020140
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020140,
+					"content": "我、我先去採蘑菇了！",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020141
+					]
+				},
+				{
+					"id": 230020141,
+					"content": "咦？噢…那就拜託您了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020142
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020142,
+					"content": "我們不會再次被捲入麻煩裡吧，真擔心啊…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020143,
+						230020145
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 230020143,
+					"content": "我就是來盯著他的。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020144
+					]
+				},
+				{
+					"id": 230020144,
+					"content": "#是這樣嗎？好吧，{F#妳}{M#你}說的也有點道理…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020147
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 230020147,
+					"content": "咦？您怎麼這麼一副不相信我的表情…放心吧，我準備工作都做得很完善了，絕不會讓您面對什麼流程問題的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020148
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020148,
+					"content": "我們不是在說這種問題啦…唉，總之我們先去林子裡幫他採蘑菇吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 230020145,
+					"content": "想看這傢伙能弄出什麼新麻煩。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020146
+					]
+				},
+				{
+					"id": 230020146,
+					"content": "喂！要是真的有什麼新麻煩，我們在這裡可是找不到人來幫忙了啊！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020147
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 230020133,
+					"content": "報酬先談好。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020134
+					]
+				},
+				{
+					"id": 230020112,
+					"content": "這位是派蒙…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020113
+					]
+				},
+				{
+					"id": 230020113,
+					"content": "是派蒙，不是什麼「飄著的小東西」！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020114
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 230020107,
+					"content": "他應該是來管蘑菇貿易的…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020108
+					]
+				},
+				{
+					"id": 230020104,
+					"content": "虎之助和陽介都提過的那個…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020105
+					]
+				}
+			]
+		},
+		{
+			"id": 2300202,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"2300201"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2300202",
+							"2"
+						],
+						"stepId": 2300202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2300203",
+							"2"
+						],
+						"stepId": 2300203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2300204",
+							"2"
+						],
+						"stepId": 2300204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"範兵衛"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230020201,
+					"content": "怎麼樣，您採到蘑菇了嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "範兵衛"
+				}
+			]
+		},
+		{
+			"id": 2300203,
+			"completionStepIds": [
+				2300205
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2300205",
+							"2"
+						],
+						"stepId": 2300205,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_NUM_LESS_THAN",
+						"rawParams": [
+							"101955",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"範兵衛"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230020301,
+					"content": "太好了，這些就足夠了。這些蘑菇看起來就不錯…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020302
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020302,
+					"content": "這些酬勞請您收好，多謝您幫忙了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020303
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020303,
+					"content": "這是稅前還是稅後？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020304
+					]
+				},
+				{
+					"id": 230020304,
+					"content": "當然是稅後了，您放心吧，我不會讓您專門回稻妻去補稅的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020305
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020305,
+					"content": "不過，也不知道幕府那邊的稅務政策有沒有修改…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020306
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020306,
+					"content": "唔，還是找個時間再給陽介寫封信吧…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "範兵衛"
+				}
+			]
+		},
+		{
+			"id": 2300204,
+			"completionStepIds": [
+				2300206
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2300206",
+							"2"
+						],
+						"stepId": 2300206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PACK_HAVE_ITEM",
+						"rawParams": [
+							"101955",
+							"1"
+						]
+					},
+					{
+						"type": "QUEST_COND_PACK_HAVE_ITEM",
+						"rawParams": [
+							"101955",
+							"2"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"範兵衛"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230020401,
+					"content": "太好了，這些就足夠了。這些蘑菇看起來就不錯…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020402
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020402,
+					"content": "我還多採了一些蘑菇。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020403
+					]
+				},
+				{
+					"id": 230020403,
+					"content": "哈哈哈，那更好了，請您把這些蘑菇也給我吧，我會多給您算一些報酬的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020404
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020404,
+					"content": "這些酬勞請您收好，多謝您幫忙了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020405
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020405,
+					"content": "這是稅前還是稅後？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020406
+					]
+				},
+				{
+					"id": 230020406,
+					"content": "這些都是稅後了，您放心吧，我不會讓您專門回稻妻去補稅的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020407
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020407,
+					"content": "不過，也不知道幕府那邊的稅務政策有沒有修改…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020408
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020408,
+					"content": "唔，還是找個時間再給陽介寫封信吧…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "範兵衛"
+				}
+			]
+		},
+		{
+			"id": 2300205,
+			"completionStepIds": [
+				2300201
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2300201",
+							"2"
+						],
+						"stepId": 2300201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"23002",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"範兵衛"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230020501,
+					"content": "這家的蘑菇看起來也不太可靠啊…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020502
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020502,
+					"content": "他怎麼一副犯愁的樣子…不會又惹上什麼麻煩了吧…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020503
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 230020503,
+					"content": "旅行者，您來了。上次您拿來的蘑菇品質真是不錯。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020504
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020504,
+					"content": "這次能請您再去採一些來嗎？我想拿來和其他供應商的蘑菇做對比。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020505,
+						230020507
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020505,
+					"content": "交給我吧。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020506
+					]
+				},
+				{
+					"id": 230020506,
+					"content": "那就拜託您了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020507,
+					"content": "你找了幾家了？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020508
+					]
+				},
+				{
+					"id": 230020508,
+					"content": "唔，五六家吧，但這些供應商的蘑菇品質都不太穩定，我實在是有些不安。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020509
+					],
+					"speakerTitle": "範兵衛"
+				},
+				{
+					"id": 230020509,
+					"content": "我還會繼續找其他供應商，採蘑菇的事情就拜託您了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "範兵衛"
+				}
+			]
+		}
+	]
+}

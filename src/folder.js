@@ -8,6 +8,8 @@ const FoldersEnum = {
 	constellations : 'constellations',
 	hyperlinks	   : 'hyperlinks',
 	stories		   : 'stories',
+	chapters	   : 'chapters',
+	tasks		   : 'tasks',
 	
 	weapons        : 'weapons',
 
@@ -31,6 +33,7 @@ const FoldersEnum = {
 	namecards      : 'namecards',
 	geographies    : 'geographies',
 	dungeons	   : 'dungeons',
+	maplayers	   : 'maplayers',
 	adventureranks : 'adventureranks',
 
 	emojis         : 'emojis',

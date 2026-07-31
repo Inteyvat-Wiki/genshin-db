@@ -1,0 +1,369 @@
+{
+	"id": 70827,
+	"type": "WQ",
+	"name": "",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7082701,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7082701,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082702,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7082701,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082703,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7082703,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082704,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7082704,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LEAVE_SCENE_RANGE",
+					"rawParams": [
+						3,
+						40
+					]
+				}
+			]
+		},
+		{
+			"id": 7082705,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7082702,
+						0
+					],
+					"talkId": 7082702
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7082701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7082701"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082702",
+							"2"
+						],
+						"stepId": 7082702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_VAR_EQUAL",
+						"rawParams": [
+							"0",
+							"0",
+							"70827"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"小魚"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708270101,
+					"content": "…嗚汪？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708270102
+					],
+					"speakerTitle": "小魚"
+				},
+				{
+					"id": 708270102,
+					"content": "#欸？{NICKNAME}{F#妳}{M#你}看，這隻小狗好像很餓的樣子…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708270103
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 708270103,
+					"content": "唔，看起來也不像是流浪狗…是和主人走丟了嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708270104
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 708270104,
+					"content": "嗚…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708270105
+					],
+					"speakerTitle": "小魚"
+				},
+				{
+					"id": 708270105,
+					"content": "#總覺得不忍心放著不管，餓肚子的感覺最痛苦了…{NICKNAME}，要是我們有多餘的肉，分一塊給牠吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				}
+			]
+		},
+		{
+			"id": 7082702,
+			"completionStepIds": [
+				7082705
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082705",
+							"2"
+						],
+						"stepId": 7082705,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"帕特里西亞"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708270201,
+					"content": "小、小魚！太好了，終於找到了！嗚嗚，我還以為再也見不到你了…！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708270202
+					],
+					"speakerTitle": "帕特里西亞"
+				},
+				{
+					"id": 708270202,
+					"content": "嗚汪！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708270203
+					],
+					"speakerTitle": "小魚"
+				},
+				{
+					"id": 708270203,
+					"content": "#謝謝{F#妳}{M#你}們，好心的{M#大哥哥和大姐姐}{F#大姐姐們}！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "帕特里西亞"
+				}
+			]
+		},
+		{
+			"id": 7082703,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7082701"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082702",
+							"2"
+						],
+						"stepId": 7082702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_VAR_EQUAL",
+						"rawParams": [
+							"0",
+							"1",
+							"70827"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"小魚"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708270301,
+					"content": "…嗚汪？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "小魚"
+				}
+			]
+		},
+		{
+			"id": 7082704,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7082701"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082702",
+							"2"
+						],
+						"stepId": 7082702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"小魚"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708270402,
+					"content": "（餵食。）",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7082705,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7082701"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082702",
+							"2"
+						],
+						"stepId": 7082702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"小魚"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708270501,
+					"content": "離開。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

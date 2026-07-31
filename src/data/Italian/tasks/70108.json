@@ -1,0 +1,395 @@
+{
+	"id": 70108,
+	"type": "WQ",
+	"name": "La grande indagine sulla montagna II",
+	"description": "Tutti i segnalatori sono stati posizionati, ma Esther non è ancora in grado di misurare quanto sia alto il Picco del Drago, in quanto sembra non avere abbastanza segnalatori. Che qualcuno possa aiutarla a posizionare un segnalatore in cima alla montagna?",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		70104,
+		70141
+	],
+	"steps": [
+		{
+			"id": 7010801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Esther",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7010801,
+						0
+					],
+					"talkId": 7010801
+				}
+			]
+		},
+		{
+			"id": 7010802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Posiziona il segnalatore d'indagine sulla cima di Picco del Drago",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7010803,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Paimon",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7010802,
+						0
+					],
+					"talkId": 7010802
+				}
+			]
+		},
+		{
+			"id": 7010804,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Torna da Esther",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7010803,
+						0
+					],
+					"talkId": 7010803
+				}
+			]
+		},
+		{
+			"id": 7010805,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Consegna la lettera a Cyrus",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7010804,
+						0
+					],
+					"talkId": 7010804
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7010802,
+			"completionStepIds": [
+				7010803
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7010803",
+							"2"
+						],
+						"stepId": 7010803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 701080201,
+					"content": "Brrr... D-Dovrebbe andare b-bene così...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080202
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 701080202,
+					"content": "Che f-freddo... P-Possiamo andare ora?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 7010803,
+			"completionStepIds": [
+				7010804
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7010804",
+							"2"
+						],
+						"stepId": 7010804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Esther"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 701080301,
+					"content": "Avete piazzato il sensore?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080302
+					],
+					"speakerTitle": "Esther"
+				},
+				{
+					"id": 701080302,
+					"content": "Sì.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						701080303
+					]
+				},
+				{
+					"id": 701080303,
+					"content": "Fantastico! Grazie, ora potrò finalmente avere una misura affidabile dell'altezza della montagna.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080304
+					],
+					"speakerTitle": "Esther"
+				},
+				{
+					"id": 701080304,
+					"content": "Oh, e per quanto riguarda il compenso, ho chiesto a Cyrus di mettere insieme qualcosa. Andate da lui, la prossima volta che siete in città.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080305
+					],
+					"speakerTitle": "Esther"
+				},
+				{
+					"id": 701080305,
+					"content": "E, visto che lo vedrete prima di me, potreste anche dargli questa lettera da parte mia? Mi ha promesso di tenermi al corrente su una seconda squadra di esplorazione diretta verso le montagne, ma non ho ancora avuto notizie.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080306
+					],
+					"speakerTitle": "Esther"
+				},
+				{
+					"id": 701080306,
+					"content": "Quando il resto dei miei sensori sarà riparato, dovrò risalire e calibrarli tutti. Ci sono ancora molte cose da rilevare su quella montagna.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Esther"
+				}
+			]
+		},
+		{
+			"id": 7010804,
+			"completionStepIds": [
+				7010805
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7010805",
+							"2"
+						],
+						"stepId": 7010805,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 701080401,
+					"content": "Ciao, come posso aiutarti?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080402
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 701080402,
+					"content": "Ho una lettera per te.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						701080403
+					]
+				},
+				{
+					"id": 701080403,
+					"content": "Una lettera? Oh, è da parte sua. Scommetto che chiede di nuovo della prossima squadra di esplorazione...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080404
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 701080404,
+					"content": "*sospira* Non so che fare. È difficile trovare una squadra disposta ad affrontare la montagna... È troppo pericoloso lassù...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080405
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 701080405,
+					"content": "#Le scriverò una risposta a breve per spiegarle la situazione. Grazie di essere venut{F#e}{M#i} fin qui per portarmi la sua lettera.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080406
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 701080406,
+					"content": "A proposito di lettere, poco tempo fa me ne ha inviata un'altra in cui chiedeva di preparare una ricompensa per voi. Ecco, prendete pure.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080407
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 701080407,
+					"content": "#Un'ultima cosa... So che siete {F#delle tipe toste}{M#dei tipi tosti}, ma fate lo stesso attenzione in montagna.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080410
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 701080410,
+					"content": "Ah, il Picco del Drago... Se mai mi capitasse l'occasione di guidare personalmente una squadra di esploratori lì, la coglierei al volo!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		},
+		{
+			"id": 7010805,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7010803",
+							"2"
+						],
+						"stepId": 7010803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Esther"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 701080501,
+					"content": "Un sensore posizionato proprio sulla vetta ridurrà di certo al minimo il margine di errore nelle mie misurazioni...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Esther"
+				}
+			]
+		},
+		{
+			"id": 7010806,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7010805",
+							"2"
+						],
+						"stepId": 7010805,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Esther"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 701080601,
+					"content": "*sospira* Quando potrò finalmente tornare sulla montagna...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Esther"
+				}
+			]
+		}
+	]
+}

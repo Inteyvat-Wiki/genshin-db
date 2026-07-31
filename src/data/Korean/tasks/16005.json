@@ -1,0 +1,91 @@
+{
+	"id": 16005,
+	"type": "LQ",
+	"name": "막간의 휴식",
+	"description": "마법책이 아직 다음 장의 힌트를 주지 않아 당신은 잠시 쉬었다가 다시 두린을 찾아가기로 한다…",
+	"unlockDescription": "",
+	"chapter": "이야기라는 이름의 마법",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1600501,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1600501,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1600502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "마법책이 다음 장의 힌트를 주길 기다리기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TIME_VAR_PASS_DAY",
+					"rawParams": [
+						16005,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1600031,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1600502",
+							"2"
+						],
+						"stepId": 1600502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"두린"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 160003101,
+					"content": "앨리스 이모 말대로면, 우린 언제든 다시 그 이야기 세계로 들어갈 수 있어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						160003102
+					],
+					"speakerTitle": "두린"
+				},
+				{
+					"id": 160003102,
+					"content": "그곳에 다시 돌아가고 싶어지면, 언제든 나를 찾아와",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "두린"
+				}
+			]
+		}
+	]
+}

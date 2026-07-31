@@ -1,0 +1,234 @@
+{
+	"id": 70816,
+	"type": "WQ",
+	"name": "Одиночное приключение",
+	"description": "Пока неуклюжий Джек наблюдал за монстрами в храме Тысячи ветров, чудовища обнаружили его. Джеку удалось вернуться в Мондштадт, но, кажется, он что-то оставил в храме...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		372
+	],
+	"steps": [
+		{
+			"id": 7081601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Джеком",
+			"finishConditions": []
+		},
+		{
+			"id": 7081602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отыщите вещи Джека у храма Тысячи ветров",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						7081601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7081603,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отыщите вещи Джека у храма Тысячи ветров",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						7081601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7081604,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7081602,
+						3
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7081603,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7081605,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7081604,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7081606,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Вернитесь к Джеку",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7081603,
+						0
+					],
+					"talkId": 7081603
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7081602,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081605",
+							"2"
+						],
+						"stepId": 7081605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Джек"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708160201,
+					"content": "Впредь я буду осмотрительнее...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708160202
+					],
+					"speakerTitle": "Джек"
+				},
+				{
+					"id": 708160202,
+					"content": "Но не чересчур, а то... Эх...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Джек"
+				}
+			]
+		},
+		{
+			"id": 7081603,
+			"completionStepIds": [
+				7081606
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081606",
+							"2"
+						],
+						"stepId": 7081606,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Джек"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708160301,
+					"content": "Ну что, они нашлись?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708160302
+					],
+					"speakerTitle": "Джек"
+				},
+				{
+					"id": 708160302,
+					"content": "Да.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708160303
+					]
+				},
+				{
+					"id": 708160303,
+					"content": "Прекрасно! Эта карта мне стала, как родная. Я нанёс на неё столько отметок, что без неё мне пришлось бы туго.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708160304
+					],
+					"speakerTitle": "Джек"
+				},
+				{
+					"id": 708160304,
+					"content": "А если бы не нашлась моя лицензия, просить Катерину о новой было бы слишком стыдно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708160305
+					],
+					"speakerTitle": "Джек"
+				},
+				{
+					"id": 708160305,
+					"content": "Во время приключения потерять свою лицензию... Вот умора!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708160306
+					],
+					"speakerTitle": "Джек"
+				},
+				{
+					"id": 708160306,
+					"content": "Спасибо, отныне я буду держать их в сохранности. А это тебе, держи.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Джек"
+				}
+			]
+		}
+	]
+}

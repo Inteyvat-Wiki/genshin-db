@@ -1,0 +1,325 @@
+{
+	"id": 70012,
+	"type": "WQ",
+	"name": "Intercambio recíproco",
+	"description": "Vas con Ella Musk a comunicarte con los Hilichurls. Quizás este sea el comienzo de una bonita amistad...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5024,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70022
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7001201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con el Hilichurl",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7001201,
+						0
+					],
+					"talkId": 7001201
+				}
+			]
+		},
+		{
+			"id": 7001202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dale el objeto al Hilichurl",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7001203,
+						0
+					],
+					"talkId": 7001203
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7001204,
+						0
+					],
+					"talkId": 7001204
+				}
+			]
+		},
+		{
+			"id": 7001203,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7001203,
+						0
+					],
+					"talkId": 7001203
+				}
+			]
+		},
+		{
+			"id": 7001204,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7001204,
+						0
+					],
+					"talkId": 7001204
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7001201,
+			"completionStepIds": [
+				7001201
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7001201",
+							"2"
+						],
+						"stepId": 7001201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hilichurl",
+					"Ella Musk"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700120101,
+					"content": "Mi muhe<color=#00E1FFFF> Upano</color>!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700120102
+					],
+					"speakerTitle": "Hilichurl"
+				},
+				{
+					"id": 700120102,
+					"content": "Parece como si quisiera algo...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ella Musk"
+				}
+			]
+		},
+		{
+			"id": 7001202,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7001202",
+							"2"
+						],
+						"stepId": 7001202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7002102"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hilichurl"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700120201,
+					"content": "Mi muhe Upano!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700120202
+					],
+					"speakerTitle": "Hilichurl"
+				},
+				{
+					"id": 700120202,
+					"content": "¿Será esto?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7001203,
+			"completionStepIds": [
+				7001202,
+				7001203
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7001203",
+							"2"
+						],
+						"stepId": 7001203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hilichurl",
+					"Ella Musk"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700120301,
+					"content": "Yeye mimi tomo! Mosi mita!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700120302
+					],
+					"speakerTitle": "Hilichurl"
+				},
+				{
+					"id": 700120302,
+					"content": "Mosi mita!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						700120303
+					]
+				},
+				{
+					"id": 700120303,
+					"content": "Así que era eso... Bien, conseguí verificar otra palabra.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700120304
+					],
+					"speakerTitle": "Ella Musk"
+				},
+				{
+					"id": 700120304,
+					"content": "Du odomu tomo dala?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700120305
+					],
+					"speakerTitle": "Ella Musk"
+				},
+				{
+					"id": 700120305,
+					"content": "Du Wei dala? Mito nye! Mi mito ya zido mito, beru ya!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700120306
+					],
+					"speakerTitle": "Hilichurl"
+				},
+				{
+					"id": 700120306,
+					"content": "Tampoco lo sabe, pero podemos preguntarle a alguien que conozca.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700120307
+					],
+					"speakerTitle": "Ella Musk"
+				},
+				{
+					"id": 700120307,
+					"content": "Marqué en el mapa la ubicación de su amigo. ¿Vamos?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ella Musk"
+				}
+			]
+		},
+		{
+			"id": 7001204,
+			"completionStepIds": [
+				7001202,
+				7001204
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7001204",
+							"2"
+						],
+						"stepId": 7001204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hilichurl"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700120401,
+					"content": "Biadam! Mani nye!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700120402
+					],
+					"speakerTitle": "Hilichurl"
+				},
+				{
+					"id": 700120402,
+					"content": "Creo que eso no era correcto... Intentémoslo de nuevo.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

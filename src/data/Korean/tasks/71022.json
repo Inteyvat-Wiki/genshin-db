@@ -1,0 +1,789 @@
+{
+	"id": 71022,
+	"type": "WQ",
+	"name": "한때 번성했던 땅으론 돌아갈 수 없네",
+	"description": "모험가 길드의 치평이 최근 천주 골짜기에서 일어난 지진과 마물의 수상한 움직임에 대해 조사하고 있는 듯하다…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		309
+	],
+	"steps": [
+		{
+			"id": 7102201,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7102201,
+						0
+					],
+					"talkId": 7102201
+				}
+			]
+		},
+		{
+			"id": 7102202,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7102202,
+						0
+					],
+					"talkId": 7102202
+				}
+			]
+		},
+		{
+			"id": 7102203,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "천주 골짜기의 유적 동굴 가기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7102204,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "「고대 바위 용 도마뱀」 처치하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7102205,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "치평에게 상황 보고하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7102204,
+						0
+					],
+					"talkId": 7102204
+				}
+			]
+		},
+		{
+			"id": 7102206,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7102207,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7102208,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						0,
+						0
+					],
+					"talkId": 0
+				}
+			]
+		},
+		{
+			"id": 7102209,
+			"order": 10,
+			"listShowType": "QUEST_SHOW",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						0,
+						0
+					],
+					"talkId": 0
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						0,
+						0
+					],
+					"talkId": 0
+				}
+			]
+		},
+		{
+			"id": 7102210,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7102201,
+			"completionStepIds": [
+				7102201
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7102206",
+							"2"
+						],
+						"stepId": 7102206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"50004",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_COMMON",
+			"trigger": {
+				"objectNames": [
+					"치평"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 710220101,
+					"content": "이번엔 천주 골짜기인가…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220102
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220102,
+					"content": "무슨 일이에요?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710220103
+					]
+				},
+				{
+					"id": 710220103,
+					"content": "#{NICKNAME}(이)구나. 반가워. 오늘 여기서 만나게 될 줄이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220104
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220104,
+					"content": "음… 혹시 최근에 천주 골짜기나 남천문 일대에 간 적 있니?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220107
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220107,
+					"content": "요새 길드에 남천문에서 천주 골짜기 일대에 지진이 발생했다는 보고가 많이 들어오거든",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220108
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220108,
+					"content": "처음엔 아주 미세했는데 최근 들어 점점 심각해지고 있는 모양이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220109
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220109,
+					"content": "얼마 전에 길드에 또 보고가 들어왔어. 아주 강렬한 지진 이후에 일부 산과 유적이 무너져서 거대한 동굴 하나가 드러났다고",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220110
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220110,
+					"content": "보고에 따르면, 거기서 미지의 마물도 발견됐대. 전에 말썽 피웠던 「바위 용 도마뱀」이나 「고대 바위 용 도마뱀」일지도 몰라…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220111
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220111,
+					"content": "제가 할 일이 있나요?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710220112
+					]
+				},
+				{
+					"id": 710220112,
+					"content": "음, 천주 골짜기에 있는 그 큰 동굴에 가서 지진의 영향을 좀 조사해 줬으면 해",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220113
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220113,
+					"content": "그리고 그 마물들도. 만약 한꺼번에 몰려오면 손 놓고 있을 순 없으니까 빨리 대책을 마련해야 해",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220114
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220114,
+					"content": "물론 이건 길드의 정식 업무니까 완료하면 그에 맞는 보수가 있어. 어때? 해볼래?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220115
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220115,
+					"content": "맡겨 주세요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710220116
+					]
+				},
+				{
+					"id": 710220116,
+					"content": "그럼 부탁할게. 꼭 조심해야 해",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "치평"
+				}
+			]
+		},
+		{
+			"id": 7102202,
+			"completionStepIds": [
+				7102202
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7102206",
+							"3"
+						],
+						"stepId": 7102206,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"50004",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_COMMON",
+			"trigger": {
+				"objectNames": [
+					"치평"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 710220201,
+					"content": "이번엔 천주 골짜기인가…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220202
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220202,
+					"content": "무슨 일이에요?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710220203
+					]
+				},
+				{
+					"id": 710220203,
+					"content": "#{NICKNAME}(이)구나. 반가워. 오늘 여기서 만나게 될 줄이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220204
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220204,
+					"content": "음… 혹시 최근에 천주 골짜기나 남천문 일대에 간 적 있니?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220205
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220205,
+					"content": "요새 길드에 남천문에서 천주 골짜기 일대에 지진이 발생했다는 보고가 많이 들어오거든",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220206
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220206,
+					"content": "처음엔 아주 미세했는데 최근 들어 점점 심각해지고 있는 모양이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220207
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220207,
+					"content": "얼마 전에 길드에 또 보고가 들어왔어. 아주 강렬한 지진 이후에 일부 산과 유적이 무너져서 거대한 동굴 하나가 드러났다고",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220208
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220208,
+					"content": "보고에 따르면, 거기서 미지의 마물도 발견됐대. 전에 말썽 피웠던 「바위 용 도마뱀」이나 「고대 바위 용 도마뱀」일지도 몰라…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220209
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220209,
+					"content": "제가 할 일이 있나요?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710220210
+					]
+				},
+				{
+					"id": 710220210,
+					"content": "음, 천주 골짜기에 있는 그 큰 동굴에 가서 지진의 영향을 좀 조사해 줬으면 해",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220211
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220211,
+					"content": "그리고 그 마물들도. 만약 한꺼번에 몰려오면 손 놓고 있을 순 없으니까 빨리 대책을 마련해야 해",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220212
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220212,
+					"content": "물론 이건 길드의 정식 업무니까 완료하면 그에 맞는 보수가 있어. 어때? 해볼래?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220213
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220213,
+					"content": "응? 표정이 왜 그래? 무슨 일 있어…?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220214
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220214,
+					"content": "거긴 이미 가봤어요…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710220215
+					]
+				},
+				{
+					"id": 710220215,
+					"content": "벌써 가봤다고? 역시 뛰어난 모험가답게 이상 상황에 예민하네",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220216
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220216,
+					"content": "천주 골짜기와 고대 바위 용 도마뱀에 대해…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710220217
+					]
+				},
+				{
+					"id": 710220217,
+					"content": "…거대한 유적 동굴과 그 안에 있는 고대 바위 용 도마뱀이라…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220218
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220218,
+					"content": "대충 이해했어. 정보 고마워. 문서로 정리해서 길드에 정식으로 보고할게",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220219
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220219,
+					"content": "저긴 어떻게 된 거죠?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710220220
+					]
+				},
+				{
+					"id": 710220220,
+					"content": "음… 서적의 기록에 따르면, 천주 골짜기의 유적은 과거 아주 번영한 마을이었다고 해",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220221
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220221,
+					"content": "지금의 모습이 된 건 아마 한 고대 용왕의 분쟁과 관련 있을 거야…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220222
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220222,
+					"content": "그 분쟁에 관한 자세한 기록은 없지만, 전설에 의하면 그 용왕은 제군과 선인들에 의해 선계의 철창에 갇혔다고 해…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220223
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220223,
+					"content": "하지만 그의 권속은 지하로 도망쳐 깊은 잠에 빠진 채 그 고대 용왕이 다시 깨어나길 기다리고 있대",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220224
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220224,
+					"content": "그 마물들, 설마…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710220225
+					]
+				},
+				{
+					"id": 710220225,
+					"content": "하하하, 떠도는 소문일 뿐인데 진짜인지 가짜인지 누가 알겠어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220226
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220226,
+					"content": "그래도 어찌 됐든 지진뿐만 아니라 갑자기 마물들도 나타났으니 빨리 대책을 세우는 게 좋겠어…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220227
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220227,
+					"content": "참, 이 보수를 받아줘. 정보를 알려줘서 고마워",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "치평"
+				}
+			]
+		},
+		{
+			"id": 7102203,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7102201",
+							"3"
+						],
+						"stepId": 7102201,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"치평"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 710220301,
+					"content": "이번엔 천주 골짜기인가…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "치평"
+				}
+			]
+		},
+		{
+			"id": 7102204,
+			"completionStepIds": [
+				7102205
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7102204",
+							"3"
+						],
+						"stepId": 7102204,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"치평"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 710220401,
+					"content": "#{NICKNAME}, 상황은 어때?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220402
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220402,
+					"content": "천주 골짜기와 고대 바위 용 도마뱀에 대해…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710220403
+					]
+				},
+				{
+					"id": 710220403,
+					"content": "…거대한 유적 동굴과, 유달리 날뛰는 마물, 그리고 동굴 속의 바위 용 도마뱀까지…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220404
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220404,
+					"content": "대충 이해했어. 정보 고마워. 문서로 정리해서 길드에 정식으로 보고할게",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220405
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220405,
+					"content": "저긴 어떻게 된 거죠?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710220406
+					]
+				},
+				{
+					"id": 710220406,
+					"content": "음… 서적의 기록에 따르면, 천주 골짜기의 유적은 과거 아주 번영한 마을이었다고 해",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220407
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220407,
+					"content": "지금의 모습이 된 건 아마 한 고대 용왕의 분쟁과 관련 있을 거야…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220408
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220408,
+					"content": "그 분쟁에 관한 자세한 기록은 없지만, 전설에 의하면 그 용왕은 제군과 선인들에 의해 선계의 철창에 갇혔다고 해…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220409
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220409,
+					"content": "하지만 그의 권속은 지하로 도망쳐 깊은 잠에 빠진 채 그 고대 용왕이 다시 깨어나길 기다리고 있대",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220410
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220410,
+					"content": "그 마물들, 설마…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710220411
+					]
+				},
+				{
+					"id": 710220411,
+					"content": "하하하, 떠도는 소문일 뿐인데 진짜인지 가짜인지 누가 알겠어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220412
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220412,
+					"content": "그래도 어찌 됐든 지진뿐만 아니라 갑자기 마물들도 나타났으니 빨리 대책을 세우는 게 좋겠어…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710220413
+					],
+					"speakerTitle": "치평"
+				},
+				{
+					"id": 710220413,
+					"content": "참, 이 보수를 받아줘. 정보를 알려줘서 고마워",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "치평"
+				}
+			]
+		}
+	]
+}

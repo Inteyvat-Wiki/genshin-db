@@ -1,0 +1,185 @@
+{
+	"id": 70704,
+	"type": "WQ",
+	"name": "コナーの醸造材料のリクエスト",
+	"description": "アカツキワイナリーのコナーは烈焔花の花蕊を3つ必要としている。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "烈焔花の花蕊をコナーに3つ渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070401,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070402,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "コナーと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070402,
+						0
+					],
+					"talkId": 7070402
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070401,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070401",
+							"2"
+						],
+						"stepId": 7070401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070401"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"コナー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707040101,
+					"content": "烈焔花の花蕊について…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707040102
+					]
+				},
+				{
+					"id": 707040102,
+					"content": "ああ、俺の依頼だ。君は来るのが速いな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707040103
+					],
+					"speakerTitle": "コナー"
+				},
+				{
+					"id": 707040103,
+					"content": "どうだ、烈焔花の花蕊を3つ集められたか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707040104,
+						707040105
+					],
+					"speakerTitle": "コナー"
+				},
+				{
+					"id": 707040104,
+					"content": "集めて来たよ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707040105,
+					"content": "まだ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707040106
+					]
+				},
+				{
+					"id": 707040106,
+					"content": "それなら、集め終えたら急いで持って来てくれ。醸造に必要なんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "コナー"
+				}
+			]
+		},
+		{
+			"id": 7070402,
+			"completionStepIds": [
+				7070402
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070402",
+							"2"
+						],
+						"stepId": 7070402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"コナー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707040201,
+					"content": "よし、十分な量がある。これをやろう。手助けに感謝する。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707040202
+					],
+					"speakerTitle": "コナー"
+				},
+				{
+					"id": 707040202,
+					"content": "このような材料で作った酒が特別かどうかは分からないが…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707040203
+					],
+					"speakerTitle": "コナー"
+				},
+				{
+					"id": 707040203,
+					"content": "醸造の工程は俺にとって忘れられないものになるだろう…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "コナー"
+				}
+			]
+		}
+	]
+}

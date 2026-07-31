@@ -1,0 +1,370 @@
+{
+	"id": 19031,
+	"type": "LQ",
+	"name": "Plötzliches Unbehagen",
+	"description": "Chongyun und du stellen sich der Probe des Mutes, doch als ihr die bösen Geister verfolgt, erlebt Chongyun plötzlich einen Anstieg instabiler Yang-Energie und muss sich ausruhen. Damit er nicht die Kontrolle verliert, sucht ihr nach einem Mittel, um seine Yang-Lastikeit zu unterdrücken ...",
+	"unlockDescription": "",
+	"chapter": "Aufspüren böser Geister",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		19032,
+		19035
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1903101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						103601,
+						1903109
+					]
+				}
+			]
+		},
+		{
+			"id": 1903102,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Finde Kryo-Vaniloqua-Nektar.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_CLEAR_GROUP_MONSTER",
+					"rawParams": [
+						133102915,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1903103,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Finde Schleimabsonderung.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_CLEAR_GROUP_MONSTER",
+					"rawParams": [
+						133102916,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1903104,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Unterhalte dich mit den Arbeitern.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1903102,
+						0
+					],
+					"talkId": 1903102
+				}
+			]
+		},
+		{
+			"id": 1903105,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						103601,
+						1903110
+					]
+				}
+			]
+		},
+		{
+			"id": 1903106,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Unterhalte dich mit den Arbeitern.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1903102,
+						0
+					],
+					"talkId": 1903102
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1903101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1903105",
+							"3"
+						],
+						"stepId": 1903105,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Chongyun"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 190310101,
+					"content": "Entschuldige nochmal die Umstände ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190310102
+					],
+					"speakerTitle": "Chongyun"
+				},
+				{
+					"id": 190310102,
+					"content": "Sei einfach vorsichtig beim Sammeln der Zutaten ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Chongyun"
+				}
+			]
+		},
+		{
+			"id": 1903102,
+			"completionStepIds": [
+				1903104,
+				1903106
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1903104",
+							"2"
+						],
+						"stepId": 1903104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1903106",
+							"2"
+						],
+						"stepId": 1903106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Fu San’er"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 1903102101,
+					"content": "Es ist gefährlich, hier alleine herumzulaufen, oder?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102102
+					],
+					"speakerTitle": "Fu San’er"
+				},
+				{
+					"id": 1903102102,
+					"content": "Du weißt nicht, wem ... oder was du begegnen könntest.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102103,
+						1903102104
+					],
+					"speakerTitle": "Fu San’er"
+				},
+				{
+					"id": 1903102103,
+					"content": "...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102105
+					]
+				},
+				{
+					"id": 1903102105,
+					"content": "Hmm, du kommst mir ziemlich ruhig vor. Wie heißt es so schön? Deine Schuhe bleiben nicht trocken, wenn du an einem Fluss entlangläufst.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102106
+					],
+					"speakerTitle": "Fu San’er"
+				},
+				{
+					"id": 1903102106,
+					"content": "An so einem unheimlichen Ort ist es praktisch unmöglich, nicht auf etwas zu stoßen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102107
+					],
+					"speakerTitle": "Fu San’er"
+				},
+				{
+					"id": 1903102107,
+					"content": "Und deine Begegnung könnte zu einem Albtraum werden, der dich bis ans Ende deiner Tage verfolgt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102108,
+						1903102109
+					],
+					"speakerTitle": "Fu San’er"
+				},
+				{
+					"id": 1903102108,
+					"content": "Oh, wirklich?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102110
+					]
+				},
+				{
+					"id": 1903102110,
+					"content": "Hä? Warum bist du so ruhig? Normalerweise laufen die Leute panisch weg, bevor ich überhaupt einen Satz beenden kann.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102111,
+						1903102114
+					],
+					"speakerTitle": "Fu San’er"
+				},
+				{
+					"id": 1903102111,
+					"content": "Für mich siehst du aus wie ein ganz normaler Mensch.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102112
+					]
+				},
+				{
+					"id": 1903102112,
+					"content": "Ja, aber man spielt einen Geist besser, wenn man eine unheimliche Atmosphäre schafft, die den Menschen das Fürchten lehrt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102113
+					],
+					"speakerTitle": "Fu San’er"
+				},
+				{
+					"id": 1903102113,
+					"content": "Dann ist es nämlich egal, wie ich aussehe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102117
+					],
+					"speakerTitle": "Fu San’er"
+				},
+				{
+					"id": 1903102117,
+					"content": "Außerdem werde ich nie in der Lage sein, jemandem wie dir einen Schrecken einzujagen, der sowieso nicht an Geister glaubt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102118
+					],
+					"speakerTitle": "Fu San’er"
+				},
+				{
+					"id": 1903102118,
+					"content": "Für mich klingt das, als wärst du einfach nur faul.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102119
+					]
+				},
+				{
+					"id": 1903102119,
+					"content": "He, das stimmt nicht! Oh, ich zieh lieber los und suche ein paar Feiglinge zum Erschrecken.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102120
+					],
+					"speakerTitle": "Fu San’er"
+				},
+				{
+					"id": 1903102120,
+					"content": "Du solltest zu deinem Partner zurückkehren. Bestimmt ist er mittlerweile schon ganz außer sich vor Angst.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Fu San’er"
+				},
+				{
+					"id": 1903102114,
+					"content": "Hast du kein Kostüm oder so?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102115
+					]
+				},
+				{
+					"id": 1903102115,
+					"content": "Schon, aber darin schwitze ich immer so ... außerdem spielt man einen Geist besser, wenn man eine unheimliche Atmosphäre schafft, die den Menschen das Fürchten lehrt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102116
+					],
+					"speakerTitle": "Fu San’er"
+				},
+				{
+					"id": 1903102116,
+					"content": "Dann ist es nämlich egal, wie ich aussehe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102117
+					],
+					"speakerTitle": "Fu San’er"
+				},
+				{
+					"id": 1903102109,
+					"content": "Tut mir leid, ich steh wohl auf der Leitung ... Was machst du hier?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102110
+					]
+				},
+				{
+					"id": 1903102104,
+					"content": "Hallo.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102105
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,167 @@
+{
+	"id": 74655,
+	"type": "WQ",
+	"name": "Stok Susu untuk Paban",
+	"description": "Paban perlu 8 botol Milk.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7465501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Berikan 8 botol Milk ke Paban",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7465501,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7465502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Paban",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7465502,
+						0
+					],
+					"talkId": 7465502
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7465501,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465501",
+							"2"
+						],
+						"stepId": 7465501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7465501"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paban"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746550101,
+					"content": "Tentang susu ....",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746550102
+					]
+				},
+				{
+					"id": 746550102,
+					"content": "Oh, minat jadi pemasok?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746550103
+					],
+					"speakerTitle": "Paban"
+				},
+				{
+					"id": 746550103,
+					"content": "Sampelnya ada? Sini, kasih aku.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746550106,
+						746550104
+					],
+					"speakerTitle": "Paban"
+				},
+				{
+					"id": 746550106,
+					"content": "Sudah ada.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 746550104,
+					"content": "Belum nih.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746550105
+					]
+				},
+				{
+					"id": 746550105,
+					"content": "Cepatlah, bukan cuma kamu yang minat jadi pemasok loh.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paban"
+				}
+			]
+		},
+		{
+			"id": 7465502,
+			"completionStepIds": [
+				7465502
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465502",
+							"2"
+						],
+						"stepId": 7465502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paban"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746550201,
+					"content": "Baiklah. Ini bayarannya, sudah termasuk ongkos kerja juga. Nanti aku kabari kalau sudah ada keputusan ya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paban"
+				}
+			]
+		}
+	]
+}

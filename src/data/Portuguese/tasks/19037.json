@@ -1,0 +1,159 @@
+{
+	"id": 19037,
+	"type": "LQ",
+	"name": "Depois da Cortina Fechar",
+	"description": "Yunjin foi até um local perigoso enquanto buscava por inspiração, e estaria encrencada se não fosse por você. Para lhe agradecer, ela concorda em lhe encontrar após sua performance...",
+	"unlockDescription": "",
+	"chapter": "Canção de Graças",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		19038,
+		19040
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1903701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Espere a performance terminar para se encontrar (20:00 — 23:00 do dia seguinte)",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						1,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1903702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Vá para a Casa de Chá Heyu procurar por Yunjin",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						106401,
+						1903701
+					]
+				}
+			]
+		},
+		{
+			"id": 1903703,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Vá para o andar de baixo da Casa de Chá Heyu",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1903703,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1903704,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com a jornalista",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						106401,
+						19037021
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						106401,
+						19037022
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1903751,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1903702",
+							"2"
+						],
+						"stepId": 1903702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1903703",
+							"2"
+						],
+						"stepId": 1903703,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Shiyun",
+					"Boyi"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 190375101,
+					"content": "Uau, Srta. Yun...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190375102
+					],
+					"speakerTitle": "Shiyun"
+				},
+				{
+					"id": 190375102,
+					"content": "Qual é o nosso ângulo aqui... Hmm...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190375103
+					],
+					"speakerTitle": "Boyi"
+				},
+				{
+					"id": 190375103,
+					"content": "A performance da Srta. Yun foi incrível! Especialmente a dança com as fitas. Você viu...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190375104
+					],
+					"speakerTitle": "Shiyun"
+				},
+				{
+					"id": 190375104,
+					"content": "Uh, sim, claro que sim... mas como faço para colocar isso em um artigo?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Boyi"
+				}
+			]
+		}
+	]
+}

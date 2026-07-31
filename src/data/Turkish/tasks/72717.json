@@ -1,0 +1,158 @@
+{
+	"id": 72717,
+	"type": "WQ",
+	"name": "Kozue'nin Demir İşi",
+	"description": "Narukami Adası'ndan Kozue'nin 10 adet Demir Parçasına ihtiyacı var.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7271701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Kozue'ye on adet Demir Parçası ver.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7271701,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7271702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Kozue ile konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7271702,
+						0
+					],
+					"talkId": 7271702
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7271701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271701",
+							"2"
+						],
+						"stepId": 7271701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7271701"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kozue"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727170101,
+					"content": "Demir Parçası isteyen sen miydin?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727170102
+					]
+				},
+				{
+					"id": 727170102,
+					"content": "Görev ilanım için mi geldin? Öyleyse çoktan 10 adet Demir Parçası toplamışsındır diye düşünüyorum.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727170105,
+						727170103
+					],
+					"speakerTitle": "Kozue"
+				},
+				{
+					"id": 727170105,
+					"content": "İşte buradalar.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 727170103,
+					"content": "Daha toplamadım.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727170104
+					]
+				},
+				{
+					"id": 727170104,
+					"content": "Tamam. Hadi git de toplayıp gel.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kozue"
+				}
+			]
+		},
+		{
+			"id": 7271702,
+			"completionStepIds": [
+				7271702
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271702",
+							"2"
+						],
+						"stepId": 7271702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kozue"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727170201,
+					"content": "Hımm... Tam da 10 tane var. Kısa sürede bunları Taroumaru'ya veririm.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kozue"
+				}
+			]
+		}
+	]
+}

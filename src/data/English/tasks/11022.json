@@ -1,0 +1,788 @@
+{
+	"id": 11022,
+	"type": "LQ",
+	"name": "A Ruin Under Lock and Key",
+	"description": "The expedition to investigate Osial in the Guyun Stone Forest came away with slim pickings. Kliment and Wanyan also clashed vociferously over their differing perspectives, which has greatly displeased the former. During the argument, he heard Wanyan mention the tale of the God of Salt, and decided to take the party there to try their luck, lest he finishes this venture empty-handed.",
+	"unlockDescription": "",
+	"chapter": "Sal Flore",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		11023
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1102201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to Sal Terrae",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1102201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1102202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to the people",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1102202,
+						0
+					],
+					"talkId": 1102202
+				}
+			]
+		},
+		{
+			"id": 1102203,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Look for a spot from which the picture formed by the relics can be seen",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1102203,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1102204,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Follow Zhongli's instructions and light the monuments up",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1102205,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1102206,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to the site of the broken seal",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1102206,
+						0
+					],
+					"talkId": 1102206
+				}
+			]
+		},
+		{
+			"id": 1102207,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to the second mechanism",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1102207,
+						0
+					],
+					"talkId": 1102207
+				}
+			]
+		},
+		{
+			"id": 1102208,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to the first mechanism",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1102208,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1102209,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1102209,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1102108,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1102106",
+							"3"
+						],
+						"stepId": 1102106,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1102201",
+							"2"
+						],
+						"stepId": 1102201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Wanyan",
+					"Kliment"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110210801,
+					"content": "Argh! You're simply a money-grubber!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110210802
+					],
+					"speakerTitle": "Wanyan"
+				},
+				{
+					"id": 110210802,
+					"content": "And what are you then? All you think about is digging up valuable relics every day!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110210803
+					],
+					"speakerTitle": "Kliment"
+				},
+				{
+					"id": 110210803,
+					"content": "They're still arguing? Ugh... let's not bother them...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 1102202,
+			"completionStepIds": [
+				1102202
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1102202",
+							"2"
+						],
+						"stepId": 1102202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Zhongli"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110220201,
+					"content": "I heard that Sal Terrae was once the home of the God of Salt's people. Therefore... hehehe. There are sure to be loads of valuable relics nearby.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220202
+					],
+					"speakerTitle": "Kliment"
+				},
+				{
+					"id": 110220202,
+					"content": "According to legend, the people of the God of Salt, Havria, enjoyed prosperous lives under her protection.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220203
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 110220203,
+					"content": "But this legend has been around for ages. With the countless scrap collectors and Treasure Hoarders in the area, there probably aren't many valuable things left here.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220204
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 110220204,
+					"content": "Gah, that's just great... If I knew it was picked this clean before, I wouldn't have come.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220205
+					],
+					"speakerTitle": "Kliment"
+				},
+				{
+					"id": 110220205,
+					"content": "About that, I know there's a ruin deep in this cave here. It's related to the God of Salt, which is actually how the area originally got its name of Sal Terrae.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220206
+					],
+					"speakerTitle": "Wanyan"
+				},
+				{
+					"id": 110220206,
+					"content": "However, the ruin entrance has been sealed by a mysterious power. Nobody has been able to break the seal.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220223
+					],
+					"speakerTitle": "Wanyan"
+				},
+				{
+					"id": 110220223,
+					"content": "I found a mechanism that seemed to be related to the seal. But when I undid the mechanism, the seal wasn't affected at all.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220207
+					],
+					"speakerTitle": "Wanyan"
+				},
+				{
+					"id": 110220207,
+					"content": "So at the moment, the seal's origin and how to break it are very important topics in my research on the God of Salt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220208,
+						110220209
+					],
+					"speakerTitle": "Wanyan"
+				},
+				{
+					"id": 110220208,
+					"content": "Is it related to the God of Salt's people?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110220210
+					]
+				},
+				{
+					"id": 110220210,
+					"content": "I don't know, there's no concrete evidence. But I'm pretty sure the seal is meant to hide some kind of long-forgotten truth.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220211
+					],
+					"speakerTitle": "Wanyan"
+				},
+				{
+					"id": 110220211,
+					"content": "The God of Salt was a benevolent god adored by the people, not to mention powerful. She wouldn't have any kind of shameful secrets to hide.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220212
+					],
+					"speakerTitle": "Wanyan"
+				},
+				{
+					"id": 110220212,
+					"content": "So... the one who wants to hide some truth is very possibly her killer, Morax.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220213
+					],
+					"speakerTitle": "Wanyan"
+				},
+				{
+					"id": 110220213,
+					"content": "This doesn't sound like something the Lord of Geo would do, though...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220214
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110220214,
+					"content": "Who cares about all that? It sounds like countless treasures of the God of Salt lie within this ruin, just waiting for someone to find them, right!?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220215
+					],
+					"speakerTitle": "Kliment"
+				},
+				{
+					"id": 110220215,
+					"content": "You weren't listening at all, were you? Argh... Even if there's a mountain of treasures inside, nobody can get in if the seal isn't broken.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220216
+					],
+					"speakerTitle": "Wanyan"
+				},
+				{
+					"id": 110220216,
+					"content": "Ah, but we have the illustrious Mr. Zhongli with us! He looks like he knows just about everything — a little seal shouldn't be any trouble for him.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220217
+					],
+					"speakerTitle": "Kliment"
+				},
+				{
+					"id": 110220217,
+					"content": "This seal seems to be quite ancient. Even Mr. Zhongli may not know all of its secrets...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220218
+					],
+					"speakerTitle": "Wanyan"
+				},
+				{
+					"id": 110220218,
+					"content": "I may know something about it.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220219
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 110220219,
+					"content": "Wh—What!?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220220
+					],
+					"speakerTitle": "Wanyan"
+				},
+				{
+					"id": 110220220,
+					"content": "Over the years, I've heard various rumors with bits of knowledge about seals. Although their references seem rather disorderly, they do in fact contain the secret to breaking seals.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220221
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 110220221,
+					"content": "Let's go take a look at the mechanism Miss Wanyan just mentioned.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220222
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 110220222,
+					"content": "Okay, since Mr. Zhongli says so... Follow me, then.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Wanyan"
+				},
+				{
+					"id": 110220209,
+					"content": "Is it related to Rex Lapis?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110220210
+					]
+				}
+			]
+		},
+		{
+			"id": 1102206,
+			"completionStepIds": [
+				1102206
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1102206",
+							"2"
+						],
+						"stepId": 1102206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Zhongli"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110220601,
+					"content": "Before entering the ruin, I have a proposal that will help us prevent the kind of senseless arguing between you two that we saw at Guyun Stone Forest.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220602
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 110220602,
+					"content": "Okay, what is it?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220603
+					],
+					"speakerTitle": "Wanyan"
+				},
+				{
+					"id": 110220603,
+					"content": "I propose you two agree upon a contract, stipulating that we alternate who gets claim to each treasure we encounter, with only one object permitted per claim.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220604
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 110220604,
+					"content": "To show my sincerity, I won't be taking any treasure — this will just be between you all.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220605
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 110220605,
+					"content": "I won't take any either.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110220606
+					]
+				},
+				{
+					"id": 110220606,
+					"content": "Hey! Don't pass an opportunity like this up so easily!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220607
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110220607,
+					"content": "I don't agree! I mean... You want me to split the treasure with this amateur archaeologist? No, absolutely not!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220608
+					],
+					"speakerTitle": "Kliment"
+				},
+				{
+					"id": 110220608,
+					"content": "I don't agree either! Hmph, he will only defile the precious relics left behind by the God of Salt! I—I can't accept this.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220609
+					],
+					"speakerTitle": "Wanyan"
+				},
+				{
+					"id": 110220609,
+					"content": "Well then... If the contract is not agreed upon, I will no longer serve as your consultant on this expedition.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220610
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 110220610,
+					"content": "You will have to rely on your own experience to find whatever treasures are hidden in this ruin, as well as traps.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220611
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 110220611,
+					"content": "Y—You have the audacity to demand this... Okay then. Even half of the treasure in the long-sealed ruin of the God of Salt should be enough to make a fortune.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220612
+					],
+					"speakerTitle": "Kliment"
+				},
+				{
+					"id": 110220612,
+					"content": "If you want me to agree upon this contract, so be it... I just have one request, Mr. Zhongli.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220613
+					],
+					"speakerTitle": "Wanyan"
+				},
+				{
+					"id": 110220613,
+					"content": "If we discover the truth behind the God of Salt, you must judge it fairly, even if the truth harms Morax's image.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220614
+					],
+					"speakerTitle": "Wanyan"
+				},
+				{
+					"id": 110220614,
+					"content": "I can accept this arrangement.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220615
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 110220615,
+					"content": "Well then, let's go.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Zhongli"
+				}
+			]
+		},
+		{
+			"id": 1102207,
+			"completionStepIds": [
+				1102207
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1102207",
+							"2"
+						],
+						"stepId": 1102207,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Zhongli"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110220701,
+					"content": "This place seems familiar... Ah, I remember! I think there's some elemental monuments here — so you're saying they're related to all this?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220702
+					],
+					"speakerTitle": "Wanyan"
+				},
+				{
+					"id": 110220702,
+					"content": "When I investigated this seal last time, I had someone with a Vision accompany me.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220703
+					],
+					"speakerTitle": "Wanyan"
+				},
+				{
+					"id": 110220703,
+					"content": "But when we lit up all the elemental monuments, nothing happened...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220704
+					],
+					"speakerTitle": "Wanyan"
+				},
+				{
+					"id": 110220704,
+					"content": "That's because you don't just need to activate them at the same time, but in a certain order as well. Otherwise, the seal will not be broken.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220705
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 110220705,
+					"content": "The secret to this puzzle is hidden in the legends about the Archon War.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220706
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 110220706,
+					"content": "\"Tianheng in the <color=#00E1FFFF>south</color>, Yaoguang in the <color=#00E1FFFF>east</color>, Jueyun in the <color=#00E1FFFF>west</color>, Qingce in the <color=#00E1FFFF>north</color> — All desolate and devoid of life. Liyue is vast, yet even one haven is hard to find.\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220707
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 110220707,
+					"content": "To the north... to the east... Do the people of Liyue always talk in riddles?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220708
+					],
+					"speakerTitle": "Kliment"
+				},
+				{
+					"id": 110220708,
+					"content": "I—I think I've heard this saying before!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220709
+					],
+					"speakerTitle": "Wanyan"
+				},
+				{
+					"id": 110220709,
+					"content": "Certainly you have, and the contents of this saying are also related to the God of Salt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220710
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 110220710,
+					"content": "To provide a haven for her people, whose lives had been ravaged by the Archon War, this benevolent god searched all across Liyue.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220711
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 110220711,
+					"content": "At that time, with the chaotic fires of war engulfing the land, even one sliver of peace was a luxury.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220712
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 110220712,
+					"content": "And that haven she eventually found is right here. Today, it is known as Sal Terrae.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220713
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 110220713,
+					"content": "How sad then... In the end, this peaceful place was destroyed by Morax.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220714
+					],
+					"speakerTitle": "Wanyan"
+				},
+				{
+					"id": 110220714,
+					"content": "Okay, enough with these ancient stories. Now that we have the clue, hurry up and break the seal! Whatever happened doesn't matter as long as we can get inside that ruin!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220715
+					],
+					"speakerTitle": "Kliment"
+				},
+				{
+					"id": 110220715,
+					"content": "#Now think, {NICKNAME}, <color=#00E1FFFF>\"Tianheng in the south, Yaoguang in the east, Jueyun in the west, Qingce in the north.\"</color>",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220716
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 110220716,
+					"content": "With this clue, you should be able to solve the puzzle.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Zhongli"
+				}
+			]
+		}
+	]
+}

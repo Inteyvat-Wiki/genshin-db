@@ -1,0 +1,299 @@
+{
+	"id": 20013,
+	"type": "IQ",
+	"name": "ทางตันเหรอ?",
+	"description": "Jack กำลังมุ่งไปยังสถานที่ผจญภัยแห่งใหม่ แต่ว่าระหว่างทางที่ Drunkard Gorge ก็มีอุปสรรค เขาถูกเหล่า Hilichurl เข้าล้อมโจมตี จัดการ Hilichurl เพื่อช่วย Jack",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2001301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "ไปข้างหน้าเพื่อตรวจสอบรายละเอียด",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001302,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "จัดการอสูรโดยรอบ",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "กำจัดมอนสเตอร์ทั้งหมดและทำลายสิ่งกีดขวาง",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "พูดคุยกับ Jack",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001303,
+						0
+					],
+					"talkId": 2001303
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2001301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001302",
+							"2"
+						],
+						"stepId": 2001302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200130101,
+					"content": "เร็วเข้า ช่วยฉันด้วย!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				}
+			]
+		},
+		{
+			"id": 2001302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001302",
+							"3"
+						],
+						"stepId": 2001302,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001303",
+							"2"
+						],
+						"stepId": 2001303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200130201,
+					"content": "เธอเองเหรอนักเดินทาง ขอบคุณมาก ๆ เลยนะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130202
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130202,
+					"content": "เธอช่วยฉันอีกหน่อยจะได้มั้ย...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130203
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130203,
+					"content": "สิ่งกีดขวางบนถนนนี้กำลังขัดขวางการผจญภัยของฉัน....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130204
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130204,
+					"content": "เธอช่วยจัดการกับสิ่งกีดขวางนี้หน่อยได้มั้ย?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130205,
+						200130206
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130205,
+					"content": "ไม่มีปัญหา",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200130207
+					]
+				},
+				{
+					"id": 200130207,
+					"content": "โอ้ว ถ้าฉันเป็นได้อย่างเธอ ก็คงจะได้เป็นยอดนักผจญภัยไปตั้งนานแล้ว",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130206,
+					"content": "ยังมีเรื่องอื่นต้องทำน่ะ",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200130208
+					]
+				},
+				{
+					"id": 200130208,
+					"content": "อย่าอย่างนั้นสิ เส้นทางสู้การเป็นยอดนักผจญภัยของฉันจะมาหยุดอยู่ที่นี่ไม่ได้ ช่วยฉันหน่อยเถอะนะ!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				}
+			]
+		},
+		{
+			"id": 2001303,
+			"completionStepIds": [
+				2001304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001304",
+							"2"
+						],
+						"stepId": 2001304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200130301,
+					"content": "ขอบคุณมาก ๆ เลยนะ นักเดินทาง",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130302
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130302,
+					"content": "ตอนแรกฉันอยากจะไปดูจุดที่คุณ Stanley ไปผจญภัยมา แต่ดันมาเจอเจ้าพวกนี้เข้ากลางทางซะก่อน",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130303
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130303,
+					"content": "ฉันยังแข็งแกร่งไม่พอ ถ้าเป็นคุณ Stanley ล่ะก็ จะต้องจัดการเจ้าพวกนั้นได้แน่",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130304
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130304,
+					"content": "ถ้ายอมร่วมผจญภัยกับฉันล่ะก็...แต่ก็ช่างเถอะ จะไปเอาแต่พึ่งคนอื่นคงไม่ดี",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130305
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130305,
+					"content": "ฉันจะไปข้างหน้าต่อละ อันนี้ให้เธอ ฉันเก็บได้เพียบเลยระหว่างทางเพื่อทำอาหารแห้ง...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130306
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130306,
+					"content": "แต่ว่า นี่คงเรียก \"อาหารแห้ง\" ไม่ได้มั้ง",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				}
+			]
+		}
+	]
+}

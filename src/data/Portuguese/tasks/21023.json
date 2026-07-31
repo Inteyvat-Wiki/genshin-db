@@ -1,0 +1,190 @@
+{
+	"id": 21023,
+	"type": "WQ",
+	"name": "Medidas Provisórias",
+	"description": "Algo está errado com a escada do Albergue Wangshu, e foi fechado para reparos. Subir até o topo agora é um grande problema...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2102301,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102301,
+						0
+					],
+					"talkId": 2102301
+				}
+			]
+		},
+		{
+			"id": 2102302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dirija o elevador",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2102303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com Huai'an",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102302,
+						0
+					],
+					"talkId": 2102302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2102302,
+			"completionStepIds": [
+				2102303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102303",
+							"2"
+						],
+						"stepId": 2102303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102301",
+							"3"
+						],
+						"stepId": 2102301,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Huai'an"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210230201,
+					"content": "Temos que nos apressar a consertar...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230202
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230202,
+					"content": "Você é o gerente?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210230203
+					]
+				},
+				{
+					"id": 210230203,
+					"content": "Sou eu! Em que posso ajudar?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230204
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230204,
+					"content": "Uma pessoa lá embaixo nos pediu para entregar esse pacote para você.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230205
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 210230205,
+					"content": "Oh, deve ser enviado por um cliente... Por que o Zhen Qiang não entregou pessoalmente?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230206
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230206,
+					"content": "Ainda tinha muitas mercadorias para receber? Ha, aposto que ele estava com preguiça de subir e descer...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230207
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230207,
+					"content": "Eu realmente sinto muito. Você é um convidado nosso e as escadas tiveram que estar quebradas justo neste momento. Estou encontrando uma maneira de consertá-la enquanto falamos.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230208
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230208,
+					"content": "E pensar que nós o fizemos ter o trabalho de trazer este pacote até aqui em cima para mim. Aqui, tome isto como um sinal do meu apreço.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230209
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230209,
+					"content": "Isso era originalmente para o Zhen Qiang, mas como ele mandou você entregar por ele, então o pagamento é seu por direito.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230210
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230210,
+					"content": "Então, eu vou continuar a preparação do conserto das escadas. Fique à vontade para dar uma volta pelo albergue. Se você precisar de qualquer coisa, me chame a qualquer hora!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Huai'an"
+				}
+			]
+		}
+	]
+}

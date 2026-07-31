@@ -1,0 +1,274 @@
+{
+	"id": 70821,
+	"type": "WQ",
+	"name": "После бури...",
+	"description": "После исцеления Двалина доступ к логову Ужаса Бури восстановлен. Вагнер хотел бы отправиться туда на поиски кристальной руды...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		396
+	],
+	"steps": [
+		{
+			"id": 7082101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Вагнером",
+			"finishConditions": []
+		},
+		{
+			"id": 7082102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Разведайте месторождения кристальной руды у логова Ужаса Бури",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1177,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Разведайте месторождения кристальной руды у логова Ужаса Бури",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1181,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Разведайте месторождения кристальной руды у логова Ужаса Бури",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1182,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082105,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Соберите 3 обломка кристаллов",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101003,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082106,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте обломки кристаллов Вагнеру",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7082102,
+						0
+					],
+					"talkId": 7082102
+				}
+			]
+		},
+		{
+			"id": 7082107,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7082107,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082108,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7082108,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7082102,
+			"completionStepIds": [
+				7082106
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082106",
+							"2"
+						],
+						"stepId": 7082106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Вагнер"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708210201,
+					"content": "#Ну как, ты собрал{F#а} кристальную руду?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708210202
+					],
+					"speakerTitle": "Вагнер"
+				},
+				{
+					"id": 708210202,
+					"content": "#Да, собрал{F#а}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708210203
+					]
+				},
+				{
+					"id": 708210203,
+					"content": "Дай взглянуть... Да, куски прямо-таки знатные.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708210204
+					],
+					"speakerTitle": "Вагнер"
+				},
+				{
+					"id": 708210204,
+					"content": "Вот, это плата за труд.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708210205
+					],
+					"speakerTitle": "Вагнер"
+				},
+				{
+					"id": 708210205,
+					"content": "Значит, ураганы у логова Ужаса Бури и в самом деле прекратились... Надо бы сходить и посмотреть.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Вагнер"
+				}
+			]
+		},
+		{
+			"id": 7082106,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082102",
+							"2"
+						],
+						"stepId": 7082102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082103",
+							"2"
+						],
+						"stepId": 7082103,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082104",
+							"2"
+						],
+						"stepId": 7082104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082105",
+							"2"
+						],
+						"stepId": 7082105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Вагнер"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708210601,
+					"content": "Насчёт руды...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708210602
+					]
+				},
+				{
+					"id": 708210602,
+					"content": "У меня ещё столько работы... Давай, вперёд и с песней!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Вагнер"
+				}
+			]
+		}
+	]
+}

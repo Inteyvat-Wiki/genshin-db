@@ -1,0 +1,617 @@
+{
+	"id": 70506,
+	"type": "WQ",
+	"name": "Dandelion, Rose, dan Windwheel Aster",
+	"description": "\"Mimpi apa aku semalam sampai hari ini melihat Grand Master Jean datang ke kedai?\" \"Santai, dia kan Grand Master yang lagi kita obrolkan. Lagian, dia tidak mungkin pergi ke kedai kalau di luar sedang ada urusan yang sangat penting.\"",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70507
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Luka dan masuk ke Tavern",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050602,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Raciklah minuman yang ditentukan untuk Lisa",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050602,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050603,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Raciklah minuman yang ditentukan untuk Jean",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050603,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050604,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Berikan minumannya kepada Lisa dan Jean",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050602,
+						0
+					],
+					"talkId": 7050602
+				}
+			]
+		},
+		{
+			"id": 7050605,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Lisa dan Jean",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050601,
+						0
+					],
+					"talkId": 7050601
+				}
+			]
+		},
+		{
+			"id": 7050606,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Pergi ke bar dan selesaikan persiapan bisnis",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050601,
+			"completionStepIds": [
+				7050605
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050605",
+							"2"
+						],
+						"stepId": 7050605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050602",
+							"2"
+						],
+						"stepId": 7050602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050603",
+							"2"
+						],
+						"stepId": 7050603,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lisa",
+					"Jean"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705060101,
+					"content": "Halo, Manis. Senang sekali bisa ketemu kamu di sini.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060102
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060102,
+					"content": "Rasanya aneh juga bisa bertemu kalian di tempat seperti ini. Tapi seperti kata Lisa, senang berjumpa dengan kalian.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060103
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060103,
+					"content": "Hei, apa maksudnya \"tempat seperti ini\"? Kedai kan tempat yang cocok sekali buat santai dan istirahat sejenak.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060104
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060104,
+					"content": "*huff* Kalian tahu tidak betapa susahnya membujuk Master Jean untuk meninggalkan kursinya?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060105
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060105,
+					"content": "Kami baru juga duduk di sini beberapa menit, dan mukanya sudah risau begitu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060106
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060106,
+					"content": "Huh, Lisa ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060107
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060107,
+					"content": "Yah, Knights of Favonius kan memangnya banyak urusan ....",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060108
+					]
+				},
+				{
+					"id": 705060108,
+					"content": "Iya! Ini kita lagi ngomongin Master Jean loh! Wajar dong kalau tugasnya bejibun!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060109
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705060109,
+					"content": "Tapi kan kata orang juga \"mumpung sudah di sini\" ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060110
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705060110,
+					"content": "Minta dia bikin minuman saja buat kalian berdua! Pasti enak loh. Mau?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060111
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705060111,
+					"content": "Anggap saja salah satu cara bersantai.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060112
+					]
+				},
+				{
+					"id": 705060112,
+					"content": "Kalau mau ngomong jujur, cuma Jean satu-satunya orang yang kukenal, yang perlu diajari caranya \"bersantai\".",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060113
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060113,
+					"content": "Manis, bikinin aku Love Poem porsi sedang yah. Sedikit manis ya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060114
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060114,
+					"content": "Dan kamu Jean ... Mau pesan apa?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060115
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060115,
+					"content": "Aku ... kopi saja. Porsi sedang ya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060116
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060116,
+					"content": "Master Jean minum kopi setiap hari, kan? Yakin enggak mau coba yang lain?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060117
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705060117,
+					"content": "Terima kasih, tapi aku butuh sesuatu untuk membuatku tetap terjaga.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060118
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060118,
+					"content": "Oke, tunggu sebentar ya.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060119
+					]
+				},
+				{
+					"id": 705060119,
+					"content": "Terima kasih.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jean"
+				}
+			]
+		},
+		{
+			"id": 7050602,
+			"completionStepIds": [
+				7050604
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050604",
+							"2"
+						],
+						"stepId": 7050604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lisa",
+					"Jean"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705060201,
+					"content": "Mmm ... manisnya pas. Nikmat.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060202
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060202,
+					"content": "Kopinya pekat dan kental, pahitnya juga pas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060203
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060203,
+					"content": "Yang penting kalian berdua puas.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060204
+					]
+				},
+				{
+					"id": 705060204,
+					"content": "Sebenarnya aku paham maksud Lisa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060205
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060205,
+					"content": "Oh?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060206
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060206,
+					"content": "Aku memang instrospeksi diri baru-baru ini. Masih banyak ruang untuk belajar mengatasi kelemahanku dan meningkatkan kinerja serta kemampuan manajemenku ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060207
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060207,
+					"content": "Aku khawatir tekanan yang kurasakan bahkan mulai bisa kamu rasakan pengaruhnya ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060208
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060208,
+					"content": "Kurasa kamu masih belum paham deh maksudnya ....",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060209
+					]
+				},
+				{
+					"id": 705060209,
+					"content": "Lah?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060210
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060210,
+					"content": "Hehe, tuh kan? Manis ngerti, kan?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060211
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060211,
+					"content": "Kamu kerja terlalu keras, makanya aku ajak kamu keluar minum. Aku cuma ingin kamu senang-senang.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060212
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060212,
+					"content": "Tapi bahkan sudah di dalam kedai pun kamu masih saja mikirin soal kerjaan. Itu kan yang bikin orang jadi prihatin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060213
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060213,
+					"content": "Kalau kamu stres terus, lama-lama kamu bisa tumbang loh.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060214
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060214,
+					"content": "Yup, betul.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060215
+					]
+				},
+				{
+					"id": 705060215,
+					"content": "#Oh ... {NICKNAME} juga setuju sama Lisa?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060216
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060216,
+					"content": "Hmm, jadi intinya ... tantangan terbesarku itu belajar bagaimana caranya bersantai?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060217
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060217,
+					"content": "Biar aku kutip ungkapan Liyue deh: \"Semuanya harus seimbang\".",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060218
+					]
+				},
+				{
+					"id": 705060218,
+					"content": "Betul betul betul! Kerja sekeras-kerasnya, main sekuat-kuatnya, tidur sepuas-puasnya, harus lengkap semua! Kalian berdua mungkin perlu lebih banyak istirahat dari yang kalian pikir loh!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060219
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705060219,
+					"content": "Omonganmu barusan ... agak aneh, tapi ada hikmahnya juga.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060220
+					]
+				},
+				{
+					"id": 705060220,
+					"content": "Hihihi ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060221
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060221,
+					"content": "Baiklah, a-aku mengerti.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060222
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060222,
+					"content": "Terima kasih ya, semuanya. Sekarang aku jadi tahu kalau tempat ini bagus untuk mengistirahatkan baik tubuh maupun pikiran. Jadi ini ya kenapa kamu dan Kaeya suka sekali ke sini?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060223
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060223,
+					"content": "Iya dan tidak. Tergantung siapa yang jadi bartendernya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060224
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060224,
+					"content": "Dan tentunya, hari ini Jean tidak akan berubah pikiran kalau bukan karena kamu, Manis. Kamu memang pintar ngomong ya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060225,
+						705060226
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060225,
+					"content": "Ah, tidak kok.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060227
+					]
+				},
+				{
+					"id": 705060227,
+					"content": "Hehe, kalau gitu sampai ketemu lagi ya~",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060228
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060228,
+					"content": "Akan kupertimbangkan untuk datang kemari dan bersantai sejenak kalau ada kesempatan di lain waktu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060229
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060229,
+					"content": "Bagus! Hati-hati di jalan!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705060226,
+					"content": "Senang bisa membantu.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060227
+					]
+				}
+			]
+		}
+	]
+}

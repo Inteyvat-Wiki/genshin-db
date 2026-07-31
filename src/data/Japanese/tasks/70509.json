@@ -1,0 +1,550 @@
+{
+	"id": 70509,
+	"type": "WQ",
+	"name": "汚れ無き秋霜",
+	"description": "「いま通った白髪の女性、璃月の仙人なんじゃないか？」 「いや、どうだろう。あんたはどう思う？」 「俺も分からないな…」",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70503,
+		70508
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050901,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "ルカと会話し、酒場に入る",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050901,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050902,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "申鶴に指定ドリンクを作る",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050902,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050903,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "ドリンクを申鶴に渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050902,
+						0
+					],
+					"talkId": 7050902
+				}
+			]
+		},
+		{
+			"id": 7050904,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "申鶴と会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050901,
+						0
+					],
+					"talkId": 7050901
+				}
+			]
+		},
+		{
+			"id": 7050905,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "カウンターに行って、営業の準備をする",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7050305,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050901,
+			"completionStepIds": [
+				7050904
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050904",
+							"2"
+						],
+						"stepId": 7050904,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050902",
+							"2"
+						],
+						"stepId": 7050902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"申鶴"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705090101,
+					"content": "二人とも、元気にしてたか。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090102
+					],
+					"speakerTitle": "申鶴"
+				},
+				{
+					"id": 705090102,
+					"content": "おう！ふぅ、友達がこんなに続けて何人も来てなかったら、きっと今回も驚いてたとこ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090103
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705090103,
+					"content": "って、申鶴！？や、やっぱり驚いたぞ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090104
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705090104,
+					"content": "うむ…ここまで来るのは実に大変だった。「エンジェルズシェア」…名前も言いにくい。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090105
+					],
+					"speakerTitle": "申鶴"
+				},
+				{
+					"id": 705090105,
+					"content": "ここに辿り着けたのも、熱心な鍾離殿が道案内してくれたおかげだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090106
+					],
+					"speakerTitle": "申鶴"
+				},
+				{
+					"id": 705090106,
+					"content": "道案内を…ってことは、もしかしてわざわざ飲み物を飲みに来てくれたのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090107
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705090107,
+					"content": "ああ、そうだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090108
+					],
+					"speakerTitle": "申鶴"
+				},
+				{
+					"id": 705090108,
+					"content": "その、友人…だからな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090109
+					],
+					"speakerTitle": "申鶴"
+				},
+				{
+					"id": 705090109,
+					"content": "何が飲みたい？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090110
+					]
+				},
+				{
+					"id": 705090110,
+					"content": "ほら、メニューはこれだ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090111
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705090111,
+					"content": "北風の望み…北風とは、ひんやりとしているということか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090112
+					],
+					"speakerTitle": "申鶴"
+				},
+				{
+					"id": 705090112,
+					"content": "えっと、この北風って、たぶん北風{RUBY#[D]ボレアス}の狼のことだよな？寒いと言えば…たしかに寒いけど…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090113
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705090113,
+					"content": "マツカサキャラメル…松なのに飲めるのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090114
+					],
+					"speakerTitle": "申鶴"
+				},
+				{
+					"id": 705090114,
+					"content": "あっ、それならオイラも飲んだことあるぞ。キャラメル味のコーヒーだ。マツカサは…えーっと、色のことだと思うぞ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090115
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705090115,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090116
+					],
+					"speakerTitle": "申鶴"
+				},
+				{
+					"id": 705090116,
+					"content": "名前を見ただけでは、まったく想像がつかない。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090117
+					],
+					"speakerTitle": "申鶴"
+				},
+				{
+					"id": 705090117,
+					"content": "ここは主らに任せよう。清心や琉璃袋のような…そういった味のものを頼む。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090118
+					],
+					"speakerTitle": "申鶴"
+				},
+				{
+					"id": 705090118,
+					"content": "えっと、そういう薬草はここじゃ育たないんだ。もし苦いのが飲みたいなら、コーヒーくらいしか…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090119
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705090119,
+					"content": "なら、甘いものはどう？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090120
+					]
+				},
+				{
+					"id": 705090120,
+					"content": "…うむ、任せよう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090121
+					],
+					"speakerTitle": "申鶴"
+				},
+				{
+					"id": 705090121,
+					"content": "そうだな、ずっと修行してきたんだし、また違う味を試してみるのも悪くないと思うぞ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090122
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705090122,
+					"content": "申鶴には深雪の口づけを作ってやろうぜ！こいつにぴったしの名前だしな！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "パイモン"
+				}
+			]
+		},
+		{
+			"id": 7050902,
+			"completionStepIds": [
+				7050903
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050903",
+							"2"
+						],
+						"stepId": 7050903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"申鶴"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705090201,
+					"content": "甘くて、口当たりがよく、苦味がまったくない。これは何という飲み物だ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090202
+					],
+					"speakerTitle": "申鶴"
+				},
+				{
+					"id": 705090202,
+					"content": "「深雪の口づけ」って言うんだ！まるで雪が降り積もったみたいな飲み物だろ。これは牛乳を泡立てて、ふわふわになった部分を飲み物の上にかけてるからなんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090203
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705090203,
+					"content": "口づけってつけた理由は…オイラもよくわからないけど…たぶん、売れるためにお店側が考えた名前だと思うぞ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090204
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705090204,
+					"content": "ふむ、そうすることで売れるのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090205
+					],
+					"speakerTitle": "申鶴"
+				},
+				{
+					"id": 705090205,
+					"content": "えっ？た、たぶんそうかな？オイラの想像でしかないけど…その…ロマンティックな言い方だろ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090206
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705090206,
+					"content": "ロマン…ティック…？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090207
+					],
+					"speakerTitle": "申鶴"
+				},
+				{
+					"id": 705090207,
+					"content": "うぅ…説明するのが難しい！オ、オイラの頭じゃ、これが限界だ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090208,
+						705090209
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705090208,
+					"content": "この泡状になった牛乳にはあまり味がない…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090210
+					]
+				},
+				{
+					"id": 705090210,
+					"content": "そうそう…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090211,
+						705090212
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705090211,
+					"content": "ジュースを飲んだ瞬間に甘みを感じるはず…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090213
+					]
+				},
+				{
+					"id": 705090213,
+					"content": "…ふむ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090214
+					],
+					"speakerTitle": "申鶴"
+				},
+				{
+					"id": 705090214,
+					"content": "そうか…分かったような気がする。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090215
+					],
+					"speakerTitle": "申鶴"
+				},
+				{
+					"id": 705090215,
+					"content": "えっ？ええ！？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090216
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705090216,
+					"content": "待て待て、なんで今のでわかるんだ！今度はオイラがわからなくなってきたぞ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090217
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705090217,
+					"content": "我が山を歩く時、時々仙草を口にすることがある。芽が地面から出てくる瞬間も、この目で見たことがある光景だ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090218
+					],
+					"speakerTitle": "申鶴"
+				},
+				{
+					"id": 705090218,
+					"content": "心を揺さぶるこの感覚は…たしかに、あの瞬間のものに似ている。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090219
+					],
+					"speakerTitle": "申鶴"
+				},
+				{
+					"id": 705090219,
+					"content": "感謝する…おかげで、このような難解な名について理解することが出来た。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090220
+					],
+					"speakerTitle": "申鶴"
+				},
+				{
+					"id": 705090220,
+					"content": "これからも主に迷惑をかけるかもしれないが、よろしく頼む。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "申鶴"
+				},
+				{
+					"id": 705090212,
+					"content": "芽が氷を砕き、口づけをしたかのような…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090213
+					]
+				},
+				{
+					"id": 705090209,
+					"content": "まるで山頂に深く積もった雪のよう…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090210
+					]
+				}
+			]
+		}
+	]
+}

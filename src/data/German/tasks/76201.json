@@ -1,0 +1,514 @@
+{
+	"id": 76201,
+	"type": "WQ",
+	"name": "Botanische Forschung – Nachtschattenblume",
+	"description": "Auch in Gebieten im Norden von Nasha, wo das Kuuvahki deutlich schwächer ist, wachsen Nachtschattenblumen ...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7620101,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7620101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7620102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Geh an den angegebenen Ort und beginne mit der Untersuchung.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7620101,
+						0
+					],
+					"talkId": 7620101
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					1825.854,
+					209.632,
+					9564.927
+				],
+				"pointId": 15872
+			}
+		},
+		{
+			"id": 7620103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sammle Nachtschattenblumen.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						121546,
+						0
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					1815.74,
+					214.932,
+					9584.25
+				],
+				"pointId": 15873
+			}
+		},
+		{
+			"id": 7620104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Vesa.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7620102,
+						0
+					],
+					"talkId": 7620102
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7620101,
+			"completionStepIds": [
+				7620102
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7620102",
+							"2"
+						],
+						"stepId": 7620102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PLAYER_CURRENT_AVATAR",
+						"rawParams": [
+							"10000130",
+							"0",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 762010101,
+					"content": "Die Vorbereitungen für die Untersuchung sind schnell getroffen ...",
+					"roleType": "TALK_ROLE_NEED_CLICK_BLACK_SCREEN",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7620102,
+			"completionStepIds": [
+				7620104
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7620104",
+							"2"
+						],
+						"stepId": 7620104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Vesa",
+					"Metta"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							1819.919,
+							212.139,
+							9583.548
+						],
+						"pointId": 16326
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							1821.29,
+							212.391,
+							9584.688
+						],
+						"pointId": 16327
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							1819.141,
+							212.557,
+							9587.804
+						],
+						"pointId": 16474
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							1818.338,
+							212.534,
+							9585.296
+						],
+						"pointId": 16475
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 762010201,
+					"content": "... Metta, du bist gemein. Ich wollte doch nur, dass du beim Abenteuer Spaß hast. Warum musst du so was sagen und mir die Laune verderben? Uuuh ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010202
+					],
+					"speakerTitle": "Vesa"
+				},
+				{
+					"id": 762010202,
+					"content": "Wenn du deine Angewohnheit, ständig deiner Laune nach zu handeln, nicht ablegst, werden die anderen dich auch nicht mehr aushalten.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010203
+					],
+					"speakerTitle": "Metta"
+				},
+				{
+					"id": 762010203,
+					"content": "Das ist doch keine Laune, ich ... ich habe auch meine eigenen Pläne ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010204
+					],
+					"speakerTitle": "Vesa"
+				},
+				{
+					"id": 762010204,
+					"content": "Pläne also ... Hm.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010205
+					],
+					"speakerTitle": "Metta"
+				},
+				{
+					"id": 762010205,
+					"content": "Du nimmst mich schon wieder nicht ernst ... Ich rede nie wieder mit dir! Bereuen hilft dir später auch nichts mehr.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010206
+					],
+					"speakerTitle": "Vesa"
+				},
+				{
+					"id": 762010206,
+					"content": "... Ah, Linnea! Hör mir zu, Metta, sie ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010207
+					],
+					"speakerTitle": "Vesa"
+				},
+				{
+					"id": 762010207,
+					"content": "Du hörst Vesa zu, wie er stockend erzählt, was passiert ist. Es schien nur ein gewöhnlicher kleiner Streit unter Kindern zu sein ...",
+					"roleType": "TALK_ROLE_NEED_CLICK_BLACK_SCREEN",
+					"nextDialogs": [
+						762010208
+					]
+				},
+				{
+					"id": 762010208,
+					"content": "Egal wie man es dreht und wendet, ich bin nicht schuld.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010209
+					],
+					"speakerTitle": "Metta"
+				},
+				{
+					"id": 762010209,
+					"content": "Dann ... Dann habe ich auch nichts falsch gemacht! Linnea ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010210
+					],
+					"speakerTitle": "Vesa"
+				},
+				{
+					"id": 762010210,
+					"content": "Hm ... Manchmal passieren solche Dinge tatsächlich. Obwohl niemand einen Fehler gemacht hat, ist das Ergebnis leider enttäuschend.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010211
+					],
+					"speakerTitle": "Linnea"
+				},
+				{
+					"id": 762010211,
+					"content": "Richtig, so wie die Geschichte der Schwestern der Nachkommen des Frostmonds, für die die Nachtschattenblume steht.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010212
+					],
+					"speakerTitle": "Linnea"
+				},
+				{
+					"id": 762010212,
+					"content": "Die Geschichte der Schwestern?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010213
+					],
+					"speakerTitle": "Vesa"
+				},
+				{
+					"id": 762010213,
+					"content": "Nun, es heißt, unter den Nachkommen des Frostmonds gab es einst zwei Schwestern. Sie waren grundverschieden, wie eine rote und eine blaue Nachtschattenblume.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010214
+					],
+					"speakerTitle": "Linnea"
+				},
+				{
+					"id": 762010214,
+					"content": "Die beiden Schwestern taten, was sie jeweils für richtig hielten, doch genau deswegen trennten sich ihre Wege.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010215
+					],
+					"speakerTitle": "Linnea"
+				},
+				{
+					"id": 762010215,
+					"content": "Es heißt, die kleine Schwester habe ihrer großen Schwester nie verziehen, dass sie sie verlassen hat. Obwohl die große Schwester danach viele Leben gerettet hat ... haben sich die beiden bis zu ihrem Tod nie wiedergesehen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010216
+					],
+					"speakerTitle": "Linnea"
+				},
+				{
+					"id": 762010216,
+					"content": "Über die Nachkommen des Frostmonds existieren also auch noch solche Geschichten ... Davon habe ich noch nie gehört.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010217
+					],
+					"speakerTitle": "Metta"
+				},
+				{
+					"id": 762010217,
+					"content": "Ich auch nicht.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010218
+					],
+					"speakerTitle": "Vesa"
+				},
+				{
+					"id": 762010218,
+					"content": "Ich habe sie auch nur von einem Barden gehört, vielleicht ist einiges davon etwas ausgeschmückt ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010219
+					],
+					"speakerTitle": "Linnea"
+				},
+				{
+					"id": 762010219,
+					"content": "Oh, die Geschichte ist also erfunden.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010220
+					],
+					"speakerTitle": "Metta"
+				},
+				{
+					"id": 762010220,
+					"content": "Ach komm schon. Selbst wenn die Geschichte erfunden ist, so stimmt die Moral doch trotzdem, oder?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010221
+					],
+					"speakerTitle": "Linnea"
+				},
+				{
+					"id": 762010221,
+					"content": "Keine von beiden sah sich im Unrecht. Beide waren fest davon überzeugt, dass ihre Entscheidung richtig war. Doch ihre Entscheidungen führten auch dazu, dass sie einander für immer verloren.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010222
+					],
+					"speakerTitle": "Linnea"
+				},
+				{
+					"id": 762010222,
+					"content": "Wenn ihr, um zu beweisen, dass ihr recht habt, einen Freund verlieren müsstet ... wie würdet ihr euch entscheiden?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010223
+					],
+					"speakerTitle": "Linnea"
+				},
+				{
+					"id": 762010223,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010224
+					],
+					"speakerTitle": "Vesa"
+				},
+				{
+					"id": 762010224,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010225
+					],
+					"speakerTitle": "Metta"
+				},
+				{
+					"id": 762010225,
+					"content": "Hach, eigentlich sind so kleine, spontane Zwischenfälle auf einem Abenteuer auch nicht schlecht.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010226
+					],
+					"speakerTitle": "Metta"
+				},
+				{
+					"id": 762010226,
+					"content": "... Ja! Wenn ich es mir recht überlege, ist die Zeit, die du für unsere Abenteuer hast, sehr kostbar. Wenn ich meine Ideen ständig ändere, erleben wir am Ende vielleicht gar nichts ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010227
+					],
+					"speakerTitle": "Vesa"
+				},
+				{
+					"id": 762010227,
+					"content": "Nächstes Mal ... Nächstes Mal werde ich es besser planen!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010228
+					],
+					"speakerTitle": "Vesa"
+				},
+				{
+					"id": 762010228,
+					"content": "Hehe, es ist wirklich das Beste, wenn ihr euch wieder vertragt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010229
+					],
+					"speakerTitle": "Linnea"
+				},
+				{
+					"id": 762010229,
+					"content": "Wenn ich später mit Vesa auf Abenteuer gehe und wir ungewöhnliche Steine finden, bringen wir sie zum „Speranza“.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010230
+					],
+					"speakerTitle": "Metta"
+				},
+				{
+					"id": 762010230,
+					"content": "Super! Dann danke ich euch schon mal.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Linnea"
+				}
+			]
+		},
+		{
+			"id": 7620103,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7620102",
+							"2"
+						],
+						"stepId": 7620102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PLAYER_CURRENT_NOT_AVATAR",
+						"rawParams": [
+							"10000130",
+							"0",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 762010301,
+					"content": "(In der Nähe scheint es etwas zu geben, das es sich zu untersuchen lohnt. <color=#FFCC33FF>Linnea</color> kennt sich mit der lokalen Ökologie gut aus. Wenn ich sie frage, finde ich vielleicht etwas heraus ...)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

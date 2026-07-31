@@ -1,0 +1,302 @@
+{
+	"id": 11004,
+	"type": "LQ",
+	"name": "고대의 선물",
+	"description": "유적에 거대한 얼음 나무가 있다는 걸 들은 향릉은 이에 흥미를 느끼고 지하 유적으로 뛰어들어간다. 향릉이 위험에 빠질까 걱정된 여행자 일행은 그녀를 따라 유적에 들어간다",
+	"unlockDescription": "",
+	"chapter": "몬드 먹거리 여행",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		11005
+	],
+	"prevMainQuestList": [
+		11003
+	],
+	"steps": [
+		{
+			"id": 1100401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "유적에 들어간 향릉 쫓아가기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_DUNGEON",
+					"rawParams": [
+						1010,
+						125
+					]
+				}
+			]
+		},
+		{
+			"id": 1100402,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "유적 깊은 곳에 들어가 식자재 찾기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1100403,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "향릉과 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1100403,
+						0
+					],
+					"talkId": 1100403
+				}
+			]
+		},
+		{
+			"id": 1100498,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(거대한 서리꽃에 부딪침, 운전)",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1100498,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1100499,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(던전에서 제1 전투구역의 적을 처치한 후, 운전)",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1100403,
+			"completionStepIds": [
+				1100403
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100403",
+							"2"
+						],
+						"stepId": 1100403,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"향릉"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110040301,
+					"content": "얼음 나무, 얼음 나무, 맛있는~ 얼음 나무~",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040302
+					],
+					"speakerTitle": "향릉"
+				},
+				{
+					"id": 110040302,
+					"content": "얼음 나무~",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040303,
+						110040305
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 110040303,
+					"content": "너무 흥이 넘치는 거 아냐, 페이몬",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110040304
+					]
+				},
+				{
+					"id": 110040304,
+					"content": "그건 네가 너무 고지식해서 그래! 희귀한 식자재를 얻는 것보다 더 기쁜 일이 또 어딨다고?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040307
+					],
+					"speakerTitle": "향릉"
+				},
+				{
+					"id": 110040307,
+					"content": "어, 여기에 뭐가 또 있어!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040308
+					],
+					"speakerTitle": "향릉"
+				},
+				{
+					"id": 110040308,
+					"content": "이게 바로 사냥꾼 아저씨가 말했던 멧돼지 아닐까?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040309
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 110040309,
+					"content": "근데 이런 무늬는 처음 봐…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040310
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 110040310,
+					"content": "이 무늬 어디서 본 적 있어! 어디였더라…. 아, 맞다… 《리월 풍물지》!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040311
+					],
+					"speakerTitle": "향릉"
+				},
+				{
+					"id": 110040311,
+					"content": "이 무늬… 맞아, 확실해! 멸종된 지 300년도 더 된 멧돼지야!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040312
+					],
+					"speakerTitle": "향릉"
+				},
+				{
+					"id": 110040312,
+					"content": "엥?! 그렇게 오래됐는데, 어떻게 아직도 살아 있는 거지?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040313,
+						110040315
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 110040313,
+					"content": "얼어붙어서겠지",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110040314
+					]
+				},
+				{
+					"id": 110040314,
+					"content": "일리 있어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040317
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 110040317,
+					"content": "이 멧돼지는 너무 맛있어서 무분별한 사냥으로 인해 멸종됐다고 책에 적혀있었어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040318
+					],
+					"speakerTitle": "향릉"
+				},
+				{
+					"id": 110040318,
+					"content": "얼음 나무와 멧돼지, 귀한 식자재를 두 개나 얻었어!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040319
+					],
+					"speakerTitle": "향릉"
+				},
+				{
+					"id": 110040319,
+					"content": "이제 이긴 거나 마찬가지야",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110040320
+					]
+				},
+				{
+					"id": 110040320,
+					"content": "응, 이제 샘물 마을로 돌아가자!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "향릉"
+				},
+				{
+					"id": 110040315,
+					"content": "수명이 긴 건 아닐까?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110040316
+					]
+				},
+				{
+					"id": 110040316,
+					"content": "길어도 너무 길잖아!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040317
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 110040305,
+					"content": "얼음 나무~",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110040306
+					]
+				},
+				{
+					"id": 110040306,
+					"content": "하하하, 왜 너희가 부르면 어색할까?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040307
+					],
+					"speakerTitle": "향릉"
+				}
+			]
+		}
+	]
+}

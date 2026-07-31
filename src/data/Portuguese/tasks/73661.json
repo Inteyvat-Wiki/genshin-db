@@ -1,0 +1,176 @@
+{
+	"id": 73661,
+	"type": "WQ",
+	"name": "Condimentos para Jahan",
+	"description": "Jahan da Cidade de Sumeru precisa de cinco frascos de Açúcar.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7366101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dê cinco frascos de Açúcar para Jahan",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7366101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7366102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com Jahan",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7366102,
+						0
+					],
+					"talkId": 7366102
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7366101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7366101",
+							"2"
+						],
+						"stepId": 7366101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7366101"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jahan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 736610101,
+					"content": "Sobre o Açúcar",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						736610102
+					]
+				},
+				{
+					"id": 736610102,
+					"content": "Ah, você está aqui para entregar o Açúcar, não é?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736610103
+					],
+					"speakerTitle": "Jahan"
+				},
+				{
+					"id": 736610103,
+					"content": "Você conseguiu todos os cinco frascos de Açúcar?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736610107,
+						736610104
+					],
+					"speakerTitle": "Jahan"
+				},
+				{
+					"id": 736610107,
+					"content": "Aqui estão",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 736610104,
+					"content": "Ainda não.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						736610105
+					]
+				},
+				{
+					"id": 736610105,
+					"content": "Quanto mais açúcar, melhor. Fico feliz quando como doces. Haha.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736610106
+					],
+					"speakerTitle": "Jahan"
+				},
+				{
+					"id": 736610106,
+					"content": "Mas não coma tanto quanto eu. Eu não posso ser responsabilizado por problemas em seus dentes.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jahan"
+				}
+			]
+		},
+		{
+			"id": 7366102,
+			"completionStepIds": [
+				7366102
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7366102",
+							"2"
+						],
+						"stepId": 7366102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jahan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 736610201,
+					"content": "Comida doce, aqui vou eu! Haha.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jahan"
+				}
+			]
+		}
+	]
+}

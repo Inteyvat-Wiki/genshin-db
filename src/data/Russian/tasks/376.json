@@ -1,0 +1,920 @@
+{
+	"id": 376,
+	"type": "AQ",
+	"name": "Погоня",
+	"description": "План Венти по похищению Небесной лиры сработал идеально. Ну... почти идеально. Когда лира уже буквально была в ваших руках, незнакомец забрал её у вас прямо из-под носа. Шум привлёк внимание стражников, и вам пришлось спасаться бегством.",
+	"unlockDescription": "",
+	"chapter": "Горькие слёзы",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		377
+	],
+	"prevMainQuestList": [
+		375
+	],
+	"steps": [
+		{
+			"id": 37601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Сбегите из собора",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1031,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Используйте потоки ветра, чтобы скрыться от погони",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1070,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37603,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37604,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Спрячьтесь в таверне",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_ROOM",
+					"rawParams": [
+						1009,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37605,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Ответьте на вопросы Дилюка",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37604,
+						0
+					],
+					"talkId": 37604
+				}
+			]
+		},
+		{
+			"id": 37606,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Спрячьтесь на втором этаже таверны",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1034,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37607,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37606,
+						0
+					],
+					"talkId": 37606
+				}
+			]
+		},
+		{
+			"id": 37608,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Дилюком",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37607,
+						0
+					],
+					"talkId": 37607
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 37604,
+			"completionStepIds": [
+				37605
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37604",
+							"3"
+						],
+						"stepId": 37604,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37605",
+							"2"
+						],
+						"stepId": 37605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Дилюк"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3760401,
+					"content": "Господин Дилюк, вот выручка за эту неделю.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760402
+					],
+					"speakerTitle": "Чарльз"
+				},
+				{
+					"id": 3760402,
+					"content": "Хм... Бедствие серьёзно повлияло на бизнес.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760403
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760403,
+					"content": "Я надеюсь, что всё это безумие скоро прекратится.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760404
+					],
+					"speakerTitle": "Чарльз"
+				},
+				{
+					"id": 3760404,
+					"content": "Хозяин! ...Мы бы не хотели сидеть у всех на виду.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760405
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3760405,
+					"content": "На втором этаже всегда меньше людей.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760406
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760406,
+					"content": "Хм. Ты же бард. Разве ты не хочешь быть в центре внимания?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760407
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760407,
+					"content": "Ха-ха! Давайте договоримся о платном выступлении на следующий раз.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760408
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3760408,
+					"content": "Приглядывай за ними. Этот бард выглядит подозрительно. Я пока наведу кое-какие справки.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760409
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760409,
+					"content": "У кого?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760410
+					],
+					"speakerTitle": "Чарльз"
+				},
+				{
+					"id": 3760410,
+					"content": "У защитников Мондштадта.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Дилюк"
+				}
+			]
+		},
+		{
+			"id": 37605,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37606",
+							"2"
+						],
+						"stepId": 37606,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Дилюк"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3760411,
+					"content": "Все ещё на первом этаже? Я думал, вы спешите.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Дилюк"
+				}
+			]
+		},
+		{
+			"id": 37606,
+			"completionStepIds": [
+				37607
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37606",
+							"3"
+						],
+						"stepId": 37606,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37607",
+							"2"
+						],
+						"stepId": 37607,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Дилюк"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3760601,
+					"content": "Ах, господин Дилюк, вы не видели здесь двух воришек?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760602
+					],
+					"speakerTitle": "Отто"
+				},
+				{
+					"id": 3760602,
+					"content": "Что произошло? Откуда эта толпа?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760603
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760603,
+					"content": "Разве вы не слышали, господин Дилюк? Два вора пытались украсть Небесную лиру!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760604
+					],
+					"speakerTitle": "Майлз"
+				},
+				{
+					"id": 3760604,
+					"content": "Хм. Неужели...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760605
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760605,
+					"content": "На этой лире играл сам Анемо Архонт. Это бесценное сокровище!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760606
+					],
+					"speakerTitle": "Майлз"
+				},
+				{
+					"id": 3760606,
+					"content": "Зачем похищать то, что нельзя продать? В моих погребах можно найти много более простой наживы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760607
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760607,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760608
+					],
+					"speakerTitle": "Отто"
+				},
+				{
+					"id": 3760608,
+					"content": "Простите, это не относится к делу. Эти двое побежали в ту сторону.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760609
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760609,
+					"content": "Так точно! Спасибо, господин Дилюк!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Майлз"
+				}
+			]
+		},
+		{
+			"id": 37607,
+			"completionStepIds": [
+				37608
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37607",
+							"3"
+						],
+						"stepId": 37607,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37608",
+							"2"
+						],
+						"stepId": 37608,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Дилюк"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3760701,
+					"content": "Можно мне стаканчик...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760702
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3760702,
+					"content": "Верни на место бутылку, которую ты украл.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760703
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760703,
+					"content": "...чего-нибудь холодненького.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760704
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3760704,
+					"content": "Хорошо. А сейчас вы ответите на мои вопросы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760705
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760705,
+					"content": "Я всё возмещу! Я дам бесплатное представление!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760706
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3760706,
+					"content": "Я говорю не о деньгах. Ты выглядишь слишком молодо, чтобы пить вино.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760707
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760708,
+					"content": "Как насчёт того, чтобы ответить на мой вопрос?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3760709
+					]
+				},
+				{
+					"id": 3760710,
+					"content": "Кто это?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3760711
+					]
+				},
+				{
+					"id": 3760707,
+					"content": "Об этом не переживайте. Я старше, чем выгляжу.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760708,
+						3760710
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3760709,
+					"content": "Ты про него спрашиваешь?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760711
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3760711,
+					"content": "Это <color=#00E1FFFF>господин Дилюк</color>, хозяин этой таверны.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760712
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3760712,
+					"content": "Его имя знакомо каждому жителю Мондштадта. Кстати, вино из одуванчиков здесь просто отменное.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760713
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3760713,
+					"content": "Хотя обычно мне хватает денег только на пару бокалов...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760714
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3760714,
+					"content": "Стражники рассказали мне о ворах.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760715
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760715,
+					"content": "Я восхищён вашей отвагой. Не каждый рискнёт украсть Небесную лиру.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760716
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760716,
+					"content": "Хоть вы и идиоты, но редкие смельчаки.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760717
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760717,
+					"content": "Мы ничего не украли! Лиру забрал кто-то другой!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760718
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 3760718,
+					"content": "У нас тут новоиспечённый рыцарь Ордо Фавониус. Как же столь благородная особа может быть замешана в краже?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760719
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3760719,
+					"content": "Рыцарь? Так это ты...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760720
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760721,
+					"content": "Не такие уж и близкие.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3760723
+					]
+				},
+				{
+					"id": 3760722,
+					"content": "#Я только однажды слышал{F#а}, как он поёт.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3760723
+					]
+				},
+				{
+					"id": 3760720,
+					"content": "Значит, вы с бардом близкие друзья?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760721,
+						3760722
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760723,
+					"content": "#Несмотря на то, что ты не отсюда, ты помог{F#ла} нашему городу в трудную минуту.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760724
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760724,
+					"content": "#Ты слишком хорош{F#а} для Ордо Фавониус.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760725
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760725,
+					"content": "Рыцари слишком осторожны, они боятся сразиться с Ужасом Бури.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760726
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760726,
+					"content": "В переговорах с <color=#00E1FFFF>Фатуи</color> они тоже не показывают особых успехов.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760727
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760727,
+					"content": "Впрочем, я не хочу об этом сейчас говорить.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760728
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760728,
+					"content": "Похоже, вам не очень нравится Ордо Фавониус, господин Дилюк.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760729
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3760729,
+					"content": "У нас с ними разные подходы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760730
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760730,
+					"content": "Я вижу развитие города по-своему.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760731
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760731,
+					"content": "Теперь скажите мне. Зачем вам Небесная лира?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760732
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760732,
+					"content": "Вы уверены, что хотите знать? Возможно, у вас будут проблемы с рыцарями.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760733
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3760733,
+					"content": "Для рыцарей я и так одна большая проблема.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760734
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760734,
+					"content": "Тогда позвольте мне поведать эту историю в песне.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760735
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3760735,
+					"content": "Хм. Ну, давай.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760736
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760736,
+					"content": "Тогда... Вы мне заплатите?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760737
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3760737,
+					"content": "Оплата от пяти моры до Небесной лиры. Зависит от твоей истории.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760738
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760738,
+					"content": "Отлично. Представление начинается...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760739
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3760739,
+					"content": "То, что я сейчас услышал...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760740
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760740,
+					"content": "Это секретная информация. Почему ты решил довериться мне?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760741
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760741,
+					"content": "Почему? Хм. Может быть, ветер поменял своё направление.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760742
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3760742,
+					"content": "Что скажете, господин Дилюк?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760743
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3760743,
+					"content": "Интересно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760744
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760744,
+					"content": "Дайте мне немного времени. Мне нужно связаться кое с кем.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760745
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760745,
+					"content": "Как член ордена, ты вне подозрений.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760746
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760746,
+					"content": "В описании Похитителей значатся только светлые волосы, тебе нечего бояться.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760747
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760747,
+					"content": "А что касается барда... Будет лучше, если он останется в таверне.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760748
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760748,
+					"content": "Без проблем. Мне нравится в таверне.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760749
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3760749,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760750
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3760750,
+					"content": "Увидимся здесь после закрытия.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760751
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 4820221,
+					"content": "Следуй за <color=#00E1FFFF>метками</color> до самого финиша.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820222
+					],
+					"speakerTitle": "Эмбер"
+				}
+			]
+		}
+	]
+}

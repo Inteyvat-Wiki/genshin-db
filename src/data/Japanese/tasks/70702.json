@@ -1,0 +1,176 @@
+{
+	"id": 70702,
+	"type": "WQ",
+	"name": "コナーの醸造材料のリクエスト",
+	"description": "アカツキワイナリーのコナーは小麦を10個必要としている。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "小麦をコナーに10個渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "コナーと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070202,
+						0
+					],
+					"talkId": 7070202
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070201",
+							"2"
+						],
+						"stepId": 7070201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070201"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"コナー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707020101,
+					"content": "小麦について…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707020102
+					]
+				},
+				{
+					"id": 707020102,
+					"content": "君…そうか、君は俺の依頼を見たのだな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707020103
+					],
+					"speakerTitle": "コナー"
+				},
+				{
+					"id": 707020103,
+					"content": "小麦…小麦10個は集まったか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707020104,
+						707020105
+					],
+					"speakerTitle": "コナー"
+				},
+				{
+					"id": 707020104,
+					"content": "集めたよ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707020105,
+					"content": "まだ…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707020106
+					]
+				},
+				{
+					"id": 707020106,
+					"content": "なら集めたら持って来てくれ。俺はもう少し休む…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "コナー"
+				}
+			]
+		},
+		{
+			"id": 7070202,
+			"completionStepIds": [
+				7070202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070202",
+							"2"
+						],
+						"stepId": 7070202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"コナー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707020201,
+					"content": "どれどれ…これだけあれば足りるだろう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707020202
+					],
+					"speakerTitle": "コナー"
+				},
+				{
+					"id": 707020202,
+					"content": "ありがとう。これを受け取ってくれ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "コナー"
+				}
+			]
+		}
+	]
+}

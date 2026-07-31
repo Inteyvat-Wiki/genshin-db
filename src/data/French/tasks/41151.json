@@ -1,0 +1,343 @@
+{
+	"id": 41151,
+	"type": "EQ",
+	"name": "Livraison spéciale : Restaurant Wanmin",
+	"description": "Le Restaurant Wanmin a besoin de livrer une commande spéciale...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 4115101,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez au chef Mao.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4115101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 4115102,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Livrez le plat à Tingfang le taciturne.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4115102,
+						0
+					],
+					"talkId": 4115102
+				}
+			]
+		},
+		{
+			"id": 4115103,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Tingfang le taciturne.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4115106,
+						0
+					],
+					"talkId": 4115106
+				}
+			]
+		},
+		{
+			"id": 4115104,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4115104,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 4115101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115101",
+							"2"
+						],
+						"stepId": 4115101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Chef Mao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411510101,
+					"content": "Je me charge de cette livraison.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411510102
+					]
+				},
+				{
+					"id": 411510102,
+					"content": "Merci, je compte sur vous.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Chef Mao"
+				}
+			]
+		},
+		{
+			"id": 4115102,
+			"completionStepIds": [
+				4115102
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115101",
+							"3"
+						],
+						"stepId": 4115101,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tingfang le taciturne"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411510201,
+					"content": "Pourquoi ma commande n'est-elle pas encore là ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tingfang le taciturne"
+				}
+			]
+		},
+		{
+			"id": 4115103,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115101",
+							"2"
+						],
+						"stepId": 4115101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Chef Mao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411510301,
+					"content": "Il paraît qu'il y a une commande spéciale...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411510302
+					]
+				},
+				{
+					"id": 411510302,
+					"content": "Oui, Tingfang a commandé un poulet pimenté de Jueyun en livraison.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411510303
+					],
+					"speakerTitle": "Chef Mao"
+				},
+				{
+					"id": 411510303,
+					"content": "Ce poulet pimenté de Jueyun pourrait s'abîmer si vous <color=#00E1FFFF>planez ou escaladez des falaises. Il ne faut pas non plus vous faire toucher par des éléments ou mettre trop de temps.</color>",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411510304
+					],
+					"speakerTitle": "Chef Mao"
+				},
+				{
+					"id": 411510304,
+					"content": "Si quelque chose vous arrive sur le chemin, revenez et je vous referai le plat. En tout cas, ne ternissez pas la réputation du Restaurant Wanmin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Chef Mao"
+				}
+			]
+		},
+		{
+			"id": 4115104,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115101",
+							"2"
+						],
+						"stepId": 4115101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Chef Mao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411510401,
+					"content": "J'ai autre chose à faire...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411510402
+					]
+				},
+				{
+					"id": 411510402,
+					"content": "D'accord, je vous laisse retourner à vos occupations.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Chef Mao"
+				}
+			]
+		},
+		{
+			"id": 4115105,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115101",
+							"2"
+						],
+						"stepId": 4115101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tingfang le taciturne"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411510501,
+					"content": "Toujours pas arrivée...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tingfang le taciturne"
+				}
+			]
+		},
+		{
+			"id": 4115106,
+			"completionStepIds": [
+				4115103
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115103",
+							"2"
+						],
+						"stepId": 4115103,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tingfang le taciturne"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411510601,
+					"content": "Voici votre commande.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411510602
+					]
+				},
+				{
+					"id": 411510602,
+					"content": "Super, merci.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tingfang le taciturne"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,176 @@
+{
+	"id": 70702,
+	"type": "WQ",
+	"name": "Connor'ın Şarap Mayası",
+	"description": "Şafak Şaraphanesinden Connor on dal Buğday istiyor.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Connor'a on dal Buğday ver.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Connor ile konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070202,
+						0
+					],
+					"talkId": 7070202
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070201",
+							"2"
+						],
+						"stepId": 7070201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070201"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707020101,
+					"content": "Buğday hakkında...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707020102
+					]
+				},
+				{
+					"id": 707020102,
+					"content": "Sen... Verdiğim görev ilanını gördün, değil mi?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707020103
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707020103,
+					"content": "On dal Buğday toplayabildin mi?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707020104,
+						707020105
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707020104,
+					"content": "Al bakalım.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707020105,
+					"content": "Hâlâ üzerinde çalışıyorum.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707020106
+					]
+				},
+				{
+					"id": 707020106,
+					"content": "Toplamayı bitirdiğinde, buğdayları bana getir. Biraz dinlenmem gerekiyor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Connor"
+				}
+			]
+		},
+		{
+			"id": 7070202,
+			"completionStepIds": [
+				7070202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070202",
+							"2"
+						],
+						"stepId": 7070202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707020201,
+					"content": "Bir bakayım. Tamamdır, bu kadarı yeter.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707020202
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707020202,
+					"content": "Sağ olasın. Lütfen bunu teşekkür olarak kabul et.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Connor"
+				}
+			]
+		}
+	]
+}

@@ -5,7 +5,11 @@ const helper = {};
  */
 helper.makeFilename = function(englishname) {
 	englishname = englishname.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-	return englishname.toLowerCase().replace(/[^a-z]/g,'');
+	return englishname
+		.toLowerCase()
+		.replace(/[^a-z0-9\s]+/g, '')
+		.replace(/\s+/g, '_')
+		.replace(/^_+|_+$/g, '');
 }
 
 

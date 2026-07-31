@@ -1,0 +1,1023 @@
+{
+	"id": 20031,
+	"type": "WQ",
+	"name": "Jeden Tag ein neues Abenteuer",
+	"description": "Katheryne von der Abenteurergilde scheint eine Mission für dich zu haben.",
+	"unlockDescription": "Schließe diesen Auftrag ab, um Missionen für Mondstadt freizuschalten.",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_GUIDE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		20032
+	],
+	"steps": [
+		{
+			"id": 2003101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Katheryne.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003101,
+						0
+					],
+					"talkId": 2003101
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003104,
+						0
+					],
+					"talkId": 2003104
+				}
+			]
+		},
+		{
+			"id": 2003102,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Sprich mit Katheryne.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003101,
+						0
+					],
+					"talkId": 2003101
+				}
+			]
+		},
+		{
+			"id": 2003103,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Schließ die Mission ab.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2010137,
+						0
+					],
+					"talkId": 2010137
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003102,
+						0
+					],
+					"talkId": 2003102
+				}
+			]
+		},
+		{
+			"id": 2003104,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Sprich mit Katheryne.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003103,
+						0
+					],
+					"talkId": 2003103
+				}
+			]
+		},
+		{
+			"id": 2003105,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Sprich mit Katheryne.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2010137,
+						0
+					],
+					"talkId": 2010137
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003104,
+						0
+					],
+					"talkId": 2003104
+				}
+			]
+		},
+		{
+			"id": 2003106,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Katheryne.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003105,
+						0
+					],
+					"talkId": 2003105
+				}
+			]
+		},
+		{
+			"id": 2003107,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Katheryne, sobald du 4 tägliche Missionen abgeschlossen hast.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003103,
+						0
+					],
+					"talkId": 2003103
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003106,
+						0
+					],
+					"talkId": 2003106
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2003101,
+			"completionStepIds": [
+				2003101,
+				2003102
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003102",
+							"2"
+						],
+						"stepId": 2003102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_CAN_GET",
+						"rawParams": [
+							"0"
+						]
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_RECEIVED",
+						"rawParams": [
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Katheryne"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200310101,
+					"content": "#So sehen wir uns wieder, Abenteurer{F#in}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310102
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310102,
+					"content": "Wie sieht es denn in der letzten Zeit mit den Abenteuern aus?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310103,
+						200310105
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310103,
+					"content": "Kann mich nicht beklagen.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200310104
+					]
+				},
+				{
+					"id": 200310104,
+					"content": "Gute Einstellung! Bleib so!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310107
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310107,
+					"content": "Du scheinst schon viel Erfahrung gesammelt zu haben. Ich sollte dich mit einer wichtigen Aufgabe der Abenteurergilde vertraut machen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310108
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310108,
+					"content": "Die Abenteurergilde vergibt jeden Tag <color=#00E1FFFF>Missionen</color> an ihre Mitglieder.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310109
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310109,
+					"content": "Diese Missionen sind die Haupteinnahmequelle vieler Abenteurer.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310110
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310110,
+					"content": "Was sind das so alles für Missionen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310111
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 200310111,
+					"content": "Ganz verschiedene. Manchmal muss man Bürgern dabei helfen, Monster loszuwerden, manchmal sind auch ziemlich gefährliche dabei.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310112
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310112,
+					"content": "Am besten ist es, ihr nehmt euch ein paar Missionen. Dann versteht ihr auch, wie der Ablauf funktioniert.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310113
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310113,
+					"content": "Dies hier sind die heute verfügbaren Missionen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310114
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310114,
+					"content": "Wenn ihr sie erfüllt habt, erstattet ihr bei mir Bericht. Dann könnt ihr euch auch eine tolle Belohnung abholen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310115,
+						200310117
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310115,
+					"content": "Ich werde das übernehmen.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200310116
+					]
+				},
+				{
+					"id": 200310116,
+					"content": "#Das ist mein{F#e} {NICKNAME}. Man kann immer auf dich zählen!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310119
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310119,
+					"content": "#Dann warte ich hier darauf, dass du mit guten Neuigkeiten wiederkommst, {NICKNAME}. Ad astra abyssosque! Zu den Sternen und Abgründen!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310117,
+					"content": "Wie toll sind die Belohnungen denn genau?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200310118
+					]
+				},
+				{
+					"id": 200310118,
+					"content": "Wir wollen die Überraschung doch nicht verderben!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310119
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310105,
+					"content": "Ziemlich anstrengend, muss ich sagen.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200310106
+					]
+				},
+				{
+					"id": 200310106,
+					"content": "Am Anfang geht das jedem so. Vor deinen Abenteuern solltest du dich gut vorbereiten. Das erleichtert vieles.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310107
+					],
+					"speakerTitle": "Katheryne"
+				}
+			]
+		},
+		{
+			"id": 2003102,
+			"completionStepIds": [
+				2003103
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003103",
+							"2"
+						],
+						"stepId": 2003103,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_CAN_GET",
+						"rawParams": [
+							"1"
+						]
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_RECEIVED",
+						"rawParams": [
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Katheryne"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200310201,
+					"content": "#Das ist ja großartig, {NICKNAME}! Für dein erstes mal ist das eine hervorragende Leistung.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310202
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310202,
+					"content": "Ich soll anstelle des Auftraggebers dessen Dank an euch aussprechen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310203
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310203,
+					"content": "Und nun werde ich mein Versprechen einlösen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Katheryne"
+				}
+			]
+		},
+		{
+			"id": 2003103,
+			"completionStepIds": [
+				2003104,
+				2003107
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003104",
+							"2"
+						],
+						"stepId": 2003104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_CAN_GET",
+						"rawParams": [
+							"1"
+						]
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_RECEIVED",
+						"rawParams": [
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Katheryne"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200310301,
+					"content": "Hehe, da können wir nicht Nein sagen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310302
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 200310302,
+					"content": "Nehmt dies als Zeichen des Dankes der Abenteurergilde.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310303
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310303,
+					"content": "Die Gilde bekommt jeden Tag so viele Missionen. Ohne euch Abenteurer hätten wir nicht die geringste Chance, das alles zu bewältigen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310304
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310304,
+					"content": "Wenn du genügend Missionen an einem Tag erledigt hast, kannst du dir bei mir ein zusätzliches Geschenk abholen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310305
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310305,
+					"content": "In deiner Abenteurerlizenz werden all deine täglich ausgeführten Missionen aufgezeichnet.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310306
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310306,
+					"content": "Denke unbedingt daran, noch am selben Tag vorbeizuschauen und deine Belohnung abzuholen. Der Vorrat ist begrenzt. Wenn du die Zeit zum Abholen verpasst, war’s das.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310307,
+						200310309
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310307,
+					"content": "Verstanden, danke.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200310308
+					]
+				},
+				{
+					"id": 200310308,
+					"content": "Ach, ich habe dir zu danken.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310312
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310312,
+					"content": "Eins noch: Wenn du anderen Abenteurern bei ihren Missionen hilfst, erhältst auch du bessere Belohnungen am Ende des Tages.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310313
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310313,
+					"content": "Arbeite also gut mit deinen Kameraden zusammen! Ad astra abyssosque!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310309,
+					"content": "Pro Tag gibt es bloß eine?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200310310
+					]
+				},
+				{
+					"id": 200310310,
+					"content": "Im Moment sieht das ganz so aus ... Tut mir leid.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310311
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310311,
+					"content": "Aber mach dir da keine Sorgen. Wir versuchen immer, beim Hauptquartier das Beste für unsere Abenteurer rauszuholen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310312
+					],
+					"speakerTitle": "Katheryne"
+				}
+			]
+		},
+		{
+			"id": 2003104,
+			"completionStepIds": [
+				2003101,
+				2003105
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003105",
+							"2"
+						],
+						"stepId": 2003105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_CAN_GET",
+						"rawParams": [
+							"1"
+						]
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_RECEIVED",
+						"rawParams": [
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Katheryne"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200310401,
+					"content": "#He, {NICKNAME}!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310402
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310402,
+					"content": "Mir ist zu Ohren gekommen, dass du schon eine <color=#00E1FFFF>Mission</color> von der Abenteurergilde abgeschlossen hast. Ich soll dir vom Auftraggeber viele Grüße ausrichten.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310403,
+						200310406
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310403,
+					"content": "Welche Mission denn?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310404
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310404,
+					"content": "Du hast doch jemandem in Not geholfen. Schon vergessen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310405
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310405,
+					"content": "Die meisten Leute, die auf Probleme stoßen, informieren die Abenteurergilde darüber.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310408
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310408,
+					"content": "Ich werde dir am besten kurz erklären, wie das alles abläuft.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310409
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310409,
+					"content": "Die Abenteurergilde vergibt jeden Tag Missionen an ihre Mitglieder.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310410
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310410,
+					"content": "Diese Missionen sind die Haupteinnahmequelle vieler Abenteurer.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310411
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310411,
+					"content": "Da kann ich dir auch gleich verraten, dass die Gilde eine Überraschung für dich vorbereitet hat.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310406,
+					"content": "Ich bin jemandem auf dem Weg begegnet, der meine Hilfe brauchte.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310407
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310407,
+					"content": "Dieser Enthusiasmus, wenn man neu in der Abenteurergilde ist!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310408
+					],
+					"speakerTitle": "Katheryne"
+				}
+			]
+		},
+		{
+			"id": 2003105,
+			"completionStepIds": [
+				2003106
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003106",
+							"2"
+						],
+						"stepId": 2003106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_CAN_GET",
+						"rawParams": [
+							"1"
+						]
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_RECEIVED",
+						"rawParams": [
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Katheryne"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200310501,
+					"content": "Hehe, da können wir nicht Nein sagen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310502
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 200310502,
+					"content": "Nehmt dies als Zeichen des Dankes der Abenteurergilde.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310503
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310503,
+					"content": "Die Gilde bekommt jeden Tag so viele Missionen. Ohne euch Abenteurer hätten wir nicht die geringste Chance, das alles zu bewältigen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310504
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310504,
+					"content": "Wenn du genügend Missionen an einem Tag erledigt hast, kannst du dir bei mir ein zusätzliches Geschenk abholen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310505
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310505,
+					"content": "In deiner Abenteurerlizenz werden all deine täglich ausgeführten Missionen aufgezeichnet.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310506
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310506,
+					"content": "Denke unbedingt daran, noch am selben Tag vorbeizuschauen und deine Belohnung abzuholen. Der Vorrat ist begrenzt. Wenn du die Zeit zum Abholen verpasst, war’s das.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310507,
+						200310509
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310507,
+					"content": "Verstanden, danke.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200310508
+					]
+				},
+				{
+					"id": 200310508,
+					"content": "Ach, ich habe dir zu danken.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310512
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310512,
+					"content": "Eins noch: Wenn du anderen Abenteurern bei ihren Missionen hilfst, erhältst auch du bessere Belohnungen am Ende des Tages.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310513
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310513,
+					"content": "Arbeite also gut mit deinen Kameraden zusammen! Ad astra abyssosque!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310509,
+					"content": "Pro Tag gibt es bloß eine?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200310510
+					]
+				},
+				{
+					"id": 200310510,
+					"content": "Im Moment sieht das ganz so aus ... Tut mir leid.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310511
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310511,
+					"content": "Aber mach dir da keine Sorgen. Wir versuchen immer, beim Hauptquartier das Beste für unsere Abenteurer rauszuholen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310512
+					],
+					"speakerTitle": "Katheryne"
+				}
+			]
+		},
+		{
+			"id": 2003106,
+			"completionStepIds": [
+				2003107
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003107",
+							"2"
+						],
+						"stepId": 2003107,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_CAN_GET",
+						"rawParams": [
+							"1"
+						]
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_RECEIVED",
+						"rawParams": [
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Katheryne"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200310304,
+					"content": "Wenn du genügend Missionen an einem Tag erledigt hast, kannst du dir bei mir ein zusätzliches Geschenk abholen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310305
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310305,
+					"content": "In deiner Abenteurerlizenz werden all deine täglich ausgeführten Missionen aufgezeichnet.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310306
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310306,
+					"content": "Denke unbedingt daran, noch am selben Tag vorbeizuschauen und deine Belohnung abzuholen. Der Vorrat ist begrenzt. Wenn du die Zeit zum Abholen verpasst, war’s das.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310307,
+						200310309
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310307,
+					"content": "Verstanden, danke.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200310308
+					]
+				},
+				{
+					"id": 200310308,
+					"content": "Ach, ich habe dir zu danken.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310312
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310312,
+					"content": "Eins noch: Wenn du anderen Abenteurern bei ihren Missionen hilfst, erhältst auch du bessere Belohnungen am Ende des Tages.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310313
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310313,
+					"content": "Arbeite also gut mit deinen Kameraden zusammen! Ad astra abyssosque!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310309,
+					"content": "Pro Tag gibt es bloß eine?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200310310
+					]
+				},
+				{
+					"id": 200310310,
+					"content": "Im Moment sieht das ganz so aus ... Tut mir leid.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310311
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200310311,
+					"content": "Aber mach dir da keine Sorgen. Wir versuchen immer, beim Hauptquartier das Beste für unsere Abenteurer rauszuholen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310312
+					],
+					"speakerTitle": "Katheryne"
+				}
+			]
+		}
+	]
+}

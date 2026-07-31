@@ -1,0 +1,167 @@
+{
+	"id": 73653,
+	"type": "WQ",
+	"name": "아미르의 짐승고기 의뢰",
+	"description": "간다르바 성곽의 아미르는 8개의 짐승고기가 필요하다",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7365301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "아미르에게 짐승고기 8개 건네기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7365301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7365302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "아미르와 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7365302,
+						0
+					],
+					"talkId": 7365302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7365301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7365301",
+							"2"
+						],
+						"stepId": 7365301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7365301"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"아미르"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 736530101,
+					"content": "짐승고기에 대해…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						736530102
+					]
+				},
+				{
+					"id": 736530102,
+					"content": "그래, 맞아. 내가 짐승고기를 가져다 달라는 의뢰를 올렸어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736530103
+					],
+					"speakerTitle": "아미르"
+				},
+				{
+					"id": 736530103,
+					"content": "짐승고기는 충분히 준비했어? 난 8개가 필요해",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736530106,
+						736530104
+					],
+					"speakerTitle": "아미르"
+				},
+				{
+					"id": 736530106,
+					"content": "준비됐어요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 736530104,
+					"content": "아직이요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						736530105
+					]
+				},
+				{
+					"id": 736530105,
+					"content": "짐승고기 8개가 적은 수량은 아니지. 그럼 모두 준비한 다음 다시 날 찾아와 줘",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "아미르"
+				}
+			]
+		},
+		{
+			"id": 7365302,
+			"completionStepIds": [
+				7365302
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7365302",
+							"2"
+						],
+						"stepId": 7365302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"아미르"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 736530201,
+					"content": "고기의 품질이 아주 좋네, 고마워. 이제 구조견들의 간식이 해결됐어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "아미르"
+				}
+			]
+		}
+	]
+}

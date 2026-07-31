@@ -1,0 +1,167 @@
+{
+	"id": 73653,
+	"type": "WQ",
+	"name": "アミルの獣肉のリクエスト",
+	"description": "ガンダルヴァー村のアミルは獣肉を8つ必要としている。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7365301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "アミルに獣肉を8つ渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7365301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7365302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "アミルと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7365302,
+						0
+					],
+					"talkId": 7365302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7365301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7365301",
+							"2"
+						],
+						"stepId": 7365301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7365301"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"アミル"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 736530101,
+					"content": "獣肉について…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						736530102
+					]
+				},
+				{
+					"id": 736530102,
+					"content": "ああ、そういえば獣肉についての依頼をしていたな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736530103
+					],
+					"speakerTitle": "アミル"
+				},
+				{
+					"id": 736530103,
+					"content": "それで、獣肉は用意できたか？8つ欲しいんだが…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736530106,
+						736530104
+					],
+					"speakerTitle": "アミル"
+				},
+				{
+					"id": 736530106,
+					"content": "用意できた。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 736530104,
+					"content": "まだ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						736530105
+					]
+				},
+				{
+					"id": 736530105,
+					"content": "確かに獣肉8つは多いからな。用意できたら、また俺のところに来てくれ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "アミル"
+				}
+			]
+		},
+		{
+			"id": 7365302,
+			"completionStepIds": [
+				7365302
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7365302",
+							"2"
+						],
+						"stepId": 7365302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"アミル"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 736530201,
+					"content": "なかなか質のいい肉だ。ありがとう、これで救助犬たちに褒美をやれる。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "アミル"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,550 @@
+{
+	"id": 70509,
+	"type": "WQ",
+	"name": "Sương Giá Chưa Vướng Bụi Trần",
+	"description": "\"Cô gái tóc trắng vừa đi ngang qua có phải là tiên nhân của Liyue không nhỉ.\" - \"Tôi không biết, anh biết không?\" - \"Tôi cũng không...\"",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70503,
+		70508
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050901,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Nói chuyện với Luka và vào quán rượu",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050901,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050902,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Pha loại uống đặc biệt cho Shenhe",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050902,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050903,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đưa đồ uống cho Shenhe",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050902,
+						0
+					],
+					"talkId": 7050902
+				}
+			]
+		},
+		{
+			"id": 7050904,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Nói chuyện với Shenhe",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050901,
+						0
+					],
+					"talkId": 7050901
+				}
+			]
+		},
+		{
+			"id": 7050905,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đến quầy bar để hoàn tất chuẩn bị",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7050305,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050901,
+			"completionStepIds": [
+				7050904
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050904",
+							"2"
+						],
+						"stepId": 7050904,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050902",
+							"2"
+						],
+						"stepId": 7050902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Shenhe"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705090101,
+					"content": "#Xin chào, {NICKNAME}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090102
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090102,
+					"content": "Ồ xin chào! Haiz, nếu không phải gặp được nhiều người từ phương xa tới thì tôi nhất định sẽ rất ngạc nhiên đó...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090103
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090103,
+					"content": "Không... không đúng, đây là Shenhe mà! Đúng là vẫn ngạc nhiên thật!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090104
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090104,
+					"content": "Ừm... nơi này thật khó tìm. \"Quà Tặng Của Thiên Sứ\"... khó đọc quá.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090105
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090105,
+					"content": "May mà có Zhongli tiên sinh tốt bụng chỉ đường.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090106
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090106,
+					"content": "Còn tìm cả người chỉ đường sao... để tôi đoán xem, cô đến để thử đồ uống sao?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090107
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090107,
+					"content": "Ừm.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090108
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090108,
+					"content": "Bởi vì chúng ta là... bạn bè.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090109
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090109,
+					"content": "Cô muốn uống gì?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090110
+					]
+				},
+				{
+					"id": 705090110,
+					"content": "Đây là thực đơn nè!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090111
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090111,
+					"content": "Ánh Nhìn Gió Bắc... gió bắc, lạnh lắm đúng không?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090112
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090112,
+					"content": "Ừm, gió bắc của cái tên này chắc là chỉ Sói Bắc Phong đúng không? Hừm... đúng là khá lạnh đó...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090113
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090113,
+					"content": "Quả Thông Ngào Đường... cái này có thể uống được sao?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090114
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090114,
+					"content": "À, cái này tôi có thử qua rồi, là cà phê có vị kẹo đường, còn quả thông thì... chắc là nói tới màu sắc đó!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090115
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090115,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090116
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090116,
+					"content": "Nhìn tên thì đúng là khó hiểu thật.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090117
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090117,
+					"content": "Các bạn chọn giúp tôi nhé. Mùi vị giống như Thanh Tâm hay Túi Lưu Ly là được.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090118
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090118,
+					"content": "Thổ nhưỡng ở đây không thích hợp để trồng những loại thảo dược đó đâu, nếu cô muốn uống đắng thì thử cà phê nhé...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090119
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090119,
+					"content": "Cô muốn nếm thử vị ngọt không?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090120
+					]
+				},
+				{
+					"id": 705090120,
+					"content": "...Ừm.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090121
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090121,
+					"content": "Vậy nhé, lâu lâu đổi khẩu vị chút!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090122
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090122,
+					"content": "Vậy chúng ta tặng cho Shenhe một ly Nụ Hôn Tuyết Phủ nhé, rất hợp với Shenhe đó.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 7050902,
+			"completionStepIds": [
+				7050903
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050903",
+							"2"
+						],
+						"stepId": 7050903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Shenhe"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705090201,
+					"content": "Rất ngọt và mịn, hoàn toàn không đắng. Đây là gì vậy?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090202
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090202,
+					"content": "Đó là \"Nụ Hôn Tuyết Phủ\"! Cách làm là đánh sữa cho đến khi nổi bọt, sau đó đổ nhẹ nhàng lên nước trái cây để trông như một lớp tuyết phủ.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090203
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090203,
+					"content": "Còn tại sao có tên là nụ hôn thì... Paimon không hiểu... chắc là chiêu trò kinh doanh thôi ấy mà, để bán chạy hơn thôi!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090204
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090204,
+					"content": "Bán chạy hơn?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090205
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090205,
+					"content": "Hả? Không phải sao? Tôi, tôi đoán bừa thôi... vậy chắc kiểu đặt cho lãng mạn rồi!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090206
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090206,
+					"content": "Lãng mạn...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090207
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090207,
+					"content": "Chậc... khó diễn giải lắm! Đừng ép Paimon giải thích.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090208,
+						705090209
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090208,
+					"content": "Bọt sữa không có quá nhiều vị...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090210
+					]
+				},
+				{
+					"id": 705090210,
+					"content": "Đúng vậy đúng vậy...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090211,
+						705090212
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090211,
+					"content": "Cảm giác đầu tiên khi uống nước ép sẽ thấy rất ngọt...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090213
+					]
+				},
+				{
+					"id": 705090213,
+					"content": "...Ah.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090214
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090214,
+					"content": "Vậy sao... tôi... có lẽ đã hiểu rồi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090215
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090215,
+					"content": "Hả?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090216
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090216,
+					"content": "Đợi đã! Sao giờ chỉ còn Paimon là chưa hiểu vậy!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090217
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090217,
+					"content": "Khi tôi đi trên núi, đôi lúc dừng lại ăn tiên thảo, cũng từng thấy những mầm non chớm nở từ dưới đất.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090218
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090218,
+					"content": "Trong lòng tôi có chút lay động... đúng là giống như bây giờ vậy.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090219
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090219,
+					"content": "#{NICKNAME}, cảm ơn bạn đã giải thích cho tôi... những cái tên khó hiểu này.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090220
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090220,
+					"content": "Sau này có lẽ phải phiền bạn thêm nhiều rồi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090212,
+					"content": "Giống như mầm non xuyên qua băng giá, gửi tặng Shenhe nụ hôn vậy...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090213
+					]
+				},
+				{
+					"id": 705090209,
+					"content": "Giống như tuyết trên núi vậy...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090210
+					]
+				}
+			]
+		}
+	]
+}

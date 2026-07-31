@@ -1,0 +1,455 @@
+{
+	"id": 20036,
+	"type": "IQ",
+	"name": "Lo que el viento se llevó",
+	"description": "Glory extraña a su novio, que está en un largo viaje. Ella está buscando una manera de transmitirle sus palabras.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2003601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Glory",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Glory",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003601,
+						0
+					],
+					"talkId": 2003601
+				}
+			]
+		},
+		{
+			"id": 2003603,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Encuentra tres semillas de diente de león",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						2003603,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003604,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dale las semillas de diente de león a Glory",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003602,
+						0
+					],
+					"talkId": 2003602
+				}
+			]
+		},
+		{
+			"id": 2003605,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dirígete a la cima de la Estatua del Arconte Anemo y dispersa las semillas de diente de león",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_INTERACT_GADGET",
+					"rawParams": [
+						70710009,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003606,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Glory",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003603,
+						0
+					],
+					"talkId": 2003603
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2003601,
+			"completionStepIds": [
+				2003602
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003601",
+							"3"
+						],
+						"stepId": 2003601,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003602",
+							"2"
+						],
+						"stepId": 2003602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Glory"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200360101,
+					"content": "Vamos, Godwin... ¿Por qué tardas tanto?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360102
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360102,
+					"content": "Hola...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360103
+					]
+				},
+				{
+					"id": 200360103,
+					"content": "#Conozco esa voz... ¿Eres {F#la viajera}{M#el viajero} que viene desde muy lejos? Gracias, Arconte Anemo, seguramente fue tu viento el que {F#la}{M#lo} guió hasta este lugar... Resulta que me gustaría pedirte algo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360104
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360104,
+					"content": "Mi... *ejem*... novio, Godwin, es miembro de los Caballeros de Favonius. Dejó la ciudad hace mucho tiempo y todavía no ha regresado.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360105
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360105,
+					"content": "No he sabido nada de él desde que se fue.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360106
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360106,
+					"content": "Estoy muy preocupada por él. Pobre Godwin, ¿y si se topa con esos desagradables Hilichurls? Me dijo que están en guerra con la Orden del Abismo, ¿y si le pasa algo? Lleva tanto tiempo fuera, ¿y si se enamora de una caballera?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360107
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360107,
+					"content": "Ay, lo siento, me dejé llevar. Mi mamá siempre me dice que los dientes de león pueden llevar los deseos de la gente muy lejos.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360108
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360108,
+					"content": "Por eso, ¿podrías recolectar tres semillas de diente de león de Levantaviento para mí?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360109,
+						200360110
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360109,
+					"content": "No hay problema.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360111
+					]
+				},
+				{
+					"id": 200360111,
+					"content": "¡Muchísimas gracias! Que el Arconte Anemo te proteja.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360110,
+					"content": "#Lo siento, estoy un poco ocupad{F#a}{M#o}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360112
+					]
+				},
+				{
+					"id": 200360112,
+					"content": "#¡Espera! Te lo ruego, por favor, ayúdame. Debería ser pan comido para {F#una viajera}{M#un viajero} experimentad{F#a}{M#o} como tú...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Glory"
+				}
+			]
+		},
+		{
+			"id": 2003602,
+			"completionStepIds": [
+				2003604
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003602",
+							"3"
+						],
+						"stepId": 2003602,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_PACK_HAVE_ITEM",
+						"rawParams": [
+							"100057",
+							"3"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003604",
+							"2"
+						],
+						"stepId": 2003604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Glory"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200360201,
+					"content": "¡Volviste! ¿Conseguiste mis semillas de diente de león?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360202
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360202,
+					"content": "Sí, ya están todas.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360203
+					]
+				},
+				{
+					"id": 200360203,
+					"content": "¡Gracias! ¿Podrías ponerlas en mi mano? No veo, así que me da miedo perderlas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360204
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360204,
+					"content": "¿Son suficientes?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360205
+					]
+				},
+				{
+					"id": 200360205,
+					"content": "¿Podrías ponerlas en mi mano? Es la única forma que tengo de saberlo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360206
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360206,
+					"content": "Es suficiente. Ahora les contaré a las semillas todo lo que quiero decirle a Godwin...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360207
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360207,
+					"content": "¿Puedes taparte los oídos? ¡Nada de espiar! Son cosas privadas entre novios. Ya sabes... ¡Jiji! Seguro que ya has tenido una experiencia similar, ¿cierto?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360208
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360208,
+					"content": "Ya terminé. Ahora, llévalas a la cima de la estatua del Arconte Anemo y arrójalas al viento. El gran Arconte se encargará del resto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360209
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360209,
+					"content": "Espero que las guíe a Godwin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Glory"
+				}
+			]
+		},
+		{
+			"id": 2003603,
+			"completionStepIds": [
+				2003606
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003606",
+							"2"
+						],
+						"stepId": 2003606,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Glory"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200360301,
+					"content": "¿Ya lo hiciste?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360302
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360302,
+					"content": "Hacía tanto viento allá arriba...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360303
+					]
+				},
+				{
+					"id": 200360303,
+					"content": "Bien, eso es lo que queremos. De esa manera, las semillas de diente de león pueden viajar muy lejos.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360304
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360304,
+					"content": "Tal vez realmente lleguen a Godwin después de todo, y le transmitan lo que quiero decirle.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360305
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360305,
+					"content": "Dame tu mano... Llévate estas. Son para darte las gracias.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360306
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360306,
+					"content": "Hay muchas cosas que quiero decirle a Godwin. Es posible que necesite tu ayuda nuevamente en el futuro.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Glory"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,214 @@
+{
+	"id": 20008,
+	"type": "IQ",
+	"name": "Un problema pegajoso",
+	"description": "De repente aparecieron Slimes en los muelles de Mondstadt, y Arthur está atrapado en medio de la conmoción...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2000801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dirígete al muelle a ver detalles",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Elimina los Slimes",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000803,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Arthur",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000801,
+						0
+					],
+					"talkId": 2000801
+				}
+			]
+		},
+		{
+			"id": 2000804,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dirígete a la ubicación misteriosa",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000805,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Usa Anemo para dispersar el polvo",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000806,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Elimina todos los Slimes",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2000801,
+			"completionStepIds": [
+				2000803
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000802",
+							"3"
+						],
+						"stepId": 2000802,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Arthur"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200080101,
+					"content": "¡Gracias! Me han salvado.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080102
+					],
+					"speakerTitle": "Arthur"
+				},
+				{
+					"id": 200080102,
+					"content": "Esos Slimes salieron de la nada. No pensé que aparecerían por estos lugares... ¡Antes de darme cuenta, ya estaba rodeado!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080103
+					],
+					"speakerTitle": "Arthur"
+				},
+				{
+					"id": 200080103,
+					"content": "Por favor, no le digas a mi padre... Siempre insiste que me quede en casa, diciendo que los Slimes de por aquí se están volviendo más hostiles recientemente.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080104
+					],
+					"speakerTitle": "Arthur"
+				},
+				{
+					"id": 200080104,
+					"content": "Con Slimes apareciendo cada vez más cerca de la ciudad, me he quedado atrapado en casa durante días. Me las arreglé para salir hoy sin que él lo notara.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080105
+					],
+					"speakerTitle": "Arthur"
+				},
+				{
+					"id": 200080105,
+					"content": "Si no te importa, ¿podrías comprobar que la costa está despejada? Y si no, ¿podrías deshacerte de los Slimes por mí?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080106,
+						200080107
+					],
+					"speakerTitle": "Arthur"
+				},
+				{
+					"id": 200080106,
+					"content": "No hay problema.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200080108
+					]
+				},
+				{
+					"id": 200080108,
+					"content": "¡Excelente! Así mi padre nunca lo sabrá...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Arthur"
+				},
+				{
+					"id": 200080107,
+					"content": "Tengo otras cosas que hacer.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200080109
+					]
+				},
+				{
+					"id": 200080109,
+					"content": "Pero... no puedo meter a mi padre en esto... ¡Por favor, eres el único que puede ayudarme!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Arthur"
+				}
+			]
+		}
+	]
+}

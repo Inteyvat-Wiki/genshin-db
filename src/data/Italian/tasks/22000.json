@@ -1,0 +1,734 @@
+{
+	"id": 22000,
+	"type": "IQ",
+	"name": "I pirati invadono il Porto di Liyue!",
+	"description": "Un gruppo di ragazzini non vede l'ora di fare un gioco a tema piratesco...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2200001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con la Piccola Lulu, con il Piccolo Fei e con il Piccolo Meng",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2200001,
+						0
+					],
+					"talkId": 2200001
+				}
+			]
+		},
+		{
+			"id": 2200002,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con il Piccolo Meng: il capitano",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2200002,
+						0
+					],
+					"talkId": 2200002
+				}
+			]
+		},
+		{
+			"id": 2200003,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Ripulisci il ponte usando Anemo o Hydro",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2200004,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con il Piccolo Meng",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2200003,
+						0
+					],
+					"talkId": 2200003
+				}
+			]
+		},
+		{
+			"id": 2200005,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						2200005,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2200001,
+			"completionStepIds": [
+				2200001
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2200001",
+							"2"
+						],
+						"stepId": 2200001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Piccolo Meng"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220000101,
+					"content": "Allora, come vogliamo fare stavolta?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000102
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000102,
+					"content": "Tsk. Se nessuno vuole fare il pirata, non possiamo proprio giocarci.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000103
+					],
+					"speakerTitle": "Piccolo Fei"
+				},
+				{
+					"id": 220000103,
+					"content": "Nessuno vuole fare il pirata. Quindi, come possiamo fare?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000104
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000104,
+					"content": "Cosa state facendo?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220000105
+					]
+				},
+				{
+					"id": 220000105,
+					"content": "Volevamo fare un gioco, ma nessuno vuole fare il pirata.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000106
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000106,
+					"content": "Se nessuno fa il pirata, non ci sarà nemmeno qualcuno a derubare gli altri... Quindi non possiamo giocare.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000107
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000107,
+					"content": "#Oooh, ci sono, puoi aiutarci tu! Vuoi fare {F#la}{M#il} pirat{F#essa}{M#a}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000108,
+						220000110
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000108,
+					"content": "Affare fatto.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220000109
+					]
+				},
+				{
+					"id": 220000109,
+					"content": "Evviva! Bene, prepariamoci...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000115
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000115,
+					"content": "#Quando ti senti pront{F#a}{M#o}, raggiungici.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000110,
+					"content": "La pirateria non è il mio campo...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220000111
+					]
+				},
+				{
+					"id": 220000111,
+					"content": "Non dovrai fare nulla di complicato! Un pirata è solo una persona molto cattiva che va in giro a rubare cose degli altri.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000112
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000112,
+					"content": "Io non ho mai visto un pirata, però. Questo è solo quello che mi ha detto Beidou.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000113
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000113,
+					"content": "Ma penso che fare finta di essere un pirata sia piuttosto semplice.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000114
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000114,
+					"content": "Eheheh, puoi farcela! Forza!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000115
+					],
+					"speakerTitle": "Piccolo Meng"
+				}
+			]
+		},
+		{
+			"id": 2200002,
+			"completionStepIds": [
+				2200002
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2200002",
+							"2"
+						],
+						"stepId": 2200002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Piccolo Meng"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220000201,
+					"content": "#Pront{F#a}{M#o}!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220000202
+					]
+				},
+				{
+					"id": 220000202,
+					"content": "Che il gioco abbia inizio!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000203
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000203,
+					"content": "Come si comincia?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000204
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000204,
+					"content": "Ehm... All'arrembaggio! Ti sto derubando!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220000205
+					]
+				},
+				{
+					"id": 220000205,
+					"content": "Aiuto! Pirati!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000206
+					],
+					"speakerTitle": "Piccola Lulu"
+				},
+				{
+					"id": 220000206,
+					"content": "Non preoccuparti, Lulu, ti salverò io!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000207
+					],
+					"speakerTitle": "Piccolo Fei"
+				},
+				{
+					"id": 220000207,
+					"content": "#Tu devi essere {F#una}{M#un} pirat{F#essa}{M#a}. Allora dimmi: perché ci stai derubando?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000208,
+						220000209
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000208,
+					"content": "#Perché sono {F#una}{M#un} pirat{F#essa}{M#a}...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220000210
+					]
+				},
+				{
+					"id": 220000210,
+					"content": "Non tutti. Ci sono pirati buoni e pirati cattivi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000211
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000211,
+					"content": "Beidou, ad esempio, è una piratessa, e non è cattiva. Ci regala tanti spuntini! Tutti adorano Beidou.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000212
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000212,
+					"content": "#Non puoi essere anche tu così? Perché devi fare quell{F#a}{M#o} cattiv{F#a}{M#o}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000213
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000213,
+					"content": "Sei stato tu a dire che i pirati sono persone cattive che vanno in giro a rubare le cose degli altri!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000214,
+						220000215
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 220000214,
+					"content": "Riconosco i miei errori.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220000216
+					]
+				},
+				{
+					"id": 220000216,
+					"content": "Bene! Ammettere i propri errori è un primo passo per diventare una persona migliore. Così dice Beidou.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000217
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000217,
+					"content": "#Il passo successivo è rimettere tutto in ordine. Se fai buone azioni, puoi essere una brava persona. Perfino {F#una}{M#un} brav{F#a}{M#o} pirat{F#essa}{M#a}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000215,
+					"content": "Dichiaro espressamente che non farò più uso della suddetta cattiveria.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220000216
+					]
+				},
+				{
+					"id": 220000209,
+					"content": "È quello che fanno i pirati...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220000210
+					]
+				}
+			]
+		},
+		{
+			"id": 2200003,
+			"completionStepIds": [
+				2200004
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2200004",
+							"2"
+						],
+						"stepId": 2200004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Piccolo Meng"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220000301,
+					"content": "Hai finito di ripulire il ponte?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000302
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000302,
+					"content": "Sì, ho finito.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220000303
+					]
+				},
+				{
+					"id": 220000303,
+					"content": "Evviva! Grazie, eccoti un regalo. Mi sono divertito un sacco a giocare con te!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000304
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000304,
+					"content": "E ricordati: essere una brava persona dev'essere un'abitudine che ti accompagna per tutta la vita.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000305
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000305,
+					"content": "Ehi, quando tocca a me fare il capitano?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000306
+					],
+					"speakerTitle": "Piccolo Fei"
+				},
+				{
+					"id": 220000306,
+					"content": "La prossima volta.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000307
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000307,
+					"content": "Me lo avevi già detto la volta scorsa!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Piccolo Fei"
+				}
+			]
+		},
+		{
+			"id": 2200004,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2200002",
+							"2"
+						],
+						"stepId": 2200002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Piccolo Meng"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220000401,
+					"content": "#Pront{F#a}{M#o}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Piccolo Meng"
+				}
+			]
+		},
+		{
+			"id": 2200005,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2200003",
+							"2"
+						],
+						"stepId": 2200003,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Piccolo Meng"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220000501,
+					"content": "Hai finito di ripulire il ponte?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000502
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000502,
+					"content": "Non ancora.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220000503
+					]
+				},
+				{
+					"id": 220000503,
+					"content": "Sbrigati. Questa è la tua occasione per cambiare e dimostrare che puoi essere una brava persona.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000504
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000504,
+					"content": "Ehi, stai davvero dicendo che basti dare una ripulita per diventare una brava persona?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000505
+					],
+					"speakerTitle": "Piccolo Fei"
+				},
+				{
+					"id": 220000505,
+					"content": "Per essere una brava persona bisogna solo avere la volontà di fare la cosa giusta.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000506
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000506,
+					"content": "Detta così, sembra fin troppo semplice...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000507
+					],
+					"speakerTitle": "Piccolo Fei"
+				},
+				{
+					"id": 220000507,
+					"content": "Fai del bene, sei una brava persona. Fai del male, sei una persona cattiva. Sì, è piuttosto semplice.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000508
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000508,
+					"content": "Beh, se è così, perché ci sono ancora tante persone cattive in questo mondo?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000509
+					],
+					"speakerTitle": "Piccolo Fei"
+				},
+				{
+					"id": 220000509,
+					"content": "Perché in questo mondo è tutto più facile a dirsi che a farsi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000510
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000510,
+					"content": "E fare del male è sempre più facile che fare del bene.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000511
+					],
+					"speakerTitle": "Piccolo Meng"
+				},
+				{
+					"id": 220000511,
+					"content": "Te l'ha insegnato Beidou?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220000512
+					],
+					"speakerTitle": "Piccolo Fei"
+				},
+				{
+					"id": 220000512,
+					"content": "No, questo l'ho letto in un libro.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Piccolo Meng"
+				}
+			]
+		},
+		{
+			"id": 2200007,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2200002",
+							"2"
+						],
+						"stepId": 2200002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Piccolo Meng"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220000701,
+					"content": "Non ancora...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220000702
+					]
+				},
+				{
+					"id": 220000702,
+					"content": "#Ok, dimmi tu quando sei pront{F#a}{M#o}, allora.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Piccolo Meng"
+				}
+			]
+		}
+	]
+}

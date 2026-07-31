@@ -1,0 +1,117 @@
+{
+	"id": 16008,
+	"type": "LQ",
+	"name": "ช่วงพักระหว่างฉาก",
+	"description": "พวกคุณพบเบาะแสสำคัญแล้ว แต่ก็ยังไม่อาจรู้คำตอบที่สมบูรณ์ได้ จนกว่า Albedo จะกลับมา...",
+	"unlockDescription": "",
+	"chapter": "เวทมนตร์ที่เรียกว่าเรื่องราว",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1600801,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1600801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1600802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "รอข่าวจาก Albedo",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TIME_VAR_PASS_DAY",
+					"rawParams": [
+						16008,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1600320,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1600802",
+							"2"
+						],
+						"stepId": 1600802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"#{REALNAME[ID(1)|HOSTONLY(true)]}"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 160032001,
+					"content": "ช่วงนี้ฉันก็อยู่แถวนี้แหละ ออกเดินทางเมื่อไหร่ก็บอกฉันละกัน",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "#{REALNAME[ID(1)|HOSTONLY(true)]}"
+				}
+			]
+		},
+		{
+			"id": 1600327,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1600802",
+							"2"
+						],
+						"stepId": 1600802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Durin"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 160032701,
+					"content": "ถ้าอยากจะกลับไปในเรื่องราว ก็มาหาฉันได้เลยนะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Durin"
+				}
+			]
+		}
+	]
+}

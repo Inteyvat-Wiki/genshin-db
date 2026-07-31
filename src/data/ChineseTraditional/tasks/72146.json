@@ -1,0 +1,128 @@
+{
+	"id": 72146,
+	"type": "WQ",
+	"name": "「海祇之牙」",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "月浴之淵",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_RANK_ZERO_WQ",
+	"suggestTrackMainQuestList": [
+		72145,
+		72147,
+		72148
+	],
+	"prevMainQuestList": [
+		72143
+	],
+	"steps": [
+		{
+			"id": 7214601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往「牙」之所在",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7214602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "閱讀「牙」處的石碑",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7214601,
+						0
+					],
+					"talkId": 7214601
+				}
+			]
+		},
+		{
+			"id": 7214603,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "守護地脈鎮石",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7214604,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "取得「御靈珠」",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7214601,
+			"completionStepIds": [
+				7214602
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214601",
+							"3"
+						],
+						"stepId": 7214601,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721460101,
+					"content": "「…是故戰釁起於前，有所守護，速而決之，則明珠可狩。是海祇爪牙之道也…」",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721460102
+					],
+					"speakerTitle": "古老的石碑"
+				},
+				{
+					"id": 721460102,
+					"content": "唔…碑文上能解讀的部分幾乎沒有呢。似乎是要打架、還要守護什麼東西…才能拿到「御靈珠」的樣子…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				}
+			]
+		}
+	]
+}

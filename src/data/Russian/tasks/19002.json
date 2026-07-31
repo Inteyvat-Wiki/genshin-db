@@ -1,0 +1,196 @@
+{
+	"id": 19002,
+	"type": "LQ",
+	"name": "Внезапный крик",
+	"description": "Внезапно, в Вольфендоме кто-то начинает звать Барбару...",
+	"unlockDescription": "",
+	"chapter": "Лечебный родник",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		19003
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1900201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Убедите Альберта уйти",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						101401,
+						20101
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						101401,
+						20102
+					]
+				}
+			]
+		},
+		{
+			"id": 1900202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Следуйте за Альбертом",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1900202,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1900203,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Альбертом",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						101401,
+						101
+					]
+				}
+			]
+		},
+		{
+			"id": 1900204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Вернитесь к Барбаре",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						101401,
+						20301
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1900201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1900201",
+							"2"
+						],
+						"stepId": 1900201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1900202",
+							"2"
+						],
+						"stepId": 1900202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Барбара"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 190010301,
+					"content": "Странно... Кто это?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						0
+					],
+					"speakerTitle": "Барбара"
+				}
+			]
+		},
+		{
+			"id": 1900202,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1900201",
+							"2"
+						],
+						"stepId": 1900201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1900202",
+							"2"
+						],
+						"stepId": 1900202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1900203",
+							"2"
+						],
+						"stepId": 1900203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1900204",
+							"2"
+						],
+						"stepId": 1900204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Виктория"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 190010201,
+					"content": "Сестра Барбара... Куда же ты ушла?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						0
+					],
+					"speakerTitle": "Виктория"
+				}
+			]
+		}
+	]
+}

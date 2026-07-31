@@ -1,0 +1,557 @@
+{
+	"id": 11003,
+	"type": "LQ",
+	"name": "Приятный сюрприз",
+	"description": "Сян Лин думает, что для победы ей не будет достаточно чашечек и острого перца. Она хочет найти ингредиенты поинтереснее.",
+	"unlockDescription": "",
+	"chapter": "Кулинарный тур по Мондштадту",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		11004
+	],
+	"prevMainQuestList": [
+		11002
+	],
+	"steps": [
+		{
+			"id": 1100301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отправляйтесь в место, указанное Сян Лин",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1100301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1100302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Сян Лин и дрожащим человеком",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1100302,
+						0
+					],
+					"talkId": 1100302
+				}
+			]
+		},
+		{
+			"id": 1100303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Приготовьте вкусный овощной суп",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						108021,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1100304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте суп охотнику",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1100304,
+						0
+					],
+					"talkId": 1100304
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1100302,
+			"completionStepIds": [
+				1100302
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100302",
+							"2"
+						],
+						"stepId": 1100302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Олаф"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110030201,
+					"content": "Как... Как холодно...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030202
+					],
+					"speakerTitle": "Олаф"
+				},
+				{
+					"id": 110030202,
+					"content": "Очень холодно! Его надо согреть.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030203
+					],
+					"speakerTitle": "Сян Лин"
+				},
+				{
+					"id": 110030203,
+					"content": "Разведи костёр!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030204
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 110030204,
+					"content": "Да. Не помешает миска горячего супа.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030205
+					],
+					"speakerTitle": "Сян Лин"
+				},
+				{
+					"id": 110030205,
+					"content": "#{NICKNAME}, я присмотрю за ним, а ты приготовь <color=#00E1FFFF>вкусный суп</color>, хорошо?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030206
+					],
+					"speakerTitle": "Сян Лин"
+				},
+				{
+					"id": 110030206,
+					"content": "Помню, как по пути сюда мы наткнулись на лагерь хиличурлов. Наверняка ты найдёшь там котёл.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030207
+					],
+					"speakerTitle": "Сян Лин"
+				},
+				{
+					"id": 110030207,
+					"content": "Конечно.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030208
+					]
+				},
+				{
+					"id": 110030208,
+					"content": "Отлично. Возвращайся скорее!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Сян Лин"
+				}
+			]
+		},
+		{
+			"id": 1100304,
+			"completionStepIds": [
+				1100304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100304",
+							"2"
+						],
+						"stepId": 1100304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PACK_HAVE_ITEM",
+						"rawParams": [
+							"108021",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Олаф"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110030401,
+					"content": "Так... Так намного лучше.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030402
+					],
+					"speakerTitle": "Олаф"
+				},
+				{
+					"id": 110030402,
+					"content": "Спасибо тебе! Этот суп буквально спас меня.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030403
+					],
+					"speakerTitle": "Олаф"
+				},
+				{
+					"id": 110030403,
+					"content": "Что произошло?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030404
+					]
+				},
+				{
+					"id": 110030404,
+					"content": "Я преследовал дикого кабана, и он завёл меня к этим подземным руинам.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030405
+					],
+					"speakerTitle": "Олаф"
+				},
+				{
+					"id": 110030405,
+					"content": "По пути я наткнулся на Крио папоротник.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030406
+					],
+					"speakerTitle": "Олаф"
+				},
+				{
+					"id": 110030406,
+					"content": "Он заморозил меня. Очнувшись, я сразу же бросился прочь, но силы начали покидать меня...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030407
+					],
+					"speakerTitle": "Олаф"
+				},
+				{
+					"id": 110030407,
+					"content": "Разве Крио папоротники нападают на людей?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030408
+					],
+					"speakerTitle": "Сян Лин"
+				},
+				{
+					"id": 110030408,
+					"content": "Ещё как! Раньше я слышал об этом от других, но теперь увидел собственными глазами.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030409
+					],
+					"speakerTitle": "Олаф"
+				},
+				{
+					"id": 110030409,
+					"content": "Звучит опасно. Стоит держаться от этих руин подальше.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030410
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 110030410,
+					"content": "Очень вкусный!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030411,
+						110030412
+					],
+					"speakerTitle": "Сян Лин"
+				},
+				{
+					"id": 110030411,
+					"content": "Э... Что?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030413
+					]
+				},
+				{
+					"id": 110030413,
+					"content": "Это тот самый ингредиент, которого не хватает! Вишенка на торте!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030414
+					],
+					"speakerTitle": "Сян Лин"
+				},
+				{
+					"id": 110030414,
+					"content": "Успокойся. Можно ли такое злобное растение съесть?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030415
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 110030415,
+					"content": "Мы этого не узнаем, пока не попробуем!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030416
+					],
+					"speakerTitle": "Сян Лин"
+				},
+				{
+					"id": 110030416,
+					"content": "Эх... Опять она за своё.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030417,
+						110030418
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 110030417,
+					"content": "Нам нужно идти.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030419
+					]
+				},
+				{
+					"id": 110030419,
+					"content": "Обо мне не беспокойтесь, я справлюсь. Позаботьтесь лучше о ней!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Олаф"
+				},
+				{
+					"id": 110030418,
+					"content": "Возвращайся в Спрингвейл.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030419
+					]
+				},
+				{
+					"id": 110030412,
+					"content": "Ты когда-нибудь думаешь о чём-нибудь кроме еды?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030413
+					]
+				}
+			]
+		},
+		{
+			"id": 1100396,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100304",
+							"2"
+						],
+						"stepId": 1100304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_NUM_LESS_THAN",
+						"rawParams": [
+							"108021",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Сян Лин"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110039801,
+					"content": "По пути сюда мы наткнулись на лагерь хиличурлов. Наверняка ты найдёшь там котёл.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110039802
+					],
+					"speakerTitle": "Сян Лин"
+				},
+				{
+					"id": 110039802,
+					"content": "#{NICKNAME}, я присмотрю за ним, а ты приготовь вкусный суп, хорошо?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Сян Лин"
+				}
+			]
+		},
+		{
+			"id": 1100397,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100304",
+							"2"
+						],
+						"stepId": 1100304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_NUM_LESS_THAN",
+						"rawParams": [
+							"108021",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Олаф"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110039901,
+					"content": "Как же... Холодно...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Олаф"
+				}
+			]
+		},
+		{
+			"id": 1100398,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100303",
+							"2"
+						],
+						"stepId": 1100303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Сян Лин"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110039801,
+					"content": "По пути сюда мы наткнулись на лагерь хиличурлов. Наверняка ты найдёшь там котёл.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110039802
+					],
+					"speakerTitle": "Сян Лин"
+				},
+				{
+					"id": 110039802,
+					"content": "#{NICKNAME}, я присмотрю за ним, а ты приготовь вкусный суп, хорошо?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Сян Лин"
+				}
+			]
+		},
+		{
+			"id": 1100399,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100303",
+							"2"
+						],
+						"stepId": 1100303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Олаф"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110039901,
+					"content": "Как же... Холодно...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Олаф"
+				}
+			]
+		}
+	]
+}

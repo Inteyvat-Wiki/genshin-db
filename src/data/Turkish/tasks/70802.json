@@ -1,0 +1,931 @@
+{
+	"id": 70802,
+	"type": "WQ",
+	"name": "Karların Arasındaki Gölge: Umut",
+	"description": "Joel'in anlattıklarına göre Cyrus, babasının nerede olabileceğine dair bir ipucu bulmuş.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		70804
+	],
+	"steps": [
+		{
+			"id": 7080201,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TIME_VAR_PASS_DAY",
+					"rawParams": [
+						70804,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Joel ile konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080201,
+						0
+					],
+					"talkId": 7080201
+				}
+			]
+		},
+		{
+			"id": 7080203,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Maceracılar Loncasına git.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080202,
+						0
+					],
+					"talkId": 7080202
+				}
+			]
+		},
+		{
+			"id": 7080204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Ejdersırtı'na git ve ipucu ara.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7080204,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080205,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Tüm düşmanları yen.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080206,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Pallad ile konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080203,
+						0
+					],
+					"talkId": 7080203
+				}
+			]
+		},
+		{
+			"id": 7080207,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Cyrus ile konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080204,
+						0
+					],
+					"talkId": 7080204
+				}
+			]
+		},
+		{
+			"id": 7080208,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Joel ile konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080205,
+						0
+					],
+					"talkId": 7080205
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7080201,
+			"completionStepIds": [
+				7080202
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080202",
+							"2"
+						],
+						"stepId": 7080202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Joel"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020101,
+					"content": "Bu sefer babamı gerçekten bulabilecek miyim?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020102
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020102,
+					"content": "Babanla ilgili gelişme var mı?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020103
+					]
+				},
+				{
+					"id": 708020103,
+					"content": "Ah, senmişsin!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020104
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020104,
+					"content": "Pallad, Cyrus Amca'nın babam hakkında bir şeyler duyduğunu söyledi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020105
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020105,
+					"content": "Cyrus Amca tam emin değilmiş ama Pallad'a göre son buldukları ipucu sağlammış. Yani bu sefer gerçekten onu bulabilirler.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020106
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020106,
+					"content": "Onlarla Ejdersırtı'na gitmeyi çok isterim ama Cyrus Amca kampta kalmamı söyledi. Yeni bir şey bulduklarında bana da haber vereceklermiş.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020107
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020107,
+					"content": "Cyrus Amca'ya gidip bir haber var mıymış sorabilir misin, lütfen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020108,
+						708020109
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020108,
+					"content": "Elbette.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020110
+					]
+				},
+				{
+					"id": 708020110,
+					"content": "Şey... Kötü bir haber olmasından korkuyorum.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020111
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020111,
+					"content": "Ne olursa olsun... Sana güveniyorum!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020109,
+					"content": "Neden gidip kendin sormuyorsun?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020110
+					]
+				}
+			]
+		},
+		{
+			"id": 7080202,
+			"completionStepIds": [
+				7080203
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080203",
+							"2"
+						],
+						"stepId": 7080203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus",
+					"Pervasız Pallad"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020201,
+					"content": "Bu bölgede demek... Emin misin Pallad?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020202
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020202,
+					"content": "Hiç olmadığım kadar, Bay Cyrus.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020203
+					],
+					"speakerTitle": "Pervasız Pallad"
+				},
+				{
+					"id": 708020203,
+					"content": "Joel'in babasıyla ilgili mi konuşuyorsunuz?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020204
+					]
+				},
+				{
+					"id": 708020204,
+					"content": "Ah, Gezgin gelmiş! Bahse girerim ki seni Joel yolladı.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020205
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020205,
+					"content": "O çocuk, neredeyse her gün birilerini göndererek herhangi bir haber olup olmadığını sordu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020206
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020206,
+					"content": "Ama bu sefer... Ona güzel haberlerimiz var, haha!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020207
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020207,
+					"content": "Bir ara Ejdersırtı'nda özel bir eğitim düzenliyorduk.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020208
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020208,
+					"content": "Kalanını ben anlatsam daha iyi olur, Bay Cyrus.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020209
+					],
+					"speakerTitle": "Pervasız Pallad"
+				},
+				{
+					"id": 708020209,
+					"content": "Eğitimime devam ederken, büyük bir kar fırtınası yüzünden belirlenmiş olan yoldan saptım.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020210
+					],
+					"speakerTitle": "Pervasız Pallad"
+				},
+				{
+					"id": 708020210,
+					"content": "El yordamıyla yolumu bulmaya çalışırken, uçurumun birinde bulanık bir gölge gördüm.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020211
+					],
+					"speakerTitle": "Pervasız Pallad"
+				},
+				{
+					"id": 708020211,
+					"content": "Benim gibi yolunu kaybetmiş bir maceracı olduğunu düşündüm ve dikkatini çekmek için bağırdım.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020212
+					],
+					"speakerTitle": "Pervasız Pallad"
+				},
+				{
+					"id": 708020212,
+					"content": "Maalesef bağırışlarım, gördüğüm kişinin dikkatinden ziyade canavarların dikkatini çekti.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020213
+					],
+					"speakerTitle": "Pervasız Pallad"
+				},
+				{
+					"id": 708020213,
+					"content": "Seni bilmem ama, benim o koşullar altında canavarları yenmem mümkün değildi. O yüzden telaşlı bir şekilde geri çekildim.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020214
+					],
+					"speakerTitle": "Pervasız Pallad"
+				},
+				{
+					"id": 708020214,
+					"content": "Döndüğümde yaşananları Bay Cyrus'a anlattım.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020215,
+						708020217
+					],
+					"speakerTitle": "Pervasız Pallad"
+				},
+				{
+					"id": 708020215,
+					"content": "Yani gördüğün kişi Joel'in babası mıydı?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020216
+					]
+				},
+				{
+					"id": 708020216,
+					"content": "Emin değiliz.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020218
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020218,
+					"content": "Neyse, yine de artık \"birinin\" Ejdersırtı'nda mahsur kaldığını biliyoruz. Bu nedenle bir kurtarma çalışması yürütmemiz gerekiyor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020219
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020219,
+					"content": "Bu kişinin Joel'in babası Joserf olup olmayacağı ise... Kader kısmet artık.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020220
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020220,
+					"content": "Her halükarda, Ejdersırtı'nı keşfedebilecek yetenekteki herkese, dağılıp aramaya başlamalarını söyledim.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020221
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020221,
+					"content": "Ben de hazırlanayım.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020222,
+						708020223
+					],
+					"speakerTitle": "Pervasız Pallad"
+				},
+				{
+					"id": 708020222,
+					"content": "Ben de geleceğim.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020224
+					]
+				},
+				{
+					"id": 708020224,
+					"content": "Gerçekten mi? Bu harika! Birlikte yola çıkalım o halde.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Pervasız Pallad"
+				},
+				{
+					"id": 708020223,
+					"content": "O canavarlara günlerini göstereceğim.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020224
+					]
+				},
+				{
+					"id": 708020217,
+					"content": "Çok önceden kaybolan herhangi bir maceracı da olabilir.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020218
+					]
+				}
+			]
+		},
+		{
+			"id": 7080203,
+			"completionStepIds": [
+				7080206
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080206",
+							"2"
+						],
+						"stepId": 7080206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Pervasız Pallad"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020301,
+					"content": "En azından alan artık güvenli. Çok teşekkürler.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020302
+					],
+					"speakerTitle": "Pervasız Pallad"
+				},
+				{
+					"id": 708020302,
+					"content": "Joserf hakkında...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020303
+					]
+				},
+				{
+					"id": 708020303,
+					"content": "Maalesef daha önce de bir şey bulamamıştım.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020304
+					],
+					"speakerTitle": "Pervasız Pallad"
+				},
+				{
+					"id": 708020304,
+					"content": "Ama tehlike geçtiği için araştırmalarıma devam edebilirim.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020305
+					],
+					"speakerTitle": "Pervasız Pallad"
+				},
+				{
+					"id": 708020305,
+					"content": "Dönüp Bay Cyrus'a arama çalışmalarına başladığımı haber verebilir misin? Teşekkürler!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Pervasız Pallad"
+				}
+			]
+		},
+		{
+			"id": 7080204,
+			"completionStepIds": [
+				7080207
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080207",
+							"2"
+						],
+						"stepId": 7080207,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020401,
+					"content": "Ah Gezgin, dönmüşsün!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020402,
+						708020404
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020402,
+					"content": "Pallad arama çalışmalarına başladı.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020403
+					]
+				},
+				{
+					"id": 708020403,
+					"content": "Öyle mi? Hah! Onun sorumlu biri olduğuna dair hiç şüphem yoktu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020406
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020406,
+					"content": "Elimdeki işler bitince, Ejdersırtı'na gidip Joel'i bizzat kontrol edeceğim ve ona haber vereceğim.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020407
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020407,
+					"content": "Yani en kısa zamanda geleceğimi, ona söyle lütfen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020408
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020408,
+					"content": "İşimi bitirmem biraz zaman alacak. Çocuğu bekletme hadi!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020404,
+					"content": "Gerçekten onu bulabilecek miyiz?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020405
+					]
+				},
+				{
+					"id": 708020405,
+					"content": "Yani... Hiçbir şeyin garantisi yok. Elimizden gelen her şeyi yapacağız.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020406
+					],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		},
+		{
+			"id": 7080205,
+			"completionStepIds": [
+				7080208
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080208",
+							"2"
+						],
+						"stepId": 7080208,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Joel"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020501,
+					"content": "Hey, gelmişsin! Bana ne haber getirdin?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020502
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020502,
+					"content": "Ah... Yani Cyrus Amca hâlâ babamı bulamadı, öyle mi?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020503,
+						708020504
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020503,
+					"content": "Ona biraz güven.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020505
+					]
+				},
+				{
+					"id": 708020505,
+					"content": "Biliyorum... O zaman Cyrus Amca geldiğinde, ayrıntıları ona kendim sorarım. Çok sağ ol!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020506
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020506,
+					"content": "Neredesin baba?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020504,
+					"content": "En azından elinde ipuçları var.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020505
+					]
+				}
+			]
+		},
+		{
+			"id": 7080206,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080203",
+							"2"
+						],
+						"stepId": 7080203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080204",
+							"2"
+						],
+						"stepId": 7080204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080205",
+							"2"
+						],
+						"stepId": 7080205,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080206",
+							"2"
+						],
+						"stepId": 7080206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080207",
+							"2"
+						],
+						"stepId": 7080207,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Joel"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020601,
+					"content": "Cyrus Amca'ya gidip sorabilir misin lütfen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Joel"
+				}
+			]
+		},
+		{
+			"id": 7080207,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080204",
+							"2"
+						],
+						"stepId": 7080204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080205",
+							"2"
+						],
+						"stepId": 7080205,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080206",
+							"2"
+						],
+						"stepId": 7080206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020701,
+					"content": "Kaybedecek zaman yok...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		},
+		{
+			"id": 7080208,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080208",
+							"2"
+						],
+						"stepId": 7080208,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020801,
+					"content": "Yani lütfen ona en kısa zamanda geleceğimi söyle.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020802
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020802,
+					"content": "İşimi bitirmem biraz zaman alacak. Çocuğu bekletme hadi!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		}
+	]
+}

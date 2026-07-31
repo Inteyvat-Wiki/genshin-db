@@ -1,0 +1,167 @@
+{
+	"id": 71702,
+	"type": "WQ",
+	"name": "Herboriste en détresse",
+	"description": "Gui l'herboriste, de Liyue, aurait besoin de 3 brins de muguet bleu.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Donnez 3 brins de muguet bleu à Gui l'herboriste.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Gui l'herboriste.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170202,
+						0
+					],
+					"talkId": 7170202
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170201",
+							"2"
+						],
+						"stepId": 7170201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170201"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Gui l'herboriste"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717020101,
+					"content": "Le muguet bleu...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717020102
+					]
+				},
+				{
+					"id": 717020102,
+					"content": "Vous tombez à pic ! Vous les avez trouvés ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717020103,
+						717020104
+					],
+					"speakerTitle": "Gui l'herboriste"
+				},
+				{
+					"id": 717020103,
+					"content": "Et voici.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717020104,
+					"content": "Pas encore...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717020105
+					]
+				},
+				{
+					"id": 717020105,
+					"content": "Je vous prie de me les ramener dès que possible, alors.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Gui l'herboriste"
+				}
+			]
+		},
+		{
+			"id": 7170202,
+			"completionStepIds": [
+				7170202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170202",
+							"2"
+						],
+						"stepId": 7170202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Gui l'herboriste"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717020201,
+					"content": "Voyons voir... Parfait, ça fera l'affaire.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717020202
+					],
+					"speakerTitle": "Gui l'herboriste"
+				},
+				{
+					"id": 717020202,
+					"content": "Merci beaucoup. Tenez, en récompense.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Gui l'herboriste"
+				}
+			]
+		}
+	]
+}

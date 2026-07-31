@@ -1,0 +1,576 @@
+{
+	"id": 20040,
+	"type": "IQ",
+	"name": "Uma nova tempestade está se formando",
+	"description": "A irmã Vind deseja chegar ao topo da torre de vigia, mas algo ficou no seu caminho. Ela está tentando pensar em uma maneira de...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2004001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com a Vind",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2004001,
+						0
+					],
+					"talkId": 2004001
+				}
+			]
+		},
+		{
+			"id": 2004002,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Elimine os monstros na torre de fumaça",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2004003,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com Vind",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2004002,
+						0
+					],
+					"talkId": 2004002
+				}
+			]
+		},
+		{
+			"id": 2004004,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Escale a Torre de Vigia",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						2004004,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2004007,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com Vind",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2004004,
+						0
+					],
+					"talkId": 2004004
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2004001,
+			"completionStepIds": [
+				2004001
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2004001",
+							"2"
+						],
+						"stepId": 2004001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Vind"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200400101,
+					"content": "*Suspiro* Como que vou conseguir passar...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400102
+					],
+					"speakerTitle": "Vind"
+				},
+				{
+					"id": 200400102,
+					"content": "Oh, olá! Tem alguma coisa errada?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400103
+					],
+					"speakerTitle": "Vind"
+				},
+				{
+					"id": 200400103,
+					"content": "O que você está fazendo?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200400104
+					]
+				},
+				{
+					"id": 200400104,
+					"content": "Estou tentando chegar à Torre de Vigia no Canto do Precursor do Vento para ver se há uma tempestade no mar ou não.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400105
+					],
+					"speakerTitle": "Vind"
+				},
+				{
+					"id": 200400105,
+					"content": "Mas há um grupo de monstros bloqueando o caminho a seguir. Eu não sei como passar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400106
+					],
+					"speakerTitle": "Vind"
+				},
+				{
+					"id": 200400106,
+					"content": "Oh, não se preocupe! Não estou pedindo você ir à Torre por mim.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400107
+					],
+					"speakerTitle": "Vind"
+				},
+				{
+					"id": 200400107,
+					"content": "É meu dever, e devo cumpri-lo, não importa o que for preciso.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400108
+					],
+					"speakerTitle": "Vind"
+				},
+				{
+					"id": 200400108,
+					"content": "Você provavelmente tem coisas para fazer. Vamos lá, não se preocupe comigo. Eu vou resolver isso...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Vind"
+				}
+			]
+		},
+		{
+			"id": 2004002,
+			"completionStepIds": [
+				2004003
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2004002",
+							"3"
+						],
+						"stepId": 2004002,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2004003",
+							"2"
+						],
+						"stepId": 2004003,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Vind"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200400201,
+					"content": "O que foi agora?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400202
+					],
+					"speakerTitle": "Vind"
+				},
+				{
+					"id": 200400202,
+					"content": "Os monstros foram eliminados.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200400203
+					]
+				},
+				{
+					"id": 200400203,
+					"content": "Sério? Graças ao Arconte Anemo...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400204
+					],
+					"speakerTitle": "Vind"
+				},
+				{
+					"id": 200400204,
+					"content": "Não, não, desculpe. Sou eu quem tenho que agradecer.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400205
+					],
+					"speakerTitle": "Vind"
+				},
+				{
+					"id": 200400205,
+					"content": "Como posso retribuir? Bem, eu tenho...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400206
+					],
+					"speakerTitle": "Vind"
+				},
+				{
+					"id": 200400206,
+					"content": "Venha me encontrar na Torre de Vigia. Eu esperarei por você.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Vind"
+				}
+			]
+		},
+		{
+			"id": 2004003,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2004002",
+							"2"
+						],
+						"stepId": 2004002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Vind"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200400301,
+					"content": "Hum... talvez se eu correr rápido o suficiente eu possa chegar em cima sem me machucar...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Vind"
+				}
+			]
+		},
+		{
+			"id": 2004004,
+			"completionStepIds": [
+				2004007
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2004004",
+							"3"
+						],
+						"stepId": 2004004,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2004007",
+							"2"
+						],
+						"stepId": 2004007,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Vind"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200400401,
+					"content": "Hum... o mar está calmo e não há vento hoje.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400402
+					],
+					"speakerTitle": "Vind"
+				},
+				{
+					"id": 200400402,
+					"content": "Gerações da minha família têm vigiado aqui em nome de Mondstadt, procurando sinais de uma tempestade que se aproximava. Foi Dama Vennessa quem primeiro nos confiou essa tarefa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400403
+					],
+					"speakerTitle": "Vind"
+				},
+				{
+					"id": 200400403,
+					"content": "Desde que Lorde Barbatos começou a proteger Mondstadt, não vimos uma única tempestade e as torres de vigia caíram em ruínas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400404
+					],
+					"speakerTitle": "Vind"
+				},
+				{
+					"id": 200400404,
+					"content": "Mesmo assim, ainda não consigo parar de vir nesta torre de vigia.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400405,
+						200400408
+					],
+					"speakerTitle": "Vind"
+				},
+				{
+					"id": 200400405,
+					"content": "Você se dedicou muito.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200400406
+					]
+				},
+				{
+					"id": 200400406,
+					"content": "Não foi mais do que a minha obrigação...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400407
+					],
+					"speakerTitle": "Vind"
+				},
+				{
+					"id": 200400407,
+					"content": "Preferia nunca ter que cumpri-lo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400410
+					],
+					"speakerTitle": "Vind"
+				},
+				{
+					"id": 200400410,
+					"content": "Enfim, obrigada pela sua ajuda. Estas Margaridas Voadoras são para você.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400411
+					],
+					"speakerTitle": "Vind"
+				},
+				{
+					"id": 200400411,
+					"content": "No passado, a minha família observava como as Margaridas Voadoras cresciam, para ver a velocidade de ventos.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400412
+					],
+					"speakerTitle": "Vind"
+				},
+				{
+					"id": 200400412,
+					"content": "Não se encontram as Margaridas Voadoras em lugares sem vento, nem em lugares com ventos bem fortes.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400413
+					],
+					"speakerTitle": "Vind"
+				},
+				{
+					"id": 200400413,
+					"content": "Só floresce em lugares como Mondstadt, onde o vento é gentil e nutritivo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400414
+					],
+					"speakerTitle": "Vind"
+				},
+				{
+					"id": 200400414,
+					"content": "Esperamos que possam continuar prosperando por aqui para sempre.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Vind"
+				},
+				{
+					"id": 200400408,
+					"content": "É uma história muito triste...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200400409
+					]
+				},
+				{
+					"id": 200400409,
+					"content": "Sim, espero que essa história nunca se repita.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400410
+					],
+					"speakerTitle": "Vind"
+				}
+			]
+		},
+		{
+			"id": 2004005,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2004002",
+							"2"
+						],
+						"stepId": 2004002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200400501,
+					"content": "Embora ela esteja falando assim, existem muitos monstros à frente...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400502
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 200400502,
+					"content": "Vamos primeiro limpar esta área para a Sra. Finder, que tal?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400503
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 200400503,
+					"content": "Olhe para ela... Parece que ela quer subir direto para lá...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400504,
+						200400505
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 200400504,
+					"content": "Sem problemas.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200400506
+					]
+				},
+				{
+					"id": 200400506,
+					"content": "As pessoas de bom caráter merecem ser ajudadas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 200400505,
+					"content": "Eu nunca vi ninguém com uma dedicação assim...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200400507
+					]
+				},
+				{
+					"id": 200400507,
+					"content": "Isso seria o pior que poderia acontecer.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400508
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 200400508,
+					"content": "Não vamos permitir que ocorra assim. Vamos lá, vamos eliminar esses monstros.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,653 @@
+{
+	"id": 79000,
+	"type": "WQ",
+	"name": "They Who Hear the Sea",
+	"description": "You discover a strange conch shell on Twinning Isle in the Golden Apple Archipelago. The sounds that come from within seem to hint at something...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7900001,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Search for treasure on Twinning Isle",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7900002,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Find the treasure",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7900003,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Unlock the treasure chest",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7900002,
+						0
+					],
+					"talkId": 7900002
+				}
+			]
+		},
+		{
+			"id": 7900004,
+			"order": 9,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7900005,
+			"order": 10,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7900006,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7900004,
+						0
+					],
+					"talkId": 7900004
+				}
+			]
+		},
+		{
+			"id": 7900007,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7900002,
+						0
+					],
+					"talkId": 7900002
+				}
+			]
+		},
+		{
+			"id": 7900008,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7900002,
+						0
+					],
+					"talkId": 7900002
+				}
+			]
+		},
+		{
+			"id": 7900009,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7900010,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6800205,
+						0
+					],
+					"talkId": 6800205
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7900001,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7900008",
+							"2"
+						],
+						"stepId": 7900008,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790000101,
+					"content": "(You must enter the correct code to open this chest. What number do you wish to enter in the first position?)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790000102,
+						790000103,
+						790000104,
+						790000105,
+						790000106
+					],
+					"speakerTitle": "Locked Chest"
+				},
+				{
+					"id": 790000102,
+					"content": "Enter \"1\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000107
+					]
+				},
+				{
+					"id": 790000107,
+					"content": "(You must enter the correct code to open this chest. What number do you wish to enter in the second position?)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790000108,
+						790000109,
+						790000110,
+						790000111,
+						790000112
+					],
+					"speakerTitle": "Locked Chest"
+				},
+				{
+					"id": 790000108,
+					"content": "Enter \"1\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000113
+					]
+				},
+				{
+					"id": 790000113,
+					"content": "(You must enter the correct code to open this chest. What number do you wish to enter in the third position?)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790000114,
+						790000115,
+						790000116,
+						790000117,
+						790000118
+					],
+					"speakerTitle": "Locked Chest"
+				},
+				{
+					"id": 790000114,
+					"content": "Enter \"1\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000119
+					]
+				},
+				{
+					"id": 790000119,
+					"content": "(You must enter the correct code to open this chest. What number do you wish to enter in the fourth position?)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790000120,
+						790000121,
+						790000122,
+						790000123,
+						790000124
+					],
+					"speakerTitle": "Locked Chest"
+				},
+				{
+					"id": 790000120,
+					"content": "Enter \"1\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000125
+					]
+				},
+				{
+					"id": 790000125,
+					"content": "(You attempt to open the coded lock...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Locked Chest"
+				},
+				{
+					"id": 790000121,
+					"content": "Enter \"2\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000125
+					]
+				},
+				{
+					"id": 790000122,
+					"content": "Enter \"3\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000125
+					]
+				},
+				{
+					"id": 790000123,
+					"content": "Enter \"4\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000125
+					]
+				},
+				{
+					"id": 790000124,
+					"content": "Enter \"5\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000125
+					]
+				},
+				{
+					"id": 790000115,
+					"content": "Enter \"2\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000119
+					]
+				},
+				{
+					"id": 790000116,
+					"content": "Enter \"3\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000119
+					]
+				},
+				{
+					"id": 790000117,
+					"content": "Enter \"4\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000119
+					]
+				},
+				{
+					"id": 790000118,
+					"content": "Enter \"5\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000119
+					]
+				},
+				{
+					"id": 790000109,
+					"content": "Enter \"2\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000113
+					]
+				},
+				{
+					"id": 790000110,
+					"content": "Enter \"3\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000113
+					]
+				},
+				{
+					"id": 790000111,
+					"content": "Enter \"4\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000113
+					]
+				},
+				{
+					"id": 790000112,
+					"content": "Enter \"5\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000113
+					]
+				},
+				{
+					"id": 790000103,
+					"content": "Enter \"2\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000107
+					]
+				},
+				{
+					"id": 790000104,
+					"content": "Enter \"3\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000107
+					]
+				},
+				{
+					"id": 790000105,
+					"content": "Enter \"4\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000107
+					]
+				},
+				{
+					"id": 790000106,
+					"content": "Enter \"5\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000107
+					]
+				}
+			]
+		},
+		{
+			"id": 7900002,
+			"completionStepIds": [
+				7900003,
+				7900007,
+				7900008
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_QUEST_VAR_EQUAL",
+						"rawParams": [
+							"0",
+							"1",
+							"79000"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7900008",
+							"2"
+						],
+						"stepId": 7900008,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790000201,
+					"content": "It opened! Let's have a look at what's inside!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Locked Chest"
+				}
+			]
+		},
+		{
+			"id": 7900003,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_QUEST_VAR_EQUAL",
+						"rawParams": [
+							"0",
+							"2",
+							"79000"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790000301,
+					"content": "Aw, it didn't open... Looks like we didn't enter the correct code...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790000302
+					],
+					"speakerTitle": "Locked Chest"
+				},
+				{
+					"id": 790000302,
+					"content": "Let's listen carefully to the sounds that the conches make. Maybe those'll give us some clues.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790000302
+					],
+					"speakerTitle": "Locked Chest"
+				}
+			]
+		},
+		{
+			"id": 7900004,
+			"completionStepIds": [
+				7900006
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7900006",
+							"2"
+						],
+						"stepId": 7900006,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790000401,
+					"content": "Found it! Treasure, treasure... Wonder what'll we find inside...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790000402
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790000402,
+					"content": "Eh? There's a lock on it. And it's coded, too... Looks like we'll need the code to open it...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790000403,
+						790000404
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790000403,
+					"content": "We can just shatter it, can't we?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000405
+					]
+				},
+				{
+					"id": 790000405,
+					"content": "Wait! What will happen if the stuff inside breaks as well?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790000406
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790000406,
+					"content": "Let's find a way to unlock it instead, shall we?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790000410
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790000410,
+					"content": "But since this chest contains \"family heirlooms\" and is locked using a code...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790000411
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790000411,
+					"content": "That's gotta mean that the person who locked it thinks that the code they left behind is easy enough to remember.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790000412
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790000412,
+					"content": "Looks like our only chance are those conches that store sounds.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790000413
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790000413,
+					"content": "Let's listen to the sounds inside those conches again. Let's hope that they can give us some clues about the code...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790000404,
+					"content": "Looks like we'll have to find a way to unlock it.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000407
+					]
+				},
+				{
+					"id": 790000407,
+					"content": "But Paimon doesn't see any stone tablets, potraits, notes, carvings or notes nearby...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790000408
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790000408,
+					"content": "There's a dearth of scholars, Treasure Hoarders, and adventurers, too.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						790000409
+					]
+				},
+				{
+					"id": 790000409,
+					"content": "Yeah. Hmm... This is an unprecedented test!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790000410
+					],
+					"speakerTitle": "Paimon"
+				}
+			]
+		}
+	]
+}

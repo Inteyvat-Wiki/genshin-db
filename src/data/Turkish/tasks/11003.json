@@ -1,0 +1,557 @@
+{
+	"id": 11003,
+	"type": "LQ",
+	"name": "Büyük İkramiye",
+	"description": "Xiangling, Nilüfer Başlarının ve Jueyun Biberinin tek başına yemek yarışmasında galip gelmesini sağlayacağına inanmıyor ve daha fazla malzeme bulmak için yola çıkıyor.",
+	"unlockDescription": "",
+	"chapter": "Mondstadt Gastronomi Yolculuğu",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		11004
+	],
+	"prevMainQuestList": [
+		11002
+	],
+	"steps": [
+		{
+			"id": 1100301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Xiangling'in söylediği yer git.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1100301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1100302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Xiangling ve titreyen adamla konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1100302,
+						0
+					],
+					"talkId": 1100302
+				}
+			]
+		},
+		{
+			"id": 1100303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bir Turplu Sebze Çorbası (Lezzetli) pişir.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						108021,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1100304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Hazırladığın çorbayı avcıya ver.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1100304,
+						0
+					],
+					"talkId": 1100304
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1100302,
+			"completionStepIds": [
+				1100302
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100302",
+							"2"
+						],
+						"stepId": 1100302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Olaf"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110030201,
+					"content": "Bırr... Çok, çok s-soğuk...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030202
+					],
+					"speakerTitle": "Olaf"
+				},
+				{
+					"id": 110030202,
+					"content": "Titriyor! Onu ısıtmalıyız, çabuk olun!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030203
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110030203,
+					"content": "Bir ateş yakın.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030204
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110030204,
+					"content": "Sıcak çorba daha da iyi olur.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030205
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110030205,
+					"content": "#{NICKNAME}, sen onun için <color=#00E1FFFF>bir kase sıcak çorba</color> hazırlarken ben de ona bakarım, olur mu?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030206
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110030206,
+					"content": "Buraya gelirken bir dağ yabanisi kampından geçtik. Büyük bir olasılıkla orada üzerinde yemek pişirebileceğimiz bir kamp ateşi vardır.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030207
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110030207,
+					"content": "Elbette.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030208
+					]
+				},
+				{
+					"id": 110030208,
+					"content": "Harika. Olabildiğince çabuk ol!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xiangling"
+				}
+			]
+		},
+		{
+			"id": 1100304,
+			"completionStepIds": [
+				1100304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100304",
+							"2"
+						],
+						"stepId": 1100304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PACK_HAVE_ITEM",
+						"rawParams": [
+							"108021",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Olaf"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110030401,
+					"content": "Mmm... Daha iyi... Daha iyi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030402
+					],
+					"speakerTitle": "Olaf"
+				},
+				{
+					"id": 110030402,
+					"content": "Teşekkür ederim. Çorba gerçekten işe yaradı.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030403
+					],
+					"speakerTitle": "Olaf"
+				},
+				{
+					"id": 110030403,
+					"content": "Ne oldu, dondun mu?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030404
+					]
+				},
+				{
+					"id": 110030404,
+					"content": "Evet. bir yaban domuzunu kovalıyordum ve tüm bu yol boyunca onu kovaladıktan sonra oradaki yer altı harabelerinin oraya düştü.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030405
+					],
+					"speakerTitle": "Olaf"
+				},
+				{
+					"id": 110030405,
+					"content": "Onu içeride takip ettim ama bir Yalancı Buz Ağacı ile karşılaştım.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030406
+					],
+					"speakerTitle": "Olaf"
+				},
+				{
+					"id": 110030406,
+					"content": "Beni anında dondurdu. Uyandığımda hemen dışarı koştum ama... Gücüm tükenmeden ancak bu kadar uzaklaşabildim.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030407
+					],
+					"speakerTitle": "Olaf"
+				},
+				{
+					"id": 110030407,
+					"content": "Yalancı Buz Ağacı mı? Ağaçlar... İnsanlara saldırıyor mu?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030408
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110030408,
+					"content": "Artık saldırıyorlar! Daha önce başkalarından duymuştum ama bu kendi gözlerimle ilk görüşümdü.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030409
+					],
+					"speakerTitle": "Olaf"
+				},
+				{
+					"id": 110030409,
+					"content": "Ah, harabelerden kesinlikle uzak durmalıyız... Kulağa tehlikeli geliyor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030410
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110030410,
+					"content": "Kulağa harika geliyor!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030411,
+						110030412
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110030411,
+					"content": "... Ciddi misin?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030413
+					]
+				},
+				{
+					"id": 110030413,
+					"content": "İşte bu! Eksik malzeme! Bu da işin kaymağı oldu!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030414
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110030414,
+					"content": "Sakin ol. Bu kadar saldırgan olan bir ağacı gerçekten yiyebilir miyiz?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030415
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110030415,
+					"content": "Öğrenmenin tek bir yolu var, hadi gidelim!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030416
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110030416,
+					"content": "*iç çeker* Yine gitti...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030417,
+						110030418
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110030417,
+					"content": "Gitmemiz gerekiyor.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030419
+					]
+				},
+				{
+					"id": 110030419,
+					"content": "Benim için endişelenmeyin, iyi olacağım. Ama onu durdurmalısınız, kendini büyük bir tehlikeye atıyor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Olaf"
+				},
+				{
+					"id": 110030418,
+					"content": "Pınarköy'e geri dönmelisin.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030419
+					]
+				},
+				{
+					"id": 110030412,
+					"content": "Aklına yiyecek GETİRMEYEN herhangi bir şey var mı?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030413
+					]
+				}
+			]
+		},
+		{
+			"id": 1100396,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100304",
+							"2"
+						],
+						"stepId": 1100304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_NUM_LESS_THAN",
+						"rawParams": [
+							"108021",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Xiangling"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110039801,
+					"content": "Buraya gelirken bir dağ yabanisi kampından geçtik. Büyük bir olasılıkla orada üzerinde yemek pişirebileceğimiz bir kamp ateşi vardır.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110039802
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110039802,
+					"content": "Sen gidip ona bir kase güzel, sıcak çorba hazırlarken ben burada kalıp ona bakacağım.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xiangling"
+				}
+			]
+		},
+		{
+			"id": 1100397,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100304",
+							"2"
+						],
+						"stepId": 1100304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_NUM_LESS_THAN",
+						"rawParams": [
+							"108021",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Olaf"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110039901,
+					"content": "Çok soğuk... Burası ç-çok s-soğuk...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Olaf"
+				}
+			]
+		},
+		{
+			"id": 1100398,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100303",
+							"2"
+						],
+						"stepId": 1100303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Xiangling"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110039801,
+					"content": "Buraya gelirken bir dağ yabanisi kampından geçtik. Büyük bir olasılıkla orada üzerinde yemek pişirebileceğimiz bir kamp ateşi vardır.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110039802
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110039802,
+					"content": "Sen gidip ona bir kase güzel, sıcak çorba hazırlarken ben burada kalıp ona bakacağım.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xiangling"
+				}
+			]
+		},
+		{
+			"id": 1100399,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100303",
+							"2"
+						],
+						"stepId": 1100303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Olaf"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110039901,
+					"content": "Çok soğuk... Burası ç-çok s-soğuk...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Olaf"
+				}
+			]
+		}
+	]
+}

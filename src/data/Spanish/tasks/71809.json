@@ -1,0 +1,696 @@
+{
+	"id": 71809,
+	"type": "WQ",
+	"name": "Un poema para la ciudad",
+	"description": "Aunque la tormenta de Liyue ya amainó, causó algunos cambios en la ciudad. El poeta Chingzhou quiere plasmar estos cambios en sus versos.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		1025
+	],
+	"steps": [
+		{
+			"id": 7180901,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		},
+		{
+			"id": 7180902,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Busca inspiración poética cerca del muelle sur",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1183,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180903,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Busca inspiración poética cerca de la Farmacia Bubu",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1184,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180904,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Busca inspiración poética cerca de la Terraza Yujing",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1185,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180905,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con las personas de la Terraza Yujing",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180902,
+						0
+					],
+					"talkId": 7180902
+				}
+			]
+		},
+		{
+			"id": 7180906,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con las personas de la Terraza Yujing",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180903,
+						0
+					],
+					"talkId": 7180903
+				}
+			]
+		},
+		{
+			"id": 7180907,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7180907,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180908,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7180908,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180909,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Informa a Chingzhou",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180904,
+						0
+					],
+					"talkId": 7180904
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7180902,
+			"completionStepIds": [
+				7180905
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180905",
+							"2"
+						],
+						"stepId": 7180905,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718090201,
+					"content": "Menos mal...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090202
+					],
+					"speakerTitle": "Hao"
+				},
+				{
+					"id": 718090202,
+					"content": "¿Estás bien?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090203
+					]
+				},
+				{
+					"id": 718090203,
+					"content": "#Oh, viajer{F#a}{M#o}, eres tú. ¿Estás al corriente de lo que ocurrió en la ciudad?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090204
+					],
+					"speakerTitle": "Hao"
+				},
+				{
+					"id": 718090204,
+					"content": "Bueno, al menos no ocurrió nada más después de ese incidente... Y lo que es más importante, los puestos de comida de la ciudad siguen abiertos.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090205
+					],
+					"speakerTitle": "Hao"
+				},
+				{
+					"id": 718090205,
+					"content": "Si no, ¿cómo podría seguir comiendo cosas tan deliciosas?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090206
+					],
+					"speakerTitle": "Hao"
+				},
+				{
+					"id": 718090206,
+					"content": "Ah, hablas de comida...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090207
+					]
+				},
+				{
+					"id": 718090207,
+					"content": "Oye, no menosprecies la comida. La mejor forma de saber si un lugar es bueno o no es viendo cómo sabe su gastronomía.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090208
+					],
+					"speakerTitle": "Hao"
+				},
+				{
+					"id": 718090208,
+					"content": "Ah, hablar de esto me está dando hambre de nuevo. Tal vez debería ir por algo de comer...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Hao"
+				}
+			]
+		},
+		{
+			"id": 7180903,
+			"completionStepIds": [
+				7180906
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180906",
+							"2"
+						],
+						"stepId": 7180906,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Fan Erye"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718090301,
+					"content": "Cuanto más escucho esta ópera, menos la entiendo...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090302
+					],
+					"speakerTitle": "Fan Erye"
+				},
+				{
+					"id": 718090302,
+					"content": "¿Ocurre algo?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090303
+					]
+				},
+				{
+					"id": 718090303,
+					"content": "#Oh, viajer{F#a}{M#o}, eres tú. La Casa de Té Heyu sacó varias piezas de ópera hace poco.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090304
+					],
+					"speakerTitle": "Fan Erye"
+				},
+				{
+					"id": 718090304,
+					"content": "Son un poco... Bueno, es cierto que tienen un ritmo muy alegre, pero no las comprendo del todo, ni tampoco entiendo por qué a los jóvenes les gustan tanto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090305
+					],
+					"speakerTitle": "Fan Erye"
+				},
+				{
+					"id": 718090305,
+					"content": "¿Y cuál es tu opinión al respecto?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090306
+					]
+				},
+				{
+					"id": 718090306,
+					"content": "Pues... personalmente, lo que más me gusta son los clásicos. Es a lo que estoy acostumbrado, después de todo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090307
+					],
+					"speakerTitle": "Fan Erye"
+				},
+				{
+					"id": 718090307,
+					"content": "Pero Liyue está cambiando, así que supongo que el hecho de que haya óperas nuevas va acorde a esta situación.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090308
+					],
+					"speakerTitle": "Fan Erye"
+				},
+				{
+					"id": 718090308,
+					"content": "*Suspira*, aun así, estos cambios han sucedido demasiado rápido, y hace mucho tiempo que no ha habido una actuación de ópera antigua. Me pregunto si Rex Lapis... Bueno, no importa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Fan Erye"
+				}
+			]
+		},
+		{
+			"id": 7180904,
+			"completionStepIds": [
+				7180909
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180909",
+							"2"
+						],
+						"stepId": 7180909,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Chingzhou"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718090401,
+					"content": "#¿Realizó algún hallazgo, {F#señorita}{M#caballero}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090402
+					],
+					"speakerTitle": "Chingzhou"
+				},
+				{
+					"id": 718090402,
+					"content": "Unos cuantos.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090403
+					]
+				},
+				{
+					"id": 718090403,
+					"content": "Oh, ¿en serio? Adelante, le escucho.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090404
+					],
+					"speakerTitle": "Chingzhou"
+				},
+				{
+					"id": 718090404,
+					"content": "Hay muchos perros en el muelle sur.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090405
+					]
+				},
+				{
+					"id": 718090405,
+					"content": "Oh, maravilloso. Seguro que dotan a la escena de un ambiente muy vivaz.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090406
+					],
+					"speakerTitle": "Chingzhou"
+				},
+				{
+					"id": 718090406,
+					"content": "Hay muchos pinzones en la Farmacia Bubu.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090407
+					]
+				},
+				{
+					"id": 718090407,
+					"content": "Pinzones... Oh, un símbolo de tiempos de paz, perfecto para mi imaginario lírico.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090408
+					],
+					"speakerTitle": "Chingzhou"
+				},
+				{
+					"id": 718090408,
+					"content": "Hay gente a la que solo le interesa la comida.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090409
+					]
+				},
+				{
+					"id": 718090409,
+					"content": "Eso no tiene nada de malo. Comer es una de las principales necesidades y placeres de la vida, especialmente en una urbe como Liyue.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090410
+					],
+					"speakerTitle": "Chingzhou"
+				},
+				{
+					"id": 718090410,
+					"content": "Todo esto es fascinante. Lo anotaré. Quizás pueda utilizarlo para mis composiciones poéticas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090411
+					],
+					"speakerTitle": "Chingzhou"
+				},
+				{
+					"id": 718090411,
+					"content": "Hay gente que piensa que las cosas están cambiando muy rápido.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090412
+					]
+				},
+				{
+					"id": 718090412,
+					"content": "Bueno, tal opinión es razonable. La actual Liyue experimenta cambios prácticamente a diario. Incluso a mí me resulta complicado aceptar tremendas transformaciones.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090413
+					],
+					"speakerTitle": "Chingzhou"
+				},
+				{
+					"id": 718090413,
+					"content": "Sin embargo, dicha cuestión es demasiado amplia. Temo que no pueda abarcarlo todo en un solo poema. No obstante, lo anotaré.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090414
+					],
+					"speakerTitle": "Chingzhou"
+				},
+				{
+					"id": 718090414,
+					"content": "Esto bastará. Puedo afirmar que, efectivamente, solicitar su ayuda fue una sabia elección.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090415
+					],
+					"speakerTitle": "Chingzhou"
+				},
+				{
+					"id": 718090415,
+					"content": "Creo que, gracias a estos temas, podré agregar varios poemas nuevos para mi próxima antología.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090416
+					],
+					"speakerTitle": "Chingzhou"
+				},
+				{
+					"id": 718090416,
+					"content": "Ah, cierto. Además de algunos bienes materiales, también le he preparado un pequeño obsequio. Le ruego lo acepte como muestra de mi gratitud.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090417
+					],
+					"speakerTitle": "Chingzhou"
+				},
+				{
+					"id": 718090417,
+					"content": "Cuando se publique mi nueva antología de poemas, puede cambiar este autógrafo por un ejemplar gratuito.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Chingzhou"
+				}
+			]
+		},
+		{
+			"id": 7180906,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180905",
+							"3"
+						],
+						"stepId": 7180905,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180908",
+							"2"
+						],
+						"stepId": 7180908,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180909",
+							"2"
+						],
+						"stepId": 7180909,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718090601,
+					"content": "Esta conversación me está dando hambre. ¿Qué podríamos comer?...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Hao"
+				}
+			]
+		},
+		{
+			"id": 7180907,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180906",
+							"3"
+						],
+						"stepId": 7180906,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180908",
+							"2"
+						],
+						"stepId": 7180908,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180909",
+							"2"
+						],
+						"stepId": 7180909,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Fan Erye"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718090701,
+					"content": "*Suspira*, Liyue está cambiando muy rápido...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Fan Erye"
+				}
+			]
+		},
+		{
+			"id": 7180910,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180902",
+							"2"
+						],
+						"stepId": 7180902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180903",
+							"2"
+						],
+						"stepId": 7180903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180904",
+							"2"
+						],
+						"stepId": 7180904,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180908",
+							"2"
+						],
+						"stepId": 7180908,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Chingzhou"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718091001,
+					"content": "Liyue ha cambiado tanto... No la reconozco.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Chingzhou"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,927 @@
+{
+	"id": 20069,
+	"type": "IQ",
+	"name": "Çiçekleri Taze Tutmak",
+	"description": "Çiçekler uzun süre taze kalamaz. Çiçek Fısıltısı'nın sahibi Flora, çiçekleri daha iyi korumanın yolunu arıyor.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2006901,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Flora ile konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2006901,
+						0
+					],
+					"talkId": 2006901
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2006903,
+						0
+					],
+					"talkId": 2006903
+				}
+			]
+		},
+		{
+			"id": 2006902,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Ejdersırtı'ndaki Yedilerin Heykeline git ve bir paket yerleştir.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_INTERACT_GADGET",
+					"rawParams": [
+						70710239,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2006903,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Tüm düşmanları yen.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2006904,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dağdaki mağaranın yakınına bir paket yerleştir.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_INTERACT_GADGET",
+					"rawParams": [
+						70710232,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2006905,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Flora ile konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2006902,
+						0
+					],
+					"talkId": 2006902
+				}
+			]
+		},
+		{
+			"id": 2006906,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2006907,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Ejdersırtı'na git ve su kaynağının yanına bir paket yerleştir.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_INTERACT_GADGET",
+					"rawParams": [
+						70710240,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2006908,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Ejdersırtı'nda bulunan dağdaki mağaraya git ve bir paket yerleştir.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2006909,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Flora'dan özür dile.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2006904,
+						0
+					],
+					"talkId": 2006904
+				}
+			]
+		},
+		{
+			"id": 2006912,
+			"order": 12,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2006901,
+			"completionStepIds": [
+				2006901
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006901",
+							"2"
+						],
+						"stepId": 2006901,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"40002",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Flora"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200690101,
+					"content": "Bu çiçekler de çok iyi durmuyor. Yazık...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690102
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690102,
+					"content": "Bir sorun mu var?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690103
+					]
+				},
+				{
+					"id": 200690103,
+					"content": "Şey, birçok insan hediye olarak tek dal çiçek almayı tercih ediyor, ben de bu sebeple bazılarını kesiyorum.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690104
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690104,
+					"content": "Ama kestiğim çiçekler uzun süre taze kalmıyor. Hepsi satılmazsa solacaklar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690105
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690105,
+					"content": "Geçmişte bir sürü yöntem denedim ama hiçbir sonuç vermedi, çiçekler yine aynı şekilde soluyor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690106
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690106,
+					"content": "Çiçekleri taze tutmanın bir yolu var mı acaba?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690107,
+						200690111
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690107,
+					"content": "Taze tutmak mı demiştin?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690108
+					]
+				},
+				{
+					"id": 200690108,
+					"content": "Avcının Yeri'ndeki Sara'nın kullanılmamış malzemeleri soğuk bir yere koyarak veya buz blokları kullanarak sakladığını duymuştum.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690109
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690109,
+					"content": "Bu yöntemleri ben de denedim ama buz bloku kullanarak sakladığım çiçekler bir tuhaf oldu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690110
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690110,
+					"content": "Solmuyor ama taze de kalmıyor. Hiçbir türlü onları müşteriye sunamıyorum.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690114
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690114,
+					"content": "Birçok kişiye sordum ve Bay Sayid... Kim olduğunu biliyorsun değil mi? Şu araştırmacı.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690115
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690115,
+					"content": "Bir gün çiçek almaya geldi. Bir kitapta çiçekleri kitap arasına koyup soğuk bir yerde sakladıkları yazıyormuş.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690116
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690116,
+					"content": "Hatta buz bloklarının yanına koymadan önce çiçekleri bir pakete koyup o şekilde saklamak gerekiyormuş.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690117
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690117,
+					"content": "Ayrıca deney yapmak istersem en uygun yer Ejdersırtı'nın düşük sıcaklığa sahip bölgesiymiş.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690118
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690118,
+					"content": "Ancak Ejdersırtı'nın çok tehlikeli bir yer olduğunu duydum ve bu kadar kısa sürede bana yardım edecek bir maceracı da bulamadım.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690119
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690119,
+					"content": "Gezgin, bu üç çiçek paketini Ejdersırtı'nda kara gömmeme yardım edebilir misin?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690120,
+						200690121
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690120,
+					"content": "Oldu bil.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690122
+					]
+				},
+				{
+					"id": 200690122,
+					"content": "Yardımın için teşekkürler. Bakalım... Ejdersırtı'nın devasa bir yer olduğunu ve birçok bölgeden oluştuğunu duymuştum, bu da bizi farklı sonuçlara götürebilir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690123
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690123,
+					"content": "Karşılaştırma yapmamız gerekebilir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690124
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690124,
+					"content": "O halde lütfen bu çiçekleri <color=#00E1FFFF>Yedilerin Heykelinin yanına</color>, <color=#00E1FFFF>su kenarına</color> ve <color=#00E1FFFF>mağara girişine</color> yerleştirmeme yardım et.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690121,
+					"content": "Nereye gömmeliyim?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690122
+					]
+				},
+				{
+					"id": 200690111,
+					"content": "En iyisi hepsini aynı gün satmak o zaman.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690112
+					]
+				},
+				{
+					"id": 200690112,
+					"content": "Bence de ama satılmayan bir iki tane kalıyor hep.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690113
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690113,
+					"content": "Yalnızca bir iki tane olduklarını biliyorum ama solup gitsinler istemiyorum.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690114
+					],
+					"speakerTitle": "Flora"
+				}
+			]
+		},
+		{
+			"id": 2006902,
+			"completionStepIds": [
+				2006905
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006905",
+							"2"
+						],
+						"stepId": 2006905,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"40002",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Flora"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200690201,
+					"content": "Çiçekler ne durumda?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690202
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690202,
+					"content": "Güvenli bir şekilde yer altındalar.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690203
+					]
+				},
+				{
+					"id": 200690203,
+					"content": "Teşekkürler. Onları bir süreliğine dağda bırakacağız.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690204
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690204,
+					"content": "Hehe, yardımların için çok teşekkür ederim. Lütfen emeklerinin karşılığı olarak bunları al.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690205
+					],
+					"speakerTitle": "Flora"
+				}
+			]
+		},
+		{
+			"id": 2006903,
+			"completionStepIds": [
+				2006901
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006901",
+							"2"
+						],
+						"stepId": 2006901,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"40002",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Flora"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200690301,
+					"content": "Bu çiçekler de çok iyi durmuyor. Yazık...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690302
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690302,
+					"content": "Bir sorun mu var?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690303
+					]
+				},
+				{
+					"id": 200690303,
+					"content": "Şey, birçok insan hediye olarak tek dal çiçek almayı tercih ediyor, ben de bu sebeple bazılarını kesiyorum.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690304
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690304,
+					"content": "Ama kestiğim çiçekler uzun süre taze kalmıyor. Hepsi satılmazsa solacaklar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690305
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690305,
+					"content": "Geçmişte bir sürü yöntem denedim ama hiçbir sonuç vermedi, çiçekler yine aynı şekilde soluyor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690306
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690306,
+					"content": "Çiçekleri taze tutmanın bir yolu var mı acaba?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690307,
+						200690311
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690307,
+					"content": "Taze tutmak mı demiştin?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690308
+					]
+				},
+				{
+					"id": 200690308,
+					"content": "Avcının Yeri'ndeki Sara'nın kullanılmamış malzemeleri soğuk bir yere koyarak veya buz blokları kullanarak sakladığını duymuştum.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690309
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690309,
+					"content": "Bu yöntemleri ben de denedim ama buz bloku kullanarak sakladığım çiçekler bir tuhaf oldu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690310
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690310,
+					"content": "Solmuyor ama taze de kalmıyor. Hiçbir türlü onları müşteriye sunamıyorum.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690314
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690314,
+					"content": "Birçok kişiye sordum ve Bay Sayid... Kim olduğunu biliyorsun değil mi? Şu araştırmacı.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690315
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690315,
+					"content": "Bir gün çiçek almaya geldi. Bir kitapta çiçekleri kitap arasına koyup soğuk bir yerde sakladıkları yazıyormuş.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690316
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690316,
+					"content": "Hatta buz bloklarının yanına koymadan önce çiçekleri bir pakete koyup o şekilde saklamak gerekiyormuş.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690317
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690317,
+					"content": "Ayrıca deney yapmak istersem en uygun yer Ejdersırtı'nın düşük sıcaklığa sahip bölgesiymiş.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690318
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690318,
+					"content": "Ancak Ejdersırtı'nın çok tehlikeli bir yer olduğunu duydum ve bu kadar kısa sürede bana yardım edecek bir maceracı da bulamadım.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690319
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690319,
+					"content": "Gezgin, bu üç çiçek paketini Ejdersırtı'nda kara gömmeme yardım edebilir misin?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690320,
+						200690321
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690320,
+					"content": "Oldu bil.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690322
+					]
+				},
+				{
+					"id": 200690322,
+					"content": "Yardımın için teşekkürler. Bakalım... Ejdersırtı'nın devasa bir yer olduğunu ve birçok bölgeden oluştuğunu duymuştum, bu da bizi farklı sonuçlara götürebilir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690323
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690323,
+					"content": "Karşılaştırma yapmamız gerekebilir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690324
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690324,
+					"content": "Tamamdır, lütfen bu çiçekleri <color=#00E1FFFF>Yedilerin Heykelinin yanına</color> ve <color=#00E1FFFF>dağdaki mağaranın girişine</color> yerleştirmeme yardım et.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690325
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690325,
+					"content": "Sonra senden <color=#00E1FFFF>dağda su olan</color> bir yer bulmanı isteyeceğim. Bir göl veya havuz iş görür. Suyun hemen kenarına göm.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690326
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690326,
+					"content": "Lütfen çok dikkatli ol. Çiçekler zarar görmesin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690321,
+					"content": "Nereye gömmeliyim?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690322
+					]
+				},
+				{
+					"id": 200690311,
+					"content": "En iyisi hepsini aynı gün satmak o zaman.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690312
+					]
+				},
+				{
+					"id": 200690312,
+					"content": "Bence de ama satılmayan bir iki tane kalıyor hep.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690313
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690313,
+					"content": "Yalnızca bir iki tane olduklarını biliyorum ama solup gitsinler istemiyorum.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690314
+					],
+					"speakerTitle": "Flora"
+				}
+			]
+		},
+		{
+			"id": 2006904,
+			"completionStepIds": [
+				2006909
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006909",
+							"2"
+						],
+						"stepId": 2006909,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"40002",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Flora"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200690401,
+					"content": "Çiçekler ne durumda?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690402
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690402,
+					"content": "Üzgünüm...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690403
+					]
+				},
+				{
+					"id": 200690403,
+					"content": "Ha? Ne oldu ki?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690404
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690404,
+					"content": "Kazara çiçekleri ve paketleri mahvettim.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690405
+					]
+				},
+				{
+					"id": 200690405,
+					"content": "Ka-Kazara mı?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690406
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690406,
+					"content": "Hay aksi... O çiçekleri özenle seçmiştim. O kalitedeki çiçekleri başka hiçbir yerde bulamazsın.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690407
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690407,
+					"content": "Ejdersırtı o kadar tehlikeli mi ki? Senin gibi bir maceracı paketleri...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690408
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690408,
+					"content": "Yine de benim için bu kadar yol gittin, teşekkür ederim. Bunları teşekkür niyetine kabul et. Şimdi izninle çiçeklerimle ilgilenmem lazım.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690409
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690409,
+					"content": "*iç çeker* Belki de Sara'nın önerdiği yöntemi denemeliyim...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Flora"
+				}
+			]
+		},
+		{
+			"id": 2006999,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006901",
+							"3"
+						],
+						"stepId": 2006901,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_NOT_RECEIVE",
+						"rawParams": [
+							"2006909",
+							"1"
+						]
+					},
+					{
+						"type": "QUEST_COND_QUEST_NOT_RECEIVE",
+						"rawParams": [
+							"2006905",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Flora"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200699904,
+					"content": "Bay Sayid gerçekten çok bilgili. Acaba insanlar Sumeru Akademisinde de çiçek saklıyor mu?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Flora"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,185 @@
+{
+	"id": 74656,
+	"type": "WQ",
+	"name": "Пузырин для Исменора",
+	"description": "Исменору нужны 5 пузыринов.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7465601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте Исменору 5 пузыринов",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7465601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7465602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Исменором",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7465602,
+						0
+					],
+					"talkId": 7465602
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7465601,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465601",
+							"2"
+						],
+						"stepId": 7465601,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7465601"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Исменор"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746560107,
+					"content": "#Ты тоже {F#пришла}{M#пришёл} сюда погулять?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746560101
+					],
+					"speakerTitle": "Исменор"
+				},
+				{
+					"id": 746560101,
+					"content": "Тебе нужен пузырин?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746560102
+					]
+				},
+				{
+					"id": 746560102,
+					"content": "#Ах, дружочек, ты {F#принесла}{M#принёс} пузырин? Прошу, поделись им со мной, и мы сможем подкрепиться и поговорить.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746560103
+					],
+					"speakerTitle": "Исменор"
+				},
+				{
+					"id": 746560103,
+					"content": "Статуи - это бессловесные поэмы, поэтому не стоит любоваться ими на голодный желудок. Так сказал мне один дуэлянт во время последней в своей жизни дуэли.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746560106,
+						746560104
+					],
+					"speakerTitle": "Исменор"
+				},
+				{
+					"id": 746560106,
+					"content": "Вот твои пузырины.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 746560104,
+					"content": "#Не {F#принесла}{M#принёс}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746560105
+					]
+				},
+				{
+					"id": 746560105,
+					"content": "Я сделал, как советовали, и отложил немного моры, чтобы поблагодарить тебя за пузырин. Я дождусь, когда ты принесёшь пузырин, а потом отдам тебе вознаграждение.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Исменор"
+				}
+			]
+		},
+		{
+			"id": 7465602,
+			"completionStepIds": [
+				7465602
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465602",
+							"2"
+						],
+						"stepId": 7465602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Исменор"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746560201,
+					"content": "Спасибо тебе! Судя по взгляду, тебя заинтересовал тот дуэлянт? Это было очень давно...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746560202
+					],
+					"speakerTitle": "Исменор"
+				},
+				{
+					"id": 746560202,
+					"content": "(Погрузился в раздумья)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Исменор"
+				}
+			]
+		}
+	]
+}

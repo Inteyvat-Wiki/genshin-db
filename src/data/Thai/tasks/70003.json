@@ -1,0 +1,550 @@
+{
+	"id": 70003,
+	"type": "WQ",
+	"name": "การทำความสะอาดบนที่สูง",
+	"description": "ดูเหมือนอัศวิน Aramis กำลังกลุ้มใจเกี่ยวกับกลีบดอกไม้ที่ปลิวว่อนไปทั่ว...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 2003,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7000301,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7000301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7000302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "พูดคุยกับ Aramis",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7000301,
+						0
+					],
+					"talkId": 7000301
+				}
+			]
+		},
+		{
+			"id": 7000303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "เก็บกวาดดอกไม้แห้งบนหลังคา",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7000304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "เก็บกวาดดอกไม้แห้งบนหลังคา",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7000305,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "เก็บกวาดดอกไม้แห้งบนกำแพงเมือง",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7000306,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "ตามหาเจ้าเหมียวน้อย",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7000306,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7000307,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7000305,
+						0
+					],
+					"talkId": 7000305
+				}
+			]
+		},
+		{
+			"id": 7000308,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "กลับไปรายงาน Aramis",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7000306,
+						0
+					],
+					"talkId": 7000306
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7000301,
+			"completionStepIds": [
+				7000302
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7000302",
+							"2"
+						],
+						"stepId": 7000302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Aramis"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700030101,
+					"content": "เฮ้อ ทำยังไงดีนะ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700030102
+					],
+					"speakerTitle": "Aramis"
+				},
+				{
+					"id": 700030102,
+					"content": "มีเรื่องกลุ้มใจอะไรเหรอ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						700030103
+					]
+				},
+				{
+					"id": 700030103,
+					"content": "พอถึงเทศกาล Windblume ก็มักจะมีคนมาถวายดอกไม้ ให้กับรูปปั้นเทพเจ้า และพอลมพัดมา กลีบของดอกไม้เหล่านั้นก็จะปลิวว่อนไปทั่วทั้งเมือง",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700030104
+					],
+					"speakerTitle": "Aramis"
+				},
+				{
+					"id": 700030104,
+					"content": "เราใช้แรงกันไปไม่น้อยเลยในการเก็บกวาดดอกไม้เหี่ยวเฉาเหล่านี้ พวกกลีบดอกไม้และใบไม้บนจัตุรัสน่ะฉันพอจะช่วยทำความสะอาดให้ได้ แต่พวกที่ปลิวไปบนหลังคาหรือกำแพงเมืองนี่ฉันคงช่วยไม่ได้หรอก",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700030105
+					],
+					"speakerTitle": "Aramis"
+				},
+				{
+					"id": 700030105,
+					"content": "โดยเฉพาะเข่าฉันน่ะ ยิ่งนับวันจะยิ่งไม่ไหวแล้ว...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700030106
+					],
+					"speakerTitle": "Aramis"
+				},
+				{
+					"id": 700030106,
+					"content": "ฉันช่วยได้",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						700030107
+					]
+				},
+				{
+					"id": 700030107,
+					"content": "เธอยินดีจะช่วยงั้นเหรอ? เยี่ยมไปเลย กลีบดอกไม้แห้งพวกนั้นกองพะเนินอยู่ชัดเจนเลยล่ะ พอเธอปีนขึ้นไปบนหลังคาแล้วก็จะเห็นเอง",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Aramis"
+				}
+			]
+		},
+		{
+			"id": 7000302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7000303",
+							"2"
+						],
+						"stepId": 7000303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7000304",
+							"2"
+						],
+						"stepId": 7000304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7000305",
+							"2"
+						],
+						"stepId": 7000305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7000306",
+							"2"
+						],
+						"stepId": 7000306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7000307",
+							"2"
+						],
+						"stepId": 7000307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Aramis"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700030201,
+					"content": "เฮ้อ ทั้งบันไดทั้งหลังคา แถมยังต้องปีนขึ้นปีนลงอีก...ไม่รู้ว่าเข่าฉันจะทนได้นานแค่ไหน...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Aramis"
+				}
+			]
+		},
+		{
+			"id": 7000305,
+			"completionStepIds": [
+				7000307
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7000306",
+							"2"
+						],
+						"stepId": 7000306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7000307",
+							"2"
+						],
+						"stepId": 7000307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"แมวหลงทาง"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700030501,
+					"content": "มีลูกแมวอยู่จริง ๆ ด้วย ว่าแต่ทำไมถึงมาอยู่ที่นี่ได้ล่ะ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700030502
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 700030502,
+					"content": "เมี้ยว... เมี้ยว...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700030503,
+						700030504
+					],
+					"speakerTitle": "แมวหลงทาง"
+				},
+				{
+					"id": 700030503,
+					"content": "เมี้ยว เมี้ยว เมี้ยว?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						700030505
+					]
+				},
+				{
+					"id": 700030505,
+					"content": "เมี้ยว เมี้ยว!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700030506
+					],
+					"speakerTitle": "แมวหลงทาง"
+				},
+				{
+					"id": 700030506,
+					"content": "อืม...ฉันว่าเจ้าเหมียวฟังไม่ออกหรอกว่าเธอพูดอะไร...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700030507
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 700030507,
+					"content": "อุ้มมันลงไปก่อนดีมั้ย เผื่อคุณ Aramis อาจจะรู้ก็ได้ว่าเจ้าของมันคือใคร",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 700030504,
+					"content": "เจ้าเหมียวหลงทางเหรอ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						700030505
+					]
+				}
+			]
+		},
+		{
+			"id": 7000306,
+			"completionStepIds": [
+				7000308
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7000308",
+							"2"
+						],
+						"stepId": 7000308,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Aramis"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700030601,
+					"content": "ขอโทษด้วยนะ แต่ฉันไม่เห็นเลย เพราะถ้าเห็นจริง ๆ ฉันก็น่าจะพอจำได้บ้างน่ะ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700030602
+					],
+					"speakerTitle": "Aramis"
+				},
+				{
+					"id": 700030602,
+					"content": "งั้นเหรอ เจ้าเหมียวชอบกลีบดอกไม้มาก ฉันก็นึกว่ามันจะวิ่งตามกลีบดอกไม้มาที่นี่ซะอีก...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700030603
+					],
+					"speakerTitle": "Margaret"
+				},
+				{
+					"id": 700030603,
+					"content": "พวกเธอกำลังตามหาแมวอยู่เหรอ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						700030604
+					]
+				},
+				{
+					"id": 700030604,
+					"content": "เมี้ยว...เมี้ยว!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700030605
+					],
+					"speakerTitle": "แมวหลงทาง"
+				},
+				{
+					"id": 700030605,
+					"content": "เสียงนี่มัน...เจ้าผีเสื้อน้อยนี่นา? จริง ๆ เลยนะเราเนี่ย หายไปไหนมาฮึ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700030606
+					],
+					"speakerTitle": "Margaret"
+				},
+				{
+					"id": 700030606,
+					"content": "มันไปอยู่บนหลังคาน่ะ",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						700030607
+					]
+				},
+				{
+					"id": 700030607,
+					"content": "เหมือนที่คิดไว้ไม่มีผิดเลย...ขอบคุณเธอมากนะ เจ้าผีเสื้อน้อยชอบวิ่งตามกลีบดอกไม้ไปทั่วน่ะ ยิ่งในช่วงเทศกาล Windblume ที่มีกลีบดอกไม้ปลิวว่อนทั่วเมืองแบบนี้ ยิ่งปวดหัวเลยล่ะ โชคดีที่มีเธอช่วยไว้",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700030608
+					],
+					"speakerTitle": "Margaret"
+				},
+				{
+					"id": 700030608,
+					"content": "คราวหน้าถ้าเธอมาที่ Cat's Tail ล่ะก็ ฉันจะเลี้ยงเครื่องดื่มเธอแก้วนึงเลย อ่า แน่นอนว่าไม่ผสมแอลกอฮอล์นะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700030609,
+						700030610
+					],
+					"speakerTitle": "Margaret"
+				},
+				{
+					"id": 700030609,
+					"content": "อย่างนี้นี่เอง...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						700030611
+					]
+				},
+				{
+					"id": 700030611,
+					"content": "ฮ่า ๆ ยังไงก็ขอบคุณเธอมากนะ งั้นไว้เจอก่อนนะ ขอให้เธอมีความสุขในเทศกาล Windblume",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700030612
+					],
+					"speakerTitle": "Margaret"
+				},
+				{
+					"id": 700030612,
+					"content": "คิดไม่ถึงเลยว่าแม้แต่แมวก็จะถูกกลีบดอกไม้ดึงดูดเข้าให้ แถมช่วงเทศกาล Windblume ก็วุ่นวายซะขนาดนี้ ดีนะที่เธอหาเจ้าเหมียวเจอ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700030613
+					],
+					"speakerTitle": "Aramis"
+				},
+				{
+					"id": 700030613,
+					"content": "ขืนให้ฉันปีนขึ้นไปบนกำแพงเมืองเพื่อตามหาแมวล่ะก็ เข่าฉันคงทรุดแน่ ๆ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700030614
+					],
+					"speakerTitle": "Aramis"
+				},
+				{
+					"id": 700030614,
+					"content": "รบกวนเธอแล้วล่ะนะ ช่วยรับของตอบแทนพวกนี้ไว้ด้วยเถอะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Aramis"
+				},
+				{
+					"id": 700030610,
+					"content": "ไว้วันหลังแล้วกันนะ",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						700030611
+					]
+				}
+			]
+		}
+	]
+}

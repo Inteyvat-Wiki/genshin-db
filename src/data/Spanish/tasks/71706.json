@@ -1,0 +1,167 @@
+{
+	"id": 71706,
+	"type": "WQ",
+	"name": "Ingredientes para el Sonriente Yanxiao",
+	"description": "El Sonriente Yanxiao, de la Posada Wangshu, necesita 2 trozos de jamón.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Entrégale 2 trozos de jamón al Sonriente Yanxiao",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con el Sonriente Yanxiao",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170602,
+						0
+					],
+					"talkId": 7170602
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170601,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170601",
+							"2"
+						],
+						"stepId": 7170601,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170601"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"El Sonriente Yanxiao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717060101,
+					"content": "Sobre el jamón...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717060102
+					]
+				},
+				{
+					"id": 717060102,
+					"content": "Oh, ¿viste mi encargo? ¿Ya tienes las 2 raciones de jamón que quería?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717060103,
+						717060104
+					],
+					"speakerTitle": "El Sonriente Yanxiao"
+				},
+				{
+					"id": 717060103,
+					"content": "Sí.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717060104,
+					"content": "Hummm, no.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717060105
+					]
+				},
+				{
+					"id": 717060105,
+					"content": "Cuando las tengas, ven rápido para dármelas, por favor. Lo necesito para probar una nueva receta.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "El Sonriente Yanxiao"
+				}
+			]
+		},
+		{
+			"id": 7170602,
+			"completionStepIds": [
+				7170602
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170602",
+							"2"
+						],
+						"stepId": 7170602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"El Sonriente Yanxiao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717060201,
+					"content": "Humm... Sí, con este jamón bastará.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717060202
+					],
+					"speakerTitle": "El Sonriente Yanxiao"
+				},
+				{
+					"id": 717060202,
+					"content": "Toma, esta es tu recompensa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "El Sonriente Yanxiao"
+				}
+			]
+		}
+	]
+}

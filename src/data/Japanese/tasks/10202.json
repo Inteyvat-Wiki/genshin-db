@@ -1,0 +1,605 @@
+{
+	"id": 10202,
+	"type": "LQ",
+	"name": "「騎士団の宝物」",
+	"description": "クレーの宝物——「爆弾」は、いとも簡単に盗人の黒幕を倒した。しかし、クレーは慌てて逃げてしまったのだ。困惑したあなたたちは騎士団に戻り、ジンに状況を報告することにした…",
+	"unlockDescription": "",
+	"chapter": "本当の宝物",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1020201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "西風騎士団に戻って、ジンに報告する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1020201,
+						0
+					],
+					"talkId": 1020201
+				}
+			]
+		},
+		{
+			"id": 1020202,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "騎士団に行く",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						1020201,
+						3
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_PRESENT_AT_SPECIFIC_SCENE",
+					"rawParams": [
+						1004,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1020203,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "ジンと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1020201,
+						0
+					],
+					"talkId": 1020201
+				}
+			]
+		},
+		{
+			"id": 1020204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "騎士団反省室を探す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1020204,
+						0
+					],
+					"talkId": 1020204
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1020201,
+			"completionStepIds": [
+				1020201,
+				1020203
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1020201",
+							"2"
+						],
+						"stepId": 1020201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ジン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 102020101,
+					"content": "あっ、クレーがいる！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020102
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 102020102,
+					"content": "ぐすっ…クレー、自首する。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020103
+					],
+					"speakerTitle": "クレー"
+				},
+				{
+					"id": 102020103,
+					"content": "えっ！？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020104
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 102020104,
+					"content": "クレーの爆弾…人を傷付けた…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020105
+					],
+					"speakerTitle": "クレー"
+				},
+				{
+					"id": 102020105,
+					"content": "こ、心得を破ったクレーは、きっと明日の太陽を見れない…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020106
+					],
+					"speakerTitle": "クレー"
+				},
+				{
+					"id": 102020107,
+					"content": "待って、誤解だ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020108
+					]
+				},
+				{
+					"id": 102020106,
+					"content": "クレー、先に答えてほしい。怪我人は？怪我人はどこにいる？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020107
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 102020109,
+					"content": "クレーが倒したのは、アビスの魔術師。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020110
+					]
+				},
+				{
+					"id": 102020108,
+					"content": "ん？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020109
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 102020110,
+					"content": "で、でも、モフモフはクレーのものを盗んだだけなのに…クレーの爆弾が…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020111
+					],
+					"speakerTitle": "クレー"
+				},
+				{
+					"id": 102020111,
+					"content": "あっ…オイラが言ったアビスの魔術師は「悪い人」っていうのは、ただの言葉のあやだぞ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020112
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 102020112,
+					"content": "アビスの魔術師は人間じゃない、あいつらは…そうだな、人類と敵対する悪いやつらだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020113
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 102020113,
+					"content": "モフモフは…人類の敵？悪いやつ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020114
+					],
+					"speakerTitle": "クレー"
+				},
+				{
+					"id": 102020114,
+					"content": "えっ、えー！？わ、わかんなくなってきちゃった…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020115
+					],
+					"speakerTitle": "クレー"
+				},
+				{
+					"id": 102020115,
+					"content": "ああ、これは私のミスだな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020116
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 102020116,
+					"content": "クレーはまだ幼いから、こういうことを教えていなかったんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020117
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 102020118,
+					"content": "それって、まさか「最強の宝物」のせい？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020119
+					]
+				},
+				{
+					"id": 102020117,
+					"content": "アビスの怪物どもはモンドの脅威であり、とりわけ最近は活動が激しい。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020118
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 102020119,
+					"content": "なるほど、オイラ分かったぞ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020120
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 102020120,
+					"content": "きっとやつらは宝物の噂を聞いたから、クレーを狙ったんだ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020121
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 102020121,
+					"content": "オイラがクレーの宝物を手に…コホン、なんなのか知りたかったみたいに！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020122
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 102020122,
+					"content": "えっと…じゃあ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020123
+					],
+					"speakerTitle": "クレー"
+				},
+				{
+					"id": 102020123,
+					"content": "今回の手柄に免じて、今度のバドルドー祭の参加を許可する。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020124
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 102020125,
+					"content": "怪我の功名だ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020127
+					]
+				},
+				{
+					"id": 102020126,
+					"content": "よかったね。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020127
+					]
+				},
+				{
+					"id": 102020124,
+					"content": "バドルドー祭！！やったぁー！！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020125,
+						102020126
+					],
+					"speakerTitle": "クレー"
+				},
+				{
+					"id": 102020127,
+					"content": "#{PLAYERAVATAR#SEXPRO[INFO_MALE_PRONOUN_BIGBROTHER|INFO_FEMALE_PRONOUN_BIGSISTER]}も絶対お祭りに来てね！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020128
+					],
+					"speakerTitle": "クレー"
+				},
+				{
+					"id": 102020128,
+					"content": "ふぅー、うまくまとまったみたいだな！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020129
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 102020129,
+					"content": "しかし…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020131
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 102020130,
+					"content": "しかし？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020131
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 102020131,
+					"content": "クレー、その「宝物」をどこに隠していた？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020132
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 102020132,
+					"content": "ぎくっ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020133
+					],
+					"speakerTitle": "クレー"
+				},
+				{
+					"id": 102020133,
+					"content": "また星落としの湖の魚に、何かするつもりだったんじゃないだろうな？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020134
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 102020134,
+					"content": "ち、違うよ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020135
+					],
+					"speakerTitle": "クレー"
+				},
+				{
+					"id": 102020136,
+					"content": "（でも、団長も見てる…）",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020137
+					]
+				},
+				{
+					"id": 102020135,
+					"content": "（オイラたちをすごい見てるよ…）",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020136
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 102020137,
+					"content": "クレー？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020138
+					],
+					"speakerTitle": "ジン"
+				},
+				{
+					"id": 102020138,
+					"content": "えっと、あの！ク、クレー、<color=#00E1FFFF>反省室</color>行ってくる…ぐすん…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020139
+					],
+					"speakerTitle": "クレー"
+				},
+				{
+					"id": 102020139,
+					"content": "クレー、ひとりで反省室にいて退屈しないかな…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "パイモン"
+				}
+			]
+		},
+		{
+			"id": 1020204,
+			"completionStepIds": [
+				1020204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1020204",
+							"2"
+						],
+						"stepId": 1020204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"反省室"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 102020401,
+					"content": "だーれだ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020402
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 102020402,
+					"content": "あっ、パイモンちゃんの声だ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020403,
+						102020404
+					],
+					"speakerTitle": "反省室"
+				},
+				{
+					"id": 102020403,
+					"content": "ここから出そうか？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020405
+					]
+				},
+				{
+					"id": 102020405,
+					"content": "うん、おねが——だ、だめ！クレーは真面目に反省してるんだから、ユーワクしないで！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020406
+					],
+					"speakerTitle": "反省室"
+				},
+				{
+					"id": 102020406,
+					"content": "反省中は、ここでバドルドー祭のために特別な「宝物」を作ってるんだ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020407
+					],
+					"speakerTitle": "反省室"
+				},
+				{
+					"id": 102020407,
+					"content": "「宝物」…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020408
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 102020408,
+					"content": "へへっ…羽球の形にしてみたんだよ、かわいいんでしょ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020409,
+						102020410
+					],
+					"speakerTitle": "反省室"
+				},
+				{
+					"id": 102020409,
+					"content": "羽球の形…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020411
+					]
+				},
+				{
+					"id": 102020411,
+					"content": "うん、バドルドー祭が始まったら、きっとみんな気に入ってくれると思う！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020412
+					],
+					"speakerTitle": "反省室"
+				},
+				{
+					"id": 102020412,
+					"content": "はあ、ジンがこの話を聞いたら…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020413
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 102020413,
+					"content": "きっと、クレーの反省室で過ごす時間が長くなるだろうな…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 102020410,
+					"content": "それ、爆弾だよね…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020411
+					]
+				},
+				{
+					"id": 102020404,
+					"content": "食べ物を持って来ようか？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020405
+					]
+				}
+			]
+		}
+	]
+}

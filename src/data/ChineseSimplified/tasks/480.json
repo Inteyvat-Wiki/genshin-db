@@ -1,0 +1,505 @@
+{
+	"id": 480,
+	"type": "LQ",
+	"name": "飞行的许可",
+	"description": "安柏专门为你准备了一场考试，在那之前，她还给了你一本「飞行指南」，要你考试前通读一遍。",
+	"unlockDescription": "",
+	"chapter": "风、勇气和翅膀",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		427
+	],
+	"prevMainQuestList": [
+		481
+	],
+	"steps": [
+		{
+			"id": 48001,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "与安柏对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						48001,
+						0
+					],
+					"talkId": 48001
+				}
+			]
+		},
+		{
+			"id": 48002,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "按指定路线限时飞抵终点",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 48003,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "在安柏的指导下重考",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4800302,
+						0
+					],
+					"talkId": 4800302
+				}
+			]
+		},
+		{
+			"id": 48004,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "与安柏对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						48004,
+						0
+					],
+					"talkId": 48004
+				}
+			]
+		},
+		{
+			"id": 48005,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往考试地点",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						48005,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 48006,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)倒计时UI显示$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						48006,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						48004,
+						0
+					],
+					"talkId": 48004
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 48001,
+			"completionStepIds": [
+				48001
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"48001",
+							"2"
+						],
+						"stepId": 48001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"安柏"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4820202,
+					"content": "倒是看完了，但…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						4820204
+					]
+				},
+				{
+					"id": 4820203,
+					"content": "规章制度…实在熟悉不了…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						4820204
+					]
+				},
+				{
+					"id": 4820201,
+					"content": "啊，你来了。已经把飞行指南好好看过了吗？规章制度都熟悉了吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820202,
+						4820203
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 4820204,
+					"content": "唔，这个勉强的语气，我了解我了解。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820205
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 4820205,
+					"content": "飞行指南就是这么枯燥无趣啦，我也一点都看不下去…呀，别告诉琴团长我说过这话。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820206
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 4820206,
+					"content": "是吗？我觉得这本「飞行指南」里讲的故事其实还蛮有趣的？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820207
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 4820207,
+					"content": "有趣的故事？哦——你是说后面附录的案例啊？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820208
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 4820208,
+					"content": "有些我也挺喜欢，最喜欢的是用风史莱姆违规起飞的那个。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820209
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 4820209,
+					"content": "借助风史莱姆被打破的时候爆发的气流，说是能一下子飞得很高很高，真想试试看哪——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820210
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 4820210,
+					"content": "不是这个啦！是一只小鸟想要学会飞行的故事…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820211
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 4820211,
+					"content": "咦…啊？！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820212
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 4820212,
+					"content": "我看看…呀！这不是我小时候最喜欢读的寓言书吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820213
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 4820213,
+					"content": "对不起！我昨天把它和骑士团飞行指南放在一起，肯定是出门的时候拿错了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820214
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 4820214,
+					"content": "这两本书…有拿错的可能性吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820215
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 4820215,
+					"content": "呃…事到如今再聊这个，实在有些不好意思。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820216
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 4820216,
+					"content": "但拿错的原因，也许是因为在我心里，这本书才是教会我飞行的指南吧…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820217
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 4820217,
+					"content": "「重要的不是强风而是勇气，是它让你们成为世上最初的飞鸟」。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820218
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 4820218,
+					"content": "就是这句话给了我飞行的勇气，让我成为侦察骑士，和蒙德城的飞行冠军…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820219
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 4820219,
+					"content": "好了好了，不说这些了，我们赶紧开始考试吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820220
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 4820220,
+					"content": "别紧张，只要发挥出你平时的飞行水准就好啦。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820221
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 4820222,
+					"content": "我准备好了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 4820221,
+					"content": "按照我给你<color=#00E1FFFF>标记好的路线</color>，一路平稳地飞到终点吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820222
+					],
+					"speakerTitle": "安柏"
+				}
+			]
+		},
+		{
+			"id": 48004,
+			"completionStepIds": [
+				48004,
+				48006
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"48004",
+							"2"
+						],
+						"stepId": 48004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"安柏"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4800401,
+					"content": "很好！不愧是在暴风里也能掌握平衡的你，顺利通过了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4800402
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 4800402,
+					"content": "接下来的测验是在蒙德城，那么我先去城里了，你也快点过来吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "安柏"
+				}
+			]
+		},
+		{
+			"id": 4800301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"48003",
+							"2"
+						],
+						"stepId": 48003,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"安柏"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4800301,
+					"content": "飞行的时候，要把握好诀窍啦。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4800302
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 4800302,
+					"content": "想要再试一次的话，就来告诉我吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "安柏"
+				}
+			]
+		},
+		{
+			"id": 4800302,
+			"completionStepIds": [
+				48003
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"安柏"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4800303,
+					"content": "我再试一次。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						4800304
+					]
+				},
+				{
+					"id": 4800304,
+					"content": "好，这次一定没问题。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "安柏"
+				}
+			]
+		},
+		{
+			"id": 4800303,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"安柏"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4800305,
+					"content": "我还要再准备一下。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						4800306
+					]
+				},
+				{
+					"id": 4800306,
+					"content": "没问题，起飞之前可要好好准备。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "安柏"
+				}
+			]
+		}
+	]
+}

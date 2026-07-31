@@ -1,0 +1,455 @@
+{
+	"id": 20036,
+	"type": "IQ",
+	"name": "เสียงกระซิบในสายลม",
+	"description": "Glory กำลังคิดถึงแฟนผู้ออกเดินทางไกลของเธอ เธอกำลังมองหาวิธี ที่จะส่งผ่านความปรารถนาของเธอไปให้เขา...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2003601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "ไปข้างหน้าเพื่อสอบถาม Glory",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "คุยกับ Glory",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003601,
+						0
+					],
+					"talkId": 2003601
+				}
+			]
+		},
+		{
+			"id": 2003603,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "ค้นหา Dandelion Seed สามอัน",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						2003603,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003604,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "มอบ Dandelion Seed ให้แก่ Glory",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003602,
+						0
+					],
+					"talkId": 2003602
+				}
+			]
+		},
+		{
+			"id": 2003605,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "ไปยอดบนสุดของรูปปั้นเทพเจ้าลมเพื่อโปรย Dandelion Seed",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_INTERACT_GADGET",
+					"rawParams": [
+						70710009,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003606,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "คุยกับ Glory",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003603,
+						0
+					],
+					"talkId": 2003603
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2003601,
+			"completionStepIds": [
+				2003602
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003601",
+							"3"
+						],
+						"stepId": 2003601,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003602",
+							"2"
+						],
+						"stepId": 2003602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Glory"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200360101,
+					"content": "...ตกลง Godwin...จะกลับมาเมื่อไหร่กันแน่นะ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360102
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360102,
+					"content": "สวัสดี...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360103
+					]
+				},
+				{
+					"id": 200360103,
+					"content": "เสียงนี้...ใช่นักเดินทางจากแดนไกลรึเปล่า? ขอบคุณเทพแห่งลม ต้องเป็นเพราะลมของท่านแน่ ๆ ที่นำพาคุณมา...รบกวนคุณช่วยฟังคำขอของเราหน่อยนะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360104
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360104,
+					"content": "ของฉัน...อะแฮ่ม แฟนของฉัน Godwin แห่งอัศวิน Favonius ได้ออกจากเมืองไปเป็นเวลานานมากแล้ว",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360105
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360105,
+					"content": "จนถึงตอนนี้ฉันก็ยังไม่ได้รับการติดต่อจากเขาเลย",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360106
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360106,
+					"content": "ฉันเป็นห่วงเขามาก Godwin ที่น่าสงสารของฉัน ถ้าเกิดว่าเขาต้องไปเจอเข้ากับพวก Hilichurl ล่ะ แล้วยังพวก Abyss Order ที่เคยสู้รบด้วย ถ้าเกิดเขาได้รับบาดเจ็บแล้วจะทำยังไงล่ะ แล้วยังออกไปนานขนาดนั้นแล้ว หรือว่าเขาไปเจอเข้ากับอัศวินสาวพราวเสน่ห์ล่ะ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360107
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360107,
+					"content": "ขอ ขอโทษ! ฉัน ฉันพูดเองเออเองเยอะไปแล้ว! ฉันฟังจากแม่ของฉัน ดอกแดนดิไลออนสามารถนำพาความคิดถึงของคนไปด้วย พัดพาไปยังที่แสนไกลด้วยกันกับสายลม",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360108
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360108,
+					"content": "เพราะงั้นฉันอยากจะขอ...ช่วยฉันไปเก็บเมล็ดของดอก Dandelion จาก Windrise มาสักสามอันได้มั้ย?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360109,
+						200360110
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360109,
+					"content": "ไม่มีปัญหา",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360111
+					]
+				},
+				{
+					"id": 200360111,
+					"content": "ขอบคุณคุณมากเลยนะ ขอให้เทพแห่งลมจงสถิตอยู่กับคุณ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360110,
+					"content": "ยังมีเรื่องอื่นต้องทำน่ะ",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360112
+					]
+				},
+				{
+					"id": 200360112,
+					"content": "รอเดี๋ยว! ขอร้องล่ะนะ ในฐานะนักเดินทางอย่างคุณแล้ว เรื่องนี้มันง่ายเหมือนปอกกล้วยเข้าปากอยู่แล้ว...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Glory"
+				}
+			]
+		},
+		{
+			"id": 2003602,
+			"completionStepIds": [
+				2003604
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003602",
+							"3"
+						],
+						"stepId": 2003602,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_PACK_HAVE_ITEM",
+						"rawParams": [
+							"100057",
+							"3"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003604",
+							"2"
+						],
+						"stepId": 2003604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Glory"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200360201,
+					"content": "คุณกลับมาแล้วเหรอ ได้ Dandelion Seed มามั้ย?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360202
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360202,
+					"content": "เก็บมาเรียบร้อยแล้ว",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360203
+					]
+				},
+				{
+					"id": 200360203,
+					"content": "ขอบคุณนะ คุณช่วยวางมันบนมือของฉันหน่อยได้มั้ย? ฉันมองไม่เห็นน่ะ กลัวว่าจะทำมันหลุดมือไป",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360204
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360204,
+					"content": "เท่านี้พอมั้ย?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360205
+					]
+				},
+				{
+					"id": 200360205,
+					"content": "ช่วยวางพวกมันบนฝ่ามือของฉันหน่อยได้มั้ย แบบนั้นฉันถึงจะรู้สึกถึงพวกมันได้...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360206
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360206,
+					"content": "เท่านี้ก็พอแล้วล่ะ ฉันจะบอกพวกมันเกี่ยวกับสิ่งที่ฉันอยากจะพูดกับ Godwin...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360207
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360207,
+					"content": "อืม...ช่วยปิดหูทีสิ อย่ามาแอบฟังคนอื่นบอกรักกันสิคะ แบบนั้นคุณจะ...อิอิ คุณเคยมีประสบการณ์แบบนี้มั้ยล่ะ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360208
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360208,
+					"content": "โอเค...คุณช่วยเอาเมล็ดเหล่านี้ไปที่บนรูปปั้นของเทพแห่งลม แล้วโปรยพวกมันไปกับอากาศเพื่อให้ท่านเทพนำพาพวกมันไปทีนะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360209
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360209,
+					"content": "หวังว่าท่านเทพแห่งลมจะช่วยนำพาพวกมันไปยัง Godwin",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Glory"
+				}
+			]
+		},
+		{
+			"id": 2003603,
+			"completionStepIds": [
+				2003606
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003606",
+							"2"
+						],
+						"stepId": 2003606,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Glory"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200360301,
+					"content": "คุณทำเสร็จแล้วเหรอคะ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360302
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360302,
+					"content": "บนยอดรูปปั้นลมแรงมาก...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360303
+					]
+				},
+				{
+					"id": 200360303,
+					"content": "อย่างนั้นสิดี จะได้นำพาเมล็ดดอก Dandelion พวกนั้นไปยังที่แสนไกล",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360304
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360304,
+					"content": "อย่างนี้เอง ไม่แน่ Godwin อาจจะได้รับข้อความที่ฉันบอกกับเขาก็ได้",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360305
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360305,
+					"content": "คุณยื่นมือมาหน่อยสิคะ ให้ฉันจับที่...ช่วยรับนี่ไปทีนะคะ ของขวัญขอบคุณสำหรับคุณ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360306
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 200360306,
+					"content": "ฉันยังมีหลายอย่างอยากบอกกับ Godwin ไม่แน่ทีหลังอาจจะต้องรบกวนคุณอีกนะคะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Glory"
+				}
+			]
+		}
+	]
+}

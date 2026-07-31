@@ -1,0 +1,430 @@
+{
+	"id": 20006,
+	"type": "IQ",
+	"name": "ส่งอาหาร",
+	"description": "เพื่อที่จะตอบสนองความต้องการของลูกค้า ร้านอาหาร Good Hunter ยังคงให้บริการลูกค้าต่อไป แต่เพราะจำนวนลูกค้านั้นมีมากเหลือเกิน คนบริการในร้านจึงขาดไปมาก Sara จึงกำลังหาคนที่จะมาช่วยงานของเธอ",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2000601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "ไปที่ร้านอาหาร Good Hunter เพื่อคุยกับ Sara",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "คุยกับ Sara",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000601,
+						0
+					],
+					"talkId": 2000601
+				}
+			]
+		},
+		{
+			"id": 2000603,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "ส่งอุปกรณ์ทานอาหารให้ Orlean ผู้ร่าเริง",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000602,
+						0
+					],
+					"talkId": 2000602
+				}
+			]
+		},
+		{
+			"id": 2000604,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "ส่งอุปกรณ์ทานอาหารให้ Orlean ผู้ร่าเริง",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000602,
+						0
+					],
+					"talkId": 2000602
+				}
+			]
+		},
+		{
+			"id": 2000605,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "ทอดสะพาน",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000602,
+						0
+					],
+					"talkId": 2000602
+				}
+			]
+		},
+		{
+			"id": 2000606,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "ส่งอุปกรณ์ทานอาหารให้ Orlean ผู้ร่าเริง",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000607,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "จัดการ Slime ตัวยุ่ง",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000610,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "จ่ายค่าอาหารแก่ Sara ที่ร้านอาหาร",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000604,
+						0
+					],
+					"talkId": 2000604
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2000601,
+			"completionStepIds": [
+				2000602
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000601",
+							"3"
+						],
+						"stepId": 2000601,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000602",
+							"2"
+						],
+						"stepId": 2000602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200060101,
+					"content": "ออเดอร์เดลิเวอรี่",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060102
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060102,
+					"content": "ยินดีต้อนรับสู่ Good Hunter... นักเดินทาง? มาพอดีเลย",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060103
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060103,
+					"content": "ขอโทษนะ ฉันรู้ว่าเธอหิวจะแย่อยู่แล้ว แต่ยังไงช่วยฉันหน่อยได้มั้ย?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060104
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060104,
+					"content": "คุณ Orlean ที่ Springvale สั่ง <color=#00E1FFFF>Sticky Honey Roast</color> หนึ่งที่ แต่ฉันได้ยินว่าช่วงนี้ที่ Springvale มีพวก Slime ออกมาป้วนเปี้ยนอยู่บ่อย ๆ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060105
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060105,
+					"content": "ฉันไม่กล้าไปเอง...ช่วยฉันส่งอาหารนี้ไปให้ <color=#00E1FFFF>Orlean ที่ Springvale</color> หน่อยได้มั้ย?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060106,
+						200060107
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060106,
+					"content": "โอเค แต่ว่า...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200060108
+					]
+				},
+				{
+					"id": 200060108,
+					"content": "รอเธอกลับมาแล้ว จะต้องจัดมื้อใหญ่ให้ซักมื้อแน่นอน!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060109
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060109,
+					"content": "ช่วยหน่อยนะ!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060107,
+					"content": "หิวจังเลย ฉันแค่จะมาหาข้าวกินน่ะ",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200060110
+					]
+				},
+				{
+					"id": 200060110,
+					"content": "รอเธอช่วยฉันเสร็จแล้ว ฉัน ฉันจะสั่งอาหารจานพิเศษของ Good Hunter ให้กับเธอ ยังไงช่วยหน่อยนะ!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		},
+		{
+			"id": 2000602,
+			"completionStepIds": [
+				2000603,
+				2000604,
+				2000605
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000607",
+							"3"
+						],
+						"stepId": 2000607,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000604",
+							"2"
+						],
+						"stepId": 2000604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Orlean ผู้ร่าเริง"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200060201,
+					"content": "ขอบคุณนะ เจ้า Slime พวกนั้นมันน่าเบื่อจริง ๆ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060202
+					],
+					"speakerTitle": "Orlean ผู้ร่าเริง"
+				},
+				{
+					"id": 200060202,
+					"content": "ถ้าไม่ใช่เพราะฉันหิวซะจนไม่มีแรงเดินล่ะก็ เจ้าพวกนั้น...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060203
+					],
+					"speakerTitle": "Orlean ผู้ร่าเริง"
+				},
+				{
+					"id": 200060203,
+					"content": "นี่คืออาหารที่คุณสั่ง",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200060204
+					]
+				},
+				{
+					"id": 200060204,
+					"content": "อืมม...ได้กลิ่นของหัวไชเท้ากับเนื้อ...ถ้าได้กินเร็วหน่อย จะเตะก้นเจ้า Slime พวกนั้นให้ปลิวไปเลย!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060205
+					],
+					"speakerTitle": "Orlean ผู้ร่าเริง"
+				},
+				{
+					"id": 200060205,
+					"content": "พอเลยไม่เอาแล้ว นี่คือค่าอาหาร เอากลับไปให้ Sara เถอะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Orlean ผู้ร่าเริง"
+				}
+			]
+		},
+		{
+			"id": 2000604,
+			"completionStepIds": [
+				2000610
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000604",
+							"3"
+						],
+						"stepId": 2000604,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000610",
+							"2"
+						],
+						"stepId": 2000610,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200060401,
+					"content": "จ่ายค่าอาหาร",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060402
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060402,
+					"content": "กลับมาแล้วเหรอ ส่งอาหารเรียบร้อยรึยัง?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060403
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060403,
+					"content": "นี่คือค่าอาหาร",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200060404
+					]
+				},
+				{
+					"id": 200060404,
+					"content": "ขอฉันดูหน่อยซิ...ถูกต้อง ขอบคุณมากนะ!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200060405
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 200060405,
+					"content": "แล้วก็ <color=#00E1FFFF>Crab, Ham & Veggie Bake แสนอร่อยนี่อีก</color>จานนี้ให้เธอ เพิ่งจะทำเสร็จพอดี รีบกินตอนที่ยังร้อนอยู่ซะเถอะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		}
+	]
+}

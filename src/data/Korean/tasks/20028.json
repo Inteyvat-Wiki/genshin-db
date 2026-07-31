@@ -1,0 +1,241 @@
+{
+	"id": 20028,
+	"type": "IQ",
+	"name": "포동포동한 대규모 폭동!",
+	"description": "슬라임이 갑자기 샘물 마을의 뒷산에서 출현했다. 근처의 겁 많은 모로도 휘말린 듯하다…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2002801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "상세내용 확인하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "슬라임 처치하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002803,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "겁 많은 모로와 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002801,
+						0
+					],
+					"talkId": 2002801
+				}
+			]
+		},
+		{
+			"id": 2002804,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "이상 정황이 있는 곳으로 가기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002805,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "「바람」으로 먼지 제거하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002806,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "모든 슬라임 처치하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2002801,
+			"completionStepIds": [
+				2002803
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002802",
+							"3"
+						],
+						"stepId": 2002802,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"겁 많은 모로"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200280101,
+					"content": "#고, 고마워, {NICKNAME}…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280102
+					],
+					"speakerTitle": "겁 많은 모로"
+				},
+				{
+					"id": 200280102,
+					"content": "내가 사냥꾼이긴 해도… 저 슬라임들은 방법이 없네",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280103
+					],
+					"speakerTitle": "겁 많은 모로"
+				},
+				{
+					"id": 200280103,
+					"content": "저놈들이 방해하면, 이번 사냥에도 빈손으로 돌아가게 될 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280104
+					],
+					"speakerTitle": "겁 많은 모로"
+				},
+				{
+					"id": 200280104,
+					"content": "다른 사냥꾼들은 나처럼 운이 나쁘지 않아야 할 텐데…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280105
+					],
+					"speakerTitle": "겁 많은 모로"
+				},
+				{
+					"id": 200280105,
+					"content": "맞다, 그나저나 주변을 좀 살펴봐줄래?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280106
+					],
+					"speakerTitle": "겁 많은 모로"
+				},
+				{
+					"id": 200280106,
+					"content": "내 착각인지 모르겠지만, 이 마을 주변에… 슬라임이 자꾸 많아지는 것 같아",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280107
+					],
+					"speakerTitle": "겁 많은 모로"
+				},
+				{
+					"id": 200280107,
+					"content": "앞으로 가서 좀 봐줄래? 슬라임을 발견하면 곧바로 처치해버려",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280108,
+						200280109
+					],
+					"speakerTitle": "겁 많은 모로"
+				},
+				{
+					"id": 200280108,
+					"content": "알겠어요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200280110
+					]
+				},
+				{
+					"id": 200280110,
+					"content": "그럼 부탁할게. 나도 두라프 씨에게 보고하러 가야겠어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280111
+					],
+					"speakerTitle": "겁 많은 모로"
+				},
+				{
+					"id": 200280111,
+					"content": "내 이야기를 못 알아들을 정도로 취한 상태가 아니면 좋겠는데…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "겁 많은 모로"
+				},
+				{
+					"id": 200280109,
+					"content": "다른 일이 있어서요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200280112
+					]
+				},
+				{
+					"id": 200280112,
+					"content": "이 사태를 해결할 수 있는 사람은 너뿐이야. 샘물 마을을 위해 부탁할게",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "겁 많은 모로"
+				}
+			]
+		}
+	]
+}

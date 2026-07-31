@@ -1,0 +1,313 @@
+{
+	"id": 73098,
+	"type": "WQ",
+	"name": "Vedute statiche",
+	"description": "Paimon ha trovato un dipinto nel Vanarana che potrebbe essere una mappa del tesoro...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		73025
+	],
+	"steps": [
+		{
+			"id": 7309801,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Ritira la posta",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7309802,
+						2
+					]
+				}
+			]
+		},
+		{
+			"id": 7309802,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Procedi verso il luogo mostrato nel dipinto",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133301165,
+						165002
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133301165,
+						165001
+					]
+				}
+			]
+		},
+		{
+			"id": 7309803,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Paimon",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7309804,
+						0
+					],
+					"talkId": 7309804
+				}
+			]
+		},
+		{
+			"id": 7309804,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7309803,
+						0
+					],
+					"talkId": 7309803
+				}
+			]
+		},
+		{
+			"id": 7309805,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Torna alla capanna dell'Aranara",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7309805,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133301277,
+						277003
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7309803,
+			"completionStepIds": [
+				7309804
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7309804",
+							"2"
+						],
+						"stepId": 7309804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_COMMON",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 730980301,
+					"content": "Fai vedere a Paimon... Mmh? È un dipinto degli Aranara...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730980302
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 730980302,
+					"content": "Non sta bene trafficare tra la roba altrui...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730980303
+					]
+				},
+				{
+					"id": 730980303,
+					"content": "Mmh... Chissà quanti ne abbiamo rovistati di accampamenti e bauli!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730980304
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 730980304,
+					"content": "#Mettiamola così: non abbiamo visto nessun Aranara vicino alla casa, ed eravamo preoccupat{F#e}{M#i}, così abbiamo preferito vedere se c'erano indizi di qualche tipo. Potremmo anche aiutare qualche Aranara in trappola!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730980305,
+						730980306
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 730980305,
+					"content": "Hai ragione.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730980307
+					]
+				},
+				{
+					"id": 730980307,
+					"content": "Certamente! A ogni modo, sembra che il dipinto raffiguri alcuni panorami qui vicino, giusto? Ah, forse è una mappa del tesoro...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730980308
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 730980308,
+					"content": "#{NICKNAME}, andiamo nel punto indicato nel dipinto! Forse troveremo qualche tesoro lasciato dagli Aranara!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 730980306,
+					"content": "Mmmh. Ha assolutamente senso.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730980307
+					]
+				}
+			]
+		},
+		{
+			"id": 7309804,
+			"completionStepIds": [
+				7309803
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7309803",
+							"2"
+						],
+						"stepId": 7309803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 730980401,
+					"content": "Mmh... Diamo un'occhiata. Sembra una nuova mappa del tesoro!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730980402
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 730980402,
+					"content": "Non aiutiamo \"gli Aranara in trappola\"?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730980403
+					]
+				},
+				{
+					"id": 730980403,
+					"content": "#Ahem! Non abbiamo trovato il padrone di casa. È preoccupante! Allora, {NICKNAME}, perché non diamo un'occhiata agli altri posti indicati dal dipinto?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730980404
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 730980404,
+					"content": "Una volta arrivati lì potremmo...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730980405,
+						730980407
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 730980405,
+					"content": "Trovare più tesori?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730980406
+					]
+				},
+				{
+					"id": 730980406,
+					"content": "Sì! Aspetta, Paimon voleva dire... No! Trovare gli Aranara in trappola!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730980409
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 730980409,
+					"content": "E questa \"cassetta della posta\" è davvero particolare. In futuro potremmo trovarci dentro qualche nuovo dipinto. Teniamola d'occhio!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 730980407,
+					"content": "Trovare \"gli Aranara in trappola\"?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730980408
+					]
+				},
+				{
+					"id": 730980408,
+					"content": "Sì! E forse addirittura qualche tesoro!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730980409
+					],
+					"speakerTitle": "Paimon"
+				}
+			]
+		}
+	]
+}

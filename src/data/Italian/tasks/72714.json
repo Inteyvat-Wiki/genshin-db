@@ -1,0 +1,167 @@
+{
+	"id": 72714,
+	"type": "WQ",
+	"name": "Delle uova per Riku",
+	"description": "Riku dell'Isola di Narukami vorrebbe 8 Uova.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7271401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dai 8 uova d'uccello a Riku",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7271401,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7271402,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Riku",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7271402,
+						0
+					],
+					"talkId": 7271402
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7271401,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271401",
+							"2"
+						],
+						"stepId": 7271401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7271401"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Riku"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727140101,
+					"content": "Vuoi delle uova d'uccello?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727140102
+					]
+				},
+				{
+					"id": 727140102,
+					"content": "Se solo avessi delle uova, potrei fare da mamma uccello e farle schiudere. Così avrei molti amici uccellini con cui giocare...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727140103
+					],
+					"speakerTitle": "Riku"
+				},
+				{
+					"id": 727140103,
+					"content": "Quindi hai preso le 8 uova d'uccello menzionate nell'incarico?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727140106,
+						727140104
+					],
+					"speakerTitle": "Riku"
+				},
+				{
+					"id": 727140106,
+					"content": "Eccole!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 727140104,
+					"content": "Non ancora.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727140105
+					]
+				},
+				{
+					"id": 727140105,
+					"content": "Oh, ok. Beh, dammele pure quando le trovi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Riku"
+				}
+			]
+		},
+		{
+			"id": 7271402,
+			"completionStepIds": [
+				7271402
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271402",
+							"2"
+						],
+						"stepId": 7271402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Riku"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727140201,
+					"content": "#Wow, grazie, signor{F#a}{M#e}! Farò molta attenzione, lo prometto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Riku"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,688 @@
+{
+	"id": 20007,
+	"type": "IQ",
+	"name": "Sửa Khẩn Cấp",
+	"description": "Allan đang vận chuyển thú săn được về thành Mondstadt, nhưng xe hàng lại bị Hilichurl tập kích, hàng hóa và bản thân anh ấy đều đang gặp nguy hiểm...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2000701,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Tiêu diệt tất cả ma vật",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000702,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Nói chuyện với Allan",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000707,
+						0
+					],
+					"talkId": 2000707
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000708,
+						0
+					],
+					"talkId": 2000708
+				}
+			]
+		},
+		{
+			"id": 2000703,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Thu thập gỗ",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100306,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000704,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đưa ván gỗ chắc chắn cho Allan",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000703,
+						0
+					],
+					"talkId": 2000703
+				}
+			]
+		},
+		{
+			"id": 2000705,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Tiêu diệt tất cả ma vật",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000706,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Nói chuyện với Allan",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000709,
+						0
+					],
+					"talkId": 2000709
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000710,
+						0
+					],
+					"talkId": 2000710
+				}
+			]
+		},
+		{
+			"id": 2000707,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Thu thập dây thừng",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100308,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000708,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đưa dây thừng cho Allan",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000706,
+						0
+					],
+					"talkId": 2000706
+				}
+			]
+		},
+		{
+			"id": 2000709,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Điều tra chi tiết",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1127,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2000701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000701",
+							"3"
+						],
+						"stepId": 2000701,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000702",
+							"2"
+						],
+						"stepId": 2000702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Allan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070101,
+					"content": "#Cảm, cảm ơn bạn, {NICKNAME}, thật tốt quá, tôi còn tưởng lần này tiêu rồi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070102
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070102,
+					"content": "Trên xe là thành quả mà các thợ săn đã cực khổ săn được, ngài Draff kêu tôi đem tới thành Mondstadt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070103
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070103,
+					"content": "Tuy rằng tôi không... giỏi việc săn bắn lắm, nhưng công việc giao đồ đơn giản như vậy, chắc là vẫn làm được, lúc đầu tôi nghĩ vậy...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070104
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070104,
+					"content": "Nhưng suýt chút nữa là làm hỏng việc rồi. Đột nhiên bị tập kích, nhất định là những vật săn này tốt quá, nên đám đó cũng thèm muốn, may mà bạn đến.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070105
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070105,
+					"content": "Khụ, tuy rằng rất ngại, nhưng... lúc nãy khi bị tập kích, xe hàng cũng bị làm hỏng rồi, muốn rời khỏi đây, tôi phải sửa lại xe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070106
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070106,
+					"content": "Khu rừng xung quanh chắc là có nguyên liệu dùng được. Nhưng vật săn vẫn ở trên xe, nếu đi khỏi thì tôi cũng rất lo lắng.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070107
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070107,
+					"content": "Nếu có thể, bạn có thể tìm giúp tôi <color=#00E1FFFF>thanh gỗ chắc chắn</color> ở xung quanh được không?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Allan"
+				}
+			]
+		},
+		{
+			"id": 2000702,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000703",
+							"2"
+						],
+						"stepId": 2000703,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Allan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070201,
+					"content": "Chỉ cần sửa vài chỗ nhỏ, để xe chịu được đến thành Mondstadt là được.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070202
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070202,
+					"content": "Trong khu rừng xung quanh chắc sẽ có gỗ thích hợp.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Allan"
+				}
+			]
+		},
+		{
+			"id": 2000703,
+			"completionStepIds": [
+				2000704
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000704",
+							"2"
+						],
+						"stepId": 2000704,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Allan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070301,
+					"content": "Nhiêu đây là đủ rồi, chỉ cần một lúc là tôi sẽ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070302
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070302,
+					"content": "Í... Nhà Lữ Hành, cái đám đó lại đến rồi!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Allan"
+				}
+			]
+		},
+		{
+			"id": 2000704,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000705",
+							"3"
+						],
+						"stepId": 2000705,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000706",
+							"2"
+						],
+						"stepId": 2000706,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Allan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070401,
+					"content": "Thật cảm ơn quá, đám này cũng kiên trì quá, những vật săn này hấp dẫn đến vậy sao?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070402
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070402,
+					"content": "Cũng là do ngài Draff có thể săn được những con thú tốt như vậy, nếu tôi cũng có thể trở thành người thợ săn giống ngài ấy thì tốt quá rồi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070403
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070403,
+					"content": "Trước lúc đó, tôi phải đem xe vào thành trước.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070404
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070404,
+					"content": "Xin lỗi, Nhà Lữ Hành, vốn dĩ xe đã gần sửa xong, nhưng hồi nãy lại bị tấn công, lại bị hỏng thêm vài chỗ.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070405
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070405,
+					"content": "Nhưng ở đây thì càng nguy hiểm, cần phải nhanh chóng sửa xe, tôi nhớ trên xe có dây buộc, nhất định là bị đám Hilichurl lúc nãy làm mất rồi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070406
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070406,
+					"content": "Nhà Lữ Hành, có thể giúp tôi tìm <color=#00E1FFFF>dây thừng</color> không?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Allan"
+				}
+			]
+		},
+		{
+			"id": 2000705,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000707",
+							"2"
+						],
+						"stepId": 2000707,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Allan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070501,
+					"content": "Dây thừng chắc là ở khu rừng xung quanh đây.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Allan"
+				}
+			]
+		},
+		{
+			"id": 2000706,
+			"completionStepIds": [
+				2000708
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000707",
+							"3"
+						],
+						"stepId": 2000707,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000708",
+							"2"
+						],
+						"stepId": 2000708,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Allan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070601,
+					"content": "Vậy là được rồi, tuy rằng cảm giác rất lỏng lẻo, nhưng chỉ cần cố đến được thành Mondstadt là được.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070602
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070602,
+					"content": "Cám ơn bạn! Vậy tôi đi trước đây, sau này đến Thanh Tuyền Trấn nhớ tìm tôi, chúng ta cùng uống một ly.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070603
+					],
+					"speakerTitle": "Allan"
+				},
+				{
+					"id": 200070603,
+					"content": "...Chỉ cần không uống như ngài Draff là được.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Allan"
+				}
+			]
+		},
+		{
+			"id": 2000707,
+			"completionStepIds": [
+				2000702
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Allan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070701,
+					"content": "Tôi hiểu rồi.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200070702
+					]
+				},
+				{
+					"id": 200070702,
+					"content": "Tốt quá rồi, tôi sẽ đợi bạn ở đây, bạn hãy nhanh lên chút, đám đó không biết chừng sẽ quay trở lại...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Allan"
+				}
+			]
+		},
+		{
+			"id": 2000708,
+			"completionStepIds": [
+				2000702
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Allan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070801,
+					"content": "Còn có việc gấp khác.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200070802
+					]
+				},
+				{
+					"id": 200070802,
+					"content": "Đừng mà! Đám đó không biết chừng còn ở gần đây, bạn giúp tôi thêm chút, để tôi sớm rời khỏi đây, năn nỉ đó!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Allan"
+				}
+			]
+		},
+		{
+			"id": 2000709,
+			"completionStepIds": [
+				2000706
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Allan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070901,
+					"content": "Không thành vấn đề.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200070902
+					]
+				},
+				{
+					"id": 200070902,
+					"content": "Thật cảm ơn quá, chắc là ở khu rừng xung quanh đây.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Allan"
+				}
+			]
+		},
+		{
+			"id": 2000710,
+			"completionStepIds": [
+				2000706
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Allan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200071001,
+					"content": "Còn có việc khác.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200071002
+					]
+				},
+				{
+					"id": 200071002,
+					"content": "Là bước cuối cùng rồi, chỉ cần đem dây thừng qua là được, những việc còn lại tôi sẽ tự làm, làm phiền bạn rồi!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Allan"
+				}
+			]
+		}
+	]
+}

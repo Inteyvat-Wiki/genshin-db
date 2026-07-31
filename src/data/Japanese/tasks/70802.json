@@ -1,0 +1,931 @@
+{
+	"id": 70802,
+	"type": "WQ",
+	"name": "純白の謎影·希望",
+	"description": "ジョエルによると、サイリュスは彼の父に関する手がかりを手に入れたようだ…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		70804
+	],
+	"steps": [
+		{
+			"id": 7080201,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TIME_VAR_PASS_DAY",
+					"rawParams": [
+						70804,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "ジョエルと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080201,
+						0
+					],
+					"talkId": 7080201
+				}
+			]
+		},
+		{
+			"id": 7080203,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "冒険者協会に行く",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080202,
+						0
+					],
+					"talkId": 7080202
+				}
+			]
+		},
+		{
+			"id": 7080204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "雪山に行って手がかりを探す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7080204,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080205,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "全ての魔物を倒す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080206,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "パラドと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080203,
+						0
+					],
+					"talkId": 7080203
+				}
+			]
+		},
+		{
+			"id": 7080207,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "サイリュスと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080204,
+						0
+					],
+					"talkId": 7080204
+				}
+			]
+		},
+		{
+			"id": 7080208,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "ジョエルに報告する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080205,
+						0
+					],
+					"talkId": 7080205
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7080201,
+			"completionStepIds": [
+				7080202
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080202",
+							"2"
+						],
+						"stepId": 7080202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ジョエル"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020101,
+					"content": "今度こそ、お父さんを見つけられるかな…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020102
+					],
+					"speakerTitle": "ジョエル"
+				},
+				{
+					"id": 708020102,
+					"content": "お父さんについて何か分かった？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020103
+					]
+				},
+				{
+					"id": 708020103,
+					"content": "#{PLAYERAVATAR#SEXPRO[INFO_MALE_PRONOUN_BIGBROTHER|INFO_FEMALE_PRONOUN_BIGSISTER]}！こんにちは！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020104
+					],
+					"speakerTitle": "ジョエル"
+				},
+				{
+					"id": 708020104,
+					"content": "パラド兄さんがね、サイリュスおじさんがお父さんの情報を見つけたって言ってた。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020105
+					],
+					"speakerTitle": "ジョエル"
+				},
+				{
+					"id": 708020105,
+					"content": "まだ確定してないけど…今回の手がかりはかなり有力で、もしかしたら本当にお父さんを見つけられるみたい…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020106
+					],
+					"speakerTitle": "ジョエル"
+				},
+				{
+					"id": 708020106,
+					"content": "ボクも一緒に雪山に行きたかったけど、何か情報があったら教えるから拠点で待つようにって、サイリュスおじさんに言われたんだ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020107
+					],
+					"speakerTitle": "ジョエル"
+				},
+				{
+					"id": 708020107,
+					"content": "#{PLAYERAVATAR#SEXPRO[INFO_MALE_PRONOUN_BIGBROTHER|INFO_FEMALE_PRONOUN_BIGSISTER]}、もしよかったら、サイリュスおじさんに情報を聞いてきてくれるかな？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020108,
+						708020109
+					],
+					"speakerTitle": "ジョエル"
+				},
+				{
+					"id": 708020108,
+					"content": "分かった。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020110
+					]
+				},
+				{
+					"id": 708020110,
+					"content": "ボ、ボクは…よくない情報を聞くのが…怖いの…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020111
+					],
+					"speakerTitle": "ジョエル"
+				},
+				{
+					"id": 708020111,
+					"content": "#とにかく、頼んだよ！{PLAYERAVATAR#SEXPRO[INFO_MALE_PRONOUN_BIGBROTHER|INFO_FEMALE_PRONOUN_BIGSISTER]}！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ジョエル"
+				},
+				{
+					"id": 708020109,
+					"content": "なんで自分で行かないの？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020110
+					]
+				}
+			]
+		},
+		{
+			"id": 7080202,
+			"completionStepIds": [
+				7080203
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080203",
+							"2"
+						],
+						"stepId": 7080203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"サイリュス",
+					"うっかりパラド"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020201,
+					"content": "まさかこのエリアに…パラド、間違いないな？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020202
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 708020202,
+					"content": "もちろんです、サイリュスさん。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020203
+					],
+					"speakerTitle": "うっかりパラド"
+				},
+				{
+					"id": 708020203,
+					"content": "ジョエルのお父さんの話？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020204
+					]
+				},
+				{
+					"id": 708020204,
+					"content": "旅人じゃないか。ジョエルのところから来たみたいだな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020205
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 708020205,
+					"content": "あの子、毎日人に頼んで、俺から情報を聞いてるんだ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020206
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 708020206,
+					"content": "だが、今回はやっといい知らせを伝えることができる。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020207
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 708020207,
+					"content": "この前、冒険者協会が「雪山特訓」を開催してな…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020208
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 708020208,
+					"content": "サイリュスさん、後は俺から説明します。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020209
+					],
+					"speakerTitle": "うっかりパラド"
+				},
+				{
+					"id": 708020209,
+					"content": "その特訓に向かう途中、俺は雪と風の影響で、予定していたルートから外れてしまったんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020210
+					],
+					"speakerTitle": "うっかりパラド"
+				},
+				{
+					"id": 708020210,
+					"content": "そして、手探りでルートに戻ろうとした時、突然、崖の上にぼんやりとした人影を見た。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020211
+					],
+					"speakerTitle": "うっかりパラド"
+				},
+				{
+					"id": 708020211,
+					"content": "最初は、俺と同じように迷っている冒険者かと思い、大声で彼に呼びかけたんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020212
+					],
+					"speakerTitle": "うっかりパラド"
+				},
+				{
+					"id": 708020212,
+					"content": "だけど、その人が気づく前に…俺の声は魔物たちを引き寄せてしまった。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020213
+					],
+					"speakerTitle": "うっかりパラド"
+				},
+				{
+					"id": 708020213,
+					"content": "雪山の環境の中で、あれらの魔物を倒す自信がなく、撤退するしかなかった。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020214
+					],
+					"speakerTitle": "うっかりパラド"
+				},
+				{
+					"id": 708020214,
+					"content": "それで戻ってから、この件をサイリュスさんに伝えたんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020215,
+						708020217
+					],
+					"speakerTitle": "うっかりパラド"
+				},
+				{
+					"id": 708020215,
+					"content": "あの人影はジョエルのお父さん？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020216
+					]
+				},
+				{
+					"id": 708020216,
+					"content": "まだ分からない。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020218
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 708020218,
+					"content": "いずれにせよ、誰かが雪山に閉じ込められたことを知った以上、救出に向かわなければならない。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020219
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 708020219,
+					"content": "その人がジョエルの父であるジョセフさんかどうかは、運次第だ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020220
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 708020220,
+					"content": "とにかく、協会の中で雪山に入れる実力者に、救出の手伝いを頼んだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020221
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 708020221,
+					"content": "俺も準備してから、救出に参加する。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020222,
+						708020223
+					],
+					"speakerTitle": "うっかりパラド"
+				},
+				{
+					"id": 708020222,
+					"content": "一緒に行くよ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020224
+					]
+				},
+				{
+					"id": 708020224,
+					"content": "手伝ってくれるのか？よかった、それじゃ一緒に出発しよう！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "うっかりパラド"
+				},
+				{
+					"id": 708020223,
+					"content": "#魔物は{PLAYERAVATAR#SEXPRO[INFO_MALE_PRONOUN_BOYFIRST|INFO_FEMALE_PRONOUN_GIRLFIRST]}が倒す。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020224
+					]
+				},
+				{
+					"id": 708020217,
+					"content": "ただ迷った冒険者かもしれない…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020218
+					]
+				}
+			]
+		},
+		{
+			"id": 7080203,
+			"completionStepIds": [
+				7080206
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080206",
+							"2"
+						],
+						"stepId": 7080206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"うっかりパラド"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020301,
+					"content": "やっと少し安全になった、ありがとう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020302
+					],
+					"speakerTitle": "うっかりパラド"
+				},
+				{
+					"id": 708020302,
+					"content": "ジョセフさんについて…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020303
+					]
+				},
+				{
+					"id": 708020303,
+					"content": "はぁ…今のところ目ぼしい手がかりはないようだな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020304
+					],
+					"speakerTitle": "うっかりパラド"
+				},
+				{
+					"id": 708020304,
+					"content": "でも、この近くは安全になったから、俺も引き続き手がかりを探すよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020305
+					],
+					"speakerTitle": "うっかりパラド"
+				},
+				{
+					"id": 708020305,
+					"content": "君は協会に戻って、俺が捜索を始めたことをサイリュスさんに伝えてきてくれ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "うっかりパラド"
+				}
+			]
+		},
+		{
+			"id": 7080204,
+			"completionStepIds": [
+				7080207
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080207",
+							"2"
+						],
+						"stepId": 7080207,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"サイリュス"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020401,
+					"content": "旅人、帰って来たか。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020402,
+						708020404
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 708020402,
+					"content": "パラドが捜索を始めた。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020403
+					]
+				},
+				{
+					"id": 708020403,
+					"content": "そうか、あいつもたまには役に立つな…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020406
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 708020406,
+					"content": "手元にある情報を整理したら、俺もジョエルに会ってくるよ。そして、事情を詳しく説明してあげよう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020407
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 708020407,
+					"content": "旅人、先にジョエルに伝えてきてくれないか。俺は後ですぐに行くから。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020408
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 708020408,
+					"content": "情報の整理にはもう少し時間がかかりそうなんだ。あの子に何も知らせないで待たせちゃ悪いからな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 708020404,
+					"content": "本当にその人を見つけられるの？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020405
+					]
+				},
+				{
+					"id": 708020405,
+					"content": "それは…保証できない。ただ確実に言えるのは、俺たちは必ず最善を尽くす。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020406
+					],
+					"speakerTitle": "サイリュス"
+				}
+			]
+		},
+		{
+			"id": 7080205,
+			"completionStepIds": [
+				7080208
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080208",
+							"2"
+						],
+						"stepId": 7080208,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ジョエル"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020501,
+					"content": "#{PLAYERAVATAR#SEXPRO[INFO_MALE_PRONOUN_BIGBROTHER|INFO_FEMALE_PRONOUN_BIGSISTER]}、何かわかったの？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020502
+					],
+					"speakerTitle": "ジョエル"
+				},
+				{
+					"id": 708020502,
+					"content": "つまり…サイリュスおじさんはまだお父さんを見つけてないってこと…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020503,
+						708020504
+					],
+					"speakerTitle": "ジョエル"
+				},
+				{
+					"id": 708020503,
+					"content": "サイリュスさんを信じよう。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020505
+					]
+				},
+				{
+					"id": 708020505,
+					"content": "#うん、わかってる。サイリュスおじさんが来たら、詳しく聞くよ。ありがとう！{PLAYERAVATAR#SEXPRO[INFO_MALE_PRONOUN_BIGBROTHER|INFO_FEMALE_PRONOUN_BIGSISTER]}。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020506
+					],
+					"speakerTitle": "ジョエル"
+				},
+				{
+					"id": 708020506,
+					"content": "お父さん…どこにいるの…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ジョエル"
+				},
+				{
+					"id": 708020504,
+					"content": "手がかりはあった。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020505
+					]
+				}
+			]
+		},
+		{
+			"id": 7080206,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080203",
+							"2"
+						],
+						"stepId": 7080203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080204",
+							"2"
+						],
+						"stepId": 7080204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080205",
+							"2"
+						],
+						"stepId": 7080205,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080206",
+							"2"
+						],
+						"stepId": 7080206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080207",
+							"2"
+						],
+						"stepId": 7080207,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ジョエル"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020601,
+					"content": "#{PLAYERAVATAR#SEXPRO[INFO_MALE_PRONOUN_BIGBROTHER|INFO_FEMALE_PRONOUN_BIGSISTER]}、サイリュスおじさんに情報を聞いてきてくれるかな？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ジョエル"
+				}
+			]
+		},
+		{
+			"id": 7080207,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080204",
+							"2"
+						],
+						"stepId": 7080204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080205",
+							"2"
+						],
+						"stepId": 7080205,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080206",
+							"2"
+						],
+						"stepId": 7080206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"サイリュス"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020701,
+					"content": "急がなければ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "サイリュス"
+				}
+			]
+		},
+		{
+			"id": 7080208,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080208",
+							"2"
+						],
+						"stepId": 7080208,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"サイリュス"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020801,
+					"content": "旅人、先にジョエルに伝えてきてくれないか。俺は後ですぐに行くから。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020802
+					],
+					"speakerTitle": "サイリュス"
+				},
+				{
+					"id": 708020802,
+					"content": "情報の整理にはもう少し時間がかかりそうなんだ。あの子に何も知らせないで待たせちゃ悪いからな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "サイリュス"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,341 @@
+{
+	"id": 76039,
+	"type": "WQ",
+	"name": "Câu Chuyện Của Tiểu Đội Chi Viện",
+	"description": "Lắng nghe lời thì thầm của u linh, tìm lại tên của họ.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7603901,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_GLOBAL_VAR_EQUAL",
+					"rawParams": [
+						7603901,
+						1
+					]
+				}
+			]
+		},
+		{
+			"id": 7603902,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đi thao tác ngọn hải đăng dẫn đường cho bóng ma lạc lối",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					3709.919,
+					257.123,
+					9178.172
+				],
+				"pointId": 360100183
+			}
+		},
+		{
+			"id": 7603903,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Nói chuyện với bóng ma lạc lối",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7603902,
+						0
+					],
+					"talkId": 7603902
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7603904,
+						0
+					],
+					"talkId": 7603904
+				}
+			]
+		},
+		{
+			"id": 7603904,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đi thao tác ngọn hải đăng dẫn đường cho bóng ma lạc lối",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7603903,
+						0
+					],
+					"talkId": 7603903
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					3709.919,
+					257.123,
+					9178.172
+				],
+				"pointId": 360100183
+			}
+		}
+	],
+	"talks": [
+		{
+			"id": 7603902,
+			"completionStepIds": [
+				7603903
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7603903",
+							"2"
+						],
+						"stepId": 7603903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7603902",
+							"2"
+						],
+						"stepId": 7603902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Bóng Ma Lạc Lối"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 760390201,
+					"content": "Không tìm được đội ngũ sống sót, chỉ có ma vật gầm gừ và thi thể. Phải làm thế nào, phải đi đâu đây?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760390202
+					],
+					"speakerTitle": "Bóng Ma Lạc Lối"
+				},
+				{
+					"id": 760390202,
+					"content": "Chỉ có thể đi theo phương hướng mà ngọn hải đăng chỉ dẫn, nhưng ở đây còn có ai cho chúng ta phương hướng chứ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Bóng Ma Lạc Lối"
+				}
+			]
+		},
+		{
+			"id": 7603903,
+			"completionStepIds": [
+				7603904
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7603904",
+							"2"
+						],
+						"stepId": 7603904,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Xem"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							3709.919,
+							257.123,
+							9178.172
+						],
+						"pointId": 360100183
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 760390301,
+					"content": "",
+					"roleType": "TALK_ROLE_NONE",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7603904,
+			"completionStepIds": [
+				7603903
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_PLAYER_CURRENT_AVATAR",
+						"rawParams": [
+							"10000120",
+							"0",
+							"1",
+							"0"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7603903",
+							"2"
+						],
+						"stepId": 7603903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7603902",
+							"2"
+						],
+						"stepId": 7603902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Bóng Ma Lạc Lối"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 760390101,
+					"content": "Theo kế hoạch khẩn cấp, sau khi tín hiệu cảnh báo sáng lên, tổng bộ sẽ phái tiểu đội chi viện đặc biệt \"Sumrak\" của chúng tôi đến chi viện.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760390102
+					],
+					"speakerTitle": "Bóng Ma Lạc Lối"
+				},
+				{
+					"id": 760390102,
+					"content": "...Sương mù ở đây dày quá, chúng tôi không nhìn thấy ngọn hải đăng.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760390103
+					],
+					"speakerTitle": "Bóng Ma Lạc Lối"
+				},
+				{
+					"id": 760390103,
+					"content": "Sĩ quan... Có tiếng bước chân...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760390104
+					],
+					"speakerTitle": "Bóng Ma Lạc Lối"
+				},
+				{
+					"id": 760390104,
+					"content": "Là Người Giữ Đèn canh gác trên đảo sao... Hãy trả lời...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760390105,
+						760390106
+					],
+					"speakerTitle": "Bóng Ma Lạc Lối"
+				},
+				{
+					"id": 760390105,
+					"content": "Đúng vậy.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						760390107
+					]
+				},
+				{
+					"id": 760390106,
+					"content": "Ngọn hải đăng ở hướng đông bắc.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						760390107
+					]
+				},
+				{
+					"id": 760390107,
+					"content": "Tình hình không ổn rồi... Cẩn thận...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760390108
+					],
+					"speakerTitle": "Bóng Ma Lạc Lối"
+				},
+				{
+					"id": 760390108,
+					"content": "Theo kế hoạch khẩn cấp, sau khi tín hiệu cảnh báo sáng lên, tổng bộ sẽ phái tiểu đội chi viện đặc biệt \"Sumrak\" của chúng tôi đến chi viện.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760390109
+					],
+					"speakerTitle": "Bóng Ma Lạc Lối"
+				},
+				{
+					"id": 760390109,
+					"content": "Sương mù ở đây dày quá, chúng tôi không nhìn thấy ngọn hải đăng...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760390110
+					],
+					"speakerTitle": "Bóng Ma Lạc Lối"
+				},
+				{
+					"id": 760390110,
+					"content": "Không nhìn thấy... không nhìn thấy... không nhìn thấy...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Bóng Ma Lạc Lối"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,185 @@
+{
+	"id": 70710,
+	"type": "WQ",
+	"name": "La virile quête de la virilité de Jack le viril",
+	"description": "Jack le viril, de Mondstadt, aurait besoin de 2 steaks.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7071001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Donnez 2 steaks à Jack le viril.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7071001,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7071002,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Jack le viril.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7071002,
+						0
+					],
+					"talkId": 7071002
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7071001,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071001",
+							"2"
+						],
+						"stepId": 7071001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7071001"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack le viril"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707100101,
+					"content": "Les steaks...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707100102
+					]
+				},
+				{
+					"id": 707100102,
+					"content": "Je vois que tu as vu mon annonce !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707100103
+					],
+					"speakerTitle": "Jack le viril"
+				},
+				{
+					"id": 707100103,
+					"content": "Et tu viens m'apporter ces deux steaks ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707100104,
+						707100105
+					],
+					"speakerTitle": "Jack le viril"
+				},
+				{
+					"id": 707100104,
+					"content": "Oui, et voilà.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707100105,
+					"content": "Pas encore...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707100106
+					]
+				},
+				{
+					"id": 707100106,
+					"content": "D'accord. Ramène-les-moi dès que tu peux, s'il te plaît !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack le viril"
+				}
+			]
+		},
+		{
+			"id": 7071002,
+			"completionStepIds": [
+				7071002
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071002",
+							"2"
+						],
+						"stepId": 7071002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack le viril"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707100201,
+					"content": "Quelle bonne odeur ! Ils sont bien gros, en plus !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707100202
+					],
+					"speakerTitle": "Jack le viril"
+				},
+				{
+					"id": 707100202,
+					"content": "Merci ! Je t'offre ceci en guise de remerciement.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707100203
+					],
+					"speakerTitle": "Jack le viril"
+				},
+				{
+					"id": 707100203,
+					"content": "Toute cette viande me rendra super viril !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack le viril"
+				}
+			]
+		}
+	]
+}

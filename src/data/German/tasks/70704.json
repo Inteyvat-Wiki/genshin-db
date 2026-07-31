@@ -1,0 +1,185 @@
+{
+	"id": 70704,
+	"type": "WQ",
+	"name": "Connors Gebräu",
+	"description": "Connor aus dem Weingut Morgenröte benötigt drei Flammenblumenstaubblätter.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bringe Connor drei Flammenblumenstaubblätter.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070401,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070402,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Connor.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070402,
+						0
+					],
+					"talkId": 7070402
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070401,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070401",
+							"2"
+						],
+						"stepId": 7070401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070401"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707040101,
+					"content": "Wie ich hörte, brauchst du Flammenblumenstaubblätter ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707040102
+					]
+				},
+				{
+					"id": 707040102,
+					"content": "Ja, so lautete die Mission. Das ging ziemlich schnell ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707040103
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707040103,
+					"content": "Hast du drei Flammenblumenstaubblätter beschafft, die ich brauche?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707040104,
+						707040105
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707040104,
+					"content": "Hier sind sie.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707040105,
+					"content": "Noch nicht.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707040106
+					]
+				},
+				{
+					"id": 707040106,
+					"content": "Dann bring sie mir bitte, sobald du sie hast. Ich muss mit der Weingärung beginnen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Connor"
+				}
+			]
+		},
+		{
+			"id": 7070402,
+			"completionStepIds": [
+				7070402
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070402",
+							"2"
+						],
+						"stepId": 7070402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707040201,
+					"content": "Ja, das sollte reichen. Bitte nimm diese kleine Aufmerksamkeit als Zeichen meines Dankes.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707040202
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707040202,
+					"content": "Ich bin nicht sicher, ob ich mit diesen Zutaten etwas Besonderes erzeugen kann ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707040203
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707040203,
+					"content": "Doch so oder so wird es eine besondere Weinbereitung werden.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Connor"
+				}
+			]
+		}
+	]
+}

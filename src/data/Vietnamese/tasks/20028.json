@@ -1,0 +1,241 @@
+{
+	"id": 20028,
+	"type": "IQ",
+	"name": "Vật Nhiễu Loạn Tròn Quay!",
+	"description": "Slime đột nhiên xuất hiện ở Thanh Tuyền Trấn, Morrow nhát gan ở gần đó hình như bị cuốn vào chuyện này...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2002801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đi xem tình hình",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Tiêu diệt Slime",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002803,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Nói chuyện với Morrow Nhát Gan",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002801,
+						0
+					],
+					"talkId": 2002801
+				}
+			]
+		},
+		{
+			"id": 2002804,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đến địa điểm bất thường",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002805,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dùng \"Phong\" giải tán bụi",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002806,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Tiêu diệt toàn bộ Slime",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2002801,
+			"completionStepIds": [
+				2002803
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002802",
+							"3"
+						],
+						"stepId": 2002802,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Morrow Nhát Gan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200280101,
+					"content": "#Cảm... cảm ơn bạn, {NICKNAME}...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280102
+					],
+					"speakerTitle": "Morrow Nhát Gan"
+				},
+				{
+					"id": 200280102,
+					"content": "Tuy là thợ săn... nhưng tôi cũng không có cách nào với bọn Slime này.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280103
+					],
+					"speakerTitle": "Morrow Nhát Gan"
+				},
+				{
+					"id": 200280103,
+					"content": "Bị bọn chúng phá đám, lần đi săn này tôi lại không đem được gì về.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280104
+					],
+					"speakerTitle": "Morrow Nhát Gan"
+				},
+				{
+					"id": 200280104,
+					"content": "Chỉ hy vọng những người thợ săn khác không xui xẻo như tôi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280105
+					],
+					"speakerTitle": "Morrow Nhát Gan"
+				},
+				{
+					"id": 200280105,
+					"content": "Phải rồi, nói đến đây, có thể phiền bạn đi xung quanh xem không?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280106
+					],
+					"speakerTitle": "Morrow Nhát Gan"
+				},
+				{
+					"id": 200280106,
+					"content": "Không biết có phải ảo giác của tôi không, nhưng xung quanh trấn.... Slime hình như càng lúc càng nhiều rồi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280107
+					],
+					"speakerTitle": "Morrow Nhát Gan"
+				},
+				{
+					"id": 200280107,
+					"content": "Bạn hãy đến phía trước xem. Nếu phát hiện Slime, thì hãy tiêu diệt bọn chúng đi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280108,
+						200280109
+					],
+					"speakerTitle": "Morrow Nhát Gan"
+				},
+				{
+					"id": 200280108,
+					"content": "Không thành vấn đề.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200280110
+					]
+				},
+				{
+					"id": 200280110,
+					"content": "Vậy thì phiền bạn rồi, tôi cũng sẽ về báo cáo với ngài Draff.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280111
+					],
+					"speakerTitle": "Morrow Nhát Gan"
+				},
+				{
+					"id": 200280111,
+					"content": "Hy vọng ngài ấy đừng uống quá nhiều, có thể nghe được tôi nói...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Morrow Nhát Gan"
+				},
+				{
+					"id": 200280109,
+					"content": "Còn có việc khác.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200280112
+					]
+				},
+				{
+					"id": 200280112,
+					"content": "Nhưng người có năng lực có thể giải quyết được việc này, chỉ có bạn thôi. Vì Thanh Tuyền Trấn, phải phiền bạn rồi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Morrow Nhát Gan"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,154 @@
+{
+	"id": 381,
+	"type": "AQ",
+	"name": "Потаённые слёзы",
+	"description": "Следы Двалина можно найти по всему Мондштадту. Одна из слёз упала в руины глубоко в лесу.",
+	"unlockDescription": "",
+	"chapter": "Горькие слёзы",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		380,
+		382,
+		383
+	],
+	"prevMainQuestList": [
+		379
+	],
+	"steps": [
+		{
+			"id": 38101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отправляйтесь к вратам Орла",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						38101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 38102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отворите врата Орла",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_DUNGEON",
+					"rawParams": [
+						10,
+						40
+					]
+				}
+			]
+		},
+		{
+			"id": 38103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Одолейте монстров, охраняющих руины",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 38104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Подберите слезу Двалина",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100160,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 38105,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						38105,
+						0
+					],
+					"talkId": 38105
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 38105,
+			"completionStepIds": [
+				38105
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"38105",
+							"2"
+						],
+						"stepId": 38105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Джинн"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3800113,
+					"content": "Ура! Мы наконец-то закончили. Пришлось хорошенько постараться!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3800114
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 3800114,
+					"content": "Расслабляться рано. Мы ещё не закончили с Ужасом Бури.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3800115
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3800115,
+					"content": "К тому же мы не знаем, что на уме у Фатуи.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Дилюк"
+				}
+			]
+		}
+	]
+}

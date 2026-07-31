@@ -1,0 +1,234 @@
+{
+	"id": 70816,
+	"type": "WQ",
+	"name": "Lâm Nguy",
+	"description": "Trong lúc quan sát động tĩnh của ma vật ở Thiên Phong Thần Điện, Jack vì quá bất cẩn mà bị ma vật phát hiện và tấn công. Tuy Jack miễn cưỡng chạy trốn được về Mondstadt, nhưng một số thứ trên người anh ấy lại thất lạc ở Thiên Phong Thần Điện...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		372
+	],
+	"steps": [
+		{
+			"id": 7081601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Nói chuyện với Jack",
+			"finishConditions": []
+		},
+		{
+			"id": 7081602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đến Thiên Phong Thần Điện tìm món đồ đã mất của Jack",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						7081601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7081603,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đến Thiên Phong Thần Điện tìm món đồ đã mất của Jack",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						7081601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7081604,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7081602,
+						3
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7081603,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7081605,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7081604,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7081606,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Báo cáo với Jack",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7081603,
+						0
+					],
+					"talkId": 7081603
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7081602,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081605",
+							"2"
+						],
+						"stepId": 7081605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708160201,
+					"content": "Sau này tôi vẫn phải cẩn thận một chút mới được.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708160202
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 708160202,
+					"content": "Nhưng nếu cẩn thận quá... Haiz...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				}
+			]
+		},
+		{
+			"id": 7081603,
+			"completionStepIds": [
+				7081606
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081606",
+							"2"
+						],
+						"stepId": 7081606,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708160301,
+					"content": "Những thứ đó, bạn đều tìm thấy rồi à?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708160302
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 708160302,
+					"content": "Tìm được rồi.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708160303
+					]
+				},
+				{
+					"id": 708160303,
+					"content": "Tốt quá, bản đồ này tôi vẫn luôn dùng, bên trên còn có rất nhiều chỗ tôi đánh dấu, làm mất thì phiền phức lắm.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708160304
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 708160304,
+					"content": "Hơn nữa, nếu ngay cả bằng chứng mạo hiểm tôi cũng làm mất, thì cũng không có mặt mũi nào đi tìm Katheryne lấy thêm một bản.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708160305
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 708160305,
+					"content": "Nhà Mạo Hiểm làm mất bằng chứng mạo hiểm trên con đường mạo hiểm... đây chẳng phải chuyện cười đó sao...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708160306
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 708160306,
+					"content": "Cảm ơn bạn, tôi sẽ thu dọn những thứ này, đây là quà tạ ơn, hãy nhận lấy nhé.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				}
+			]
+		}
+	]
+}

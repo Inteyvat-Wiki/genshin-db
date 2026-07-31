@@ -1,0 +1,167 @@
+{
+	"id": 71702,
+	"type": "WQ",
+	"name": "Herbalist's Forage",
+	"description": "Liyue Harbor's Herbalist Gui needs three Violetgrass.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Give three Violetgrass to Herbalist Gui",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Herbalist Gui",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170202,
+						0
+					],
+					"talkId": 7170202
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170201",
+							"2"
+						],
+						"stepId": 7170201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170201"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Herbalist Gui"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717020101,
+					"content": "About Violetgrass...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717020102
+					]
+				},
+				{
+					"id": 717020102,
+					"content": "Ah, you must've seen my commission. You've come just in time, can you find me three Violetgrass?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717020103,
+						717020104
+					],
+					"speakerTitle": "Herbalist Gui"
+				},
+				{
+					"id": 717020103,
+					"content": "Here they are.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717020104,
+					"content": "Not yet...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717020105
+					]
+				},
+				{
+					"id": 717020105,
+					"content": "Please remember to bring them back as soon as you've found them.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Herbalist Gui"
+				}
+			]
+		},
+		{
+			"id": 7170202,
+			"completionStepIds": [
+				7170202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170202",
+							"2"
+						],
+						"stepId": 7170202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Herbalist Gui"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717020201,
+					"content": "Let me see... Yes, this Violetgrass will do nicely.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717020202
+					],
+					"speakerTitle": "Herbalist Gui"
+				},
+				{
+					"id": 717020202,
+					"content": "Here, these are for you. Thanks for your help.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Herbalist Gui"
+				}
+			]
+		}
+	]
+}

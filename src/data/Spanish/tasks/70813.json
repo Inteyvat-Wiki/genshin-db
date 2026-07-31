@@ -1,0 +1,188 @@
+{
+	"id": 70813,
+	"type": "WQ",
+	"name": "¡Al ladrón!",
+	"description": "La tormenta acaba de terminar, y Cyrus, del Gremio de Aventureros, está planeando lanzar una ofensiva contra los Ladrones de Tesoros...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		20603
+	],
+	"steps": [
+		{
+			"id": 7081301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Cyrus",
+			"finishConditions": []
+		},
+		{
+			"id": 7081302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Derrota a los Ladrones de Tesoros cerca del Viñedo del Amanecer",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7081303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Despeja los campamentos de Ladrones de Tesoros",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7081304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Cyrus",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7081305,
+						0
+					],
+					"talkId": 7081305
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7081304,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081302",
+							"2"
+						],
+						"stepId": 7081302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081303",
+							"2"
+						],
+						"stepId": 7081303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708130401,
+					"content": "¡Hum! Estos Ladrones de Tesoros... Qué ratas tan persistentes...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		},
+		{
+			"id": 7081305,
+			"completionStepIds": [
+				7081304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081304",
+							"2"
+						],
+						"stepId": 7081304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708130501,
+					"content": "¡Regresaste! ¿Pudiste despejar los campamentos de los Ladrones de Tesoros?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708130502
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708130502,
+					"content": "¡Acabé con todos!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708130503
+					]
+				},
+				{
+					"id": 708130503,
+					"content": "#No esperaba menos de ti, {F#Caballera Honoraria}{M#Caballero Honorario}. ¡Sabía que sería pan comido para ti!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708130504
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708130504,
+					"content": "Admito que esos Ladrones de Tesoros son bastante persistentes. Mientras todo el mundo corría para cubrirse durante la tormenta, ellos tuvieron la audacia de robar cosas y salir corriendo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708130505
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708130505,
+					"content": "Si, en vez de eso, hubieran usado esa perseverancia para hacer algo bueno...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		}
+	]
+}

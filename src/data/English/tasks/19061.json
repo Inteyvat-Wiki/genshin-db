@@ -1,0 +1,217 @@
+{
+	"id": 19061,
+	"type": "LQ",
+	"name": "Maid-in-Training",
+	"description": "In accordance with your growing fame as the Honorary Knight, one of your junior Knights of Favonius would like to receive your guidance...",
+	"unlockDescription": "",
+	"chapter": "Chivalric Training",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		19062,
+		19064,
+		19067
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1906102,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Head to near Mondstadt",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1906103,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Noelle",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_ANY_SAVE_POINT",
+					"rawParams": [
+						103401,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1906104,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		},
+		{
+			"id": 1906105,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Follow Noelle",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1906105,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1906106,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Follow Noelle",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1906107,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Look for the source of the cry for help.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1906107,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1906108,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to the crossing and appraise the situation",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1906109,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Defeat all opponents",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1906110,
+			"order": 10,
+			"listShowType": "QUEST_SHOW",
+			"description": "Report back to Noelle and Alois",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_ANY_SAVE_POINT",
+					"rawParams": [
+						103401,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1906111,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Noelle",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_ANY_SAVE_POINT",
+					"rawParams": [
+						103401,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1906101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1906108",
+							"2"
+						],
+						"stepId": 1906108,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1906109",
+							"2"
+						],
+						"stepId": 1906109,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Noelle",
+					"Alois"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 190610801,
+					"content": "No, no, it's okay... I'll be fine with a bit of rest, don't worry about me...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190610802
+					],
+					"speakerTitle": "Alois"
+				},
+				{
+					"id": 190610802,
+					"content": "Sorry! If you really don't want to be examined, I still need to take care of you!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Noelle"
+				}
+			]
+		}
+	]
+}

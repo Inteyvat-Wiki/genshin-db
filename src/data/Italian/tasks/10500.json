@@ -1,0 +1,1964 @@
+{
+	"id": 10500,
+	"type": "LQ",
+	"name": "L'astrologia e il patto dei cinquant'anni",
+	"description": "#Tu e Paimon siete uscit{F#e}{M#i} da Liyue, con l'intenzione di partire per una nuova avventura...",
+	"unlockDescription": "",
+	"chapter": "Al di là delle stelle",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		10501
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1050001,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Scopri cosa vuole la ragazza che ti ha fermato",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1050001,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1050002,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Scopri cosa vuole la ragazza che ti ha fermato",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1050001,
+						0
+					],
+					"talkId": 1050001
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1050009,
+						0
+					],
+					"talkId": 1050009
+				}
+			]
+		},
+		{
+			"id": 1050003,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Accompagna Mona a dire addio al signor Zhu",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1050002,
+						0
+					],
+					"talkId": 1050002
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1050008,
+						0
+					],
+					"talkId": 1050008
+				}
+			]
+		},
+		{
+			"id": 1050004,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Attira i Melmosi e recupera l'anello perduto del signor Zhu",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_INTERACT_GADGET",
+					"rawParams": [
+						70300052,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1050005,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sconfiggi i Melmosi e cerca l'anello",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1050006,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Restituisci l'anello al signor Zhu",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1050003,
+						0
+					],
+					"talkId": 1050003
+				}
+			]
+		},
+		{
+			"id": 1050007,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Lascia il Porto di Liyue",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1050008,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Paimon",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1050007,
+						0
+					],
+					"talkId": 1050007
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1050001,
+			"completionStepIds": [
+				1050002
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050002",
+							"2"
+						],
+						"stepId": 1050002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Mona"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000101,
+					"content": "C-Come fai a saperlo?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000102
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000102,
+					"content": "Come? Perché sono una maestra d'astrologia.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000103
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000103,
+					"content": "Se non avete altre domande, seguitemi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000104,
+						105000105
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000104,
+					"content": "Oh, si dà il caso che invece abbia un sacco di domande da porti!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000106
+					]
+				},
+				{
+					"id": 105000106,
+					"content": "*sospira* E va bene. Cercherò di essere paziente per chiarirvi le idee.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000107
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000107,
+					"content": "Sono l'astrologa Mona Megistus ma, considerato che dimenticare i nomi altrui è maleducazione, permetto agli altri di chiamarmi soltanto Mona.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000108
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000108,
+					"content": "La mia maestra mi ha affidato una missione: recuperare una certa scatola da Mondstadt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000109
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000109,
+					"content": "Faceva parte di un accordo preso con una sua amica cinquant'anni or sono. Ma ormai non è più arzilla come un tempo, per cui tocca a me occuparmene.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000110
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000110,
+					"content": "Ehm... Non capisco cosa c'entriamo noi con il recupero di questa scatola. Perché dovremmo seguirti?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000111
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000111,
+					"content": "Beh... Perché vorrei anche affrontare il guardiano della scatola.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000112
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000112,
+					"content": "La mia maestra e la sua amica hanno passato la vita a sfidarsi nelle arti mistiche, senza che nessuna delle due ne uscisse vincitrice. Se dovessi farcela, dimostrerei di aver superato la mia maestra!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000113,
+						105000115
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000113,
+					"content": "Quindi vuoi dar prova di te?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000114
+					]
+				},
+				{
+					"id": 105000114,
+					"content": "Ahem, in realtà voglio dar prova del potere e del prestigio dell'arte dell'astrologia.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000117
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000117,
+					"content": "Stando alle mie predizioni, l'amica della mia maestra ha lasciato Mondstadt, affidando la guardia della scatola al suo erede.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000118
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000118,
+					"content": "Proprio come me, anche questa persona deve aver superato la sua maestra, per cui non posso lasciare nulla al caso.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000119
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000119,
+					"content": "Quindi preferirei assicurarmi la vittoria in questa sfida e, dopo averci riflettuto un po', ho pensato che tu avresti fatto al caso mio!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000120,
+						105000122
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000120,
+					"content": "Ma... io non ho idea di come funzioni l'astrologia...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000121
+					]
+				},
+				{
+					"id": 105000121,
+					"content": "#Cosa c'entra {F#lei}{M#lui} con questa storia?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000123
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000123,
+					"content": "La conoscenza che la mia maestra mi ha trasmesso dev'essere a sua volta tramandata a qualcun altro.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000124
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000124,
+					"content": "#Se portassi con me u{F#na}{M#n} discepol{F#a}{M#o} a conoscerla, sarei già in vantaggio, no?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000125
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000125,
+					"content": "#E tu sei {F#la grande eroina}{M#il grande eroe} di Mondstadt, mi{F#a}{M#o} pari quanto a prestigio. Per cui...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000126,
+						105000127
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000126,
+					"content": "Mi rifiuto.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000128
+					]
+				},
+				{
+					"id": 105000128,
+					"content": "#Non è necessario che diventi davvero {F#mia discepola}{M#mio discepolo}. Devi solo fingere.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000129
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000129,
+					"content": "Se accetterai di accompagnarmi a recuperare quella scatola, ci guadagnerai qualcosa anche tu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000130
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000130,
+					"content": "Dopo che avrò incontrato l'erede e confrontato le nostre conoscenze, dovrei essere in grado di leggere il tuo futuro con maggior precisione.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000131
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000131,
+					"content": "A quel punto potrò rispondere alle tue domande, anche su questioni fumose come divinità e parentele.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000132
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000132,
+					"content": "Beh, in effetti sarebbe più rapido che setacciare l'intero continente paese per paese!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000133,
+						105000134
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000133,
+					"content": "D'accordo, accetto le tue condizioni.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000135
+					]
+				},
+				{
+					"id": 105000135,
+					"content": "Eheh, saggia decisione!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000136
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000136,
+					"content": "Detto ciò, vorrei far visita a un certo luogo prima di andare.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000134,
+					"content": "Beh... Suppongo che ti asseconderemo...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000135
+					]
+				},
+				{
+					"id": 105000127,
+					"content": "#E da quando sarei {F#diventata una tua allieva}{M#diventato un tuo allievo}?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000128
+					]
+				},
+				{
+					"id": 105000122,
+					"content": "Come mai hai pensato proprio a me?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000123
+					]
+				},
+				{
+					"id": 105000115,
+					"content": "Cioè, in altre parole, vuoi metterti in mostra...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000116
+					]
+				},
+				{
+					"id": 105000116,
+					"content": "Non dire sciocchezze! Il punto è che posso sfruttare quest'occasione per dimostrare il potere e il prestigio dell'arte dell'astrologia.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000117
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000105,
+					"content": "Tanto per cominciare: chi sei?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000106
+					]
+				}
+			]
+		},
+		{
+			"id": 1050002,
+			"completionStepIds": [
+				1050003
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050003",
+							"2"
+						],
+						"stepId": 1050003,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"46622",
+							"3"
+						],
+						"stepId": 46622,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Signor Zhu"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000201,
+					"content": "(Non mi sorprende che una locanda in questo posto non faccia grandi affari...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000202
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000202,
+					"content": "Mona, sei arrivata proprio al momento giusto. Per caso hai visto un anello di giada sulla strada?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000203
+					],
+					"speakerTitle": "Signor Zhu"
+				},
+				{
+					"id": 105000203,
+					"content": "Un anello di giada? Non direi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000204
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000204,
+					"content": "Oh, no... Quell'anello era un regalo di mia madre. Mentre ero di spalle, un Melmoso l'ha ingoiato!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000205
+					],
+					"speakerTitle": "Signor Zhu"
+				},
+				{
+					"id": 105000205,
+					"content": "Beh, non dovrebbe essere un problema, ora che Mona è qui! È bravissima con l'astrologia...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000206
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000206,
+					"content": "Assolutamente no. L'astrologia va usata per comprendere la realtà e il destino stesso, non per questioni tanto banali.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000207
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000207,
+					"content": "Ma prima non hai detto che il proprietario della locanda è stato buono con te?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000208
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000208,
+					"content": "È una questione di orgoglio e consapevolezza. Se un astrologo pensasse di usare la propria arte per risolvere qualsiasi problema, verrebbe presto abbandonato dall'etere stellare.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000209
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000209,
+					"content": "Le sue divinazioni perderebbero la capacità di guidare, e non sarebbe più in grado di penetrare la nebbia dell'ignoto dinanzi a sé. È una questione di principio.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000210
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000210,
+					"content": "Hai un potere così grande... e non lo usi per guadagnarti da vivere? Un vero spreco...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000211
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000211,
+					"content": "*sospira* Beh, avrei offerto 20.000 Mora come ricompensa, se foste stati disposti ad aiutarmi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000212
+					],
+					"speakerTitle": "Signor Zhu"
+				},
+				{
+					"id": 105000212,
+					"content": "2—20.000...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000213,
+						105000214
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000213,
+					"content": "Tutto bene?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000215
+					]
+				},
+				{
+					"id": 105000215,
+					"content": "Oh... Ah... Niente! S-Stavo solo pensando che chiunque trovi quell'anello sarà davvero fortunato. Guadagnare 20.000 Mora così... di punto in bianco...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000216,
+						105000217
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000216,
+					"content": "Prima non stavi parlando di orgoglio dell'astrologo?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000218
+					]
+				},
+				{
+					"id": 105000218,
+					"content": "Ahem... Ma sì, certo! Tuttavia... l'attività del locandiere ha visto giorni migliori. Dev'essere un anello davvero straordinario, se è disposto a spendere tanto denaro per ritrovarlo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000219
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000219,
+					"content": "Non sarebbe giusto andarcene senza averlo aiutato. Forse ci sono altri modi per riuscirci, oltre all'astrologia.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000220
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000220,
+					"content": "Oh, Paimon sa già come andrà a finire...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000221
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000221,
+					"content": "#{NICKNAME}, lascerò che sia tu a occupartene! Considerala la prima missione che ti affido come tua maestra!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000222,
+						105000223
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000222,
+					"content": "Mi sembra logico...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000224
+					]
+				},
+				{
+					"id": 105000224,
+					"content": "Mmmh... Dato che è stato un Melmoso a inghiottirlo, forse potremmo usare un'esca elementale per attirare tutti i Melmosi nelle vicinanze...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000225
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000225,
+					"content": "Ricordi? La sostanza che patron Diluc ha prodotto con il nostro aiuto?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000226
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000226,
+					"content": "E... beh, Paimon ne ha conservato un pochino!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000227,
+						105000229
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000227,
+					"content": "Ben fatto, Paimon!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000228
+					]
+				},
+				{
+					"id": 105000228,
+					"content": "Paimon è il partner perfetto, vero?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000231
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000231,
+					"content": "A quanto pare avete già un piano.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000232
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000232,
+					"content": "Esatto. Torneremo in un battibaleno!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000229,
+					"content": "Non dirmi che l'hai conservata solo per fare uno spuntino quando ti viene fame...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000230
+					]
+				},
+				{
+					"id": 105000230,
+					"content": "Ah, non stare a spaccare il capello!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000231
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000223,
+					"content": "Suppongo che tocchi a me, di nuovo...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000224
+					]
+				},
+				{
+					"id": 105000217,
+					"content": "Che fine ha fatto la \"questione di principio\"?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000218
+					]
+				},
+				{
+					"id": 105000214,
+					"content": "Cos'è quello sguardo?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000215
+					]
+				}
+			]
+		},
+		{
+			"id": 1050003,
+			"completionStepIds": [
+				1050006
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050006",
+							"2"
+						],
+						"stepId": 1050006,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Signor Zhu"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000301,
+					"content": "Sì! È proprio lui! Temevo di averlo perso per sempre!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000302
+					],
+					"speakerTitle": "Signor Zhu"
+				},
+				{
+					"id": 105000302,
+					"content": "L'avete trovato davvero. Niente male!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000303
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000303,
+					"content": "Signor Zhu, dovrebbe avere più cura di cose tanto preziose. Potrebbe non essere altrettanto fortunato la prossima volta.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000304
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000304,
+					"content": "Hai assolutamente ragione. Con quale coraggio mi sarei potuto ripresentare davanti alla mia famiglia dopo aver perso il duecentocinquantatreesimo anello che mi ha regalato mia madre?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000305,
+						105000306,
+						105000307
+					],
+					"speakerTitle": "Signor Zhu"
+				},
+				{
+					"id": 105000305,
+					"content": "...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000308
+					]
+				},
+				{
+					"id": 105000308,
+					"content": "Ah, lasciate che vi spieghi. La mia famiglia possiede tre miniere di giada e, per assicurarsi che trovassi una buona moglie, mia madre fece creare parecchi cimeli di famiglia di giada.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000309
+					],
+					"speakerTitle": "Signor Zhu"
+				},
+				{
+					"id": 105000309,
+					"content": "Credo ce ne siano oltre cinquecento.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000310
+					],
+					"speakerTitle": "Signor Zhu"
+				},
+				{
+					"id": 105000310,
+					"content": "Ma allora perché costruire una locanda qui, in mezzo al nulla?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000311
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000311,
+					"content": "Beh, avendo ereditato l'attività di famiglia così presto, mi sono stancato in fretta della routine.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000312
+					],
+					"speakerTitle": "Signor Zhu"
+				},
+				{
+					"id": 105000312,
+					"content": "Comunque sia, grazie mille per il vostro aiuto. Ecco i Mora, come promesso.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000313
+					],
+					"speakerTitle": "Signor Zhu"
+				},
+				{
+					"id": 105000313,
+					"content": "Beh, allora...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000314
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000314,
+					"content": "Allora li accetto volentieri.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000315,
+						105000316
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000315,
+					"content": "Wow, che velocità!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000317
+					]
+				},
+				{
+					"id": 105000317,
+					"content": "#Ma siamo stat{F#e}{M#i} noi a fare tutto il lavoro!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000318
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000318,
+					"content": "Un discepolo dovrebbe sempre comportarsi come tale. Non può sottrarre la gloria al proprio maestro.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000319,
+						105000321
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000319,
+					"content": "Beh...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000320
+					]
+				},
+				{
+					"id": 105000320,
+					"content": "#{NICKNAME}, non si era detto che avremmo semplicemente finto?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000323
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000323,
+					"content": "Beh, dovete iniziare a esercitarvi. Se il mio rivale è intelligente come penso, vi smaschererà in un istante.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000324
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000324,
+					"content": "*stomaco che brontola*",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000325
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000325,
+					"content": "Ehm...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000326
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000326,
+					"content": "Cos'è stato?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000327
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000327,
+					"content": "Oh, ma certo! Suppongo che tu non abbia mangiato per giorni. Avevo dimenticato che non hai...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000328
+					],
+					"speakerTitle": "Signor Zhu"
+				},
+				{
+					"id": 105000328,
+					"content": "Aaaaaaah! Shhhhahahahaha! Non è successo niente! È tutto a posto!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000329
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000329,
+					"content": "Uhm... Beh, devo ammettere che avete fatto un buon lavoro. Credo sia giusto spendere questi soldi per offrirvi un buon pasto!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000330
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000330,
+					"content": "Se andiamo a nord, raggiungeremo la <color=#00E1FFFF>Locanda Wangshu</color>. Ho sentito dire che il cibo lì è davvero ottimo. Andiamo a scoprire se è vero!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000331
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000331,
+					"content": "No, non c'è bisogno che mi ringraziate! Faccio solo ciò che farebbe qualsiasi buon maestro!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000332
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000332,
+					"content": "Paimon ha sentito bene? Ha davvero detto che ci avrebbe offerto lei!?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000333,
+						105000335
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000333,
+					"content": "Aspetta, lo dico io per te: \"Forza, seguiamola!\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000334
+					]
+				},
+				{
+					"id": 105000334,
+					"content": "Forza, seguiamola! In nome del buon cibo!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000335,
+					"content": "Lo dico io per te: \"Che brava persona!\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000336
+					]
+				},
+				{
+					"id": 105000336,
+					"content": "Che brava persona! Eheh... Forza, andiamo, c'è un pasto fantastico che ci aspetta!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000321,
+					"content": "#Non ho mai detto che sarei {F#stata davvero tua discepola}{M#stato davvero tuo discepolo}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000322
+					]
+				},
+				{
+					"id": 105000322,
+					"content": "Esatto!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000323
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000316,
+					"content": "Nemmeno Paimon è stata abbastanza veloce!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000317
+					]
+				},
+				{
+					"id": 105000306,
+					"content": "...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000308
+					]
+				},
+				{
+					"id": 105000307,
+					"content": "... ... ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000308
+					]
+				}
+			]
+		},
+		{
+			"id": 1050005,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050004",
+							"2"
+						],
+						"stepId": 1050004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Signor Zhu"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000501,
+					"content": "Grazie infinite, quell'anello ha un grande valore per me.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Signor Zhu"
+				}
+			]
+		},
+		{
+			"id": 1050006,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050004",
+							"2"
+						],
+						"stepId": 1050004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Mona"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000601,
+					"content": "Questa è la tua prima missione, quindi non rovinare tutto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000602
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000602,
+					"content": "Se le cose dovessero mettersi male... Beh, allora darò una mano.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Mona"
+				}
+			]
+		},
+		{
+			"id": 1050007,
+			"completionStepIds": [
+				1050008
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050008",
+							"2"
+						],
+						"stepId": 1050008,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000701,
+					"content": "Trovato! Dev'essere questo l'anello!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000702
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000702,
+					"content": "Com'è bello. Paimon è sicura che valga una tonnellata di...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000703
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000703,
+					"content": "Ah, ma Paimon non ha brutte intenzioni! Riportiamo l'anello al <color=#00E1FFFF>signor Zhu</color>!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 1050008,
+			"completionStepIds": [
+				1050003
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050003",
+							"2"
+						],
+						"stepId": 1050003,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Signor Zhu"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000201,
+					"content": "(Non mi sorprende che una locanda in questo posto non faccia grandi affari...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000202
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000202,
+					"content": "Mona, sei arrivata proprio al momento giusto. Per caso hai visto un anello di giada sulla strada?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000203
+					],
+					"speakerTitle": "Signor Zhu"
+				},
+				{
+					"id": 105000203,
+					"content": "Un anello di giada? Non direi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000204
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000204,
+					"content": "Oh, no... Quell'anello era un regalo di mia madre. Mentre ero di spalle, un Melmoso l'ha ingoiato!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000205
+					],
+					"speakerTitle": "Signor Zhu"
+				},
+				{
+					"id": 105000205,
+					"content": "Beh, non dovrebbe essere un problema, ora che Mona è qui! È bravissima con l'astrologia...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000206
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000206,
+					"content": "Assolutamente no. L'astrologia va usata per comprendere la realtà e il destino stesso, non per questioni tanto banali.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000207
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000207,
+					"content": "Ma prima non hai detto che il proprietario della locanda è stato buono con te?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000208
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000208,
+					"content": "È una questione di orgoglio e consapevolezza. Se un astrologo pensasse di usare la propria arte per risolvere qualsiasi problema, verrebbe presto abbandonato dall'etere stellare.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000209
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000209,
+					"content": "Le sue divinazioni perderebbero la capacità di guidare, e non sarebbe più in grado di penetrare la nebbia dell'ignoto dinanzi a sé. È una questione di principio.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000210
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000210,
+					"content": "Hai un potere così grande... e non lo usi per guadagnarti da vivere? Un vero spreco...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000211
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000211,
+					"content": "*sospira* Beh, avrei offerto 20.000 Mora come ricompensa, se foste stati disposti ad aiutarmi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000212
+					],
+					"speakerTitle": "Signor Zhu"
+				},
+				{
+					"id": 105000213,
+					"content": "Tutto bene?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000215
+					]
+				},
+				{
+					"id": 105000214,
+					"content": "Cos'è quello sguardo?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000215
+					]
+				},
+				{
+					"id": 105000212,
+					"content": "2—20.000...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000213,
+						105000214
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000216,
+					"content": "Prima non stavi parlando di orgoglio dell'astrologo?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000218
+					]
+				},
+				{
+					"id": 105000217,
+					"content": "Che fine ha fatto la \"questione di principio\"?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000218
+					]
+				},
+				{
+					"id": 105000215,
+					"content": "Oh... Ah... Niente! S-Stavo solo pensando che chiunque trovi quell'anello sarà davvero fortunato. Guadagnare 20.000 Mora così... di punto in bianco...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000216,
+						105000217
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000218,
+					"content": "Ahem... Ma sì, certo! Tuttavia... l'attività del locandiere ha visto giorni migliori. Dev'essere un anello davvero straordinario, se è disposto a spendere tanto denaro per ritrovarlo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000219
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000219,
+					"content": "Non sarebbe giusto andarcene senza averlo aiutato. Forse ci sono altri modi per riuscirci, oltre all'astrologia.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000220
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000220,
+					"content": "Oh, Paimon sa già come andrà a finire...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000221
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000222,
+					"content": "Mi sembra logico...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000224
+					]
+				},
+				{
+					"id": 105000223,
+					"content": "Suppongo che tocchi a me, di nuovo...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000224
+					]
+				},
+				{
+					"id": 105000221,
+					"content": "#{NICKNAME}, lascerò che sia tu a occupartene! Considerala la prima missione che ti affido come tua maestra!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000222,
+						105000223
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000224,
+					"content": "Mmmh... Dato che è stato un Melmoso a inghiottirlo, forse potremmo usare un'esca elementale per attirare tutti i Melmosi nelle vicinanze...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000225
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000825,
+					"content": "Sai, si tratta di qualcosa che il Vigneto Prima Luce ha creato per errore mentre produceva del vino...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000826
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000826,
+					"content": "La formula è segreta, ma è davvero perfetta per attirare i Melmosi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000827
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000227,
+					"content": "Ben fatto, Paimon!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000228
+					]
+				},
+				{
+					"id": 105000229,
+					"content": "Non dirmi che l'hai conservata solo per fare uno spuntino quando ti viene fame...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000230
+					]
+				},
+				{
+					"id": 105000226,
+					"content": "E... beh, Paimon ne ha conservato un pochino!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000227,
+						105000229
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000228,
+					"content": "Paimon è il partner perfetto, vero?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000231
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000230,
+					"content": "Ah, non stare a spaccare il capello!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000231
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000231,
+					"content": "A quanto pare avete già un piano.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000232
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000232,
+					"content": "Esatto. Torneremo in un battibaleno!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 1050009,
+			"completionStepIds": [
+				1050002
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050002",
+							"2"
+						],
+						"stepId": 1050002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"50001",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Mona"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000902,
+					"content": "È passato un po' di tempo...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000904
+					]
+				},
+				{
+					"id": 105000903,
+					"content": "Sei Mona!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000904
+					]
+				},
+				{
+					"id": 105000901,
+					"content": "La mia capacità di penetrare così facilmente nei vostri segreti non vi evoca alcun ricordo?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000902,
+						105000903
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000904,
+					"content": "Oh, Paimon si ricorda! L'astrologa!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000905
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000905,
+					"content": "Esatto, sono proprio io: l'astrologa Mona Megistus.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000906
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000906,
+					"content": "Stavolta vorrei che mi accompagnaste a Mondstadt per recuperare una scatola di proprietà della mia maestra.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000907
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000109,
+					"content": "Faceva parte di un accordo preso con una sua amica cinquant'anni or sono. Ma ormai non è più arzilla come un tempo, per cui tocca a me occuparmene.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000110
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000110,
+					"content": "Ehm... Non capisco cosa c'entriamo noi con il recupero di questa scatola. Perché dovremmo seguirti?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000111
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000111,
+					"content": "Beh... Perché vorrei anche affrontare il guardiano della scatola.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000112
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000911,
+					"content": "Quindi vuoi dar prova di te?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000912
+					]
+				},
+				{
+					"id": 105000913,
+					"content": "Cioè, in altre parole, vuoi metterti in mostra...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000914
+					]
+				},
+				{
+					"id": 105000112,
+					"content": "La mia maestra e la sua amica hanno passato la vita a sfidarsi nelle arti mistiche, senza che nessuna delle due ne uscisse vincitrice. Se dovessi farcela, dimostrerei di aver superato la mia maestra!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000113,
+						105000115
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000114,
+					"content": "Ahem, in realtà voglio dar prova del potere e del prestigio dell'arte dell'astrologia.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000117
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000116,
+					"content": "Non dire sciocchezze! Il punto è che posso sfruttare quest'occasione per dimostrare il potere e il prestigio dell'arte dell'astrologia.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000117
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000117,
+					"content": "Stando alle mie predizioni, l'amica della mia maestra ha lasciato Mondstadt, affidando la guardia della scatola al suo erede.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000118
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000118,
+					"content": "Proprio come me, anche questa persona deve aver superato la sua maestra, per cui non posso lasciare nulla al caso.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000119
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000918,
+					"content": "Ma... io non ho idea di come funzioni l'astrologia...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000919
+					]
+				},
+				{
+					"id": 105000920,
+					"content": "Come mai hai pensato proprio a me?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000921
+					]
+				},
+				{
+					"id": 105000119,
+					"content": "Quindi preferirei assicurarmi la vittoria in questa sfida e, dopo averci riflettuto un po', ho pensato che tu avresti fatto al caso mio!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000120,
+						105000122
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000121,
+					"content": "#Cosa c'entra {F#lei}{M#lui} con questa storia?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000123
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000123,
+					"content": "La conoscenza che la mia maestra mi ha trasmesso dev'essere a sua volta tramandata a qualcun altro.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000124
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000124,
+					"content": "#Se portassi con me u{F#na}{M#n} discepol{F#a}{M#o} a conoscerla, sarei già in vantaggio, no?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000125
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000924,
+					"content": "Mi rifiuto.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000926
+					]
+				},
+				{
+					"id": 105000925,
+					"content": "#E da quando sarei {F#diventata una tua allieva}{M#diventato un tuo allievo}?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000926
+					]
+				},
+				{
+					"id": 105000125,
+					"content": "#E tu sei {F#la grande eroina}{M#il grande eroe} di Mondstadt, mi{F#a}{M#o} pari quanto a prestigio. Per cui...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000126,
+						105000127
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000128,
+					"content": "#Non è necessario che diventi davvero {F#mia discepola}{M#mio discepolo}. Devi solo fingere.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000129
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000129,
+					"content": "Se accetterai di accompagnarmi a recuperare quella scatola, ci guadagnerai qualcosa anche tu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000130
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000130,
+					"content": "Dopo che avrò incontrato l'erede e confrontato le nostre conoscenze, dovrei essere in grado di leggere il tuo futuro con maggior precisione.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000131
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000131,
+					"content": "A quel punto potrò rispondere alle tue domande, anche su questioni fumose come divinità e parentele.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000132
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000133,
+					"content": "D'accordo, accetto le tue condizioni.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000135
+					]
+				},
+				{
+					"id": 105000134,
+					"content": "Beh... Suppongo che ti asseconderemo...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000135
+					]
+				},
+				{
+					"id": 105000132,
+					"content": "Beh, in effetti sarebbe più rapido che setacciare l'intero continente paese per paese!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000133,
+						105000134
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 105000135,
+					"content": "Eheh, saggia decisione!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000136
+					],
+					"speakerTitle": "Mona"
+				},
+				{
+					"id": 105000136,
+					"content": "Detto ciò, vorrei far visita a un certo luogo prima di andare.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Mona"
+				}
+			]
+		}
+	]
+}

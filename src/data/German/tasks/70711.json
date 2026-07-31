@@ -1,0 +1,176 @@
+{
+	"id": 70711,
+	"type": "WQ",
+	"name": "Jacks Weg zur Männlichkeit",
+	"description": "Der männliche Jack benötigt drei Portionen von Mondstadts gegrillten Fischspießen.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7071101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Reiche dem männlichen Jack drei gegrillte Fischspieße.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7071101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7071102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit dem männlichen Jack.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7071102,
+						0
+					],
+					"talkId": 7071102
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7071101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071101",
+							"2"
+						],
+						"stepId": 7071101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7071101"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Der männliche Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707110101,
+					"content": "Du möchtest gegrillten Fischspieß?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707110102
+					]
+				},
+				{
+					"id": 707110102,
+					"content": "Du hast wohl den Auftrag gesehen. Sehr gut! Hast du die drei gegrillten Fischspieße bei dir?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707110103,
+						707110104
+					],
+					"speakerTitle": "Der männliche Jack"
+				},
+				{
+					"id": 707110103,
+					"content": "Ja, hier sind sie.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707110104,
+					"content": "Noch nicht.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707110105
+					]
+				},
+				{
+					"id": 707110105,
+					"content": "Nun, dann bring sie mir, sobald du alle drei hast.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Der männliche Jack"
+				}
+			]
+		},
+		{
+			"id": 7071102,
+			"completionStepIds": [
+				7071102
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071102",
+							"2"
+						],
+						"stepId": 7071102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Der männliche Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707110201,
+					"content": "Oh ja, diese gegrillten Fischspieße duften köstlich ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707110202
+					],
+					"speakerTitle": "Der männliche Jack"
+				},
+				{
+					"id": 707110202,
+					"content": "Oh, stimmt. Nimm dies hier als Dank für deine Hilfe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707110203
+					],
+					"speakerTitle": "Der männliche Jack"
+				},
+				{
+					"id": 707110203,
+					"content": "Ob mich das wohl männlicher macht ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Der männliche Jack"
+				}
+			]
+		}
+	]
+}

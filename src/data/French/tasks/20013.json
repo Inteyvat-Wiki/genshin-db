@@ -1,0 +1,299 @@
+{
+	"id": 20013,
+	"type": "IQ",
+	"name": "Route bloquée ?",
+	"description": "Jack partait vers une nouvelle aventure quand des Brutocollinus lui ont tendu une embuscade après avoir barré la route qui mène à la Gorge de l'Ivrogne. Éliminez les créatures et sauvez-le.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2001301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Avancez pour en apprendre davantage.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001302,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Éliminez tous les monstres à proximité",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Éliminez tous les monstres et les obstacles.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Jack.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001303,
+						0
+					],
+					"talkId": 2001303
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2001301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001302",
+							"2"
+						],
+						"stepId": 2001302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200130101,
+					"content": "À l'aiiiide !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				}
+			]
+		},
+		{
+			"id": 2001302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001302",
+							"3"
+						],
+						"stepId": 2001302,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001303",
+							"2"
+						],
+						"stepId": 2001303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200130201,
+					"content": "#Ah, c'était toi, {M#voyageur}{F#voyageuse}. Merci, vraiment.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130202
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130202,
+					"content": "Ça m'embête de te le demander, mais... Tu pourrais m'aider ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130203
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130203,
+					"content": "Cette route bloquée est le dernier obstacle qui se dresse entre ma grande aventure et moi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130204
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130204,
+					"content": "Tu peux m'aider à la dégager ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130205,
+						200130206
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130205,
+					"content": "Bien sûr.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200130207
+					]
+				},
+				{
+					"id": 200130207,
+					"content": "*soupir* Si seulement j'étais comme toi, j'aurais pu devenir un aventurier aguerri en un rien de temps !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130206,
+					"content": "#Je suis {M#occupé}{F#occupée}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200130208
+					]
+				},
+				{
+					"id": 200130208,
+					"content": "Je t'en supplie ! Mon aventure ne peut pas se terminer avant d'avoir commencé !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				}
+			]
+		},
+		{
+			"id": 2001303,
+			"completionStepIds": [
+				2001304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001304",
+							"2"
+						],
+						"stepId": 2001304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200130301,
+					"content": "#Merci, {M#voyageur}{F#voyageuse} !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130302
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130302,
+					"content": "Mon plan était de marcher sur les traces de Stanley, et m'aventurer où il s'était aventuré... Mais il a fallu que je tombe sur ces saletés à peine parti.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130303
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130303,
+					"content": "Je ne suis pas assez fort pour repousser les monstres. Stanley leur aurait mis une raclée...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130304
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130304,
+					"content": "Sinon, accompagne-moi ? ... Non, c'est une mauvaise idée. Je ne peux pas laisser quelqu'un d'autre faire mon boulot.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130305
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130305,
+					"content": "Je vais y aller ! Un petit cadeau pour toi ! J'ai ramassé des rations sur mon chemin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130306
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130306,
+					"content": "Enfin, on ne peut pas tout à fait appeler ça des rations, mais c'est mieux que rien.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				}
+			]
+		}
+	]
+}

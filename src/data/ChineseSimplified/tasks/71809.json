@@ -1,0 +1,696 @@
+{
+	"id": 71809,
+	"type": "WQ",
+	"name": "此诗送此城",
+	"description": "璃月港的那场风波虽然平息了，但那场风波也让璃月港开始了变化。诗人清昼正试图用自己的诗来捕捉这种变化…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		1025
+	],
+	"steps": [
+		{
+			"id": 7180901,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "（test)【隐藏】与清昼对话$HIDDEN",
+			"finishConditions": []
+		},
+		{
+			"id": 7180902,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "在南码头附近寻找诗歌灵感",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1183,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180903,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "在「不卜庐」附近寻找诗歌灵感",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1184,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180904,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "在玉京台附近寻找诗歌灵感",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1185,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180905,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "与玉京台上的人对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180902,
+						0
+					],
+					"talkId": 7180902
+				}
+			]
+		},
+		{
+			"id": 7180906,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "与玉京台上的人对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180903,
+						0
+					],
+					"talkId": 7180903
+				}
+			]
+		},
+		{
+			"id": 7180907,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)【隐藏】进度记录$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7180907,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180908,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)【隐藏】回滚保护$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7180908,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180909,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "向清昼回报",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180904,
+						0
+					],
+					"talkId": 7180904
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7180902,
+			"completionStepIds": [
+				7180905
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180905",
+							"2"
+						],
+						"stepId": 7180905,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"浩仔"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718090201,
+					"content": "还好，还好…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090202
+					],
+					"speakerTitle": "浩仔"
+				},
+				{
+					"id": 718090202,
+					"content": "什么还好？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090203
+					]
+				},
+				{
+					"id": 718090203,
+					"content": "哦，是旅行者啊。之前城里不是出了那么大的事吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090204
+					],
+					"speakerTitle": "浩仔"
+				},
+				{
+					"id": 718090204,
+					"content": "还好，那件事之后也没出什么大乱子。最主要的是…城里的饭馆也都开得好好的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090205
+					],
+					"speakerTitle": "浩仔"
+				},
+				{
+					"id": 718090205,
+					"content": "要不然，那么多好菜我都吃不着了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090206
+					],
+					"speakerTitle": "浩仔"
+				},
+				{
+					"id": 718090206,
+					"content": "原来是因为吃的啊…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090207
+					]
+				},
+				{
+					"id": 718090207,
+					"content": "你可别小看了吃啊。要判断一个地方的好坏，最直接的方法，就是看这地方吃的东西怎么样。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090208
+					],
+					"speakerTitle": "浩仔"
+				},
+				{
+					"id": 718090208,
+					"content": "啊…说着说着肚子又饿了，我得再去吃点什么…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "浩仔"
+				}
+			]
+		},
+		{
+			"id": 7180903,
+			"completionStepIds": [
+				7180906
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180906",
+							"2"
+						],
+						"stepId": 7180906,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"范二爷"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718090301,
+					"content": "现在这戏啊，我真是越听越不明白…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090302
+					],
+					"speakerTitle": "范二爷"
+				},
+				{
+					"id": 718090302,
+					"content": "怎么了？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090303
+					]
+				},
+				{
+					"id": 718090303,
+					"content": "是旅行者啊，这「和裕茶馆」又有几出新戏。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090304
+					],
+					"speakerTitle": "范二爷"
+				},
+				{
+					"id": 718090304,
+					"content": "不过这些新戏啊…热闹倒是热闹，但我都有些听不懂了，年轻人倒是都很喜欢。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090305
+					],
+					"speakerTitle": "范二爷"
+				},
+				{
+					"id": 718090305,
+					"content": "您觉得这样好吗？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090306
+					]
+				},
+				{
+					"id": 718090306,
+					"content": "这个嘛…就我来说，当然是乐意听那些老戏的，这么多年也听习惯了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090307
+					],
+					"speakerTitle": "范二爷"
+				},
+				{
+					"id": 718090307,
+					"content": "但是，现在整座璃月港都在变，变几场新戏出来倒也应景。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090308
+					],
+					"speakerTitle": "范二爷"
+				},
+				{
+					"id": 718090308,
+					"content": "唉，但这变化也太快了，老戏也好久没开，也不知道岩王爷他…算了，不说了，不说了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "范二爷"
+				}
+			]
+		},
+		{
+			"id": 7180904,
+			"completionStepIds": [
+				7180909
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180909",
+							"2"
+						],
+						"stepId": 7180909,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"清昼"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718090401,
+					"content": "您可有收获？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090402
+					],
+					"speakerTitle": "清昼"
+				},
+				{
+					"id": 718090402,
+					"content": "有不少。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090403
+					]
+				},
+				{
+					"id": 718090403,
+					"content": "哦？请说来听听。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090404
+					],
+					"speakerTitle": "清昼"
+				},
+				{
+					"id": 718090404,
+					"content": "南码头上有很多狗。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090405
+					]
+				},
+				{
+					"id": 718090405,
+					"content": "哦，不错不错，颇有生活气息。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090406
+					],
+					"speakerTitle": "清昼"
+				},
+				{
+					"id": 718090406,
+					"content": "「不卜庐」附近有很多团雀。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090407
+					]
+				},
+				{
+					"id": 718090407,
+					"content": "团雀，唔…也能算是宁和之象，入诗正好。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090408
+					],
+					"speakerTitle": "清昼"
+				},
+				{
+					"id": 718090408,
+					"content": "有人只在意吃…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090409
+					]
+				},
+				{
+					"id": 718090409,
+					"content": "这样也没错，吃当然是头等要务，特别…是在这座璃月港里。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090410
+					],
+					"speakerTitle": "清昼"
+				},
+				{
+					"id": 718090410,
+					"content": "这倒也有些趣味，我先记下，说不定也能入诗。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090411
+					],
+					"speakerTitle": "清昼"
+				},
+				{
+					"id": 718090411,
+					"content": "有人觉得变化太快。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718090412
+					]
+				},
+				{
+					"id": 718090412,
+					"content": "嗯…有人这么觉得倒也正常，如今的璃月港里的变化可以称得上是日新月异，有些东西就连我都有点接受不了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090413
+					],
+					"speakerTitle": "清昼"
+				},
+				{
+					"id": 718090413,
+					"content": "但这题目有些太大，只怕一首诗容纳不下…我还是先记下吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090414
+					],
+					"speakerTitle": "清昼"
+				},
+				{
+					"id": 718090414,
+					"content": "这样就可以了，拜托你帮忙果然不错。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090415
+					],
+					"speakerTitle": "清昼"
+				},
+				{
+					"id": 718090415,
+					"content": "如此一来，我的下一部诗集中说不定又可以添几首新作。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090416
+					],
+					"speakerTitle": "清昼"
+				},
+				{
+					"id": 718090416,
+					"content": "啊对了，除了一些财帛俗物外…还有一份小小心意，还请收下。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718090417
+					],
+					"speakerTitle": "清昼"
+				},
+				{
+					"id": 718090417,
+					"content": "等我的下一本诗集出版，便可以凭此签名换得一册。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "清昼"
+				}
+			]
+		},
+		{
+			"id": 7180906,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180905",
+							"3"
+						],
+						"stepId": 7180905,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180908",
+							"2"
+						],
+						"stepId": 7180908,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180909",
+							"2"
+						],
+						"stepId": 7180909,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"浩仔"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718090601,
+					"content": "说着说着，肚子又饿了…吃什么好呢…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "浩仔"
+				}
+			]
+		},
+		{
+			"id": 7180907,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180906",
+							"3"
+						],
+						"stepId": 7180906,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180908",
+							"2"
+						],
+						"stepId": 7180908,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180909",
+							"2"
+						],
+						"stepId": 7180909,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"范二爷"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718090701,
+					"content": "唉，这城里的变化也太快了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "范二爷"
+				}
+			]
+		},
+		{
+			"id": 7180910,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180902",
+							"2"
+						],
+						"stepId": 7180902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180903",
+							"2"
+						],
+						"stepId": 7180903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180904",
+							"2"
+						],
+						"stepId": 7180904,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180908",
+							"2"
+						],
+						"stepId": 7180908,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"清昼"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718091001,
+					"content": "如今的璃月港…还真是让人觉着大不一样了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "清昼"
+				}
+			]
+		}
+	]
+}

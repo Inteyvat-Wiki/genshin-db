@@ -1,0 +1,306 @@
+{
+	"id": 70666,
+	"type": "WQ",
+	"name": "Ascensión de Nivel de jugador (I)",
+	"description": "#La Asociación de Jugadores de Invocación de los Sabios ha determinado que reúnes los requisitos para participar en el duelo de ascensión. ¡Gana el duelo y conviértete en {F#una invocadora experimentada}{M#un invocador experimentado}! ¡Esperamos que sigas disfrutando de Invocación de los Sabios!",
+	"unlockDescription": "Completa esta misión para ascender de Nivel de jugador en Invocación de los Sabios",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_GUIDE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7066601,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dirígete a la taberna Cola de Gato",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7066601,
+						0
+					],
+					"talkId": 7066601
+				}
+			]
+		},
+		{
+			"id": 7066602,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Juega el duelo de ascensión con Príncipe",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GCG_LEVEL_WIN",
+					"rawParams": [
+						20001,
+						1
+					]
+				}
+			]
+		},
+		{
+			"id": 7066603,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Príncipe",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7066602,
+						0
+					],
+					"talkId": 7066602
+				}
+			]
+		},
+		{
+			"id": 7066604,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LEAVE_SCENE",
+					"rawParams": [
+						79999,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7066605,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GCG_LEVEL_WIN",
+					"rawParams": [
+						20001,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7066601,
+			"completionStepIds": [
+				7066601
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066601",
+							"2"
+						],
+						"stepId": 7066601,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066602",
+							"2"
+						],
+						"stepId": 7066602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Príncipe"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706660101,
+					"content": "¡Vine a participar en el duelo de ascensión!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						706660102
+					]
+				},
+				{
+					"id": 706660102,
+					"content": "#Miau... (¿Humm? ¿Así que vienes para participar en el duelo de ascensión? Veamos... Veo que cumples con los requisitos, {NICKNAME}. Muy bien...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706660103
+					],
+					"speakerTitle": "Príncipe"
+				},
+				{
+					"id": 706660103,
+					"content": "(Le diré a Shuyun que prepare el duelo para ti. Ve con cuidado...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Príncipe"
+				}
+			]
+		},
+		{
+			"id": 7066602,
+			"completionStepIds": [
+				7066603
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066603",
+							"2"
+						],
+						"stepId": 7066603,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Príncipe"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706660201,
+					"content": "#¡Miau! (¡Miauravilloso! ¡Felicidades! Has superado el duelo de ascensión. ¡Ahora eres {F#una invocadora experimentada}{M#un invocador experimentado}!)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706660202
+					],
+					"speakerTitle": "Príncipe"
+				},
+				{
+					"id": 706660202,
+					"content": "¿Miau? (¿Eh? ¿Solo hace falta superar un reto para convertirse en invocador experimentado? Bueno, supongo que es porque la mayor parte de los jugadores solo juega por diversión y no se lo toma en serio...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706660203
+					],
+					"speakerTitle": "Príncipe"
+				},
+				{
+					"id": 706660203,
+					"content": "(Solo unos pocos son capaces de probar su determinación en el juego. Aunque sea un entretenimiento, también requiere dedicación y esfuerzo.)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706660204
+					],
+					"speakerTitle": "Príncipe"
+				},
+				{
+					"id": 706660204,
+					"content": "¡Miau! (¡Ah, sí! Ahora que te has ganado mi reconocimiento, podrás participar en las partidas de otros jugadores que haya en la taberna. Seguro que acaban por apreciar tu compañía.)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706660205
+					],
+					"speakerTitle": "Príncipe"
+				},
+				{
+					"id": 706660205,
+					"content": "¿Los demás jugadores?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						706660206
+					]
+				},
+				{
+					"id": 706660206,
+					"content": "Miau. (Así es. Al igual que yo, son gatos. Aunque no deberías subestimarles.)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706660207
+					],
+					"speakerTitle": "Príncipe"
+				},
+				{
+					"id": 706660207,
+					"content": "¡Miau! (Cuando llegue el momento, Shuyun sujetará las cartas en su lugar. Y bien, tal y como marca la tradición, ¡aún tengo algo que decir!)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706660208
+					],
+					"speakerTitle": "Príncipe"
+				},
+				{
+					"id": 706660208,
+					"content": "#({NICKNAME}, ¡que la juerga te acompañe!)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Príncipe"
+				}
+			]
+		},
+		{
+			"id": 7066603,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066603",
+							"0"
+						],
+						"stepId": 7066603,
+						"stateName": "QUEST_STATE_NONE"
+					},
+					{
+						"type": "QUEST_COND_GCG_WORLD_CHALLENGE_RESULT",
+						"rawParams": [
+							"-1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Príncipe"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706660301,
+					"content": "#Miau... (Es una verdadera pena, {NICKNAME}. Ten más cuidado y ajusta tu mazo antes de intentarlo de nuevo.)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706660302
+					],
+					"speakerTitle": "Príncipe"
+				},
+				{
+					"id": 706660302,
+					"content": "(Sé que serás capaz de superar el duelo...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Príncipe"
+				}
+			]
+		}
+	]
+}

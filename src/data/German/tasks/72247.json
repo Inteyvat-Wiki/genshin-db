@@ -1,0 +1,555 @@
+{
+	"id": 72247,
+	"type": "WQ",
+	"name": "Schmale Befragung",
+	"description": "Erledige die Prüfungen auf dem vom Geist namens Aberaku vorgeschriebenen Weg und erhalte die Opfergaben ...",
+	"unlockDescription": "",
+	"chapter": "Hyperions Klagelied",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		72177
+	],
+	"steps": [
+		{
+			"id": 7224701,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7224702,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Starte die Prüfung des Geists.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7224705,
+						0
+					],
+					"talkId": 7224705
+				}
+			]
+		},
+		{
+			"id": 7224703,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7224704,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Erhalte die Opfergabe von dem Geist.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7224702,
+						0
+					],
+					"talkId": 7224702
+				}
+			]
+		},
+		{
+			"id": 7224705,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7224703,
+						0
+					],
+					"talkId": 7224703
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7224701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7224702",
+							"2"
+						],
+						"stepId": 7224702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Aberaku"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722470101,
+					"content": "#Bist du bereit, {F#Reisende}{M#Reisender}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Aberaku"
+				}
+			]
+		},
+		{
+			"id": 7224702,
+			"completionStepIds": [
+				7224704
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7224704",
+							"2"
+						],
+						"stepId": 7224704,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Aberaku",
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722470201,
+					"content": "Es scheint, dass du stark genug bist, um das Opfer zu begleiten ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470202
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470202,
+					"content": "Das wird mir Seelenfrieden geben ... Ihr müsst es liefern, damit ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470203
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470203,
+					"content": "Damit was?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470204
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470204,
+					"content": "Damit ... Damit ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470205
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470205,
+					"content": "Es ist vorbei, es ist völlig kaputt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470206
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470206,
+					"content": "Aber das ist das Opfer, das er meint, glaubt Paimon ... Es sieht auch ein bisschen zerlumpt aus.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 7224703,
+			"completionStepIds": [
+				7224705
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7224705",
+							"2"
+						],
+						"stepId": 7224705,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_COMMON",
+			"trigger": {
+				"objectNames": [
+					"Paimon",
+					"Aberaku"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722470301,
+					"content": "Etwas ... kommt heraus ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470302
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470302,
+					"content": "Es sieht aus, als ob es auch ein hinterbliebener Schatten ist.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470303
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470303,
+					"content": "Ich bin ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470304
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470304,
+					"content": "Ich bin der Erbauer des Helios, Aberaku!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470305
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470305,
+					"content": "Paimon hat das verstanden.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470306
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470306,
+					"content": "Die Formulierung bedeutet, dass ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470307
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470307,
+					"content": "Er sagte, sein Name sei Helios.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470308,
+						722470309
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470308,
+					"content": "Nichts verstanden!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722470310
+					]
+				},
+				{
+					"id": 722470310,
+					"content": "Ist das so ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470311
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470311,
+					"content": "Aberaku ist sein Name. Sehr komischer Name.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470312
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470312,
+					"content": "Aber da sein Name Aberaku ist, was ist dann Helios?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470313
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470313,
+					"content": "Helios! Helios!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470314
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470314,
+					"content": "An dem Tag, an dem Helios erschaffen wurde, hüllten zehntausend Lichtstrahlen den Himmel von oben ein, so wurden alle Menschen geschützt vor Monstern.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470315
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470315,
+					"content": "Aah, als die Menschen aufschauten und weinten und ihre Arme vor Freude und Aufregung hoben ... Aber was ist nun?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470316
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470316,
+					"content": "Nein, ich, warum bin ich hier ... Warum ... Warum ist meine Seele im Land der Träume verloren und nicht in Frieden.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470317
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470317,
+					"content": "Hast du das verstanden, Paimon?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722470318
+					]
+				},
+				{
+					"id": 722470318,
+					"content": "Paimon hat das verstanden.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470319
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470319,
+					"content": "Das muss ein ... geistig Verwirrter Geist sein.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470320
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470320,
+					"content": "Ich erinnere mich ... Meine Seele ist unvollständig, und wenn meine Seele an einen Ort zurückkehrt, werde ich wieder in Frieden sein.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470321
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470321,
+					"content": "Die Gelegenheit ist in dir und ich werde zu dir sprechen ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470322
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470322,
+					"content": "Nun, Paimon riecht Ärger ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470323
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722470323,
+					"content": "Ein Teil meiner Gebeine hätte hier aufbewahrt werden sollen, aber sie sind schon lange verwest ... Ich bin dir anvertraut ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470324
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470324,
+					"content": "Nimm diese Opfergaben, die meine Gedanken enthalten ... Aber es gibt Monster, die meine Seele gefangen halten, und sobald das Objekt, das meine Seele enthält, weg ist ... wird es von ihnen wimmeln.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470325
+					],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470325,
+					"content": "#Dies ist eine gefährliche Angelegenheit, o Reisende{M#r}, und wenn du bereit bist, sprich noch einmal mit mir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Aberaku"
+				},
+				{
+					"id": 722470309,
+					"content": "Aberaku ist sein Name.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722470310
+					]
+				}
+			]
+		},
+		{
+			"id": 7224705,
+			"completionStepIds": [
+				7224702
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7224702",
+							"2"
+						],
+						"stepId": 7224702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Aberaku"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722470501,
+					"content": "Ich bin bereit.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722470502
+					]
+				},
+				{
+					"id": 722470502,
+					"content": "Dann wünsche ich dir ... viel Glück bei deinen Bemühungen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Aberaku"
+				}
+			]
+		},
+		{
+			"id": 7224706,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7224702",
+							"2"
+						],
+						"stepId": 7224702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Aberaku"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722470601,
+					"content": "Nein, es müssen noch einige Vorbereitungen getroffen werden.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722470602
+					]
+				},
+				{
+					"id": 722470602,
+					"content": "Ich werde also hier sein und darauf warten, von dir zu hören.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Aberaku"
+				}
+			]
+		}
+	]
+}

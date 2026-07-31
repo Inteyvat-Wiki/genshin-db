@@ -1,0 +1,176 @@
+{
+	"id": 70707,
+	"type": "WQ",
+	"name": "Buket Alfred",
+	"description": "Alfred dari Mondstadt membutuhkan tiga Windwheel Aster.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Berikan Alfred tiga Windwheel Aster",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070701,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Alfred",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070702,
+						0
+					],
+					"talkId": 7070702
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070701",
+							"2"
+						],
+						"stepId": 7070701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070701"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Alfred"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707070101,
+					"content": "Tentang Windwheel Aster...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707070102
+					]
+				},
+				{
+					"id": 707070102,
+					"content": "Apakah Anda melihat komisi dariku? Maaf mereepotkanmu karena harus berjalan jauh...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707070103
+					],
+					"speakerTitle": "Alfred"
+				},
+				{
+					"id": 707070103,
+					"content": "Apa Anda sudah mengumpulkan tiga Windwheel Aster tersebut?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707070104,
+						707070105
+					],
+					"speakerTitle": "Alfred"
+				},
+				{
+					"id": 707070104,
+					"content": "Sudah dikumpulkan.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707070105,
+					"content": "Masih belum.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707070106
+					]
+				},
+				{
+					"id": 707070106,
+					"content": "Setelah kamu mengumpulkan semuanya, tolong berikan padaku secepatnya, dan jangan sampai kelopaknya terpisah ya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Alfred"
+				}
+			]
+		},
+		{
+			"id": 7070702,
+			"completionStepIds": [
+				7070702
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070702",
+							"2"
+						],
+						"stepId": 7070702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Alfred"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707070201,
+					"content": "Windwheel Aster ini... putriku pasti akan sangat menyukainya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707070202
+					],
+					"speakerTitle": "Alfred"
+				},
+				{
+					"id": 707070202,
+					"content": "Ini untukmu, terimalah, terima kasih banyak.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Alfred"
+				}
+			]
+		}
+	]
+}

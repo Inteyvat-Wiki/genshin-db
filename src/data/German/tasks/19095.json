@@ -1,0 +1,227 @@
+{
+	"id": 19095,
+	"type": "LQ",
+	"name": "Ein gewöhnlicher Tag im Ritterorden",
+	"description": "Ähnliche Dinge spielen sich regelmäßig im Ritterorden ab ...",
+	"unlockDescription": "",
+	"chapter": "Unsinn und süßer Wein",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		19096,
+		19097
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1909501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Geh zum Hauptquartier des Ritterordens.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_ROOM",
+					"rawParams": [
+						1004,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1909501,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1909502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Geh in das Büro des stellvertretenden Großmeisters.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						101501,
+						190950201
+					]
+				}
+			]
+		},
+		{
+			"id": 1909503,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Geh zur Plattform vorm Eingang des Hauptquartiers des Ritterordens.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						101501,
+						190950301
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						101501,
+						190950302
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					2247.995,
+					235.99,
+					-792.985
+				],
+				"pointId": 4232
+			}
+		},
+		{
+			"id": 1909504,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1909509,
+						0
+					],
+					"talkId": 1909509
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1909507,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1909503",
+							"2"
+						],
+						"stepId": 1909503,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jean"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 190950701,
+					"content": "Es gibt immer viel zu tun, aber ich bin immer erleichtert, wenn ich die Hilfe aller habe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jean"
+				}
+			]
+		},
+		{
+			"id": 1909508,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1909503",
+							"2"
+						],
+						"stepId": 1909503,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lisa"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 190950801,
+					"content": "Kaeya ist so aufmerksam wie immer.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Lisa"
+				}
+			]
+		},
+		{
+			"id": 1909509,
+			"completionStepIds": [
+				1909504
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1909502",
+							"2"
+						],
+						"stepId": 1909502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1909503",
+							"2"
+						],
+						"stepId": 1909503,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1909501",
+							"2"
+						],
+						"stepId": 1909501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 190950901,
+					"content": "Wann kommt Kaeya zurück? „Der Fuchs im Löwenzahnmeer“ hat eine zehnte und eine elfte Geschichte, die mir noch erzählt werden müssen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Stimme hinter der Tür"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,961 @@
+{
+	"id": 374,
+	"type": "AQ",
+	"name": "План Венти",
+	"description": "Наконец Венти объяснил, что во время вашей первой встречи он пытался снять проклятие с Двалина. Теперь, чтобы помочь дракону, барду необходима магическая сила Небесной лиры.",
+	"unlockDescription": "",
+	"chapter": "Горькие слёзы",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		375
+	],
+	"prevMainQuestList": [
+		373
+	],
+	"steps": [
+		{
+			"id": 37401,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Подойдите к Венти",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1028,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37402,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Посмотрите, как Венти просит одолжить ему Небесную лиру",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37402,
+						0
+					],
+					"talkId": 37402
+				}
+			]
+		},
+		{
+			"id": 37403,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						37403,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37404,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Венти",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37403,
+						0
+					],
+					"talkId": 37403
+				}
+			]
+		},
+		{
+			"id": 37405,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						37405,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37406,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с сестрой",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37404,
+						0
+					],
+					"talkId": 37404
+				}
+			]
+		},
+		{
+			"id": 37407,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Следуйте за Венти к собору",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37407,
+						0
+					],
+					"talkId": 37407
+				}
+			]
+		},
+		{
+			"id": 37408,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						37408,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 37310,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37403",
+							"3"
+						],
+						"stepId": 37403,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_NOT_EQUAL",
+						"rawParams": [
+							"37404",
+							"3"
+						],
+						"stepId": 37404,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Геттлинда"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3730901,
+					"content": "Дела у церкви в последнее время идут неважно. Сенешаля давно не было видно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Геттлинда"
+				}
+			]
+		},
+		{
+			"id": 37402,
+			"completionStepIds": [
+				37402
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37401",
+							"3"
+						],
+						"stepId": 37401,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37402",
+							"2"
+						],
+						"stepId": 37402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Венти"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3740201,
+					"content": "Предоставьте это мне.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740202
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740202,
+					"content": "Добрый день, сестра!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740203
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740203,
+					"content": "Да хранит тебя ветер, юный бард! Чем могу помочь?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740204
+					],
+					"speakerTitle": "Геттлинда"
+				},
+				{
+					"id": 3740204,
+					"content": "Знаете что? Мне известна тайна, которая может спасти Мондштадт.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740205
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740205,
+					"content": "Ох! Хвала Анемо Архонту.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740206
+					],
+					"speakerTitle": "Геттлинда"
+				},
+				{
+					"id": 3740206,
+					"content": "Но тебе следует обратиться по этому вопросу к рыцарям Ордо Фавониус. Почему ты пришёл сюда?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740207
+					],
+					"speakerTitle": "Геттлинда"
+				},
+				{
+					"id": 3740207,
+					"content": "Сестра, конечно же, я пришёл сюда не просто так. Ты можешь мне помочь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740208
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740208,
+					"content": "Я хотел бы одолжить Небесную лиру. Она может помочь Ужасу Бури.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740209
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740209,
+					"content": "Пожалуйста, покиньте помещение.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740210
+					],
+					"speakerTitle": "Геттлинда"
+				},
+				{
+					"id": 3740210,
+					"content": "Но...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740211
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740211,
+					"content": "Рыцари сами будут решать, что им делать с драконом. Мы не вправе стоять у них на пути.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740212
+					],
+					"speakerTitle": "Геттлинда"
+				},
+				{
+					"id": 3740212,
+					"content": "Но они убьют его! Мы не можем этого допустить.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740213
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740213,
+					"content": "Это глупое создание предало восточные ветра. Он не заслуживает прощения Анемо Архонта.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740214
+					],
+					"speakerTitle": "Геттлинда"
+				},
+				{
+					"id": 3740214,
+					"content": "Ох...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740215
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740215,
+					"content": "Пожалуйста...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740216
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740216,
+					"content": "Нет, юный бард.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740217
+					],
+					"speakerTitle": "Геттлинда"
+				},
+				{
+					"id": 3740217,
+					"content": "(Странно... Почему-то мне кажется, что не стоит отказывать этому мальчику...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740218
+					],
+					"speakerTitle": "Геттлинда"
+				},
+				{
+					"id": 3740218,
+					"content": "Эх... Ничего не поделаешь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740219
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740219,
+					"content": "Я не могу больше скрывать свою подлинную сущность!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740220
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740220,
+					"content": "Возрадуйтесь, правоверные! Узрите явление <color=#00E1FFFF>Барбатоса</color>!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740221
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740221,
+					"content": "Я напугал тебя? Разве ты не хочешь расплакаться от радости? Тебе явилось божество, которому ты служила всю свою жизнь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740222
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740222,
+					"content": "Как я понимаю, тебе больше нечего сказать. Прошу прощения, но у меня ещё много работы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740223
+					],
+					"speakerTitle": "Геттлинда"
+				},
+				{
+					"id": 3740223,
+					"content": "Эй, постой!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Венти"
+				}
+			]
+		},
+		{
+			"id": 37403,
+			"completionStepIds": [
+				37404
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37403",
+							"3"
+						],
+						"stepId": 37403,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37404",
+							"2"
+						],
+						"stepId": 37404,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Венти"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3740301,
+					"content": "Как же так? Она и бровью не повела.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740302
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740302,
+					"content": "Но я узнал всё, что хотел...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740303
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740303,
+					"content": "Небесная лира находится в соборе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740304
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740304,
+					"content": "#{NICKNAME}! Ты звезда Ордо Фавониус!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740305
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740305,
+					"content": "Может быть, ты тоже попробуешь?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Венти"
+				}
+			]
+		},
+		{
+			"id": 37404,
+			"completionStepIds": [
+				37406
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37405",
+							"3"
+						],
+						"stepId": 37405,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37406",
+							"2"
+						],
+						"stepId": 37406,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Геттлинда"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3740401,
+					"content": "Да хранит тебя ветер!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740402,
+						3740404
+					],
+					"speakerTitle": "Геттлинда"
+				},
+				{
+					"id": 3740402,
+					"content": "Здравствуйте!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740403
+					]
+				},
+				{
+					"id": 3740403,
+					"content": "Ты же новобранец Ордо Фавониус, верно?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740406
+					],
+					"speakerTitle": "Геттлинда"
+				},
+				{
+					"id": 3740406,
+					"content": "Что привело тебя к нам? Поручение действующего магистра?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740411
+					],
+					"speakerTitle": "Геттлинда"
+				},
+				{
+					"id": 3740411,
+					"content": "Ммм, да! Рыцарям понадобилась Небесная лира.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740412
+					]
+				},
+				{
+					"id": 3740412,
+					"content": "Действительно?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740413
+					],
+					"speakerTitle": "Геттлинда"
+				},
+				{
+					"id": 3740413,
+					"content": "Странно. Этот подозрительный бард тоже приходил за лирой.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740414
+					],
+					"speakerTitle": "Геттлинда"
+				},
+				{
+					"id": 3740414,
+					"content": "Он нёс какую-то чушь и даже притворялся Барбатосом. Точно что-то недоброе задумал.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740415
+					],
+					"speakerTitle": "Геттлинда"
+				},
+				{
+					"id": 3740415,
+					"content": "Использование Небесной лиры строго регламентировано. Сейчас мы достаём её только на Луди Гарпастум.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740416
+					],
+					"speakerTitle": "Геттлинда"
+				},
+				{
+					"id": 3740416,
+					"content": "Чтобы получить доступ к лире, тебе понадобятся подписанные документы от магистра Ордо Фавониус, от сенешаля и народного представителя.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740417
+					],
+					"speakerTitle": "Геттлинда"
+				},
+				{
+					"id": 3740417,
+					"content": "У тебя есть все необходимые бумаги?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740418,
+						3740419,
+						3740420
+					],
+					"speakerTitle": "Геттлинда"
+				},
+				{
+					"id": 3740418,
+					"content": "Действующий магистр наверное забыла о них...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740422
+					]
+				},
+				{
+					"id": 3740422,
+					"content": "В любом случае тебе понадобятся подписанные документы. Если у тебя нет бумаг, я ничем не могу тебе помочь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740423
+					],
+					"speakerTitle": "Геттлинда"
+				},
+				{
+					"id": 3740423,
+					"content": "Если тебе нечего больше сказать, то прошу меня извинить. У меня много работы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Геттлинда"
+				},
+				{
+					"id": 3740419,
+					"content": "#Простите, я забыл{F#а} их принести.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740422
+					]
+				},
+				{
+					"id": 3740420,
+					"content": "Паймон их съела.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740421
+					]
+				},
+				{
+					"id": 3740421,
+					"content": "Эй!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740422
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 3740404,
+					"content": "#Я почётный рыцарь Ордо Фавониус {NICKNAME}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740405
+					]
+				},
+				{
+					"id": 3740405,
+					"content": "Я слышала о тебе. Ты и Эмбер спасли Мондштадт.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740406
+					],
+					"speakerTitle": "Геттлинда"
+				}
+			]
+		},
+		{
+			"id": 37405,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37404",
+							"3"
+						],
+						"stepId": 37404,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_NOT_EQUAL",
+						"rawParams": [
+							"37405",
+							"3"
+						],
+						"stepId": 37405,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Венти"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3740306,
+					"content": "Давай, не стесняйся.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Венти"
+				}
+			]
+		},
+		{
+			"id": 37407,
+			"completionStepIds": [
+				37407
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37407",
+							"2"
+						],
+						"stepId": 37407,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Венти"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3740701,
+					"content": "Ты говорил о Небесной лире...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740702
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 3740702,
+					"content": "Самое драгоценное сокровище Мондштадта. На этой лире играл сам Барбатос.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740703
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740703,
+					"content": "Возможно, музыка Небесной лиры поможет Двалину пробудиться от его чудовищного кошмара.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740704
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740704,
+					"content": "Ты правда думаешь, что музыка поможет остановить Ужас Бури?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740705
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 3740705,
+					"content": "Я уверен в этом. Ты сейчас говоришь с лучшим бардом в мире.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740706
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740706,
+					"content": "Мне знакомы все песни древности и современности!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740707
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740707,
+					"content": "Что? Ты не веришь мне?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740708,
+						3740709,
+						3740710
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740708,
+					"content": "Звучит сомнительно.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740711
+					]
+				},
+				{
+					"id": 3740711,
+					"content": "Ха! С бардом такие штучки не пройдут.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740712
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740712,
+					"content": "Как же мы добудем Небесную лиру?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740713
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 3740713,
+					"content": "Говорят, что она надёжно спрятана где-то в соборе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740714
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740714,
+					"content": "Я собираюсь наведаться туда. Вы со мной?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3740709,
+					"content": "Я тебе, конечно, верю.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740711
+					]
+				},
+				{
+					"id": 3740710,
+					"content": "Твои глаза, такого же цвета, как и небо над моим родным городом.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740711
+					]
+				}
+			]
+		},
+		{
+			"id": 37503,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"42101",
+							"2"
+						],
+						"stepId": 42101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Отто"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3750202,
+					"content": "Ну и вонища! Стою здесь целый <color=#00E1FFFF>день</color>, охраняю этот вход... \\nЭй ты! Стоять! Тебе сюда нельзя!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750203
+					],
+					"speakerTitle": "Отто"
+				},
+				{
+					"id": 3750203,
+					"content": "Нам стоит вернуться <color=#00E1FFFF>вечером</color>.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				}
+			]
+		}
+	]
+}

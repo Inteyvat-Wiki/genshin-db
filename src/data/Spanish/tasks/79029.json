@@ -1,0 +1,480 @@
+{
+	"id": 79029,
+	"type": "WQ",
+	"name": "Pista del tesoro: Islas Hermanas",
+	"description": "Dirígete al arrecife de las Islas Hermanas y busca pistas sobre el tesoro que hayan podido dejar los piratas.",
+	"unlockDescription": "",
+	"chapter": "Buscando tesoros entre arrecifes",
+	"showType": "QUEST_SHOW",
+	"activityId": 5084,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		79020
+	],
+	"steps": [
+		{
+			"id": 7902901,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dirígete al arrecife cercano a las Islas Hermanas",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7902901,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7902906,
+						2
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7902906,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7902902,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Busca pistas del tesoro por la zona",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6800285,
+						0
+					],
+					"talkId": 6800285
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7902906,
+						2
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7902906,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7902903,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con el Capitán Cuervo Noctívago",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6800286,
+						0
+					],
+					"talkId": 6800286
+				}
+			]
+		},
+		{
+			"id": 7902904,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Atraviesa la niebla siguiendo las instrucciones del Capitán Cuervo Noctívago",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7902904,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7902905,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Busca en la isla la pista del tesoro secreto",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101771,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101760,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7902906,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Ayuda al Capitán Cuervo Noctívago a deshacerse de los Hilichurls",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7902907,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Informa al Capitán Cuervo Noctívago",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6800288,
+						0
+					],
+					"talkId": 6800288
+				}
+			]
+		},
+		{
+			"id": 7902908,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6800285,
+						0
+					],
+					"talkId": 6800285
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7902901,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7902902",
+							"2"
+						],
+						"stepId": 7902902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7902908",
+							"2"
+						],
+						"stepId": 7902908,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Capitán Cuervo Noctívago"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790290101,
+					"content": "¿Qué hace una estatua aquí?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290102
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790290102,
+					"content": "*Suspira*...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290103
+					],
+					"speakerTitle": "Capitán Cuervo Noctívago"
+				},
+				{
+					"id": 790290103,
+					"content": "Hola. ¿Qué haces aquí, suspirando en la entrada de esta cueva?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290112
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790290112,
+					"content": "Verás, es que yo ahora vivo aquí...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290113
+					],
+					"speakerTitle": "Capitán Cuervo Noctívago"
+				},
+				{
+					"id": 790290113,
+					"content": "¡Paimon no se puede creer que vivas en un sitio así!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290114
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790290114,
+					"content": "¡No tuve otro remedio! Esa compañía de teatro llegó un día de pronto y empezaron a montar escándalo a todas horas. Así no hay quien duerma... Por eso vine aquí, se está un poco más tranquilo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290104
+					],
+					"speakerTitle": "Capitán Cuervo Noctívago"
+				},
+				{
+					"id": 790290104,
+					"content": "Pero un montón de Hilichurls aparecieron de la nada y me arrebataron mi refugio. ¡Por eso tuve que quedarme aquí fuera a la intemperie!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290105
+					],
+					"speakerTitle": "Capitán Cuervo Noctívago"
+				},
+				{
+					"id": 790290105,
+					"content": "*Suspira*, me prometí a mí mismo que si me encontraba con alguien que pudiera ayudarme, se lo diría...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290106
+					],
+					"speakerTitle": "Capitán Cuervo Noctívago"
+				},
+				{
+					"id": 790290106,
+					"content": "¿Decirle qué?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290107
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790290107,
+					"content": "¡Le diría a esa persona que viniese conmigo a buscar el legendario tesoro pirata! Aunque yo solo tenga una cuarta parte de pista...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290108
+					],
+					"speakerTitle": "Capitán Cuervo Noctívago"
+				},
+				{
+					"id": 790290108,
+					"content": "¿Una cuarta parte de pista?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290109
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790290109,
+					"content": "Ustedes tienen pinta de buscar tesoros. Hagamos esto, si me ayudan a deshacerme de los Hilichurls, compartiré la pista con ustedes.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290110
+					],
+					"speakerTitle": "Capitán Cuervo Noctívago"
+				},
+				{
+					"id": 790290110,
+					"content": "Dicen que si encuentras las cuatro pistas, ¡podrás hacerte con el tesoro que los piratas enterraron aquí!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290111
+					],
+					"speakerTitle": "Capitán Cuervo Noctívago"
+				},
+				{
+					"id": 790290111,
+					"content": "¡Trato hecho!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 7902902,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7902903",
+							"2"
+						],
+						"stepId": 7902903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Capitán Cuervo Noctívago"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790290201,
+					"content": "¡Muy bien! ¿Todo listo?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290202
+					],
+					"speakerTitle": "Capitán Cuervo Noctívago"
+				},
+				{
+					"id": 790290202,
+					"content": "Yo iré en seguida, ¡y les enseñaré cómo surcar los mares como es debido!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290203
+					],
+					"speakerTitle": "Capitán Cuervo Noctívago"
+				},
+				{
+					"id": 790290203,
+					"content": "Muy bien. ¿Ves esa roca de ahí? Primero hay que avanzar en esa dirección.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Capitán Cuervo Noctívago"
+				}
+			]
+		},
+		{
+			"id": 7902907,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7902906",
+							"2"
+						],
+						"stepId": 7902906,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Capitán Cuervo Noctívago"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790290701,
+					"content": "¿Cómo les fue? ¿Lograron librarse de los Hilichurls?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Capitán Cuervo Noctívago"
+				}
+			]
+		},
+		{
+			"id": 7902908,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7902907",
+							"2"
+						],
+						"stepId": 7902907,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Capitán Cuervo Noctívago"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790290801,
+					"content": "¿Se deshicieron de los Hilichurls de ahí dentro? ¡Mil gracias!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290802
+					],
+					"speakerTitle": "Capitán Cuervo Noctívago"
+				},
+				{
+					"id": 790290802,
+					"content": "Vengan, les enseñaré cómo atravesar el banco de niebla para poder encontrar la pista...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290803
+					],
+					"speakerTitle": "Capitán Cuervo Noctívago"
+				},
+				{
+					"id": 790290803,
+					"content": "#Cuando estén list{F#a}{M#o}s, vengan a buscarme al otro lado del arrecife.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Capitán Cuervo Noctívago"
+				}
+			]
+		}
+	]
+}

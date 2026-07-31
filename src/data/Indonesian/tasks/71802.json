@@ -1,0 +1,1055 @@
+{
+	"id": 71802,
+	"type": "WQ",
+	"name": "Pengabdian Adeptus",
+	"description": "Di puncak Mt. Aocang, kamu menemukan jejak Adeptus ....",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		1016,
+		1009
+	],
+	"steps": [
+		{
+			"id": 7180201,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Berikan Delicious Jewelry Soup",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						1103509,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7180203,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Pergi ke tempat tinggal Adeptus untuk mencari denah",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100583,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180204,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Serahkan denah kepada Cloud Retainer",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180205,
+						0
+					],
+					"talkId": 7180205
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180212,
+						0
+					],
+					"talkId": 7180212
+				}
+			]
+		},
+		{
+			"id": 7180205,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		},
+		{
+			"id": 7180206,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bawalah denah ke hadapan Cloud Retainer",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180202,
+						0
+					],
+					"talkId": 7180202
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180213,
+						0
+					],
+					"talkId": 7180213
+				}
+			]
+		},
+		{
+			"id": 7180207,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Kunjungi Cloud Retainer",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180203,
+						0
+					],
+					"talkId": 7180203
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180210,
+						0
+					],
+					"talkId": 7180210
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7180202,
+			"completionStepIds": [
+				7180206
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180206",
+							"2"
+						],
+						"stepId": 7180206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cloud Retainer"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718020201,
+					"content": "Benar, ini benar adalah denah untuk Dwelling in the Clouds yang kubuat.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020202
+					],
+					"speakerTitle": "Cloud Retainer"
+				},
+				{
+					"id": 718020202,
+					"content": "Kamu belum mengatakan apa yang akan kamu...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020203
+					]
+				},
+				{
+					"id": 718020203,
+					"content": "Kenapa kamu masih bertanya? *huff* Baiklah, melihat usahamu untukku...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020204
+					],
+					"speakerTitle": "Cloud Retainer"
+				},
+				{
+					"id": 718020204,
+					"content": "Aku dengar, manusia biasa di Liyue juga membangun Jade Chamber yang berada di atas Liyue.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020205
+					],
+					"speakerTitle": "Cloud Retainer"
+				},
+				{
+					"id": 718020205,
+					"content": "Aku juga mendengar orang mengatakan bahwa manusia biasa menilai semuanya dari ukuran, dan Jade Chamber ini tidak ada tandingannya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020206
+					],
+					"speakerTitle": "Cloud Retainer"
+				},
+				{
+					"id": 718020206,
+					"content": "Hmm, hanya sebatas inilah wawasan manusia biasa, tidak mampu memahami kehebatan kaum Adeptus.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020207
+					],
+					"speakerTitle": "Cloud Retainer"
+				},
+				{
+					"id": 718020207,
+					"content": "Jade Chamber? Jade Chamber tidak ada apa-apanya dibandingkan mesin ciptaanku!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020208
+					],
+					"speakerTitle": "Cloud Retainer"
+				},
+				{
+					"id": 718020208,
+					"content": "Kamu... tidak mengaku kalah?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020209
+					]
+				},
+				{
+					"id": 718020209,
+					"content": "Tidak mengaku kalah? Omong kosong apa itu, aku hanya kasihan pada manusia biasa yang tidak mampu memahami kehebatan kaum Adeptus, mereka begitu mudah kagum akan hal-hal yang biasa saja.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020210
+					],
+					"speakerTitle": "Cloud Retainer"
+				},
+				{
+					"id": 718020210,
+					"content": "Aku hanya khawatir manusia-manusia ini akan mengarah ke jalan yang salah bila keadaan terus seperti ini. Sudah menjadi tugasku untuk mengarahkan mereka ke jalan yang benar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020211
+					],
+					"speakerTitle": "Cloud Retainer"
+				},
+				{
+					"id": 718020211,
+					"content": "Baiklah, masalah ini sudah selesai, cepatlah kalian pergi dari sini dan jangan ganggu aku.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cloud Retainer"
+				}
+			]
+		},
+		{
+			"id": 7180203,
+			"completionStepIds": [
+				7180207
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180207",
+							"2"
+						],
+						"stepId": 7180207,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718020301,
+					"content": "Segera beri tahu aku ada masalah apa! Masih banyak sekali masalah yang harus kuurus, jangan buang-buang waktuku!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020302
+					],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus"
+				},
+				{
+					"id": 718020302,
+					"content": "Hanya ingin melihat keadaanmu.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020303
+					]
+				},
+				{
+					"id": 718020303,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020304
+					],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus"
+				},
+				{
+					"id": 718020304,
+					"content": "Kamu ini aneh sekali... Kamu benar-benar hanya ingin menanyakan keadaanku? Bukan karena butuh sesuatu dariku?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020305
+					],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus"
+				},
+				{
+					"id": 718020305,
+					"content": "Cukup! Terserah kalian saja, aku tidak tertarik untuk mencoba memahami pemikiran manusia biasa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020306
+					],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus"
+				},
+				{
+					"id": 718020306,
+					"content": "Kalau kalian tidak ada kerjaan sekarang... Maukah membantuku sedikit?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020307
+					],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus"
+				},
+				{
+					"id": 718020307,
+					"content": "Dulu sekali, aku mencoba mempelajari ilmu mekanik dan berhasil membuat Dwelling in the Clouds yang mengapung di langit.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020308
+					],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus"
+				},
+				{
+					"id": 718020308,
+					"content": "Dwelling in the Clouds ini terbuat dari material Plaustrite dan dikombinasikan dengan berbagai teknologi canggih. Teknologi yang menurutku paling hebat adalah...Lupakan saja, kalian juga tidak akan mengerti bila kujelaskan.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020309
+					],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus"
+				},
+				{
+					"id": 718020309,
+					"content": "Setelah aku selesai membangun Dwelling in the Clouds, aku meninggalkan denahnya di sana.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020310
+					],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus"
+				},
+				{
+					"id": 718020310,
+					"content": "Aku juga menyegelnya, dan berpikir kalau seseorang ditakdirkan untuk mendapatkannya, mereka akan mendapatkannya. Tapi sudah begitu lama, belum ada yang menyentuhnya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020311
+					],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus"
+				},
+				{
+					"id": 718020311,
+					"content": "Aku juga malas menaruh denah ini di sana, bagaimana kalau kalian pergi ke Dwelling in the Clouds dan ambil denah yang ada di sana.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020312,
+						718020314
+					],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus"
+				},
+				{
+					"id": 718020312,
+					"content": "Baiklah.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020313
+					]
+				},
+				{
+					"id": 718020313,
+					"content": "Antusiasme yang luar biasa, kalau begitu cepatlah pergi. Pergilah ke gua setelah kamu menemukannya, karena di situlah aku akan menunggumu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus"
+				},
+				{
+					"id": 718020314,
+					"content": "Apa yang akan kamu lakukan dengan denah itu?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020315
+					]
+				},
+				{
+					"id": 718020315,
+					"content": "Aku punya alasanku sendiri, dan kamu tidak akan mengerti.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020316
+					],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus"
+				},
+				{
+					"id": 718020316,
+					"content": "Cepatlah pergi. Segera bawa ke gua setelah kamu mendapatkannya, karena di situlah aku akan menunggumu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus"
+				}
+			]
+		},
+		{
+			"id": 7180204,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180203",
+							"2"
+						],
+						"stepId": 7180203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718020401,
+					"content": "Kamu masih belum mendapatkan denahnya? Dia di Dwelling in the Clouds...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020402
+					],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus"
+				},
+				{
+					"id": 718020402,
+					"content": "Hah, bagaimana dia tahu kita belum mendapatkan denahnya...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020403
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718020403,
+					"content": "Denah itu adalah karyaku sendiri, tidak bisakah aku merasakannya saat berada di dekatku? Sekarang, segera ambil denahnya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus"
+				}
+			]
+		},
+		{
+			"id": 7180205,
+			"completionStepIds": [
+				7180204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180204",
+							"2"
+						],
+						"stepId": 7180204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718020501,
+					"content": "Sepertinya kalian sudah mendapatkan denahnya. Sekarang, cepat berikan padaku.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus"
+				}
+			]
+		},
+		{
+			"id": 7180210,
+			"completionStepIds": [
+				7180207
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180207",
+							"2"
+						],
+						"stepId": 7180207,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1103509",
+							"3"
+						],
+						"stepId": 1103509,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718021001,
+					"content": "Mencari Adeptus ke Jueyun, bukan main-main. Tapi kalian tetap berkunjung ke sini ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021002
+					],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus",
+					"speakerSubtitle": "Suara yang Agak Beda?"
+				},
+				{
+					"id": 718021002,
+					"content": "Eh? Bu-Bukannya dia sudah ke Pelabuhan Liyue? Masak sih diam-diam balik ke sini?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021003
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021003,
+					"content": "Suaranya ... kayak aneh.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021004
+					]
+				},
+				{
+					"id": 718021004,
+					"content": "Uh, Adeptus, kami sih cuma khawatir ada yang nyolong barang di tempatmu ya. Sama sekali enggak ada niat ngeganggu kamu kok.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021005
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021005,
+					"content": "Diriku punya tugas untuk kalian. Jika kalian bisa menyelesaikannya, diriku akan mengizinkan kalian masuk ke kediamanku.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021006,
+						718021007
+					],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus",
+					"speakerSubtitle": "Suara yang Agak Beda?"
+				},
+				{
+					"id": 718021006,
+					"content": "Kayaknya dia ngomong sendiri deh sekarang ....",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021008
+					]
+				},
+				{
+					"id": 718021008,
+					"content": "Eh? Jadi maksudnya yang ngomong sama kita ini bukan Cloud Retainer? Tapi mesin yang dia tinggalkan?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021009
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021009,
+					"content": "Dulu sekali, diriku mencoba mempelajari ilmu mekanik dan berhasil membuat Dwelling in the Clouds yang mengapung di langit",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021010
+					],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus",
+					"speakerSubtitle": "Suara yang Agak Beda?"
+				},
+				{
+					"id": 718021010,
+					"content": "Dan saat Dwelling in the Clouds-nya selesai, mengingat betapa sulitnya bertemu dengan seorang Adeptus, diriku meninggalkan satu cetak biru di atasnya untuk diambil oleh orang yang ditakdirkan.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021011
+					],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus",
+					"speakerSubtitle": "Suara yang Agak Beda?"
+				},
+				{
+					"id": 718021011,
+					"content": "Ambillah cetak birunya, lalu masuk ke dalam kediaman diriku untuk membahas lebih lanjut.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021012
+					],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus",
+					"speakerSubtitle": "Suara yang Agak Beda?"
+				},
+				{
+					"id": 718021012,
+					"content": "Err ... Bu Adeptus?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021013
+					]
+				},
+				{
+					"id": 718021013,
+					"content": "Cloud Retainer? Err ... Nona Xianyun?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021014
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021014,
+					"content": "Ambil cetak birunya untuk menyelesaikan tugas ini, lalu masuk ke kediaman diriku untuk melanjutkannya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021015
+					],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus",
+					"speakerSubtitle": "Suara yang Agak Beda?"
+				},
+				{
+					"id": 718021015,
+					"content": "Dia sama sekali enggak peduliin kita deh, ngomong sendiri saja dia!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021016,
+						718021017
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021016,
+					"content": "Pasti mesin deh.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021018
+					]
+				},
+				{
+					"id": 718021018,
+					"content": "Tapi, mesin yang jaga di kediaman bukannya biasanya ... yang bisa gebuk-gebuk?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021019,
+						718021020
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021019,
+					"content": "Mungkin ada pertimbangannya sendiri ....",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021021
+					]
+				},
+				{
+					"id": 718021021,
+					"content": "Yah, kalau begitu habis dapat cetak biru, langsung masuk ke dalam kediaman dan lihat?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021022
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021022,
+					"content": "Heh, Paimon penasaran juga sih dia tinggalin mesin kayak gimana di dalam.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021020,
+					"content": "Aku lebih khawatir soal cetak birunya sih ....",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021021
+					]
+				},
+				{
+					"id": 718021017,
+					"content": "Mulai ngulang-ngulang kata terakhir tuh ....",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021018
+					]
+				},
+				{
+					"id": 718021007,
+					"content": "Apa mungkin suaranya keluar dari kayak mesin apa begitu ....",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021008
+					]
+				}
+			]
+		},
+		{
+			"id": 7180211,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180203",
+							"2"
+						],
+						"stepId": 7180203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1103509",
+							"3"
+						],
+						"stepId": 1103509,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718021101,
+					"content": "Dulu sekali, diriku mencoba mempelajari ilmu mekanik dan berhasil membuat Dwelling in the Clouds yang mengapung di langit",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021102
+					],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus",
+					"speakerSubtitle": "Suara yang Agak Beda?"
+				},
+				{
+					"id": 718021102,
+					"content": "Dan saat Dwelling in the Clouds-nya selesai, mengingat betapa sulitnya bertemu dengan seorang Adeptus, diriku meninggalkan satu cetak biru di atasnya untuk diambil oleh orang yang ditakdirkan.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021103
+					],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus",
+					"speakerSubtitle": "Suara yang Agak Beda?"
+				},
+				{
+					"id": 718021103,
+					"content": "Ambillah cetak birunya, lalu masuk ke dalam kediaman diriku untuk membahas lebih lanjut.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus",
+					"speakerSubtitle": "Suara yang Agak Beda?"
+				}
+			]
+		},
+		{
+			"id": 7180212,
+			"completionStepIds": [
+				7180204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180204",
+							"2"
+						],
+						"stepId": 7180204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1103509",
+							"3"
+						],
+						"stepId": 1103509,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718021201,
+					"content": "Bisa mengambil cetak biru, berarti berjodoh dengan Adeptus. Masuklah.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kunjungi tempat tinggal Adeptus",
+					"speakerSubtitle": "Suara yang Agak Beda?"
+				}
+			]
+		},
+		{
+			"id": 7180213,
+			"completionStepIds": [
+				7180206
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180206",
+							"2"
+						],
+						"stepId": 7180206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1103509",
+							"3"
+						],
+						"stepId": 1103509,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718021301,
+					"content": "Eh ... Apaan nih, di atas meja ada ... satu kotak. Terus enggak ada apa-apa lagi di sampingnya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021302,
+						718021303
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021302,
+					"content": "Meja Adeptus.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021304
+					]
+				},
+				{
+					"id": 718021304,
+					"content": "Kalau sudah tiba di sini, diriku sudah tahu niat hatimu ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021305
+					],
+					"speakerTitle": "Cloud Retainer ...?"
+				},
+				{
+					"id": 718021305,
+					"content": "Ngomong lagi dia!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021306
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021306,
+					"content": "Tuliskan keinginanmu, masukkan ke dalam kotak, diriku akan membuat keputusan.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021307
+					],
+					"speakerTitle": "Cloud Retainer ...?"
+				},
+				{
+					"id": 718021307,
+					"content": "Menghadapi kesulitan dan bahaya, tekad tak tergoyahkan, keteguhan hati tetap kokoh, hal yang langka sekali. Ambillah pusaka ini.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021308
+					],
+					"speakerTitle": "Cloud Retainer ...?"
+				},
+				{
+					"id": 718021308,
+					"content": "Wow! Hehe! Paimon tahu kamu pasti enggak mungkin suruh kita pulang dengan tangan kosong.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021309
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021309,
+					"content": "Tapi, suaranya bilang \"Tuliskan keinginanmu, masukkan ke dalam kotak\" ... Jadi mau tulisin harapan kita ke kotak?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021310,
+						718021311
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021310,
+					"content": "Jangan sembarangan tulis harapan ke Adeptus ya ....",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021312
+					]
+				},
+				{
+					"id": 718021312,
+					"content": "Yah, benar juga sih. Kalau kita kenapa-kenapa, ya langsung saja cari si ... Nona Xianyun saja buat diskusi. Hehe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021313
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021313,
+					"content": "Kalau gitu, kita taruh cetak birunya ke dalam kotak, terus kita pergi?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021314
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021314,
+					"content": "Tapi di sekitar sini sih kosong ya. Harusnya dia yang ambil semua barangnya ya?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021315
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021315,
+					"content": "Sebenarnya mesin ini diciptakan buat apa ya ....",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021316
+					]
+				},
+				{
+					"id": 718021316,
+					"content": "Paimon enggak tahu juga sih ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021317
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021317,
+					"content": "Waktu ketemu dia lain kali, langsung tanyain saja.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021311,
+					"content": "Soalnya tulis harapan ke orang yang dikenal, kok kayaknya ....",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021312
+					]
+				},
+				{
+					"id": 718021303,
+					"content": "Terus ada kotak Adeptus.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021304
+					]
+				}
+			]
+		}
+	]
+}

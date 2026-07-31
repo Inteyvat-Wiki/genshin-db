@@ -1,0 +1,167 @@
+{
+	"id": 71710,
+	"type": "WQ",
+	"name": "Gastronostalgia de Geri de Mondstadt",
+	"description": "Geri do Porto de Liyue precisa de 3 Sopas de Rabanete.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7171001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dê 3 Sopas de Rabanete para Geri",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7171001,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7171002,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com Geri",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7171002,
+						0
+					],
+					"talkId": 7171002
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7171001,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7171001",
+							"2"
+						],
+						"stepId": 7171001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7171001"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Geri"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717100101,
+					"content": "Sobre Sopa de Rabanete e Vegetais...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717100102
+					]
+				},
+				{
+					"id": 717100102,
+					"content": "Sim, é sobre minha missão, você já preparou 3 Sopas de Rabanete e Vegetais?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717100103,
+						717100104
+					],
+					"speakerTitle": "Geri"
+				},
+				{
+					"id": 717100103,
+					"content": "Já!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717100104,
+					"content": "Ainda não...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717100105
+					]
+				},
+				{
+					"id": 717100105,
+					"content": "Me traga elas assim que ficarem prontas. Minha irmã também vai querer tomar um pouco...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Geri"
+				}
+			]
+		},
+		{
+			"id": 7171002,
+			"completionStepIds": [
+				7171002
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7171002",
+							"2"
+						],
+						"stepId": 7171002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Geri"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717100201,
+					"content": "Ah... Que cheiro bom. Bem como eu me lembrava...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717100202
+					],
+					"speakerTitle": "Geri"
+				},
+				{
+					"id": 717100202,
+					"content": "Obrigado, aceite isto como recompensa. Eu vou aproveitar cada colher.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Geri"
+				}
+			]
+		}
+	]
+}

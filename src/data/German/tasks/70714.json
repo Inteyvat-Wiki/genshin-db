@@ -1,0 +1,185 @@
+{
+	"id": 70714,
+	"type": "WQ",
+	"name": "Brook die Fleischfresserin",
+	"description": "Brook aus Quellingen benötigt sechs Portionen rohes Geflügel.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7071401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bringe Brook sechs Portionen rohes Geflügel.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7071401,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7071402,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Brook.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7071402,
+						0
+					],
+					"talkId": 7071402
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7071401,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071401",
+							"2"
+						],
+						"stepId": 7071401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7071401"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Brook"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707140101,
+					"content": "Du brauchst rohes Geflügel?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707140102
+					]
+				},
+				{
+					"id": 707140102,
+					"content": "Du hast wohl meinen Aushang gesehen, wie? Du kommst gerade rechtzeitig.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707140103
+					],
+					"speakerTitle": "Brook"
+				},
+				{
+					"id": 707140103,
+					"content": "Hast du sechs Portionen rohes Geflügel?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707140104,
+						707140105
+					],
+					"speakerTitle": "Brook"
+				},
+				{
+					"id": 707140104,
+					"content": "Hier sind sie.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707140105,
+					"content": "Noch nicht ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707140106
+					]
+				},
+				{
+					"id": 707140106,
+					"content": "Nun, ich möchte etwas kochen, also bring sie mir bitte, sobald du sie hast.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Brook"
+				}
+			]
+		},
+		{
+			"id": 7071402,
+			"completionStepIds": [
+				7071402
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071402",
+							"2"
+						],
+						"stepId": 7071402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Brook"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707140201,
+					"content": "Dieses Fleisch ist von ziemlich guter Qualität ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707140202
+					],
+					"speakerTitle": "Brook"
+				},
+				{
+					"id": 707140202,
+					"content": "Danke. Das hier ist für dich.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707140203
+					],
+					"speakerTitle": "Brook"
+				},
+				{
+					"id": 707140203,
+					"content": "Komm vorbei, wenn die Rezepte fertig sind, dann darfst du sie als erstes ausprobieren, versprochen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Brook"
+				}
+			]
+		}
+	]
+}

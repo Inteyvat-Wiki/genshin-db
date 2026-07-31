@@ -1,0 +1,352 @@
+{
+	"id": 41160,
+	"type": "EQ",
+	"name": "Wanmin para llevar",
+	"description": "El Restaurante Wanmin de Liyue tiene un pedido especial para llevar.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 4116001,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con el Chef Mao",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4116001,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 4116002,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Lleva la comida al Taciturno Tingfang",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4116002,
+						0
+					],
+					"talkId": 4116002
+				}
+			]
+		},
+		{
+			"id": 4116003,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con el Taciturno Tingfang",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4116006,
+						0
+					],
+					"talkId": 4116006
+				}
+			]
+		},
+		{
+			"id": 4116004,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4116004,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 4116001,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4116001",
+							"2"
+						],
+						"stepId": 4116001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Chef Mao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411600101,
+					"content": "Iré a entregarlo ahora mismo.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411600102
+					]
+				},
+				{
+					"id": 411600102,
+					"content": "Muchas gracias.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411600103
+					],
+					"speakerTitle": "Chef Mao"
+				},
+				{
+					"id": 411600103,
+					"content": "Ten cuidado de <color=#00E1FFFF>no tocar ningún Elemento extraño ni resultar herido</color> en el camino.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Chef Mao"
+				}
+			]
+		},
+		{
+			"id": 4116002,
+			"completionStepIds": [
+				4116002
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4116001",
+							"3"
+						],
+						"stepId": 4116001,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"El Taciturno Tingfang"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411600201,
+					"content": "Me mue-ro de ham-bre.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "El Taciturno Tingfang"
+				}
+			]
+		},
+		{
+			"id": 4116003,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4116001",
+							"2"
+						],
+						"stepId": 4116001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Chef Mao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411600301,
+					"content": "Escuché que alguien hizo un pedido especial.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411600302
+					]
+				},
+				{
+					"id": 411600302,
+					"content": "Escuchaste bien. Alguien llamado Tingfang pidió un estofado de gemas y, luego, se fue al Estanque Chingxu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411600303
+					],
+					"speakerTitle": "Chef Mao"
+				},
+				{
+					"id": 411600303,
+					"content": "No sé qué tendrá que hacer allí, pero te aseguro que no encontrará ningún defecto en nuestro estofado de gemas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411600304
+					],
+					"speakerTitle": "Chef Mao"
+				},
+				{
+					"id": 411600304,
+					"content": "Dicho esto, ¿podrías llevárselo, por favor? Cuando lo hagas, <color=#00E1FFFF>no vueles</color>, o el caldo se derramará.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Chef Mao"
+				}
+			]
+		},
+		{
+			"id": 4116004,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4116001",
+							"2"
+						],
+						"stepId": 4116001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Chef Mao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411600401,
+					"content": "#Lo siento, estoy un poco ocupad{F#a}{M#o}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411600402
+					]
+				},
+				{
+					"id": 411600402,
+					"content": "Ah, bueno... Entonces, pensaré en un plan distinto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Chef Mao"
+				}
+			]
+		},
+		{
+			"id": 4116005,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4116001",
+							"2"
+						],
+						"stepId": 4116001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"El Taciturno Tingfang"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411600501,
+					"content": "Humm...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "El Taciturno Tingfang"
+				}
+			]
+		},
+		{
+			"id": 4116006,
+			"completionStepIds": [
+				4116003
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4116003",
+							"2"
+						],
+						"stepId": 4116003,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"El Taciturno Tingfang"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411600601,
+					"content": "Aquí está la comida que pediste.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411600602
+					]
+				},
+				{
+					"id": 411600602,
+					"content": "¡Gracias! Creo que el Chef Mao es mejor que el Sonriente Yanxiao.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "El Taciturno Tingfang"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,717 @@
+{
+	"id": 72115,
+	"type": "WQ",
+	"name": "Contes de Tatara : Enquête prioritaire",
+	"description": "Xavier, qui fait des recherches sur le Fourneau Mikage, semble avoir une nouvelle idée...",
+	"unlockDescription": "",
+	"chapter": "Les contes de Tatara",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_RANK_ZERO_WQ",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		72114
+	],
+	"steps": [
+		{
+			"id": 7211501,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		},
+		{
+			"id": 7211502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Xavier.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7211501,
+						0
+					],
+					"talkId": 7211501
+				}
+			]
+		},
+		{
+			"id": 7211503,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Placez les balises.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7211504,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Placez les balises.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7211505,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Placez les balises.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7211506,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7211506,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7211507,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7211506,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7211508,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Faites votre rapport à Xavier.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7211503,
+						0
+					],
+					"talkId": 7211503
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7211501,
+			"completionStepIds": [
+				7211502
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7211502",
+							"2"
+						],
+						"stepId": 7211502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Xavier"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721150101,
+					"content": "#Bonjour {M#mon cher}{F#ma chère} ! J'ai une bonne et une mauvaise nouvelle concernant le Fourneau Mikage. Laquelle aimeriez-vous entendre en premier ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150102,
+						721150106
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150102,
+					"content": "Commençons par la bonne nouvelle.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721150103
+					]
+				},
+				{
+					"id": 721150103,
+					"content": "La bonne nouvelle, c'est que le noyau n'a subi que quelques dommages mineurs. Je peux encore le réparer.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150104
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150104,
+					"content": "La mauvaise nouvelle, cependant, c'est que les Fatui qui se baladent là-dedans ne semblent pas apprécier cette nouvelle.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150105
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150105,
+					"content": "On dirait qu'ils cherchent un moyen de mettre leurs sales pattes sur le noyau du Tatarigami.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150111
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150111,
+					"content": "Mais si on les laisse faire, la puissance du Tatarigami ne sera plus contrôlable. L'île entière sera détruite, ainsi que tous ceux qui s'y trouvent.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150112
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150112,
+					"content": "Cependant, si nous nous concentrons uniquement sur les Fatui, l'énergie du Tatarigami accumulée à l'intérieur du dôme de confinement finira aussi par atteindre sa limite...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150113
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150113,
+					"content": "Alors, on doit s'occuper des deux en même temps ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721150114
+					]
+				},
+				{
+					"id": 721150114,
+					"content": "Eh bien... En termes simples, académiquement parlant, et dans un sens objectif...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150115
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150115,
+					"content": "Nous sommes confrontés à deux problèmes distincts : les Fatui et le Tatarigami.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150116
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150116,
+					"content": "Mais vu la situation à l'intérieur du Fourneau Mikage, quel que soit le problème que nous choisissons de résoudre, nous devrons probablement faire face à l'autre dans le même temps.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150117
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150117,
+					"content": "Donc, en fin de compte, le fait est que...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150118
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150118,
+					"content": "Ce que vous vouliez dire, c'est « oui ».",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721150119
+					]
+				},
+				{
+					"id": 721150119,
+					"content": "Euh, oui, c'est ça. On doit s'occuper des deux en même temps.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150120
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150120,
+					"content": "Mais une chose à la fois. Comme le dit le dicton liyuéen, « ne te précipite pas pour manger du tofu chaud, ou tu te brûleras la langue ».",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150121
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150121,
+					"content": "Comment se fait-il que vous connaissiez les proverbes de Liyue ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721150122
+					]
+				},
+				{
+					"id": 721150122,
+					"content": "On est allés à Liyue avant de venir ici. Je considère ce petit bijou de sagesse comme un souvenir de voyage.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150123
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150123,
+					"content": "J'ai plein d'autres souvenirs de Liyue comme celui-là. Quant à Mondstadt, je dois avouer que j'ai bu la plupart des « souvenirs » de ce voyage... Délicieux, d'ailleurs.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150124
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150124,
+					"content": "Revenons-en à nos Brutocollinus. J'ai un commencement de plan pour résoudre la situation au Fourneau Mikage, mais j'aurai besoin de votre aide.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150125,
+						721150127
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150125,
+					"content": "Vous l'avez !",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721150126
+					]
+				},
+				{
+					"id": 721150126,
+					"content": "#Ha ! Enthousiaste et {M#prêt}{F#prête} à en découdre ! C'est ce que j'aime chez vous !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150131
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150131,
+					"content": "Hum. Je m'égare. Tenez, prenez ces balises de relevé, s'il vous plaît.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150132
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150132,
+					"content": "J'ai besoin que vous les placiez dans un certain nombre d'endroits pour moi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150133
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150133,
+					"content": "Ces balises vont recueillir des données sur la concentration et la distribution de l'énergie du Tatarigami au sein du Fourneau Mikage. Une fois que j'aurai ces données, je devrais être en mesure d'élaborer un plan plus détaillé.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150134,
+						721150136
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150134,
+					"content": "Laissez-moi m'en charger, alors.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721150135
+					]
+				},
+				{
+					"id": 721150135,
+					"content": "Je m'en remets donc à vous.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150141
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150141,
+					"content": "#Je vais marquer les emplacements des balises sur votre carte. Je compte sur vous, {M#voyageur}{F#voyageuse} !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150136,
+					"content": "Je me demande comment ces balises fonctionnent...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721150137
+					]
+				},
+				{
+					"id": 721150137,
+					"content": "La façon la plus simple de l'expliquer est qu'il s'agit d'instruments qui utilisent la puissance élémentaire pour quantifier et calculer toutes les autres sortes d'énergie.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150138
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150138,
+					"content": "Enfin, je dis « simple », mais en fait, ce n'est pas si facile à expliquer... Je suppose qu'on pourrait partir de la théorie des sept éléments ! Bon, alors...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150139
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150139,
+					"content": "Non, non, pas besoin de continuer.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721150140
+					]
+				},
+				{
+					"id": 721150140,
+					"content": "Eh bien, comme vous voulez.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150141
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150127,
+					"content": "Eh bien, qu'est-ce que j'en retire, moi ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721150128
+					]
+				},
+				{
+					"id": 721150128,
+					"content": "Euh... Que diriez-vous des trésors non découverts de cette île, et des débris du Fourneau Mikage ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150129
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150129,
+					"content": "Je suis sûr qu'il doit y avoir des choses intéressantes à l'intérieur du Fourneau Mikage, vu que c'est la plus grande forge d'Inazuma...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150130
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150130,
+					"content": "Bien sûr, étant donné que je n'ai pas d'œil divin, je ne peux pas entrer dans le Fourneau Mikage, et je ne sais pas vraiment ce qui s'y passe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150131
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150106,
+					"content": "Commençons par la mauvaise nouvelle.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721150107
+					]
+				},
+				{
+					"id": 721150107,
+					"content": "La mauvaise nouvelle, c'est que les Fatui sont toujours en train de fouiner à l'intérieur du Fourneau.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150108
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150108,
+					"content": "On dirait qu'ils cherchent un moyen de mettre leurs sales pattes sur le noyau du Tatarigami.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150109
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150109,
+					"content": "La bonne nouvelle, c'est que le noyau n'a pas subi beaucoup de dégâts, je peux donc le réparer moi-même.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150110
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150110,
+					"content": "Ce qui, de toute évidence, n'est pas pour plaire aux Fatui.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150111
+					],
+					"speakerTitle": "Xavier"
+				}
+			]
+		},
+		{
+			"id": 7211502,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7211502",
+							"3"
+						],
+						"stepId": 7211502,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_NOT_RECEIVE",
+						"rawParams": [
+							"7211508",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Xavier"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721150201,
+					"content": "J'espère que la situation ne va pas s'aggraver davantage...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xavier"
+				}
+			]
+		},
+		{
+			"id": 7211503,
+			"completionStepIds": [
+				7211508
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7211508",
+							"2"
+						],
+						"stepId": 7211508,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Xavier"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721150301,
+					"content": "Vous avez réussi à placer ces balises ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150302
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150302,
+					"content": "Oui.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721150303
+					]
+				},
+				{
+					"id": 721150303,
+					"content": "Bien joué, il ne nous reste plus qu'à les laisser collecter les données.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150304,
+						721150308
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150304,
+					"content": "Comment saviez-vous où les positionner ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721150305
+					]
+				},
+				{
+					"id": 721150305,
+					"content": "Je faisais partie de l'équipe de conception du Fourneau Mikage. En plaçant les balises à ces endroits, nous pouvons collecter des données sur presque toutes les zones à l'intérieur.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150306
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150306,
+					"content": "Hmm, vous savez, si nous installions des appareils de purification à ces endroits, nos problèmes seraient réglés du jour au lendemain.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150307
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150307,
+					"content": "Si monsieur Flois savait ce qui s'est passé ici, il deviendrait complètement fou...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150311
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150311,
+					"content": "Très bien, merci pour votre aide. Prenez ceci en gage de compensation.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150312
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150312,
+					"content": "Ahem, autre chose... J'aurai peut-être, probablement, certainement besoin de vous pour m'aider à récupérer les balises au cours des prochains jours.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150313
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150313,
+					"content": "Je n'ai pas d'œil divin, après tout, donc je ne peux pas simplement me promener dans un endroit avec une telle concentration d'énergie du Tatarigami.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150314
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150314,
+					"content": "Sans oublier que ces, hmm, malotrus de Fatui sont toujours là. Je pense honnêtement que vous êtes la seule personne sur toute l'île capable de s'occuper de ces vandales et du fourneau en même temps.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150308,
+					"content": "Ces balises sont-elles à vendre ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721150309
+					]
+				},
+				{
+					"id": 721150309,
+					"content": "Vous plaisantez ! Si je les vends, qu'est-ce que je vais utiliser ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150310
+					],
+					"speakerTitle": "Xavier"
+				},
+				{
+					"id": 721150310,
+					"content": "Sérieusement, si jamais vous allez à Fontaine, je peux vous mettre en contact avec quelqu'un qui vous les vendra à un prix très raisonnable.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721150311
+					],
+					"speakerTitle": "Xavier"
+				}
+			]
+		}
+	]
+}

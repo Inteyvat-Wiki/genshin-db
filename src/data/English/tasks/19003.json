@@ -1,0 +1,772 @@
+{
+	"id": 19003,
+	"type": "LQ",
+	"name": "The Church's Affairs",
+	"description": "At Barbara's request, you head back to Mondstadt to report to Sister Victoria.",
+	"unlockDescription": "",
+	"chapter": "Wellspring of Healing",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		19004,
+		19006,
+		19009
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1900301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Leave Wolvendom with Barbara",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1900301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1900302,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						101401,
+						30101
+					]
+				}
+			]
+		},
+		{
+			"id": 1900303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Report back to Sister Victoria",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1900303,
+						0
+					],
+					"talkId": 1900303
+				}
+			]
+		},
+		{
+			"id": 1900304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Clean the Cathedral grounds",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1900305,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Report back to Sister Victoria",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						101401,
+						30301
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						101401,
+						30302
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						101401,
+						30303
+					]
+				}
+			]
+		},
+		{
+			"id": 1900306,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Sister Victoria",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1900306,
+						0
+					],
+					"talkId": 1900306
+				}
+			]
+		},
+		{
+			"id": 1900307,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Sister Victoria",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1900307,
+						0
+					],
+					"talkId": 1900307
+				}
+			]
+		},
+		{
+			"id": 1900308,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Sister Victoria",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						101401,
+						30601
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1900301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1900301",
+							"2"
+						],
+						"stepId": 1900301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1900302",
+							"2"
+						],
+						"stepId": 1900302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Victoria"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 190010201,
+					"content": "Sister Barbara... Where have you gone?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						0
+					],
+					"speakerTitle": "Victoria"
+				}
+			]
+		},
+		{
+			"id": 1900303,
+			"completionStepIds": [
+				1900303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1900303",
+							"2"
+						],
+						"stepId": 1900303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Victoria"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 190030301,
+					"content": "Oh, you're back again. If you're looking for Sister Barbara... she's yet to return.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030302,
+						190030303
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030302,
+					"content": "We found Barbara in Wolvendom.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						190030304
+					]
+				},
+				{
+					"id": 190030304,
+					"content": "Oh, I see... Thank Barbatos that she's alright.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030305
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030305,
+					"content": "But it sounds like she won't be back any time soon... Hmm, perhaps I'll have to pass her responsibilities in the Cathedral to someone else...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030306
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030306,
+					"content": "We can help.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						190030307
+					]
+				},
+				{
+					"id": 190030307,
+					"content": "Oh, well that's most kind of you. I certainly wouldn't want to trouble you...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030308
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030308,
+					"content": "Hmm... Let me think for a moment... Ah yes, you could help tidy up around the Cathedral a bit.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030309
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030309,
+					"content": "People tend to bring dust in as they come into the Cathedral, so the floor is often quite dirty.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030310
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030310,
+					"content": "Cleaning and the like have always been Sister Barbara's responsibility... So the moment she's gone, everything starts getting dirty...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030311
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030311,
+					"content": "Barbara is responsible for cleaning a place this huge by herself?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						190030312
+					]
+				},
+				{
+					"id": 190030312,
+					"content": "Yes, that's right. She always said that she could handle it herself and that there's no need to ask anyone else to help her.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030313
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030313,
+					"content": "But she does often appear quite exhausted after she's finished with the cleaning.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030314
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030314,
+					"content": "To be honest, I'm most surprised that you are willing to help... Or rather, that Barbara is willing to let you help.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030315
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030315,
+					"content": "However, this would help to lighten her burden.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030316
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030316,
+					"content": "Anyway, I'll let you handle the cleaning for now, Honorary Knight.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						0
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030303,
+					"content": "Barbara is at Dawn Winery checking on Tunner.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						190030304
+					]
+				}
+			]
+		},
+		{
+			"id": 1900304,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1900304",
+							"2"
+						],
+						"stepId": 1900304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1900305",
+							"2"
+						],
+						"stepId": 1900305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Victoria"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 190030401,
+					"content": "Your kindness will not go unnoticed, Honorary Knight. Barbatos bless you.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						0
+					],
+					"speakerTitle": "Victoria"
+				}
+			]
+		},
+		{
+			"id": 1900306,
+			"completionStepIds": [
+				1900306
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1900306",
+							"2"
+						],
+						"stepId": 1900306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Victoria"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 190030601,
+					"content": "Yes, my child?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030602
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030602,
+					"content": "About Barbara's time off...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						190030603
+					]
+				},
+				{
+					"id": 190030603,
+					"content": "Oh yes, Sister Barbara just submitted her request for half a day's leave. She said she had plans with a friend.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030604
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030604,
+					"content": "I must say though, it is quite unusual for Barbara to request time off just to see a friend...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030605
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030605,
+					"content": "But that's beside the point. What is it you'd like to ask me?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030606
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030606,
+					"content": "About \"Fantastic Summer-Serendipity Coral Sparkling Tea\"...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						190030607
+					]
+				},
+				{
+					"id": 190030607,
+					"content": "Oh? You mean to tell me that Barbara intends to accompany you to buy this... special drink?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030608
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030608,
+					"content": "Then you must be the friend that she mentioned, I presume?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030609
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030609,
+					"content": "Hmm, seeing as you're the Honorary Knight, I guess that's fine...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030610
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030610,
+					"content": "Well then, please take good care of Sister Barbara.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030611
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030611,
+					"content": "Why does Barbara always have to report her plans?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						190030612
+					]
+				},
+				{
+					"id": 190030612,
+					"content": "Well, as you may already know, Sister Barbara is quite popular in Mondstadt for several reasons...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030613
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030613,
+					"content": "Although the citizens here may only be acting out of good intention, there are too many of them, and Sister Barbara can't handle it all.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030614
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030614,
+					"content": "If they appear while she is working here at the Church, we can come and intervene.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030615
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030615,
+					"content": "But if she's approached by fans during her time off, then she can only fend for herself.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030616
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030616,
+					"content": "And not to mention, she's too... kind. She'll always try to fulfill the requests of the citizens of Mondstadt, even when it takes a heavy toll and leaves her more exhausted than actual working hours.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030617
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030617,
+					"content": "So with that in mind, we thought we'd have Sister Barbara always tell us where she'd be, just in case we need to come rescue her from the crowds.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030618
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030618,
+					"content": "My hope is that Sister Barbara stops pushing herself so hard...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						0
+					],
+					"speakerTitle": "Victoria"
+				}
+			]
+		},
+		{
+			"id": 1900307,
+			"completionStepIds": [
+				1900307
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1900307",
+							"2"
+						],
+						"stepId": 1900307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Victoria"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 190030701,
+					"content": "Yes, my child?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030702
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030702,
+					"content": "About Barbara's itinerary...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						190030703
+					]
+				},
+				{
+					"id": 190030703,
+					"content": "Oh? Sister Barbara wishes to go to the Whispering Woods to pick herbs?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030704
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030704,
+					"content": "I see... In fact, Sister Barbara just requested a half day's leave to go meet a friend. Now she suddenly intends to go herb-picking?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030705
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030705,
+					"content": "I'm sure Sister Barbara has her reasons... Will you be accompanying her?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030706
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030706,
+					"content": "Yes, I will be accompanying her.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						190030707
+					]
+				},
+				{
+					"id": 190030707,
+					"content": "Ah, I trust she will be in good hands then. Please take good care of Sister Barbara, Honorary Knight.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030708
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030708,
+					"content": "Why does Barbara always have to report her plans?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						190030709
+					]
+				},
+				{
+					"id": 190030709,
+					"content": "Well, as you may already know, Sister Barbara is quite popular in Mondstadt for several reasons...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030710
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030710,
+					"content": "Although the citizens here may only be acting out of good intention, there are too many of them, and Sister Barbara can't handle it all.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030711
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030711,
+					"content": "If they appear while she is working here at the Church, we can come and intervene.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030712
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030712,
+					"content": "But if she's approached by fans during her time off, then she can only fend for herself.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030713
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030713,
+					"content": "And not to mention, she's too... kind. She'll always try to fulfill the requests of the citizens of Mondstadt, even when it takes a heavy toll and leaves her more exhausted than actual working hours.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030714
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030714,
+					"content": "So with that in mind, we thought we'd have Sister Barbara always tell us where she'd be, just in case we need to come rescue her from the crowds.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190030715
+					],
+					"speakerTitle": "Victoria"
+				},
+				{
+					"id": 190030715,
+					"content": "My hope is that Sister Barbara stops pushing herself so hard...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						0
+					],
+					"speakerTitle": "Victoria"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,908 @@
+{
+	"id": 73316,
+	"type": "WQ",
+	"name": "唤醒「灵谷木」中的残灵",
+	"description": "「灵谷木」中的残灵还停留在过去的执念中，斯露莎可以将她们唤醒…",
+	"unlockDescription": "",
+	"chapter": "微暗之火",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		73238,
+		73309
+	],
+	"steps": [
+		{
+			"id": 7331601,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)获得斯露莎小道具后才能接取任务$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7331602,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)到达精灵冢附近$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7331602,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7331603,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)与斯露莎对话$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7331603,
+						0
+					],
+					"talkId": 7331603
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7331602,
+						0
+					],
+					"talkId": 7331602
+				}
+			]
+		},
+		{
+			"id": 7331604,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "让斯露莎唤醒「灵谷木」中的残灵",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7331605,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "与谷木中的残灵对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7331605,
+						0
+					],
+					"talkId": 7331605
+				}
+			]
+		},
+		{
+			"id": 7331607,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "与谷木中的残灵对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7331607,
+						0
+					],
+					"talkId": 7331607
+				}
+			]
+		},
+		{
+			"id": 7331608,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)派蒙reminder$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7331609,
+			"order": 9,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)完成第一个精灵冢开车$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7331613,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "击败魔物",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					566.889,
+					106.761,
+					6592.713
+				],
+				"pointId": 3988
+			}
+		}
+	],
+	"talks": [
+		{
+			"id": 7331602,
+			"completionStepIds": [
+				7331603
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7331603",
+							"2"
+						],
+						"stepId": 7331603,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7325103",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"斯露莎"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							565.998,
+							106.692,
+							6590.936
+						],
+						"pointId": 4022
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 733160201,
+					"content": "没想到竟然变成这副模样了…还真是可怜。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160202
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160202,
+					"content": "咦，斯露莎在说什么呢？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160203
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 733160203,
+					"content": "没什么，不过是看到了一些同族终末的丑态罢了，不用在意。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160204
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160204,
+					"content": "唔，这种说法反而更让人在意了吧！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160205
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 733160205,
+					"content": "让我看看…哦哦，那边有棵好奇怪的树呢，团成一圈感觉就像是个门一样。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160206,
+						733160207
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 733160206,
+					"content": "要是穿过去的话…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						733160208
+					]
+				},
+				{
+					"id": 733160208,
+					"content": "这样一说，有点跃跃欲试起来了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160209
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 733160209,
+					"content": "…这些「灵谷木」可不是什么门扉，若是冒冒失失地穿过去的话，可是会打扰到寄宿在其中的残灵的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160210
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160210,
+					"content": "哦哦，原来是叫「灵谷木」吗？不过你说残灵…明明什么都看不到嘛！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160211
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 733160211,
+					"content": "白飘飘当然看不到，毕竟这些残灵还停留在过去的执念当中。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160212
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160212,
+					"content": "虽说未必是其本心所愿，不过这般执着于世的样子，实在是目不忍视。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160213
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160213,
+					"content": "明明看上去还很茂盛，感觉很亲切呢！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160214
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 733160214,
+					"content": "哼，白飘飘知道什么，这些「灵谷木」乃是那些与侵害大地的污秽战斗到最后一刻的花灵，用尽最后的力量所化而成的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160215
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160215,
+					"content": "耗尽了力量而无法维持形体，又因为沾染了污秽而被花海所拒绝。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160216
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160216,
+					"content": "传说在古时矫论团会为她们举行净罪的仪式，使她们得以重回「甘露花海」。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160217
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160217,
+					"content": "不过如今矫论团早已无人能够主持这样的仪式，至多只能勉力维持这些「灵谷木」不至于枯死罢了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160218
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160218,
+					"content": "但这也不过是延长了她们的痛苦，看她们如今的样子，估计除了需要独自忍受的苦痛追忆外，早已什么都不剩了吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160219,
+						733160220
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160219,
+					"content": "看来应该帮帮她们。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						733160221
+					]
+				},
+				{
+					"id": 733160221,
+					"content": "对啊，什么独自受苦，听上去也太可怜了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160222
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 733160222,
+					"content": "虽说是这样，不过这也算是吾辈花灵的命运，说不定用这种方式守护大地也正是她们的愿望呢。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160223
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160223,
+					"content": "唔，虽然斯露莎是这样想的啦，不过说不定她们会有不同的想法呢！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160224
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 733160224,
+					"content": "毕竟如果是我的话，比起待在这种地方，还是更想回到花海和大家待在一起…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160225
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 733160225,
+					"content": "白飘飘还真是看轻我们花灵了啊！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160226
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160226,
+					"content": "哼，也罢，就姑且以吾之力量将其唤醒，让你们听听她的终末之声好了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160220,
+					"content": "这样说就是有解救的方法…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						733160221
+					]
+				},
+				{
+					"id": 733160207,
+					"content": "说不定会通往何处。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						733160208
+					]
+				}
+			]
+		},
+		{
+			"id": 7331603,
+			"completionStepIds": [
+				7331603
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7331603",
+							"2"
+						],
+						"stepId": 7331603,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7325103",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"斯露莎"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							565.998,
+							106.692,
+							6590.936
+						],
+						"pointId": 4022
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 733160301,
+					"content": "哼！没想到竟然变成这副模样了…还真是可悲可叹。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160302
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160302,
+					"content": "咦，斯露莎在说什么呢？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160303
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 733160303,
+					"content": "没什么，不过是看到了一些同族终末的丑态罢了。不用在意，我等继续前进便是。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160304
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160304,
+					"content": "这种说法反而更让人在意了吧！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160305
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 733160305,
+					"content": "让我看看…哦哦，那边有棵好奇怪的树呢，团成一圈感觉就像是个门一样。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160306,
+						733160307
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 733160306,
+					"content": "要是穿过去的话…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						733160308
+					]
+				},
+				{
+					"id": 733160308,
+					"content": "这样一说，有点跃跃欲试起来了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160309
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 733160309,
+					"content": "…这些「灵谷木」可不是什么门扉，若是冒冒失失地穿过去的话，可是会打扰到寄宿在其中的残灵的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160310
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160310,
+					"content": "哦哦，原来是叫「灵谷木」吗？不过你说残灵…明明什么都看不到嘛！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160311
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 733160311,
+					"content": "白飘飘当然看不到，毕竟这些残灵还停留在过去的执念当中。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160312
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160312,
+					"content": "虽说未必是其本心所愿，不过这般执着于世的样子，真可谓是滑稽的丑态。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160313
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160313,
+					"content": "虽然看上去是有点奇怪啦，不过说是丑态也太过了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160314
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 733160314,
+					"content": "在这里能看到这样茂盛的植物，应该感觉很亲切才对吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160315
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 733160315,
+					"content": "哼，我只有对充满争斗的战场才会感到亲切，直到时间尽头的战斗才是永恒啊！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160316
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160316,
+					"content": "白飘飘既然跟随吾之道路，也应该早日明白这个道理才是。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160317
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160317,
+					"content": "这些「灵谷木」便是那些与侵害大地的污秽战斗到最后一刻的花灵，用尽最后的力量所化。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160318
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160318,
+					"content": "耗尽了力量而无法维持形体，又因为沾染了污秽而被花海所拒绝。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160319
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160319,
+					"content": "传说在古时矫论团会为她们举行净罪的仪式，使她们得以重回「甘露花海」。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160320
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160320,
+					"content": "不过如今矫论团早已无人能够主持这样的仪式，至多只能勉力维持这些「灵谷木」不至于枯死罢了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160321
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160321,
+					"content": "但这也不过是延长了她们的痛苦，看她们如今的样子，估计除了需要独自忍受的苦痛追忆外，早已什么都不剩了吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160322
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160322,
+					"content": "虽说也算是完成了花灵的使命，不过比起真正的牺牲来，只能说是无谓之举…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160323,
+						733160324
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160323,
+					"content": "看来应该帮帮她们。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						733160325
+					]
+				},
+				{
+					"id": 733160325,
+					"content": "对啊，什么独自受苦，听上去也太可怜了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160326
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 733160326,
+					"content": "可怜？白飘飘还真是软弱，虽说慈悲是神鸟大人也拥有的高贵品德，不过光靠仁慈可是没办法在此地生存下去的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160327
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160327,
+					"content": "况且对于吾辈花灵而言，耗尽心力而与邪恶的力量战斗到最后，本来就是最好的归宿了，何必要画蛇添足。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160328
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160328,
+					"content": "唔，虽然斯露莎是这样想的啦，不过说不定她们会有不同的想法呢！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160329
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 733160329,
+					"content": "毕竟如果是我的话，比起待在这种地方，还是更想回到花海和大家待在一起…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160330
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 733160330,
+					"content": "吾辈花灵岂会如此软弱！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160331
+					],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160331,
+					"content": "哼，也罢，既然连吾之「谒颂主」都这样说了，就姑且以吾之力量将其唤醒，让你们听听她的终末之声好了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "斯露莎"
+				},
+				{
+					"id": 733160324,
+					"content": "这样说就是有解救的方法…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						733160325
+					]
+				},
+				{
+					"id": 733160307,
+					"content": "说不定会通往何处。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						733160308
+					]
+				}
+			]
+		},
+		{
+			"id": 7331605,
+			"completionStepIds": [
+				7331605
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7331605",
+							"2"
+						],
+						"stepId": 7331605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_COMMON",
+			"trigger": {
+				"objectNames": [
+					"谷木的残灵"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 733160501,
+					"content": "嘘！别出声，惊动到那边的黑色狗狗的话，可就大事不妙了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160502
+					],
+					"speakerTitle": "谷木的残灵"
+				},
+				{
+					"id": 733160502,
+					"content": "哎呀，看上去果然还是惊动到了，这样的话就没办法了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "谷木的残灵"
+				}
+			]
+		},
+		{
+			"id": 7331607,
+			"completionStepIds": [
+				7331607
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7331607",
+							"2"
+						],
+						"stepId": 7331607,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"谷木的残灵"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 733160701,
+					"content": "#哇啊，好厉害，不愧是「谒颂主」{M#大哥哥}{F#大姐姐}！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						733160702
+					],
+					"speakerTitle": "谷木的残灵"
+				},
+				{
+					"id": 733160702,
+					"content": "呜呜，安心了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "谷木的残灵"
+				}
+			]
+		},
+		{
+			"id": 7331620,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7331607",
+							"2"
+						],
+						"stepId": 7331607,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_NOT_RECEIVE",
+						"rawParams": [
+							"7331607",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"谷木的残灵"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 733162001,
+					"content": "这样的话就没办法了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "谷木的残灵"
+				}
+			]
+		}
+	]
+}

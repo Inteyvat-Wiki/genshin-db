@@ -1,0 +1,117 @@
+{
+	"id": 16008,
+	"type": "LQ",
+	"name": "幕間小憩",
+	"description": "#{F#妳}{M#你}們已經找到了關鍵的線索，但在阿貝多回來之前，{F#妳}{M#你}們仍舊無從得知完整的答案…",
+	"unlockDescription": "",
+	"chapter": "名為故事的魔法",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1600801,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1600801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1600802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "等待阿貝多的消息",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TIME_VAR_PASS_DAY",
+					"rawParams": [
+						16008,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1600320,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1600802",
+							"2"
+						],
+						"stepId": 1600802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"#{REALNAME[ID(1)|HOSTONLY(true)]}"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 160032001,
+					"content": "我最近幾天都在這裡，出發的時候通知我就行。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "#{REALNAME[ID(1)|HOSTONLY(true)]}"
+				}
+			]
+		},
+		{
+			"id": 1600327,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1600802",
+							"2"
+						],
+						"stepId": 1600802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"杜林"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 160032701,
+					"content": "如果想回故事裡看看，來找我就好。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "杜林"
+				}
+			]
+		}
+	]
+}

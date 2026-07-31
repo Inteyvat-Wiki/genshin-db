@@ -1,0 +1,1238 @@
+{
+	"id": 24017,
+	"type": "IQ",
+	"name": "水底の日々",
+	"description": "フォンテーヌの潜水士イヴスは何やら忙しいようだ…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2401701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "イヴスと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2401701,
+						0
+					],
+					"talkId": 2401701
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2401702,
+						0
+					],
+					"talkId": 2401702
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2401707,
+						0
+					],
+					"talkId": 2401707
+				}
+			]
+		},
+		{
+			"id": 2401702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "水中で引き揚げ作業を行う",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2401703,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "引き揚げたものをイヴスに渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						2401703,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2401704,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "イヴスと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2401704,
+						0
+					],
+					"talkId": 2401704
+				}
+			]
+		},
+		{
+			"id": 2401705,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "水中で引き揚げ作業を行う",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2401706,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "イヴスと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2401705,
+						0
+					],
+					"talkId": 2401705
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2401701,
+			"completionStepIds": [
+				2401701
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2401701",
+							"2"
+						],
+						"stepId": 2401701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_VAR_EQ",
+						"rawParams": [
+							"43080",
+							"2",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"イヴス"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 240170101,
+					"content": "ふぅ…ったく…なんでこんな目に…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170102,
+						240170103
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170102,
+					"content": "#{M#君}{F#あなた}は潜水士？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170104
+					]
+				},
+				{
+					"id": 240170104,
+					"content": "ああ、こうやって潜水服を着てるだろ。何か手伝ってほしいことでもあるのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170105
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170105,
+					"content": "もしそうなら、残念な知らせだ…しばらくダイビングは無理だ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170106
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170106,
+					"content": "このエリアの水中は環境がひどすぎる。少し深くまで潜ると、海流がひどく乱れているうえに、大量の水草やらゴミやらに足を取られっぱなしでね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170107
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170107,
+					"content": "ちょっと油断した隙に足が金属パイプに引っかかって、潜水服が破れちまった。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170108
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170108,
+					"content": "幸い、岸からそう遠くなかったから、必死で泳いで岸まで上がってこれたよ。潜水服は破れたけど、足を怪我してなかっただけよかった…病院に行く金なんかないし。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170109
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170109,
+					"content": "だが、ゴールドマンに指示された仕事はできなくなっちまった…それに、あのケチに弁償するよう言われるかもしれない。なんて不運な日だ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170110,
+						240170112
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170110,
+					"content": "怪我してなくてよかった。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170111
+					]
+				},
+				{
+					"id": 240170111,
+					"content": "…お前、慰めるのがうまいな。でも確かにその通りさ。この丈夫な身体を除けば、俺には何の取柄もない。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170116
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170116,
+					"content": "はぁ…とにかく、お前には何も力は貸せない。早く潜水服を直して、ゴールドマンに指示された水中のゴミを引き揚げなきゃいけないんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170117,
+						240170118
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170117,
+					"content": "#{M#俺}{F#私}が手伝ってあげる。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170119
+					]
+				},
+				{
+					"id": 240170119,
+					"content": "気持ちはありがたいけど、潜水は一般人にできるような仕事じゃない。それに、お前に払うモラも持ってないし。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170120,
+						240170121
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170120,
+					"content": "#{M#俺}{F#私}、潜水できるよ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170122
+					]
+				},
+				{
+					"id": 240170122,
+					"content": "…はぁ、だめだ…この潜水服の穴は大きすぎる。すぐに修復するのは無理だな。今はお前に頼むしかなさそうだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170127
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170127,
+					"content": "お前は優しいな。きっと誰もがお前と仲良くなりたがるだろう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170123
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170123,
+					"content": "ゴールドマンの欲張りめ、きつい仕事ばかりさせやがって。探す物は一番深い水底に沈んでたり、土の中に埋もれてたり、そんなのばっかだ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170128
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170128,
+					"content": "捜索地点に印をつけよう…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170124
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170124,
+					"content": "よし、捜索地点の印をつけておいた。しっかり頼んだぞ。潜水服にこんな大きい穴が空けちまって…いったいいくら弁償させられるんだか…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170121,
+					"content": "#安心して、{M#俺}{F#私}に任せて。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170122
+					]
+				},
+				{
+					"id": 240170118,
+					"content": "#よければ…{M#俺}{F#私}が引き揚げようか？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170119
+					]
+				},
+				{
+					"id": 240170112,
+					"content": "ゴールドマンって誰？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170113
+					]
+				},
+				{
+					"id": 240170113,
+					"content": "あいつは、フン…俺のボスだ。俺みたいに何の取柄もなくて、力仕事しかできない人を雇って仕事をさせてるんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170114
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170114,
+					"content": "あいつ、フォンタで頭がいっぱいなくせに、口うるさくて、とんだケチ野郎でな！クソほどある労働ルールとやらを絶対に守らなきゃいけないって、俺たちに強要しやがる…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170125
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170125,
+					"content": "それに仕事用の潜水服は、やつからの「貸出し品」なんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170115
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170115,
+					"content": "ルールに違反したり、潜水服が破れたりしたら、弁償までさせられるし…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170126
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170126,
+					"content": "つまり、もし仕事中にヘマでもしようものなら、あのケチに弁償額を払って、雇い続けてくれるように頼まなきゃいけない！ちくしょう！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170116
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170103,
+					"content": "さっきまでダイビング中だったの？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170104
+					]
+				}
+			]
+		},
+		{
+			"id": 2401702,
+			"completionStepIds": [
+				2401701
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2401701",
+							"2"
+						],
+						"stepId": 2401701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_VAR_GT",
+						"rawParams": [
+							"43080",
+							"2",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"イヴス"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 240170201,
+					"content": "あの欲張りめ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170203
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170203,
+					"content": "潜水服はどうなった？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170204
+					]
+				},
+				{
+					"id": 240170204,
+					"content": "お前だったか！お前に会えたことは、今日一番の幸運だ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170205
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170205,
+					"content": "お前は知らないだろうが、ゴールドマンのやつ、また俺たちをいじめる新しい方法を考えついたみたいでな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170206
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170206,
+					"content": "計算がうまい人を雇って、それぞれが毎日どれだけ引き揚げたか数えさせてるんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170222
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170222,
+					"content": "そしてやつはその「計算結果」に基づいて、俺たちに毎日その量を引き揚げろって押し付けたんだ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170207
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170207,
+					"content": "俺たちも疲れる時だってあるだろう。怪我したり、腹が減ったり、へばったりもするから、毎日あんな大量に引き揚げられるわけじゃないのに…ゴールドマンは全然聞く耳を持たない！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170223
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170223,
+					"content": "引き揚げた量がその「計算結果」に達してなかったら、俺たちはやつに罵られ、給料まで引かれる始末さ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170208
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170208,
+					"content": "でも、それはあの計算担当の人のせいじゃない。彼はフィネガンという名前で、同情心のある人だった。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170209
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170209,
+					"content": "彼は計算のかたわら、俺たち一人一人に毎日具体的にどんな仕事をしてるか尋ねてくれた。ある日、俺たちの話を聞き終わった彼は、計算を済ませた後…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170224
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170224,
+					"content": "突然、彼は立ち上がると、ゴールドマンの部屋に押し入ってやつに向かって怒鳴ったんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170210
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170210,
+					"content": "こう言ったんだ。「…これは非常識だ。彼らは生きた人間であって、マシナリーなんかじゃない！」ってな…俺に聞こえたのはこれだけだったが…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170211
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170211,
+					"content": "…その後、彼はゴールドマンの部下によって水たまりの中に投げ込まれちまった…俺たちは彼を引っ張り上げたんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170212
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170212,
+					"content": "それで彼は涙まで流しながら、俺たちに謝ってくれたのさ。俺たちは彼を恨んだりはしない。俺たちと同じように、彼もただゴールドマンに虐げられた被害者の一人に過ぎないからな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170213
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170213,
+					"content": "彼は、必ず俺たちのために正義を取り戻すって約束してくれたけど…彼が再びあの泥沼に戻ってほしくないと、俺たちは心から願ってる。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170214,
+						240170215
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170214,
+					"content": "今日の仕事は、あとどれぐらい掛かりそう？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170216
+					]
+				},
+				{
+					"id": 240170216,
+					"content": "まだ結構かかりそうだな。いつ終わるか分かんないけど、できるだけ給料を引かれないためにも、できるところまでやっとかないと…それに仕事を続けるには、誰かから潜水服を借りる必要もある…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170217,
+						240170218
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170217,
+					"content": "手を貸してあげる。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170219
+					]
+				},
+				{
+					"id": 240170219,
+					"content": "本当か？また手伝ってくれるのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170220
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170220,
+					"content": "お前はマジで俺の救世主だ。ゴールドマンにお前の人徳の半分でもあったらいいのに…あ、すまん、あの豚をお前と比べたりするんじゃなかった。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170221
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170221,
+					"content": "前回と同じように位置をマークしておいたから、手分けして探そう。はぁ、借りてきた潜水服も壊さないように気をつけないと…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170218,
+					"content": "仕事を手伝ってあげる。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170219
+					]
+				},
+				{
+					"id": 240170215,
+					"content": "今日の仕事は、どれぐらい残ってるの？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170216
+					]
+				}
+			]
+		},
+		{
+			"id": 2401703,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2401703",
+							"2"
+						],
+						"stepId": 2401703,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"2401703"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"イヴス"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 240170301,
+					"content": "頼んだものは、引き揚げることができたか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "イヴス"
+				}
+			]
+		},
+		{
+			"id": 2401704,
+			"completionStepIds": [
+				2401704
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2401704",
+							"2"
+						],
+						"stepId": 2401704,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"イヴス"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 240170401,
+					"content": "そう、これが俺たちが毎日引き揚げてるものだよ。何の役にも立たないゴミばかり。あのケチめ、ゴミを食ってるのか…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170402
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170402,
+					"content": "助けてくれて本当にありがとう。これはゴールドマンに頼んで前払いしてもらった給料だ。受け取ってくれ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170403
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170403,
+					"content": "この給料をもらうわけにはいかない。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170404
+					]
+				},
+				{
+					"id": 240170404,
+					"content": "受け取ってくれ。これはお前が働いて稼いだ報酬だ！もう俺のものじゃなくなったから、もしお前が要らないなら、水の中に投げるぞ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170405
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170405,
+					"content": "分かった…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170406
+					]
+				},
+				{
+					"id": 240170406,
+					"content": "よかった。今後もし何か引き揚げてほしいものがあったら、いつでも俺に頼んでくれ。お前が探したいものがどこにあろうと、必ず完全無傷の状態で引き揚げてやるからさ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170407
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170407,
+					"content": "じゃ、俺は引き続き潜水服を直さないと。はぁ、しかしマジででっかい穴だな…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "イヴス"
+				}
+			]
+		},
+		{
+			"id": 2401705,
+			"completionStepIds": [
+				2401706
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2401706",
+							"2"
+						],
+						"stepId": 2401706,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"イヴス"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 240170501,
+					"content": "これは…うぉーっ！中にアクセサリーがいっぱい詰まってるぞ！まさか、ゴールドマンが俺たちに引き揚げてほしかったのは、これだったのか…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170502
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170502,
+					"content": "手伝ってくれて本当にありがとうな。このモラを…受け取ってくれ。この件は絶対に誰にも言わないでくれ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170503
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170503,
+					"content": "これを売れば自分で潜水服を買えるし、もう二度とゴールドマンにレンタル料を払わずに済む！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170504,
+						240170505
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170504,
+					"content": "それをもらうわけにはいかない。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170506
+					]
+				},
+				{
+					"id": 240170506,
+					"content": "いや！ならん！これはお前がもらうべき報酬だ。これでもお前の労力には見合わないだろうけど、俺は今これしか持ってない。夜にちょいと酒でも飲もうかと取っておいたんだ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170507
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170507,
+					"content": "だから、どうか受け取ってくれ！俺はちょっと片付けてから、なんとかこれらのアクセサリーを売る方法を探してみるよ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170505,
+					"content": "絶対に口外しないから。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170506
+					]
+				}
+			]
+		},
+		{
+			"id": 2401706,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2401705",
+							"2"
+						],
+						"stepId": 2401705,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2401702",
+							"2"
+						],
+						"stepId": 2401702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"イヴス"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 240170601,
+					"content": "あのケチめ、フンッ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170602,
+						240170608,
+						240170612
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170602,
+					"content": "ゴールドマンについてもう少し教えて。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170603
+					]
+				},
+				{
+					"id": 240170603,
+					"content": "彼は俺のボスで、俺みたいに何の才能もなく、力仕事しかできない人を雇って働かせてる。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170604
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170604,
+					"content": "あいつ、フォンタで頭がいっぱいなくせに、口うるさくて、とんだケチ野郎でな！クソほどある労働ルールとやらを絶対に守らなきゃいけないって、俺たちに強要しやがる…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170614
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170614,
+					"content": "それに仕事用の潜水服は、やつからの「貸出し品」なんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170605
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170605,
+					"content": "ルールに違反したり、潜水服が破れたりしたら、弁償までさせられるし…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170615
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170615,
+					"content": "つまり、もし仕事中にヘマでもしようものなら、あのケチに弁償額を払って、雇い続けてくれるように頼まなきゃいけない！ちくしょう！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170606
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170606,
+					"content": "やつのことを知ってどうすんだよ。まさか、あいつに会いにでも行くのか？頼むから、お前の名声のためにも、あいつからは離れたほうがいい。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170616
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170616,
+					"content": "やつは恥知らずだ。だから周りにも、同じ悪趣味の連中が集まるのさ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170607
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170607,
+					"content": "お前はあいつと絶対に関わるなよ。泥沼の泥をかき除いて、きれいな水と入れ替えるのは、そう容易にできることじゃないんだから。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170617
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170617,
+					"content": "清らかな池を泥のひと塊で汚すのは、いとも簡単なことだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170608,
+					"content": "#{M#君}{F#あなた}の仕事って大変だね…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170609
+					]
+				},
+				{
+					"id": 240170609,
+					"content": "ははっ、その通りさ。でも、これが俺の唯一の稼ぎ口なんだ。俺は頭もよくないし、他の能力もない。だからと言って、悪事に手を染めたくはないんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170618
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170618,
+					"content": "パンのために悪事を働くぐらいなら、腹を空かせたほうがマシさ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170610
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170610,
+					"content": "今の仕事は確かに大変だけど、少なくとも夜はしっかり眠れている。誰かに恨まれて、寝てる間に包丁で目を刺されたりする心配をしなくていい。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170611
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170611,
+					"content": "この点においては、ゴールドマンよりもマシな人生を歩んでるぜ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170612,
+					"content": "さようなら。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170613
+					]
+				},
+				{
+					"id": 240170613,
+					"content": "ああ、引き揚げる件は頼んだぞ、優しい若者よ。俺は引き続きこの潜水服を直さないと。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "イヴス"
+				}
+			]
+		},
+		{
+			"id": 2401707,
+			"completionStepIds": [
+				2401701
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2401701",
+							"2"
+						],
+						"stepId": 2401701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"2401701",
+							"2"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"イヴス"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 240170701,
+					"content": "はぁ…マジでついてないな…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170702
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170702,
+					"content": "モノは売れたの？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170703
+					]
+				},
+				{
+					"id": 240170703,
+					"content": "お前か。はぁ、実はこっそり買い手を探してたのに、ゴールドマンのやつが突然俺の部屋に押し入ってきてな。アクセサリーを全部かっさらって行ったんだ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170704
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170704,
+					"content": "もし俺に働いてもらう必要がなかったら、やつはきっと俺をボコボコに殴ってたんだろう…二ヶ月分の給料が飛んじまった…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170716
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170716,
+					"content": "今年の仕事を全部完了したら、給料を払ってくれるって言うんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170705
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170705,
+					"content": "はぁ…もういい。俺みたいなバカに幸運が訪れるわけがない…ゴールドマンはお前んとこに行ってないよな？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170706,
+						240170709
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170706,
+					"content": "来てないよ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170707
+					]
+				},
+				{
+					"id": 240170707,
+					"content": "ならよかった。俺がやられるのは構わんけど、やつがお前に迷惑をかけるのは嫌なんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170708
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170708,
+					"content": "お前が手伝ってくれたことは誰にも言ってない。なんとなくだけど、もし誰かに言ったら、あのケチにチクりそうな気がしてな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170711
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170711,
+					"content": "それはそうとして、今日はどうしてもお前に頼まないといけないことがある。潜水服はまだ直せてないのに、ゴールドマンのやつに催促されまくっててな。この数日で遅れた仕事を全部間に合わせろって。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170712
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170712,
+					"content": "仕方なく、他の人の潜水服を借りて、急いで仕事をしたけど…どうしても間に合わない。だから、お前に頼むしかないんだ。どうか、もう一回助けてくれ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170713,
+						240170714
+					],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170713,
+					"content": "いいよ！",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170715
+					]
+				},
+				{
+					"id": 240170715,
+					"content": "ありがとう。位置をマークしてあげるから手分けして探そう。仕事が終わったら、また潜水服を直すとしよう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "イヴス"
+				},
+				{
+					"id": 240170714,
+					"content": "任せて。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170715
+					]
+				},
+				{
+					"id": 240170709,
+					"content": "彼が来たら、しっかり教育してあげる。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						240170710
+					]
+				},
+				{
+					"id": 240170710,
+					"content": "あの豚とは絶対に関わるな。やつは卑劣で恥知らずなんだ！お前のような尊敬に値する人は、やつと知り合うべきじゃない。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						240170711
+					],
+					"speakerTitle": "イヴス"
+				}
+			]
+		}
+	]
+}

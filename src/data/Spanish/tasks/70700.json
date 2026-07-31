@@ -1,0 +1,176 @@
+{
+	"id": 70700,
+	"type": "WQ",
+	"name": "Té especial de Helen",
+	"description": "Helen, de Mondstadt, necesita 10 flores dulces.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Entrégale 10 flores dulces a Helen",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070001,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070002,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Helen",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070002,
+						0
+					],
+					"talkId": 7070002
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070001,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070001",
+							"2"
+						],
+						"stepId": 7070001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070001"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Helen"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707000101,
+					"content": "Sobre las flores dulces...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707000102
+					]
+				},
+				{
+					"id": 707000102,
+					"content": "Oh, ¿viste mi encargo? Bien, por fin alguien que puede ayudarme.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707000103
+					],
+					"speakerTitle": "Helen"
+				},
+				{
+					"id": 707000103,
+					"content": "¿Ya tienes las 10 flores dulces que quería?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707000104,
+						707000105
+					],
+					"speakerTitle": "Helen"
+				},
+				{
+					"id": 707000104,
+					"content": "Sí.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707000105,
+					"content": "Aún no.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707000106
+					]
+				},
+				{
+					"id": 707000106,
+					"content": "Bueno... Cuando las hayas recogido, ven rápido, por favor. Cada vez me duele más la garganta.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Helen"
+				}
+			]
+		},
+		{
+			"id": 7070002,
+			"completionStepIds": [
+				7070002
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070002",
+							"2"
+						],
+						"stepId": 7070002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Helen"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707000201,
+					"content": "Gracias. Toma, aquí tienes tu recompensa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707000202
+					],
+					"speakerTitle": "Helen"
+				},
+				{
+					"id": 707000202,
+					"content": "Las usaré para preparar té. Con suerte, eso me aliviará el dolor...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Helen"
+				}
+			]
+		}
+	]
+}

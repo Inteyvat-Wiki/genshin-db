@@ -1,0 +1,176 @@
+{
+	"id": 71714,
+	"type": "WQ",
+	"name": "Yi Zhu's Snack",
+	"description": "Yi Zhu needs a serving of Almond Tofu.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7171401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Give the Almond Tofu to Yi Zhu",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7171401,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7171402,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Yi Zhu",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7171402,
+						0
+					],
+					"talkId": 7171402
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7171401,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7171401",
+							"2"
+						],
+						"stepId": 7171401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7171401"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Yi Zhu"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717140101,
+					"content": "About Almond Tofu...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717140102
+					]
+				},
+				{
+					"id": 717140102,
+					"content": "Hi! Oh, you must've seen my commission. Have you prepared an Almond Tofu for me?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717140103,
+						717140104
+					],
+					"speakerTitle": "Yi Zhu"
+				},
+				{
+					"id": 717140103,
+					"content": "Ready!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717140104,
+					"content": "Not yet.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717140105
+					]
+				},
+				{
+					"id": 717140105,
+					"content": "Aw alright, just bring it to me as soon as it's ready.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Yi Zhu"
+				}
+			]
+		},
+		{
+			"id": 7171402,
+			"completionStepIds": [
+				7171402
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7171402",
+							"2"
+						],
+						"stepId": 7171402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Yi Zhu"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717140201,
+					"content": "Yay, Almond Tofu! I'll take that.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717140202
+					],
+					"speakerTitle": "Yi Zhu"
+				},
+				{
+					"id": 717140202,
+					"content": "This is for you. Thanks for helping.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717140203
+					],
+					"speakerTitle": "Yi Zhu"
+				},
+				{
+					"id": 717140203,
+					"content": "I hope this Almond Tofu will keep Yi Xian happy...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Yi Zhu"
+				}
+			]
+		}
+	]
+}

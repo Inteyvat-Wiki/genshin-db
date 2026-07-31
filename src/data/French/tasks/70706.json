@@ -1,0 +1,176 @@
+{
+	"id": 70706,
+	"type": "WQ",
+	"name": "Le souhait de Timmy",
+	"description": "Timmy, de Mondstadt, aurait besoin de 10 brins de blé.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Donnez 10 brins de blé à Timmy.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Timmy.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070602,
+						0
+					],
+					"talkId": 7070602
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070601,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070601",
+							"2"
+						],
+						"stepId": 7070601,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070601"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Timmy"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707060101,
+					"content": "Les brins de blé...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707060102
+					]
+				},
+				{
+					"id": 707060102,
+					"content": "Ah, vous avez vu mon annonce ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707060103
+					],
+					"speakerTitle": "Timmy"
+				},
+				{
+					"id": 707060103,
+					"content": "Vous les avez, ces dix brins de blé ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707060104,
+						707060105
+					],
+					"speakerTitle": "Timmy"
+				},
+				{
+					"id": 707060104,
+					"content": "Et voici.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707060105,
+					"content": "Pas encore.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707060106
+					]
+				},
+				{
+					"id": 707060106,
+					"content": "Foncez, alors. Ramenez-les moi dès que vous le pourrez.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Timmy"
+				}
+			]
+		},
+		{
+			"id": 7070602,
+			"completionStepIds": [
+				7070602
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070602",
+							"2"
+						],
+						"stepId": 7070602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Timmy"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707060201,
+					"content": "Ça devrait le faire. Merci pour votre aide ! Prenez ceci en cadeau.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707060202
+					],
+					"speakerTitle": "Timmy"
+				},
+				{
+					"id": 707060202,
+					"content": "Les oiseaux vont se régaler avec la nourriture que je vais leur préparer !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Timmy"
+				}
+			]
+		}
+	]
+}

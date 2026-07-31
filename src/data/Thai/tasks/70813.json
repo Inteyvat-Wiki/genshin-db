@@ -1,0 +1,188 @@
+{
+	"id": 70813,
+	"type": "WQ",
+	"name": "จับโจร",
+	"description": "พายุเพิ่งจะสงบลง คุณ Cyrus แห่งกิลด์นักผจญภัยของ Mondstadt กำลังเตรียมลงมือกวาดล้างกองโจรล่าสมบัติ...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		20603
+	],
+	"steps": [
+		{
+			"id": 7081301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "คุยกับ Cyrus",
+			"finishConditions": []
+		},
+		{
+			"id": 7081302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "กำจัดกองโจรล่าสมบัติที่อยู่รอบ Dawn Winery",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7081303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "กำจัดกองโจรล่าสมบัติที่เฝ้าค่าย",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7081304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "คุยกับ Cyrus",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7081305,
+						0
+					],
+					"talkId": 7081305
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7081304,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081302",
+							"2"
+						],
+						"stepId": 7081302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081303",
+							"2"
+						],
+						"stepId": 7081303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708130401,
+					"content": "หึ กองโจรล่าสมบัติ...เจ้าพวกหนูที่กวาดล้างไม่สิ้นซากสักที",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		},
+		{
+			"id": 7081305,
+			"completionStepIds": [
+				7081304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081304",
+							"2"
+						],
+						"stepId": 7081304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708130501,
+					"content": "#{F#เธอ}{M#นาย}กลับมาแล้วเหรอ กำจัดค่ายกองโจรล่าสมบัติเรียบร้อยแล้วเหรอ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708130502
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708130502,
+					"content": "จัดการเรียบร้อยหมดแล้ว",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708130503
+					]
+				},
+				{
+					"id": 708130503,
+					"content": "สมแล้วที่เป็นอัศวินผู้มีเกียรติ เรื่องแบบนี้เป็นแค่เรื่องจิ๊บ ๆ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708130504
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708130504,
+					"content": "หึ...กองโจรล่าสมบัติกลุ่มนี้ค่อนข้างมี \"ความมุ่งมั่น\" ทีเดียว ตอนที่ทั้งเมืองต่างพากับหลบภัยจากพายุถล่ม พวกมันกลับกล้าฝ่าพายุเข้ามาขโมยของ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708130505
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708130505,
+					"content": "\"ความมุ่งมั่น\" แบบนี้ถ้าไปทำเรื่องที่ถูกที่ควรก็คงจะดีไม่น้อย...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		}
+	]
+}

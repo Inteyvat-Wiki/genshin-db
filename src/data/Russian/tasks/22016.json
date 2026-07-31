@@ -1,0 +1,1830 @@
+{
+	"id": 22016,
+	"type": "WQ",
+	"name": "Всеядные гурманы: о важности правильного питания",
+	"description": "Кажется, Парвана из всеядных гурманов в смятении...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2201601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Парваной",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2201601,
+						0
+					],
+					"talkId": 2201601
+				}
+			]
+		},
+		{
+			"id": 2201602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Встретьтесь с Сюй Дуном",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						2201602,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2201603,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Сюй Дуном",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2201602,
+						0
+					],
+					"talkId": 2201602
+				}
+			]
+		},
+		{
+			"id": 2201604,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Продолжите поиск впереди",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						2201604,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						2201606,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 2201605,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Победите всех врагов",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2201606,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2201607,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поищите следы Камэи Мунэхисы впереди",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2201608,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Камэи Мунэхисой",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2201604,
+						0
+					],
+					"talkId": 2201604
+				}
+			]
+		},
+		{
+			"id": 2201609,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Джули",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2201603,
+						0
+					],
+					"talkId": 2201603
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2201602,
+			"completionStepIds": [
+				2201603
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2201603",
+							"2"
+						],
+						"stepId": 2201603,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Сюй Дун"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220160201,
+					"content": "#Парвана... и путешественни{F#ца}{M#к}? Что привело вас сюда?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160202,
+						220160205
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160202,
+					"content": "#Я {M#пришёл}{F#пришла} помочь.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160203
+					]
+				},
+				{
+					"id": 220160203,
+					"content": "В самом деле? Спасибо большое! Джули, кажется, зашла совсем далеко...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160204
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160204,
+					"content": "Там куча монстров. Мы вдвоём едва ли с ними справимся. Но с тобой у нас появляются отличные шансы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160210
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160210,
+					"content": "Идём. Джули должна быть где-то в лесах.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160205,
+					"content": "#Я {M#пришёл}{F#пришла} на обещанный праздник.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160206
+					]
+				},
+				{
+					"id": 220160206,
+					"content": "Не вопрос. Но я не могу приготовить все в одиночестве.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160207
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160207,
+					"content": "#Путешественни{F#ца}{M#к}, ты можешь сделать мне одолжение и сначала помочь вернуть Джули?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160208
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160208,
+					"content": "Кажется, Джули зашла слишком далеко... А там много монстров. Нам вдвоём не справиться.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160209
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160209,
+					"content": "А когда мы найдём Джули, я устрою тебе обещанный праздник.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160210
+					],
+					"speakerTitle": "Сюй Дун"
+				}
+			]
+		},
+		{
+			"id": 2201603,
+			"completionStepIds": [
+				2201609
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2201609",
+							"2"
+						],
+						"stepId": 2201609,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Парвана",
+					"Сюй Дун",
+					"Джули"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220160301,
+					"content": "Эй! Если ты угробишь вок, в чем мы будем готовить?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160302
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160302,
+					"content": "Не стоит недооценивать умение Ли Юэ делать новые воки. Это уникальный чугунный вок, и он специально спроектирован так, чтобы в нем легче было подбрасывать еду.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160303
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160303,
+					"content": "Кроме того, монстров совсем немного. Что же это за чугунный вок, если им нельзя прибить парочку чудовищ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160304
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160304,
+					"content": "Ты слишком многого от него ждёшь...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160305,
+						220160308,
+						220160312
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160305,
+					"content": "Сюй Дун - большой хвастун.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160306
+					]
+				},
+				{
+					"id": 220160306,
+					"content": "Ну конечно! Шеф-повару полагается подавать себя определённым образом.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160307
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160307,
+					"content": "Никогда не доводилось слышать ни о чём подобном! Зачем повару колотить монстров железной сковородкой?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160315
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160315,
+					"content": "Ладно. Джули, давай выбираться отсюда. И побыстрее!..",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160316
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160316,
+					"content": "По... Подожди! Нужно помочь дядюшке Мунехисе! Он один сражается в лесах против кайраги.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160317
+					],
+					"speakerTitle": "Джули"
+				},
+				{
+					"id": 220160317,
+					"content": "Кайраги? Не против монстров? А ты как с ними связалась?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160318
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160318,
+					"content": "Я... Я потом все расскажу... Давайте поможем ему! Он же совсем один...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160319
+					],
+					"speakerTitle": "Джули"
+				},
+				{
+					"id": 220160319,
+					"content": "#Ладно, все ясно. Путешественни{F#ца}{M#к}, ты пойдешь с нами?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160320,
+						220160321
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160320,
+					"content": "Конечно.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160325
+					]
+				},
+				{
+					"id": 220160325,
+					"content": "Вперед, поспешим!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160321,
+					"content": "Ты собираешься сражаться с кайраги?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160322
+					]
+				},
+				{
+					"id": 220160322,
+					"content": "Само собой. Мне не терпится взяться за дело.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160323
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160323,
+					"content": "Кроме того, истинный повар никогда не убегает от боя.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160324
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160324,
+					"content": "Я же говорила тебе, не стоит предъявлять такие высокие требования к поварам или их железным вокам!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160325
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160308,
+					"content": "А где мне купить такой вок?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160309
+					]
+				},
+				{
+					"id": 220160309,
+					"content": "Ха-ха, отличный вопрос. Для меня его специально изготовили в «Холодном клинке».",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160310
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160310,
+					"content": "Говорят, что при литье в железо добавляют материалы из Разлома. Если хочешь такой же, иди в «Холодный клинок».",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160311
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160311,
+					"content": "Но ведь Разлом, как говорят, давно закрыт. Вряд ли твой мастер сможет изготовить новый вок...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160315
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160312,
+					"content": "Парвана тоже может постоять за себя.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160313
+					]
+				},
+				{
+					"id": 220160313,
+					"content": "Что? Ну что ж... ха-ха-ха, я просто бросила монстру в голову несколько книжек. А прогоняла их вовсе не я - это все ты.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160314
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160314,
+					"content": "Подождите. А где же «Рядом с божеством», том 6? Я его тоже бросила? Я его ещё не дочитала!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160315
+					],
+					"speakerTitle": "Парвана"
+				}
+			]
+		},
+		{
+			"id": 2201604,
+			"completionStepIds": [
+				2201608
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2201608",
+							"2"
+						],
+						"stepId": 2201608,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Камэи Мунэхиса",
+					"Джули",
+					"Сюй Дун",
+					"Парвана"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220160401,
+					"content": "Кхм... Прошу прощения, что вам приходится видеть меня в таком виде.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160402
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160402,
+					"content": "Дядюшка Мунэхиса, ты цел?..",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160403
+					],
+					"speakerTitle": "Джули"
+				},
+				{
+					"id": 220160403,
+					"content": "Всего пара царапин. Ничего страшного.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160404
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160404,
+					"content": "А теперь, Джули, рассказывай. И ничего не утаивай!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160405
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160405,
+					"content": "Выкладывай все - иначе получится, что мои книги пропали зазря... Ох, теперь все страницы помялись...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160406
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160406,
+					"content": "Всё просто... Я просто хотела принести ему немного еды.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160407
+					],
+					"speakerTitle": "Джули"
+				},
+				{
+					"id": 220160407,
+					"content": "Эх... Да ты же видела его всего один раз в жизни. Почему... ты так ему доверяешь?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160408
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160408,
+					"content": "Я уверена что он хороший человек! Он голодал, но отдал нам свою пищу, а не оставил всё себе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160409
+					],
+					"speakerTitle": "Джули"
+				},
+				{
+					"id": 220160409,
+					"content": "Любой, кто делится едой с голодным, - хороший человек!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160410
+					],
+					"speakerTitle": "Джули"
+				},
+				{
+					"id": 220160410,
+					"content": "Твоя концепция добра и зла такая прямолинейная и чистая...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160411
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160411,
+					"content": "Ты, наверное, не в Тейвате живёшь, а в какой-то сказочной стране.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160412
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160412,
+					"content": "Ха-ха-ха! Думаю, она права.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160413
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160413,
+					"content": "Я согласен. Те, кто может блюсти свою честь и достоинство, невзирая на голод, не могут быть плохими людьми.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160414
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160414,
+					"content": "Какая простая и прямолинейная логика...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160415
+					]
+				},
+				{
+					"id": 220160415,
+					"content": "Давайте не будем отвлекаться. Джули, продолжай.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160416
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160416,
+					"content": "Ну я и приготовила куриных шашлычков с грибами и решила испытать удачу и поискать его там, где мы встретились впервые.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160417
+					],
+					"speakerTitle": "Джули"
+				},
+				{
+					"id": 220160417,
+					"content": "А в итоге встретила его здесь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160418
+					],
+					"speakerTitle": "Джули"
+				},
+				{
+					"id": 220160418,
+					"content": "Я как раз собиралась поздороваться, когда заметила, что он сражается с несколькими кайраги.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160419
+					],
+					"speakerTitle": "Джули"
+				},
+				{
+					"id": 220160419,
+					"content": "Я хотела убежать, но они меня заметили...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160420
+					],
+					"speakerTitle": "Джули"
+				},
+				{
+					"id": 220160420,
+					"content": "Позволь, я продолжу...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160421
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160421,
+					"content": "Среди этих... людей были и мои старые друзья, которые вместе со мной служили сёгуну.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160422
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160422,
+					"content": "После того, как в Инадзуме произошли резкие перемены, мы все один за другим оставили сёгунат и отправились жить своей жизнью.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160423,
+						220160425,
+						220160427
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160423,
+					"content": "Значит, теперь это так называется?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160424
+					]
+				},
+				{
+					"id": 220160424,
+					"content": "...Да. Мы не умеем зарабатывать деньги иначе, как мечом.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160432
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160432,
+					"content": "Они после этого стали кайраги и живут разбоем.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160433
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160433,
+					"content": "Я не хотел так жить, поэтому отправился странствовать по стране в поисках работы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160434
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160434,
+					"content": "Но едва узнав, что я бывший самурай, оставивший сёгунат, люди отказывались меня нанимать. Никто так и не осмелился.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160435
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160435,
+					"content": "С тех пор, как видите, мне приходится питаться по лесам подножным кормом.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160436
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160436,
+					"content": "В последнее время у моих бывших товарищей, видимо, не хватает рук, и они каждый день приходят сюда в надежде убедить меня примкнуть к ним. Я каждый раз отказывал.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160437
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160437,
+					"content": "А сегодня... Когда появилась Джули, они решили, что я вступил в какой-то клан и пытаюсь избавиться от них. Потому они на нас и напали.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160438,
+						220160440
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160438,
+					"content": "Неразумное отребье...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160439
+					]
+				},
+				{
+					"id": 220160439,
+					"content": "Разумно они не действовали никогда. Но в их ситуации... О каком разуме может идти речь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160444
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160444,
+					"content": "И он пошёл разобраться с теми парнями, а я осталась на месте ждать, когда он вернётся. А потом вдруг появилась стая монстров...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160445
+					],
+					"speakerTitle": "Джули"
+				},
+				{
+					"id": 220160445,
+					"content": "Но ты же наверняка смогла с ними разделаться, правда?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160446
+					]
+				},
+				{
+					"id": 220160446,
+					"content": "В обычной ситуации смогла бы запросто. Но я с утра ничего не ела, а потому была очень голодна. У меня вообще сил не было.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160447
+					],
+					"speakerTitle": "Джули"
+				},
+				{
+					"id": 220160447,
+					"content": "Когда меня заметили те кайраги, я потеряла все свои куриные шашлычки с грибами... К счастью, дядюшка Мунэхиса смог меня защитить.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160448,
+						220160449
+					],
+					"speakerTitle": "Джули"
+				},
+				{
+					"id": 220160448,
+					"content": "Вот почему завтракать так важно.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160450
+					]
+				},
+				{
+					"id": 220160450,
+					"content": "В Инадзуме до сих пор полно этих неразумных кайраги. Мы пробудем здесь какое-то время, и это может быть небезопасно...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160451
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160451,
+					"content": "Мы в состоянии разделаться с парой слабых монстров, но вряд ли справимся с шайкой людей, владеющих боевыми искусствами...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160452
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160452,
+					"content": "Ох... Дядюшка, ты же говорил, что ищешь работу, верно?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160453
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160453,
+					"content": "Хочешь пойти с нами?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160454
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160454,
+					"content": "Эй, было бы здорово!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160455
+					],
+					"speakerTitle": "Джули"
+				},
+				{
+					"id": 220160455,
+					"content": "Но он же самурай, оставивший сёгунат. Он же навлечёт на нас в Инадзуме беду, разве нет?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160456
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160456,
+					"content": "Это правда. Если я пойду с вами, я навлеку на вас беду.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160457
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160457,
+					"content": "Ха-ха-ха, мне кажется, это не так уж важно. Мы же просто ищем кухонные ингредиенты.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160458
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160458,
+					"content": "Лучшее, что он может сделать в этой ситуации, - это держаться подальше от всего, что имеет хоть какое-то отношение к сёгунату или самураям.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160459
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160459,
+					"content": "Когда работаешь у кого-то телохранителем или служишь в охранном отряде, ты вызываешь ещё больше подозрений.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160460
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160460,
+					"content": "Кроме того, вряд ли будет правильным решением бросить такого хорошего человека голодать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160461
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160461,
+					"content": "Я повар и вряд ли смогу помочь тебе чем-то еще, но уж как следует накормить-то я способен.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160462
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160462,
+					"content": "Господин, вы...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160463
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160463,
+					"content": "Хе-хе. Ну, что скажешь? Хочешь к нам присоединиться? Много денег предложить не сможем, но еды будет просто завались.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160464
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160464,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160465
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160465,
+					"content": "В таком случае я к вашим услугам, господин.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160466
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160466,
+					"content": "Ух ты!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160467
+					],
+					"speakerTitle": "Джули"
+				},
+				{
+					"id": 220160467,
+					"content": "Это же доброе дело, правда? Да, это явно к лучшему...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160468
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160468,
+					"content": "Ладно! Не сомневаюсь, что после таких трудов все проголодались. Не самое удобное место, чтобы готовить пищу... Но я что-нибудь придумаю...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160469
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160469,
+					"content": "#Путешественни{F#ца}{M#к}, отдохни пока. Я обо всем позабочусь. А ты просто жди здесь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160470
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160470,
+					"content": "Ладно, пора приступать!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160471
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160471,
+					"content": "Готово... Ха-ха. Онигири... Шарики из остатков риса. Грубовато, но желудок набьют. Вперед, налетайте.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160472
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160472,
+					"content": "#Путешественни{F#ца}{M#к}, спасибо за то, что {M#пошёл}{F#пошла} с нами. Этот рецепт - специально для тебя. Мне его дал дядюшка Мунэхиса, а я сделал для тебя копию.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160473
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160473,
+					"content": "Он сказал, что получил этот рецепт, когда служил сёгунату. Это уникальный рецепт. Можешь попробовать, если интересно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160474
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160474,
+					"content": "Вот и славно. А теперь хватит болтать. Поедим!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160449,
+					"content": "Что ж, теперь, полагаю, ты больше никогда не пропустишь завтрак.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160450
+					]
+				},
+				{
+					"id": 220160440,
+					"content": "Какие ранимые, ха.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160441
+					]
+				},
+				{
+					"id": 220160441,
+					"content": "Неудивительно - с учетом их положения.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160442
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160442,
+					"content": "Мне кажется, они просто пытались найти отговорку, чтобы договориться с таким «непокорным» человеком, как я. Немного придать себе весу.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160443
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160443,
+					"content": "Ведь я им постоянно отказывал. Им, наверное, было непросто, это принять.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160444
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160425,
+					"content": "А все кайраги...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160426
+					]
+				},
+				{
+					"id": 220160426,
+					"content": "Не все. Но это неважно. Они были трусами и подняли мечи против слабого.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160432
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160427,
+					"content": "Почему вы оставили сёгунат?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160428
+					]
+				},
+				{
+					"id": 220160428,
+					"content": "Я просто... не мог смириться с тем, что сёгунат вытворял в Инадзуме.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160429
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160429,
+					"content": "Я всего лишь владею боевыми искусствами. Я не знаю, что хорошо для страны, а что плохо.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160430
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160430,
+					"content": "Но я точно знал, что происходящее мне не по сердцу, а потому решил уйти.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160431
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160431,
+					"content": "Хе-хе. Может быть, я просто старомоден...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160432
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				}
+			]
+		},
+		{
+			"id": 2201605,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2201608",
+							"3"
+						],
+						"stepId": 2201608,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Сюй Дун"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220160501,
+					"content": "Ох, наконец-то... Хм-м..",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160502,
+						220160513
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160502,
+					"content": "А почему ты ему помог?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160503
+					]
+				},
+				{
+					"id": 220160503,
+					"content": "Кому? Дядюшке Мунэхисе? Само собой, из профессиональной этики - я же повар.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160504
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160504,
+					"content": "Ха, да ладно, шучу. Но мне очень не нравится, когда такой хороший человек разгуливает голодным.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160505
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160505,
+					"content": "Честно говоря... Мне вообще не нравится, когда кто-то голодает.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160506
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160506,
+					"content": "Голод - это ужасное чувство. У меня был опыт.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160507
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160507,
+					"content": "От голода люди делают ужасные вещи.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160508
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160508,
+					"content": "Думаю, что если бы все в этом мире хорошо питались, может быть, можно было бы избежать многих ужасных вещей.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160509
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160509,
+					"content": "Да, одному мне не справиться, но я повар и могу попытаться помочь хорошо питаться тем, кто рядом.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160510
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160510,
+					"content": "Ха-ха-ха, проще говоря, я хочу, чтобы у всех была еда и все ели хорошо. Пожалуй, довольно бессмысленная мечта.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160511
+					],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160511,
+					"content": "Нет, это очень благородная идея.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160512
+					]
+				},
+				{
+					"id": 220160512,
+					"content": "Хе-хе, спасибо большое. Ладно... хватит болтать. Съешьте ещё - не оставляйте ничего на тарелках. Выбрасывать еду - ужасный грех.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Сюй Дун"
+				},
+				{
+					"id": 220160513,
+					"content": "Пока.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160514
+					]
+				},
+				{
+					"id": 220160514,
+					"content": "Ты что, уходишь? Нет даже пары секунд?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Сюй Дун"
+				}
+			]
+		},
+		{
+			"id": 2201606,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2201608",
+							"3"
+						],
+						"stepId": 2201608,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Джули"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220160601,
+					"content": "Хе-хе, вообще-то это довольно вкусно. Съем-ка я ещё...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160602,
+						220160606,
+						220160609
+					],
+					"speakerTitle": "Джули"
+				},
+				{
+					"id": 220160602,
+					"content": "Почему ты хотела принести ему еды?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160603
+					]
+				},
+				{
+					"id": 220160603,
+					"content": "Ну... Я просто не хотела, чтобы он голодал.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160604
+					],
+					"speakerTitle": "Джули"
+				},
+				{
+					"id": 220160604,
+					"content": "Когда мы виделись в прошлый раз, он явно грустил. Я решила, что это из-за голода.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160605
+					],
+					"speakerTitle": "Джули"
+				},
+				{
+					"id": 220160605,
+					"content": "Поэтому я хотела принести ему поесть. Я подумала, что наевшись он не будет таким печальным.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Джули"
+				},
+				{
+					"id": 220160606,
+					"content": "А почему ты стала ему доверять?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160607
+					]
+				},
+				{
+					"id": 220160607,
+					"content": "Это... интуиция искателя приключений. Я очень хорошо умею отличать хороших парней от плохих.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160608
+					],
+					"speakerTitle": "Джули"
+				},
+				{
+					"id": 220160608,
+					"content": "Только хорошие люди отдают еду, когда сами голодны...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Джули"
+				},
+				{
+					"id": 220160609,
+					"content": "Пока.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160610
+					]
+				},
+				{
+					"id": 220160610,
+					"content": "Пока. Я больше никогда не буду пропускать завтрак...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Джули"
+				}
+			]
+		},
+		{
+			"id": 2201607,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2201608",
+							"3"
+						],
+						"stepId": 2201608,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Парвана"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220160701,
+					"content": "Не могу поверить, что эти двое...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160702,
+						220160705,
+						220160713
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160702,
+					"content": "Ты всё еще ему не доверяешь, верно?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160703
+					]
+				},
+				{
+					"id": 220160703,
+					"content": "Ты про Камэи Мунэхису? Конечно же, нет... Мы встречались всего несколько раз - как я могу ему доверять?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160704
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160704,
+					"content": "...Но хоть я не доверяю Камэи Мунэхисе, я полностью доверяю мнению Сюй Дуна.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160705,
+					"content": "Ты из Академии?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160706
+					]
+				},
+				{
+					"id": 220160706,
+					"content": "Типа того. Я занималась полевыми исследованиями в Академии, когда встретила Сюй Дуна в Ли Юэ.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160707
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160707,
+					"content": "Он собирался отправиться в экспедицию, чтобы изучать рецепты, а тема моей работы как раз была связана с кулинарией. Мы несколько раз пообщались, а потом решили путешествовать вместе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160708
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160708,
+					"content": "Первым делом мы отправились в Мондштадт, и там нас окружила толпа монстров. И тут появилась Джули - она помогла нам сбежать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160709
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160709,
+					"content": "Когда она узнала, что мы странствуем и изучаем разные кухни, она решила присоединиться к нам.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160710
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160710,
+					"content": "Она сказала, что собралась отправиться на поиски приключений, но у меня такое чувство, что ей просто захотелось поесть хорошей еды...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160711
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160711,
+					"content": "Дальше мы пойдём в Сумеру. Мои исследования почти завершены и мне пора возвращаться в Академию.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160712
+					],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160712,
+					"content": "Когда мы доберемся до Сумеру, я обязательно дам им попробовать наши местные деликатесы...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Парвана"
+				},
+				{
+					"id": 220160713,
+					"content": "До свидания.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160714
+					]
+				},
+				{
+					"id": 220160714,
+					"content": "Да... До встречи.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Парвана"
+				}
+			]
+		},
+		{
+			"id": 2201608,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2201608",
+							"3"
+						],
+						"stepId": 2201608,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Камэи Мунэхиса"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220160801,
+					"content": "Что тебя беспокоит?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160802,
+						220160807,
+						220160814,
+						220160819
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160802,
+					"content": "Почему ты согласился пойти вместе с Сюй Дуном?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160803
+					]
+				},
+				{
+					"id": 220160803,
+					"content": "Как сказал Сюй Дун, если я хочу хорошо питаться... работа на него в данный момент - мой лучший вариант.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160804
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160804,
+					"content": "Кроме того, Джули и Сюй Дун - люди высокой морали, и для меня будет большой честью странствовать вместе с ними.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160805
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160805,
+					"content": "Парвана... вдумчивая девушка. Вполне естественно, что она относится ко мне настороженно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160806
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160806,
+					"content": "Кроме того, она просто отнеслась ко мне немного подозрительно, но не стала сразу меня прогонять, а этого... этого мне достаточно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160807,
+					"content": "А ты и впрямь просто странствовал по окрестным землям?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160808
+					]
+				},
+				{
+					"id": 220160808,
+					"content": "Точно. Я бы никогда не стал лгать. Я просто странствовал с тех пор, как оставил сёгунат.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160809
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160809,
+					"content": "Я просто набивал желудок подножным кормом. Если везло - мясом.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160810
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160810,
+					"content": "Иногда я помогал людям прогнать монстров или кайраги - это приносило мне хоть какие-то деньги.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160811
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160811,
+					"content": "Хе-хе... Человеку вроде меня, который только и умеет, что ловко махать мечом, найти подходящую вакансию не так просто.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160812
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160812,
+					"content": "Не говоря уже о моём прошлом - я же служил сёгунату. Люди до сих пор ассоциируют меня с кайраги, а потому найти работу еще сложнее.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160813
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160813,
+					"content": "У меня в Инадзуме нет ни дома, ни семьи - мне некуда податься. Поэтому я просто странствовал.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160814,
+					"content": "Почему вы оставили сёгунат?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160815
+					]
+				},
+				{
+					"id": 220160815,
+					"content": "Я просто... не мог смириться с тем, что сёгунат вытворял в Инадзуме.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160816
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160816,
+					"content": "Я всего лишь владею боевыми искусствами. Я не знаю, что хорошо для страны, а что плохо.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160817
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160817,
+					"content": "Но я точно знал, что происходящее мне не по сердцу, а потому решил уйти.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160818
+					],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160818,
+					"content": "Хе-хе. Может быть, я просто старомоден.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Камэи Мунэхиса"
+				},
+				{
+					"id": 220160819,
+					"content": "Пока.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160820
+					]
+				},
+				{
+					"id": 220160820,
+					"content": "Прощай.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Камэи Мунэхиса"
+				}
+			]
+		}
+	]
+}

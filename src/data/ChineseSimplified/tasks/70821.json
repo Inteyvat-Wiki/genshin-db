@@ -1,0 +1,274 @@
+{
+	"id": 70821,
+	"type": "WQ",
+	"name": "风后宝矿",
+	"description": "在特瓦林被净化后，风龙废墟已经可以通行了。瓦格纳先生想要去那里寻找珍贵的水晶矿…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		396
+	],
+	"steps": [
+		{
+			"id": 7082101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "与瓦格纳对话",
+			"finishConditions": []
+		},
+		{
+			"id": 7082102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往风龙废墟探查水晶矿",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1177,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往风龙废墟探查水晶矿",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1181,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往风龙废墟探查水晶矿",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1182,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082105,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "采掘三份水晶块",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101003,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082106,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "把水晶块交给瓦格纳",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7082102,
+						0
+					],
+					"talkId": 7082102
+				}
+			]
+		},
+		{
+			"id": 7082107,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)进度保存$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7082107,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082108,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)回滚保护$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7082108,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7082102,
+			"completionStepIds": [
+				7082106
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082106",
+							"2"
+						],
+						"stepId": 7082106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"瓦格纳"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708210201,
+					"content": "怎么样，你采到水晶了吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708210202
+					],
+					"speakerTitle": "瓦格纳"
+				},
+				{
+					"id": 708210202,
+					"content": "已经采到了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708210203
+					]
+				},
+				{
+					"id": 708210203,
+					"content": "让我看看，唔，这些水晶块看上去确实不错。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708210204
+					],
+					"speakerTitle": "瓦格纳"
+				},
+				{
+					"id": 708210204,
+					"content": "这些是给你的谢礼，收下吧，这次辛苦你了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708210205
+					],
+					"speakerTitle": "瓦格纳"
+				},
+				{
+					"id": 708210205,
+					"content": "这么看来…风龙废墟那边的风暴确实已经消散了，我也要挑个时候过去看看了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "瓦格纳"
+				}
+			]
+		},
+		{
+			"id": 7082106,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082102",
+							"2"
+						],
+						"stepId": 7082102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082103",
+							"2"
+						],
+						"stepId": 7082103,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082104",
+							"2"
+						],
+						"stepId": 7082104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082105",
+							"2"
+						],
+						"stepId": 7082105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"瓦格纳"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708210601,
+					"content": "关于矿石…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708210602
+					]
+				},
+				{
+					"id": 708210602,
+					"content": "还有很多工作没做，得再加把劲了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "瓦格纳"
+				}
+			]
+		}
+	]
+}

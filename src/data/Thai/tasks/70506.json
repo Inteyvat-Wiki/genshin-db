@@ -1,0 +1,617 @@
+{
+	"id": 70506,
+	"type": "WQ",
+	"name": "Dandelion, Rose, Windwheel Aster",
+	"description": "\"แม้แต่หัวหน้ากอง Jean ก็ยังไปที่ร้านเหล้างั้นเหรอ? เกิดอะไรขึ้นกันแน่?\" \"ตกใจอะไรกัน นั่นหัวหน้ากอง Jean เชียวนะ อีกอย่าง ถ้ามีเรื่องใหญ่จริง ๆ ก็คงไม่ไปที่ร้านเหล้าหรอก\"",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70507
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "พูดคุยกับ Luka และเข้าไปในร้านเหล้า",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050602,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "ชงเครื่องดื่มให้ Lisa ตามที่กำหนด",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050602,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050603,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "ชงเครื่องดื่มให้ Jean ตามที่กำหนด",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050603,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050604,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "ส่งเครื่องดื่มให้ Lisa และ Jean",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050602,
+						0
+					],
+					"talkId": 7050602
+				}
+			]
+		},
+		{
+			"id": 7050605,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "คุยกับ Lisa และ Jean",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050601,
+						0
+					],
+					"talkId": 7050601
+				}
+			]
+		},
+		{
+			"id": 7050606,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "ไปยังบาร์และเตรียมพร้อมการเปิดให้บริการ",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050601,
+			"completionStepIds": [
+				7050605
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050605",
+							"2"
+						],
+						"stepId": 7050605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050602",
+							"2"
+						],
+						"stepId": 7050602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050603",
+							"2"
+						],
+						"stepId": 7050603,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lisa",
+					"Jean"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705060101,
+					"content": "เฮ้ เจ้าตัวน้อย ดีใจจังที่เจอเธอ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060102
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060102,
+					"content": "ถึงแม้จะไม่ค่อยได้เจอกันในสถานที่แบบนี้ แต่ความรู้สึกของฉันในตอนนี้ ก็เหมือนกับ Lisa เลย",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060103
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060103,
+					"content": "เฮ้ \"สถานที่แบบนี้\" หมายความว่ายังไงกัน? ร้านเหล้าเป็นสถานที่พักผ่อนหย่อนใจนี่นา",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060104
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060104,
+					"content": "เธอคงคิดไม่ถึงสินะ ฉันต้องใช้ความพยายามโน้มน้าวตั้งค่อนวันกว่าจะเชิญคนงานยุ่งคนนี้ออกมาจากเก้าอี้นั่นได้",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060105
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060105,
+					"content": "เพิ่งนั่งตรงนี้ได้ไม่นาน ใบหน้าของ Jean ก็เต็มไปด้วยความกังวลอีกแล้ว...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060106
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060106,
+					"content": "Lisa...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060107
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060107,
+					"content": "ก็งานของกองอัศวินมีตั้งเยอะแยะนี่นา...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060108
+					]
+				},
+				{
+					"id": 705060108,
+					"content": "ใช่แล้วล่ะ หัวหน้ากอง Jean เป็นรักษาการผู้บัญชาการ แน่นอนว่าต้องกังวลเรื่องนี้อยู่แล้ว!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060109
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705060109,
+					"content": "แต่ว่าประโยคนั้นพูดว่าไงนะ... \"ไหน ๆ ก็มาแล้ว!\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060110
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705060110,
+					"content": "ให้นักเดินทางทำเครื่องดื่มอร่อย ๆ ให้พวกเธอสักแก้วสองแก้วละกัน ดื่มแล้วจะได้มีความสุขไงล่ะ!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060111
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705060111,
+					"content": "คิดซะว่ามาเปลี่ยนบรรยากาศก็แล้วกัน",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060112
+					]
+				},
+				{
+					"id": 705060112,
+					"content": "เฮ้อ คนที่ต้องเรียนรู้วิธีการผ่อนคลาย คงจะมีแค่ Jean แล้วล่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060113
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060113,
+					"content": "เจ้าตัวน้อย ทำ Love Poem ให้ฉันแก้วนึงสิ ขอแก้วกลาง หวาน ๆ หน่อยนะจ๊ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060114
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060114,
+					"content": "Jean ล่ะ? จะดื่มอะไรหน่อยมั้ย?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060115
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060115,
+					"content": "ของฉัน... เอาเป็นกาแฟละกัน แล้วก็ขอเป็นแก้วกลางเหมือนกัน",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060116
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060116,
+					"content": "ปกติหัวหน้ากอง Jean น่าจะดื่มกาแฟเยอะแล้วนะ ลองเปลี่ยนรสชาติดูบ้างมั้ยล่ะ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060117
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705060117,
+					"content": "ขอบคุณนะ แต่ว่า ฉันอยากจะดื่มอะไรที่ทำให้ตื่นตัวสักหน่อยน่ะ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060118
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060118,
+					"content": "เข้าใจแล้วล่ะ รอแป๊บนึงนะ",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060119
+					]
+				},
+				{
+					"id": 705060119,
+					"content": "อืม รบกวนเธอด้วยนะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jean"
+				}
+			]
+		},
+		{
+			"id": 7050602,
+			"completionStepIds": [
+				7050604
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050604",
+							"2"
+						],
+						"stepId": 7050604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lisa",
+					"Jean"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705060201,
+					"content": "ฮ๊าาา... ความหวานแบบนี้นี่แหละ เยี่ยมไปเลย",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060202
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060202,
+					"content": "กาแฟเองเข้มข้นมาก ความขมก็กำลังดีเลยล่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060203
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060203,
+					"content": "พวกเธอสองคนพอใจก็ดีแล้วล่ะ",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060204
+					]
+				},
+				{
+					"id": 705060204,
+					"content": "...ที่ Lisa พูดแบบนั้น ที่จริงแล้วฉันก็พอจะเข้าใจอยู่นะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060205
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060205,
+					"content": "หื้ม?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060206
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060206,
+					"content": "ช่วงนี้ฉันมักจะคิดถึงเรื่องข้อบกพร่องของตัวเองอยู่บ่อย ๆ ทั้งในเรื่องประสิทธิภาพในการทำงานและทักษะในการทำงาน... ต่างก็มีช่องว่างที่ยังสามารถพัฒนาขึ้นไปได้อีก",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060207
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060207,
+					"content": "ดูเหมือนความกดดันของฉัน จะลามไปถึง Lisa โดยไม่รู้ตัวแล้วสิ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060208
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060208,
+					"content": "นี่คุณยังไม่ได้เข้าใจสักนิดเลยนี่นา",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060209
+					]
+				},
+				{
+					"id": 705060209,
+					"content": "เอ๋?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060210
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060210,
+					"content": "ใช่แล้วล่ะ เห็นมั้ยล่ะ เจ้าตัวน้อยมองแป๊บเดียวก็มองออกแล้วล่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060211
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060211,
+					"content": "ฉันว่าเธอน่ะทำงานหนักเกินไป ก็แค่อยากจะพาเธอไปดื่มเหล้า ดื่มชา สัมผัสประสบการณ์ที่มีความสุขก็เท่านั้นเอง",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060212
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060212,
+					"content": "แต่พอมาถึงที่ร้านเหล้า ในใจของเธอก็เอาแต่คิดถึงเรื่องงาน ก็เลยรู้สึกผิดหวังนิดหน่อยน่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060213
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060213,
+					"content": "เอาแต่เครียดอยู่แบบนี้ตลอดเวลา สักวันก็จะต้องเบิร์นเอาต์แน่ ๆ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060214
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060214,
+					"content": "ใช่แล้วล่ะ",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060215
+					]
+				},
+				{
+					"id": 705060215,
+					"content": "#{NICKNAME} แม้แต่คุณก็คิดแบบนี้เหรอ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060216
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060216,
+					"content": "โอ้ งั้นก็หมายความว่า... การเรียนรู้ที่จะพักผ่อน ถึงเป็นการท้าทายที่ใหญ่ที่สุดสำหรับฉันสินะ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060217
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060217,
+					"content": "เหมือนคำกล่าว Liyue ที่ว่า \"ต้องแบ่งเวลางานกับเวลาพักผ่อนให้เป็น\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060218
+					]
+				},
+				{
+					"id": 705060218,
+					"content": "อื้ม! ถึงเวลาทำงานก็ต้องทำงาน เวลาพักผ่อนก็ต้องพักผ่อน พูดง่าย ๆ ก็คือพวกคุณต้องทำงานให้น้อยลงแล้วก็ต้องพักผ่อนให้มากขึ้นน่ะ!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060219
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705060219,
+					"content": "วิธีพูดแปลกจังเลยแฮะ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060220
+					]
+				},
+				{
+					"id": 705060220,
+					"content": "ฮ่า...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060221
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060221,
+					"content": "ฉัน ฉันเข้าใจแล้ว...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060222
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060222,
+					"content": "ขอบคุณพวกคุณมากนะ นึกไม่ถึงเลยว่า การมาที่นี่ นอกจากจะได้ดื่มอะไรสักหน่อยแล้ว ยังสามารถทำให้ผ่อนคลายลงได้ไม่น้อยอีก นี่เป็นเหตุผลที่ Lisa และ Kaeya ชอบร้านเหล้าสินะ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060223
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060223,
+					"content": "ใช่นะ แต่ก็ไม่ทั้งหมดหรอก ที่สำคัญไปกว่านั้นก็คือจะต้องดูว่าใครเป็นคนชงเครื่องดื่มน่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060224
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060224,
+					"content": "วันนี้ต้องขอบคุณเจ้าตัวน้อยมากเลยนะที่โน้มน้าว Jean ได้น่ะ เธอนี่พูดเก่งซะจริง ๆ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060225,
+						705060226
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060225,
+					"content": "ก็ไม่มีอะไรนี่นา",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060227
+					]
+				},
+				{
+					"id": 705060227,
+					"content": "ฮ่ะฮ่ะ ถ้างั้นพวกเราขอตัวกลับก่อนแล้วนะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060228
+					],
+					"speakerTitle": "Lisa"
+				},
+				{
+					"id": 705060228,
+					"content": "ถ้าวันหลังมีโอกาส ไว้ฉันจะมาพักผ่อนที่นี่อีกนะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060229
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 705060229,
+					"content": "ได้เลย ทั้งสองคนเดินทางดี ๆ นะ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705060226,
+					"content": "ช่วยพวกคุณได้ก็ดีแล้วล่ะ",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060227
+					]
+				}
+			]
+		}
+	]
+}

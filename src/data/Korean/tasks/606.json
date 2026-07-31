@@ -1,0 +1,169 @@
+{
+	"id": 606,
+	"type": "AQ",
+	"name": "",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		601
+	],
+	"steps": [
+		{
+			"id": 60601,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						60601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 60602,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 60603,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						60601,
+						0
+					],
+					"talkId": 60601
+				}
+			]
+		},
+		{
+			"id": 60604,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						60106,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 60605,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						60605,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 60601,
+			"completionStepIds": [
+				60603
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"60603",
+							"2"
+						],
+						"stepId": 60603,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"60605",
+							"2"
+						],
+						"stepId": 60605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"노엘"
+				],
+				"points": [
+					{
+						"sceneId": 20260,
+						"position": [
+							2323.988,
+							223.99,
+							-828.775
+						],
+						"pointId": 77
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 6060101,
+					"content": "도와주셔서 감사해요! 덕분에 예상보다 빨리 전투를 끝낼 수 있었어요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						6060102
+					],
+					"speakerTitle": "노엘"
+				},
+				{
+					"id": 6060102,
+					"content": "여기 주민들은 제가 도울 테니 안심하세요. 바쁘신 것 같으니까 두 분을 방해하지 않을게요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						6060103
+					],
+					"speakerTitle": "노엘"
+				},
+				{
+					"id": 6060103,
+					"content": "부디 몸조심하시고, 승리해서 돌아오세요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "노엘"
+				}
+			]
+		}
+	]
+}

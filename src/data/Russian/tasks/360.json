@@ -1,0 +1,226 @@
+{
+	"id": 360,
+	"type": "AQ",
+	"name": "В ногу с ветром",
+	"description": "Девушку зовут Эмбер. Как скаут Ордо Фавониус, она обязана проводить вас в Мондштадт. Однако сначала она должна выполнить другое задание и прогнать хиличурлов, которые подобрались слишком близко к городу.",
+	"unlockDescription": "",
+	"chapter": "Чужеземец, поймавший ветер",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		356
+	],
+	"prevMainQuestList": [
+		354
+	],
+	"steps": [
+		{
+			"id": 36001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Одолейте бродячих хиличурлов",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 36003,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Зачистите лагерь хиличурлов",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 36004,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Эмбер",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						36001,
+						0
+					],
+					"talkId": 36001
+				}
+			]
+		},
+		{
+			"id": 36005,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Продолжайте двигаться в Мондштадт",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1024,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 36001,
+			"completionStepIds": [
+				36004
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"36004",
+							"2"
+						],
+						"stepId": 36004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Эмбер"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3600101,
+					"content": "Фух, это было просто.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600102
+					],
+					"speakerTitle": "Эмбер"
+				},
+				{
+					"id": 3600102,
+					"content": "Не ожидала, что ты умеешь так хорошо сражаться.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600103
+					],
+					"speakerTitle": "Эмбер"
+				},
+				{
+					"id": 3600103,
+					"content": "Спасибо за помощь! Было сложно?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600104,
+						3600105
+					],
+					"speakerTitle": "Эмбер"
+				},
+				{
+					"id": 3600104,
+					"content": "Проще простого.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3600106
+					]
+				},
+				{
+					"id": 3600106,
+					"content": "Кстати, откуда здесь вообще взялись хиличурлы?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600107
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 3600107,
+					"content": "Для таких существ не свойственно селиться рядом с большими городами.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600108
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 3600108,
+					"content": "Да. Обычно они селятся в дикой местности.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600109
+					],
+					"speakerTitle": "Эмбер"
+				},
+				{
+					"id": 3600109,
+					"content": "Но в последнее время дракон стал досаждать нам больше обычного. Сады вокруг города разрушены. Это сильно повлияло на торговлю.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600110
+					],
+					"speakerTitle": "Эмбер"
+				},
+				{
+					"id": 3600110,
+					"content": "Во время бури всегда есть раненные. Рыцари Ордо Фавониус делают всё возможное, чтобы защитить Мондштадт, но нам всё равно не хватает людей.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600111
+					],
+					"speakerTitle": "Эмбер"
+				},
+				{
+					"id": 3600111,
+					"content": "А эти назойливые создания стали разбивать свои лагеря всё ближе к городу?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600112
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 3600112,
+					"content": "Именно. Поэтому зачистка этого лагеря сделала местность немного безопаснее.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600113
+					],
+					"speakerTitle": "Эмбер"
+				},
+				{
+					"id": 3600113,
+					"content": "Следуйте за мной! Как рыцарь Ордо Фавониус, я должна обеспечить вам безопасный путь в город.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Эмбер"
+				},
+				{
+					"id": 3600105,
+					"content": "#Труднее, чем я думал{F#а}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3600106
+					]
+				}
+			]
+		}
+	]
+}

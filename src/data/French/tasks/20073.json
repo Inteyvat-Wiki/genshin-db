@@ -1,0 +1,839 @@
+{
+	"id": 20073,
+	"type": "IQ",
+	"name": "Rations d'urgence",
+	"description": "Afin d'éviter que des aventuriers trop téméraires ne se mettent en danger dans les Monts Dosdragon, Riese prévoit de placer des provisions d'urgence dans la montagne...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2007301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Riese.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2007301,
+						0
+					],
+					"talkId": 2007301
+				}
+			]
+		},
+		{
+			"id": 2007302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Placez la nourriture au premier endroit.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						2007301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2007303,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Placez la nourriture au troisième endroit.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						2007303,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2007304,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Placez la nourriture au deuxième endroit.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						2007302,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2007305,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						200730801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2007306,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Faites votre rapport à Riese.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2007302,
+						0
+					],
+					"talkId": 2007302
+				}
+			]
+		},
+		{
+			"id": 2007307,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2007308,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						200730801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2007309,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2007301,
+			"completionStepIds": [
+				2007301
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007301",
+							"2"
+						],
+						"stepId": 2007301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Riese"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200730101,
+					"content": "#{M#Voyageur}{F#Voyageuse}, vous tombez à pic ! Pourriez-vous me donner un coup de main ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730102
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730102,
+					"content": "Qu'est-ce qu'il se passe ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200730103
+					]
+				},
+				{
+					"id": 200730103,
+					"content": "Comme vous l'avez certainement vu, les conditions climatiques des Monts Dosdragon sont épouvantables. Même les aventuriers expérimentés n'osent pas faire face à tout ce que la montagne leur réserve.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730104
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730104,
+					"content": "J'ai été déployé ici par ordre de la Grande Maîtresse suppléante pour empêcher les Mondstadtois de monter.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730105
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730105,
+					"content": "J'ai persuadé nombre d'entre eux de ne pas gravir ces monts, mais il y a toujours ces aventuriers...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730106
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730106,
+					"content": "Vous le savez certainement... On a beau les prévenir, ils n'en font qu'à leur tête...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730107
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730107,
+					"content": "Je ne compte même plus le nombre d'incidents que j'ai dû résoudre à cause de ces têtes brûlées... Mais il y en a de plus en plus qui veulent tenter l'ascension.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730108
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730108,
+					"content": "Et je ne peux pas m'occuper de tout ce monde... Alors on place des provisions à certains endroits.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730109
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730109,
+					"content": "Comme ça, les aventuriers qui n'en peuvent plus et veulent rebrousser chemin ont une meilleure chance de s'extirper des montagnes.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730110
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730110,
+					"content": "Mais... Un aventurier téméraire montant trop haut ne pourra compter que sur lui-même...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730111
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730111,
+					"content": "Est-ce que vous pourriez m'aider à placer ces provisions dans la montagne ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730112,
+						200730114
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730112,
+					"content": "Je m'en charge.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200730113
+					]
+				},
+				{
+					"id": 200730113,
+					"content": "Je compte sur vous alors ! *soupir* Ce serait formidable si ces aventuriers étaient davantage comme vous, et avaient la tête sur les épaules...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730117
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730117,
+					"content": "J'ai marqué trois emplacements sur votre carte. Vous n'avez qu'à placer <color=#00E1FFFF>une portion de jambon</color> à chaque endroit.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730118
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730118,
+					"content": "*soupir* Si seulement ces aventuriers étaient un peu plus responsables...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730114,
+					"content": "Et... Ce sera utile ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200730115
+					]
+				},
+				{
+					"id": 200730115,
+					"content": "Utile ou pas... Mieux vaut avoir quelque chose que rien du tout !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730116
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730116,
+					"content": "Avec les conditions affreuses du coin, avoir davantage de provisions n'est jamais une mauvaise chose ! Je compte sur vous.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730117
+					],
+					"speakerTitle": "Riese"
+				}
+			]
+		},
+		{
+			"id": 2007302,
+			"completionStepIds": [
+				2007306
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007306",
+							"2"
+						],
+						"stepId": 2007306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Riese"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200730201,
+					"content": "Avez-vous fini de placer les provisions ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730202
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730202,
+					"content": "Elles sont toutes à leur place.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200730203
+					]
+				},
+				{
+					"id": 200730203,
+					"content": "Parfait ! Voilà qui m'enlève un poids !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730204
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730204,
+					"content": "Enfin, j'espère cependant que ceux qui gravissent les montagnes seront bien préparés et qu'ils n'auront pas à utiliser ces provisions d'urgence.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730205
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730205,
+					"content": "Mais au fait, vos vêtements semblent vraiment légers. Est-ce la dernière mode à Mondstadt ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730206
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730206,
+					"content": "Prenez cette récompense, et retournez vous couvrir davantage.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Riese"
+				}
+			]
+		},
+		{
+			"id": 2007303,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007302",
+							"2"
+						],
+						"stepId": 2007302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"2007301"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200730301,
+					"content": "Ceci est un point de ravitaillement d'urgence. Veuillez vous servir en cas de besoin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730302
+					],
+					"speakerTitle": "Ravitaillement d'urgence"
+				},
+				{
+					"id": 200730302,
+					"content": "Les montagnes sont dangereuses. Veillez à ne pas aller trop loin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730303
+					],
+					"speakerTitle": "Ravitaillement d'urgence"
+				},
+				{
+					"id": 200730303,
+					"content": "Placer les provisions",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200730303
+					]
+				}
+			]
+		},
+		{
+			"id": 2007304,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007304",
+							"2"
+						],
+						"stepId": 2007304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"2007302"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200730401,
+					"content": "Ceci est un point de ravitaillement d'urgence. Veuillez vous servir en cas de besoin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730402
+					],
+					"speakerTitle": "Ravitaillement d'urgence"
+				},
+				{
+					"id": 200730402,
+					"content": "Les montagnes sont dangereuses. Veillez à ne pas aller trop loin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730403
+					],
+					"speakerTitle": "Ravitaillement d'urgence"
+				},
+				{
+					"id": 200730403,
+					"content": "Placer les provisions",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200730403
+					]
+				}
+			]
+		},
+		{
+			"id": 2007305,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007303",
+							"2"
+						],
+						"stepId": 2007303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"2007303"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007307",
+							"3"
+						],
+						"stepId": 2007307,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200730501,
+					"content": "Ceci est un point de ravitaillement d'urgence. Veuillez vous servir en cas de besoin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730502
+					],
+					"speakerTitle": "Ravitaillement d'urgence"
+				},
+				{
+					"id": 200730502,
+					"content": "Les montagnes sont dangereuses. Veillez à ne pas aller trop loin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730503
+					],
+					"speakerTitle": "Ravitaillement d'urgence"
+				},
+				{
+					"id": 200730503,
+					"content": "Placer les provisions",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200730503
+					]
+				}
+			]
+		},
+		{
+			"id": 2007313,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007302",
+							"3"
+						],
+						"stepId": 2007302,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007304",
+							"2"
+						],
+						"stepId": 2007304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007306",
+							"2"
+						],
+						"stepId": 2007306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007303",
+							"2"
+						],
+						"stepId": 2007303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200731301,
+					"content": "Ceci est un point de ravitaillement d'urgence. Veuillez vous servir en cas de besoin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200731302
+					],
+					"speakerTitle": "Ravitaillement d'urgence"
+				},
+				{
+					"id": 200731302,
+					"content": "Les montagnes sont dangereuses. Veillez à ne pas aller trop loin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ravitaillement d'urgence"
+				}
+			]
+		},
+		{
+			"id": 2007314,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007304",
+							"3"
+						],
+						"stepId": 2007304,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007303",
+							"2"
+						],
+						"stepId": 2007303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007306",
+							"2"
+						],
+						"stepId": 2007306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200731401,
+					"content": "Ceci est un point de ravitaillement d'urgence. Veuillez vous servir en cas de besoin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200731402
+					],
+					"speakerTitle": "Ravitaillement d'urgence"
+				},
+				{
+					"id": 200731402,
+					"content": "Les montagnes sont dangereuses. Veillez à ne pas aller trop loin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ravitaillement d'urgence"
+				}
+			]
+		},
+		{
+			"id": 2007315,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007306",
+							"2"
+						],
+						"stepId": 2007306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200731501,
+					"content": "Ceci est un point de ravitaillement d'urgence. Veuillez vous servir en cas de besoin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200731502
+					],
+					"speakerTitle": "Ravitaillement d'urgence"
+				},
+				{
+					"id": 200731502,
+					"content": "Les montagnes sont dangereuses. Veillez à ne pas aller trop loin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ravitaillement d'urgence"
+				}
+			]
+		},
+		{
+			"id": 2007316,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007302",
+							"2"
+						],
+						"stepId": 2007302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007304",
+							"2"
+						],
+						"stepId": 2007304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007303",
+							"2"
+						],
+						"stepId": 2007303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Riese"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200731601,
+					"content": "Et n'oubliez pas : vous devez placer <color=#00E1FFFF>une portion de jambon</color> à chacun des trois endroits.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200731602
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200731602,
+					"content": "Si seulement ces aventuriers pouvaient réfléchir avec leur tête...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Riese"
+				}
+			]
+		}
+	]
+}

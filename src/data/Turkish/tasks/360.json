@@ -1,0 +1,226 @@
+{
+	"id": 360,
+	"type": "AQ",
+	"name": "Rüzgara Ayak Uydurmak",
+	"description": "Bu kızın adı Amber, bir Kaşif olarak görevi de Mondstadt'a kadar sana eşlik etmek. Ancak öncelikle ilgilenmesi gereken başka bir görev var; şehrin etrafında dolanan dağ yabanilerini ortadan kaldırmak.",
+	"unlockDescription": "",
+	"chapter": "Rüzgarı Yakalayan Yabancı",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		356
+	],
+	"prevMainQuestList": [
+		354
+	],
+	"steps": [
+		{
+			"id": 36001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Çevredeki dağ yabanilerini yen.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 36003,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dağ yabanisi kampını ortadan kaldır.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 36004,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Amber ile konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						36001,
+						0
+					],
+					"talkId": 36001
+				}
+			]
+		},
+		{
+			"id": 36005,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Mondstadt'a ilerlemeye devam et.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1024,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 36001,
+			"completionStepIds": [
+				36004
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"36004",
+							"2"
+						],
+						"stepId": 36004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Amber"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3600101,
+					"content": "Hıh, bu çok kolaydı.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600102
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600102,
+					"content": "Ama söylemeliyim ki, oradaki hamlelerinizle beni biraz şaşırttınız...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600103
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600103,
+					"content": "Yardım için teşekkürler. Nasıl hissettirdi?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600104,
+						3600105
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600104,
+					"content": "Hemen hemen hiç ter döktürmedi.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3600106
+					]
+				},
+				{
+					"id": 3600106,
+					"content": "Şimdi sen sözünü etmişken, nasıl oldu da dağ yabanileri sonunda buraya geldi?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600107
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3600107,
+					"content": "Bu yaratıklar, bunun gibi şehirlere bu kadar yakın kamp kuracak tiplere benzemiyorlar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600108
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3600108,
+					"content": "Kesinlikle. Normal şartlarda vahşi doğada, çok daha uzakta olmaları gerekir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600109
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600109,
+					"content": "Ama ejder Fırtına Dehşeti son zamanlarda etrafta çok dolaştığı için meyve bahçelerimiz harap oldu ve yerel pazar da bundan etkilendi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600110
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600110,
+					"content": "Genellikle fırtınalar vurduğunda, en az birkaç yaralanma vakası olur. Bu yüzden Favonius Şövalyeleri bölgeyi savunmak için ellerinden geleni yapmakla meşgul.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600111
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600111,
+					"content": "Yani, bu sinir bozucu yaratıklar şehre giderek daha da mı yaklaşıyor?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600112
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3600112,
+					"content": "Kesinlikle. Bununla birlikte, bu kampı temizlemek bölgeyi birazcık daha güvenli hale getirmeme yardım etti.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600113
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600113,
+					"content": "Benimle gelin! Sorumlu bir şövalye olarak şehre güvenle ulaştığınızdan emin olmalıyım.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600105,
+					"content": "O şeyler göründüklerinden daha zorlu.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3600106
+					]
+				}
+			]
+		}
+	]
+}

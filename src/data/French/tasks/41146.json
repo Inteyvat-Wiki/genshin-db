@@ -1,0 +1,370 @@
+{
+	"id": 41146,
+	"type": "EQ",
+	"name": "Livraison spéciale : Le Bon Chasseur",
+	"description": "Le Bon Chasseur a besoin de livrer une commande spéciale...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 4114601,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Sara.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4114601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 4114602,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Livrez le plat à Angelo le fainéant.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4114602,
+						0
+					],
+					"talkId": 4114602
+				}
+			]
+		},
+		{
+			"id": 4114603,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Angelo le fainéant.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4114606,
+						0
+					],
+					"talkId": 4114606
+				}
+			]
+		},
+		{
+			"id": 4114604,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4114604,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 4114601,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4114601",
+							"2"
+						],
+						"stepId": 4114601,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411460101,
+					"content": "Je me charge de cette livraison.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411460102
+					]
+				},
+				{
+					"id": 411460102,
+					"content": "Merci beaucoup. C'est beaucoup trop loin, je ne pouvais pas me permettre d'envoyer un de nos employés.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411460103
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 411460103,
+					"content": "Lors de la livraison, <color=#00E1FFFF>ne courez pas trop vite et ne planez pas. L'escalade n'est pas une bonne idée non plus...</color>",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411460104
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 411460104,
+					"content": "Le client refusera sans doute la commande si la sauce et la viande se séparent.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		},
+		{
+			"id": 4114602,
+			"completionStepIds": [
+				4114602
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4114601",
+							"3"
+						],
+						"stepId": 4114601,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Angelo le fainéant"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411460201,
+					"content": "Je me demande bien où est-ce que cette commande a pu passer. C'était pas de la tarte de trouver un endroit tranquille comme ici...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Angelo le fainéant"
+				}
+			]
+		},
+		{
+			"id": 4114603,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4114601",
+							"2"
+						],
+						"stepId": 4114601,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411460301,
+					"content": "Il paraît qu'il y a une commande spéciale...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411460302
+					]
+				},
+				{
+					"id": 411460302,
+					"content": "Un certain Angelo nous a commandé un plat de pâtes à la bolognaise enflammées.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411460303
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 411460303,
+					"content": "Il veut qu'on le livre au Canyon de Brillecouronne, mais je crains que ça ne soit un peu trop loin pour nous...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411460304
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 411460304,
+					"content": "Si vous êtes libre, pourriez-vous livrer cette commande ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		},
+		{
+			"id": 4114604,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4114601",
+							"2"
+						],
+						"stepId": 4114601,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411460401,
+					"content": "J'ai autre chose à faire...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411460402
+					]
+				},
+				{
+					"id": 411460402,
+					"content": "Mais... Très bien, je vais demander à quelqu'un d'autre.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		},
+		{
+			"id": 4114605,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4114601",
+							"2"
+						],
+						"stepId": 4114601,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Angelo le fainéant"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411460501,
+					"content": "Je me demande bien où est-ce que cette commande a pu passer. C'était pas de la tarte de trouver un endroit tranquille comme ici...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Angelo le fainéant"
+				}
+			]
+		},
+		{
+			"id": 4114606,
+			"completionStepIds": [
+				4114603
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4114603",
+							"2"
+						],
+						"stepId": 4114603,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Angelo le fainéant"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411460601,
+					"content": "Voici votre commande.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411460602
+					]
+				},
+				{
+					"id": 411460602,
+					"content": "C'était pas trop tôt ! J'allais m'endormir à ce rythme-là...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411460603
+					],
+					"speakerTitle": "Angelo le fainéant"
+				},
+				{
+					"id": 411460603,
+					"content": "Merci, je vous débarrasse.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Angelo le fainéant"
+				}
+			]
+		}
+	]
+}

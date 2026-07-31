@@ -1,0 +1,230 @@
+{
+	"id": 70826,
+	"type": "WQ",
+	"name": "",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7082601,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7082601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082602,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082603,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7082601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082604,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LEAVE_SCENE_RANGE",
+					"rawParams": [
+						3,
+						40
+					]
+				}
+			]
+		},
+		{
+			"id": 7082605,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7082603,
+						0
+					],
+					"talkId": 7082603
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7082601,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7082601"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082603",
+							"2"
+						],
+						"stepId": 7082603,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"芬恩"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708260101,
+					"content": "嗚嗚…氣球…我的氣球…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708260102
+					],
+					"speakerTitle": "芬恩"
+				},
+				{
+					"id": 708260102,
+					"content": "交還氣球",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7082602,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082604",
+							"2"
+						],
+						"stepId": 7082604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082602",
+							"2"
+						],
+						"stepId": 7082602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"芬恩"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708260201,
+					"content": "嗚嗚…氣球…我的氣球…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "芬恩"
+				}
+			]
+		},
+		{
+			"id": 7082603,
+			"completionStepIds": [
+				7082605
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082605",
+							"2"
+						],
+						"stepId": 7082605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"芬恩"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708260301,
+					"content": "#哇啊，謝謝{F#妳}{M#你}，金髮的{M#大哥哥}{F#大姐姐}！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "芬恩"
+				}
+			]
+		}
+	]
+}

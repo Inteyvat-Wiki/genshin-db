@@ -1,0 +1,185 @@
+{
+	"id": 70704,
+	"type": "WQ",
+	"name": "코너의 주조 재료 의뢰",
+	"description": "다운 와이너리의 코너는 화염꽃 꽃술이 3개 필요하다",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "코너에게 화염꽃 꽃술 3개 건네기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070401,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070402,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "코너와 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070402,
+						0
+					],
+					"talkId": 7070402
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070401,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070401",
+							"2"
+						],
+						"stepId": 7070401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070401"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"코너"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707040101,
+					"content": "화염꽃 꽃술에 대해…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707040102
+					]
+				},
+				{
+					"id": 707040102,
+					"content": "그래, 내가 의뢰했어. 빨리 왔구나…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707040103
+					],
+					"speakerTitle": "코너"
+				},
+				{
+					"id": 707040103,
+					"content": "어때, 화염꽃 꽃술 3개는 모아왔니?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707040104,
+						707040105
+					],
+					"speakerTitle": "코너"
+				},
+				{
+					"id": 707040104,
+					"content": "모아왔어요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707040105,
+					"content": "아직이요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707040106
+					]
+				},
+				{
+					"id": 707040106,
+					"content": "다 모으면 나한테 빨리 좀 갖다줘. 술 빚는 데 쓰려고 기다리고 있거든",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "코너"
+				}
+			]
+		},
+		{
+			"id": 7070402,
+			"completionStepIds": [
+				7070402
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070402",
+							"2"
+						],
+						"stepId": 7070402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"코너"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707040201,
+					"content": "좋아, 이 정도면 충분해. 도와줘서 고마워, 이것들을 받아줘",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707040202
+					],
+					"speakerTitle": "코너"
+				},
+				{
+					"id": 707040202,
+					"content": "이걸로 빚은 술이 특별할진 모르겠지만…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707040203
+					],
+					"speakerTitle": "코너"
+				},
+				{
+					"id": 707040203,
+					"content": "주조 과정은 기억에 남을 것 같군…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "코너"
+				}
+			]
+		}
+	]
+}

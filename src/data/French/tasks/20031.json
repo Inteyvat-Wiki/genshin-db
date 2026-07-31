@@ -1,0 +1,1023 @@
+{
+	"id": 20031,
+	"type": "WQ",
+	"name": "Chaque jour est une aventure",
+	"description": "Catherine, de la Guilde des aventuriers, a une mission à vous confier.",
+	"unlockDescription": "Terminez cette quête pour débloquer les missions de Mondstadt.",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_GUIDE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		20032
+	],
+	"steps": [
+		{
+			"id": 2003101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Catherine.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003101,
+						0
+					],
+					"talkId": 2003101
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003104,
+						0
+					],
+					"talkId": 2003104
+				}
+			]
+		},
+		{
+			"id": 2003102,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Parlez à Catherine.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003101,
+						0
+					],
+					"talkId": 2003101
+				}
+			]
+		},
+		{
+			"id": 2003103,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Terminez la mission",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2010137,
+						0
+					],
+					"talkId": 2010137
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003102,
+						0
+					],
+					"talkId": 2003102
+				}
+			]
+		},
+		{
+			"id": 2003104,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Parlez à Catherine.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003103,
+						0
+					],
+					"talkId": 2003103
+				}
+			]
+		},
+		{
+			"id": 2003105,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Parlez à Catherine.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2010137,
+						0
+					],
+					"talkId": 2010137
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003104,
+						0
+					],
+					"talkId": 2003104
+				}
+			]
+		},
+		{
+			"id": 2003106,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Catherine.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003105,
+						0
+					],
+					"talkId": 2003105
+				}
+			]
+		},
+		{
+			"id": 2003107,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Terminez 4 missions quotidiennes avant de revenir voir Catherine.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003103,
+						0
+					],
+					"talkId": 2003103
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003106,
+						0
+					],
+					"talkId": 2003106
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2003101,
+			"completionStepIds": [
+				2003101,
+				2003102
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003102",
+							"2"
+						],
+						"stepId": 2003102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_CAN_GET",
+						"rawParams": [
+							"0"
+						]
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_RECEIVED",
+						"rawParams": [
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Catherine"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200310101,
+					"content": "#Nous nous retrouvons de nouveau, {M#cher aventurier}{F#chère aventurière}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310102
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310102,
+					"content": "Tes aventures se passent bien ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310103,
+						200310105
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310103,
+					"content": "Très bien !",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200310104
+					]
+				},
+				{
+					"id": 200310104,
+					"content": "C'est top ! Continue comme ça.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310107
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310107,
+					"content": "Maintenant que tu as un peu plus d'expérience, je vais t'expliquer le vrai travail de la Guilde.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310108
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310108,
+					"content": "Nous recevons des ordres de <color=#00E1FFFF>mission</color> des quatre coins de Teyvat, tous les jours. Ensuite, nous les assignons à nos membres.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310109
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310109,
+					"content": "Ces missions sont leur gagne-pain.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310110
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310110,
+					"content": "Quel genre de missions ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310111
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 200310111,
+					"content": "Il y a de tout ! De la livraison de marchandise à de la chasse de monstres. Certaines sont tranquilles mais d'autres peuvent être carrément dangereuses !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310112
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310112,
+					"content": "Le mieux c'est que tu voies par toi-même.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310113
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310113,
+					"content": "Tu peux voir le détail des quêtes d'aujourd'hui ici.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310114
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310114,
+					"content": "Reviens me voir quand tu en auras terminé une. Une récompense t'attendra ici.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310115,
+						200310117
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310115,
+					"content": "Pas de problème.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200310116
+					]
+				},
+				{
+					"id": 200310116,
+					"content": "#Excellent, {NICKNAME} ! On peut toujours te faire confiance.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310119
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310119,
+					"content": "#J'attendrai ton retour avec impatience, {NICKNAME}. Vers les étoiles et au-delà !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310117,
+					"content": "J'espère que cette récompense sera très généreuse.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200310118
+					]
+				},
+				{
+					"id": 200310118,
+					"content": "#Tu verras bien ! En tout cas, je suis sûre que tu ne seras pas {M#déçu}{F#déçue} !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310119
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310105,
+					"content": "C'est fatigant.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200310106
+					]
+				},
+				{
+					"id": 200310106,
+					"content": "C'est toujours comme ça quand on débute. Une bonne préparation avant le départ facilite beaucoup de choses.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310107
+					],
+					"speakerTitle": "Catherine"
+				}
+			]
+		},
+		{
+			"id": 2003102,
+			"completionStepIds": [
+				2003103
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003103",
+							"2"
+						],
+						"stepId": 2003103,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_CAN_GET",
+						"rawParams": [
+							"1"
+						]
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_RECEIVED",
+						"rawParams": [
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Catherine"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200310201,
+					"content": "#Excellent travail, {NICKNAME} ! J'ai du mal à croire que c'était ta première fois.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310202
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310202,
+					"content": "Le commanditaire m'a même demandé de te remercier de sa part.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310203
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310203,
+					"content": "Chose promise, chose due ! Voici ta récompense.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Catherine"
+				}
+			]
+		},
+		{
+			"id": 2003103,
+			"completionStepIds": [
+				2003104,
+				2003107
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003104",
+							"2"
+						],
+						"stepId": 2003104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_CAN_GET",
+						"rawParams": [
+							"1"
+						]
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_RECEIVED",
+						"rawParams": [
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Catherine"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200310301,
+					"content": "Merci bien ! Héhé !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310302
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 200310302,
+					"content": "Prends ça en cadeau de la part de la Guilde.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310303
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310303,
+					"content": "Nous recevons des missions tous les jours et c'est grâce à nos membres que nous arrivons à les accomplir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310304
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310304,
+					"content": "Si tu arrives à terminer suffisamment de missions quotidiennes, tu auras droit à des récompenses spéciales de ma part.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310305
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310305,
+					"content": "N'oublie pas, tout est répertorié dans ton Guide de l'aventurier.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310306
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310306,
+					"content": "Récupère tes récompenses quotidiennes le jour même où tu finis les missions. Il y a une quantité limitée de récompenses, donc elles seront perdues si tu ne les réclames pas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310307,
+						200310309
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310307,
+					"content": "Reçu 5/5, merci !",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200310308
+					]
+				},
+				{
+					"id": 200310308,
+					"content": "Je t'en prie. Ton aide m'est précieuse après tout.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310312
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310312,
+					"content": "Ah, si tu aides un autre aventurier à terminer une mission, ça compte aussi pour les récompenses quotidiennes.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310313
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310313,
+					"content": "Alors n'hésite pas à coopérer avec les autres. Vers les étoiles et au-delà !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310309,
+					"content": "Je ne peux recevoir les récompenses quotidiennes qu'une fois par jour ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200310310
+					]
+				},
+				{
+					"id": 200310310,
+					"content": "Oui, désolée.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310311
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310311,
+					"content": "En tout cas, on essaye de faire bouger les choses au siège pour que nos aventuriers puissent être davantage rémunérés.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310312
+					],
+					"speakerTitle": "Catherine"
+				}
+			]
+		},
+		{
+			"id": 2003104,
+			"completionStepIds": [
+				2003101,
+				2003105
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003105",
+							"2"
+						],
+						"stepId": 2003105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_CAN_GET",
+						"rawParams": [
+							"1"
+						]
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_RECEIVED",
+						"rawParams": [
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Catherine"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200310401,
+					"content": "#Salut {NICKNAME}. J'ai entendu dire quelque chose...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310402
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310402,
+					"content": "Tu as terminé toutes les <color=#00E1FFFF>missions</color> et je te remercie de la part des commanditaires !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310403,
+						200310406
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310403,
+					"content": "Qui ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310404
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310404,
+					"content": "La personne que tu as aidée à traverser sur ton chemin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310405
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310405,
+					"content": "Beaucoup de gens que tu rencontres au quotidien nous confient certaines missions à la Guilde.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310408
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310408,
+					"content": "Je vais t'expliquer le système de notre Guilde plus en détail.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310409
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310409,
+					"content": "Nous recevons des ordres de mission des quatre coins de Teyvat, tous les jours. Ensuite, nous les assignons à nos membres.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310410
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310410,
+					"content": "Ces missions sont leur gagne-pain.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310411
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310411,
+					"content": "En parlant de ça, nous avons quelque chose pour toi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310406,
+					"content": "C'était juste ma B.A. de la journée.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310407
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310407,
+					"content": "Toujours fidèle à toi-même !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310408
+					],
+					"speakerTitle": "Catherine"
+				}
+			]
+		},
+		{
+			"id": 2003105,
+			"completionStepIds": [
+				2003106
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003106",
+							"2"
+						],
+						"stepId": 2003106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_CAN_GET",
+						"rawParams": [
+							"1"
+						]
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_RECEIVED",
+						"rawParams": [
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Catherine"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200310501,
+					"content": "Merci bien ! Héhé !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310502
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 200310502,
+					"content": "Prends ça en cadeau de la part de la Guilde.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310503
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310503,
+					"content": "Nous recevons des missions tous les jours et c'est grâce à nos membres que nous arrivons à les accomplir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310504
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310504,
+					"content": "Si tu arrives à terminer suffisamment de missions quotidiennes, tu auras droit à des récompenses spéciales de ma part.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310505
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310505,
+					"content": "N'oublie pas, tout est répertorié dans ton Guide de l'aventurier.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310506
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310506,
+					"content": "Récupère tes récompenses quotidiennes le jour même où tu finis les missions. Il y a une quantité limitée de récompenses, donc elles seront perdues si tu ne les réclames pas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310507,
+						200310509
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310507,
+					"content": "Reçu 5/5, merci !",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200310508
+					]
+				},
+				{
+					"id": 200310508,
+					"content": "Je t'en prie. Ton aide m'est précieuse après tout.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310512
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310512,
+					"content": "Ah, si tu aides un autre aventurier à terminer une mission, ça compte aussi pour les récompenses quotidiennes.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310513
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310513,
+					"content": "Alors n'hésite pas à coopérer avec les autres. Vers les étoiles et au-delà !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310509,
+					"content": "Je ne peux recevoir les récompenses quotidiennes qu'une fois par jour ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200310510
+					]
+				},
+				{
+					"id": 200310510,
+					"content": "Oui, désolée.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310511
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310511,
+					"content": "En tout cas, on essaye de faire bouger les choses au siège pour que nos aventuriers puissent être davantage rémunérés.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310512
+					],
+					"speakerTitle": "Catherine"
+				}
+			]
+		},
+		{
+			"id": 2003106,
+			"completionStepIds": [
+				2003107
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003107",
+							"2"
+						],
+						"stepId": 2003107,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_CAN_GET",
+						"rawParams": [
+							"1"
+						]
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_REWARD_RECEIVED",
+						"rawParams": [
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Catherine"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200310304,
+					"content": "Si tu arrives à terminer suffisamment de missions quotidiennes, tu auras droit à des récompenses spéciales de ma part.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310305
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310305,
+					"content": "N'oublie pas, tout est répertorié dans ton Guide de l'aventurier.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310306
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310306,
+					"content": "Récupère tes récompenses quotidiennes le jour même où tu finis les missions. Il y a une quantité limitée de récompenses, donc elles seront perdues si tu ne les réclames pas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310307,
+						200310309
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310307,
+					"content": "Reçu 5/5, merci !",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200310308
+					]
+				},
+				{
+					"id": 200310308,
+					"content": "Je t'en prie. Ton aide m'est précieuse après tout.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310312
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310312,
+					"content": "Ah, si tu aides un autre aventurier à terminer une mission, ça compte aussi pour les récompenses quotidiennes.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310313
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310313,
+					"content": "Alors n'hésite pas à coopérer avec les autres. Vers les étoiles et au-delà !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310309,
+					"content": "Je ne peux recevoir les récompenses quotidiennes qu'une fois par jour ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200310310
+					]
+				},
+				{
+					"id": 200310310,
+					"content": "Oui, désolée.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310311
+					],
+					"speakerTitle": "Catherine"
+				},
+				{
+					"id": 200310311,
+					"content": "En tout cas, on essaye de faire bouger les choses au siège pour que nos aventuriers puissent être davantage rémunérés.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200310312
+					],
+					"speakerTitle": "Catherine"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,1688 @@
+{
+	"id": 10120,
+	"type": "LQ",
+	"name": "Ombra del passato",
+	"description": "La maestra Jean ha un compito speciale per te. Raggiungi il quartier generale dei Cavalieri di Favonius per saperne di più.",
+	"unlockDescription": "",
+	"chapter": "Le Onde danzanti non torneranno mai al mare",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		10121
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1012001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con la maestra Jean",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1012001,
+						0
+					],
+					"talkId": 1012001
+				}
+			]
+		},
+		{
+			"id": 1012002,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Cerca l'ex membro dell'aristocrazia nella città",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1012003,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con la persona vicino alle mura della città",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1012002,
+						0
+					],
+					"talkId": 1012002
+				}
+			]
+		},
+		{
+			"id": 1012004,
+			"order": 10,
+			"listShowType": "QUEST_SHOW",
+			"description": "Torna al quartier generale dei Cavalieri per discutere delle contromisure",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1012005,
+			"order": 11,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Amber",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1012003,
+						0
+					],
+					"talkId": 1012003
+				}
+			]
+		},
+		{
+			"id": 1012006,
+			"order": 12,
+			"listShowType": "QUEST_SHOW",
+			"description": "Vai sulle Montagne Vedetta e trova Eula",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1012007,
+			"order": 13,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sconfiggi i Fatui nelle vicinanze",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1012008,
+			"order": 20,
+			"listShowType": "QUEST_SHOW",
+			"description": "Assisti alla sconfitta dell'ultimo Fatuus per mano della giovane donna",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1012008,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1012009,
+			"order": 21,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Eula",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1012004,
+						0
+					],
+					"talkId": 1012004
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1012001,
+			"completionStepIds": [
+				1012001
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1012001",
+							"2"
+						],
+						"stepId": 1012001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jean",
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 101200101,
+					"content": "#...Grazie per aver risposto alla mia chiamata con così poco preavviso, Cavaliere Onorari{M#o}{F#a}. So che hai tanti impegni.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200102
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 101200102,
+					"content": "Beh, per farla breve, c'è una particolare questione per la quale i Cavalieri richiedono la tua assistenza.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200103,
+						101200105
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 101200103,
+					"content": "I Cavalieri sono sempre impegnati!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200104
+					]
+				},
+				{
+					"id": 101200104,
+					"content": "*sospira* Sì, ultimamente c'è stato molto da fare. Né io né nessun altro membro della guarnigione di Mondstadt abbiamo avuto un momento di pace.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200107
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 101200107,
+					"content": "Di recente, ho ricevuto diversi rapporti dai Cavalieri riguardanti dei contatti tra un membro del clan Lawrence e i Fatui.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200108
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 101200108,
+					"content": "I Fatui! Ancora!?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200109
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200109,
+					"content": "Ma che cos'è il clan Lawrence?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200110
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200110,
+					"content": "C'è stato un periodo buio nella storia di Mondstadt quando i nobili governavano la città. La libertà duramente conquistata con la caduta di Decarabian fu nuovamente persa, e la schiavitù si diffuse in tutto il paese.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200111
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 101200111,
+					"content": "Vennessa, la prima a fregiarsi del titolo di Cavaliere del Dente di leone, guidò la rivoluzione che rovesciò il vecchio sistema nobiliare e istituì l'ordine dei Cavalieri di Favonius, trasformando Mondstadt nella città che conoscete oggi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200112
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 101200112,
+					"content": "I nobili che avevano oppresso il popolo di Mondstadt non erano altri che i membri del clan Lawrence.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200113
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 101200113,
+					"content": "Oh, Paimon ha capito. Quindi adesso i discendenti del clan stanno tramando con i cattivi per compiere altre azioni malvagie?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200114
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200114,
+					"content": "...Crediamo di sì, anche se non abbiamo ancora prove concrete. Il motivo per cui vi ho convocato qui oggi è per chiedervi di aiutarci ad approfondire ulteriormente questa faccenda.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200115,
+						101200116
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 101200115,
+					"content": "Ma perché noi?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200117
+					]
+				},
+				{
+					"id": 101200117,
+					"content": "*sospira* Sfortunatamente, tra i Cavalieri di Favonius e i nobili non scorre buon sangue da che ho memoria.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200118
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 101200118,
+					"content": "Abbiamo già provato di tutto per appianare le nostre divergenze, ma sembra che i discendenti dell'aristocrazia continuino a non fidarsi dei Cavalieri...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200119
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 101200119,
+					"content": "...Indipendentemente dalla nostra posizione nei loro confronti, l'esito è sempre lo stesso... I nostri sforzi hanno come unico risultato quello di inasprire ulteriormente il conflitto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200120
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 101200120,
+					"content": "Potremmo bussare alla loro porta avvalendoci di un mandato di perquisizione, ma se l'indagine dovesse rivelarsi un buco nell'acqua, temo che le tensioni e la sfiducia non farebbero che aumentare.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200121
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 101200121,
+					"content": "Tutti i nostri sforzi passati verrebbero vanificati...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200122
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 101200122,
+					"content": "#Ma, in quanto Cavaliere Onorari{M#o}{F#a}, io tecnicamente appartengo ai Cavalieri...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200123
+					]
+				},
+				{
+					"id": 101200123,
+					"content": "#Tu sei {F#la candidata}{M#il candidato} ideale per rappresentare i Cavalieri di Favonius.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200124
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 101200124,
+					"content": "#Ma non dovrai specificare il tuo ruolo di Cavaliere Onorari{M#o}{F#a}. Sei {F#una viaggiatrice}{M#un viaggiatore} di una terra lontana e, in quanto tale, potrai avvicinarti all'aristocrazia.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200125
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 101200125,
+					"content": "Una volta stretti dei rapporti amichevoli con il clan Lawrence, non dovresti avere problemi a scoprirne le possibili connessioni con i Fatui.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200126
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 101200126,
+					"content": "Wow, solo la maestra Jean poteva pensare a un piano del genere.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200127
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200127,
+					"content": "Ahah, forse è frutto dell'esperienza accumulata nel corso di tutte le missioni diplomatiche a cui ho partecipato.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200128
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 101200128,
+					"content": "Il membro del clan Lawrence in questione si chiama Schubert. Ultimamente, lo troverai spesso a passeggiare nei pressi delle mura settentrionali della città.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200129
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 101200129,
+					"content": "Si dice che andare d'accordo con lui sia piuttosto difficile per via del suo temperamento, ma se lo approcciamo con calma, non dovremmo avere problemi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200130,
+						101200131
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 101200130,
+					"content": "Lascia fare a me.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200132
+					]
+				},
+				{
+					"id": 101200132,
+					"content": "Grazie ancora per il vostro aiuto. Se vi imbattete in qualsiasi ostacolo lungo il cammino, farò il possibile per darvi una mano.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 101200131,
+					"content": "Spero che le cose vadano per il verso giusto.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200132
+					]
+				},
+				{
+					"id": 101200116,
+					"content": "Sembra un lavoro perfetto per i Cavalieri di Favonius.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200117
+					]
+				},
+				{
+					"id": 101200105,
+					"content": "Tipico della maestra Jean.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200106
+					]
+				},
+				{
+					"id": 101200106,
+					"content": "Avevo intenzione di parlarti non appena ci fosse stata occasione, ma come ben sai, la sicurezza di Mondstadt viene prima di tutto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200107
+					],
+					"speakerTitle": "Jean"
+				}
+			]
+		},
+		{
+			"id": 1012002,
+			"completionStepIds": [
+				1012003
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1012003",
+							"2"
+						],
+						"stepId": 1012003,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"???",
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 101200201,
+					"content": "Eh? E tu chi sei?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200202
+					],
+					"speakerTitle": "Schubert"
+				},
+				{
+					"id": 101200202,
+					"content": "Ciao, siamo qui per...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200203
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200203,
+					"content": "Tsk... \"Ciao\"?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200204,
+						101200206
+					],
+					"speakerTitle": "Schubert"
+				},
+				{
+					"id": 101200204,
+					"content": "Uh, ciao...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200205
+					]
+				},
+				{
+					"id": 101200205,
+					"content": "Ho sentito bene? \"Ciao\"?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200208
+					],
+					"speakerTitle": "Schubert"
+				},
+				{
+					"id": 101200208,
+					"content": "Tsk! E così credete di poter piombare qui e salutarmi in modo così scortese e volgare?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200209
+					],
+					"speakerTitle": "Schubert"
+				},
+				{
+					"id": 101200209,
+					"content": "#Dal momento che non ti conosco, suppongo che tu sia una specie di {F#viaggiatrice}{M#viaggiatore}. Ti informo che ti trovi al cospetto di Schubert Lawrence, discendente diretto della grande nobiltà.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200210
+					],
+					"speakerTitle": "Schubert"
+				},
+				{
+					"id": 101200210,
+					"content": "Se vuoi rivolgerti a me, dovrai scegliere le tue parole con più cura. Modi così volgari non sono ammissibili e non lo saranno mai.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200211
+					],
+					"speakerTitle": "Schubert"
+				},
+				{
+					"id": 101200211,
+					"content": "Ora, se sei in grado di capire quanto ho appena detto, inginocchiati, chiedi scusa per le tue nefande azioni e presentati in modo appropriato. È così che richiede il galateo!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200212
+					],
+					"speakerTitle": "Schubert"
+				},
+				{
+					"id": 101200212,
+					"content": "Galateo? Paimon non ha mai sentito parlare di una cosa così complicata!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200213
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200213,
+					"content": "Tsk. In passato, quando la gente sapeva stare al suo posto e rispettava le tradizioni, una tale condotta era la norma nell'approcciarsi a un esponente della nobiltà.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200214
+					],
+					"speakerTitle": "Schubert"
+				},
+				{
+					"id": 101200214,
+					"content": "Non rispettare tali regole voleva dire beccarsi subito una frustata.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200215
+					],
+					"speakerTitle": "Schubert"
+				},
+				{
+					"id": 101200215,
+					"content": "*sospira* Ma i tempi sono cambiati, le regole sono state cancellate e le buone maniere dimenticate. Uff, non posso sopportare un tale degrado.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200216,
+						101200217
+					],
+					"speakerTitle": "Schubert"
+				},
+				{
+					"id": 101200216,
+					"content": "Mi sembra esagerato...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200218
+					]
+				},
+				{
+					"id": 101200218,
+					"content": "Che cosa hai detto? Osi mettere in dubbio la dignità dell'aristocrazia?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200219
+					],
+					"speakerTitle": "Schubert"
+				},
+				{
+					"id": 101200219,
+					"content": "Sappiate che anche se il clan Lawrence è in declino, io e tanti altri discendenti dal sangue blu stiamo lavorando per tornare ai vecchi fasti.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200220
+					],
+					"speakerTitle": "Schubert"
+				},
+				{
+					"id": 101200220,
+					"content": "Basta guardarsi intorno, la gente è rozza e maleducata! Io, invece, mi impegno a mantenere l'eleganza e rispettare il galateo imposto dalla nobiltà. Dopo tutto, siamo completamente diversi per nascita.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200221
+					],
+					"speakerTitle": "Schubert"
+				},
+				{
+					"id": 101200221,
+					"content": "Non ho ancora detto nulla...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200222
+					]
+				},
+				{
+					"id": 101200222,
+					"content": "Risparmia il fiato, ritengo i tuoi modi e il tuo portamento ripugnanti. Non ho niente da discutere con gente come te.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200223
+					],
+					"speakerTitle": "Schubert"
+				},
+				{
+					"id": 101200223,
+					"content": "Inoltre, non sono affatto tenuto a istruire la gente comune sulle più basilari norme di cortesia.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200224
+					],
+					"speakerTitle": "Schubert"
+				},
+				{
+					"id": 101200224,
+					"content": "Ora, ho questioni più urgenti di cui occuparmi. È meglio che vada.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Schubert"
+				},
+				{
+					"id": 101200217,
+					"content": "Non c'è da meravigliarsi che l'aristocrazia sia decaduta.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200218
+					]
+				},
+				{
+					"id": 101200206,
+					"content": "Sì, cosa c'è che non va?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200207
+					]
+				},
+				{
+					"id": 101200207,
+					"content": "\"Cosa c'è che non va\"? Hai appena detto \"cosa c'è che non va\"?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200208
+					],
+					"speakerTitle": "Schubert"
+				}
+			]
+		},
+		{
+			"id": 1012003,
+			"completionStepIds": [
+				1012005
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1012005",
+							"2"
+						],
+						"stepId": 1012005,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Amber",
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 101200301,
+					"content": "#Cavaliere Onorari{M#o}{F#a}, che piacere! Stavo giusto andando a raccogliere delle informazioni. Non mi aspettavo di incontrarti qui!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200302
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 101200302,
+					"content": "Eh? A giudicare dalla tua espressione, devi aver avuto qualche problema.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200303
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 101200303,
+					"content": "La maestra Jean ci ha affidato un incarico speciale, ma attualmente le cose non sembrano andare per il verso giusto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200304,
+						101200305
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200304,
+					"content": "È una lunga storia...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200306
+					]
+				},
+				{
+					"id": 101200306,
+					"content": "Non c'è bisogno di abbattersi, a volte le cose non vanno come previsto. Anche io non riesco sempre a ottenere informazioni utili ogni volta che mi vengono richieste.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200307
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 101200307,
+					"content": "Basta perseverare e non arrendersi mai!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200308,
+						101200309
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 101200308,
+					"content": "Grazie.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200310
+					]
+				},
+				{
+					"id": 101200310,
+					"content": "Eheh! Ehi, perché non lasciate che vi aiuti? Qual è il problema?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200311
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 101200311,
+					"content": "La maestra Jean ci ha chiesto di stringere rapporti con una persona di nome Schubert Lawrence.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200312
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200312,
+					"content": "A quanto pare però è un personaggio particolare che non vuole sentire ragioni... Soprattutto da Paimon.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200313
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200313,
+					"content": "Ahah, Schubert, lo conosco! Lasciatemi indovinare, ha detto che non conoscete le buone maniere.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200314,
+						101200315
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 101200314,
+					"content": "L'hai sentito anche tu...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200316
+					]
+				},
+				{
+					"id": 101200316,
+					"content": "Eheh, sono stata più volte vittima delle sue ramanzine. Il clan Lawrence sa essere davvero seccante su queste cose.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200317
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 101200317,
+					"content": "Ah... Vuoi dire che tutti i membri del clan Lawrence sono così rompiscatole?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200318
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200318,
+					"content": "In quanto aristocratici, credono che tra loro e la gente comune debba esserci un certo distacco. *sospira* Capisco il loro ragionamento, ma le cose non stanno più così.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200319
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 101200319,
+					"content": "Tuttavia, all'interno del clan Lawrence c'è un'eccezione. La mia cara amica Eula!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200320
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 101200320,
+					"content": "A-Amica?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200321
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200321,
+					"content": "Proprio così! Non solo fa parte del clan Lawrence, ma è anche capitano della 4ª Compagnia dei Cavalieri di Favonius.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200322,
+						101200323
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 101200322,
+					"content": "Jean ci ha detto che clan Lawrence e Cavalieri non sono in buoni rapporti.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200324
+					]
+				},
+				{
+					"id": 101200324,
+					"content": "Eula è speciale! Non è come gli altri membri del suo clan. Ha le proprie convinzioni e si vede.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200325
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 101200325,
+					"content": "In altre parole, non segue alla lettere le regole rigide e le convenzioni della sua famiglia.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200326
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 101200326,
+					"content": "Però, sa bene come trattare con i Lawrence. Sono sicura che capirete cosa intendo se la incontrerete.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200327
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 101200327,
+					"content": "Mmh, che strano. Se Eula appartiene al clan Lawrence, allora perché la maestra Jean ha scelto di affidare a noi l'incarico? Non avrebbe potuto semplicemente chiedere a Eula?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200328
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200328,
+					"content": "Ah, beh... È un po' complicato. Fondamentalmente, il clan Lawrence non ha accolto di buon occhio l'ingresso di Eula nei Cavalieri, i suoi parenti non nutrono grande stima nei suoi confronti...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200329
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 101200329,
+					"content": "Ai loro occhi, Eula non è altro che una traditrice.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200330,
+						101200331
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 101200330,
+					"content": "Un persona fuori dal comune, insomma.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200332
+					]
+				},
+				{
+					"id": 101200332,
+					"content": "È molto alla mano. Spiegatele la situazione e sono sicuro che vi aiuterà a trovare un modo per approcciare Schubert.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200333
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 101200333,
+					"content": "Credo che stamattina sia impegnata in una perlustrazione al di fuori delle mura. Dovreste essere in grado di trovarla nei pressi delle Montagne Vedetta.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200334
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 101200334,
+					"content": "Grazie, Amber! Ok, hai sentito quello che ha detto, andiamo a trovare Eula!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200335
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200335,
+					"content": "Buona fortuna! Io ho delle questioni di cui occuparmi!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 101200331,
+					"content": "Credo sia comprensibile dal loro punto di vista...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200332
+					]
+				},
+				{
+					"id": 101200323,
+					"content": "Come fa un membro del clan Lawrence a far parte dei Cavalieri?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200324
+					]
+				},
+				{
+					"id": 101200315,
+					"content": "Sembra che sia familiare con le sue lamentele...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200316
+					]
+				},
+				{
+					"id": 101200309,
+					"content": "Tipico di Amber.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200310
+					]
+				},
+				{
+					"id": 101200305,
+					"content": "Non è colpa nostra.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200306
+					]
+				}
+			]
+		},
+		{
+			"id": 1012004,
+			"completionStepIds": [
+				1012009
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1012009",
+							"2"
+						],
+						"stepId": 1012009,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Eula",
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 101200401,
+					"content": "Non ci pensi due volte prima di mettere mano alla spada, vero? Uff... hai idea di quanto tempo mi ci è voluto per rintracciare quei bersagli?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200402
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 101200402,
+					"content": "#...E ora tu vorresti prenderti tutto il merito. Tsk, credi di essere più forte solo perché sei arrivat{F#a}{M#o} prima di me? Uff... Segnatevi le mie parole, la vendetta sarà mia!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200403
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 101200403,
+					"content": "...Ah, cosa?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200404
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200404,
+					"content": "Come, scusa? Vendetta?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200405
+					]
+				},
+				{
+					"id": 101200405,
+					"content": "Proprio così. Ho sentito il trambusto e sono venuta il più velocemente possibile, solo per trovare voi due già alle prese con i Fatui. E stavi anche avendo la meglio!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200406
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 101200406,
+					"content": "#Se non fossi intervenuta, saresti persino riuscit{F#a}{M#o} a prenderti tutto il merito!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200407
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 101200407,
+					"content": "In ogni caso, mi rincuora sapere che stiate bene. Affrontare tutti quei Fatui contemporaneamente può essere pericoloso.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200408,
+						101200409
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 101200408,
+					"content": "In realtà, non è la prima volta che affronto i Fatui.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200410
+					]
+				},
+				{
+					"id": 101200410,
+					"content": "Ah... Scusa, Paimon non capisce cosa intendi... ma grazie per la tua preoccupazione.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200411
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200411,
+					"content": "#Preoccupazione? Perché dovrei preoccuparmi dell'incolumità de{F#lle mie arcinemiche}{M#i miei arcinemici}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200412
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 101200412,
+					"content": "#\"{F#Arcinemiche}{M#Arcinemici}\"? Aspetta un attimo! Un secondo fa hai detto che eri contenta di sapere che \"stavamo bene\"!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200413
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200413,
+					"content": "#Intendevo dire che se aveste avuto delle ferite, sarei stata costretta a scortare fino a Mondstadt due sconosciut{M#i}{F#e} responsabili di avermi soffiato il lavoro...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200414
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 101200414,
+					"content": "In altre parole, mi avreste causato ulteriori problemi... in quel caso, la mia vendetta sarebbe stata ancora più grande!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200415
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 101200415,
+					"content": "Eh? È così che la pensi?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200416
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200416,
+					"content": "E così tu sei Eula?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200417
+					]
+				},
+				{
+					"id": 101200417,
+					"content": "Sì, sono io.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200418
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 101200418,
+					"content": "Paimon pensa che sia piuttosto strana... Anche se, quantomeno con lei riusciamo a parlare.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200419
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200419,
+					"content": "Come osi definire qualcuno che hai appena conosciuto \"strano\"? Lascia perdere la nobiltà, questa è roba da maleducati, anche per la gente comune!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200420
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 101200420,
+					"content": "A proposito... come fate a conoscere il mio nome?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200421
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 101200421,
+					"content": "#Ti presento {F#la}{M#il} Cavaliere Onorari{M#o}{F#a} dei Cavalieri di Favonius. E a proposito di maleducazione, stiamo cercando di indagare su un nobile di nome Schubert Lawrence.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200422
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200422,
+					"content": "È così ossessionato dal galateo che non vuole nemmeno rivolgerci la parola!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200423
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200423,
+					"content": "Ahahah! Chiaro. Tipico di mio zio.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200424
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 101200424,
+					"content": "Perché volete indagare su di lui?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200425
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 101200425,
+					"content": "Potrebbe avere segretamente a che fare con i Fatui.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200426
+					]
+				},
+				{
+					"id": 101200426,
+					"content": "Capisco... Ahah, avete una bella faccia tosta a diffamare un membro della mia famiglia davanti a me. Mi vendicherò anche di questo!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200427
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 101200427,
+					"content": "No, no, no! È un incarico che ci ha dato la maestra Jean! È solo un'indagine, nient'altro!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200428,
+						101200429
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200428,
+					"content": "Non sei curiosa di saperne di più su tuo zio?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200430
+					]
+				},
+				{
+					"id": 101200430,
+					"content": "Per la gente comune di Mondstadt, tutti i membri del clan Lawrence sono feccia. È naturale che le voci e i pettegolezzi ingiustificati portino a tali sospetti.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200431
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 101200431,
+					"content": "Difficile evitare una reputazione del genere quando si ha la fama di essere stati gli spietati signori della Vecchia Mondstadt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200432
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200432,
+					"content": "Allora è questo che pensate di me? Un altro motivo per cui vendicarmi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200433
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 101200433,
+					"content": "Ma non sei stata tu la prima a dirlo? Argh...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200434
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200434,
+					"content": "#Ahahah, bizzarro... Ci siamo appena conosciut{M#i}{F#e} e mi avete già dato tre motivi per cui vendicarmi. Era da un po' che non incontravo gente così interessante.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200435,
+						101200436
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 101200435,
+					"content": "La tua definizione di bizzarro è... bizzarra.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200437
+					]
+				},
+				{
+					"id": 101200437,
+					"content": "Suppongo che abbiate bisogno di me per imparare le norme del galateo del clan Lawrence. Solo allora sarete finalmente in grado di parlare con mio zio, non è così?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200438
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 101200438,
+					"content": "Esatto, Amber ci ha detto di venire a parlare con te.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200439
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200439,
+					"content": "Bene, allora cominciamo subito il vostro addestramento. Una volta a Mondstadt sarà più semplice, ci serviranno altre persone.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200440,
+						101200441
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 101200440,
+					"content": "Ma non stavi tramando vendetta contro di noi?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200442
+					]
+				},
+				{
+					"id": 101200442,
+					"content": "Lascia stare la vendetta per ora. E poi, considerato che si tratta di un incarico affidatovi dalla Gran Maestra Reggente, e che è stata Amber a mandarvi da me, non posso fare diversamente.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 101200441,
+					"content": "Non hai intenzione di vendicarti al momento più opportuno, vero?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200442
+					]
+				},
+				{
+					"id": 101200436,
+					"content": "Perché sembri così felice?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200437
+					]
+				},
+				{
+					"id": 101200429,
+					"content": "Non sei preoccupata per tuo zio?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200430
+					]
+				},
+				{
+					"id": 101200409,
+					"content": "Sono in grado di combattere.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200410
+					]
+				}
+			]
+		},
+		{
+			"id": 1012006,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1012002",
+							"2"
+						],
+						"stepId": 1012002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jean"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 101200601,
+					"content": "Schubert sa essere piuttosto permaloso, per questo all'inizio non è facile andarci d'accordo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200602
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 101200602,
+					"content": "Finché le cose non degenerano, però, dovreste riuscire a instaurare dei buoni rapporti con lui.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jean"
+				}
+			]
+		},
+		{
+			"id": 1012007,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"99902",
+							"2"
+						],
+						"stepId": 99902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hertha"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 101200701,
+					"content": "A proposito di Schubert...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200702
+					]
+				},
+				{
+					"id": 101200702,
+					"content": "Intendi quello strano vecchio nobile? Temo di non averlo visto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200703
+					],
+					"speakerTitle": "Hertha"
+				},
+				{
+					"id": 101200703,
+					"content": "Solitamente i membri del clan Lawrence non si presentano ai Cavalieri di Favonius di propria volontà.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200704
+					],
+					"speakerTitle": "Hertha"
+				},
+				{
+					"id": 101200704,
+					"content": "Ed è meglio così. Sarebbe una seccatura se finissero per influenzare le nostre decisioni.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200705
+					],
+					"speakerTitle": "Hertha"
+				},
+				{
+					"id": 101200705,
+					"content": "Andate su a dare un'occhiata. Chissà, potreste trovarlo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Hertha"
+				}
+			]
+		},
+		{
+			"id": 1012008,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1012002",
+							"2"
+						],
+						"stepId": 1012002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1012003",
+							"2"
+						],
+						"stepId": 1012003,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Michelle"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 101200801,
+					"content": "Ehi, hai visto un nobile di nome Schubert da queste parti?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200802
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 101200802,
+					"content": "Mmh, il nome non mi dice niente, ma c'era uno strano tipo che passeggiava nei paraggi di recente.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200803
+					],
+					"speakerTitle": "Michelle"
+				},
+				{
+					"id": 101200803,
+					"content": "Si guarda sempre intorno e a volte sembra fermarsi a disegnare o ad annotare qualcosa. A dire il vero, non ho idea di cosa abbia in mente.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200804
+					],
+					"speakerTitle": "Michelle"
+				},
+				{
+					"id": 101200804,
+					"content": "Se pensate che possa essere il vostro uomo, dirigetevi verso le mura della città e dovreste trovarlo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Michelle"
+				}
+			]
+		},
+		{
+			"id": 1012011,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"99902",
+							"2"
+						],
+						"stepId": 99902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Amber"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 101201101,
+					"content": "Raggiungete le Montagne Vedetta... Eula dovrebbe trovarsi lì!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101201102
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 101201102,
+					"content": "È una mia grande amica. Vi aiuterà sicuramente.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Amber"
+				}
+			]
+		}
+	]
+}

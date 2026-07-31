@@ -1,0 +1,167 @@
+{
+	"id": 74657,
+	"type": "WQ",
+	"name": "Du sel pour Galathée",
+	"description": "Galathée a besoin de 10 bouteilles de sel.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7465701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Donnez 10 bouteilles de sel à Galathée.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7465701,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7465702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Galathée.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7465702,
+						0
+					],
+					"talkId": 7465702
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7465701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465701",
+							"2"
+						],
+						"stepId": 7465701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7465701"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Galathée"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746570101,
+					"content": "À propos du sel...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746570102
+					]
+				},
+				{
+					"id": 746570102,
+					"content": "Bonjour, vous êtes là pour parler de l'approvisionnement de sel ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746570103
+					],
+					"speakerTitle": "Galathée"
+				},
+				{
+					"id": 746570103,
+					"content": "Vous devez en avoir beaucoup, non ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746570106,
+						746570104
+					],
+					"speakerTitle": "Galathée"
+				},
+				{
+					"id": 746570106,
+					"content": "Et voilà.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 746570104,
+					"content": "Pas encore.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746570105
+					]
+				},
+				{
+					"id": 746570105,
+					"content": "Il faut en ramener assez. Nous faisons notre stock pour le voyage dès que notre bateau doit partir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Galathée"
+				}
+			]
+		},
+		{
+			"id": 7465702,
+			"completionStepIds": [
+				7465702
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465702",
+							"2"
+						],
+						"stepId": 7465702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Galathée"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746570201,
+					"content": "Cette quantité devrait suffire pour un court trajet. Vous êtes plutôt fiable, alors je vous contacterai en premier à l'avenir dès que j'aurais besoin de sel.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Galathée"
+				}
+			]
+		}
+	]
+}

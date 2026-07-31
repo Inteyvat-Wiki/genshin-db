@@ -1,0 +1,214 @@
+{
+	"id": 20008,
+	"type": "IQ",
+	"name": "Big Pudgy Problem!",
+	"description": "Slimes have suddenly appeared on the Mondstadt docks, and it seems Arthur has become caught up in the commotion...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2000801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to the docks and see what's going on",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Defeat the slimes",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000803,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Arthur",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000801,
+						0
+					],
+					"talkId": 2000801
+				}
+			]
+		},
+		{
+			"id": 2000804,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to the strange location",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000805,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Use Anemo to blow out the dust",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000806,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Defeat all of the slimes",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2000801,
+			"completionStepIds": [
+				2000803
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000802",
+							"3"
+						],
+						"stepId": 2000802,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Arthur"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200080101,
+					"content": "Thank you! You saved my life.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080102
+					],
+					"speakerTitle": "Arthur"
+				},
+				{
+					"id": 200080102,
+					"content": "Those slimes came out of nowhere. I didn't think they would show up around these parts... Before I knew what was happening, I was surrounded!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080103
+					],
+					"speakerTitle": "Arthur"
+				},
+				{
+					"id": 200080103,
+					"content": "Please don't tell my father... He's already been nagging me to stay at home, saying the slimes 'round here are supposed to be getting more hostile recently.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080104
+					],
+					"speakerTitle": "Arthur"
+				},
+				{
+					"id": 200080104,
+					"content": "With slimes appearing closer to the city, I've been stuck at home for days now. I managed to slip out today without him noticing.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080105
+					],
+					"speakerTitle": "Arthur"
+				},
+				{
+					"id": 200080105,
+					"content": "If you don't mind, could you check if the coast is clear now? And if not, get rid of the slimes for me?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080106,
+						200080107
+					],
+					"speakerTitle": "Arthur"
+				},
+				{
+					"id": 200080106,
+					"content": "Sure, it won't take me long.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200080108
+					]
+				},
+				{
+					"id": 200080108,
+					"content": "Great! Looks like my father will never have to find out...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Arthur"
+				},
+				{
+					"id": 200080107,
+					"content": "Sorry, I've got too much on my plate right now.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200080109
+					]
+				},
+				{
+					"id": 200080109,
+					"content": "B—But... I cannot get my father involved... Please, you're the only one who can help me!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Arthur"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,313 @@
+{
+	"id": 73098,
+	"type": "WQ",
+	"name": "Статичные пейзажи",
+	"description": "В Ванаране Паймон отыскала рисунок, но не факт, что это карта сокровищ...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		73025
+	],
+	"steps": [
+		{
+			"id": 7309801,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Заберите письмо",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7309802,
+						2
+					]
+				}
+			]
+		},
+		{
+			"id": 7309802,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отправляйтесь в указанное на снимке место",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133301165,
+						165002
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133301165,
+						165001
+					]
+				}
+			]
+		},
+		{
+			"id": 7309803,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Паймон",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7309804,
+						0
+					],
+					"talkId": 7309804
+				}
+			]
+		},
+		{
+			"id": 7309804,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7309803,
+						0
+					],
+					"talkId": 7309803
+				}
+			]
+		},
+		{
+			"id": 7309805,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Вернитесь в хижину аранары",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7309805,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133301277,
+						277003
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7309803,
+			"completionStepIds": [
+				7309804
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7309804",
+							"2"
+						],
+						"stepId": 7309804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_COMMON",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 730980301,
+					"content": "Дай-ка посмотреть... Хм? Это нарисовал аранара?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730980302
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 730980302,
+					"content": "Трогать чужие вещи без разрешения - нехорошо.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730980303
+					]
+				},
+				{
+					"id": 730980303,
+					"content": "Вот как? Но ведь сколько лагерей искателей приключений нам попадалось, сколько руин и сундуков - мы ни один из них не обошли стороной!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730980304
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 730980304,
+					"content": "Хм... Скажем так. Мы не увидели аранару поблизости, начали переживать и решили поискать зацепки. Как знать, может, мы ещё поможем попавшему в беду аранаре!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730980305,
+						730980306
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 730980305,
+					"content": "Ты права.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730980307
+					]
+				},
+				{
+					"id": 730980307,
+					"content": "Разумеется! Как бы то ни было, пейзаж на этом рисунке... похож на окружающий, не так ли? Может быть, это карта сокровищ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730980308
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 730980308,
+					"content": "#{NICKNAME}, давай отправимся в указанное место и проверим! Может быть, там мы найдём сокровище аранары?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 730980306,
+					"content": "Звучит в высшей степени разумно!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730980307
+					]
+				}
+			]
+		},
+		{
+			"id": 7309804,
+			"completionStepIds": [
+				7309803
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7309803",
+							"2"
+						],
+						"stepId": 7309803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Паймон"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 730980401,
+					"content": "Хм... Дай-ка посмотреть... Такое чувство, что у нас появилась новая карта сокровищ!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730980402
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 730980402,
+					"content": "А разве ты не говорила, что хочешь помочь попавшему в беду аранаре?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730980403
+					]
+				},
+				{
+					"id": 730980403,
+					"content": "#Ой! Точно! Мы так и не смогли найти хозяина дома, у Паймон душа не на месте! Поэтому, {NICKNAME}, Паймон считает, что нам нужно продолжить поиски, например, в указанном на рисунке месте!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730980404
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 730980404,
+					"content": "Когда мы доберёмся туда, с помощью отмеченных точек мы сможем...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730980405,
+						730980407
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 730980405,
+					"content": "Найти ещё больше сокровищ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730980406
+					]
+				},
+				{
+					"id": 730980406,
+					"content": "Да! Ой, нет! Найти аранару, которому нужна наша помощь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730980409
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 730980409,
+					"content": "Хм... этот «почтовый ящик» очень странный. Не факт, что в будущем в нём не появятся новые рисунки. Нужно не забыть про него!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 730980407,
+					"content": "Найти попавшего в беду аранару?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730980408
+					]
+				},
+				{
+					"id": 730980408,
+					"content": "Да! И как знать, может, рядышком будут сокровища!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730980409
+					],
+					"speakerTitle": "Паймон"
+				}
+			]
+		}
+	]
+}

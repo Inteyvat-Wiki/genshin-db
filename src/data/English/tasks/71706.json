@@ -1,0 +1,167 @@
+{
+	"id": 71706,
+	"type": "WQ",
+	"name": "Smiley's Selections",
+	"description": "Wangshu Inn's Smiley Yanxiao needs two Hams.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Give two Hams to Smiley Yanxiao",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Smiley Yanxiao",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170602,
+						0
+					],
+					"talkId": 7170602
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170601,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170601",
+							"2"
+						],
+						"stepId": 7170601,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170601"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Smiley Yanxiao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717060101,
+					"content": "About Ham...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717060102
+					]
+				},
+				{
+					"id": 717060102,
+					"content": "Huh? Ah yes, you must mean the commission I posted. So, have you prepared the two pieces of Ham?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717060103,
+						717060104
+					],
+					"speakerTitle": "Smiley Yanxiao"
+				},
+				{
+					"id": 717060103,
+					"content": "Yes, the Ham's ready!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717060104,
+					"content": "Not yet...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717060105
+					]
+				},
+				{
+					"id": 717060105,
+					"content": "Well get to it then. Be sure to bring me the Ham as soon as you've got it, I've got some new dish ideas to try.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Smiley Yanxiao"
+				}
+			]
+		},
+		{
+			"id": 7170602,
+			"completionStepIds": [
+				7170602
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170602",
+							"2"
+						],
+						"stepId": 7170602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Smiley Yanxiao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717060201,
+					"content": "Yes, this Ham is just what I needed.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717060202
+					],
+					"speakerTitle": "Smiley Yanxiao"
+				},
+				{
+					"id": 717060202,
+					"content": "Here's your payment, as promised.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Smiley Yanxiao"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,272 @@
+{
+	"id": 20012,
+	"type": "IQ",
+	"name": "Blocked?",
+	"description": "Myrana was enjoying a rare opportunity to go out for a walk, but on the way to the winery is stopped and attacked by hilichurls. Defeat the hilichurls and save Myrana.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2001201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go check the details",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001202,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Defeat the nearby enemies",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001203,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Defeat all opponents and destroy the roadblocks",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Myrana",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001203,
+						0
+					],
+					"talkId": 2001203
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2001201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001202",
+							"2"
+						],
+						"stepId": 2001202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Panicked Myrana"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200120101,
+					"content": "H—Help me! Please!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Panicked Myrana"
+				}
+			]
+		},
+		{
+			"id": 2001202,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001202",
+							"3"
+						],
+						"stepId": 2001202,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001203",
+							"2"
+						],
+						"stepId": 2001203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Panicked Myrana"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200120201,
+					"content": "Th—Thank you, Traveler...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200120202
+					],
+					"speakerTitle": "Panicked Myrana"
+				},
+				{
+					"id": 200120202,
+					"content": "*sigh* First monsters, now this roadblock... It's hectic enough already back home, there was me thinking this would be a chance to get away from it all for a while!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200120203
+					],
+					"speakerTitle": "Panicked Myrana"
+				},
+				{
+					"id": 200120203,
+					"content": "I'm sorry, but is there any chance you could sort out this roadblock situation for me?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200120204,
+						200120205
+					],
+					"speakerTitle": "Panicked Myrana"
+				},
+				{
+					"id": 200120204,
+					"content": "Okay.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200120206
+					]
+				},
+				{
+					"id": 200120206,
+					"content": "Thank you! I hope my two young ones grow up to be kind like you.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Panicked Myrana"
+				},
+				{
+					"id": 200120205,
+					"content": "I have other things to do.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200120207
+					]
+				},
+				{
+					"id": 200120207,
+					"content": "Come on, please... I promise it won't take you too long.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Panicked Myrana"
+				}
+			]
+		},
+		{
+			"id": 2001203,
+			"completionStepIds": [
+				2001204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001204",
+							"2"
+						],
+						"stepId": 2001204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Panicked Myrana"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200120301,
+					"content": "Th—Thanks so much, Traveler.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200120302
+					],
+					"speakerTitle": "Panicked Myrana"
+				},
+				{
+					"id": 200120302,
+					"content": "But please, don't tell anybody I got myself into trouble. My husband will give me an earful if he finds out...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200120303
+					],
+					"speakerTitle": "Panicked Myrana"
+				},
+				{
+					"id": 200120303,
+					"content": "Don't look at me like that... Wait till you're married, you'll see. A solitary stroll is a huge luxury when you're living with someone, you've got to make the most of it.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200120304
+					],
+					"speakerTitle": "Panicked Myrana"
+				},
+				{
+					"id": 200120304,
+					"content": "Here, take this. I picked some while I was out. Much cheaper to cook for yourself than eat at Good Hunter! You have to scrimp and save if you want to get by.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Panicked Myrana"
+				}
+			]
+		}
+	]
+}

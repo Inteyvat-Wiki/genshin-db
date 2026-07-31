@@ -1,0 +1,666 @@
+{
+	"id": 70504,
+	"type": "WQ",
+	"name": "Когда доспехи сняты",
+	"description": "«Кто-нибудь видел капитана Кэйю?» «А, капитан Кэйа, ты найдёшь его в таверне. Хе-хе, ты, должно быть, новичок, да? Удачи!»",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70505
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Лукой и войдите в таверну",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050401,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050402,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Приготовьте Розарии напиток",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050402,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050403,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Приготовьте Кэйе напиток",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050403,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050404,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте напитки Кэйе и Розарии",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050402,
+						0
+					],
+					"talkId": 7050402
+				}
+			]
+		},
+		{
+			"id": 7050405,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Кэйей и Розарией",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050401,
+						0
+					],
+					"talkId": 7050401
+				}
+			]
+		},
+		{
+			"id": 7050406,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отправляйтесь к стойке и подготовьтесь к началу работы",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050401,
+			"completionStepIds": [
+				7050405
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050405",
+							"2"
+						],
+						"stepId": 7050405,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050402",
+							"2"
+						],
+						"stepId": 7050402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050403",
+							"2"
+						],
+						"stepId": 7050403,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Кэйа",
+					"Розария"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705040101,
+					"content": "Вот так сюрприз. Не ожидал увидеть вас двоих за барной стойкой.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040102
+					],
+					"speakerTitle": "Кэйа"
+				},
+				{
+					"id": 705040102,
+					"content": "Тогда мне стаканчик Полуденной смерти...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040103
+					],
+					"speakerTitle": "Кэйа"
+				},
+				{
+					"id": 705040103,
+					"content": "Кэйа - настоящий мастер усложнять другим жизнь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040104
+					],
+					"speakerTitle": "Розария"
+				},
+				{
+					"id": 705040104,
+					"content": "#Ой, да я просто хотел посмотреть, как отреагирует {NICKNAME}. Не ожидал встретить тебя здесь сегодня, Розария.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040105
+					],
+					"speakerTitle": "Кэйа"
+				},
+				{
+					"id": 705040105,
+					"content": "#В таверну приходит так много привередливых посетителей. Так что я просто хочу помочь путешественни{F#це}{M#ку} набраться опыта.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040106
+					],
+					"speakerTitle": "Кэйа"
+				},
+				{
+					"id": 705040106,
+					"content": "И вот он опять всех заболтал!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040107
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705040107,
+					"content": "Не поймите меня неправильно, я всего лишь пытался быть полезным! Лучше бы спасибо сказали. Ладно, давай для начала что-то попроще. Например, Лунный переулок.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040108
+					],
+					"speakerTitle": "Кэйа"
+				},
+				{
+					"id": 705040108,
+					"content": "И, пожалуйста, большую кружку!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040109
+					],
+					"speakerTitle": "Кэйа"
+				},
+				{
+					"id": 705040109,
+					"content": "А мне сделай на своё усмотрение. Любой чай, только не в самой большой кружке.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040110
+					],
+					"speakerTitle": "Розария"
+				},
+				{
+					"id": 705040110,
+					"content": "Ясно. Одну минуту.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705040111
+					]
+				},
+				{
+					"id": 705040111,
+					"content": "Не торопись. Предвкушение - половина удовольствия.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Кэйа"
+				}
+			]
+		},
+		{
+			"id": 7050402,
+			"completionStepIds": [
+				7050404
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050404",
+							"2"
+						],
+						"stepId": 7050404,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Розария",
+					"Кэйа"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705040201,
+					"content": "Хм...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040202
+					],
+					"speakerTitle": "Розария"
+				},
+				{
+					"id": 705040202,
+					"content": "Что такое, Розария? Тебе не нравится?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040203
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705040203,
+					"content": "Я могу переделать...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705040204
+					]
+				},
+				{
+					"id": 705040204,
+					"content": "Нет, напиток хороший. Я просто редко пью чай, и его вкус навевает на меня воспоминания...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040205
+					],
+					"speakerTitle": "Розария"
+				},
+				{
+					"id": 705040205,
+					"content": "А, ты говоришь о церкви, полагаю?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040206
+					],
+					"speakerTitle": "Кэйа"
+				},
+				{
+					"id": 705040206,
+					"content": "Да. Однажды в церкви проходило мероприятие, на котором я не смогла присутствовать, но сестра Барбара всё равно оставила для меня немного чая и десерта...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040207
+					],
+					"speakerTitle": "Розария"
+				},
+				{
+					"id": 705040207,
+					"content": "Десерт уже зачерствел, поэтому она тайком его выбросила, но чай был на вкус точно таким же, как этот.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040208
+					],
+					"speakerTitle": "Розария"
+				},
+				{
+					"id": 705040208,
+					"content": "Хм, нечасто тебя увидишь такой, Розария.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040209
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705040209,
+					"content": "Кажется, в Мондштадте появился ещё один любитель чая.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040210
+					],
+					"speakerTitle": "Кэйа"
+				},
+				{
+					"id": 705040210,
+					"content": "Хех, мне по душе что-нибудь покрепче.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040211
+					],
+					"speakerTitle": "Розария"
+				},
+				{
+					"id": 705040211,
+					"content": "Кэйа, а как тебе напиток?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705040212
+					]
+				},
+				{
+					"id": 705040212,
+					"content": "Ну, если я укажу на несколько недостатков, ты сделаешь мне другой?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040213
+					],
+					"speakerTitle": "Кэйа"
+				},
+				{
+					"id": 705040213,
+					"content": "Ха-ха-ха! Шутка! Конечно, я так с тобой не поступлю.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040214
+					],
+					"speakerTitle": "Кэйа"
+				},
+				{
+					"id": 705040214,
+					"content": "Ой! С этим Кэйей никогда не знаешь, что он выкинет! Розария, как ты можешь с ним пить?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040215
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705040215,
+					"content": "Хм? Да мне без разницы, что у него на уме, когда мы пьём, то мало что обсуждаем.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040216
+					],
+					"speakerTitle": "Розария"
+				},
+				{
+					"id": 705040216,
+					"content": "Кроме того, у Кэйи в голове только то, что его заинтриговало, будь то вы или здешний трактирщик, или кто-то ещё...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040217
+					],
+					"speakerTitle": "Розария"
+				},
+				{
+					"id": 705040217,
+					"content": "Эй! Как ты можешь так просто сдать своего дорогого собутыльника?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040218
+					],
+					"speakerTitle": "Кэйа"
+				},
+				{
+					"id": 705040218,
+					"content": "Сдать? Вот ещё придумал.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040219
+					],
+					"speakerTitle": "Розария"
+				},
+				{
+					"id": 705040219,
+					"content": "Мне и в жизни хватает ханжей вокруг, а в таверне я предпочитаю расслабляться.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040220
+					],
+					"speakerTitle": "Розария"
+				},
+				{
+					"id": 705040220,
+					"content": "Ханжей? Посплетничаем о тех, кто старается всё делать правильно?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040221
+					],
+					"speakerTitle": "Кэйа"
+				},
+				{
+					"id": 705040221,
+					"content": "Кстати говоря, я знаю, кого с лёгкостью можно записать в тройку самых праведных людей в Мондштадте.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040222
+					],
+					"speakerTitle": "Кэйа"
+				},
+				{
+					"id": 705040222,
+					"content": "В такой степени, что... Да хоть в лицо такому человеку объяви о его праведности, а он и глазом не моргнёт.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040223
+					],
+					"speakerTitle": "Кэйа"
+				},
+				{
+					"id": 705040223,
+					"content": "Ой, а есть такой список?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040224
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705040224,
+					"content": "Конечно. У меня в голове есть куча списков: самых заядлых выпивох, самых трудолюбивых работников, худших поваров и даже... величайших хранителей тёмных тайн.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040225
+					],
+					"speakerTitle": "Кэйа"
+				},
+				{
+					"id": 705040225,
+					"content": "Паймон думает, что у мондштадтцев слишком много свободного времени!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040226
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705040226,
+					"content": "Неужели и впрямь столько людей слоняются без работы, занимаясь всем этим?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040227,
+						705040228
+					],
+					"speakerTitle": "Розария"
+				},
+				{
+					"id": 705040227,
+					"content": "Нет...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705040229
+					]
+				},
+				{
+					"id": 705040229,
+					"content": "#Ой, а как же Паймон? Мы можем вместе с {F#путешественницей}{M#путешественником} попасть в какой-нибудь список?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040230
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705040230,
+					"content": "Конечно. Например, лучших барменов.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040231
+					],
+					"speakerTitle": "Кэйа"
+				},
+				{
+					"id": 705040231,
+					"content": "П-правда?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040232
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705040232,
+					"content": "#Как здорово, {NICKNAME}! Наши имена войдут в историю!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040233
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705040233,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040234
+					],
+					"speakerTitle": "Розария"
+				},
+				{
+					"id": 705040234,
+					"content": "Ну, признаюсь, атмосферка тут очень даже ничего.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040235
+					],
+					"speakerTitle": "Розария"
+				},
+				{
+					"id": 705040235,
+					"content": "#Ещё бы! Сплошная радость смотреть на Паймон и путешественни{F#цу}{M#ка}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040236
+					],
+					"speakerTitle": "Кэйа"
+				},
+				{
+					"id": 705040236,
+					"content": "Такая тёплая и уютная атмосфера идёт на пользу любой таверне. Кажется, вы и правда заслуживаете звания лучших барменов.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040237
+					],
+					"speakerTitle": "Кэйа"
+				},
+				{
+					"id": 705040237,
+					"content": "Хм?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040238
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705040238,
+					"content": "Хех, ничего. Спасибо за ваше гостеприимство.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040239
+					],
+					"speakerTitle": "Кэйа"
+				},
+				{
+					"id": 705040239,
+					"content": "Да, мне тоже пора.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040240
+					],
+					"speakerTitle": "Розария"
+				},
+				{
+					"id": 705040240,
+					"content": "Кстати, чай был великолепен. Когда-нибудь я себе сама такой приготовлю... Ну, если смогу встать пораньше.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040241
+					],
+					"speakerTitle": "Розария"
+				},
+				{
+					"id": 705040241,
+					"content": "До встречи.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040242
+					],
+					"speakerTitle": "Кэйа"
+				},
+				{
+					"id": 705040242,
+					"content": "Приходите ещё.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 705040228,
+					"content": "Кажется, я знаю, о ком он говорит...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705040229
+					]
+				}
+			]
+		}
+	]
+}

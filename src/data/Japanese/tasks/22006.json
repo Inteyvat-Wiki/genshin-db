@@ -1,0 +1,864 @@
+{
+	"id": 22006,
+	"type": "IQ",
+	"name": "「紛失」された文物",
+	"description": "宝児はある貴重な文物をなくして、かなり焦っている。どうやら協力が必要なようだ…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2200601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "宝児と会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2200601,
+						0
+					],
+					"talkId": 2200601
+				}
+			]
+		},
+		{
+			"id": 2200602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "宝児の落し物を見つける",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2200603,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "ソラヤーを救う",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2200604,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "ソラヤーに話を聞く",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2200603,
+						0
+					],
+					"talkId": 2200603
+				}
+			]
+		},
+		{
+			"id": 2200605,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "宝児と会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2200605,
+						0
+					],
+					"talkId": 2200605
+				}
+			]
+		},
+		{
+			"id": 2200606,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "宝児と会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2200606,
+						0
+					],
+					"talkId": 2200606
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2200601,
+			"completionStepIds": [
+				2200601
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2200601",
+							"2"
+						],
+						"stepId": 2200601,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"宝児"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220060101,
+					"content": "一体どこなのよ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060102
+					],
+					"speakerTitle": "宝児"
+				},
+				{
+					"id": 220060102,
+					"content": "また落とし物でもした…？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060103
+					]
+				},
+				{
+					"id": 220060103,
+					"content": "今回は「落とした」じゃないわ、まだ探し始めたばかりよ！でも——どうしても見つからないの！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060104
+					],
+					"speakerTitle": "宝児"
+				},
+				{
+					"id": 220060104,
+					"content": "一体どこにあるのよ、せっかく位置まで絞ったのに…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060105
+					],
+					"speakerTitle": "宝児"
+				},
+				{
+					"id": 220060105,
+					"content": "一緒に探してよ、こんな貴重な文物を放置するわけにはいかないでしょう！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060106,
+						220060107
+					],
+					"speakerTitle": "宝児"
+				},
+				{
+					"id": 220060106,
+					"content": "分かった…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060108
+					]
+				},
+				{
+					"id": 220060108,
+					"content": "じゃあ、あなたはあっち、私は引き続きこっちを探すわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060109
+					],
+					"speakerTitle": "宝児"
+				},
+				{
+					"id": 220060109,
+					"content": "絶対探し出すわよ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "宝児"
+				},
+				{
+					"id": 220060107,
+					"content": "今回はどういう文物…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060110
+					]
+				},
+				{
+					"id": 220060110,
+					"content": "えっと…うーん、すごく古い！そうね、千年前…いや、魔神戦争の時代のものよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060111
+					],
+					"speakerTitle": "宝児"
+				},
+				{
+					"id": 220060111,
+					"content": "とにかく、とても貴重な文物なんだから、放置するわけにはいかないわ！一緒に探して！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "宝児"
+				}
+			]
+		},
+		{
+			"id": 2200602,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2200602",
+							"2"
+						],
+						"stepId": 2200602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"宝児"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220060201,
+					"content": "一体どこなのよ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060202
+					],
+					"speakerTitle": "宝児"
+				},
+				{
+					"id": 220060202,
+					"content": "今回はどういう文物…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060203
+					]
+				},
+				{
+					"id": 220060203,
+					"content": "えっと…うーん、すごく古い！そうね、千年前…いや、魔神戦争の時代のものよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060204
+					],
+					"speakerTitle": "宝児"
+				},
+				{
+					"id": 220060204,
+					"content": "とにかく、とても貴重な文物なんだから、放置するわけにはいかないわ！一緒に探して！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "宝児"
+				}
+			]
+		},
+		{
+			"id": 2200603,
+			"completionStepIds": [
+				2200604
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2200604",
+							"2"
+						],
+						"stepId": 2200604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ソラヤー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220060301,
+					"content": "ありがとう、旅人…ふう、さっきはビックリしたよ、最近の宝盗団も大胆になってきてるんだね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060302
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060302,
+					"content": "#{PLAYERAVATAR#SEXPRO[INFO_MALE_PRONOUN_BOYSECOND|INFO_FEMALE_PRONOUN_GIRLSECOND]}は？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060303
+					]
+				},
+				{
+					"id": 220060303,
+					"content": "私はソラヤー、遊学者だよ。今はここで研究してるの。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060304
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060304,
+					"content": "数日前、手がかりを辿ってある遺跡を見つけた。中で魔神戦争時代の歴史が記されている玉盤を見つけたんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060305
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060305,
+					"content": "でも玉盤を取り出し遺跡を出てすぐに、宝盗団に襲われた。頑張って逃げたけど、すぐ追いつかれてしまって…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060306
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060306,
+					"content": "あなたたちがいなかったら、私も玉盤も無事ではすまなかったよ。本当にありがとう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060307
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060307,
+					"content": "#{PLAYERAVATAR#SEXPRO[INFO_MALE_PRONOUN_BOYSECOND|INFO_FEMALE_PRONOUN_GIRLSECOND]}も学者？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060308
+					]
+				},
+				{
+					"id": 220060308,
+					"content": "…も？他に学者がここで研究してるの？名前を聞いても…？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060309
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060309,
+					"content": "宝児…待って、さっき私を襲った宝盗団も、「宝児に独り占めさせるわけには」って言ったような。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060310
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060310,
+					"content": "そんな偶然があるとは…ごめん、あなたが出会ったその「宝児」のことを詳しく教えてもらえないかな？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060311
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060311,
+					"content": "事の経緯はこう…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060312
+					]
+				},
+				{
+					"id": 220060312,
+					"content": "…その「宝児」があなたに教えた場所は、ちょうど私が選定した場所だよ。こんな「偶然」はあまりにもおかしい。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060313
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060313,
+					"content": "もし彼女が宝盗団のメンバーなら、私はきっと宝盗団に尾行されているのだろう…私の後をついて、そのまま宝物を探し出すつもりだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060314
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060314,
+					"content": "あの「宝児」は宝物を独り占めしたいから、一人で行動しているんだ。でも、彼女一人だけでは広範囲を探せない。だから…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060315
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060315,
+					"content": "…君も利用されたみたいだね、旅人。おそらく今回の位置も、彼女が狙った場所だろうね。ただ彼女の仲間と私が君よりも先に着いたようだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060316
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060316,
+					"content": "本気にしないで、あくまで私の推測だよ。しかし「宝児」って名前…あやしいね、偽名か、コードネームかもしれない。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060317
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060317,
+					"content": "旅人、適当に彼女の相手をしてくれないかな？何があっても、この玉盤をあやしい人に渡すことはできないよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060318,
+						220060319
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060318,
+					"content": "分かった。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060320
+					]
+				},
+				{
+					"id": 220060320,
+					"content": "ありがとう、でも手ぶらで帰ると、彼女に疑われるかもしれないね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060321
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060321,
+					"content": "こうしよう、それほど貴重じゃないものを持っているから、それを彼女に渡して。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060322
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060322,
+					"content": "大した価値はないけど、これでしばらくは誤魔化せるはずだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060325
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060325,
+					"content": "さあ、早く戻って。彼女の仲間を倒したけど、今の彼女は単独行動中だ。きっとその仲間も君のことをすぐに彼女に教えることはできないはずだよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060326
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060326,
+					"content": "そうだ、今度また彼女に探し物を頼まれて、本当に見つけてしまったら、私のところに持ってきてほしい。いつもは望舒旅館にいる。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060327
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060327,
+					"content": "まあ、私にできることは限られるけど…文物はなるべく守っておきたいから。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060319,
+					"content": "手ぶらで帰ると疑われる…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060323
+					]
+				},
+				{
+					"id": 220060323,
+					"content": "うん…一理あるね。こうしよう、それほど貴重じゃないものを持っているから、それを彼女に渡して。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060324
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060324,
+					"content": "大した価値はないけど、これでしばらくは誤魔化せるはずだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060325
+					],
+					"speakerTitle": "ソラヤー"
+				}
+			]
+		},
+		{
+			"id": 2200604,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2200605",
+							"2"
+						],
+						"stepId": 2200605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ソラヤー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220060401,
+					"content": "05ソラヤー放置会話テスト（宝児にあげる）",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ソラヤー"
+				}
+			]
+		},
+		{
+			"id": 2200605,
+			"completionStepIds": [
+				2200605
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2200605",
+							"2"
+						],
+						"stepId": 2200605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"宝児"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220060501,
+					"content": "05宝児会話テスト（宝児にあげる）",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "宝児"
+				}
+			]
+		},
+		{
+			"id": 2200606,
+			"completionStepIds": [
+				2200606
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2200606",
+							"2"
+						],
+						"stepId": 2200606,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"宝児"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220060601,
+					"content": "結構時間がかかったわね、何か発見は？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060602,
+						220060603
+					],
+					"speakerTitle": "宝児"
+				},
+				{
+					"id": 220060602,
+					"content": "これを見つけた。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060604
+					]
+				},
+				{
+					"id": 220060604,
+					"content": "はあ…まあいいものだけど、私が探してるものとは、かなり違うわね…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060605
+					],
+					"speakerTitle": "宝児"
+				},
+				{
+					"id": 220060605,
+					"content": "でも、これもちゃんとした文物だから、保管しておくわ。安心して、ちゃんとその価値を発揮させるから。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060609
+					],
+					"speakerTitle": "宝児"
+				},
+				{
+					"id": 220060609,
+					"content": "お疲れ様、これはあなたへの報酬よ、受け取って。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060610
+					],
+					"speakerTitle": "宝児"
+				},
+				{
+					"id": 220060610,
+					"content": "でもあの文物がまだ見つからないなんて、心配よ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "宝児"
+				},
+				{
+					"id": 220060603,
+					"content": "探しものはこれかな？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060606
+					]
+				},
+				{
+					"id": 220060606,
+					"content": "いいものだけど、私が探してるものじゃないわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060607
+					],
+					"speakerTitle": "宝児"
+				},
+				{
+					"id": 220060607,
+					"content": "でも、あなたは文物の保存に詳しくないし、うっかり壊してしまうかもしれない。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060608
+					],
+					"speakerTitle": "宝児"
+				},
+				{
+					"id": 220060608,
+					"content": "これは私が代わりに保管しておく、ちゃんとその価値を発揮させるから。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060609
+					],
+					"speakerTitle": "宝児"
+				}
+			]
+		},
+		{
+			"id": 2200607,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2200606",
+							"2"
+						],
+						"stepId": 2200606,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ソラヤー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220060701,
+					"content": "玉盤が壊れてなくてよかった。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060702,
+						220060706
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060702,
+					"content": "襲われた時、どうして渡さなかったの？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060703
+					]
+				},
+				{
+					"id": 220060703,
+					"content": "文物はね、学者の研究、芸術家の参考、そして展示品としての使い道があるんだけど…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060704
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060704,
+					"content": "泥棒に売られることは絶対にダメ、それは文物を侮辱するだけでなく、歴史を踏みにじることと同じだよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060705
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060705,
+					"content": "文物を侮辱し、歴史を踏みにじるのを私は絶対に許さない。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060706,
+					"content": "この玉盤…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060707
+					]
+				},
+				{
+					"id": 220060707,
+					"content": "ん？君もこの玉盤に興味があるの？興味があるのはその価値？それとも値段？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060708
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060708,
+					"content": "冗談だよ、この玉盤には魔神戦争時代の歴史の一部が描かれていてね、うーん、どうやら二つの部族の戦争に関することみたいだけど…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060709
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060709,
+					"content": "解読できたら、教令院の書籍にある空白を埋められるかもしれない。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060710
+					],
+					"speakerTitle": "ソラヤー"
+				},
+				{
+					"id": 220060710,
+					"content": "まあ、その「空白」はとうに埋められいて、私がそれを読むことができないだけだって可能性もあるけど…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ソラヤー"
+				}
+			]
+		}
+	]
+}

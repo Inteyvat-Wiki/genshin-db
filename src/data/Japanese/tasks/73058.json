@@ -1,0 +1,484 @@
+{
+	"id": 73058,
+	"type": "WQ",
+	"name": "アランガルの落書き",
+	"description": "アランガルを手伝って、チャトラカム洞窟に潜むエルマイト旅団を倒した。しかし、エルマイト旅団の目的は、アランガルの忘れた友情と関わっているらしい…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		73032
+	],
+	"steps": [
+		{
+			"id": 7305801,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7305802,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "アランガルと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7305801,
+						0
+					],
+					"talkId": 7305801
+				}
+			]
+		},
+		{
+			"id": 7305803,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "エルマイト旅団の拠点を調べる",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7305805,
+						0
+					],
+					"talkId": 7305805
+				}
+			]
+		},
+		{
+			"id": 7305804,
+			"order": 10,
+			"listShowType": "QUEST_SHOW",
+			"description": "アランガルと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7305802,
+						0
+					],
+					"talkId": 7305802
+				}
+			]
+		},
+		{
+			"id": 7305805,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "エルマイト旅団の拠点を調べる",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133315008,
+						8015
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7305803,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7305806,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "エルマイト旅団の拠点を調べる",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133315008,
+						8026
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7305803,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7305807,
+			"order": 30,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		},
+		{
+			"id": 7305808,
+			"order": 9,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7305804,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7305809,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7305801,
+			"completionStepIds": [
+				7305802
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7305802",
+							"2"
+						],
+						"stepId": 7305802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"アランガル",
+					"パイモン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 730580101,
+					"content": "金色のナラ、白いふわふわ！また会ったな！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580102
+					],
+					"speakerTitle": "アランガル"
+				},
+				{
+					"id": 730580102,
+					"content": "うわっ、今度急に出てくる時は先に一声かけろよな！またびっくりしちゃったぜ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580103,
+						730580104
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 730580103,
+					"content": "#{M#俺}{F#私}たちは悪いやつじゃない。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730580105
+					]
+				},
+				{
+					"id": 730580105,
+					"content": "へえ…確かに話の筋は通ってる…それで、悪いヤツには見えない金色のナラと、白いふわふわ。もう一回助けてもらえないか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580106
+					],
+					"speakerTitle": "アランガル"
+				},
+				{
+					"id": 730580106,
+					"content": "#喜んで。{M#俺}{F#私}は{NICKNAME}だよ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730580107
+					]
+				},
+				{
+					"id": 730580107,
+					"content": "オイラはパイモン。今度は忘れるなよ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580108
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 730580108,
+					"content": "今度…？んん…ゴホンッ、ボクはアランガル！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580109
+					],
+					"speakerTitle": "アランガル"
+				},
+				{
+					"id": 730580109,
+					"content": "#オイラたち、おまえと一緒にここに来たことあるんだ。おまえは忘れちゃったみたいだけどさ…えっと、うまく説明できないや！{NICKNAME}も一緒に説明してやってくれよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580110
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 730580110,
+					"content": "アランガルに冒険の思い出を話した。",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": [
+						730580111
+					]
+				},
+				{
+					"id": 730580111,
+					"content": "そうか…覚えてないけど、何故だか信じてみようって気になった…しかもオマエらはボクのあげた花を持ってる。カノジョがそこにいる気配がするよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580112
+					],
+					"speakerTitle": "アランガル"
+				},
+				{
+					"id": 730580112,
+					"content": "あ、そうだ！悪いナラが野営地を残していった。そこに何があるか見に行きたいんだ。ヤツらの企みが分かるかもしれない！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "アランガル"
+				},
+				{
+					"id": 730580104,
+					"content": "悪いやつを追い払ってあげた。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730580105
+					]
+				}
+			]
+		},
+		{
+			"id": 7305802,
+			"completionStepIds": [
+				7305804
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7305804",
+							"2"
+						],
+						"stepId": 7305804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"アランガル",
+					"パイモン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 730580201,
+					"content": "どうだ？何か見つかったか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580202
+					],
+					"speakerTitle": "アランガル"
+				},
+				{
+					"id": 730580202,
+					"content": "うーん…どこの言葉かはよく分からないけど、命令を見つけたぞ。それとこれ！ドライフラワー！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580203
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 730580203,
+					"content": "わあ…！これ、もらっていいか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580204
+					],
+					"speakerTitle": "アランガル"
+				},
+				{
+					"id": 730580204,
+					"content": "悪いやつの忘れ物だぞ。毒とかあるかもしれないのに…怖くないのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580205
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 730580205,
+					"content": "心配するな。この花には見覚えがある…そいつ、会ったことあるはずなんだ…頼むからボクにくれ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580206
+					],
+					"speakerTitle": "アランガル"
+				},
+				{
+					"id": 730580206,
+					"content": "どうぞ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730580207
+					]
+				},
+				{
+					"id": 730580207,
+					"content": "#ありがとう！ナラ{NICKNAME}と白いふわふわ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580208
+					],
+					"speakerTitle": "アランガル"
+				},
+				{
+					"id": 730580208,
+					"content": "アランガルは風に乾いた小さな花をマウティーマ稠林まで持っていた…",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7305804,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7305803",
+							"2"
+						],
+						"stepId": 7305803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"アランガル"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 730580401,
+					"content": "悪いナラのキャンプに行ってみたら、ヤツらの目的が分かるはず！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730580402
+					],
+					"speakerTitle": "アランガル"
+				},
+				{
+					"id": 730580402,
+					"content": "悪い奴をどうやって見分けるの？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730580403
+					]
+				},
+				{
+					"id": 730580403,
+					"content": "#うーん…さあ？うまく説明できないけど、ナラ{NICKNAME}と白いふわふわが悪い奴じゃないのはわかるぞ！アランガルは信じてる！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "アランガル"
+				}
+			]
+		},
+		{
+			"id": 7305805,
+			"completionStepIds": [
+				7305803
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7305803",
+							"2"
+						],
+						"stepId": 7305803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7305803",
+							"3"
+						],
+						"stepId": 7305803,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": []
+		}
+	]
+}

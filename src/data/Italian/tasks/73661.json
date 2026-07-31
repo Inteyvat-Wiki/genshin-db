@@ -1,0 +1,176 @@
+{
+	"id": 73661,
+	"type": "WQ",
+	"name": "Zucchero per Jahan",
+	"description": "Jahan della Città di Sumeru ha bisogno di 5 barattoli di zucchero.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7366101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Consegna 5 barattoli di zucchero a Jahan",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7366101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7366102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Jahan",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7366102,
+						0
+					],
+					"talkId": 7366102
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7366101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7366101",
+							"2"
+						],
+						"stepId": 7366101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7366101"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jahan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 736610101,
+					"content": "A proposito dello zucchero...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						736610102
+					]
+				},
+				{
+					"id": 736610102,
+					"content": "Oh, sei qui per consegnare lo zucchero, vero?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736610103
+					],
+					"speakerTitle": "Jahan"
+				},
+				{
+					"id": 736610103,
+					"content": "Hai preso 5 barattoli di zucchero?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736610107,
+						736610104
+					],
+					"speakerTitle": "Jahan"
+				},
+				{
+					"id": 736610107,
+					"content": "Ecco lo zucchero che avevi chiesto.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 736610104,
+					"content": "Non ancora.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						736610105
+					]
+				},
+				{
+					"id": 736610105,
+					"content": "Non si ha mai abbastanza zucchero. A chi non piace un po' di dolcezza?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736610106
+					],
+					"speakerTitle": "Jahan"
+				},
+				{
+					"id": 736610106,
+					"content": "Ma non fare come me, che ne mangio troppo. Non mi prenderei nessuna responsabilità se ti venissero delle carie.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jahan"
+				}
+			]
+		},
+		{
+			"id": 7366102,
+			"completionStepIds": [
+				7366102
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7366102",
+							"2"
+						],
+						"stepId": 7366102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jahan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 736610201,
+					"content": "Ahah, altri cibi zuccherati!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jahan"
+				}
+			]
+		}
+	]
+}

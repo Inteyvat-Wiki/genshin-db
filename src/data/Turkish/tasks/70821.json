@@ -1,0 +1,274 @@
+{
+	"id": 70821,
+	"type": "WQ",
+	"name": "Fırtınadan Sonra",
+	"description": "Dvalin arındırıldıktan sonra, Fırtına Dehşeti'nin İnine giriş tekrar açıldı. Wagner içeri girip değerli Kristal Cevheri aramak istiyor.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		396
+	],
+	"steps": [
+		{
+			"id": 7082101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Wagner ile konuş.",
+			"finishConditions": []
+		},
+		{
+			"id": 7082102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fırtına Dehşeti'nin İninde kristal cevher ara.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1177,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fırtına Dehşeti'nin İninde kristal cevher ara.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1181,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fırtına Dehşeti'nin İninde kristal cevher ara.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1182,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082105,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "3 Kristal Parçası topla.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101003,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082106,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Kristal Parçalarını Wagner'a ver.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7082102,
+						0
+					],
+					"talkId": 7082102
+				}
+			]
+		},
+		{
+			"id": 7082107,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7082107,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7082108,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						7082108,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7082102,
+			"completionStepIds": [
+				7082106
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082106",
+							"2"
+						],
+						"stepId": 7082106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Wagner"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708210201,
+					"content": "Cevher çıkarabildin mi?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708210202
+					],
+					"speakerTitle": "Wagner"
+				},
+				{
+					"id": 708210202,
+					"content": "İşte burada.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708210203
+					]
+				},
+				{
+					"id": 708210203,
+					"content": "Bakalım. Hımm. Bu kristal cevherler fena durmuyor aslında.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708210204
+					],
+					"speakerTitle": "Wagner"
+				},
+				{
+					"id": 708210204,
+					"content": "İşte ücretin. Emeklerinin karşılığı olarak kabul et.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708210205
+					],
+					"speakerTitle": "Wagner"
+				},
+				{
+					"id": 708210205,
+					"content": "Yani, Fırtına Dehşeti'nin İni etrafındaki fırtına gerçekten dağılmış. Yakın zamanda kendim de gitmeliyim.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Wagner"
+				}
+			]
+		},
+		{
+			"id": 7082106,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082102",
+							"2"
+						],
+						"stepId": 7082102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082103",
+							"2"
+						],
+						"stepId": 7082103,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082104",
+							"2"
+						],
+						"stepId": 7082104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7082105",
+							"2"
+						],
+						"stepId": 7082105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Wagner"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708210601,
+					"content": "Şu cevherler hakkında...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708210602
+					]
+				},
+				{
+					"id": 708210602,
+					"content": "Hâlâ yapılacak çok iş var. İşe koyulmam lazım...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Wagner"
+				}
+			]
+		}
+	]
+}

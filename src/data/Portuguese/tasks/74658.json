@@ -1,0 +1,167 @@
+{
+	"id": 74658,
+	"type": "WQ",
+	"name": "Encomenda de Carne Crua de Etienne",
+	"description": "Etienne precisa de 8 Carnes Cruas.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7465801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Entregue 8 Carnes Cruas a Etienne",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7465801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7465802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com Etienne",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7465802,
+						0
+					],
+					"talkId": 7465802
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7465801,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465801",
+							"2"
+						],
+						"stepId": 7465801,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7465801"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Etienne"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746580101,
+					"content": "Sobre a Carne Crua...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746580102
+					]
+				},
+				{
+					"id": 746580102,
+					"content": "#Ufa... {M#Meu salvador}{F#minha salvadora}! Finalmente chegou.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746580103
+					],
+					"speakerTitle": "Etienne"
+				},
+				{
+					"id": 746580103,
+					"content": "Você trouxe toda a Carne Crua, né? Pode entregar. Eu vou preparar o prato de Baguette e descansar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746580106,
+						746580104
+					],
+					"speakerTitle": "Etienne"
+				},
+				{
+					"id": 746580106,
+					"content": "Tá pronto.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 746580104,
+					"content": "Ainda não.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746580105
+					]
+				},
+				{
+					"id": 746580105,
+					"content": "Então posso incomodar você e pedir mais pressa? Estou muito cansado e só quero descansar um pouco.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Etienne"
+				}
+			]
+		},
+		{
+			"id": 7465802,
+			"completionStepIds": [
+				7465802
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465802",
+							"2"
+						],
+						"stepId": 7465802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Etienne"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746580201,
+					"content": "#Ótimo, obrigado. Isso é para você, {NICKNAME}. Finalmente posso cozinhar uma coisa boa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Etienne"
+				}
+			]
+		}
+	]
+}

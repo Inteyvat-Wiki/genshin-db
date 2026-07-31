@@ -1,0 +1,746 @@
+{
+	"id": 451,
+	"type": "LQ",
+	"name": "Teritori Serigala",
+	"description": "Kamu dan Paimon memutuskan pergi ke pinggiran Mondstadt yang sepi penduduk, mengunjungi Wolvendom dan kamu sama sekali tidak menyadari bahaya yang mengintaimu.",
+	"unlockDescription": "",
+	"chapter": "Makna dari Lupical",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		452
+	],
+	"prevMainQuestList": [
+		396,
+		485
+	],
+	"steps": [
+		{
+			"id": 45101,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Pergi ke Wolvendom",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1051,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45102,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Bicara dengan Paimon",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						45101,
+						0
+					],
+					"talkId": 45101
+				}
+			]
+		},
+		{
+			"id": 45103,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habisi semua Slime",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45104,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Berterima kasih atas bantuan pemuda",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						45103,
+						0
+					],
+					"talkId": 45103
+				}
+			]
+		},
+		{
+			"id": 45105,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Kumpulkan Raw Meat secukupnya",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100061,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						45105,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45106,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Berikan 3 Raw Meat pada Razor",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						45106,
+						0
+					],
+					"talkId": 45106
+				}
+			]
+		},
+		{
+			"id": 45107,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Paimon",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						45107,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45108,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						45108,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45109,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Pergi ke Wolvendom",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						45109,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 45101,
+			"completionStepIds": [
+				45102
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45107",
+							"2"
+						],
+						"stepId": 45107,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510101,
+					"content": "Ini adalah Wolvendom, orang-orang Mondstadt jarang sekali ada yang berani datang ke sini...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510102
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510102,
+					"content": "Meskipun tidak jauh dari kota, tapi lingkungan di sini tidak tersentuh. Tempat ini masih dikuasai oleh hukum alam.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510103
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510103,
+					"content": "Pokoknya di sana yang kuat makan yang lemah! Slime di sana juga katanya besar-besar!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510104
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510104,
+					"content": "Sebesar... itu, yang itu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510105
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510105,
+					"content": "... mereka datang! Bersiap bertarung!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 45103,
+			"completionStepIds": [
+				45104
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45104",
+							"2"
+						],
+						"stepId": 45104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Razor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510301,
+					"content": "Te... terima kasih! Argh!! Serigala!! LARI!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510303
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510303,
+					"content": "Jangan takut. Serigala adalah teman. Tapi... kamu siapa?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510304
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510304,
+					"content": "Kami bukan siapa-siapa! Hanya pengembara yang kebetulan lewat...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510305
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510305,
+					"content": "Kalian... wangi yang tidak biasa. Wangi kalian... *endus* seperti kukenal...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510306
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510306,
+					"content": "Kamu kenal wangi kami...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510307
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510307,
+					"content": "Kamu tercium seperti Knights of Favonius. Aku punya teman di sana.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510308,
+						4510309
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510308,
+					"content": "Siapa namamu?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						4510310
+					]
+				},
+				{
+					"id": 4510310,
+					"content": "Aku Razor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510311
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510311,
+					"content": "Kamu juga anggota Knights of Favonius?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510312
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510312,
+					"content": "Bukan.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510314
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510314,
+					"content": "Oh...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510315
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510315,
+					"content": "Serigala-serigala itu...?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						4510316
+					]
+				},
+				{
+					"id": 4510316,
+					"content": "Lupical, mereka, keluargaku...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510317
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510317,
+					"content": "Keluarga?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510318
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510318,
+					"content": "Ya. Mereka merawatku. Kami hidup bersama... dan kami adalah keluarga.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510319
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510319,
+					"content": "Kurasa, aku memiliki banyak pertanyaan...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510320
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510320,
+					"content": "Mereka marah padaku. Karena aku menolong kalian, aku gagal menangkap boar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510321
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510321,
+					"content": "#Begitu rupanya... Jangan khawatir! {NICKNAME} ahlinya berburu boar!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510322
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510322,
+					"content": "#{NICKNAME} lebih kuat dari kelihatannya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510323
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510323,
+					"content": "Ti... tidak perlu. Serigala pasti akan keburu lapar kalau harus menunggu pertolongan Knight dulu...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510324
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510324,
+					"content": "Jangan konyol! Tunggu di sini – kami tidak akan mengacaukannya, lihat saja!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510309,
+					"content": "Kamu anggota Knights of Favonius?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						4510313
+					]
+				},
+				{
+					"id": 4510313,
+					"content": "Aku Razor. Bukan Knight.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510314
+					],
+					"speakerTitle": "Razor"
+				}
+			]
+		},
+		{
+			"id": 45105,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45105",
+							"2"
+						],
+						"stepId": 45105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Razor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510501,
+					"content": "... Kamu benar-benar ingin membantuku?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510502
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510502,
+					"content": "Serigala berburu berdasarkan insting, dan itu selalu berhasil. Tetapi... memasang perangkap juga terdengar menarik.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510503
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510503,
+					"content": "Pertama, kita pasang perangkapnya. Selanjutnya, kita siasati agar boar terperangkap – betul?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510504
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510504,
+					"content": "Semoga tidak meledak...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Razor"
+				}
+			]
+		},
+		{
+			"id": 45106,
+			"completionStepIds": [
+				45106
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45106",
+							"2"
+						],
+						"stepId": 45106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PACK_HAVE_ITEM",
+						"rawParams": [
+							"100061",
+							"3"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Razor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510601,
+					"content": "Lihat, kita berhasil!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510602
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510602,
+					"content": "Terima kasih, tapi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510603
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510603,
+					"content": "Tapi... serigala biasanya menangkap lima atau enam ekor sekaligus... *huff* Malam ini, sepertinya akan ada serigala yang kelaparan...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510604
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510604,
+					"content": "Uhm...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510605
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510605,
+					"content": "Jangan berkecil hati. Setidaknya kamu sudah mencobanya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510606
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510606,
+					"content": "Setidaknya kalian masih bisa melakukannya lebih baik daripada teman Knight lainnya – perempuan... yang berbaju merah itu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510607
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510607,
+					"content": "Kalau dia ada di sini, satu gunung pun bisa saja dia bakar. Tapi... satu boar pun tidak ada yang berhasil dia tangkap.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510608
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510608,
+					"content": "Aku harus pergi sekarang.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510609
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510609,
+					"content": "Di sini tidak aman, hati-hati.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510610
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510610,
+					"content": "Orang itu, aneh sekali...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510611
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510611,
+					"content": "Knight perempuan, merah...? Maksudnya...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510612
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510612,
+					"content": "#{NICKNAME}, siapa ya yang dia maksud?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 45107,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45106",
+							"2"
+						],
+						"stepId": 45106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_NUM_LESS_THAN",
+						"rawParams": [
+							"100061",
+							"3"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Razor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510501,
+					"content": "... Kamu benar-benar ingin membantuku?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510502
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510502,
+					"content": "Serigala berburu berdasarkan insting, dan itu selalu berhasil. Tetapi... memasang perangkap juga terdengar menarik.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510503
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510503,
+					"content": "Pertama, kita pasang perangkapnya. Selanjutnya, kita siasati agar boar terperangkap – betul?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510504
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510504,
+					"content": "Semoga tidak meledak...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Razor"
+				}
+			]
+		}
+	]
+}

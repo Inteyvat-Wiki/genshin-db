@@ -1,0 +1,167 @@
+{
+	"id": 71706,
+	"type": "WQ",
+	"name": "Продукты для улыбчивого Янь Сяо",
+	"description": "Улыбчивому Янь Сяо с постоялого двора «Ваншу» нужны две порции ветчины.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте Улыбчивому Янь Сяо 2 порции ветчины",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с улыбчивым Янь Сяо",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170602,
+						0
+					],
+					"talkId": 7170602
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170601,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170601",
+							"2"
+						],
+						"stepId": 7170601,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170601"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Улыбчивый Янь Сяо"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717060101,
+					"content": "О ветчине...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717060102
+					]
+				},
+				{
+					"id": 717060102,
+					"content": "#Что? А, я же поручение отсылал. {M#Принёс}{F#Принесла} два куска ветчины?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717060103,
+						717060104
+					],
+					"speakerTitle": "Улыбчивый Янь Сяо"
+				},
+				{
+					"id": 717060103,
+					"content": "Да, всё готово.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717060104,
+					"content": "Пока ещё нет.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717060105
+					]
+				},
+				{
+					"id": 717060105,
+					"content": "Когда приготовишь, приноси поскорее. Хочу попробовать сделать новое блюдо.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Улыбчивый Янь Сяо"
+				}
+			]
+		},
+		{
+			"id": 7170602,
+			"completionStepIds": [
+				7170602
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170602",
+							"2"
+						],
+						"stepId": 7170602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Улыбчивый Янь Сяо"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717060201,
+					"content": "Да, этого должно хватить.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717060202
+					],
+					"speakerTitle": "Улыбчивый Янь Сяо"
+				},
+				{
+					"id": 717060202,
+					"content": "Вот и оплата. Держи.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Улыбчивый Янь Сяо"
+				}
+			]
+		}
+	]
+}

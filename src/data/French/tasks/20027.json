@@ -1,0 +1,223 @@
+{
+	"id": 20027,
+	"type": "IQ",
+	"name": "Que d'agitation !",
+	"description": "Des Blobs sont apparus près du Domaine de l'Aurore ; Tunner semble être au cœur de l'agitation...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2002701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Avancez pour en apprendre davantage.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Éliminez les Blobs.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002703,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Tunner.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002701,
+						0
+					],
+					"talkId": 2002701
+				}
+			]
+		},
+		{
+			"id": 2002704,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Rendez-vous au site étrange.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002705,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dispersez la poussière à l'aide d'une compétence Anémo.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002706,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Éliminez les Blobs.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2002701,
+			"completionStepIds": [
+				2002703
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002702",
+							"3"
+						],
+						"stepId": 2002702,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tunner"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200270101,
+					"content": "#Merci ! Merci énormément, {NICKNAME}...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270102
+					],
+					"speakerTitle": "Tunner"
+				},
+				{
+					"id": 200270102,
+					"content": "Je m'apprêtais à entretenir mes vignes, et voilà que je tombe sur ça...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270103
+					],
+					"speakerTitle": "Tunner"
+				},
+				{
+					"id": 200270103,
+					"content": "*soupir* Ne dites rien à mon fils. Il doit en avoir assez sur les bras avec son boulot à l'Ordre de Favonius.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270104
+					],
+					"speakerTitle": "Tunner"
+				},
+				{
+					"id": 200270104,
+					"content": "Pas besoin de l'embêter davantage avec mes histoires.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270105
+					],
+					"speakerTitle": "Tunner"
+				},
+				{
+					"id": 200270105,
+					"content": "Récemment, il y a beaucoup de Blobs qui traînent autour du Domaine. Je crains qu'ils ne détruisent mes vignes et ça m'empêche de fermer l'œil de la nuit.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270106
+					],
+					"speakerTitle": "Tunner"
+				},
+				{
+					"id": 200270106,
+					"content": "Si vous avez un peu de temps à tuer, pourriez-vous les repousser pour qu'ils évitent de se rapprocher d'ici ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270107,
+						200270108
+					],
+					"speakerTitle": "Tunner"
+				},
+				{
+					"id": 200270107,
+					"content": "Bien sûr.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200270109
+					]
+				},
+				{
+					"id": 200270109,
+					"content": "Que Barbatos vous bénisse ! Vous permettrez à un vieil homme de dormir en paix.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tunner"
+				},
+				{
+					"id": 200270108,
+					"content": "#Je suis {M#occupé}{F#occupée}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200270110
+					]
+				},
+				{
+					"id": 200270110,
+					"content": "*soupir* Je l'aurais bien fait moi-même, mais c'est impossible avec mon grand âge. Cette tâche devrait être facile pour une jeune personne comme vous. Faites-moi une fleur, s'il vous plaît.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tunner"
+				}
+			]
+		}
+	]
+}

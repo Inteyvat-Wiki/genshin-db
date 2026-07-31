@@ -1,0 +1,562 @@
+{
+	"id": 70503,
+	"type": "WQ",
+	"name": "堅氷、酒に溶けやすし",
+	"description": "「チッ、どうしてローレンス家の人もここで酒を飲んでるの…まったく…」 「コホンッ、ちょっと静かに…向こうも一応、騎士団の人なんだよ…」",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70508,
+		70509
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "ルカと会話し、酒場に入る",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050302,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "エウルアに指定ドリンクを作る",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050302,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050303,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "ドリンクをエウルアに渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050302,
+						0
+					],
+					"talkId": 7050302
+				}
+			]
+		},
+		{
+			"id": 7050304,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "エウルアと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050301,
+						0
+					],
+					"talkId": 7050301
+				}
+			]
+		},
+		{
+			"id": 7050305,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "カウンターに行って、営業の準備をする",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050301,
+			"completionStepIds": [
+				7050304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050304",
+							"2"
+						],
+						"stepId": 7050304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050302",
+							"2"
+						],
+						"stepId": 7050302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"エウルア"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705030101,
+					"content": "スモールサイズのフローティングリーフを…お願い。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030102,
+						705030103
+					],
+					"speakerTitle": "エウルア"
+				},
+				{
+					"id": 705030102,
+					"content": "エウルア？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030104
+					]
+				},
+				{
+					"id": 705030104,
+					"content": "…大丈夫よ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030105
+					],
+					"speakerTitle": "エウルア"
+				},
+				{
+					"id": 705030105,
+					"content": "な、なんだか…エウルアの様子がいつもと違うぞ。まさか、ここに来る前からお酒を飲んでたのかな？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030106
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705030106,
+					"content": "たしか、フローティングリーフってコーヒーから作るんだよな。お酒の後にコーヒーって…胃が爆発するんじゃないか。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030107
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705030107,
+					"content": "エウルアのお腹のためにも、出す前にこっそりと水で薄めてやろう！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705030103,
+					"content": "どうしたの？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030104
+					]
+				}
+			]
+		},
+		{
+			"id": 7050302,
+			"completionStepIds": [
+				7050303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050303",
+							"2"
+						],
+						"stepId": 7050303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"エウルア"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705030238,
+					"content": "パイモンの言うことに従って、コーヒーに水を加えた…",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": []
+				},
+				{
+					"id": 705030201,
+					"content": "味は…悪くないわね…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030202
+					],
+					"speakerTitle": "エウルア"
+				},
+				{
+					"id": 705030202,
+					"content": "…水であんなに薄めたのに気付いてないなんて、相当酔っ払ってるみたいだな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030203
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705030203,
+					"content": "バーテンダー、もういっぱ…ん、待って、どうして君たちが？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030204,
+						705030205
+					],
+					"speakerTitle": "エウルア"
+				},
+				{
+					"id": 705030204,
+					"content": "バーテンダーの体験をしている…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030206
+					]
+				},
+				{
+					"id": 705030205,
+					"content": "今さら気付いたの…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030206
+					]
+				},
+				{
+					"id": 705030206,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030207
+					],
+					"speakerTitle": "エウルア"
+				},
+				{
+					"id": 705030207,
+					"content": "わ、悪かったわ。さっきまでキャッツテールに行ってて、そこで少し飲みすぎたみたい…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030208,
+						705030209
+					],
+					"speakerTitle": "エウルア"
+				},
+				{
+					"id": 705030208,
+					"content": "何か悩みごとでもあるの？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030210
+					]
+				},
+				{
+					"id": 705030209,
+					"content": "話し相手になるよ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030210
+					]
+				},
+				{
+					"id": 705030210,
+					"content": "おう。一人でお酒を飲むのは寂しいしな。オイラたちと話せば、気分も明るくなるはずだぞ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030211
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705030211,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030212
+					],
+					"speakerTitle": "エウルア"
+				},
+				{
+					"id": 705030212,
+					"content": "確かに、一人でお酒を飲んでいたわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030213
+					],
+					"speakerTitle": "エウルア"
+				},
+				{
+					"id": 705030213,
+					"content": "モンドにいると、どの酒場に行っても歓迎されないのよ。今日はせっかく気分が良くて…だから、お酒を飲もうと思ったのに、また人に後ろ指をさされて…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030214
+					],
+					"speakerTitle": "エウルア"
+				},
+				{
+					"id": 705030214,
+					"content": "君は、どうやってそんなにたくさんの友人を作ったの？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030215
+					],
+					"speakerTitle": "エウルア"
+				},
+				{
+					"id": 705030215,
+					"content": "人が君のことを話す時、その言葉にはいつも憧れが見えて、みんな微笑んでいるわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030216
+					],
+					"speakerTitle": "エウルア"
+				},
+				{
+					"id": 705030216,
+					"content": "なのに、私の名前を聞いただけで、みんな…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030217
+					],
+					"speakerTitle": "エウルア"
+				},
+				{
+					"id": 705030217,
+					"content": "そんな悪い風に考えないで。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030218
+					]
+				},
+				{
+					"id": 705030218,
+					"content": "ローレンス家に生まれたのは、エウルアの意志とは関係ないだろ。それに、オイラたちはそんなこと気にしてないぞ。オイラたちの知ってるエウルアは、すっごくいいやつだからな！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030219
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705030219,
+					"content": "ただ、エウルアって素直じゃないっていうか…いつも人を恨んでるふりをして、優しい一面を隠すんだよな…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030220
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705030220,
+					"content": "ちょっと、誰がふりをしているですって…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030221,
+						705030222
+					],
+					"speakerTitle": "エウルア"
+				},
+				{
+					"id": 705030221,
+					"content": "#{M#俺}{F#私}たち以外にも…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030223
+					]
+				},
+				{
+					"id": 705030222,
+					"content": "みんながエウルアを認める日が来る…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030223
+					]
+				},
+				{
+					"id": 705030223,
+					"content": "本当かしら？酔っ払っていても、そんな日が来るなんて想像できないわ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030224
+					],
+					"speakerTitle": "エウルア"
+				},
+				{
+					"id": 705030224,
+					"content": "ずっとずっと…私が西風騎士団に入ってからも、みんなは…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030225
+					],
+					"speakerTitle": "エウルア"
+				},
+				{
+					"id": 705030225,
+					"content": "「風向きは変わるもの。」",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030226
+					]
+				},
+				{
+					"id": 705030226,
+					"content": "ああ！あの吟遊野郎も、そんなこと言ってたよな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030227
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705030227,
+					"content": "エウルア、おまえは自分のやり方で進めばいいんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030228
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705030228,
+					"content": "いつか、みんなが抱いているローレンス家のイメージを、おまえが変えてやろうぜ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030229
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705030229,
+					"content": "辛抱強くね。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030230
+					]
+				},
+				{
+					"id": 705030230,
+					"content": "ええ、ありがとう…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030231
+					],
+					"speakerTitle": "エウルア"
+				},
+				{
+					"id": 705030231,
+					"content": "わ、私…こほんっ！話はここまでにしましょう、今日は帰るわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030232
+					],
+					"speakerTitle": "エウルア"
+				},
+				{
+					"id": 705030232,
+					"content": "送ろうか？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030233
+					]
+				},
+				{
+					"id": 705030233,
+					"content": "大丈夫よ。今は他のことを考えていられないもの…さっきの話をしっかりと覚えておかなくちゃ。帰ってすぐ紙に書かないと…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030234
+					],
+					"speakerTitle": "エウルア"
+				},
+				{
+					"id": 705030234,
+					"content": "酔ってるエウルアって、いつもより素直になるんだな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030235
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705030235,
+					"content": "でも、あのエウルアの決め台詞を聞けなかったのは、なんだか物足りない感じがするけど。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030236
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705030236,
+					"content": "あっ！あいつの酔いが覚めた後、「この間のことは全部忘れなさい！」とか言ってこないよな？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030237
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705030237,
+					"content": "あり得るかも…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

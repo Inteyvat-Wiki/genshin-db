@@ -1,0 +1,186 @@
+{
+	"id": 73298,
+	"type": "WQ",
+	"name": "",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		73083
+	],
+	"steps": [
+		{
+			"id": 7329801,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6833001,
+						0
+					],
+					"talkId": 6833001
+				}
+			]
+		},
+		{
+			"id": 7329802,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7329803,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7329802,
+						0
+					],
+					"talkId": 7329802
+				}
+			]
+		},
+		{
+			"id": 7329804,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7329801,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7329801",
+							"3"
+						],
+						"stepId": 7329801,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7329802",
+							"2"
+						],
+						"stepId": 7329802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 732980101,
+					"content": "Aaa, kilit taşı bir anda kuma dönüştü! Paimon bunu beklemiyordu!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						732980102
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 732980102,
+					"content": "Anlaşılan kilit taşı ve levhanın bir bağlantısı var... Paimon levhayla ilgili burada ipucu bulacağımızı hiç düşünmezdi. Vaktimiz olduğunda gidip bunu Tirzad'a anlatmalıyız.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 7329802,
+			"completionStepIds": [
+				7329803
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7329803",
+							"2"
+						],
+						"stepId": 7329803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 732980201,
+					"content": "Levhanın üzerindeki sembolü etkinleştirdikten hemen sonra kilit taşı kuma dönüşür ve yok olur.",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": [
+						732980202
+					]
+				},
+				{
+					"id": 732980202,
+					"content": "Aaa, kilit taşı bir anda kuma dönüştü! Paimon bunu beklemiyordu!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						732980203
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 732980203,
+					"content": "Anlaşılan kilit taşı ve levhanın bir bağlantısı var... Paimon levhayla ilgili burada ipucu bulacağımızı hiç düşünmezdi. Vaktimiz olduğunda gidip bunu Tirzad'a anlatmalıyız.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		}
+	]
+}

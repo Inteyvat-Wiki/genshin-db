@@ -1,0 +1,913 @@
+{
+	"id": 11102,
+	"type": "LQ",
+	"name": "Estirpare il male",
+	"description": "La capacità di Ladro di stelle di estirpare il male ha origine dal Sigillo del consenso. Dopo un imprevisto, insegui un gruppo di Hilichurl dall'aura malvagia...",
+	"unlockDescription": "",
+	"chapter": "Il sogno della farfalla",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		11103
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1110201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Usa la Vista elementale per rintracciare gli Hilichurl con l'aura malvagia",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1110201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1110202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Xiao",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1110202,
+						0
+					],
+					"talkId": 1110202
+				}
+			]
+		},
+		{
+			"id": 1110203,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Raggiungi la caverna del Karma",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_DUNGEON",
+					"rawParams": [
+						1102,
+						173
+					]
+				}
+			]
+		},
+		{
+			"id": 1110204,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1110204,
+						0
+					],
+					"talkId": 1110204
+				}
+			]
+		},
+		{
+			"id": 1110205,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1110206,
+						0
+					],
+					"talkId": 1110206
+				}
+			]
+		},
+		{
+			"id": 1110206,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sconfiggi gli Hilichurl con l'aura malvagia presenti nella caverna",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1110207,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1110202,
+			"completionStepIds": [
+				1110202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110202",
+							"2"
+						],
+						"stepId": 1110202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Xiao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111020201,
+					"content": "Sei tu... mi ricordo di te.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020202
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020202,
+					"content": "Stavo liberando alcuni esseri viventi dall'influenza demoniaca. Sembrerebbe che vi abbia causato dei problemi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020203
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020203,
+					"content": "(Eh? Di solito non è così educato, cosa sta succedendo?!?)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020204
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020204,
+					"content": "Se stavi esorcizzando dei demoni, come puoi aver causato problemi?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020205
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020205,
+					"content": "I cambiamenti che si sono manifestati in questi mostri sono dovuti a me, o più precisamente, al karma che ho accumulato.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020206
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020206,
+					"content": "Mutazioni, karma... questo significa...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020207,
+						111020208
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020207,
+					"content": "Lo abbiamo letto nel libro...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020209
+					]
+				},
+				{
+					"id": 111020209,
+					"content": "Sì. Paimon si ricorda che Xiao è noto anche con il nome di Custode Yaksha, vero?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020210
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020210,
+					"content": "Quindi... questo significa che... ooh...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020211
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020211,
+					"content": "P-povero Xiao...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020212
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020212,
+					"content": "...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020213,
+						111020214
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020213,
+					"content": "Abbiamo letto la tua storia in un libro.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020215
+					]
+				},
+				{
+					"id": 111020215,
+					"content": "Capisco. Ti starai riferendo a quella fanfiction da intellettuali di qualche centinaio d'anni fa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020216
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020216,
+					"content": "Tsk. Ogni cosa è temporanea, e vivere significa soffrire. Noi Yaksha non abbiamo bisogno di compassione né di lacrime.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020217
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020217,
+					"content": "Le tue lacrime sarebbero solo un'offesa alla memoria dei miei compagni morti.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020218
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020218,
+					"content": "Oh, uhm... a Paimon dispiace...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020219
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020219,
+					"content": "Non ha importanza. In ogni caso, sto per andare a liberare una caverna dall'influenza demoniaca, quindi le nostre strade si separano qui.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020220
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020220,
+					"content": "A-aspetta! Portaci con te! Paimon ti promette che saremo di grande aiuto!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020221
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020221,
+					"content": "Non ce n'è bisogno. Sono abituato a combattere da solo, e in ogni caso queste mutazioni sono state causate da me...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020222
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020222,
+					"content": "Beh, allora... Ah! Considerala la punizione di Paimon per essere stata involontariamente scortese poco fa! Per favore!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020223
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020223,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020224
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020224,
+					"content": "D'accordo, andiamo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020214,
+					"content": "Stavamo giusto leggendo un libro intitolato \"Yaksha: Gli Adepti guardiani\".",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020215
+					]
+				},
+				{
+					"id": 111020208,
+					"content": "Quindi Xiao è lo Yaksha sopravvissuto?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020209
+					]
+				}
+			]
+		},
+		{
+			"id": 1110204,
+			"completionStepIds": [
+				1110204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110204",
+							"2"
+						],
+						"stepId": 1110204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111020401,
+					"content": "Oooh, questo posto fa venire la pelle d'oca a Paimon!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020402
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020402,
+					"content": "Userò il rituale conosciuto come il Castigo di ogni male per liberare questo luogo dal suo karma.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020403
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020403,
+					"content": "Rimanete calmi. Non permettete che l'ira degli dèi antichi abbia un'influenza negativa su di voi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xiao"
+				}
+			]
+		},
+		{
+			"id": 1110206,
+			"completionStepIds": [
+				1110205
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110205",
+							"2"
+						],
+						"stepId": 1110205,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111020601,
+					"content": "È un bene che siamo venuti qui. Un insolito numero di esseri viventi ha subito l'influenza demoniaca. Se non fossimo arrivati in tempo, le conseguenze sarebbero state disastrose.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020602
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020602,
+					"content": "Ora, riguardo a quel Ladro di stelle di cui parlavi, come stanno le cose?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020603
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020603,
+					"content": "Oooh, te lo dirà Paimon!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020604
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020604,
+					"content": "Un Adeptus che esaudisce i desideri... E pensare che la gente si lascia ingannare così facilmente da bugie talmente spudorate...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020605
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020605,
+					"content": "Essendo un Adeptus, hai il potere di esaudire i desideri, Xiao?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020606
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020606,
+					"content": "La Liyue del passato non chiederebbe mai agli Adepti dei doni senza averli prima guadagnati.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020607
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020607,
+					"content": "Migliaia di anni fa, il popolo ancestrale di Liyue chiedeva agli Adepti nient'altro che la capacità di difendere la propria terra.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020608
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020608,
+					"content": "Eh... A dire il vero, un Adeptus che esaudisce i desideri attirerebbe molto di più l'attenzione della gente al giorno d'oggi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020609
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020609,
+					"content": "Per quanto deboli possano essere le persone al giorno d'oggi, questo non mi riguarda. Ciò che mi interessa è rispettare il decreto originario di Rex Lapis.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020610
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020610,
+					"content": "Ops... Paimon ha parlato di nuovo senza pensare...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020611
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020611,
+					"content": "Oh, ah, un'altra cosa! Quel finto Adeptus ha un Sigillo del consenso. Lo usa per esorcizzare i demoni!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020612
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020612,
+					"content": "Davvero? Tsk. Che idiota. Esorcizzare i demoni senza sterminarli: non c'è da meravigliarsi che siano di nuovo qui.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020613
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020613,
+					"content": "Se questa situazione non si fermerà qui, le cose potrebbero sfuggire al mio controllo... Dobbiamo confiscare il suo Sigillo del consenso.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020614,
+						111020615
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020614,
+					"content": "Confiscare? Tutto qui?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020616
+					]
+				},
+				{
+					"id": 111020616,
+					"content": "Le grandi menti pensano allo stesso modo! Paimon è d'accordo, dobbiamo farla pagare a quell'imbroglione per aver cercato di ingannarci!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020617
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020617,
+					"content": "E si dà il caso che abbiamo con noi anche un vero Adeptus! Se Xiao dovesse dare una lezione a Ladro di stelle, quel farabutto non oserà spacciarsi mai più per un Adeptus, puoi scommetterci!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020618
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020618,
+					"content": "No. Io uccido solo i demoni, non uccido i comuni mortali.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020619
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020619,
+					"content": "Chi ha parlato di ucciderlo?!?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020620
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020620,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020621
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020621,
+					"content": "Liyue trarrebbe giovamento se riuscissimo a convincerlo a porre fine alle sue azioni malvagie.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020622
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020622,
+					"content": "Io possiedo un'arte chiamata Catturasogni. Di solito viene usata per separare l'anima dal corpo e per coltivare sé stessi, come in un sogno a occhi aperti...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020623
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020623,
+					"content": "Ma può anche essere usata per evocare gli spiriti.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020624
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020624,
+					"content": "Wow, questa sì che è una vera arte da Adepti!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020625,
+						111020626
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020625,
+					"content": "È simile al dono dei sogni e delle visioni?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020627
+					]
+				},
+				{
+					"id": 111020627,
+					"content": "Per poter utilizzare quest'arte è necessario eseguire un rituale. Aiutami a raccogliere alcuni oggetti: un incensiere, sette lampade e qualcosa per abbassare la temperatura.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020628
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020628,
+					"content": "Abbassare la temperatura... Oh, dei Fiordinebbia dovrebbero andare bene, giusto?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020629
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020629,
+					"content": "Ma per quanto riguarda l'incensiere e le sette lampade... mmh... Probabilmente non è il tipo di cose che si possono trovare facilmente qui intorno.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020630
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 111020630,
+					"content": "Sai dove sono le due statue degli Yaksha che sorvegliano la strada dei commercianti a sud del Monte Tianheng?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020631
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020631,
+					"content": "Gli antenati del popolo di Liyue costruirono dei santuari per onorare gli Yaksha. Dovresti riuscire a trovare ancora degli oggetti cerimoniali laggiù.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						111020632
+					],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020632,
+					"content": "Una volta che li avrai trovati, incontriamoci vicino alle statue degli Yaksha dopo il tramonto. Ti insegnerò come usare quest'arte.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xiao"
+				},
+				{
+					"id": 111020626,
+					"content": "Lo farai uscire fuori di senno.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020627
+					]
+				},
+				{
+					"id": 111020615,
+					"content": "Anch'io vorrei dargli una lezione.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						111020616
+					]
+				}
+			]
+		},
+		{
+			"id": 1110220,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110201",
+							"2"
+						],
+						"stepId": 1110201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Credente"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111022001,
+					"content": "È molto strano che Maestro delle stelle fallisca un esorcismo... forse non si sente bene oggi?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Credente"
+				}
+			]
+		},
+		{
+			"id": 1110221,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110201",
+							"2"
+						],
+						"stepId": 1110201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Credente"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111022101,
+					"content": "Cosa è successo? Fortuna che c'eri tu, eh...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Credente"
+				}
+			]
+		},
+		{
+			"id": 1110222,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110201",
+							"2"
+						],
+						"stepId": 1110201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Mercante credente"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111022201,
+					"content": "Non posso credere che Maestro delle stelle non sia riuscito a sconfiggere quegli Hilichurl...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Mercante credente"
+				}
+			]
+		},
+		{
+			"id": 1110223,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110201",
+							"2"
+						],
+						"stepId": 1110201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ladro di stelle"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111022301,
+					"content": "Costui non si sente tanto bene. Costui spera che non spargerai la voce in giro...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ladro di stelle"
+				}
+			]
+		},
+		{
+			"id": 1110224,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1110203",
+							"2"
+						],
+						"stepId": 1110203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Xiao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 111022401,
+					"content": "Porta a compimento i preparativi ed entreremo, dobbiamo occuparci di quei mostri.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xiao"
+				}
+			]
+		}
+	]
+}

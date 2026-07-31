@@ -1,0 +1,190 @@
+{
+	"id": 21023,
+	"type": "WQ",
+	"name": "Kế Sách Tạm Thời",
+	"description": "Thang bộ tại \"Nhà Trọ Vọng Thư\" tạm thời bị niêm phong do gặp phải sự cố nào đó. Làm cách nào để đi lên trên cũng là một vấn đề nan giải...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2102301,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102301,
+						0
+					],
+					"talkId": 2102301
+				}
+			]
+		},
+		{
+			"id": 2102302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Ngồi thang máy",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2102303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Nói chuyện với Huai'an",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102302,
+						0
+					],
+					"talkId": 2102302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2102302,
+			"completionStepIds": [
+				2102303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102303",
+							"2"
+						],
+						"stepId": 2102303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102301",
+							"3"
+						],
+						"stepId": 2102301,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Huai'an"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210230201,
+					"content": "Cầu thang phải nhanh chóng sửa...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230202
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230202,
+					"content": "Bạn là chưởng quỹ sao?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210230203
+					]
+				},
+				{
+					"id": 210230203,
+					"content": "Đúng vậy, bạn có chuyện gì sao?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230204
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230204,
+					"content": "Có một món đồ cho bạn, là người dưới lầu bảo tôi mang lên.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230205
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 210230205,
+					"content": "Ồ... Chắc là món đồ mà khách hàng đưa cho tôi... Zhen Qiang sao không tự mình mang lên chứ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230206
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230206,
+					"content": "Anh ta nói còn phải nhận hàng? Haizz anh ta bảo lên lên xuống xuống mất thời gian...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230207
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230207,
+					"content": "Bạn là khách phải không, quả là có lỗi khi để cầu thang bị hỏng đúng lúc này. Tôi đang nghĩ cách để sửa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230208
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230208,
+					"content": "Thật là phiền phức quá, còn bắt bạn mang đồ cho tôi. Đây là tiền thưởng cho bạn, hãy mau nhận lấy.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230209
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230209,
+					"content": "Việc này vốn là của Zhen Qiang, anh ta dám sai bạn mang lên sao. Đây là tiền thưởng cho bạn, hãy mau nhận lấy.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210230210
+					],
+					"speakerTitle": "Huai'an"
+				},
+				{
+					"id": 210230210,
+					"content": "Tôi giờ phải nghĩ việc sửa cầu thang, bạn cứ đi lại thoải mái nhé, có chuyện gì thì đến tìm tôi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Huai'an"
+				}
+			]
+		}
+	]
+}

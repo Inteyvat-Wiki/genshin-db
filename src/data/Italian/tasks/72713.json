@@ -1,0 +1,167 @@
+{
+	"id": 72713,
+	"type": "WQ",
+	"name": "Degli ingredienti per Murakami",
+	"description": "Murakami dell'Isola di Narukami vorrebbe 15 foglie di menta.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7271301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dai 15 foglie di menta a Murakami",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7271301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7271302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Murakami",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7271302,
+						0
+					],
+					"talkId": 7271302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7271301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271301",
+							"2"
+						],
+						"stepId": 7271301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7271301"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Murakami"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727130101,
+					"content": "Stai cercando della menta?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727130102
+					]
+				},
+				{
+					"id": 727130102,
+					"content": "Menta, sì, ho bisogno di menta... Con della menta, potrei creare dei nuovi sapori...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727130103
+					],
+					"speakerTitle": "Murakami"
+				},
+				{
+					"id": 727130103,
+					"content": "Devi aver accettato il mio incarico. In questo caso, hai già recuperato 15 foglie di menta?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727130106,
+						727130104
+					],
+					"speakerTitle": "Murakami"
+				},
+				{
+					"id": 727130106,
+					"content": "Indovinato!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 727130104,
+					"content": "Non ancora.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727130105
+					]
+				},
+				{
+					"id": 727130105,
+					"content": "Ah, va bene. Allora, portamele quando le trovi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Murakami"
+				}
+			]
+		},
+		{
+			"id": 7271302,
+			"completionStepIds": [
+				7271302
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271302",
+							"2"
+						],
+						"stepId": 7271302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Murakami"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727130201,
+					"content": "Ottimo, allora è arrivato il momento di creare nuovi piatti! Oh, ma prima devo pagarti. Stavo per dimenticarmene!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Murakami"
+				}
+			]
+		}
+	]
+}

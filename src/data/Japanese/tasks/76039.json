@@ -1,0 +1,341 @@
+{
+	"id": 76039,
+	"type": "WQ",
+	"name": "支援小隊の語り",
+	"description": "亡霊の囁きに耳を傾け、彼らの名前を取り戻そう。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7603901,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_GLOBAL_VAR_EQUAL",
+					"rawParams": [
+						7603901,
+						1
+					]
+				}
+			]
+		},
+		{
+			"id": 7603902,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "灯台の照明を操作して、行き先を見失った亡霊を導く",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					3709.919,
+					257.123,
+					9178.172
+				],
+				"pointId": 360100183
+			}
+		},
+		{
+			"id": 7603903,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "行き先を見失った亡霊と会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7603902,
+						0
+					],
+					"talkId": 7603902
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7603904,
+						0
+					],
+					"talkId": 7603904
+				}
+			]
+		},
+		{
+			"id": 7603904,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "灯台の照明を操作して、行き先を見失った亡霊を導く",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7603903,
+						0
+					],
+					"talkId": 7603903
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					3709.919,
+					257.123,
+					9178.172
+				],
+				"pointId": 360100183
+			}
+		}
+	],
+	"talks": [
+		{
+			"id": 7603902,
+			"completionStepIds": [
+				7603903
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7603903",
+							"2"
+						],
+						"stepId": 7603903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7603902",
+							"2"
+						],
+						"stepId": 7603902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"行き先を見失った亡霊"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 760390201,
+					"content": "生存している小隊は発見できなかった。見つかったのは、叫び声をあげる魔物と死体だけ。一体どうすればいい？どこに行けばいいんだ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760390202
+					],
+					"speakerTitle": "行き先を見失った亡霊"
+				},
+				{
+					"id": 760390202,
+					"content": "灯台の導きに従うしかない。だが、こんな場所で誰が道を示してくれるというんだ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "行き先を見失った亡霊"
+				}
+			]
+		},
+		{
+			"id": 7603903,
+			"completionStepIds": [
+				7603904
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7603904",
+							"2"
+						],
+						"stepId": 7603904,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"調べる"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							3709.919,
+							257.123,
+							9178.172
+						],
+						"pointId": 360100183
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 760390301,
+					"content": "",
+					"roleType": "TALK_ROLE_NONE",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7603904,
+			"completionStepIds": [
+				7603903
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_PLAYER_CURRENT_AVATAR",
+						"rawParams": [
+							"10000120",
+							"0",
+							"1",
+							"0"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7603903",
+							"2"
+						],
+						"stepId": 7603903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7603902",
+							"2"
+						],
+						"stepId": 7603902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"行き先を見失った亡霊"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 760390101,
+					"content": "緊急時の対策として、警戒信号が出されれば、本部から特別支援小隊「シャドウ」が派遣され、我々を支援をしてくれる。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760390102
+					],
+					"speakerTitle": "行き先を見失った亡霊"
+				},
+				{
+					"id": 760390102,
+					"content": "…ここは霧が濃くて、灯台が見えない。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760390103
+					],
+					"speakerTitle": "行き先を見失った亡霊"
+				},
+				{
+					"id": 760390103,
+					"content": "指揮官…足音が…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760390104
+					],
+					"speakerTitle": "行き先を見失った亡霊"
+				},
+				{
+					"id": 760390104,
+					"content": "島に駐留しているライトキーパーだろうか…応答せよ——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760390105,
+						760390106
+					],
+					"speakerTitle": "行き先を見失った亡霊"
+				},
+				{
+					"id": 760390105,
+					"content": "そのとおり。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						760390107
+					]
+				},
+				{
+					"id": 760390106,
+					"content": "灯台は北東にある。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						760390107
+					]
+				},
+				{
+					"id": 760390107,
+					"content": "様子がおかしい…注意しろ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760390108
+					],
+					"speakerTitle": "行き先を見失った亡霊"
+				},
+				{
+					"id": 760390108,
+					"content": "緊急時の対策として、警戒信号が出されれば、本部から特別支援小隊「シャドウ」が派遣され、我々を支援をしてくれる。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760390109
+					],
+					"speakerTitle": "行き先を見失った亡霊"
+				},
+				{
+					"id": 760390109,
+					"content": "…ここは霧が濃くて、灯台が見えない…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760390110
+					],
+					"speakerTitle": "行き先を見失った亡霊"
+				},
+				{
+					"id": 760390110,
+					"content": "見えない…見えない…見えない…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "行き先を見失った亡霊"
+				}
+			]
+		}
+	]
+}

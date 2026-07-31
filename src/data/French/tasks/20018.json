@@ -1,0 +1,669 @@
+{
+	"id": 20018,
+	"type": "IQ",
+	"name": "Réparation urgente",
+	"description": "Magar acheminait sa marchandise vers Deauclaire quand il s'est fait attaquer par des Brutocollinus. Sa vie et son convoi sont en danger...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2001801,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Éliminez tous les monstres.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001802,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Magar.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001807,
+						0
+					],
+					"talkId": 2001807
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001808,
+						0
+					],
+					"talkId": 2001808
+				}
+			]
+		},
+		{
+			"id": 2001803,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Collectez du bois.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100306,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001804,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Donnez la planche en bois solide à Magar.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001803,
+						0
+					],
+					"talkId": 2001803
+				}
+			]
+		},
+		{
+			"id": 2001805,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Éliminez tous les monstres.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001806,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Magar.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001809,
+						0
+					],
+					"talkId": 2001809
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001810,
+						0
+					],
+					"talkId": 2001810
+				}
+			]
+		},
+		{
+			"id": 2001807,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Collectez de la corde.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100308,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001808,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Donnez la corde à Magar",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001806,
+						0
+					],
+					"talkId": 2001806
+				}
+			]
+		},
+		{
+			"id": 2001809,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Avancez pour en apprendre davantage.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1138,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2001801,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001801",
+							"3"
+						],
+						"stepId": 2001801,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001802",
+							"2"
+						],
+						"stepId": 2001802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Magar"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200180101,
+					"content": "Merci. Je vous promets que je vais arranger les choses...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180102
+					],
+					"speakerTitle": "Magar"
+				},
+				{
+					"id": 200180102,
+					"content": "À quoi je sers si je ne peux même pas livrer une cargaison de vin ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180103
+					],
+					"speakerTitle": "Magar"
+				},
+				{
+					"id": 200180103,
+					"content": "Je vais être renvoyé du Domaine si je ne me reprends pas... À moins que monsieur Connor ait déjà décidé que je n'étais d'aucune utilité. Gloups... Si ça se trouve monsieur Elzer est déjà en train de rédiger la lettre de licenciement au moment où je vous parle... Mon dieu, tout espoir est perdu...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180104
+					],
+					"speakerTitle": "Magar"
+				},
+				{
+					"id": 200180104,
+					"content": "Calmez-vous un peu...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200180105
+					]
+				},
+				{
+					"id": 200180105,
+					"content": "*soupir* Ma situation est irrécupérable, mais je livrerai ce vin à tout prix.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180106
+					],
+					"speakerTitle": "Magar"
+				},
+				{
+					"id": 200180106,
+					"content": "Mon véhicule est endommagé... Pourriez-vous me chercher de quoi le réparer ? Une <color=#00E1FFFF>planche solide</color> sera amplement suffisante.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Magar"
+				}
+			]
+		},
+		{
+			"id": 2001802,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001803",
+							"2"
+						],
+						"stepId": 2001803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Magar"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200180201,
+					"content": "Vous trouverez facilement une <color=#00E1FFFF>planche solide</color> dans la forêt. Ramenez-m'en une, s'il vous plaît.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Magar"
+				}
+			]
+		},
+		{
+			"id": 2001803,
+			"completionStepIds": [
+				2001804
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001804",
+							"2"
+						],
+						"stepId": 2001804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Magar"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200180301,
+					"content": "Ça ira, enfin j'espère... Merci beaucoup.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180302
+					],
+					"speakerTitle": "Magar"
+				},
+				{
+					"id": 200180302,
+					"content": "Zut ! Ils sont de retour ! Aidez-moi, s'il vous plaît !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Magar"
+				}
+			]
+		},
+		{
+			"id": 2001804,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001805",
+							"3"
+						],
+						"stepId": 2001805,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001806",
+							"2"
+						],
+						"stepId": 2001806,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Magar"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200180401,
+					"content": "Merci beaucoup ! Heureusement que vous étiez là.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180402
+					],
+					"speakerTitle": "Magar"
+				},
+				{
+					"id": 200180402,
+					"content": "Par contre, ça va être difficile de réparer mon véhicule maintenant...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180403
+					],
+					"speakerTitle": "Magar"
+				},
+				{
+					"id": 200180403,
+					"content": "Il est cassé de partout... Bon, je suppose qu'il n'y a rien à faire à part essayer de le réparer de façon temporaire.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180404
+					],
+					"speakerTitle": "Magar"
+				},
+				{
+					"id": 200180404,
+					"content": "Ça me va, du moment qu'elle tient jusqu'à ce que j'atteigne la ville.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180405
+					],
+					"speakerTitle": "Magar"
+				},
+				{
+					"id": 200180405,
+					"content": "J'avais des cordes, mais je crois que les monstres se sont fait la malle avec.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180406
+					],
+					"speakerTitle": "Magar"
+				},
+				{
+					"id": 200180406,
+					"content": "Peut-être qu'elles sont <color=#00E1FFFF>dans la forêt</color> ? Vous pourriez aller y jeter un coup d'œil pour moi ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Magar"
+				}
+			]
+		},
+		{
+			"id": 2001805,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001807",
+							"2"
+						],
+						"stepId": 2001807,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Magar"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200180501,
+					"content": "Ramenez-moi des <color=#00E1FFFF>cordes</color>, s'il vous plaît.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Magar"
+				}
+			]
+		},
+		{
+			"id": 2001806,
+			"completionStepIds": [
+				2001808
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001807",
+							"3"
+						],
+						"stepId": 2001807,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001808",
+							"2"
+						],
+						"stepId": 2001808,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Magar"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200180601,
+					"content": "Merci beaucoup ! Ça fera l'affaire.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180602
+					],
+					"speakerTitle": "Magar"
+				},
+				{
+					"id": 200180602,
+					"content": "Je peux poursuivre mon chemin jusqu'à Deauclaire comme ça. Une fois que j'aurais déposé la marchandise, j'expliquerai ce qu'il s'est passé quand je reviendrai au Domaine de l'Aurore.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180603
+					],
+					"speakerTitle": "Magar"
+				},
+				{
+					"id": 200180603,
+					"content": "J'espère qu'Elzer ne va pas me virer en voyant l'état de la charrette.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Magar"
+				}
+			]
+		},
+		{
+			"id": 2001807,
+			"completionStepIds": [
+				2001802
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Magar"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200180701,
+					"content": "Pas de problème, je vais vous en trouver une.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200180702
+					]
+				},
+				{
+					"id": 200180702,
+					"content": "Merci, je compte sur vous ! Je vais réfléchir aux réparations en attendant votre retour.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Magar"
+				}
+			]
+		},
+		{
+			"id": 2001808,
+			"completionStepIds": [
+				2001802
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Magar"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200180801,
+					"content": "#Je suis {M#occupé}{F#occupée}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200180802
+					]
+				},
+				{
+					"id": 200180802,
+					"content": "N—Ne partez pas ! Je n'arriverai à rien sans votre aide. Vous êtes mon seul espoir de m'en sortir..",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Magar"
+				}
+			]
+		},
+		{
+			"id": 2001809,
+			"completionStepIds": [
+				2001806
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Magar"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200180901,
+					"content": "J'ai compris.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200180902
+					]
+				},
+				{
+					"id": 200180902,
+					"content": "Bien. Quant à moi, je vais monter la garde.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Magar"
+				}
+			]
+		},
+		{
+			"id": 2001810,
+			"completionStepIds": [
+				2001806
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Magar"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200181001,
+					"content": "#Je suis {M#occupé}{F#occupée}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200181002
+					]
+				},
+				{
+					"id": 200181002,
+					"content": "#Vous êtes {M#le seul}{F#la seule} à pouvoir m'aidez ici ! Ne me laissez pas tomber...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Magar"
+				}
+			]
+		}
+	]
+}

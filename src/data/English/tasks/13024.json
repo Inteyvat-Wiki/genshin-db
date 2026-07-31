@@ -1,0 +1,2317 @@
+{
+	"id": 13024,
+	"type": "LQ",
+	"name": "Shade Upon Red Silk",
+	"description": "One day, you and Paimon stop by the Grand Bazaar...",
+	"unlockDescription": "",
+	"chapter": "Lionsblood",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		13025
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1302401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to the Grand Bazaar",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1302401,
+						0
+					],
+					"talkId": 1302401
+				}
+			]
+		},
+		{
+			"id": 1302402,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to Caravan Ribat to learn more about the situation",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1302402,
+						0
+					],
+					"talkId": 1302402
+				}
+			]
+		},
+		{
+			"id": 1302403,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Watch over the trade route and wait for your moment",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1302403,
+						0
+					],
+					"talkId": 1302403
+				}
+			]
+		},
+		{
+			"id": 1302404,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Intercept the caravan and search for clues",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1302405,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Sattar",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1302405,
+						0
+					],
+					"talkId": 1302405
+				}
+			]
+		},
+		{
+			"id": 1302406,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1302406,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						1302403,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 1302407,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Look for clues among the goods",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1302407,
+						0
+					],
+					"talkId": 1302407
+				}
+			]
+		},
+		{
+			"id": 1302408,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1302408,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						1302407,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1302401,
+			"completionStepIds": [
+				1302401
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1302401",
+							"2"
+						],
+						"stepId": 1302401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Dehya",
+					"Dunyarzad"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130240101,
+					"content": "Hmm, Paimon's trying to remember... what else did we put on our shopping list...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240102
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240102,
+					"content": "*sniff* Oh, what a mouthwatering smell! Paimon would know the aroma of Biryani anywhere! Let's go get some!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240103
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240103,
+					"content": "That wasn't on our list, was it?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130240104
+					]
+				},
+				{
+					"id": 130240104,
+					"content": "Uh, we can still add it to the list!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240105
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240105,
+					"content": "#Well, if it isn't {NICKNAME} and Paimon. Wasn't expecting to see you here.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240106
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240106,
+					"content": "Hello there! It's been quite a while.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240107
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130240107,
+					"content": "Huh, so you two are still hanging out together! Dehya, didn't you say last time that you were gonna head back to the desert?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240108
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240108,
+					"content": "Haha, I said I was going to resign from being her bodyguard, not that our friendship was over. We're still the best of friends.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240109
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240109,
+					"content": "The Homayanis also still post jobs from time to time. Their pay is always generous, so me and the other mercs never pass them up.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240110
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240110,
+					"content": "I told Dehya to just stay at our place when she took one of those jobs a few days ago.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240111
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130240111,
+					"content": "My parents were delighted. They even said that it always felt like we were missing someone whenever Dehya wasn't around.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240112
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130240112,
+					"content": "Pff, that sounds like something they would say alright. They are always so welcoming...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240113
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240113,
+					"content": "Anyway, the job is already taken care of, so I was gonna head back to the brigade as soon as I finished a little shopping. But the master kept insisting and I ended up staying for another day.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240114
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240114,
+					"content": "You can stay for as many days as you want, Dehya. Father hasn't even gotten around to treating you to his best dishes yet.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240115
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130240115,
+					"content": "Heh, you know I'm not the kind of person to stay put in one place like that, my lady. Don't worry though — there'll always be next time.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240116
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240116,
+					"content": "But she said they'll treat you to the \"best dishes\"... Paimon can't believe you can still refuse that!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240117
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240117,
+					"content": "Ah, but wait, didn't you say last time that you would take me on a trip to the desert? Why don't you just take me with you today when you leave?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240118
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130240118,
+					"content": "There are so many places I still haven't visited yet.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240119
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130240119,
+					"content": "I'm sorry, my lady, but no can do. There are still a few things I need to take care of back at the brigade. Besides, the desert hasn't exactly been the most peaceful place lately.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240120
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240120,
+					"content": "Oh, come on, not this again! That's also what you said last time, and the time before that.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240121
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130240121,
+					"content": "I know, I'm sorry! Just give me some more time, and I promise I'll plan the best trip ever for you.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240122
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240122,
+					"content": "Alright, fine. To be perfectly honest, it's not that I wanted to go, it's more like... I feel like something is off about you lately.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240123
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130240123,
+					"content": "Ever since you first set foot on the estate a few days ago, you've been acting anxious and even paranoid.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240124
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130240124,
+					"content": "Have you been delaying our trip because you've run into some kind of trouble?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240125
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130240125,
+					"content": "Nah, are you kidding? You're worrying too much.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240126
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240126,
+					"content": "Would you swear on that? Friends shouldn't lie to each other, you know. I won't pry any further if you're willing to swear on what you just said.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240127
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130240127,
+					"content": "But if something really is bothering you, then just tell me. You know I'll help you however I can.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240128
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130240128,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240129
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240129,
+					"content": "Oh, looks like Dunyarzad was on to something.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240130
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240130,
+					"content": "*sigh* You're too perceptive, my lady. Seems I can't hide anything from you.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240131
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240131,
+					"content": "I just thought that nothing good could come out of telling you about the messy happenings of mercenaries. Knowing too much only leads to more trouble.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240132
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240132,
+					"content": "Mercenary life is a dog-eat-dog world where Mora reigns supreme. Everything operates on a completely different set of rules.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240133
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240133,
+					"content": "That doesn't change anything about what I just said, though. We're still friends, and I can only support you if I understand what's bothering you.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240134
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130240134,
+					"content": "My lady... *sigh* You're not gonna stop until you drag it out of me, are ya...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240135
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240135,
+					"content": "Alright, I'll share what I know. Let's go somewhere else first, this isn't exactly the best place for a discussion.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240136
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240136,
+					"content": "Okay, let's talk here. Just try not to draw any extra attention.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240137
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240137,
+					"content": "As you may already know, the Eremites have both a lot of mercenaries and a complex organizational structure. Many mercs are no different than me, just going around looking for jobs to earn some Mora.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240138
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240138,
+					"content": "My brigade is called the \"Blazing Beasts.\" We're not a large group, but every member is loyal and brave.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240139
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240139,
+					"content": "However, not all Eremite brigades are like mine. Some are willing to cross all kinds of lines for the sake of Mora. The most notorious is a faction known as \"Deshret's Relics.\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240140
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240140,
+					"content": "Deshret's Relics? Judging from the name, they must really look up to...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240141,
+						130240142
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240141,
+					"content": "King Deshret.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130240143
+					]
+				},
+				{
+					"id": 130240143,
+					"content": "Yep, you got it. I've heard that you've already crossed paths with Ayn Al-Ahmar? They're one of the groups under the Relics' banner.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240144
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240144,
+					"content": "Oh, you mean the group that tried to sell us the Divine Knowledge Capsule! Yeah, they weren't friendly at all...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240145
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240145,
+					"content": "Deshret's Relics is composed of many smaller brigades like Ayn Al-Ahmar. The Relics' headquarters issues orders to all brigades under its control.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240146
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240146,
+					"content": "On any other day, I would want nothing to do with them. Unfortunately though, the brigade that's stirring up trouble now is none other than Dakan Al-Ahmar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240147
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240147,
+					"content": "Dakan...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240148
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240148,
+					"content": "I think it means \"beard\" or something. Believe me, it's a really stupid name... I've found it insufferable for years.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240149
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240149,
+					"content": "Anyway, the real issue is that Dakan Al-Ahmar is led by my father, Kusayla.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240150
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240150,
+					"content": "Say what now!?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240151
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240151,
+					"content": "I think I'm starting to understand your anxiety now... but what did they do?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240152
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130240152,
+					"content": "I won't go into details, my lady, but they've been involved in a lot of violent incidents. We're talking hundreds.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240153
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240153,
+					"content": "...Hundreds!?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240154
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240154,
+					"content": "Yep. The scenes tend to be quite gruesome, too. They strip the victims of all their valuables before murdering them.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240155
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240155,
+					"content": "Not only have they targeted merchant caravans and ordinary citizens, but other mercenary brigades as well.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240156
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240156,
+					"content": "...That's beyond terrible. They won't even spare their own kind.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240157
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130240157,
+					"content": "I don't know how Deshret's Relics sees it, all I do know is that Dakan Al-Ahmar has become more and more aggressive over the last few years.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240158
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240158,
+					"content": "If I don't do something about them, then even my brigade or the people of Aaru Village could become their next target.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240159
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240159,
+					"content": "*sigh* I just wish I knew what's driven him to do this...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240160
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240160,
+					"content": "Yeah, how can your father do such terrible things?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240161
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240161,
+					"content": "I dunno, people change. He's always been pretty pathetic, but at least in the past, there were still a few lines that he wouldn't cross.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240162
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240162,
+					"content": "That's setting the bar pretty low...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240163
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240163,
+					"content": "I mean, if he was even remotely decent, then why would I have to leave the brigade and cut all ties with him?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240164
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240164,
+					"content": "He was loud and foolish, with no real sense of purpose. Instead of doing anything useful, he spent most of his time drinking and chasing after women.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240165
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240165,
+					"content": "Of course, the other brigade members were just like him. Their ruckus would go on night after night...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240166
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240166,
+					"content": "Sounds like a nightmare...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240167
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240167,
+					"content": "What about your mother? Did she ever step in to stop them?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240168
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130240168,
+					"content": "...Unfortunately, I never knew my mother.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240169
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240169,
+					"content": "Ah... I'm sorry, Dehya. I didn't know...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240170
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130240170,
+					"content": "It's alright, my lady. That's pretty common in mercenary circles. Didn't I mention that my father was chasing after women? I was the result of one of those encounters with some random person.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240171
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240171,
+					"content": "He told me that he wasn't sure who my mother was, and in any case, she never came to see me.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240172
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240172,
+					"content": "He'd say, \"You'll be fine as long as you remember to stick with Dad,\" but even then, he left most of the parenting to the brigade. The one thing I do remember is that he used to tell me stories.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240173
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240173,
+					"content": "But the problem was that he had terrible taste. He only knew a few stories, and even those tended to be pretty stale...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240174
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240174,
+					"content": "They were tales of desert warriors defeating dragons in the forest, or stories of mercenaries rescuing princesses from rebel armies.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240175
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240175,
+					"content": "Sounds like your typical fairy tales...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240176
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240176,
+					"content": "More or less, yeah. They were interesting maybe the first or second time around, but after about 20 repeats, they started to get a little dull...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240177
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240177,
+					"content": "He seemed to think those stories were the best things ever, though. He was so into 'em that he'd call the whole brigade over and make them perform the whole thing as a play.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240178
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240178,
+					"content": "Even the toys he gave me would all be story props... I'd get helmets, shields, and toy swords.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240179
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240179,
+					"content": "It was only much later when I realized that the shows were more for him than they ever were for me.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240180
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240180,
+					"content": "...What an interesting guy.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240181
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240181,
+					"content": "But it doesn't sound like he had all bad intentions?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130240182
+					]
+				},
+				{
+					"id": 130240182,
+					"content": "Yeah, I've always found him pretty childish, but that was something I could just shrug off. I had no reason to despise him...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240183
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240183,
+					"content": "...Until I grew up, and learned the true face of Deshret's Relics for myself.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240184
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240184,
+					"content": "Looting, blackmail, violence, and fraud... They not only accepted such heinous acts, they would even openly boast about them.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240185
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240185,
+					"content": "No one in the brigade was any kind of hero, instead, my father and his cronies were more like the bad guys that needed to be taken down.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240186
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240186,
+					"content": "Did they really think that as long as they didn't do any of that stuff right in front of me, I would never know?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240187
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240187,
+					"content": "I think I can understand your feelings. The difference between perception and reality must have hit hard...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240188
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130240188,
+					"content": "Yeah, but don't worry, my lady, it's all water under the bridge to me now. I had a huge argument with my father, and left that place behind for good.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240189
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240189,
+					"content": "I'm not investigating them due to any bitter feelings I still have towards my father. I just want to protect those that are close to me.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240190,
+						130240191
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240190,
+					"content": "You just want to find out...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130240192
+					]
+				},
+				{
+					"id": 130240192,
+					"content": "Yeah, I told the boys to gather as much information as they could. Most of the reports concern violent incidents, but there's also some talk of smuggling.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240193
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240193,
+					"content": "I see... But isn't this investigation incredibly dangerous?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240194
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130240194,
+					"content": "It is, but every mercenary lives life on the edge. It's a lifestyle that I enjoy.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240195
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240195,
+					"content": "That may be true, but it'll be impossible for those who care about you not to worry.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240196
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130240196,
+					"content": "Well... now you get why I didn't want to share any of this with you.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130241101
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130241101,
+					"content": "What should we do? They both have valid concerns...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130241102
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130241102,
+					"content": "I'll go back to the desert with Dehya.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130241103
+					]
+				},
+				{
+					"id": 130241103,
+					"content": "Huh? But there's no need for you to get caught up in this mess, too.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130241104
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130241104,
+					"content": "#Well, {M#he}{F#she}'s super tough, so if {M#he}{F#she} went to the desert with you, then Paimon bets the problem would be solved in no time!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130241105
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130241105,
+					"content": "#Hmm... I'm inclined to agree. I'd feel a lot more at ease if you took {M#him}{F#her} along to help.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130241106,
+						130241107
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130241106,
+					"content": "You can count on me!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130241108
+					]
+				},
+				{
+					"id": 130241108,
+					"content": "I'll wait for news from you in the city until then. Please, stay safe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130241109
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130241109,
+					"content": "I'm honored that you care so much for me, my lady.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130241110
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130241110,
+					"content": "Alright, then let's get moving. Our first stop will be Caravan Ribat, where we can catch up a bit with my fellow mercs.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130241107,
+					"content": "I'll do my best.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130241108
+					]
+				},
+				{
+					"id": 130240191,
+					"content": "Why they suddenly started causing so much more trouble.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130240192
+					]
+				},
+				{
+					"id": 130240142,
+					"content": "Al-Ahmar.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130240143
+					]
+				}
+			]
+		},
+		{
+			"id": 1302402,
+			"completionStepIds": [
+				1302402
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1302402",
+							"2"
+						],
+						"stepId": 1302402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Harun",
+					"Hisham",
+					"Khalaf"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130240201,
+					"content": "Hey, Dehya, you're back! Are these two friends of yours?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240202,
+						130240204
+					],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130240202,
+					"content": "It's a pleasure to meet you.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130240203
+					]
+				},
+				{
+					"id": 130240203,
+					"content": "Hahaha, likewise. There's no need to be so formal with us. We're a pretty casual crew.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240206
+					],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130240206,
+					"content": "Anyway, since we've got newcomers, let me fill you in on what Dakan Al-Ahmar's been up to lately.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240207
+					],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130240207,
+					"content": "They've become extremely aggressive. Apparently even their own now have become acceptable targets.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240208
+					],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130240208,
+					"content": "They even attack other Relics brigades just the same as any other mercenary brigade.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240209
+					],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130240209,
+					"content": "Even the most ferocious beasts still protect their own. It sounds like they've thrown that straight to the wind.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240210
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240210,
+					"content": "That's right. Once they've collected enough loot off the other mercenaries, they sell it off to a different brigade, or turn to merchants on the black market.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240211
+					],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130240211,
+					"content": "A portion of their profits is immediately exchanged for more food and weaponry to be used in their next violent operation.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240212
+					],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130240212,
+					"content": "That's terrible...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240213
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240213,
+					"content": "Yeah, and it really makes you wonder why they're so desperate for Mora.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240214
+					],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130240214,
+					"content": "A few days ago, Hisham and I trailed them for a while, and even disguised ourselves as merchants to conduct trade with them. We were able to learn a few things from the exchange.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240215
+					],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130240215,
+					"content": "Rather than saying they're out to plunder and hoard Mora, it'd probably be more accurate to say that they're experiencing an internal power struggle.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240216
+					],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130240216,
+					"content": "Wait, a power struggle?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240217
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240217,
+					"content": "You heard me right. The vast majority of their victims are mercenaries from the other brigades of Deshret's Relics.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240218
+					],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130240218,
+					"content": "If their only goal was Mora, they could have gone after anybody. The targeted nature of their attacks points to a power struggle between the different brigades within the Relics, that's the only plausible explanation we have.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240219
+					],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130240219,
+					"content": "Unfortunately, we weren't able to find out anything more specific. It seems they're also trying to keep things under wraps.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240220
+					],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130240220,
+					"content": "Oh, one last thing we discovered was that over the past few years, as Dakan Al-Ahmar became more and more active, Deshret's Relics as a whole became a lot weaker.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240221,
+						130240222
+					],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130240221,
+					"content": "They were able to cause so much damage...?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130240223
+					]
+				},
+				{
+					"id": 130240223,
+					"content": "Sounds mighty strange to me, too. Harun, you can leave the rest of the investigation to us.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240224
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240224,
+					"content": "Gotta say though, I didn't expect you to go on a whole undercover mission during the few days I was gone. Sounds like you were really putting your necks on the line, no?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240225
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240225,
+					"content": "Nah, it was nothin'. We're just as concerned about the situation as you are. Dakan Al-Ahmar is your father's crew, after all.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240226
+					],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130240226,
+					"content": "Haha, what he said. Besides, Dehya, haven't you done more dangerous things than all of us combined? What we did is nothing compared to your experiences.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240227
+					],
+					"speakerTitle": "Hisham"
+				},
+				{
+					"id": 130240227,
+					"content": "Yeah! And while they went to talk with Dakan Al-Ahmar, I took a look at the last camp they attacked.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240228
+					],
+					"speakerTitle": "Khalaf"
+				},
+				{
+					"id": 130240228,
+					"content": "Any survivors of the attack were already long gone. There was nothing of value left in the camp.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240229
+					],
+					"speakerTitle": "Khalaf"
+				},
+				{
+					"id": 130240229,
+					"content": "Ah, Hisham and Khalaf, you're here too.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240230
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240230,
+					"content": "We rushed over as soon as we saw you come into Caravan Ribat.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240231
+					],
+					"speakerTitle": "Hisham"
+				},
+				{
+					"id": 130240231,
+					"content": "#Although this new friend of yours looks a little green behind the ears, I'm sensing a special vibe from {M#him}{F#her}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240232
+					],
+					"speakerTitle": "Hisham"
+				},
+				{
+					"id": 130240232,
+					"content": "Now that we know you'll have a capable partner with you, we can also rest easy.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240233
+					],
+					"speakerTitle": "Hisham"
+				},
+				{
+					"id": 130240233,
+					"content": "Hey, what about Paimon? Feel anything special?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240234
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240234,
+					"content": "Oh, uh... You're also planning to tag along with them?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240235
+					],
+					"speakerTitle": "Hisham"
+				},
+				{
+					"id": 130240235,
+					"content": "#Of course! Paimon is the Traveler's most important guide. Wherever {M#he}{F#she} goes, Paimon will follow!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240236
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240236,
+					"content": "Oh, in that case... then you'd better take care of her too, Dehya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240237
+					],
+					"speakerTitle": "Hisham"
+				},
+				{
+					"id": 130240237,
+					"content": "Ugh, don't underestimate Paimon!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240238
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240238,
+					"content": "Hahaha, don't worry about her. She may look tiny and helpless, but she's been through just as many battles as the Traveler here.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240239
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240239,
+					"content": "Even if she had only survived on sheer luck, then that alone would still make her quite formidable.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240240
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240240,
+					"content": "Hah, I had no idea... I guess I shouldn't judge by appearances, haha.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240241
+					],
+					"speakerTitle": "Hisham"
+				},
+				{
+					"id": 130240241,
+					"content": "Oh, one other thing, Dehya. When you're free, why don't you update the deputy about your upcoming schedule?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240242
+					],
+					"speakerTitle": "Khalaf"
+				},
+				{
+					"id": 130240242,
+					"content": "We held another recruitment event a few days ago, but everyone only came to see the Flame-Mane. You weren't around at the time, so people were pretty disappointed to only find our crew of rough, unkempt guys.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240243
+					],
+					"speakerTitle": "Khalaf"
+				},
+				{
+					"id": 130240243,
+					"content": "The deputy put a lot of effort into the event, but it was basically for nothing... only a few people chose to stay, and that really got to him.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240244
+					],
+					"speakerTitle": "Khalaf"
+				},
+				{
+					"id": 130240244,
+					"content": "Ah, sorry to hear that. I'll be sure to bring him some great liquor next time... I left in a hurry, and I couldn't make it back in time for the event.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240245
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240245,
+					"content": "Gotta admit, I can understand their disappointment, though. You're our brigade's main selling point, after all.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240246
+					],
+					"speakerTitle": "Hisham"
+				},
+				{
+					"id": 130240246,
+					"content": "Now, if only the deputy could figure out a way to bring a few more smokin' hot members into our ranks...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240247
+					],
+					"speakerTitle": "Hisham"
+				},
+				{
+					"id": 130240247,
+					"content": "Hah, keep dreaming. Remember the last time I invited a couple gals into the brigade? You all just froze up with your mouths gaping, like a bunch o' scarecrows.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240248
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240248,
+					"content": "The awkward silence and weird expressions left quite the impression on 'em. They were originally interested in joining us, but after that, they both told me they were too uncomfortable to stick around.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240249
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240249,
+					"content": "Hey, didn't we agree to never bring that up again!?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240250
+					],
+					"speakerTitle": "Hisham"
+				},
+				{
+					"id": 130240250,
+					"content": "Huh? Wait, are you serious? Why've I never heard about this?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240251
+					],
+					"speakerTitle": "Khalaf"
+				},
+				{
+					"id": 130240251,
+					"content": "I don't think you were a part of the brigade yet.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240252
+					],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130240252,
+					"content": "Are you kidding me!? I missed a once-in-a-lifetime moment like that, and you weren't even gonna tell me!?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240253
+					],
+					"speakerTitle": "Khalaf"
+				},
+				{
+					"id": 130240253,
+					"content": "Alright, alright! We can tell you about it later. Now's not the time.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240254
+					],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130240254,
+					"content": "Hey, don't you try to change the subject! You and Hisham get your butts over here and tell me everything right now.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240255
+					],
+					"speakerTitle": "Khalaf"
+				},
+				{
+					"id": 130240255,
+					"content": "Uh, are they... always like this?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240256
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240256,
+					"content": "Haha, more or less.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240257
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240257,
+					"content": "There aren't many rules or graces when it comes to mercenaries. We're used to just speaking our minds.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240258
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240258,
+					"content": "If someone starts getting under your skin, you just yell right back at 'em. If that doesn't put an end to it... eh, then you just challenge 'em to a fight.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240259
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240259,
+					"content": "But we also don't tend to take many things too seriously. Being direct and getting it all out of your system as soon as things come up is better than keeping everything bottled up and never talking about it.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240260
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240260,
+					"content": "That's also why I never spare their feelings when I talk to them. If I wanna laugh, I'll laugh. If I'm angry, then I'll unload on 'em. It's hard to stop once you get used to it, though I can never do that when I'm with the Homayanis.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240261
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240261,
+					"content": "Hey, knuckleheads. Can you at least tell me the rest of the intel before you go back to your bickering?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240262
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240262,
+					"content": "Yeah, you hear her, Khalaf? Told ya we gotta focus on the investigation first. Ahem, I drew up a map — right here's the spot — there you'll find the merchant caravan responsible for getting rid of Dakan Al-Ahmar's looted goods.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240263
+					],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130240263,
+					"content": "All you gotta do is wait and ambush them in the evening. They'll have no idea what hit 'em.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240264
+					],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130240264,
+					"content": "Perfect, thanks for that. Be sure to pass my regards to everyone else in the brigade as well.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240265
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240265,
+					"content": "Will do. You stay safe, Dehya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130240222,
+					"content": "That somehow makes things even more confusing.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130240223
+					]
+				},
+				{
+					"id": 130240204,
+					"content": "I'd trust Dehya with my life.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130240205
+					]
+				},
+				{
+					"id": 130240205,
+					"content": "Oh? So you've already become like one of us then, haha. That's good to know.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240206
+					],
+					"speakerTitle": "Harun"
+				}
+			]
+		},
+		{
+			"id": 1302403,
+			"completionStepIds": [
+				1302403
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1302403",
+							"2"
+						],
+						"stepId": 1302403,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Dehya"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130240301,
+					"content": "This should be the place. Let's find a spot to hide and bide our time.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240302
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240302,
+					"content": "It's gonna come down to a fight one way or another, so let's all be careful.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240303
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240303,
+					"content": "#No need to worry! {M#He}{F#She} knows {M#his}{F#her} way around a fight.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240304
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240304,
+					"content": "Haha, I'm not worried about that! What I meant is that we probably shouldn't go too hard on the enemy. After all, we still need to get information out of them.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240305
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240305,
+					"content": "Ah, here they come! You ready?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240306
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240306,
+					"content": "Let's not give them a chance to react and end this quickly.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Dehya"
+				}
+			]
+		},
+		{
+			"id": 1302405,
+			"completionStepIds": [
+				1302405
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1302405",
+							"2"
+						],
+						"stepId": 1302405,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sattar",
+					"Dehya"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130240501,
+					"content": "A—Argh!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240502
+					],
+					"speakerTitle": "Sattar"
+				},
+				{
+					"id": 130240502,
+					"content": "Y—You're... the Flame-Mane!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240503
+					],
+					"speakerTitle": "Sattar"
+				},
+				{
+					"id": 130240503,
+					"content": "Good, that saves me an introduction. Alright, time for a little talk. Are you buddies with Dakan Al-Ahmar now? Tell me, what're they after?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240504
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240504,
+					"content": "Hmph... You know the code of being a mercenary just like everyone else. The first rule is to never divulge key information about our employer. What makes you think I'd talk?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240505
+					],
+					"speakerTitle": "Sattar"
+				},
+				{
+					"id": 130240505,
+					"content": "Heh, that might have worked on an amateur, but I know you're just looking to protect your reputation.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240506
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240506,
+					"content": "Think about it, though. What's your reputation worth if you won't have the other tools you need to succeed in this line of work? Tools like, I dunno... your limbs, or eyes?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240507
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240507,
+					"content": "You've got five seconds. You might want to think twice about how much your employer's information is worth to you.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240508
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240508,
+					"content": "Wh—Whoa!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240509,
+						130240510
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240509,
+					"content": "It's alright, Paimon.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130240511
+					]
+				},
+				{
+					"id": 130240511,
+					"content": "I'm not joking around. We can do this the easy way, or the painful way.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240512
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240512,
+					"content": "Two seconds...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240513
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240513,
+					"content": "I'll save you the trouble... Hmph!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240514
+					],
+					"speakerTitle": "Sattar"
+				},
+				{
+					"id": 130240514,
+					"content": "Huh!? Are you crazy!?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240515
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240515,
+					"content": "He tried to bite off his own tongue! Quick, search the area for any first aid supplies!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240516
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240516,
+					"content": "With Dehya's emergency treatment, the bleeding in Sattar's mouth is brought under control...",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": [
+						130240517
+					]
+				},
+				{
+					"id": 130240517,
+					"content": "Ugh, I definitely didn't expect him to go that far. Thankfully, the wound wasn't too deep, and he just passed out from the pain.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240518
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240518,
+					"content": "But why would he be so extreme...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240519
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240519,
+					"content": "I just wanted to test his mettle. You can get a lot of mercenaries to talk just by threatening them.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240520
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240520,
+					"content": "I didn't expect him to be willing to go through so much pain just to deny us some intel.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240521
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240521,
+					"content": "Well, he's out cold for now... We could wait for him to wake up, but maybe it's not a good idea to interrogate him any further... What should we do?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240522
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130240522,
+					"content": "Yeah, don't worry about it. It'll be a waste of time to interrogate him again after that. He might just hurt himself again if we start asking.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240523
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240523,
+					"content": "There are lots of goods around here. Let's search the area, maybe we'll be able to find something.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130240524
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240524,
+					"content": "...I'm really sorry.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130240510,
+					"content": "She knows what she's doing.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130240511
+					]
+				}
+			]
+		},
+		{
+			"id": 1302411,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130241101,
+					"content": "What should we do? They both have valid concerns...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130241102
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130241102,
+					"content": "I'll go back to the desert with Dehya.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130241103
+					]
+				},
+				{
+					"id": 130241103,
+					"content": "Huh? But there's no need for you to get caught up in this mess, too.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130241104
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130241104,
+					"content": "#Well, {M#he}{F#she}'s super tough, so if {M#he}{F#she} went to the desert with you, then Paimon bets the problem would be solved in no time!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130241105
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 130241105,
+					"content": "#Hmm... I'm inclined to agree. I'd feel a lot more at ease if you took {M#him}{F#her} along to help.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130241106,
+						130241107
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130241106,
+					"content": "You can count on me!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130241108
+					]
+				},
+				{
+					"id": 130241108,
+					"content": "I'll wait for news from you in the city until then. Please, stay safe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130241109
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130241109,
+					"content": "I'm honored that you care so much for me, my lady.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130241110
+					],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130241110,
+					"content": "Alright, then let's get moving. Our first stop will be Caravan Ribat, where we can catch up a bit with my fellow mercs.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Dehya"
+				},
+				{
+					"id": 130241107,
+					"content": "I'll do my best.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130241108
+					]
+				}
+			]
+		},
+		{
+			"id": 1302420,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1302402",
+							"2"
+						],
+						"stepId": 1302402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Dunyarzad"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130242001,
+					"content": "Please be careful. I'll stay in the city and wait for news from you.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130242002
+					],
+					"speakerTitle": "Dunyarzad"
+				},
+				{
+					"id": 130242002,
+					"content": "Just don't do anything reckless, alright?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Dunyarzad"
+				}
+			]
+		},
+		{
+			"id": 1302421,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1302403",
+							"2"
+						],
+						"stepId": 1302403,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Harun",
+					"Khalaf"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130242101,
+					"content": "Now, like I said... The two ladies Dehya brought with her were also like super-mercs, I'm talkin' same level as Flame-Mane here.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130242102
+					],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130242102,
+					"content": "You should have seen it, the aura of the two of 'em when they were standing together... it was incredible! I was just at a loss for words, that's all!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130242103
+					],
+					"speakerTitle": "Harun"
+				},
+				{
+					"id": 130242103,
+					"content": "So pathetic...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130242104
+					],
+					"speakerTitle": "Khalaf"
+				},
+				{
+					"id": 130242104,
+					"content": "H—Hey, shut up!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Harun"
+				}
+			]
+		},
+		{
+			"id": 1302453,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1302407",
+							"2"
+						],
+						"stepId": 1302407,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sattar"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130245301,
+					"content": "(Sattar is not gravely injured, and will probably wake up soon. It should be okay to leave him here for a little while.)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sattar"
+				}
+			]
+		}
+	]
+}

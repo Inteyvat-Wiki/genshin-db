@@ -1,0 +1,557 @@
+{
+	"id": 11003,
+	"type": "LQ",
+	"name": "意外の収穫",
+	"description": "香菱はハスの花托と絶雲の唐辛子のような食材では勝てないと考え、特別な食材を探すために、再び旅に出た。",
+	"unlockDescription": "",
+	"chapter": "モンド美食の旅",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		11004
+	],
+	"prevMainQuestList": [
+		11002
+	],
+	"steps": [
+		{
+			"id": 1100301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "香菱が言っていた場所に行く",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1100301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1100302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "香菱と震えている人と会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1100302,
+						0
+					],
+					"talkId": 1100302
+				}
+			]
+		},
+		{
+			"id": 1100303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "「美味しそうな大根入りの野菜スープ」を作る",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						108021,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1100304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "完成したスープを狩人に渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1100304,
+						0
+					],
+					"talkId": 1100304
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1100302,
+			"completionStepIds": [
+				1100302
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100302",
+							"2"
+						],
+						"stepId": 1100302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"オラフ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110030201,
+					"content": "さ、寒い…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030202
+					],
+					"speakerTitle": "オラフ"
+				},
+				{
+					"id": 110030202,
+					"content": "体が冷え切ってる！急いで温めないと！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030203
+					],
+					"speakerTitle": "香菱"
+				},
+				{
+					"id": 110030203,
+					"content": "火を起こそう！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030204
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 110030204,
+					"content": "うん、あと温かいスープも必要だと思う。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030205
+					],
+					"speakerTitle": "香菱"
+				},
+				{
+					"id": 110030205,
+					"content": "#{NICKNAME}、アタシはここで彼を見ておくから、あなたは<color=#00E1FFFF>美味しいスープ</color>を用意してもらえないかな？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030206
+					],
+					"speakerTitle": "香菱"
+				},
+				{
+					"id": 110030206,
+					"content": "ここに来る途中にヒルチャールの集落があったでしょ。そこに行けばスープを作れるはずだから。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030207
+					],
+					"speakerTitle": "香菱"
+				},
+				{
+					"id": 110030207,
+					"content": "分かった。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030208
+					]
+				},
+				{
+					"id": 110030208,
+					"content": "うん、用意ができたら早く戻ってきてね！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "香菱"
+				}
+			]
+		},
+		{
+			"id": 1100304,
+			"completionStepIds": [
+				1100304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100304",
+							"2"
+						],
+						"stepId": 1100304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PACK_HAVE_ITEM",
+						"rawParams": [
+							"108021",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"オラフ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110030401,
+					"content": "はぁ…だいぶよくなったよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030402
+					],
+					"speakerTitle": "オラフ"
+				},
+				{
+					"id": 110030402,
+					"content": "ありがとう、このスープもとても美味しかった。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030403
+					],
+					"speakerTitle": "オラフ"
+				},
+				{
+					"id": 110030403,
+					"content": "どうしてそこまで冷えたの？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030404
+					]
+				},
+				{
+					"id": 110030404,
+					"content": "イノシシを追っていたら、どうも遠くまで来すぎてしまったみたいでね。しかも、獲物にはそこの地下遺跡に逃げられる始末だ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030405
+					],
+					"speakerTitle": "オラフ"
+				},
+				{
+					"id": 110030405,
+					"content": "仕方ないから追いかけて遺跡に入ったら、巨大な急凍樹を見つけたんだよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030406
+					],
+					"speakerTitle": "オラフ"
+				},
+				{
+					"id": 110030406,
+					"content": "すごく寒くてね、逃げようと思ったら、体の力が抜けてこの様だ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030407
+					],
+					"speakerTitle": "オラフ"
+				},
+				{
+					"id": 110030407,
+					"content": "巨大な急凍樹？どれくらい大きかったの？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030408
+					],
+					"speakerTitle": "香菱"
+				},
+				{
+					"id": 110030408,
+					"content": "以前、その噂を聞いたことはあったが、あんなの初めて見たよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030409
+					],
+					"speakerTitle": "オラフ"
+				},
+				{
+					"id": 110030409,
+					"content": "危なそうだな…遺跡には近づかないようにしようぜ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030410
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 110030410,
+					"content": "美味しい食材の予感がする！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030411,
+						110030412
+					],
+					"speakerTitle": "香菱"
+				},
+				{
+					"id": 110030411,
+					"content": "…へっ？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030413
+					]
+				},
+				{
+					"id": 110030413,
+					"content": "これだよ！足りない食材はこれだ！絶対美味しいに決まってる！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030414
+					],
+					"speakerTitle": "香菱"
+				},
+				{
+					"id": 110030414,
+					"content": "落ち着けって、そんなすごそうな植物、本当に食べられるのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030415
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 110030415,
+					"content": "試してみないと分からないでしょ。さあ、早く出発しよう！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030416
+					],
+					"speakerTitle": "香菱"
+				},
+				{
+					"id": 110030416,
+					"content": "また一人で行っちゃった…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110030417,
+						110030418
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 110030417,
+					"content": "行こう。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030419
+					]
+				},
+				{
+					"id": 110030419,
+					"content": "俺のことは気にするな。それより彼女を止めてくれ、危険だ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "オラフ"
+				},
+				{
+					"id": 110030418,
+					"content": "先に清泉町に戻ってて。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030419
+					]
+				},
+				{
+					"id": 110030412,
+					"content": "食べる気？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110030413
+					]
+				}
+			]
+		},
+		{
+			"id": 1100396,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100304",
+							"2"
+						],
+						"stepId": 1100304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_NUM_LESS_THAN",
+						"rawParams": [
+							"108021",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"香菱"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110039801,
+					"content": "ここに来る途中、ヒルチャールの集落があったでしょ。そこに行けばスープを作れるはずだよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110039802
+					],
+					"speakerTitle": "香菱"
+				},
+				{
+					"id": 110039802,
+					"content": "アタシはここで彼を見ておくから、温かいスープを用意してもらえるかな？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "香菱"
+				}
+			]
+		},
+		{
+			"id": 1100397,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100304",
+							"2"
+						],
+						"stepId": 1100304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_NUM_LESS_THAN",
+						"rawParams": [
+							"108021",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"オラフ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110039901,
+					"content": "さ、寒い…凍え死にそうだ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "オラフ"
+				}
+			]
+		},
+		{
+			"id": 1100398,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100303",
+							"2"
+						],
+						"stepId": 1100303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"香菱"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110039801,
+					"content": "ここに来る途中、ヒルチャールの集落があったでしょ。そこに行けばスープを作れるはずだよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110039802
+					],
+					"speakerTitle": "香菱"
+				},
+				{
+					"id": 110039802,
+					"content": "アタシはここで彼を見ておくから、温かいスープを用意してもらえるかな？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "香菱"
+				}
+			]
+		},
+		{
+			"id": 1100399,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100303",
+							"2"
+						],
+						"stepId": 1100303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"オラフ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110039901,
+					"content": "さ、寒い…凍え死にそうだ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "オラフ"
+				}
+			]
+		}
+	]
+}

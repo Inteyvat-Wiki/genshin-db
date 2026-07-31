@@ -1,0 +1,702 @@
+{
+	"id": 20601,
+	"type": "WQ",
+	"name": "하늘이 내린 기회?",
+	"description": "폭풍이 몰아치고 있지만 모험가 길드의 사이러스 씨는 단단히 벼르고 있다…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		357,
+		309
+	],
+	"steps": [
+		{
+			"id": 2060101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "사이러스와 대화하기",
+			"finishConditions": []
+		},
+		{
+			"id": 2060102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "잭 추적하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2060103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "잭 추적하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2060104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "포위당한 잭 구출하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2060105,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "잭과 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2060105,
+						0
+					],
+					"talkId": 2060105
+				}
+			]
+		},
+		{
+			"id": 2060106,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "야영지 소탕하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2060107,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "사이러스와 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2060107,
+						0
+					],
+					"talkId": 2060107
+				}
+			]
+		},
+		{
+			"id": 2060108,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2060106,
+						0
+					],
+					"talkId": 2060106
+				}
+			]
+		},
+		{
+			"id": 2060109,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "사이러스와 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2060108,
+						0
+					],
+					"talkId": 2060108
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2060104,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060101",
+							"3"
+						],
+						"stepId": 2060101,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_NOT_RECEIVE",
+						"rawParams": [
+							"2060107",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"사이러스"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010401,
+					"content": "베넷 이 녀석은 어디로 간 거야? 휴, 이런 상황에서 무슨 사고라도 생기면 큰일인데…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "사이러스"
+				}
+			]
+		},
+		{
+			"id": 2060105,
+			"completionStepIds": [
+				2060105
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060105",
+							"2"
+						],
+						"stepId": 2060105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"잭"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010501,
+					"content": "스읍, 아파…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010502
+					],
+					"speakerTitle": "잭"
+				},
+				{
+					"id": 206010502,
+					"content": "살아 돌아갈 수 없을 줄 알았는데, 고마워",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010503
+					],
+					"speakerTitle": "잭"
+				},
+				{
+					"id": 206010503,
+					"content": "괜찮아요?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010504
+					]
+				},
+				{
+					"id": 206010504,
+					"content": "하, 이 정도쯤이… 윽! 이 정도… 쯤이야. 난 괜찮아",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010505
+					],
+					"speakerTitle": "잭"
+				},
+				{
+					"id": 206010505,
+					"content": "난 앞쪽 야영지에 츄츄족들이 모여드는 걸 발견하고, 무슨 짓을 하려는지 보려고 뒤따라갔어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010506
+					],
+					"speakerTitle": "잭"
+				},
+				{
+					"id": 206010506,
+					"content": "…하지만 너무 가까이 가버리는 바람에 조사하던 도중 들켜 버렸지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010507
+					],
+					"speakerTitle": "잭"
+				},
+				{
+					"id": 206010507,
+					"content": "아, 이럴 때가 아니지. 내 걱정은 말고 빨리 저 앞에 있는 츄츄족을 무찔러줘!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010508
+					],
+					"speakerTitle": "잭"
+				},
+				{
+					"id": 206010508,
+					"content": "츄츄족의 숫자가 갈수록 많아지고 있어. 절대 그들 뜻대로 되게 해선 안 돼!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010509
+					],
+					"speakerTitle": "잭"
+				},
+				{
+					"id": 206010509,
+					"content": "난… 난 혼자서도 괜찮아",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "잭"
+				}
+			]
+		},
+		{
+			"id": 2060106,
+			"completionStepIds": [
+				2060108
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060108",
+							"2"
+						],
+						"stepId": 2060108,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"잭"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010601,
+					"content": "벌써 야영지를 다 처리한 거야?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010602
+					],
+					"speakerTitle": "잭"
+				},
+				{
+					"id": 206010602,
+					"content": "응",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010603
+					]
+				},
+				{
+					"id": 206010603,
+					"content": "너 정말 강하구나. 나도 너처럼 실력이 뛰어났으면 좋을 텐데…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010604
+					],
+					"speakerTitle": "잭"
+				},
+				{
+					"id": 206010604,
+					"content": "나도 악룡을 처치하고 세상을 구했다는 전설을 남기고 싶지만, 아직 츄츄족조차 이기지 못해…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010605
+					],
+					"speakerTitle": "잭"
+				},
+				{
+					"id": 206010605,
+					"content": "음, 저기… 미안하지만 너한테 부탁이 하나 있어…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010606
+					],
+					"speakerTitle": "잭"
+				},
+				{
+					"id": 206010606,
+					"content": "사실 내가 이번에 천풍 신전을 조사하게 된 이유는 곧 있을 「모험 등급 평가」 때문이야…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010607
+					],
+					"speakerTitle": "잭"
+				},
+				{
+					"id": 206010607,
+					"content": "지금 같은 시기에 실력을 보여줄 수만 있다면 등급 평가를 무사히 통과할 수 있겠다 싶었거든",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010608
+					],
+					"speakerTitle": "잭"
+				},
+				{
+					"id": 206010608,
+					"content": "하지만 실력을 보여 주기는커녕 오히려 목숨을 잃을 뻔할 줄이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010609
+					],
+					"speakerTitle": "잭"
+				},
+				{
+					"id": 206010609,
+					"content": "부, 부탁인데 이런 내 모습을 사이러스 씨한텐 비밀로 해줄 수 있을까? 정말로 「모험 등급 평가」에 지장을 준다면 큰일이라구…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010610,
+						206010612
+					],
+					"speakerTitle": "잭"
+				},
+				{
+					"id": 206010610,
+					"content": "알겠어요…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010611
+					]
+				},
+				{
+					"id": 206010611,
+					"content": "정말 고마워! 다시는 이렇게 경솔하게 행동하지 않을게!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "잭"
+				},
+				{
+					"id": 206010612,
+					"content": "그럼 안 돼요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010613
+					]
+				},
+				{
+					"id": 206010613,
+					"content": "안된다는 건 나도 알아…. 사이러스 씨도 「모험가는 자신을 직시할 줄 알아야 한다」고 하셨었어…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010614
+					],
+					"speakerTitle": "잭"
+				},
+				{
+					"id": 206010614,
+					"content": "그치만… 휴, 그래. 사이러스 씨가 너무 화내지 않으셨으면 좋겠네…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "잭"
+				}
+			]
+		},
+		{
+			"id": 2060107,
+			"completionStepIds": [
+				2060107
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060108",
+							"2"
+						],
+						"stepId": 2060108,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"사이러스"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010701,
+					"content": "돌아왔구나, 잭도 돌아왔네. 근데 왜 그렇게 절뚝거려…?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010702
+					],
+					"speakerTitle": "사이러스"
+				},
+				{
+					"id": 206010702,
+					"content": "도대체 무슨 일이 있었던 거야?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010703
+					],
+					"speakerTitle": "사이러스"
+				},
+				{
+					"id": 206010703,
+					"content": "잭이 무모하게 뛰어들다가 다쳤어요…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010704
+					]
+				},
+				{
+					"id": 206010704,
+					"content": "역시 내 예상대로야, 휴… 평소에 내가 했던 말들은 하나도 기억 못하나 보군",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010705
+					],
+					"speakerTitle": "사이러스"
+				},
+				{
+					"id": 206010705,
+					"content": "용맹함을 증명하고 싶어 하는 건 알지만…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010706
+					],
+					"speakerTitle": "사이러스"
+				},
+				{
+					"id": 206010706,
+					"content": "됐네, 이 일은 알겠어. 내가 잭과 한번 이야기해보지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010707
+					],
+					"speakerTitle": "사이러스"
+				},
+				{
+					"id": 206010707,
+					"content": "이건 너에게 주는 모험 보상이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "사이러스"
+				}
+			]
+		},
+		{
+			"id": 2060108,
+			"completionStepIds": [
+				2060109
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060109",
+							"2"
+						],
+						"stepId": 2060109,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"사이러스"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010801,
+					"content": "돌아왔구나, 잭도 돌아왔네. 근데 왜 그렇게 절뚝거려?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010802
+					],
+					"speakerTitle": "사이러스"
+				},
+				{
+					"id": 206010802,
+					"content": "도대체 무슨 일이 있었던 거야?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010803,
+						206010807
+					],
+					"speakerTitle": "사이러스"
+				},
+				{
+					"id": 206010803,
+					"content": "잭은 용감하게 싸웠어요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010804
+					]
+				},
+				{
+					"id": 206010804,
+					"content": "너와 함께 싸운 건가? 그래서 다친 거군…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010805
+					],
+					"speakerTitle": "사이러스"
+				},
+				{
+					"id": 206010805,
+					"content": "휴, 용감한 것도 좋지만… 난 그가 좀 더 진중하길 바라네. 결국, 살아남는 모험가야말로 진정한 모험가니까",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010806
+					],
+					"speakerTitle": "사이러스"
+				},
+				{
+					"id": 206010806,
+					"content": "여행자, 너와 잭의 용맹함은 모두 칭찬할만해. 이걸 받게. 너에게 주는 모험 보상이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "사이러스"
+				},
+				{
+					"id": 206010807,
+					"content": "잭이 무모하게 뛰어들다가 다쳤어요…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010808
+					]
+				},
+				{
+					"id": 206010808,
+					"content": "역시 내 예상대로야, 휴… 평소에 내가 했던 말들은 하나도 기억 못하나 보군",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010809
+					],
+					"speakerTitle": "사이러스"
+				},
+				{
+					"id": 206010809,
+					"content": "용맹함을 증명하고 싶어 하는 건 알지만…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010810
+					],
+					"speakerTitle": "사이러스"
+				},
+				{
+					"id": 206010810,
+					"content": "됐네, 이 일은 알겠어. 내가 잭과 한번 이야기해보지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010811
+					],
+					"speakerTitle": "사이러스"
+				},
+				{
+					"id": 206010811,
+					"content": "이건 너에게 주는 모험 보상이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "사이러스"
+				}
+			]
+		},
+		{
+			"id": 2060109,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060109",
+							"2"
+						],
+						"stepId": 2060109,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"잭"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206011001,
+					"content": "휴, 내 「모험 등급 평가」엔 지장이 없어야 할 텐데…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206011002
+					],
+					"speakerTitle": "잭"
+				}
+			]
+		}
+	]
+}

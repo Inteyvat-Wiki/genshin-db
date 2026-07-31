@@ -1,0 +1,191 @@
+{
+	"id": 21020,
+	"type": "WQ",
+	"name": "Hazineni Paylaşma",
+	"description": "Bir mahzende bir Harabe Muhafızı tarafından korunan yıpranmış bir mektup ortaya çıkıyor. Guili Ovası'nda dilekleri gerçekleştiren bir ateşin olduğunu düşünen bir hazine avcısı tarafından yazılmış.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2102000,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102000,
+						0
+					],
+					"talkId": 2102000
+				}
+			]
+		},
+		{
+			"id": 2102010,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Ateşi yak.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2102020,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Düşmanları yen.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2102021,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Metni oku.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102020,
+						0
+					],
+					"talkId": 2102020
+				}
+			]
+		},
+		{
+			"id": 2102022,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Hazinenin olduğu yeri bul.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2102000,
+			"completionStepIds": [
+				2102000
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102000",
+							"2"
+						],
+						"stepId": 2102000,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210200001,
+					"content": "\"Sanırım açgözlülüğün sonu bu. Her şeyi isteyip nerede duracağını bilmeyince böyle oluyor. Gömülü hazineyi bulduğumda dursaydım ve o aptal, dandik ateşe gitmekte ısrar etmeseydim mekanizmayı hiç tetiklemeyecektim ve o korkunç canavar tarafından buraya hapsedilmeyecektim. Şimdi burada mahsur kaldım.\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210200002
+					],
+					"speakerTitle": "Yıpranmış Mektup"
+				},
+				{
+					"id": 210200002,
+					"content": "\"Onu yenebilecek kuvvete sahip olan varsa o ateşte bir dilek dilesin. Ne olduğu önemli değil. Ben de... duygusal açıdan destek olurum. Hehe.\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Yıpranmış Mektup"
+				}
+			]
+		},
+		{
+			"id": 2102020,
+			"completionStepIds": [
+				2102021
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102021",
+							"2"
+						],
+						"stepId": 2102021,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102022",
+							"2"
+						],
+						"stepId": 2102022,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210202001,
+					"content": "\"Şu ateşin dilekleri gerçekleştirdiği hikayesi tamamen yalan! Tabii altında gömülü olan hazineler gerçek. Patron o kağıt parçasını bulduğum yerde bırakıp yakınlarda beklememi söyledi. İnsanlar kesin tuzağa düşermiş. Ateş yanmaya başlar başlamaz da... Hehehe. Bu fikir ceplerimizi çok güzel dolduracak.\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210202002
+					],
+					"speakerTitle": "Karalanmış Notlar"
+				},
+				{
+					"id": 210202002,
+					"content": "\"Tabii buradaki hazinelerin hepsini tek seferde taşıyamam. Patron hazineyi önce <color=#00E1FFFF>Cuijue Yamacı'ndaki en yüksek tepeye</color> gömmemi söyledi. Dağın tepesinde yaşlı, solmuş bir ağaç var. Göreceğine eminim.\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Karalanmış Notlar"
+				}
+			]
+		}
+	]
+}

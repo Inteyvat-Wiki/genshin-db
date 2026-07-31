@@ -1,0 +1,631 @@
+{
+	"id": 70508,
+	"type": "WQ",
+	"name": "月夜、船は埠頭に泊まる",
+	"description": "「聞いてくれ。実は今日、かなりの上客に出会えてな。上品な身だしなみに、話上手。その上、金持ちなんだ。」 「何を売ったんだ？」 「それは、企業秘密さ。」",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70503,
+		70509
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "ルカと会話し、酒場に入る",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050802,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "凝光に指定ドリンクを作る",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050802,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050803,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "北斗に指定ドリンクを作る",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050803,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050804,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "ドリンクを凝光と北斗に渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050802,
+						0
+					],
+					"talkId": 7050802
+				}
+			]
+		},
+		{
+			"id": 7050805,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "凝光と北斗に話しかける",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050801,
+						0
+					],
+					"talkId": 7050801
+				}
+			]
+		},
+		{
+			"id": 7050806,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "カウンターに行って、営業の準備をする",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7050305,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050801,
+			"completionStepIds": [
+				7050805
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050805",
+							"2"
+						],
+						"stepId": 7050805,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050802",
+							"2"
+						],
+						"stepId": 7050802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050803",
+							"2"
+						],
+						"stepId": 7050803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"北斗",
+					"凝光"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705080101,
+					"content": "おお！旅人じゃないか、ここで会うとはな。よし、この酒場で一杯やるか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080102
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080102,
+					"content": "まさか、あなたがここにいるなんてね。会えて嬉しいわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080103
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080103,
+					"content": "二人ともどうしてここに？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080104
+					]
+				},
+				{
+					"id": 705080104,
+					"content": "えっ…おまえたち、もしかして二人で来たのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080105
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705080105,
+					"content": "ああ、「このお方」がゆっくりと休みたいって言うもんでな。この辺りを旅行することにしたんだよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080106
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080106,
+					"content": "だが、旅行に対する認識がアタシらの間でズレてたみたいだ。まだ数えるほどしか山にも登ってないのに、「ここで休憩する」とか言い出してな。まったく、これだから金持ちってやつは…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080107
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080107,
+					"content": "その言い方、傷つくわね。私はあなたのために、わざわざお酒を飲めるような場所を選んであげたのよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080108
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080108,
+					"content": "まあ、見識の広い「船長様」からすると、この小さな酒場では物足りないみたいね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080109
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080109,
+					"content": "ちっ、分かったよ。ったく、今回はアタシのおごりだ。これでいいだろ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080110
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080110,
+					"content": "北斗のおごり？オイラたちの分もか！？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080111
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705080111,
+					"content": "#パイモン、{M#俺}{F#私}たちはバーテンダーだから。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080112
+					]
+				},
+				{
+					"id": 705080112,
+					"content": "そうだった、つい…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080113
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705080113,
+					"content": "二人とも何が飲みたい？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080114
+					]
+				},
+				{
+					"id": 705080114,
+					"content": "私はスモールサイズの樺木をいただけるかしら。酸味を強めでお願い。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080115
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080115,
+					"content": "なら、アタシはラージサイズの夕暮れを頼む。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080116
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080116,
+					"content": "分かった、少し待ってて。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7050802,
+			"completionStepIds": [
+				7050804
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050804",
+							"2"
+						],
+						"stepId": 7050804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"凝光",
+					"北斗"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705080201,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080202
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080202,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080203
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080203,
+					"content": "ど、どうだ？なんか言ってくれよ。緊張するだろ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080204
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705080204,
+					"content": "そうね…かつての苦い思い出が蘇り、今の幸せをかみ締められるような味だわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080205
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080205,
+					"content": "ん？無一文から事業を成功させた味か？どんな味だよ、それ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080206
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080206,
+					"content": "ふふっ…甘酸っぱくて、余韻のある味よ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080207
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080207,
+					"content": "あー…小さな商売で果物を売っても、あんま儲からないことに気付いた時の味か？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080208
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080208,
+					"content": "わざわざ言葉にする必要なんてないのよ。過去のことは過去のこととして、ただ味わえばね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080209
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080209,
+					"content": "ははっ、高貴な天権様が街中で果物を売ってたなんて、誰が想像できるだろうな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080210
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080210,
+					"content": "アタシが元は漁師だったのと同じくらい、信じられない話だろ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080211
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080211,
+					"content": "そんなことないわ。私から見たら…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080212
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080212,
+					"content": "北斗船長の海を見通すその目も、波を乗り越えて前へと進むその心も、海に囲まれながら生まれてきた人のものだわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080213
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080213,
+					"content": "おいおい、それはアタシを褒めてんのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080214
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080214,
+					"content": "あなたの悪口を言っても、何のメリットもないでしょ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080215
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080215,
+					"content": "まったく、あんたの口が上手いのは知ってたが、今日は元々アタシのおごりなんだ、これ以上は何も出ないぞ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080216
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080216,
+					"content": "ふふっ…そうね。なら、もっといただこうかしら。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080217,
+						705080218
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080217,
+					"content": "おかわりする？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080219
+					]
+				},
+				{
+					"id": 705080218,
+					"content": "心からおもてなしさせてもらう。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080219
+					]
+				},
+				{
+					"id": 705080219,
+					"content": "よし、バーテンダー、もう一杯だ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080220
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705080220,
+					"content": "おっ、威勢がいいな！じゃ、アタシももう一杯いただくか！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080221
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080234,
+					"content": "二人におかわりをやった…",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": []
+				},
+				{
+					"id": 705080221,
+					"content": "ふぅ、モンドのジュースは美味しいわね。毎日飲めたらいいのに。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080222
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080222,
+					"content": "ん？まさかとは思うが、夕暮れの実の貿易ルートを開拓したいとか言い出さないよな…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080223
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080223,
+					"content": "あら、面白そうね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080224
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080224,
+					"content": "おい、本気か？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080225
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080225,
+					"content": "冗談よ。夕暮れの実に関する貿易は、既に一定規模で行われているわ。だから、私が手を出す必要なんてないの。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080226
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080226,
+					"content": "#{NICKNAME}、今日はありがとう。もしのんびりと働ける仕事に就きたくなったら、私の専用バーテンダーになってみるのはどうかしら。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080227
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080227,
+					"content": "それなら、ウチの「死兆星」号に来ないか。みんな酒が好きでな。あんたがもし来てくれたら、思う存分酒を飲んで、たらふく肉を食うんだ。絶対に楽しいはずだぜ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080228
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080228,
+					"content": "北斗船長は私と人材の奪い合いをする気？そんな必要はないわ。旅人の作った飲み物が飲みたくなったら、群玉閣に来ればいいでしょう？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080229
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080229,
+					"content": "#（すごい、二人が{M#俺}{F#私}を取り合ってる！）",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080230
+					]
+				},
+				{
+					"id": 705080230,
+					"content": "いつの間にか、あいつらの中でおまえを雇うことは決定してるみたいだな…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080231,
+						705080232
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 705080231,
+					"content": "機会があったら…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 705080232,
+					"content": "必ず行くよ、きっと…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

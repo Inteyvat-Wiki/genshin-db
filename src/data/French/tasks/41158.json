@@ -1,0 +1,352 @@
+{
+	"id": 41158,
+	"type": "EQ",
+	"name": "Livraison spéciale : Le Bon Chasseur",
+	"description": "Le Bon Chasseur a besoin de livrer une commande spéciale...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 4115801,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Sara.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4115801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 4115802,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Livrez le plat à Wallit l'irascible.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4115802,
+						0
+					],
+					"talkId": 4115802
+				}
+			]
+		},
+		{
+			"id": 4115803,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Wallit l'irascible.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4115806,
+						0
+					],
+					"talkId": 4115806
+				}
+			]
+		},
+		{
+			"id": 4115804,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4115804,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 4115801,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115801",
+							"2"
+						],
+						"stepId": 4115801,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411580101,
+					"content": "Je me charge de cette livraison.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411580102
+					]
+				},
+				{
+					"id": 411580102,
+					"content": "Merci beaucoup !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411580103
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 411580103,
+					"content": "Vous devriez faire attention lors de la livraison. <color=#00E1FFFF>Ne courez pas trop vite et n'entrez pas en contact avec les éléments.</color>",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411580104
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 411580104,
+					"content": "Par contre, je ne traînerais pas trop si j'étais vous. Wallit est quelqu'un de très impatient.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		},
+		{
+			"id": 4115802,
+			"completionStepIds": [
+				4115802
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115801",
+							"3"
+						],
+						"stepId": 4115801,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Wallit"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411580201,
+					"content": "Pourquoi cette commande n'arrive pas ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Wallit"
+				}
+			]
+		},
+		{
+			"id": 4115803,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115801",
+							"2"
+						],
+						"stepId": 4115801,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411580301,
+					"content": "Il paraît qu'il y a une commande spéciale...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411580302
+					]
+				},
+				{
+					"id": 411580302,
+					"content": "Wallit a passé commande avant de se mettre en route pour la Porte de Pierre entre Mondstadt et Liyue. Un toast de pêcheur !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411580303
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 411580303,
+					"content": "Franchement, qui commande ce genre de plat en livraison...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		},
+		{
+			"id": 4115804,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115801",
+							"2"
+						],
+						"stepId": 4115801,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411580401,
+					"content": "#Je suis {M#occupé}{F#occupée}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411580402
+					]
+				},
+				{
+					"id": 411580402,
+					"content": "Pas de problème. Ça lui apprendra.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		},
+		{
+			"id": 4115805,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115801",
+							"2"
+						],
+						"stepId": 4115801,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Wallit"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411580501,
+					"content": "Où est cette commande ?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Wallit"
+				}
+			]
+		},
+		{
+			"id": 4115806,
+			"completionStepIds": [
+				4115803
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115803",
+							"2"
+						],
+						"stepId": 4115803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Wallit"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411580601,
+					"content": "Voici votre commande.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411580602
+					]
+				},
+				{
+					"id": 411580602,
+					"content": "Ah, enfin. Merci, merci. Donnez-moi vite ça ! Je dois retourner travailler ensuite.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Wallit"
+				}
+			]
+		}
+	]
+}

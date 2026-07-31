@@ -1,0 +1,3486 @@
+{
+	"id": 13013,
+	"type": "LQ",
+	"name": "Сон о пробуждении",
+	"description": "Однажды в Сумеру вы и Паймон слышите, как многие говорят о снах...",
+	"unlockDescription": "",
+	"chapter": "Непрекращающееся тепло",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		13014
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1301301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отправляйтесь в город Сумеру",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1301301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1301302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Петрушем",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1301301,
+						0
+					],
+					"talkId": 1301301
+				}
+			]
+		},
+		{
+			"id": 1301303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отправляйтесь следом за Петрушем на Мгновение сновидений",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1301305,
+						0
+					],
+					"talkId": 1301305
+				}
+			]
+		},
+		{
+			"id": 1301304,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отправляйтесь к месту, указанному Ильманом",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1301304,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1301305,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Победите монстров перед вами",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1301306,
+			"order": 10,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Ильманом",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1301303,
+						0
+					],
+					"talkId": 1301303
+				}
+			]
+		},
+		{
+			"id": 1301307,
+			"order": 11,
+			"listShowType": "QUEST_SHOW",
+			"description": "Вернитесь на Мгновение сновидений, чтобы узнать, как обстоят дела",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1301304,
+						0
+					],
+					"talkId": 1301304
+				}
+			]
+		},
+		{
+			"id": 1301308,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Позаботьтесь о расстроенном Ильмане",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1301306,
+						0
+					],
+					"talkId": 1301306
+				}
+			]
+		},
+		{
+			"id": 1301309,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Ильманом",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1301314,
+						0
+					],
+					"talkId": 1301314
+				}
+			]
+		},
+		{
+			"id": 1301310,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поднимитесь на вершину",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1301316,
+						0
+					],
+					"talkId": 1301316
+				}
+			]
+		},
+		{
+			"id": 1301311,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1301311,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1301301,
+			"completionStepIds": [
+				1301302
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301302",
+							"2"
+						],
+						"stepId": 1301302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Петруш"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130130101,
+					"content": "#Привет, {NICKNAME}! Тебе что-нибудь известно о Мгновении сновидений?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130102,
+						130130103
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130102,
+					"content": "Мгновении сновидений?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130104
+					]
+				},
+				{
+					"id": 130130104,
+					"content": "Звучит как название сладкого напитка.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130105
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130105,
+					"content": "Ха-ха, а вот и нет! Так называется мероприятие, которое мы проводим.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130106
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130106,
+					"content": "В последнее время все только и говорят, что о снах. Многие с удовольствием рассказывают о том, что им приснилось вчера.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130107
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130107,
+					"content": "Даже я. Последний раз я видел сон ещё в детстве и невольно испытываю душевный подъём.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130108
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130108,
+					"content": "Точно! Они снова видят сны.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130109
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130109,
+					"content": "Вот почему мы решили провести мероприятие, где каждый сможет рассказать о своих необычных снах.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130110
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130110,
+					"content": "Так и родилась идея Мгновения сновидений.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130111
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130111,
+					"content": "Так это чаепитие?..",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130112
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130112,
+					"content": "Ну да. Каждый день здесь делятся необыкновенными историями. Хотите послушать?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130113
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130113,
+					"content": "Я понимаю, что для вас сны - диковинка...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130114
+					]
+				},
+				{
+					"id": 130130114,
+					"content": "Угу, но для нас сон - это такое же обыденное дело, как еда или отдых.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130115
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130115,
+					"content": "Но если там будут бесплатные сладости и напитки, мы подумаем.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130116
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130116,
+					"content": "Правда?! То есть вы уже видели много снов?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130117
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130117,
+					"content": "Ну, можно и так сказать. В этом нет ничего особенного.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130118
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130118,
+					"content": "Ничего себе! Нашему мероприятию как раз нужны участники с таким богатым опытом сновидений, как у вас!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130119
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130119,
+					"content": "Давайте я буду называть вас «экспертами по снам»!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130120,
+						130130121
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130120,
+					"content": "...Звучит как-то странно.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130122
+					]
+				},
+				{
+					"id": 130130122,
+					"content": "«Эксперты», хи-хи, неплохо.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130123
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130123,
+					"content": "Вижу, в тебе проснулся интерес. Пойдём, это не займёт много времени.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130124
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130124,
+					"content": "К тому же там будут и напитки, и сладости.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130125
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130125,
+					"content": "А ты профессионал!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130126
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130126,
+					"content": "#Ой, нет, Паймон не может принимать такое решение. Нужно сначала узнать {M#его}{F#её} мнение.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130127
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130127,
+					"content": "Почему ты молчишь?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130128,
+						130130129
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130128,
+					"content": "...Пусть будет по-твоему.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130130
+					]
+				},
+				{
+					"id": 130130130,
+					"content": "Хе-хе, тогда пошли делать из нас экспертов!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130131
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130131,
+					"content": "Ха-ха, хорошо. Следуйте за мной.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130129,
+					"content": "Похоже, у меня нет выбора.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130130
+					]
+				},
+				{
+					"id": 130130121,
+					"content": "Разве бывают эксперты по снам?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130122
+					]
+				},
+				{
+					"id": 130130103,
+					"content": "Что это?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130104
+					]
+				}
+			]
+		},
+		{
+			"id": 1301302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301303",
+							"2"
+						],
+						"stepId": 1301303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Петруш"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130130201,
+					"content": "Прошу минуточку внимания! У нас наконец-то появились эксперты!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130202
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130202,
+					"content": "Прошу, эксперты, сюда. Любой желающий может задать им вопрос.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130203
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130203,
+					"content": "Сторонние эксперты? Чудесно!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130204
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130204,
+					"content": "Я первый! Я первый!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130205
+					],
+					"speakerTitle": "Нассер"
+				},
+				{
+					"id": 130130205,
+					"content": "Не торопитесь. В порядке очереди, по одному!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130206
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130206,
+					"content": "После некоторой суматохи все, наконец, выстраиваются в очередь.",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": [
+						130130207
+					]
+				},
+				{
+					"id": 130130207,
+					"content": "Паймон и не думала, что здесь все такие приветливые...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130208
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130208,
+					"content": "У меня простой вопрос. Я день за днём тружусь что есть силы и во сне хочу быть слаймом. Как это сделать?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130209,
+						130130210
+					],
+					"speakerTitle": "Ата"
+				},
+				{
+					"id": 130130209,
+					"content": "...Ох, как сложно.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130211
+					]
+				},
+				{
+					"id": 130130211,
+					"content": "Паймон знает! Паймон уже видела такой сон. Паймон хочет сказать!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130212
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130212,
+					"content": "#В первый раз Паймон превратилась в Анемо слайма, из-за чего стала мишенью для лука {M#искателя}{F#искательницы} приключений и всю ночь пролетала в небе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130213
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130213,
+					"content": "Во второй раз Паймон превратилась в Дендро слайма. Тогда орава детей приняла Паймон за редис и повыдёргивала из головы всю ботву. Так себе удовольствие.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130214
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130214,
+					"content": "В третий раз Паймон превратилась в Крио слайма и угодила в руки повара, который приготовил из неё холодный сок.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130215
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130215,
+					"content": "А вот в четвёртый раз Паймон превратилась в сильного Гео слайма и решила отомстить лесному кабану за причинённую когда-то обиду.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130216
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130216,
+					"content": "В итоге ему на помощь поспешили собратья, и Паймон опять потерпела поражение.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130217
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130217,
+					"content": "Постой, почему у всех историй такой мрачный финал?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130218
+					],
+					"speakerTitle": "Ата"
+				},
+				{
+					"id": 130130218,
+					"content": "Слаймы - это монстры. Они хоть и милые, но любят побезобразничать, за что и подвергаются нападкам искателей приключений.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130219
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130219,
+					"content": "Поверьте Паймон на слово: все монстры плохо заканчивают.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130220,
+						130130221
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130220,
+					"content": "(Как же хочется её прервать...)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130222
+					]
+				},
+				{
+					"id": 130130222,
+					"content": "Да, как-никак это монстры.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130223
+					],
+					"speakerTitle": "Ата"
+				},
+				{
+					"id": 130130223,
+					"content": "Просто мне захотелось новых ощущений. Видимо, превращение в монстра ничем не лучше моей сегодняшней жизни.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130224
+					],
+					"speakerTitle": "Ата"
+				},
+				{
+					"id": 130130224,
+					"content": "Наверное, превратиться в обычного зяблика или рыбку куда интереснее...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130225
+					],
+					"speakerTitle": "Ата"
+				},
+				{
+					"id": 130130225,
+					"content": "А быть экспертом не так сложно, как Паймон казалось!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130226
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130226,
+					"content": "Следующий!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130227
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130227,
+					"content": "Теперь моя очередь! Эксперт, в какой позе нужно заснуть, чтобы увидеть тот же сон, что и вчера?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130228
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130228,
+					"content": "Эм, ну...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130229
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130229,
+					"content": "Мне тоже любопытно, эксперт.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130230
+					]
+				},
+				{
+					"id": 130130230,
+					"content": "Ты что, не поможешь Паймон?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130231
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130231,
+					"content": "Расскажи, что бы тебе хотелось увидеть во сне?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130232
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130232,
+					"content": "Да ничего такого, просто как в солнечный день я болтаю со своей женой под мерные завывания ветра в горах.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130233
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130233,
+					"content": "А ты поболтай с женой просто так, без всякого сна.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130234
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130234,
+					"content": "Вообще-то... её больше нет.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130235
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130235,
+					"content": "Ой, прости! Паймон опять сказала глупость!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130236
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130236,
+					"content": "Ничего, это я неясно выразился. Я просто хочу ещё раз её увидеть.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130237
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130237,
+					"content": "А если попытаться уснуть, глядя на её фотографию?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130238
+					]
+				},
+				{
+					"id": 130130238,
+					"content": "Точно! Паймон считает, что мысли перед сном важнее, чем поза, в которой засыпаешь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130239
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130239,
+					"content": "И это всё?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130240
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130240,
+					"content": "Ведь это ты по ней тоскуешь, и видишь сны тоже ты, значит, можешь легко связать одно с другим.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130241
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130241,
+					"content": "Звучит разумно. Попробую сегодня ночью! Спасибо за совет, эксперт!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130242
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130242,
+					"content": "Теперь я! Как мне узнать названия растений, которые я вижу во сне?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130243
+					],
+					"speakerTitle": "Катия"
+				},
+				{
+					"id": 130130243,
+					"content": "Я хочу перенести в свой сон шкатулку, которая стоит у меня в комнате!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130244
+					],
+					"speakerTitle": "Дебби"
+				},
+				{
+					"id": 130130244,
+					"content": "Вчера мне приснилась ворона, летящая над пустырём. Что это значит?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130245
+					],
+					"speakerTitle": "Павлин"
+				},
+				{
+					"id": 130130245,
+					"content": "Не спешите, по одному!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130246
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130246,
+					"content": "Спустя долгое время эксперты наконец завершают свою работу.",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": []
+				},
+				{
+					"id": 130130221,
+					"content": "(Но ведь она тоже искательница приключений.)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130222
+					]
+				},
+				{
+					"id": 130130210,
+					"content": "Честно говоря, я не знаю.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130211
+					]
+				}
+			]
+		},
+		{
+			"id": 1301303,
+			"completionStepIds": [
+				1301306
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301306",
+							"2"
+						],
+						"stepId": 1301306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ильман"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130130301,
+					"content": "Какой потрясающий вид! Здесь можно вздремнуть и перекусить.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130302
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130302,
+					"content": "Хотела бы Паймон бывать здесь каждый день, хе-хе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130303
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130303,
+					"content": "Похоже, здесь нет ничего странного.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130304
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130304,
+					"content": "Я не отрицаю силу мысли. Вполне возможно, что этот эмоциональный фактор, который сложно оценить, способен управлять снами.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130305
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130305,
+					"content": "Паймон кажется, что его жена была невероятно обаятельной.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130306
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130306,
+					"content": "А где Ильман?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130307
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130307,
+					"content": "Ты ждёшь меня, вот это да! Я сегодня не один, а с отличной компанией.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130308
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130308,
+					"content": "Я ушам своим поверить не мог, когда Дендро Архонт изъявила желание пойти вместе со мной.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130309
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130309,
+					"content": "Как только я запомню дорогу, сразу возьму Хайдар. Она сильно по тебе скучает.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130310
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130310,
+					"content": "Что это с ним?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130311
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130311,
+					"content": "Там же никого нет.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130312
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130312,
+					"content": "Майнар, стой! Там опасно, не ходи туда.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130313
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130313,
+					"content": "Он сейчас упадёт! Держите его!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130314
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130314,
+					"content": "Хорошо, что не упал. Что за околесицу он начал нести? А теперь, похоже, он без сознания.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130315
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130315,
+					"content": "Он спит, а его слова, похоже, связаны со сном, о котором он рассказывал.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130316
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130316,
+					"content": "Что? Он... заснул и увидел тот же сон?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130317
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130317,
+					"content": "Согласна, это странно. Но будить блуждающих во сне нельзя. Подождём.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130318
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130318,
+					"content": "О... Эм?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130319
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130319,
+					"content": "Майнар... Где она?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130320
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130320,
+					"content": "Ты проснулся! Вот здорово!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130321
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130321,
+					"content": "Неужели я...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130322,
+						130130323
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130322,
+					"content": "Ты блуждал во сне.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130324
+					]
+				},
+				{
+					"id": 130130324,
+					"content": "Блуждал во сне?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130325
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130325,
+					"content": "Да, такое могло произойти только во сне.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130326
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130326,
+					"content": "Взобравшись на вершину, я увидел там свою жену Майнар и подошёл к ней.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130327
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130327,
+					"content": "Я рассказал ей о вас, и она ринулась вперёд. Я попросил её остановиться, ведь там был обрыв...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130328
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130328,
+					"content": "А потом она исчезла. Подул сильный ветер, и небо резко потемнело.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130329
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130329,
+					"content": "А как только я почувствовал, что что-то не так, я проснулся.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130330
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130330,
+					"content": "Паймон кажется это странным. А ты не устал?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130331
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130331,
+					"content": "Нет, я вчера хорошо выспался, и в сон совсем не клонит.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130332
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130332,
+					"content": "Возможно, последовав за ним, мы повлияли на его подсознание, отвечающее за сны.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130333
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130333,
+					"content": "В любом случае главное, что удалось благополучно проснуться.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130334
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130334,
+					"content": "Кажется, я знаю, что произошло. Если бы не вы, я бы упал.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130335
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130335,
+					"content": "В любом случае нам пора возвращаться. Лучше тебе пока сюда не приходить.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130336
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130336,
+					"content": "...Хорошо.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130337
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130337,
+					"content": "Нахида, у тебя есть идеи? Что-то Паймон не по себе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130338
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130338,
+					"content": "Слишком мало зацепок, рано делать выводы. Но что, если произошедшее с Ильманом не единичный случай?..",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130339
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130339,
+					"content": "Верно, многие участники Мгновения сновидений хорошо помнят свои сновидения!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130340
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130340,
+					"content": "Дело набирает обороты.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130341
+					]
+				},
+				{
+					"id": 130130341,
+					"content": "Да, возможно, таких людей можно встретить не только на Мгновении сновидений, но и где-то ещё в Сумеру.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130342
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130342,
+					"content": "Нельзя терять ни минуты, нужно во всём разобраться.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130343
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130343,
+					"content": "Тогда пора возвращаться.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130344
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130344,
+					"content": "Не стой столбом, Ильман! Идём!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130323,
+					"content": "И чуть было не упал!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130324
+					]
+				}
+			]
+		},
+		{
+			"id": 1301304,
+			"completionStepIds": [
+				1301307
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301307",
+							"2"
+						],
+						"stepId": 1301307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Петруш"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130130401,
+					"content": "Почему вы так быстро вернулись? Что-то случилось?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130402
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130402,
+					"content": "Дело серьёзное. Передай всем присутствующим, что они могут обсуждать свои сны, но ни в коем случае не должны искать те места, которые им приснились.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130403
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130403,
+					"content": "Хорошо, как скажешь, Дендро Архонт...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130404
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130404,
+					"content": "Но я могу узнать, что произошло? Вы явно чем-то озабочены.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130405
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130405,
+					"content": "Вы рассказываете Петрушу о том, что произошло.",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": [
+						130130406
+					]
+				},
+				{
+					"id": 130130406,
+					"content": "Ясно. Я и не знал, что сны могут быть так опасны.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130407
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130407,
+					"content": "Не волнуйтесь, я сообщу всем участникам, а ещё расскажу об этом остальным сотрудникам Мгновения сновидений.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130408
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130408,
+					"content": "У нас есть список участников. С ним можно предупредить большее количество людей, интересующихся снами.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130409
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130409,
+					"content": "Спасибо, ты здорово нам поможешь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130410
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130410,
+					"content": "Только сначала надо убедиться, что все участники сегодняшнего мероприятия всё ещё здесь...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130411
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130411,
+					"content": "Ата уже ушёл и, похоже, собирается заняться молотками, так что всё в порядке... Ой, а где Катия?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130412
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130412,
+					"content": "Кто-нибудь видел Катию? Она уже ушла?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130413
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130413,
+					"content": "Она куда-то собиралась. Видимо, уже ушла.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130414
+					],
+					"speakerTitle": "Дебби"
+				},
+				{
+					"id": 130130414,
+					"content": "О нет! Она же не отправилась на поиски места из сна?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130415
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130415,
+					"content": "Можешь сказать, куда именно она пошла?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130416
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130416,
+					"content": "Ничего конкретного она не сказала, куда-то в сторону пещеры Чатракам.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130417
+					],
+					"speakerTitle": "Дебби"
+				},
+				{
+					"id": 130130417,
+					"content": "Спасибо! Попробуем поискать там.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130418
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130418,
+					"content": "Пожалуйста, предупреди других, что нельзя действовать безрассудно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130419
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130419,
+					"content": "Хорошо. Кто бы мог подумать, что всё так обернётся...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Дебби"
+				}
+			]
+		},
+		{
+			"id": 1301305,
+			"completionStepIds": [
+				1301303
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301303",
+							"2"
+						],
+						"stepId": 1301303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Петруш",
+					"Нахида",
+					"Ильман",
+					"Ата"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130130501,
+					"content": "Эх, как всё сложно. Мы знаем не больше, чем они, просто у нас чуть больше опыта.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130502,
+						130130503
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130502,
+					"content": "Их не интересуют ответы.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130504
+					]
+				},
+				{
+					"id": 130130504,
+					"content": "Похоже на то. Поиски и размышления гораздо интереснее, чем ответы на вопросы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130505
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130505,
+					"content": "Это как бродяга, который не ел три дня и три ночи, и так голоден, что готов съесть всё что угодно, хоть плошку риса, хоть кусок пирога.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130506
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130506,
+					"content": "Ты же понимаешь, кого Паймон имеет в виду?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130507
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130507,
+					"content": "Нахида.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130508
+					]
+				},
+				{
+					"id": 130130508,
+					"content": "Хе-хе, точно. Она наверняка сказала бы что-то подобное, если бы была рядом.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130509
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130509,
+					"content": "Жаль, что она занята и не сможет принять участие в собрании.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130510
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130510,
+					"content": "Уважаемые эксперты, ещё один гость хочет задать вам вопрос.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130511
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130511,
+					"content": "Ой, лучше не надо. Разве по нашим ответам не видно, что никакие мы не специалисты?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130512
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130512,
+					"content": "Это особенный гость...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130513
+					],
+					"speakerTitle": "Петруш"
+				},
+				{
+					"id": 130130513,
+					"content": "Я хочу узнать, почему вы не позвали меня в такое интересное место?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130514
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130514,
+					"content": "Вот это да! Как ты здесь оказалась?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130515
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130515,
+					"content": "Такое мероприятие, как Мгновение сновидений, проходит не каждый день. Разве я могла его пропустить?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130516
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130516,
+					"content": "Наша встреча - это неожиданный поворот судьбы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130517
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130517,
+					"content": "Ты же больше всех знаешь о снах и уж точно поможешь нам ответить на все вопросы!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130518
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130518,
+					"content": "И то верно. Можете спрашивать о чём угодно. Чем интереснее вопрос, тем лучше.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130519
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130519,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130520
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130520,
+					"content": "Что-то не так? Было так оживлённо, и вдруг все стали такими робкими.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130521
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130521,
+					"content": "Им нужно морально подготовиться.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130522
+					]
+				},
+				{
+					"id": 130130522,
+					"content": "Даже если и так, я не кусаюсь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130523
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130523,
+					"content": "Вы совершили много великих дел в Сумеру, если не сказать больше.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130524
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130524,
+					"content": "Не таких уж и великих.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130525
+					]
+				},
+				{
+					"id": 130130525,
+					"content": "Эх, ни одного интересного вопроса. Похоже, я испортила всё веселье, лучше я пойду.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130526
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130526,
+					"content": "Мы не это имели в виду!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130527
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130527,
+					"content": "На Мгновении сновидений все собираются вместе и делятся своими чудесными снами. Не хочется этому мешать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130528
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130528,
+					"content": "Здешняя атмосфера теперь напоминает сосуд, заполненный водой: вода принимает форму сосуда и больше не может течь свободно, как в реке.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130529
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130529,
+					"content": "Я хочу быть одной из капель, а не бесчувственным сосудом.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130530
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130530,
+					"content": "Неужели она...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130531
+					]
+				},
+				{
+					"id": 130130531,
+					"content": "...Да что с вами такое?..",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130532
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130532,
+					"content": "Давайте-ка поактивнее! С Дендро Архонтом легко поладить! Неужели вы дадите ей уйти?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130533
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130533,
+					"content": "Ладно, я попробую.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130534
+					],
+					"speakerTitle": "Ата"
+				},
+				{
+					"id": 130130534,
+					"content": "Это тот самый «любитель слаймов».",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130535
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130535,
+					"content": "Что за странное прозвище?.. Я больше не хочу превращаться в слайма, лучше в зяблика или рыбку.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130536
+					],
+					"speakerTitle": "Ата"
+				},
+				{
+					"id": 130130536,
+					"content": "Значит, хочешь во сне быть животным? А почему?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130537
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130537,
+					"content": "Наверное, хочу испытать что-то новое. Ведь жизнь так однообразна.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130538
+					],
+					"speakerTitle": "Ата"
+				},
+				{
+					"id": 130130538,
+					"content": "Над головой - небо, вдали - океан, но каждый мой день похож на предыдущий.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130539
+					],
+					"speakerTitle": "Ата"
+				},
+				{
+					"id": 130130539,
+					"content": "И поэтому хочешь ощутить себя во сне кем-то другим?.. Прости, я запуталась. А почему не сделать это наяву?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130540
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130540,
+					"content": "Потому что я должен работать, чтобы были деньги. Я не хочу каждый день забивать гвозди и пилить дрова, но кто тогда позаботится о родителях и детях?..",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130541
+					],
+					"speakerTitle": "Ата"
+				},
+				{
+					"id": 130130541,
+					"content": "Осознав это, я обнаружил, что моя жизнь заполнена всякими пустяками, и в ней нет места для чего-то другого.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130542
+					],
+					"speakerTitle": "Ата"
+				},
+				{
+					"id": 130130542,
+					"content": "Но даже если во сне ты превратишься в птицу или рыбу, наяву ты всё равно будешь забивать гвозди и пилить дрова.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130543
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130543,
+					"content": "Ты уже в ловушке, и какую бы форму ни принимало твоё тело, твой разум не может вырваться из этих оков.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130544
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130544,
+					"content": "Всё так ужасно? И что же тогда делать?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130545
+					],
+					"speakerTitle": "Ата"
+				},
+				{
+					"id": 130130545,
+					"content": "Я не могу ощутить всю тяжесть, которую ты несёшь на своих плечах, но что, если сменить молоток?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130546
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130546,
+					"content": "Сменить молоток?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130547
+					],
+					"speakerTitle": "Ата"
+				},
+				{
+					"id": 130130547,
+					"content": "Ну да. Ты же давно работаешь, так что должен разбираться в молотках.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130548
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130548,
+					"content": "Разумеется. Он должен быть достаточно тяжёлым, чтобы делать меньше взмахов. А рукоятка не должна быть слишком гладкой, иначе молоток будет выскальзывать из рук.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130549
+					],
+					"speakerTitle": "Ата"
+				},
+				{
+					"id": 130130549,
+					"content": "Кстати, я давно не менял молоток, которым пользуюсь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130550
+					],
+					"speakerTitle": "Ата"
+				},
+				{
+					"id": 130130550,
+					"content": "Вот и замени. А ещё укрась чем-нибудь его рукоятку, например, мехом или кожаным ремешком, и напиши имя ребёнка.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130551
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130551,
+					"content": "...Отличная идея! Это придаст сил в работе!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130552
+					],
+					"speakerTitle": "Ата"
+				},
+				{
+					"id": 130130552,
+					"content": "Чувство новизны кроется в бытовых мелочах.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130553
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130553,
+					"content": "Тебе не нужно превращаться в птицу или рыбу. Если жить в полную силу, всё, что тебе дорого, будет доставлять счастье.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130554
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130554,
+					"content": "Ясно. Я словно прозрел!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130555
+					],
+					"speakerTitle": "Ата"
+				},
+				{
+					"id": 130130555,
+					"content": "Пойду выберу новый молоток... Нет, лучше сделаю его сам! Спасибо, Дендро Архонт!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130556
+					],
+					"speakerTitle": "Ата"
+				},
+				{
+					"id": 130130556,
+					"content": "Тебе всегда удаётся найти отличное решение!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130557
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130557,
+					"content": "Если честно, я не поняла, в чём была проблема.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130558
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130558,
+					"content": "А?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130559
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130559,
+					"content": "Я так сказала, потому что однажды увидела, как один рабочий, устав, посмотрел на имя, высеченное на рукоятке.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130560
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130560,
+					"content": "И тут же рассмеялся, перепугав меня. Наверное, это было имя кого-то очень для него важного.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130561,
+						130130562
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130561,
+					"content": "Думаю, я понимаю.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130563
+					]
+				},
+				{
+					"id": 130130563,
+					"content": "Угу, увидев это, я поняла, что такое поведение мотивирует людей. Но почему?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130564
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130564,
+					"content": "Я не знаю, что это было: волнение, предвкушение или беспомощность. Но даже если бы и знала, о чём он думает, не смогла бы понять его чувства.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130565
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130565,
+					"content": "Вот оно что! Поэтому ты вынуждена говорить очень уклончиво.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130566
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130566,
+					"content": "Ха-ха, я немного волновалась. К счастью, он остался доволен, значит, я попала в точку.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130567
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130567,
+					"content": "Ладно, это не так важно. Это просто мой способ обучения.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130568
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130568,
+					"content": "Если нужно, я тебе помогу.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130569
+					]
+				},
+				{
+					"id": 130130569,
+					"content": "Эй, а как же Паймон?! Паймон тоже разбирается в людях!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130570
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130570,
+					"content": "Спасибо! Вы меня успокоили. Давайте перейдём к следующему вопросу.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130571
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130571,
+					"content": "Я уже задавал свой вопрос, но хотел бы услышать мнение Дендро Архонта.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130572
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130572,
+					"content": "Что я должен делать, чтобы каждую ночь видеть во сне свою умершую жену?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130573
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130573,
+					"content": "Тоска по умершему человеку...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130574,
+						130130575
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130574,
+					"content": "(Она вспомнила великую властительницу Руккхадевату?..)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130576
+					]
+				},
+				{
+					"id": 130130576,
+					"content": "Постоянное повторение приятных воспоминаний только усиливает пустоту реальности.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130577
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130577,
+					"content": "Уверена, если бы она всё ещё была рядом, то не захотела бы видеть тебя в таком состоянии.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130578
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130578,
+					"content": "Теоретически так и есть, но время, которое мы проводим во сне, - это не просто повторение воспоминаний.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130579
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130579,
+					"content": "Наверное, я очень по ней скучаю. Во сне она как живая...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130580
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130580,
+					"content": "Она помнит всё, что происходило во снах. И в каждом новом сне мы можем обсуждать то, о чём говорили в прошлый раз.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130581
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130581,
+					"content": "Невероятно! Серийные сны встречаются крайне редко.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130582
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130582,
+					"content": "Она словно обрела в моих снах вторую жизнь. Но чем более живой она становится, тем сильнее я ощущаю пустоту и страдания после пробуждения. Что это: благо или пытка?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130583
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130583,
+					"content": "Возможно, всё дело в тоске.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130584
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130584,
+					"content": "Может, у вас остались незавершённые дела, о которых ты сожалеешь?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130585
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130585,
+					"content": "Даже не знаю... Наверное, больше всего я жалею, что мы не дожили вместе до старости.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130586
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130586,
+					"content": "Я готов двигаться дальше, но из-за этого реалистичного сна мне не хватает решительности.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130587
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130587,
+					"content": "Что наяву бредится, то и во сне грезится.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130588
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130588,
+					"content": "Сны всегда остаются снами, ведь мы живём наяву.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130589
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130589,
+					"content": "Не стоит увязать во снах, иначе они поглотят твой разум.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130590
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130590,
+					"content": "...Знаю, поэтому и виню себя, ведь я должен заботиться о нашем ребёнке.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130591
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130591,
+					"content": "Лучше ей не видеть своего отца в таком подавленном состоянии.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130592
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130592,
+					"content": "Так или иначе, спасибо тебе за совет, Дендро Архонт.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130593
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130593,
+					"content": "Как-то неспокойно за него на душе. Надеюсь, он возьмёт себя в руки.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130594
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130594,
+					"content": "Я в полном порядке. Если вам скучно, то необязательно составлять мне компанию. В конце концов, вы здесь для того, чтобы развлекаться.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130575,
+					"content": "(Нет, она не помнит.)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130576
+					]
+				},
+				{
+					"id": 130130562,
+					"content": "Ты просто провела аналогию.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130563
+					]
+				},
+				{
+					"id": 130130503,
+					"content": "Реалистичные сны приводят их в восторг.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130504
+					]
+				}
+			]
+		},
+		{
+			"id": 1301306,
+			"completionStepIds": [
+				1301308
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301308",
+							"2"
+						],
+						"stepId": 1301308,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ильман"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130130601,
+					"content": "Тебе лучше?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130602
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130602,
+					"content": "Угу, Дендро Архонт права, я должен освободиться от этой тоски и жить дальше.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130603
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130603,
+					"content": "Я вот о чём подумал: каждый раз во сне я встречаюсь с женой в одном и том же месте.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130604
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130604,
+					"content": "Это реально существующее место, только находится далековато, и там довольно опасно. Я не решаюсь идти туда один.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130605
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130605,
+					"content": "Но я должен побывать в этом месте и убедиться, что там ничего нет. Так я смогу принять реальность.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130606
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130606,
+					"content": "Это может сработать.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130607
+					]
+				},
+				{
+					"id": 130130607,
+					"content": "Иначе я буду жить словно в полусне.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130608
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130608,
+					"content": "Если я перестану видеть то место во сне, моя жизнь наладится.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130609
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130609,
+					"content": "Вы же искатели приключений? Не проводите меня до того места?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130610,
+						130130611
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130610,
+					"content": "Почему бы и нет.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130612
+					]
+				},
+				{
+					"id": 130130612,
+					"content": "Это как раз то, что нужно для смены настроения.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130613
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130613,
+					"content": "Если ты не увидишь свою жену, то великолепные виды уж точно тебя порадуют.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130614
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130614,
+					"content": "Надеюсь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130615
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130615,
+					"content": "Ура! Тогда в путь!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130616
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130616,
+					"content": "(Раз речь зашла о тоске по усопшим, лучше рассказать Нахиде о великой властительнице Руккхадевате.)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130617
+					]
+				},
+				{
+					"id": 130130617,
+					"content": "(По крайней мере, пусть Нахида знает, что она существовала.)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130618
+					]
+				},
+				{
+					"id": 130130618,
+					"content": "Опять собираетесь повеселиться без меня?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130619
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130619,
+					"content": "А разве ты не отвечаешь на вопросы?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130620
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130130620,
+					"content": "Только что закончила. Это был продуктивный день, я услышала столько всего нового и интересного!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130621
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130621,
+					"content": "Похоже, вы куда-то собрались. Возьмите меня с собой!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130622
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130622,
+					"content": "Неловко беспокоить Дендро Архонта по таким пустякам. У вас наверняка полно дел.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130623
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130623,
+					"content": "Ерунда. К тому же у меня есть причина, чтобы пойти с вами.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130624
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130624,
+					"content": "Я хочу воспользоваться этой возможностью и обсудить с вами то, что не даёт мне покоя.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130625
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130625,
+					"content": "Неужели Дендро Архонта может что-то привести в замешательство?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130626
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130130626,
+					"content": "Между нами не такая большая разница. Ну что, идём? По пути всё обсудим.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130130627
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130130627,
+					"content": "(Нужно идти. О великой властительнице Руккхадевате в двух словах не расскажешь.)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 130130611,
+					"content": "Пришло время прояснить ситуацию.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130130612
+					]
+				}
+			]
+		},
+		{
+			"id": 1301307,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301304",
+							"2"
+						],
+						"stepId": 1301304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301309",
+							"2"
+						],
+						"stepId": 1301309,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301305",
+							"2"
+						],
+						"stepId": 1301305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301306",
+							"2"
+						],
+						"stepId": 1301306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301310",
+							"2"
+						],
+						"stepId": 1301310,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301307",
+							"2"
+						],
+						"stepId": 1301307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Дебби"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130130701,
+					"content": "От всех этих разговоров о снах мне захотелось вздремнуть.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Дебби"
+				}
+			]
+		},
+		{
+			"id": 1301308,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301308",
+							"2"
+						],
+						"stepId": 1301308,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301304",
+							"2"
+						],
+						"stepId": 1301304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301305",
+							"2"
+						],
+						"stepId": 1301305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301306",
+							"2"
+						],
+						"stepId": 1301306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301310",
+							"2"
+						],
+						"stepId": 1301310,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Петруш"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130130801,
+					"content": "Дендро Архонт внезапно посетила мероприятие... Такое даже во сне не приснится!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Петруш"
+				}
+			]
+		},
+		{
+			"id": 1301309,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301308",
+							"2"
+						],
+						"stepId": 1301308,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301304",
+							"2"
+						],
+						"stepId": 1301304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301305",
+							"2"
+						],
+						"stepId": 1301305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301306",
+							"2"
+						],
+						"stepId": 1301306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301310",
+							"2"
+						],
+						"stepId": 1301310,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301307",
+							"2"
+						],
+						"stepId": 1301307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Нассер"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130130901,
+					"content": "Вот это удача! Будет, чем похвастаться перед друзьями!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Нассер"
+				}
+			]
+		},
+		{
+			"id": 1301310,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301308",
+							"2"
+						],
+						"stepId": 1301308,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301304",
+							"2"
+						],
+						"stepId": 1301304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301305",
+							"2"
+						],
+						"stepId": 1301305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301306",
+							"2"
+						],
+						"stepId": 1301306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301310",
+							"2"
+						],
+						"stepId": 1301310,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301307",
+							"2"
+						],
+						"stepId": 1301307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Павлин"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130131001,
+					"content": "Хочу видеть простые сны. Например, как я становлюсь богатым или знаменитым...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Павлин"
+				}
+			]
+		},
+		{
+			"id": 1301311,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"99902",
+							"3"
+						],
+						"stepId": 99902,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Дебби"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130131101,
+					"content": "Разве это не блуждание во сне? Бред какой-то.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131102
+					],
+					"speakerTitle": "Дебби"
+				},
+				{
+					"id": 130131102,
+					"content": "Как же хочется спать...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Дебби"
+				}
+			]
+		},
+		{
+			"id": 1301312,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"99902",
+							"3"
+						],
+						"stepId": 99902,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Нассер"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130131201,
+					"content": "Это всего лишь сон, ничего серьёзного.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Нассер"
+				}
+			]
+		},
+		{
+			"id": 1301313,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"99902",
+							"3"
+						],
+						"stepId": 99902,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Павлин"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130131301,
+					"content": "Что это за переполох?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Павлин"
+				}
+			]
+		},
+		{
+			"id": 1301314,
+			"completionStepIds": [
+				1301309
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301309",
+							"2"
+						],
+						"stepId": 1301309,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ильман"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130131401,
+					"content": "Ах, неспешные прогулки - это всегда приятно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131402
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130131402,
+					"content": "Искатели приключений частенько бывают в таких местах?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131403,
+						130131404
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130131403,
+					"content": "Конечно.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130131405
+					]
+				},
+				{
+					"id": 130131405,
+					"content": "Хм, надо полагать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131406
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130131406,
+					"content": "Так здесь ты встречаешься с женой во снах?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131407
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130131407,
+					"content": "Угу, почти всегда. Вон там, на самой вершине.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131408
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130131408,
+					"content": "Мы ничего не делаем, просто болтаем о том о сём.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131409
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130131409,
+					"content": "Я рассказываю, как дела у Хайдар, нашей дочери, а она внимательно слушает.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131410
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130131410,
+					"content": "Мы вспоминаем прошлое, она рассказывает забавные истории, и мы вместе смеёмся.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131411
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130131411,
+					"content": "Хочется, чтобы это длилось вечно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131412
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130131412,
+					"content": "Иногда именно мелочи в жизни имеют наибольшее значение.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131413
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130131413,
+					"content": "Именно это меня и беспокоит...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131414
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130131414,
+					"content": "Я многое знаю о снах. Сны конечны и лишены логики.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131415
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130131415,
+					"content": "Говоришь, она помнит всё, о чём ты рассказывал, верно?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131416
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130131416,
+					"content": "Она внимательно слушает меня во сне, как делала это и прежде.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131417
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130131417,
+					"content": "И что самое удивительное, она помнит каждую мелочь. Из-за этого она кажется такой настоящей.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131418
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130131418,
+					"content": "Удивительно... Хотя сны и должны удивлять.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131419
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130131419,
+					"content": "Дело в том, что в его рассказах всё слишком упорядочено, но сны - довольно хрупкая материя.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131420
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130131420,
+					"content": "Например, раздавшийся за окном грохот во сне может превратиться в пушечный залп.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131421
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130131421,
+					"content": "Или из-за сухости во рту может присниться, как вы бредёте по бесконечной пустыне.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131422
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130131422,
+					"content": "Но образ твоей жены не меняется и ничего на него не влияет. Это очень и очень редкое явление.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131423
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130131423,
+					"content": "Я тоже не понимаю, в чём дело, но у меня нет причин ставить под сомнение или отвергать этот сон, ведь он прекрасен.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131424,
+						130131425
+					],
+					"speakerTitle": "Ильман"
+				},
+				{
+					"id": 130131424,
+					"content": "Да, это правда.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130131426
+					]
+				},
+				{
+					"id": 130131426,
+					"content": "А мне всё-таки любопытно. Я прежде ни с чем подобным не сталкивалась. Хочется понаблюдать за происходящим.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131427
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130131427,
+					"content": "Давайте поднимемся на гору, устроим себе небольшую прогулку.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130131425,
+					"content": "Похоже, нет смысла зацикливаться на причинах.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130131426
+					]
+				},
+				{
+					"id": 130131404,
+					"content": "Бывают и в ещё более опасных.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						130131405
+					]
+				}
+			]
+		},
+		{
+			"id": 1301315,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301308",
+							"2"
+						],
+						"stepId": 1301308,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Нахида",
+					"Дебби"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130131501,
+					"content": "...Ещё один серийный сон?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131502
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130131502,
+					"content": "Эм, может, это какой-то знак?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Дебби"
+				}
+			]
+		},
+		{
+			"id": 1301316,
+			"completionStepIds": [
+				1301310
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1301310",
+							"2"
+						],
+						"stepId": 1301310,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Нахида"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 130131601,
+					"content": "Хм, а он не шутил. Здесь и впрямь небезопасно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131602
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130131602,
+					"content": "Ерунда, давайте покончим с этим как можно скорее.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131603
+					],
+					"speakerTitle": "Нахида"
+				},
+				{
+					"id": 130131603,
+					"content": "Ты тоже хочешь принять участие?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						130131604
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 130131604,
+					"content": "Конечно, это же часть прогулки.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Нахида"
+				}
+			]
+		}
+	]
+}

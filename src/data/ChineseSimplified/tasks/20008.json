@@ -1,0 +1,214 @@
+{
+	"id": 20008,
+	"type": "IQ",
+	"name": "圆滚滚的大团骚乱！",
+	"description": "史莱姆突然在蒙德城的码头出现，在码头附近的阿瑟尔似乎被卷入其中…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2000801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往码头查看详情",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "消灭史莱姆",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000803,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "和阿瑟尔对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000801,
+						0
+					],
+					"talkId": 2000801
+				}
+			]
+		},
+		{
+			"id": 2000804,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往异常地点",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000805,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "用「风」驱散尘埃",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000806,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "消灭全部史莱姆",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2000801,
+			"completionStepIds": [
+				2000803
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000802",
+							"3"
+						],
+						"stepId": 2000802,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"阿瑟尔"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200080101,
+					"content": "谢谢，谢谢你救了我。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080102
+					],
+					"speakerTitle": "阿瑟尔"
+				},
+				{
+					"id": 200080102,
+					"content": "这些史莱姆突然冒出来，我没想到史莱姆会在这里出现，没来得及跑就被它们围住了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080103
+					],
+					"speakerTitle": "阿瑟尔"
+				},
+				{
+					"id": 200080103,
+					"content": "你们千万别告诉我爸。我爸本来要我一直呆在家里。他说最近这周围的史莱姆都特别凶。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080104
+					],
+					"speakerTitle": "阿瑟尔"
+				},
+				{
+					"id": 200080104,
+					"content": "而且史莱姆都开始出现在蒙德城周围了，我已经闷在家里好几天了，今天是偷跑出来的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080105
+					],
+					"speakerTitle": "阿瑟尔"
+				},
+				{
+					"id": 200080105,
+					"content": "如果你们愿意的话，能去前面看看吗，如果有史莱姆的话，就请消灭它们吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080106,
+						200080107
+					],
+					"speakerTitle": "阿瑟尔"
+				},
+				{
+					"id": 200080106,
+					"content": "没问题。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200080108
+					]
+				},
+				{
+					"id": 200080108,
+					"content": "太好了！我总算能安心去玩了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "阿瑟尔"
+				},
+				{
+					"id": 200080107,
+					"content": "还有别的急事。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200080109
+					]
+				},
+				{
+					"id": 200080109,
+					"content": "可，可是，我不敢告诉我爸…能处理这事的只有你，拜托你了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "阿瑟尔"
+				}
+			]
+		}
+	]
+}

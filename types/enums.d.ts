@@ -37,6 +37,7 @@ declare module "genshin-db" {
 		windgliders    = "windgliders",
 		namecards      = "namecards",
 		geographies    = "geographies",
+		chapters       = "chapters",
 
 		achievements   = "achievements",
 		achievementgroups = "achievementgroups",
@@ -64,6 +65,7 @@ declare module "genshin-db" {
 
 	export enum MatchType {
 		None = "none",
+		Filenames = "filenames",
 		Names = "names",
 		AltNames = "altnames",
 		Aliases = "aliases",

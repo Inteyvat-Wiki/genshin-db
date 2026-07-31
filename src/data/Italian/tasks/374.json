@@ -1,0 +1,961 @@
+{
+	"id": 374,
+	"type": "AQ",
+	"name": "Il piano di Venti",
+	"description": "Dopo essere stato fermato, Venti spiega come ha provato a eliminare la maledizione di Dvalin durante il loro ultimo incontro, ma senza alcun successo. Adesso non può che affidarsi al potere della Lira sacra celeste per riportare indietro Dvalin.",
+	"unlockDescription": "",
+	"chapter": "Per un domani senza lacrime",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		375
+	],
+	"prevMainQuestList": [
+		373
+	],
+	"steps": [
+		{
+			"id": 37401,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Vai da Venti",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1028,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37402,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Scopri come farà Venti a prendere in prestito la Lira sacra",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37402,
+						0
+					],
+					"talkId": 37402
+				}
+			]
+		},
+		{
+			"id": 37403,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						37403,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37404,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Venti",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37403,
+						0
+					],
+					"talkId": 37403
+				}
+			]
+		},
+		{
+			"id": 37405,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						37405,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37406,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con la sorella",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37404,
+						0
+					],
+					"talkId": 37404
+				}
+			]
+		},
+		{
+			"id": 37407,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Raggiungi la cattedrale insieme a Venti",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37407,
+						0
+					],
+					"talkId": 37407
+				}
+			]
+		},
+		{
+			"id": 37408,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						37408,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 37310,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37403",
+							"3"
+						],
+						"stepId": 37403,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_NOT_EQUAL",
+						"rawParams": [
+							"37404",
+							"3"
+						],
+						"stepId": 37404,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Gotelinde"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3730901,
+					"content": "Di recente, la Chiesa è caduta nel caos e il Siniscalco non è qui... *sospira*",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Gotelinde"
+				}
+			]
+		},
+		{
+			"id": 37402,
+			"completionStepIds": [
+				37402
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37401",
+							"3"
+						],
+						"stepId": 37401,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37402",
+							"2"
+						],
+						"stepId": 37402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Venti"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3740201,
+					"content": "Ci penso io...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740202
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740202,
+					"content": "Salve, sorella.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740203
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740203,
+					"content": "Che il Dio di Anemo ti benedica, giovane bardo. Come posso aiutarti?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740204
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740204,
+					"content": "Conosco un segreto che potrebbe salvare Mondstadt dalla crisi che sta affrontando.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740205
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740205,
+					"content": "Ah, una benedizione del Dio di Anemo!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740206
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740206,
+					"content": "Dovresti comunicarlo ai Cavalieri di Favonius. Come mai sei venuto da me?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740207
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740207,
+					"content": "Ahahah! Perché solo tu, cara sorella, mi puoi aiutare!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740208
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740208,
+					"content": "Vorrei prendere in prestito... la Lira sacra. Tramite quello strumento, sarò in grado di aiutare Terrore alato...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740209
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740209,
+					"content": "Fuori di qui, grazie.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740210
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740210,
+					"content": "Come, prego?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740211
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740211,
+					"content": "Sappiamo che è un perfido drago, ma quando la Gran Maestra Reggente avrà preso una decisione, nulla potrà ostacolare i Cavalieri.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740212
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740212,
+					"content": "Questo è inaccettabile. Non pensi che così Terrore alato finirà per essere ucciso?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740213
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740213,
+					"content": "Quella folle bestia ha tradito i venti. Neanche il Dio di Anemo lo perdonerebbe!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740214
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740214,
+					"content": "Wow...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740215
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740215,
+					"content": "Ti prego... Ti supplico!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740216
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740216,
+					"content": "Non posso farlo, piccolo bardo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740217
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740217,
+					"content": "(Che strano... Per qualche motivo, mi spiace davvero rifiutare di aiutare un giovane così dolce...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740218
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740218,
+					"content": "Beh, allora non mi resta altra scelta.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740219
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740219,
+					"content": "Non posso più nascondermi!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740220
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740220,
+					"content": "Miei discepoli, esultate! Il <color=#00E1FFFF>Dio di Anemo, Barbatos</color> è sceso fra voi!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740221
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740221,
+					"content": "Notizia scioccante, vero? Non ti viene voglia di piangere e gioire? Come ci si sente a poter finalmente conoscere il dio che tanto adori?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740222
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740222,
+					"content": "Se non c'è altro, torno a occuparmi dei documenti della cattedrale.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740223
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740223,
+					"content": "Aspetta...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Venti"
+				}
+			]
+		},
+		{
+			"id": 37403,
+			"completionStepIds": [
+				37404
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37403",
+							"3"
+						],
+						"stepId": 37403,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37404",
+							"2"
+						],
+						"stepId": 37404,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Venti"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3740301,
+					"content": "Eh? Non ha nemmeno battuto ciglio.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740302
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740302,
+					"content": "Quantomeno ho scoperto quello che volevo sapere.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740303
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740303,
+					"content": "Non ha negato che la cattedrale custodisca la Lira sacra.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740304
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740304,
+					"content": "#Ora, {NICKNAME}, dato che sei l'asso dei Cavalieri di Favonius...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740305
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740305,
+					"content": "Magari potresti provare.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Venti"
+				}
+			]
+		},
+		{
+			"id": 37404,
+			"completionStepIds": [
+				37406
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37405",
+							"3"
+						],
+						"stepId": 37405,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37406",
+							"2"
+						],
+						"stepId": 37406,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Gotelinde"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3740401,
+					"content": "Barbatos ti benedica.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740402,
+						3740404
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740402,
+					"content": "Ciao.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740403
+					]
+				},
+				{
+					"id": 3740403,
+					"content": "Ah, sei tu! L'ultima recluta dei Cavalieri di Favonius, vero?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740406
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740406,
+					"content": "Cosa ti porta qui? La Gran Maestra Reggente ti ha affidato un incarico?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740411
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740411,
+					"content": "Proprio così. I Cavalieri di Favonius vorrebbero in prestito la Lira sacra...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740412
+					]
+				},
+				{
+					"id": 3740412,
+					"content": "Ah, sì?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740413
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740413,
+					"content": "Non che non mi fidi di te, ma anche un bardo dall'aria sospetta ha chiesto in prestito la Lira sacra.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740414
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740414,
+					"content": "Non ha fatto altro che blaterare, si è perfino definito Barbatos. Starà sicuramente tramando qualcosa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740415
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740415,
+					"content": "L'utilizzo della Lira sacra è regolato da alcune norme. Al momento, viene utilizzata solamente nel corso del Ludi Harpastum.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740416
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740416,
+					"content": "Occorrono dei documenti firmati dal Gran Maestro, dal Siniscalco e dal rappresentante della comunità.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740417
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740417,
+					"content": "Posso vedere il documento dei Cavalieri di Favonius?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740418,
+						3740419,
+						3740420
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740418,
+					"content": "Il Gran Maestro non ne ha parlato...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740422
+					]
+				},
+				{
+					"id": 3740422,
+					"content": "È necessario un documento firmato. Senza non posso fare molto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740423
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740423,
+					"content": "Ora, se volete scusarmi... Ultimamente non ho un attimo di pausa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740419,
+					"content": "Mi dispiace, ho dimenticato di portarlo.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740422
+					]
+				},
+				{
+					"id": 3740420,
+					"content": "Paimon l'ha mangiato lungo la strada.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740421
+					]
+				},
+				{
+					"id": 3740421,
+					"content": "Ehi!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740422
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3740404,
+					"content": "#Sono {NICKNAME}, Cavaliere Onorari{F#a}{M#o}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740405
+					]
+				},
+				{
+					"id": 3740405,
+					"content": "Ti conosco. Quel giorno, tu e Amber avete salvato Mondstadt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740406
+					],
+					"speakerTitle": "Gotelinde"
+				}
+			]
+		},
+		{
+			"id": 37405,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37404",
+							"3"
+						],
+						"stepId": 37404,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_NOT_EQUAL",
+						"rawParams": [
+							"37405",
+							"3"
+						],
+						"stepId": 37405,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Venti"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3740306,
+					"content": "Non è il momento di essere timidi, su.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Venti"
+				}
+			]
+		},
+		{
+			"id": 37407,
+			"completionStepIds": [
+				37407
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37407",
+							"2"
+						],
+						"stepId": 37407,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Venti"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3740701,
+					"content": "Quindi questa... \"Lira sacra celeste\" è...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740702
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3740702,
+					"content": "Uno dei tesori più apprezzati di Mondstadt. È la lira che suonava Barbatos stesso.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740703
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740703,
+					"content": "Suonandola, forse potrei aiutare Dvalin a ritrovare la sua natura gentile e a dimenticare l'incubo che sta vivendo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740704
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740704,
+					"content": "Credi davvero che possa impedire a Terrore alato di causare altri danni?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740705
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3740705,
+					"content": "Certo. Sono il miglior bardo al mondo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740706
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740706,
+					"content": "Non esiste canzone che io non conosca, che sia del passato, del presente o del futuro.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740707
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740707,
+					"content": "Guardami negli occhi. Non mi trovi affidabile?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740708,
+						3740709,
+						3740710
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740708,
+					"content": "Cos'hai... negli occhi?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740711
+					]
+				},
+				{
+					"id": 3740711,
+					"content": "Ahahah, con i bardi non attacca.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740712
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740712,
+					"content": "Come possiamo trovare la Lira sacra?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740713
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3740713,
+					"content": "Gira voce che sia nascosta in un luogo sicuro all'interno della cattedrale.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740714
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740714,
+					"content": "Vado a dare un'occhiata. Se volete, potete venire anche voi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740709,
+					"content": "Guardami negli occhi. Cosa stai nascondendo?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740711
+					]
+				},
+				{
+					"id": 3740710,
+					"content": "I tuoi occhi hanno lo stesso colore del cielo della mia città natale.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740711
+					]
+				}
+			]
+		},
+		{
+			"id": 37503,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"42101",
+							"2"
+						],
+						"stepId": 42101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Otto"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3750202,
+					"content": "Che rottura dover restare qui tutto il santo <color=#00E1FFFF>giorno</color> a guardia di questa entrata.\\nEhi! Non ti muovere! È vietato andare laggiù!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750203
+					],
+					"speakerTitle": "Otto"
+				},
+				{
+					"id": 3750203,
+					"content": "A quanto pare, per intrufolarci dovremo aspettare che <color=#00E1FFFF>faccia buio</color>.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		}
+	]
+}

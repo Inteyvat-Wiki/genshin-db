@@ -1,0 +1,176 @@
+{
+	"id": 70707,
+	"type": "WQ",
+	"name": "Le bouquet d'Alfred",
+	"description": "Alfred, de Mondstadt, aurait besoin de 3 chrysanthèmes à aubes.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Donnez 3 chrysanthèmes à aubes à Alfred.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070701,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Alfred.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070702,
+						0
+					],
+					"talkId": 7070702
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070701",
+							"2"
+						],
+						"stepId": 7070701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070701"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Alfred"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707070101,
+					"content": "Les chrysanthèmes à aubes...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707070102
+					]
+				},
+				{
+					"id": 707070102,
+					"content": "Mon petit doigt me dit que vous avez vu mon annonce. Merci d'avoir accepté...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707070103
+					],
+					"speakerTitle": "Alfred"
+				},
+				{
+					"id": 707070103,
+					"content": "Vous avez ces trois chrysanthèmes à aubes sur vous ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707070104,
+						707070105
+					],
+					"speakerTitle": "Alfred"
+				},
+				{
+					"id": 707070104,
+					"content": "Voici pour vous.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707070105,
+					"content": "Pas encore.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707070106
+					]
+				},
+				{
+					"id": 707070106,
+					"content": "Je vous laisse le faire, alors. Ne prenez pas trop de temps, ils faneront sinon.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Alfred"
+				}
+			]
+		},
+		{
+			"id": 7070702,
+			"completionStepIds": [
+				7070702
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070702",
+							"2"
+						],
+						"stepId": 7070702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Alfred"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707070201,
+					"content": "Je suis certain que ma fille va les adorer.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707070202
+					],
+					"speakerTitle": "Alfred"
+				},
+				{
+					"id": 707070202,
+					"content": "Merci beaucoup. Voici votre récompense.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Alfred"
+				}
+			]
+		}
+	]
+}

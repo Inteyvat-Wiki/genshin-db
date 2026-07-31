@@ -1,0 +1,931 @@
+{
+	"id": 70802,
+	"type": "WQ",
+	"name": "เงาร่างกลางหิมะ - ความหวัง",
+	"description": "Joel บอกว่า คุณ Cyrus ได้ค้นพบเบาะแสเกี่ยวกับพ่อของเขา...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		70804
+	],
+	"steps": [
+		{
+			"id": 7080201,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TIME_VAR_PASS_DAY",
+					"rawParams": [
+						70804,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "พูดคุยกับ Joel",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080201,
+						0
+					],
+					"talkId": 7080201
+				}
+			]
+		},
+		{
+			"id": 7080203,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "ไปที่กิลด์นักผจญภัย",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080202,
+						0
+					],
+					"talkId": 7080202
+				}
+			]
+		},
+		{
+			"id": 7080204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "ไปที่ภูเขา Dragonspine เพื่อหาเบาะแส",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7080204,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080205,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "กำจัดมอนสเตอร์ทั้งหมด",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080206,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "พูดคุยกับ Pallad",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080203,
+						0
+					],
+					"talkId": 7080203
+				}
+			]
+		},
+		{
+			"id": 7080207,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "พูดคุยกับ Cyrus",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080204,
+						0
+					],
+					"talkId": 7080204
+				}
+			]
+		},
+		{
+			"id": 7080208,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "รายงานให้ Joel รู้",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080205,
+						0
+					],
+					"talkId": 7080205
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7080201,
+			"completionStepIds": [
+				7080202
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080202",
+							"2"
+						],
+						"stepId": 7080202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Joel"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020101,
+					"content": "ครั้งนี้จะตามหาพ่อเจอจริง ๆ ใช่มั้ย...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020102
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020102,
+					"content": "พี่ได้ข่าวพ่อของผมบ้างมั้ย?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020103
+					]
+				},
+				{
+					"id": 708020103,
+					"content": "#พี่ {NICKNAME} เองเหรอ!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020104
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020104,
+					"content": "พี่ Pallad บอกผมว่า ลุง Cyrus เจอเบาะแสเกี่ยวกับพ่อของผมแล้ว",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020105
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020105,
+					"content": "ถึงพี่ Pallad จะยังไม่ค่อยแน่ใจ... แต่พี่ Pallad บอกว่าเบาะแสที่พวกเขาเจอครั้งนี้น่าเชื่อถือมาก ไม่แน่ว่าพวกเขาอาจจะเจอพ่อของผมจริง ๆ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020106
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020106,
+					"content": "ผมก็อยากไปบนภูเขา Dragonspine กับพวกเขาเหมือนกัน แต่ลุง Cyrus บอกให้ผมรออยู่ที่แคมป์นี่ บอกว่าถ้ามีข่าวแล้วจะมาบอกผมเอง...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020107
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020107,
+					"content": "#พี่ {NICKNAME} ถ้าพี่สะดวก ช่วยไปถามข่าวจากลุง Cyrus ให้ผมทีได้มั้ย?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020108,
+						708020109
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020108,
+					"content": "ฉันเข้าใจแล้ว",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020110
+					]
+				},
+				{
+					"id": 708020110,
+					"content": "ผะ ผมกลัวว่าจะได้ฟัง... ข่าวร้าย...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020111
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020111,
+					"content": "#งั้นก็รบกวนพี่ด้วยนะ! ขอบคุณนะพี่ {NICKNAME}!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020109,
+					"content": "ทำไมเธอไม่ไปเองล่ะ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020110
+					]
+				}
+			]
+		},
+		{
+			"id": 7080202,
+			"completionStepIds": [
+				7080203
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080203",
+							"2"
+						],
+						"stepId": 7080203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus",
+					"Pallad ผู้บ้าบิ่น"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020201,
+					"content": "Pallad... นายแน่ใจเหรอว่าเป็นพื้นที่แถวนี้?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020202
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020202,
+					"content": "แน่ใจสิ คุณ Cyrus",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020203
+					],
+					"speakerTitle": "Pallad ผู้บ้าบิ่น"
+				},
+				{
+					"id": 708020203,
+					"content": "เมื่อกี้พวกเธอกำลังคุยเรื่องพ่อของ Joel กันอยู่เหรอ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020204
+					]
+				},
+				{
+					"id": 708020204,
+					"content": "นักเดินทางนี่นา? ดูท่าคงจะเป็น Joel ส่งเธอมาล่ะสิ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020205
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020205,
+					"content": "เจ้าเด็กคนนั้นส่งคนมาถามข่าวกับเราทุกวันเลย...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020206
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020206,
+					"content": "แต่ว่าคราวนี้เรามีข่าวดีให้เขาแล้วล่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020207
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020207,
+					"content": "ก่อนหน้านี้ ทางกิลด์นักผจญภัยของเราได้จัดการฝึกพิเศษแห่ง Dragonspine ขึ้นมา...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020208
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020208,
+					"content": "ที่เหลือให้ฉันพูดเองเถอะ คุณ Cyrus",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020209
+					],
+					"speakerTitle": "Pallad ผู้บ้าบิ่น"
+				},
+				{
+					"id": 708020209,
+					"content": "ระหว่างเข้าร่วมการฝึก ฉันเจอพายุหิมะเข้า เลยต้องออกนอกเส้นทางไปหน่อย",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020210
+					],
+					"speakerTitle": "Pallad ผู้บ้าบิ่น"
+				},
+				{
+					"id": 708020210,
+					"content": "ตอนที่ฉันคลำทางหาเส้นทางที่ถูกต้องอยู่ จู่ ๆ ก็เห็นร่างคนราง ๆ อยู่บนผา",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020211
+					],
+					"speakerTitle": "Pallad ผู้บ้าบิ่น"
+				},
+				{
+					"id": 708020211,
+					"content": "ตอนแรกฉันนึกว่าเป็นนักผจญภัยที่หลงทางเหมือนฉัน ฉันเลยตะโกนเรียกเขา",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020212
+					],
+					"speakerTitle": "Pallad ผู้บ้าบิ่น"
+				},
+				{
+					"id": 708020212,
+					"content": "แต่ก่อนที่เสียงตะโกนของฉันจะดึงดูดความสนใจของเขา... มันดันไปดึงดูดพวกมอนสเตอร์ซะก่อน",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020213
+					],
+					"speakerTitle": "Pallad ผู้บ้าบิ่น"
+				},
+				{
+					"id": 708020213,
+					"content": "ในสภาพแวดล้อมของภูเขา Dragonspine ฉันไม่มั่นใจว่าจะเอาชนะพวกมอนสเตอร์ได้ ฉันเลยต้องถอยก่อน",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020214
+					],
+					"speakerTitle": "Pallad ผู้บ้าบิ่น"
+				},
+				{
+					"id": 708020214,
+					"content": "พอกลับมาแล้ว ฉันก็เลยเล่าให้คุณ Cyrus ฟัง",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020215,
+						708020217
+					],
+					"speakerTitle": "Pallad ผู้บ้าบิ่น"
+				},
+				{
+					"id": 708020215,
+					"content": "หรือว่าเงานั่นจะเป็นพ่อของ Joel?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020216
+					]
+				},
+				{
+					"id": 708020216,
+					"content": "เราก็ไม่แน่ใจเหมือนกัน",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020218
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020218,
+					"content": "ไม่ว่ายังไง อย่างน้อยพวกเราก็ได้รู้ว่ามีคนติดอยู่บนภูเขา Dragonspine และต้องจัดคนไปช่วยเขาออกมา",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020219
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020219,
+					"content": "ส่วนเรื่องที่เขาจะใช่ Joserf พ่อของ Joel รึเปล่า... คงต้องพึ่งดวงแล้วล่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020220
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020220,
+					"content": "สรุปคือ ฉันได้ขอให้ทุกคนในกิลด์ที่มีความสามารถพอที่จะขึ้นไปบนภูเขา Dragonspine ให้ไปร่วมกันค้นหาและช่วยเหลือเขาออกมา",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020221
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020221,
+					"content": "ฉันเองก็จะเตรียมตัวเหมือนกัน เดี๋ยวฉันจะไปเข้าร่วมทีมค้นหาบนภูเขา Dragonspine",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020222,
+						708020223
+					],
+					"speakerTitle": "Pallad ผู้บ้าบิ่น"
+				},
+				{
+					"id": 708020222,
+					"content": "ฉันไปกับเธอด้วยละกัน",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020224
+					]
+				},
+				{
+					"id": 708020224,
+					"content": "เธอจะช่วยงั้นเหรอ? เยี่ยมไปเลย งั้นเราออกเดินทางกันเถอะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Pallad ผู้บ้าบิ่น"
+				},
+				{
+					"id": 708020223,
+					"content": "ฉันจะไปจัดการมอนสเตอร์พวกนั้น",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020224
+					]
+				},
+				{
+					"id": 708020217,
+					"content": "บางทีอาจเป็นนักผจญภัยที่หลงทางคนอื่น ๆ ก็ได้...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020218
+					]
+				}
+			]
+		},
+		{
+			"id": 7080203,
+			"completionStepIds": [
+				7080206
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080206",
+							"2"
+						],
+						"stepId": 7080206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Pallad ผู้บ้าบิ่น"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020301,
+					"content": "บริเวณนี้ปลอดภัยขึ้นมาบ้างแล้วล่ะ ขอบใจมากนะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020302
+					],
+					"speakerTitle": "Pallad ผู้บ้าบิ่น"
+				},
+				{
+					"id": 708020302,
+					"content": "เกี่ยวกับคุณ Joserf...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020303
+					]
+				},
+				{
+					"id": 708020303,
+					"content": "เฮ้อ เมื่อกี้ฉันไม่เจอเบาะแสอะไรใหม่ ๆ เลย",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020304
+					],
+					"speakerTitle": "Pallad ผู้บ้าบิ่น"
+				},
+				{
+					"id": 708020304,
+					"content": "แต่ว่า ในเมื่อบริเวณนี้ปลอดภัยแล้ว งั้นฉันจะหาเบาะแสต่อไปนะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020305
+					],
+					"speakerTitle": "Pallad ผู้บ้าบิ่น"
+				},
+				{
+					"id": 708020305,
+					"content": "เธอช่วยกลับไปที่กิลด์ทีได้มั้ย ไปบอกคุณ Cyrus ทีว่าฉันได้เริ่มทำการค้นหาแล้ว",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Pallad ผู้บ้าบิ่น"
+				}
+			]
+		},
+		{
+			"id": 7080204,
+			"completionStepIds": [
+				7080207
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080207",
+							"2"
+						],
+						"stepId": 7080207,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020401,
+					"content": "นักเดินทาง กลับมาแล้วเหรอ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020402,
+						708020404
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020402,
+					"content": "Pallad ได้เริ่มทำการค้นหาแล้วล่ะ",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020403
+					]
+				},
+				{
+					"id": 708020403,
+					"content": "อืม เจ้าหนุ่มคนนั้นก็มีความรับผิดชอบเหมือนกันนี่นา...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020406
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020406,
+					"content": "รอให้ฉันจัดการกับงานตรงนี้ก่อน แล้วฉันจะไปหาเจ้าเด็ก Joel ที่ภูเขา Dragonspine แล้วบอกเรื่องนี้กับเขาอย่างละเอียด",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020407
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020407,
+					"content": "นักเดินทาง รบกวนเธอไปบอก Joel ทีนะว่าเดี๋ยวฉันจะไปหา",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020408
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020408,
+					"content": "ฉันต้องใช้เวลาจัดการกับข่าวกรองพวกนี้อีกสักพัก ไม่อยากให้เจ้าเด็กคนนั้นรอนานน่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020404,
+					"content": "เราจะหาคนคนนั้นเจอจริง ๆ เหรอ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020405
+					]
+				},
+				{
+					"id": 708020405,
+					"content": "เรื่องนี้... ฉันรับประกันไม่ได้หรอก บอกได้แค่ว่า เราจะทำเต็มที่",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020406
+					],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		},
+		{
+			"id": 7080205,
+			"completionStepIds": [
+				7080208
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080208",
+							"2"
+						],
+						"stepId": 7080208,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Joel"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020501,
+					"content": "#พี่ {NICKNAME} พี่ได้ข่าวอะไรมาบ้างมั้ย?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020502
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020502,
+					"content": "หมายความว่า... ลุง Cyrus ยังไม่เจอพ่อของผม...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020503,
+						708020504
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020503,
+					"content": "เชื่อใจคุณ Cyrus เถอะ",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020505
+					]
+				},
+				{
+					"id": 708020505,
+					"content": "#อื้ม ผมรู้ รอให้ลุง Cyrus มาก่อน แล้วผมจะถามรายละเอียดกับลุงอีกที ขอบคุณนะพี่ {NICKNAME}!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020506
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020506,
+					"content": "ไปอยู่ที่ไหนกันนะ... พ่อ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020504,
+					"content": "เขาเจอเบาะแสแล้วล่ะ",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020505
+					]
+				}
+			]
+		},
+		{
+			"id": 7080206,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080203",
+							"2"
+						],
+						"stepId": 7080203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080204",
+							"2"
+						],
+						"stepId": 7080204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080205",
+							"2"
+						],
+						"stepId": 7080205,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080206",
+							"2"
+						],
+						"stepId": 7080206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080207",
+							"2"
+						],
+						"stepId": 7080207,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Joel"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020601,
+					"content": "#พี่ {NICKNAME} ช่วยไปถามข่าวจากลุง Cyrus ให้ผมทีได้มั้ย?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Joel"
+				}
+			]
+		},
+		{
+			"id": 7080207,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080204",
+							"2"
+						],
+						"stepId": 7080204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080205",
+							"2"
+						],
+						"stepId": 7080205,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080206",
+							"2"
+						],
+						"stepId": 7080206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020701,
+					"content": "ต้องเร่งมือกันหน่อยแล้ว...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		},
+		{
+			"id": 7080208,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080208",
+							"2"
+						],
+						"stepId": 7080208,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020801,
+					"content": "นักเดินทาง รบกวนเธอไปบอก Joel ทีนะว่าเดี๋ยวฉันจะไปหา",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020802
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020802,
+					"content": "ฉันต้องใช้เวลาจัดการกับข่าวกรองพวกนี้อีกสักพัก ไม่อยากให้เจ้าเด็กคนนั้นรอนานน่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		}
+	]
+}

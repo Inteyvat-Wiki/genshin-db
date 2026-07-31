@@ -1,0 +1,514 @@
+{
+	"id": 76201,
+	"type": "WQ",
+	"name": "Исследование растений: Ночноцвет",
+	"description": "К северу от Нашгорода, в области со слабой куувяки, также произрастает ночноцвет...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7620101,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7620101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7620102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Перейдите к указанному месту и начните исследование",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7620101,
+						0
+					],
+					"talkId": 7620101
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					1825.854,
+					209.632,
+					9564.927
+				],
+				"pointId": 15872
+			}
+		},
+		{
+			"id": 7620103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Соберите ночноцвет",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						121546,
+						0
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					1815.74,
+					214.932,
+					9584.25
+				],
+				"pointId": 15873
+			}
+		},
+		{
+			"id": 7620104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Весой",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7620102,
+						0
+					],
+					"talkId": 7620102
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7620101,
+			"completionStepIds": [
+				7620102
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7620102",
+							"2"
+						],
+						"stepId": 7620102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PLAYER_CURRENT_AVATAR",
+						"rawParams": [
+							"10000130",
+							"0",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 762010101,
+					"content": "Линнея подготавливается к исследованию...",
+					"roleType": "TALK_ROLE_NEED_CLICK_BLACK_SCREEN",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7620102,
+			"completionStepIds": [
+				7620104
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7620104",
+							"2"
+						],
+						"stepId": 7620104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Веса",
+					"Метта"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							1819.919,
+							212.139,
+							9583.548
+						],
+						"pointId": 16326
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							1821.29,
+							212.391,
+							9584.688
+						],
+						"pointId": 16327
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							1819.141,
+							212.557,
+							9587.804
+						],
+						"pointId": 16474
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							1818.338,
+							212.534,
+							9585.296
+						],
+						"pointId": 16475
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 762010201,
+					"content": "Ты злая, Метта! Я только хотел, чтобы тебе было весело в приключении... Зачем говорить такие обидные вещи? Уф...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010202
+					],
+					"speakerTitle": "Веса"
+				},
+				{
+					"id": 762010202,
+					"content": "Если ты не избавишься от привычки действовать по первому импульсу, то других тоже будешь сердить.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010203
+					],
+					"speakerTitle": "Метта"
+				},
+				{
+					"id": 762010203,
+					"content": "Это не капризы! У меня тоже есть свои планы...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010204
+					],
+					"speakerTitle": "Веса"
+				},
+				{
+					"id": 762010204,
+					"content": "Планы, говоришь?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010205
+					],
+					"speakerTitle": "Метта"
+				},
+				{
+					"id": 762010205,
+					"content": "Уф... Ты снова надо мной издеваешься. Я больше не буду с тобой разговаривать! Даже если потом пожалеешь, будет уже поздно!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010206
+					],
+					"speakerTitle": "Веса"
+				},
+				{
+					"id": 762010206,
+					"content": "...Ах, Линнея! Посмотри на неё! Она...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010207
+					],
+					"speakerTitle": "Веса"
+				},
+				{
+					"id": 762010207,
+					"content": "Пока Веса путано рассказывает, что произошло, становится ясно, что это была обычная детская ссора...",
+					"roleType": "TALK_ROLE_NEED_CLICK_BLACK_SCREEN",
+					"nextDialogs": [
+						762010208
+					]
+				},
+				{
+					"id": 762010208,
+					"content": "В любом случае виновата точно не я.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010209
+					],
+					"speakerTitle": "Метта"
+				},
+				{
+					"id": 762010209,
+					"content": "Тогда я... я тоже ни в чём не виноват! Сестра Линнея...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010210
+					],
+					"speakerTitle": "Веса"
+				},
+				{
+					"id": 762010210,
+					"content": "Хм... иногда так бывает. Никто по-настоящему не виноват, но всё равно получается не так, как хотелось.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010211
+					],
+					"speakerTitle": "Линнея"
+				},
+				{
+					"id": 762010211,
+					"content": "О, это как история о двух сёстрах из Детей Морозной Луны, которых символизирует ночноцвет.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010212
+					],
+					"speakerTitle": "Линнея"
+				},
+				{
+					"id": 762010212,
+					"content": "История сестёр?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010213
+					],
+					"speakerTitle": "Веса"
+				},
+				{
+					"id": 762010213,
+					"content": "Да. Я слышала, что когда-то были две сестры в племени Детей Морозной Луны. Их характеры сильно отличались, подобно ночноцвету: как красный и синий.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010214
+					],
+					"speakerTitle": "Линнея"
+				},
+				{
+					"id": 762010214,
+					"content": "Обе сестры поступали так, как считали правильным, но именно из-за этого их пути разошлись.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010215
+					],
+					"speakerTitle": "Линнея"
+				},
+				{
+					"id": 762010215,
+					"content": "Говорят, младшая сестра так и не простила старшей, что та оставила её, хотя старшая впоследствии спасла бесчисленное множество жизней... Они больше не встретились снова до самой смерти.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010216
+					],
+					"speakerTitle": "Линнея"
+				},
+				{
+					"id": 762010216,
+					"content": "О... Я не знала, что у Детей Морозной Луны есть такие истории...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010217
+					],
+					"speakerTitle": "Метта"
+				},
+				{
+					"id": 762010217,
+					"content": "Я тоже.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010218
+					],
+					"speakerTitle": "Веса"
+				},
+				{
+					"id": 762010218,
+					"content": "Хм... я слышала это от странствующего барда. Возможно, частично это и вымысел...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010219
+					],
+					"speakerTitle": "Линнея"
+				},
+				{
+					"id": 762010219,
+					"content": "О, значит, это выдуманная история.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010220
+					],
+					"speakerTitle": "Метта"
+				},
+				{
+					"id": 762010220,
+					"content": "Ну, даже если история не совсем правдива, урок, который она несёт, всё равно верен, правда?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010221
+					],
+					"speakerTitle": "Линнея"
+				},
+				{
+					"id": 762010221,
+					"content": "Ни одна из них не считала, что была неправа. Обе были уверены, что только их выбор верен, но их выбор привёл к тому, что они навсегда потеряли друг друга.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010222
+					],
+					"speakerTitle": "Линнея"
+				},
+				{
+					"id": 762010222,
+					"content": "Если доказательство своей правоты означает потерю друга... что бы вы выбрали?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010223
+					],
+					"speakerTitle": "Линнея"
+				},
+				{
+					"id": 762010223,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010224
+					],
+					"speakerTitle": "Веса"
+				},
+				{
+					"id": 762010224,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010225
+					],
+					"speakerTitle": "Метта"
+				},
+				{
+					"id": 762010225,
+					"content": "Эх, вообще-то небольшие спонтанные отступления во время приключений - это тоже неплохо.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010226
+					],
+					"speakerTitle": "Метта"
+				},
+				{
+					"id": 762010226,
+					"content": "...Да! Если подумать, время, которое Метта проводит со мной в приключениях, очень ценно. Если я буду постоянно менять планы, мы можем вообще ничего не успеть...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010227
+					],
+					"speakerTitle": "Веса"
+				},
+				{
+					"id": 762010227,
+					"content": "Я... Я лучше спланирую всё в следующий раз!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010228
+					],
+					"speakerTitle": "Веса"
+				},
+				{
+					"id": 762010228,
+					"content": "Хе-хе, как же хорошо, что вы помирились.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010229
+					],
+					"speakerTitle": "Линнея"
+				},
+				{
+					"id": 762010229,
+					"content": "И если мы по пути найдём какие-нибудь необычные камни, мы отправим их в «Сперанцу».",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010230
+					],
+					"speakerTitle": "Метта"
+				},
+				{
+					"id": 762010230,
+					"content": "Отлично! Тогда заранее спасибо вам.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Линнея"
+				}
+			]
+		},
+		{
+			"id": 7620103,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7620102",
+							"2"
+						],
+						"stepId": 7620102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PLAYER_CURRENT_NOT_AVATAR",
+						"rawParams": [
+							"10000130",
+							"0",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 762010301,
+					"content": "(Похоже, поблизости есть что-то достойное изучения. <color=#FFCC33FF>Линнея</color> отлично знает местную экосистему. Возможно, она что-то обнаружит...)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

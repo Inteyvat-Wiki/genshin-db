@@ -1,0 +1,688 @@
+{
+	"id": 20007,
+	"type": "IQ",
+	"name": "緊急修理",
+	"description": "艾倫正運送著獵物去蒙德城，但是貨車卻被丘丘人襲擊，貨物和他自己都陷入了危險的境地……",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2000701,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "消滅所有魔物",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000702,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "和艾倫對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000707,
+						0
+					],
+					"talkId": 2000707
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000708,
+						0
+					],
+					"talkId": 2000708
+				}
+			]
+		},
+		{
+			"id": 2000703,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "收集木材",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100306,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000704,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "將結實的木板交給艾倫",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000703,
+						0
+					],
+					"talkId": 2000703
+				}
+			]
+		},
+		{
+			"id": 2000705,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "消滅所有魔物",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000706,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "和艾倫對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000709,
+						0
+					],
+					"talkId": 2000709
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000710,
+						0
+					],
+					"talkId": 2000710
+				}
+			]
+		},
+		{
+			"id": 2000707,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "收集繩索",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100308,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000708,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "將繩索交給艾倫",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000706,
+						0
+					],
+					"talkId": 2000706
+				}
+			]
+		},
+		{
+			"id": 2000709,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "前去查看詳情",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1127,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2000701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000701",
+							"3"
+						],
+						"stepId": 2000701,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000702",
+							"2"
+						],
+						"stepId": 2000702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"艾倫"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070101,
+					"content": "#謝、謝謝{F#妳}{M#你}，{NICKNAME}，太好了，我還以為這次完蛋了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070102
+					],
+					"speakerTitle": "艾倫"
+				},
+				{
+					"id": 200070102,
+					"content": "這車上都是獵手們辛苦狩獵的成果，杜拉夫先生要我送去蒙德城。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070103
+					],
+					"speakerTitle": "艾倫"
+				},
+				{
+					"id": 200070103,
+					"content": "雖然我不…太擅長狩獵，但是押送這麼簡單的活，應該還是能做的，我一開始是這麼想的…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070104
+					],
+					"speakerTitle": "艾倫"
+				},
+				{
+					"id": 200070104,
+					"content": "#但還是差點搞砸了。突然被這麼襲擊，肯定是因為這些獵物太好了，那群傢伙也想要，還好{F#妳}{M#你}來了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070105
+					],
+					"speakerTitle": "艾倫"
+				},
+				{
+					"id": 200070105,
+					"content": "呃，雖然很不好意思，但是…剛才被襲擊的時候，貨車也被弄壞了，想要離開這，我必須把車修好。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070106
+					],
+					"speakerTitle": "艾倫"
+				},
+				{
+					"id": 200070106,
+					"content": "周圍的樹林裡應該有能用的材料。但是獵物還在車裡，走開的話我實在很擔心。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070107
+					],
+					"speakerTitle": "艾倫"
+				},
+				{
+					"id": 200070107,
+					"content": "#如果可以的話，{F#妳}{M#你}能幫我從周圍找一塊<color=#00E1FFFF>結實的木板</color>來嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "艾倫"
+				}
+			]
+		},
+		{
+			"id": 2000702,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000703",
+							"2"
+						],
+						"stepId": 2000703,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"艾倫"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070201,
+					"content": "只需要修理幾個小地方，能讓車撐到蒙德城就好了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070202
+					],
+					"speakerTitle": "艾倫"
+				},
+				{
+					"id": 200070202,
+					"content": "周圍的樹林裡應該就有合適的木材。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "艾倫"
+				}
+			]
+		},
+		{
+			"id": 2000703,
+			"completionStepIds": [
+				2000704
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000704",
+							"2"
+						],
+						"stepId": 2000704,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"艾倫"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070301,
+					"content": "這些就足夠了，只要一下子我就能…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070302
+					],
+					"speakerTitle": "艾倫"
+				},
+				{
+					"id": 200070302,
+					"content": "咦…旅行者，那群傢伙又來了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "艾倫"
+				}
+			]
+		},
+		{
+			"id": 2000704,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000705",
+							"3"
+						],
+						"stepId": 2000705,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000706",
+							"2"
+						],
+						"stepId": 2000706,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"艾倫"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070401,
+					"content": "太感謝了，這幫傢伙也太執著了，這些獵物有這麼大的吸引力嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070402
+					],
+					"speakerTitle": "艾倫"
+				},
+				{
+					"id": 200070402,
+					"content": "也虧得杜拉夫先生能獵到這麼好的獵物，要是我也能成為這樣的獵人就好了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070403
+					],
+					"speakerTitle": "艾倫"
+				},
+				{
+					"id": 200070403,
+					"content": "唉，在此之前，我還是先把車給弄進城吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070404
+					],
+					"speakerTitle": "艾倫"
+				},
+				{
+					"id": 200070404,
+					"content": "抱歉，旅行者，本來車都快修好了，結果剛才一搞，又有個小地方出問題了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070405
+					],
+					"speakerTitle": "艾倫"
+				},
+				{
+					"id": 200070405,
+					"content": "但是再待在這只會更危險，必須把車快點修好，我記得車上有繩索，一定是被那群丘丘人給丟掉了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070406
+					],
+					"speakerTitle": "艾倫"
+				},
+				{
+					"id": 200070406,
+					"content": "#旅行者，能請{F#妳}{M#你}去幫我去周圍找找<color=#00E1FFFF>繩索</color>嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "艾倫"
+				}
+			]
+		},
+		{
+			"id": 2000705,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000707",
+							"2"
+						],
+						"stepId": 2000707,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"艾倫"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070501,
+					"content": "繩索應該就在周圍的樹林裡。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "艾倫"
+				}
+			]
+		},
+		{
+			"id": 2000706,
+			"completionStepIds": [
+				2000708
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000707",
+							"3"
+						],
+						"stepId": 2000707,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000708",
+							"2"
+						],
+						"stepId": 2000708,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"艾倫"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070601,
+					"content": "這樣就可以了，雖然感覺隨時可能散架，但只要能撐到蒙德城就好。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070602
+					],
+					"speakerTitle": "艾倫"
+				},
+				{
+					"id": 200070602,
+					"content": "#謝謝{F#妳}{M#你}！那麼我先出發了，以後來清泉鎮記得來找我，我們好好喝一杯。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070603
+					],
+					"speakerTitle": "艾倫"
+				},
+				{
+					"id": 200070603,
+					"content": "…只要別喝得像杜拉夫先生一樣就行。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "艾倫"
+				}
+			]
+		},
+		{
+			"id": 2000707,
+			"completionStepIds": [
+				2000702
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"艾倫"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070701,
+					"content": "我明白了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200070702
+					]
+				},
+				{
+					"id": 200070702,
+					"content": "#太好了，那我就在這等{F#妳}{M#你}，請{F#妳}{M#你}快一些，不然那群傢伙說不定又要回來了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "艾倫"
+				}
+			]
+		},
+		{
+			"id": 2000708,
+			"completionStepIds": [
+				2000702
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"艾倫"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070801,
+					"content": "還有別的急事。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200070802
+					]
+				},
+				{
+					"id": 200070802,
+					"content": "#別啊！那群傢伙說不定還在附近，{F#妳}{M#你}就再幫我一把，讓我快點離開這吧，拜託了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "艾倫"
+				}
+			]
+		},
+		{
+			"id": 2000709,
+			"completionStepIds": [
+				2000706
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"艾倫"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070901,
+					"content": "沒問題。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200070902
+					]
+				},
+				{
+					"id": 200070902,
+					"content": "太感謝了，應該就在周圍的樹林裡。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "艾倫"
+				}
+			]
+		},
+		{
+			"id": 2000710,
+			"completionStepIds": [
+				2000706
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"艾倫"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200071001,
+					"content": "還有別的事。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200071002
+					]
+				},
+				{
+					"id": 200071002,
+					"content": "#最——後一步了，只要把繩索拿過來就好，剩下的我自己搞定，辛苦{F#妳}{M#你}了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "艾倫"
+				}
+			]
+		}
+	]
+}

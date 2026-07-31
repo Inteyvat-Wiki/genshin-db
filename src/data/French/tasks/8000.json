@@ -1,0 +1,977 @@
+{
+	"id": 8000,
+	"type": "AQ",
+	"name": "Sacrifice involontaire",
+	"description": "Ganyu et Lan vous ont indiqué que les Pilleurs de trésors de Mondstadt et de Liyue prévoyaient de s'unir pour piller des ruines liées à l'Ordre de l'Abîme. Vous inquiétant du chaos que ces Pilleurs pourraient causer, vous acceptez la mission et allez enquêter sur cette affaire...",
+	"unlockDescription": "",
+	"chapter": "Nous serons enfin réunis",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		8001
+	],
+	"prevMainQuestList": [
+		454,
+		18000,
+		485,
+		1025
+	],
+	"steps": [
+		{
+			"id": 800001,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Rapprochez-vous du panneau d'affichage de la Guilde.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						800001,
+						0
+					],
+					"talkId": 800001
+				}
+			]
+		},
+		{
+			"id": 800002,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Rendez-vous dans les ruines.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_DUNGEON",
+					"rawParams": [
+						1114,
+						233
+					]
+				}
+			]
+		},
+		{
+			"id": 800003,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Suivez la piste des Pilleurs de trésors.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 800004,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Inspectez les profondeurs des ruines.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						800002,
+						0
+					],
+					"talkId": 800002
+				}
+			]
+		},
+		{
+			"id": 800005,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Enfuyez-vous des ruines.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 800006,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Repoussez l'Apôtre de l'Abîme.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 800007,
+			"order": 10,
+			"listShowType": "QUEST_SHOW",
+			"description": "Quittez les ruines.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_MY_WORLD",
+					"rawParams": [
+						3,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 800008,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à l'Apôtre de l'Abîme.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						800003,
+						0
+					],
+					"talkId": 800003
+				}
+			]
+		},
+		{
+			"id": 800009,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlementez avec l'Apôtre de l'Abîme.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						800004,
+						0
+					],
+					"talkId": 800004
+				}
+			]
+		},
+		{
+			"id": 800010,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						1800027,
+						3
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						45406,
+						3
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						48508,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 800001,
+			"completionStepIds": [
+				800001
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"800001",
+							"2"
+						],
+						"stepId": 800001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ganyu"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 80000101,
+					"content": "Oui, c'est vrai... Je sais bien qu'ils ont l'audace de s'en prendre à tout...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000102
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 80000102,
+					"content": "Que ce soit des anciens artéfacts issus des Sept Archons, des dieux ou des dragons... Rien n'échappe à leurs ambitions avides.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000103
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 80000103,
+					"content": "Pourtant, cette fois, c'est différent... Pour qui se prennent-ils... À vouloir s'attaquer aux trésors de l'Ordre de l'Abîme ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000104
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 80000104,
+					"content": "#Oh, {M#voyageur}{F#voyageuse}, c'est vous.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000105
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 80000105,
+					"content": "Oh, Ganyu ! Qu'est-ce que vous faites ici avec Lan ? Vous êtes en mission ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000106
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000106,
+					"content": "#Bonjour {NICKNAME}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000107
+					],
+					"speakerTitle": "Ganyu"
+				},
+				{
+					"id": 80000107,
+					"content": "Nous parlions des Pilleurs de trésors.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000108
+					],
+					"speakerTitle": "Ganyu"
+				},
+				{
+					"id": 80000108,
+					"content": "Oui, on se disait simplement que même ces perfides Pilleurs devraient savoir qu'il ne faut pas s'approcher de l'Abîme. C'est une puissance trop dangereuse.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000109
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 80000109,
+					"content": "Mais nous avons récemment reçu des informations du Bureau des affaires civiles selon lesquelles deux des plus importants Pilleurs de trésors de Liyue et de Mondstadt envisagent une grande opération conjointe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000110
+					],
+					"speakerTitle": "Ganyu"
+				},
+				{
+					"id": 80000110,
+					"content": "Deux des plus importants Pilleurs de trésors ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000111
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000111,
+					"content": "Oui, ils sont connus sous le nom de « Grande Sœur du Sud » et de « Rapace du Nord ».",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000112
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 80000112,
+					"content": "Oh ! Le Rapace ! Je me souviens, il avait essayé d'échapper à Amber à Mondstadt... Mais qui est cette « Grande sœur du Sud » ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000113,
+						80000114
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000113,
+					"content": "« Grande sœur »... Ça veut dire que c'est la sœur aînée ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000116
+					]
+				},
+				{
+					"id": 80000116,
+					"content": "Vous avez raison. C'est elle qui est à la tête des Pilleurs de trésors de Liyue. Si je comprends bien, ils l'appellent tous « Grande Sœur », ou juste « Cheffe ».",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000117
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 80000117,
+					"content": "Certains racontent même que le Dieu des voleurs lui a accordé sa bénédiction pour la récompenser de ses exploits, faisant d'elle la « Grande Sœur des dieux »... Mais ce n'est probablement qu'une rumeur.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000118
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 80000118,
+					"content": "Quoi qu'il en soit, les Pilleurs de trésors ont découvert des ruines jusqu'alors inexplorées que l'Ordre de l'Abîme protège dans le plus grand secret.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000119
+					],
+					"speakerTitle": "Ganyu"
+				},
+				{
+					"id": 80000119,
+					"content": "Malgré le danger que ça implique, tout ce qui intéresse les Pilleurs de trésors, c'est de découvrir quels genres de trésors pourraient se trouver à l'intérieur...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000120
+					],
+					"speakerTitle": "Ganyu"
+				},
+				{
+					"id": 80000120,
+					"content": "Ils ont déjà prévu d'envoyer une troupe faire diversion, pendant qu'un voleur expert s'infiltrera pour s'emparer des trésors.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000121
+					],
+					"speakerTitle": "Ganyu"
+				},
+				{
+					"id": 80000121,
+					"content": "Et c'est pour cette raison que la Cheffe et le Rapace auraient recruté un certain « Maître voleur » de Fontaine...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000122
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 80000122,
+					"content": "Un « Maître voleur » ? Ça en jette comme titre, ça...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000123
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000123,
+					"content": "En effet. C'est un individu qui sort de l'ordinaire.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000124
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 80000124,
+					"content": "Ce Maître voleur est très respecté parmi les Pilleurs de trésors... Un peu à la manière dont nous, les aventuriers, admirons les aventuriers célèbres.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000125,
+						80000127
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 80000125,
+					"content": "Comme Alice par exemple ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000126
+					]
+				},
+				{
+					"id": 80000126,
+					"content": "Ah, alors vous connaissez l'auteure du Guide de voyage en Teyvat ? Correct, le Maître voleur est une personne aussi renommée qu'elle.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000129
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 80000129,
+					"content": "Par conséquent, bien qu'ils jouissent d'un statut relativement important à Liyue et à Mondstadt, Grande sœur et le Rapace ont dû se démener pour convaincre un voleur de son envergure de superviser cette opération.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000130
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 80000130,
+					"content": "Avec les changements majeurs qui ont récemment eu lieu à Liyue, le Bureau des affaires civiles et les Millelithes ont déjà les mains pleines. Ils n'ont pas le temps d'enquêter sur les rumeurs portant sur les activités des Pilleurs de trésors.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000131
+					],
+					"speakerTitle": "Ganyu"
+				},
+				{
+					"id": 80000131,
+					"content": "Mais tout ce qui touche à l'Abîme me donne l'impression qu'un danger inconnu se cache sous la surface...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000132
+					],
+					"speakerTitle": "Ganyu"
+				},
+				{
+					"id": 80000132,
+					"content": "J'ai donc décidé de venir à la Guilde des aventuriers pour publier une mission.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000133,
+						80000134
+					],
+					"speakerTitle": "Ganyu"
+				},
+				{
+					"id": 80000133,
+					"content": "Eh bien, puisque je suis là...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000135
+					]
+				},
+				{
+					"id": 80000135,
+					"content": "Oui ! Laissez-nous cette mission !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000136
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000136,
+					"content": "Oh, merci beaucoup...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000137
+					],
+					"speakerTitle": "Ganyu"
+				},
+				{
+					"id": 80000137,
+					"content": "Bien, l'affaire est entre les mains d'un membre fiable de la Guilde. Eh bien, bonne chance ! La Guilde s'occupera des détails de cette mission.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 80000134,
+					"content": "Moi aussi, je comprends le danger de l'Abîme.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000135
+					]
+				},
+				{
+					"id": 80000127,
+					"content": "Comme Stanley par exemple ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000128
+					]
+				},
+				{
+					"id": 80000128,
+					"content": "Oh, alors vous avez rencontré la légende vivante en personne pendant que vous étiez à Mondstadt ? Correct, le Maître voleur est quelqu'un d'aussi renommé que lui.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000129
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 80000114,
+					"content": "Est-ce que c'est cette « Cheffe » que les Pilleurs de trésors mentionnent parfois ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000115
+					]
+				},
+				{
+					"id": 80000115,
+					"content": "Vous en savez déjà beaucoup, je vois... Je suppose que vous avez dû croiser la route de ces Pilleurs de trésors plus d'une fois.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000116
+					],
+					"speakerTitle": "Lan"
+				}
+			]
+		},
+		{
+			"id": 800002,
+			"completionStepIds": [
+				800004
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"800004",
+							"2"
+						],
+						"stepId": 800004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 80000201,
+					"content": "On dirait... qu'il y a quelqu'un !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000202
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000202,
+					"content": "Est-ce que c'est... ce fameux Maître voleur ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000203
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000203,
+					"content": "Mais pourquoi est-il dans cette position... Il est en train de prier ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000204
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000204,
+					"content": "Hein ?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000205
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000205,
+					"content": "C'est... C'est...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000206,
+						80000207
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000206,
+					"content": "Une... Statue des Sept !",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000208
+					]
+				},
+				{
+					"id": 80000208,
+					"content": "Mais... Cette Statue des Sept... Pourquoi est-elle suspendue la tête en bas ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000209
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000209,
+					"content": "Et ses mains... Je me souviens qu'elles tiennent un orbe d'habitude, non ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000210
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000210,
+					"content": "Mais... Cette statue, elle tient... Qu'est-ce que c'est ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000211
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000211,
+					"content": "Euh... J'ai un très mauvais pressentiment...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000212
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000212,
+					"content": "Et ce Maître voleur n'a pas bougé d'un pouce. Est-ce que tu penses qu'il est...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000213
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000213,
+					"content": "Euh, bonjour ? Ça va ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000214
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000214,
+					"content": "(Il n'y a aucune réaction, ni aucun signe de respiration.)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000215
+					]
+				},
+				{
+					"id": 80000215,
+					"content": "... Il... Il est mort.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000216
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000216,
+					"content": "#{NICKNAME}, je... Je ne me sens pas bien.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000217,
+						80000218
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000217,
+					"content": "Quel endroit terrible...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000219
+					]
+				},
+				{
+					"id": 80000219,
+					"content": "Sortons d'ici, et en vitesse ! On doit raconter tout ça à Ganyu et à Lan...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000220
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000220,
+					"content": "Aaah ! Quoi encore ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000218,
+					"content": "Comment est-il mort...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000219
+					]
+				},
+				{
+					"id": 80000207,
+					"content": "Voilà un étrange spectacle...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000208
+					]
+				}
+			]
+		},
+		{
+			"id": 800003,
+			"completionStepIds": [
+				800008
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"800008",
+							"2"
+						],
+						"stepId": 800008,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Apôtre de l'Abîme"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 80000301,
+					"content": "Cette puissance... Elle me semble familière...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000302
+					],
+					"speakerTitle": "Apôtre de l'Abîme"
+				},
+				{
+					"id": 80000302,
+					"content": "Ah...!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000303
+					],
+					"speakerTitle": "Apôtre de l'Abîme"
+				},
+				{
+					"id": 80000303,
+					"content": "Je vois... Alors, c'est vous !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000304
+					],
+					"speakerTitle": "Apôtre de l'Abîme"
+				},
+				{
+					"id": 80000304,
+					"content": "Dans ce cas, je prends congé...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000305
+					],
+					"speakerTitle": "Apôtre de l'Abîme"
+				},
+				{
+					"id": 80000305,
+					"content": "#Ouf... Un combat pas facile... Est-ce que ça va, {NICKNAME} ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000306
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000306,
+					"content": "Quel ennemi... Qui savait que l'Ordre de l'Abîme comptait des monstres aussi puissants en son sein ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000307
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000307,
+					"content": "(Il semblait... me connaître.)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000308
+					]
+				},
+				{
+					"id": 80000308,
+					"content": "Hein ? Qu'est-ce qu'il y a ? À quoi tu penses ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000309
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000309,
+					"content": "Ce n'est rien. Sortons d'ici.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000310
+					]
+				},
+				{
+					"id": 80000310,
+					"content": "Oui, d'accord... On n'est pas loin de la sortie ! Quittons cet endroit terrifiant avant que quelque chose d'encore plus dangereux ne nous tombe dessus !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 800004,
+			"completionStepIds": [
+				800009
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"800009",
+							"2"
+						],
+						"stepId": 800009,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Apôtre de l'Abîme"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 80000401,
+					"content": "Les secrets de l'Abîme ne vous concernent pas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000402
+					],
+					"speakerTitle": "Apôtre de l'Abîme"
+				},
+				{
+					"id": 80000402,
+					"content": "#Vous êtes {M#venus}{F#venues} jusqu'ici, vous avez vu nos secrets. Vous devrez en payer le prix.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000403
+					],
+					"speakerTitle": "Apôtre de l'Abîme"
+				},
+				{
+					"id": 80000403,
+					"content": "En tant qu'Apôtre, je vous infligerai votre punition.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000404
+					],
+					"speakerTitle": "Apôtre de l'Abîme"
+				},
+				{
+					"id": 80000404,
+					"content": "Un Apôtre de l'Abîme ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000405,
+						80000406
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80000405,
+					"content": "Celui dont Dain parlait...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000407
+					]
+				},
+				{
+					"id": 80000407,
+					"content": "Dain... Dainsleif ? Et moi qui pensais que vous n'étiez que des cafards arrivés ici par erreur... Ainsi donc, vous êtes avec Dainsleif, cette nuisance permanente...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000408
+					],
+					"speakerTitle": "Apôtre de l'Abîme"
+				},
+				{
+					"id": 80000408,
+					"content": "#Vous a-t-il {M#envoyés}{F#envoyées} ici pour mourir ? Sa résistance à l'Abîme est futile depuis bien longtemps. Il n'y a rien que vous puissiez faire pour changer les choses...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80000409
+					],
+					"speakerTitle": "Apôtre de l'Abîme"
+				},
+				{
+					"id": 80000409,
+					"content": "L'Abîme... est inarrêtable !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Apôtre de l'Abîme"
+				},
+				{
+					"id": 80000406,
+					"content": "Le monstre qu'on traquait avec Dain...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80000407
+					]
+				}
+			]
+		}
+	]
+}

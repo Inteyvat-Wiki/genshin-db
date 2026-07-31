@@ -1,0 +1,185 @@
+{
+	"id": 70713,
+	"type": "WQ",
+	"name": "Brook l'amante della carne",
+	"description": "Brook del Villaggio Acquachiara ha bisogno di 6 porzioni di carne cruda.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7071301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Consegna 6 porzioni di carne cruda a Brook",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7071301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7071302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Brook",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7071302,
+						0
+					],
+					"talkId": 7071302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7071301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071301",
+							"2"
+						],
+						"stepId": 7071301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7071301"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Brook"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707130101,
+					"content": "Hai bisogno di carne cruda?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707130102
+					]
+				},
+				{
+					"id": 707130102,
+					"content": "Oh, devi aver letto il mio incarico.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707130103
+					],
+					"speakerTitle": "Brook"
+				},
+				{
+					"id": 707130103,
+					"content": "Allora, hai le 6 porzioni di carne cruda che ho richiesto?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707130104,
+						707130105
+					],
+					"speakerTitle": "Brook"
+				},
+				{
+					"id": 707130104,
+					"content": "Certo.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707130105,
+					"content": "Non ancora...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707130106
+					]
+				},
+				{
+					"id": 707130106,
+					"content": "Capisco. Vorrei provare nuove ricette, quindi ti prego di portarmele non appena le avrai reperite.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Brook"
+				}
+			]
+		},
+		{
+			"id": 7071302,
+			"completionStepIds": [
+				7071302
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071302",
+							"2"
+						],
+						"stepId": 7071302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Brook"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707130201,
+					"content": "Accipicchia, questi tagli sono ottimi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707130202
+					],
+					"speakerTitle": "Brook"
+				},
+				{
+					"id": 707130202,
+					"content": "Grazie mille per il tuo aiuto. Questi sono per te.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707130203
+					],
+					"speakerTitle": "Brook"
+				},
+				{
+					"id": 707130203,
+					"content": "Prometto che quando finirò con le mie ricerche ti farò provare il mio nuovo piatto!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Brook"
+				}
+			]
+		}
+	]
+}

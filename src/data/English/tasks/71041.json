@@ -1,0 +1,827 @@
+{
+	"id": 71041,
+	"type": "WQ",
+	"name": "Meeting New People... and Foiling Some Bandits",
+	"description": "As you explore the lower levels of The Chasm, you discover Treasure Hoarders. If they think you'll let them do things as they please down here, then they've got another think coming!",
+	"unlockDescription": "",
+	"chapter": "The Chasm Delvers",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_RANK_ZERO_WQ",
+	"suggestTrackMainQuestList": [
+		71040,
+		71037
+	],
+	"prevMainQuestList": [
+		71037
+	],
+	"steps": [
+		{
+			"id": 7104101,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to the second occupied camp",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7104102,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Clear the Treasure Hoarders from the miner's camp",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7104103,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to the campsite that has been occupied by Treasure Hoarders",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7104104,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Clear out the Treasure Hoarders in the miner's camp",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7104107,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Clitopho",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7104101,
+						0
+					],
+					"talkId": 7104101
+				}
+			]
+		},
+		{
+			"id": 7104108,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Save the person trapped in a cage by the Treasure Hoarders",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7104109,
+			"order": 10,
+			"listShowType": "QUEST_SHOW",
+			"description": "Examine the giant cannon in the depths of the tunnels",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7104103,
+						0
+					],
+					"talkId": 7104103
+				}
+			]
+		},
+		{
+			"id": 7104110,
+			"order": 11,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to the storehouse in which the cannonballs are stored",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7104111,
+			"order": 12,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Zhiqiong",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7104104,
+						0
+					],
+					"talkId": 7104104
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7104101,
+			"completionStepIds": [
+				7104107
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7104107",
+							"2"
+						],
+						"stepId": 7104107,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Clitopho",
+					"Zhiqiong",
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 710410101,
+					"content": "Phew! Thank you for saving my life...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410102
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410102,
+					"content": "Wait a moment... I remember you! You're that Toclipho guy from back at the mine!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410103
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410103,
+					"content": "Uh, what? No! That wasn't... I—I don't sell any fake medicines! I'm Clitopho, yes, but not the one that's into pharmaceuticals. No sir!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410104
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410104,
+					"content": "Huh. So the medicines you sold were fake?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710410105
+					]
+				},
+				{
+					"id": 710410105,
+					"content": "What? No! Impossible! The medicines I sell are one-hundred-percent the real deal! I mean, you saw the miners! They drank it, and they felt great!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410106
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410106,
+					"content": "And didn't you say you were the non-pharmaceutical Clitopho?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410107
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410107,
+					"content": "Ah, uh... Right, that was after my life selling medicines ended. And it all ended when that... when that Toclipho sold fakes under a false identity!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410108
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410108,
+					"content": "He sold fake medicines under a false name and ruined my reputation! That's right. That's why I swore off selling medicines forever!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410109
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410109,
+					"content": "And just as I was changing tacks, I was captured by that band of Treasure Hoarders...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410110
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410110,
+					"content": "But yes, that charlatan is truly despicable...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410111
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410111,
+					"content": "Yup, he's a real piece of work, to want to trick those in the same business as him like that!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410112
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 710410112,
+					"content": "And so, what was the false name of this \"Toclipho\" again?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710410113
+					]
+				},
+				{
+					"id": 710410113,
+					"content": "Clitopho!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410114
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410114,
+					"content": "Uh. No, wait. Clitopho isn't a fake name. It's a real one...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410115
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410115,
+					"content": "Doesn't that make \"Toclipho\" a fake name?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410116
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 710410116,
+					"content": "No... Wait, yes. Yes. He took my name falsely, so \"Clitopho\" is now a false name. We're clear now, right?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410117
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410117,
+					"content": "Ooh... So \"Toclipho\" became a real name.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410118
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 710410118,
+					"content": "What a shame...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710410119
+					]
+				},
+				{
+					"id": 710410119,
+					"content": "What's a shame?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410120
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410120,
+					"content": "You nearly confessed without us having to try too hard.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410121
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410121,
+					"content": "Let's take him back up. The Millelith have a lot of questions for him, most likely.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410122
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410122,
+					"content": "Or we could deal with him right here and now.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710410123
+					]
+				},
+				{
+					"id": 710410123,
+					"content": "What?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410124
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410124,
+					"content": "Hey! This isn't the time for such jokes.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410125
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410125,
+					"content": "Hehe, hehehe. Paimon thinks it's pretty funny.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410126
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 710410126,
+					"content": "B—But you're not laughing. And no, this isn't funny at all!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410127,
+						710410130
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410127,
+					"content": "You're right, actually — because we're about to get serious.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710410128
+					]
+				},
+				{
+					"id": 710410128,
+					"content": "W—Wait a moment! This isn't the time for an interrogation!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410129
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410129,
+					"content": "I don't know about you, but carrying a Treasure Hoarder you scared half to death around doesn't appeal to me one bit. Either way, let's take him back to the camp first.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410131
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410131,
+					"content": "Hey, hey, hey! Take me along, would you? I'll be very useful to you! I mean, as you can see... I've been kicked out of the Treasure Hoarders...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410132
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410132,
+					"content": "So now I'm an upstanding citizen again, y'know?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410133
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410133,
+					"content": "Oh, so that's what counts for \"upstanding citizen\" to you, huh...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410134
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 710410134,
+					"content": "And what are your skills, again?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410135
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410135,
+					"content": "I can... make explosives?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410136
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410136,
+					"content": "Not fake medicine?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410137
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 710410137,
+					"content": "No, no, he said \"explosives.\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710410138
+					]
+				},
+				{
+					"id": 710410138,
+					"content": "And your explosives aren't fake, either?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410139
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410139,
+					"content": "No, they're for real this time!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410140
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410140,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410141
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410141,
+					"content": "...I'm not at liberty to include you on the team. As for how we should deal with you, Jinwu would be a better judge of that. But I guess she'll just hand you over to the Millelith.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410142
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410142,
+					"content": "But we'll keep an eye on you. All Treasure Hoarders are not to be trusted, let alone someone who sells fake medicine...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410143
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410143,
+					"content": "Oh come on, I don't do that anymore!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410144
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410144,
+					"content": "Oh, we know, we know! Let's go, shall we?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 710410130,
+					"content": "You make a good point.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710410131
+					]
+				}
+			]
+		},
+		{
+			"id": 7104103,
+			"completionStepIds": [
+				7104109
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7104109",
+							"2"
+						],
+						"stepId": 7104109,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Clitopho",
+					"Paimon",
+					"Zhiqiong"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 710410301,
+					"content": "The locking mechanism hasn't rusted away yet. In fact, it looks like it's been lubricated. Looks like someone maintained it even after the mine was sealed.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410302
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410302,
+					"content": "The breech also looks whole... It's just that the safety is currently locked down.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410303
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410303,
+					"content": "What is he talking about?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410304
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 710410304,
+					"content": "The tunnels ahead were sealed using large rocks when the miners were dispersed... Looks like that's where we're going to need to use this cannon again.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410305
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410305,
+					"content": "But without any shot, cannons, no matter how large, are useless. As such, we need to find ourselves some.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410306
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410306,
+					"content": "Hmph, don't say it like I didn't know that, Mr. Know-It-All.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410307
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410307,
+					"content": "There's a store room nearby that should contain the cannon-shot. With any luck, not all of it was moved away when the miners were dismissed...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410308
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410308,
+					"content": "Let's head that way, then.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710410309
+					]
+				},
+				{
+					"id": 710410309,
+					"content": "Let's go.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Clitopho"
+				}
+			]
+		},
+		{
+			"id": 7104104,
+			"completionStepIds": [
+				7104111
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7104111",
+							"2"
+						],
+						"stepId": 7104111,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Zhiqiong",
+					"Clitopho",
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 710410401,
+					"content": "This is the place. *cough* Ugh, the gate's locked.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410402
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410402,
+					"content": "Looks like we'll need to use two keys at once to open the door... Oh come on, why are you Liyue people so conscientious about the silliest things?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410403
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410403,
+					"content": "Oh, cut the useless chatter... See that notice pasted next to the gate? If nothing else, that tells us that our cannonballs can be found within.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410404
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410404,
+					"content": "Well, that's one thing, but how do we know if the fuses have been well-preserved or not? I wouldn't get our hopes up just yet.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410405
+					],
+					"speakerTitle": "Clitopho"
+				},
+				{
+					"id": 710410405,
+					"content": "Oh, great — we have an optimist over here. Cut it with the quitter talk, would you?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410406
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410406,
+					"content": "...Seriously, what am I doing, listening to a Treasure Hoarder doubt us left and right?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410407,
+						710410408
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410407,
+					"content": "Clitopho does have a point here, actually...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710410409
+					]
+				},
+				{
+					"id": 710410409,
+					"content": "Exactly! Don't you two fight, alright?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410410
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 710410410,
+					"content": "Hmph, alright. Let's continue. Maybe Jinwu knows how to open this gate.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410411
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410411,
+					"content": "We'll be pretty busy after it opens, too. We'll have to activate a signaling device to get the breech open.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710410412
+					],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410412,
+					"content": "Jinwu said that there should be an observation point for the demolitions team that overlooks the cannon and that we'll be able to adjust the signal from there, which will let us unlock the cannon from a safe distance.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Zhiqiong"
+				},
+				{
+					"id": 710410408,
+					"content": "Either way, we need to get this gate open first.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710410409
+					]
+				}
+			]
+		}
+	]
+}

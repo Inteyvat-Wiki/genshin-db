@@ -1,0 +1,1735 @@
+{
+	"id": 12023,
+	"type": "LQ",
+	"name": "Victory Banquet",
+	"description": "Go to the site of the Victory Feast with Kokomi and listen to her speech.",
+	"unlockDescription": "",
+	"chapter": "Warriors' Dreams Like Spring Grass Renewing",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		12024
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1202301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to the site of the Victory Feast",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1202301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1202302,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Listen to Kokomi's speech",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1202301,
+						0
+					],
+					"talkId": 1202301
+				}
+			]
+		},
+		{
+			"id": 1202303,
+			"order": 10,
+			"listShowType": "QUEST_SHOW",
+			"description": "Investigate the suspicious soldier",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1202302,
+						0
+					],
+					"talkId": 1202302
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1202320,
+						0
+					],
+					"talkId": 1202320
+				}
+			]
+		},
+		{
+			"id": 1202304,
+			"order": 11,
+			"listShowType": "QUEST_SHOW",
+			"description": "Time for a debate",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1202305,
+			"order": 15,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to the soldier",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1202303,
+						0
+					],
+					"talkId": 1202303
+				}
+			]
+		},
+		{
+			"id": 1202306,
+			"order": 30,
+			"listShowType": "QUEST_SHOW",
+			"description": "Report the truth back to Kokomi",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1202304,
+						0
+					],
+					"talkId": 1202304
+				}
+			]
+		},
+		{
+			"id": 1202307,
+			"order": 19,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1202304,
+						0
+					],
+					"talkId": 1202304
+				}
+			]
+		},
+		{
+			"id": 1202308,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to the nearby crowd",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1202305,
+						0
+					],
+					"talkId": 1202305
+				}
+			]
+		},
+		{
+			"id": 1202309,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to the nearby crowd",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1202306,
+						0
+					],
+					"talkId": 1202306
+				}
+			]
+		},
+		{
+			"id": 1202310,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Wait until nighttime (18:00 – 6:00)",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1202311,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1202311,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1202312,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1202303,
+						0
+					],
+					"talkId": 1202303
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1202301,
+			"completionStepIds": [
+				1202302
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202302",
+							"2"
+						],
+						"stepId": 1202302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sangonomiya Kokomi",
+					"Denjirou"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 120230101,
+					"content": "It looks like everything's in place for the feast. But I still need to give a quick speech before the festivities begin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230102
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230102,
+					"content": "Oh... How much energy will that take? D'you think you've got enough?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230103
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 120230103,
+					"content": "Don't worry, I've got plenty. Thanks to you two, I recovered more quickly than usual.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230104
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230104,
+					"content": "That's great! We'll be rooting for you!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230105
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 120230105,
+					"content": "Welcome everyone. Today is the day that we celebrate our victory.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230106
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230106,
+					"content": "Recently, our war with the Shogun's Army came to an end, and we finally saw the abolition of the Vision Hunt Decree.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230107
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230107,
+					"content": "None of us can know what the Inazuma of the future will look like. But tomorrow, I meet with the Tenryou Commission for peace talks. I give you my word that I will strive for peace for Watatsumi Island, once and for all.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230108
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230108,
+					"content": "Thank you all for your valiant efforts throughout. Truly, it is only through those efforts that we have been able to prevail in this trying war.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230109
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230109,
+					"content": "This feast is held in honor of each and every one of you gathered here today. I hope all of you get to relax and enjoy our hard-won victory.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230110
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230110,
+					"content": "Woohoo!!!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230111
+					],
+					"speakerTitle": "Denjirou"
+				},
+				{
+					"id": 120230111,
+					"content": "Tonight seems to have gone off without a hitch. I'm so glad it's all going smoothly.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230112
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230112,
+					"content": "#People tend to be more open when they're in a good mood. Could I ask you to go around and see what information you can gather, {NICKNAME}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230113
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230113,
+					"content": "I still have no further leads regarding the issue of potential collusion between the Tenryou Commission and the Fatui.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230114
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230114,
+					"content": "And I'm concerned that something might happen at tomorrow's peace talks...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230115
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230115,
+					"content": "Okay, sure. We'll go ask around.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 1202302,
+			"completionStepIds": [
+				1202303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202303",
+							"2"
+						],
+						"stepId": 1202303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"1202301",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kouzen"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 120230201,
+					"content": "Whew... this guy smells of booze...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230202
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 120230202,
+					"content": "Mm? Wait, wait, don't tell me... Captain of Swordfish II! Right?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230203
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230203,
+					"content": "You actually came back. I thought you'd abandoned the platoon and made a run for it.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230204
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230204,
+					"content": "Nuh-uh! We would never run from a fight!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230205
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 120230205,
+					"content": "Hmph, is that so. All anyone talks about these days is peace and stability.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230206
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230206,
+					"content": "Do you remember what the most important thing is to the resistance?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230207
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230207,
+					"content": "A warrior's will.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						120230208
+					]
+				},
+				{
+					"id": 120230208,
+					"content": "You got that right. So I'm gonna put you to the test. Time to see if you truly are a bona fide resistance warrior.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230209
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230209,
+					"content": "I'll answer your questions — but only if you can beat me in a duel.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230210
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230210,
+					"content": "Ugh, this guy... Would it kill him to just have a normal conversation...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230211
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 120230211,
+					"content": "#What do you think, are we gonna do this, {NICKNAME}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230212,
+						120230213
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 120230212,
+					"content": "Sure. We're hardly going to lose.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						120230214
+					]
+				},
+				{
+					"id": 120230214,
+					"content": "Hmph... We'll see about that!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230213,
+					"content": "In a few seconds you'll be begging to talk!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						120230214
+					]
+				}
+			]
+		},
+		{
+			"id": 1202303,
+			"completionStepIds": [
+				1202305,
+				1202312
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202305",
+							"2"
+						],
+						"stepId": 1202305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kouzen"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 120230301,
+					"content": "You're a strong fighter... No wonder Her Excellency chose you.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230302
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230302,
+					"content": "You really do have a warrior's will... Then, maybe you can understand us.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230303
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230303,
+					"content": "Captain, comrade... will you join us?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230304
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230304,
+					"content": "First you need to tell me what's going on.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						120230305
+					]
+				},
+				{
+					"id": 120230305,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230306
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230306,
+					"content": "We made it up. The story about the Tenryou Commission colluding with the Fatui... It didn't happen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230307
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230307,
+					"content": "WHAT!? Poor Kokomi's been worried sick! You're telling us you made the whole thing up?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230308
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 120230308,
+					"content": "What the heck were you thinking? This could send you right back into war with the Tenryou Commission!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230309
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 120230309,
+					"content": "Yes. That's exactly what we're hoping to achieve.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230310
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230310,
+					"content": "Peace talks? Pfft... Everyone's been drawn in by the idea. That's why the future of Watatsumi Island is at stake.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230311
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230311,
+					"content": "What's to stop the Tenryou Commission from stabbing us in the back? And what's to stop the Raiden Shogun from issuing another Vision Hunt Decree?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230312
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230312,
+					"content": "We are the resistance! Everything hinges on our warrior's will!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230313
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230313,
+					"content": "We can't trust the Tenryou Commission or the Raiden Shogun. But we can put faith in ourselves!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230314
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230314,
+					"content": "Surely you agree with that?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230315
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230315,
+					"content": "His point does kinda make sense, but something about it doesn't feel right to Paimon...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230316
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 120230316,
+					"content": "What it boils down to is... you just want to fight.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						120230317
+					]
+				},
+				{
+					"id": 120230317,
+					"content": "Yeah! Everything you said just now was pure speculation, wasn't it?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230318
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 120230318,
+					"content": "Are you seriously willing to make up a wild rumor and ruin the peace everyone's worked so hard for, all because of some imaginary situation that may not even happen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230319
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 120230319,
+					"content": "Don't take that tone with me, acting like you're above all of this! What would you understand?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230320
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230320,
+					"content": "For the sake of victory, we embodied the warrior's will to the fullest. You understand? We were all in. Now they're suddenly trying to tell us that none of it matters anymore...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230321
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230321,
+					"content": "You'd have me just put down my weapon and start living like an ordinary person, but how can I? How can I, when... when every time I close my eyes, I see the faces of the friends we lost in battle.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230322
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230322,
+					"content": "Every time I see them there, in my mind's eye, it reminds me that I can never forgive the Tenryou Commission, and never forgive the Vision Hunt Decree!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230323
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230323,
+					"content": "I guess you're not one of us... Well, whatever. Go ahead and tell Sangonomiya if you want. But you're too late to stop us now...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230324
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230324,
+					"content": "Too late? What do you mean?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230325
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 120230325,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230326
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120230326,
+					"content": "Darn, doesn't seem like he's gonna answer that one.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230327
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 120230327,
+					"content": "#What are we gonna do, {NICKNAME}? This is really serious! We need to give Kokomi the full story right away!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 1202304,
+			"completionStepIds": [
+				1202306,
+				1202307
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202306",
+							"2"
+						],
+						"stepId": 1202306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sangonomiya Kokomi"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 120230401,
+					"content": "...So we found out a few things.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230402
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 120230402,
+					"content": "The whole thing about the Tenryou Commission colluding with the Fatui is baloney! They made it all up.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230403
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 120230403,
+					"content": "They wanted the peace talks to break down so that they could carry on fighting the war. And they said that it's too late to try and stop them, no matter what we do.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230404
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 120230404,
+					"content": "Mm. I see.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230405,
+						120230406
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230405,
+					"content": "What's the matter, Kokomi?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						120230407
+					]
+				},
+				{
+					"id": 120230407,
+					"content": "I'm fine, don't worry.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230408
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230408,
+					"content": "This is my fault. If only I'd perceived what they were feeling earlier, it never would have come to this.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230409
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230409,
+					"content": "I think I understand what Kouzen means when he says it's too late.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230410
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230410,
+					"content": "The talks don't begin until tomorrow, but both sides have already sent their guards to the location. They are responsible for making sure the area is safe and secure.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230411
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230411,
+					"content": "I highly suspect that one of Kouzen's pro-war co-conspirators will have infiltrated the guards with an intent to reignite hostilities tomorrow during the negotiations.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230412
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230412,
+					"content": "Well that's no good. Do you want us to head over there now and switch out the guards?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230413
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 120230413,
+					"content": "That won't work. Firstly, the act of bringing a new team of guards to a neutral negotiation site will put both sides on high alert.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230414
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230414,
+					"content": "It would almost certainly push the pro-war faction into taking action. They would attack the Tenryou Commission's guards, and we'd be in danger of war breaking out once again.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230415
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230415,
+					"content": "Not to mention that we have no idea how many of Watatsumi Island's soldiers are involved in this plot. If we change the guard in haste, we face the issue of not knowing who to trust.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230416
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230416,
+					"content": "Sounds like a really tricky situation... so, is there really nothing we can do about it?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230417
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 120230417,
+					"content": "Don't let it worry you, what's done is done. Mm... Now it falls to me to devise a counter plan.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230418
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230418,
+					"content": "These soldiers crossed a line, but the blame is not theirs alone. Whatever happens, I will find a way to ensure they do not come to harm...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230419
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230419,
+					"content": "Let's meet here again tomorrow.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 120230406,
+					"content": "Are you feeling alright?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						120230407
+					]
+				}
+			]
+		},
+		{
+			"id": 1202305,
+			"completionStepIds": [
+				1202308
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202308",
+							"2"
+						],
+						"stepId": 1202308,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hirai"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 120230501,
+					"content": "Watatsumi Island is finally at peace, and it's all thanks to Her Excellency, Sangonomiya...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230502
+					],
+					"speakerTitle": "Hirai"
+				},
+				{
+					"id": 120230502,
+					"content": "What's new? Anything to report?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						120230503
+					]
+				},
+				{
+					"id": 120230503,
+					"content": "Recently? Um, lemme think...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230504
+					],
+					"speakerTitle": "Hirai"
+				},
+				{
+					"id": 120230504,
+					"content": "Well, the biggest thing for us is that we can finally get back out on the ocean to fish.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230505
+					],
+					"speakerTitle": "Hirai"
+				},
+				{
+					"id": 120230505,
+					"content": "During the hostilities, the open sea was full of warships. We just had to make do with what little fish and shrimp we could get our hands on closer to shore.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230506
+					],
+					"speakerTitle": "Hirai"
+				},
+				{
+					"id": 120230506,
+					"content": "When the catch wasn't good, we'd all go hungry. The poor kids were crying all day and night, but there was just nothing I could do.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230507
+					],
+					"speakerTitle": "Hirai"
+				},
+				{
+					"id": 120230507,
+					"content": "We'd go to bed ravenous and be tossing and turning all night long, trying to keep it together until the morning. At least things are finally improving now...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230508
+					],
+					"speakerTitle": "Hirai"
+				},
+				{
+					"id": 120230508,
+					"content": "I hear you're Captain of Swordfish II, is that right? Well, thank you for your service. Here, have a fish! It's freshly caught, so it's a bit, uh, fishy, but it's fine.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230509
+					],
+					"speakerTitle": "Hirai"
+				},
+				{
+					"id": 120230509,
+					"content": "Oh... no, no, no, w—we couldn't possibly...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230510
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 120230510,
+					"content": "Ah, come on, take it! Without you, we'd probably still be going to bed hungry tonight. Her Excellency always teaches us to repay kindness with gratitude.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230511
+					],
+					"speakerTitle": "Hirai"
+				},
+				{
+					"id": 120230511,
+					"content": "#Okay, well, thanks. Come on, {NICKNAME} let's go talk to some others.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 1202306,
+			"completionStepIds": [
+				1202309
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202309",
+							"2"
+						],
+						"stepId": 1202309,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kabasawa"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 120230601,
+					"content": "Hey there, care for some fresh fruit and vegetables? Nature's remedy when you overdo the barbecue!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230602
+					],
+					"speakerTitle": "Kabasawa"
+				},
+				{
+					"id": 120230602,
+					"content": "What's new? Anything to report?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						120230603
+					]
+				},
+				{
+					"id": 120230603,
+					"content": "Are you referring to the thing about the Tenryou Commission and the Fatui? I've heard rumors, but nothing too detailed.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230604
+					],
+					"speakerTitle": "Kabasawa"
+				},
+				{
+					"id": 120230604,
+					"content": "It's funny you should say that the soldiers seem excitable, though. I've had the same feeling. See that guy over there?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230605
+					],
+					"speakerTitle": "Kabasawa"
+				},
+				{
+					"id": 120230605,
+					"content": "He's been acting strange these days — always shouting and waving his spear around when he's got nothing to do. He's scared the heck out of me a few times.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230606
+					],
+					"speakerTitle": "Kabasawa"
+				},
+				{
+					"id": 120230606,
+					"content": "Ugh... It's a miracle the fighting has finally come to an end. I really hope we don't go making any more trouble for ourselves.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230607
+					],
+					"speakerTitle": "Kabasawa"
+				},
+				{
+					"id": 120230607,
+					"content": "Sorry, I'm afraid I don't have much information. If you still have questions, you may as well go and talk to him.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120230608
+					],
+					"speakerTitle": "Kabasawa"
+				},
+				{
+					"id": 120230608,
+					"content": "#Sounds promising. Let's go see what that guy's deal is, {NICKNAME}!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 1202308,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202312",
+							"2"
+						],
+						"stepId": 1202312,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sangonomiya Kokomi"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 120230801,
+					"content": "Found anything out yet?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sangonomiya Kokomi"
+				}
+			]
+		},
+		{
+			"id": 1202309,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202310",
+							"2"
+						],
+						"stepId": 1202310,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202308",
+							"2"
+						],
+						"stepId": 1202308,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202309",
+							"2"
+						],
+						"stepId": 1202309,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kouzen"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 120230901,
+					"content": "I'm not drunk... Another one's not gonna do me any harm! Haha!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kouzen"
+				}
+			]
+		},
+		{
+			"id": 1202310,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202307",
+							"2"
+						],
+						"stepId": 1202307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202310",
+							"2"
+						],
+						"stepId": 1202310,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Arisawa"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 120231001,
+					"content": "A friend of mine was really looking forward to this feast. Even promised he'd sing a song with me. *sigh* If only he were still here...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Arisawa"
+				}
+			]
+		},
+		{
+			"id": 1202311,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202307",
+							"2"
+						],
+						"stepId": 1202307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202310",
+							"2"
+						],
+						"stepId": 1202310,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Matsuda"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 120231101,
+					"content": "With me around, no one would dare try any funny business at the Victory Feast!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Matsuda"
+				}
+			]
+		},
+		{
+			"id": 1202312,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202307",
+							"2"
+						],
+						"stepId": 1202307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202310",
+							"2"
+						],
+						"stepId": 1202310,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Youkou"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 120231201,
+					"content": "Her Excellency is looking much better today, I can breathe a sigh of relief... Nothing is more important than everyone being safe and sound.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Youkou"
+				}
+			]
+		},
+		{
+			"id": 1202313,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202307",
+							"2"
+						],
+						"stepId": 1202307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202310",
+							"2"
+						],
+						"stepId": 1202310,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Iwata"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 120231301,
+					"content": "I do hope the future will be free from the trials and tribulations of the past. If every day can be as happy as today, that would be a blessing.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Iwata"
+				}
+			]
+		},
+		{
+			"id": 1202314,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202307",
+							"2"
+						],
+						"stepId": 1202307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202310",
+							"2"
+						],
+						"stepId": 1202310,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ryouko"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 120231401,
+					"content": "Come visit Watatsumi Island whenever you want. You'll always be a hero here!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ryouko"
+				}
+			]
+		},
+		{
+			"id": 1202316,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202310",
+							"2"
+						],
+						"stepId": 1202310,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202302",
+							"2"
+						],
+						"stepId": 1202302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202303",
+							"2"
+						],
+						"stepId": 1202303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202306",
+							"2"
+						],
+						"stepId": 1202306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202309",
+							"2"
+						],
+						"stepId": 1202309,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hirai"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 120231601,
+					"content": "Let's hope the peace talks go smoothly. The last thing we want is to go back to war...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Hirai"
+				}
+			]
+		},
+		{
+			"id": 1202318,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202310",
+							"2"
+						],
+						"stepId": 1202310,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202302",
+							"2"
+						],
+						"stepId": 1202302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202303",
+							"2"
+						],
+						"stepId": 1202303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202306",
+							"2"
+						],
+						"stepId": 1202306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202308",
+							"2"
+						],
+						"stepId": 1202308,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kabasawa"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 120231801,
+					"content": "So much fighting... we could all do with a rest. Hey, anybody need some fruit or vegetables? Get them today, they're on sale.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kabasawa"
+				}
+			]
+		},
+		{
+			"id": 1202320,
+			"completionStepIds": [
+				1202303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1202303",
+							"2"
+						],
+						"stepId": 1202303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"1202301",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kouzen"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 120232001,
+					"content": "That all you got? I expected more from Swordfish II.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						120232002
+					],
+					"speakerTitle": "Kouzen"
+				},
+				{
+					"id": 120232002,
+					"content": "Come on! Again!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kouzen"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,395 @@
+{
+	"id": 70108,
+	"type": "WQ",
+	"name": "雪山再勘測",
+	"description": "雖然放置好了所有信標，但似乎是因為勘測信標數量不足的原因，艾斯特爾還是沒辦法準確勘測出雪山的高度。為了準確勘測出雪山的高度，她想要找個人幫自己把一枚信標直接放在雪山的最高處…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		70104,
+		70141
+	],
+	"steps": [
+		{
+			"id": 7010801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "與艾斯特爾對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7010801,
+						0
+					],
+					"talkId": 7010801
+				}
+			]
+		},
+		{
+			"id": 7010802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "將勘測信標放置在雪山山頂",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7010803,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "與派蒙對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7010802,
+						0
+					],
+					"talkId": 7010802
+				}
+			]
+		},
+		{
+			"id": 7010804,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "向艾斯特爾回報",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7010803,
+						0
+					],
+					"talkId": 7010803
+				}
+			]
+		},
+		{
+			"id": 7010805,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "將信帶給賽琉斯",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7010804,
+						0
+					],
+					"talkId": 7010804
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7010802,
+			"completionStepIds": [
+				7010803
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7010803",
+							"2"
+						],
+						"stepId": 7010803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"派蒙"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 701080201,
+					"content": "嗚…這，這樣應該就可，可以了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080202
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 701080202,
+					"content": "好冷…我們還是快點下去吧…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				}
+			]
+		},
+		{
+			"id": 7010803,
+			"completionStepIds": [
+				7010804
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7010804",
+							"2"
+						],
+						"stepId": 7010804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"艾斯特爾"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 701080301,
+					"content": "#{F#妳}{M#你}把信標放好了嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080302
+					],
+					"speakerTitle": "艾斯特爾"
+				},
+				{
+					"id": 701080302,
+					"content": "已經放好了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						701080303
+					]
+				},
+				{
+					"id": 701080303,
+					"content": "#太好了，謝謝{F#妳}{M#你}，這樣我一定能勘測到雪山的高度。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080304
+					],
+					"speakerTitle": "艾斯特爾"
+				},
+				{
+					"id": 701080304,
+					"content": "#啊，對了，{F#妳}{M#你}的報酬我已經拜託賽琉斯先生準備好了，{F#妳}{M#你}去城裡找他拿一下吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080305
+					],
+					"speakerTitle": "艾斯特爾"
+				},
+				{
+					"id": 701080305,
+					"content": "然後，順便幫我把這封信帶給他，他答應我幫忙留意第二支要進山的探險隊，結果到現在也沒有消息。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080306
+					],
+					"speakerTitle": "艾斯特爾"
+				},
+				{
+					"id": 701080306,
+					"content": "那些信標修好了之後，我還得再進山把它們安置一遍。這座雪山上還有很多東西要勘測呢。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "艾斯特爾"
+				}
+			]
+		},
+		{
+			"id": 7010804,
+			"completionStepIds": [
+				7010805
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7010805",
+							"2"
+						],
+						"stepId": 7010805,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"賽琉斯"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 701080401,
+					"content": "#{F#妳}{M#你}好，有什麼事嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080402
+					],
+					"speakerTitle": "賽琉斯"
+				},
+				{
+					"id": 701080402,
+					"content": "這封信是給你的。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						701080403
+					]
+				},
+				{
+					"id": 701080403,
+					"content": "信？哦…是她的啊，我知道了，肯定又是來問我有關探險隊的事…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080404
+					],
+					"speakerTitle": "賽琉斯"
+				},
+				{
+					"id": 701080404,
+					"content": "唉，這事我也沒辦法，現在沒幾支探險隊會去雪山裡探險，那地方實在是太危險了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080405
+					],
+					"speakerTitle": "賽琉斯"
+				},
+				{
+					"id": 701080405,
+					"content": "#我等一下會自己寫封信給她，把情況和她說明一下，謝謝{F#妳}{M#你}專門送信過來。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080406
+					],
+					"speakerTitle": "賽琉斯"
+				},
+				{
+					"id": 701080406,
+					"content": "#哦對了，這是她之前寫信過來讓我給{F#妳}{M#你}準備的報酬，{F#妳}{M#你}就收下吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080407
+					],
+					"speakerTitle": "賽琉斯"
+				},
+				{
+					"id": 701080407,
+					"content": "#還有…我多說一句，雖然{F#妳}{M#你}看起來身手不錯，但在雪山裡活動，還是要格外小心才好。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701080410
+					],
+					"speakerTitle": "賽琉斯"
+				},
+				{
+					"id": 701080410,
+					"content": "唉，雪山…要是有機會的話，我一定要親自領隊進山看看。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "賽琉斯"
+				}
+			]
+		},
+		{
+			"id": 7010805,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7010803",
+							"2"
+						],
+						"stepId": 7010803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"艾斯特爾"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 701080501,
+					"content": "只要把信標放在山頂上，一定能縮小不少勘測誤差…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "艾斯特爾"
+				}
+			]
+		},
+		{
+			"id": 7010806,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7010805",
+							"2"
+						],
+						"stepId": 7010805,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"艾斯特爾"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 701080601,
+					"content": "唉，到底什麼時候我才能再進雪山呢…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "艾斯特爾"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,167 @@
+{
+	"id": 71706,
+	"type": "WQ",
+	"name": "Nguyên liệu thực phẩm Yanxiao cần",
+	"description": "Yanxiao tại Nhà Trọ Vọng Thư cần 2 phần Giăm Bông.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đưa 2 Giăm Bông giao cho Yanxiao",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Nói chuyện với Yanxiao",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170602,
+						0
+					],
+					"talkId": 7170602
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170601,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170601",
+							"2"
+						],
+						"stepId": 7170601,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170601"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Yanxiao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717060101,
+					"content": "Về Giăm Bông...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717060102
+					]
+				},
+				{
+					"id": 717060102,
+					"content": "Ừm? Bạn nhìn thấy uỷ thác của tôi nhỉ. Sao rồi, 2 phần Giăm Bông chuẩn bị đủ chưa?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717060103,
+						717060104
+					],
+					"speakerTitle": "Yanxiao"
+				},
+				{
+					"id": 717060103,
+					"content": "Chuẩn bị đủ rồi.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717060104,
+					"content": "Vẫn chưa...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717060105
+					]
+				},
+				{
+					"id": 717060105,
+					"content": "Vậy sau khi chuẩn bị xong, hãy đem tới cho tôi nhé. Tôi phải mau bắt đầu thử làm món mới rồi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Yanxiao"
+				}
+			]
+		},
+		{
+			"id": 7170602,
+			"completionStepIds": [
+				7170602
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170602",
+							"2"
+						],
+						"stepId": 7170602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Yanxiao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717060201,
+					"content": "Ừm, từng này Giăm Bông chắc đủ để tôi dùng rồi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717060202
+					],
+					"speakerTitle": "Yanxiao"
+				},
+				{
+					"id": 717060202,
+					"content": "Thù lao này, bạn cầm lấy nhé.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Yanxiao"
+				}
+			]
+		}
+	]
+}

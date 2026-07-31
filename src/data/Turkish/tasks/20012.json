@@ -1,0 +1,272 @@
+{
+	"id": 20012,
+	"type": "IQ",
+	"name": "Geçiş Yok",
+	"description": "Myrana yürüyüşe çıkmak için güzel bir gün olduğunu düşünüyordu fakat şaraphaneye giderken dağ yabanileri tarafından saldırıya uğradı. Dağ yabanilerini yen ve Myrana'yı kurtar.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2001201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Ayrıntıları kontrol et.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001202,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001203,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Tüm düşmanları yen ve barikatları yok et.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Myrana ile konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001203,
+						0
+					],
+					"talkId": 2001203
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2001201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001202",
+							"2"
+						],
+						"stepId": 2001202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Telaşlı Myrana"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200120101,
+					"content": "Lü-Lütfen yardım edin!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Telaşlı Myrana"
+				}
+			]
+		},
+		{
+			"id": 2001202,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001202",
+							"3"
+						],
+						"stepId": 2001202,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001203",
+							"2"
+						],
+						"stepId": 2001203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Telaşlı Myrana"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200120201,
+					"content": "Te-Teşekkürler Gezgin...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200120202
+					],
+					"speakerTitle": "Telaşlı Myrana"
+				},
+				{
+					"id": 200120202,
+					"content": "*iç çeker* Canavarlar yetmiyormuş gibi bir de barikat çıktı başıma... Evde zaten yeteri kadar stres oluyorum, sonunda biraz dışarıya çıktım diye seviniyordum!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200120203
+					],
+					"speakerTitle": "Telaşlı Myrana"
+				},
+				{
+					"id": 200120203,
+					"content": "Üzgünüm ama acaba benim için barikatları ortadan kaldırabilir misin?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200120204,
+						200120205
+					],
+					"speakerTitle": "Telaşlı Myrana"
+				},
+				{
+					"id": 200120204,
+					"content": "Tamam.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200120206
+					]
+				},
+				{
+					"id": 200120206,
+					"content": "Teşekkür ederim! Umarım çocuklarım da senin gibi nazik olurlar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Telaşlı Myrana"
+				},
+				{
+					"id": 200120205,
+					"content": "Yapacak başka işlerim var.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200120207
+					]
+				},
+				{
+					"id": 200120207,
+					"content": "Lütfen yardım et... Söz veriyorum çok uzun sürmeyecek.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Telaşlı Myrana"
+				}
+			]
+		},
+		{
+			"id": 2001203,
+			"completionStepIds": [
+				2001204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001204",
+							"2"
+						],
+						"stepId": 2001204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Telaşlı Myrana"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200120301,
+					"content": "Çok te-teşekkür ederim Gezgin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200120302
+					],
+					"speakerTitle": "Telaşlı Myrana"
+				},
+				{
+					"id": 200120302,
+					"content": "Bu arada lütfen kimseye başımı belaya soktuğumu söyleme. Kocam bunu öğrenirse çok kızar...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200120303
+					],
+					"speakerTitle": "Telaşlı Myrana"
+				},
+				{
+					"id": 200120303,
+					"content": "Hiç bana öyle bakma, evlendiğinde sen de anlarsın. Hayatını biriyle yaşamaya adadıktan sonra arada bir yalnız dolaşmak bir lütuftur ve bunu en iyi şekilde değerlendirmek gerekir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200120304
+					],
+					"speakerTitle": "Telaşlı Myrana"
+				},
+				{
+					"id": 200120304,
+					"content": "Bunu dışarıdayken toplamıştım, al lütfen. Kendi yemeğini kendin pişirmek Avcının Yeri'nde yemekten çok daha ucuza gelir! Biraz tutumlu olmakta fayda var.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Telaşlı Myrana"
+				}
+			]
+		}
+	]
+}

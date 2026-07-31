@@ -1,0 +1,562 @@
+{
+	"id": 70503,
+	"type": "WQ",
+	"name": "坚冰，易溶于酒",
+	"description": "「啧，怎么劳伦斯家的人也在这里喝酒…真是…」 「咳咳，你还是少说两句吧。好歹人家也是骑士团的人…」",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70508,
+		70509
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "与卢卡对话，进入酒馆",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050302,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "为优菈调制指定饮品",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050302,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050303,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "将饮品交给优菈",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050302,
+						0
+					],
+					"talkId": 7050302
+				}
+			]
+		},
+		{
+			"id": 7050304,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "与优菈对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050301,
+						0
+					],
+					"talkId": 7050301
+				}
+			]
+		},
+		{
+			"id": 7050305,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往吧台并完成营业准备",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050301,
+			"completionStepIds": [
+				7050304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050304",
+							"2"
+						],
+						"stepId": 7050304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050302",
+							"2"
+						],
+						"stepId": 7050302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"优菈"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705030101,
+					"content": "小杯远礁浮沫…谢谢。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030102,
+						705030103
+					],
+					"speakerTitle": "优菈"
+				},
+				{
+					"id": 705030102,
+					"content": "优菈？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030104
+					]
+				},
+				{
+					"id": 705030104,
+					"content": "我…我没事…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030105
+					],
+					"speakerTitle": "优菈"
+				},
+				{
+					"id": 705030105,
+					"content": "唔…优菈的样子不太对劲，是来之前就喝了不少酒吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030106
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030106,
+					"content": "我记得远礁浮沫是用咖啡泡的。喝完酒之后喝咖啡，哇，肚子会不会爆炸啊。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030107
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030107,
+					"content": "为了肚子着想，端上去之前，偷偷帮她兑点水吧！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030103,
+					"content": "你怎么了？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030104
+					]
+				}
+			]
+		},
+		{
+			"id": 7050302,
+			"completionStepIds": [
+				7050303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050303",
+							"2"
+						],
+						"stepId": 7050303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"优菈"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705030238,
+					"content": "按派蒙的说法在咖啡里兑了水…",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": []
+				},
+				{
+					"id": 705030201,
+					"content": "味道…不错…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030202
+					],
+					"speakerTitle": "优菈"
+				},
+				{
+					"id": 705030202,
+					"content": "哇，兑了那么多水都没察觉，优菈果然喝多了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030203
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030203,
+					"content": "酒保，再来…等、等等，怎么是你们？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030204,
+						705030205
+					],
+					"speakerTitle": "优菈"
+				},
+				{
+					"id": 705030204,
+					"content": "正巧在体验酒保…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030206
+					]
+				},
+				{
+					"id": 705030205,
+					"content": "现在才发现吗…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030206
+					]
+				},
+				{
+					"id": 705030206,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030207
+					],
+					"speakerTitle": "优菈"
+				},
+				{
+					"id": 705030207,
+					"content": "不好意思。刚刚从猫尾酒馆过来，喝得可能稍微多了一些…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030208,
+						705030209
+					],
+					"speakerTitle": "优菈"
+				},
+				{
+					"id": 705030208,
+					"content": "有什么烦心事吗？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030210
+					]
+				},
+				{
+					"id": 705030209,
+					"content": "陪你聊聊吧。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030210
+					]
+				},
+				{
+					"id": 705030210,
+					"content": "对啊。一个人喝闷酒多孤单，还是说出来，大家一起聊聊比较开心！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030211
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030211,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030212
+					],
+					"speakerTitle": "优菈"
+				},
+				{
+					"id": 705030212,
+					"content": "的确只有一个人喝。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030213
+					],
+					"speakerTitle": "优菈"
+				},
+				{
+					"id": 705030213,
+					"content": "只要在蒙德，无论到哪个酒馆都不受待见。今天难得心情好，想喝上几杯，最后又被指指点点…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030214
+					],
+					"speakerTitle": "优菈"
+				},
+				{
+					"id": 705030214,
+					"content": "#{NICKNAME}，你是怎么交到那么多朋友的呢？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030215
+					],
+					"speakerTitle": "优菈"
+				},
+				{
+					"id": 705030215,
+					"content": "大家谈论你时，语气中总是很憧憬，脸上还带着笑容。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030216
+					],
+					"speakerTitle": "优菈"
+				},
+				{
+					"id": 705030216,
+					"content": "而我，哪怕只是提到我的姓氏，都会…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030217
+					],
+					"speakerTitle": "优菈"
+				},
+				{
+					"id": 705030217,
+					"content": "别这样想。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030218
+					]
+				},
+				{
+					"id": 705030218,
+					"content": "出生在劳伦斯家族不是优菈自己能决定的事。但我们又不在乎这些，我们认识的优菈是个很好的人哦！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030219
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030219,
+					"content": "不过优菈就是不坦率，总爱装作记仇，把自己温柔的一面藏起来…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030220
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030220,
+					"content": "喂，谁说是装作…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030221,
+						705030222
+					],
+					"speakerTitle": "优菈"
+				},
+				{
+					"id": 705030221,
+					"content": "除了我们以外…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030223
+					]
+				},
+				{
+					"id": 705030222,
+					"content": "也会有更多的人认可优菈…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030223
+					]
+				},
+				{
+					"id": 705030223,
+					"content": "真的吗？我喝醉了都不敢这么想…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030224
+					],
+					"speakerTitle": "优菈"
+				},
+				{
+					"id": 705030224,
+					"content": "那么久以来，哪怕加入了西风骑士团，大家都还…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030225
+					],
+					"speakerTitle": "优菈"
+				},
+				{
+					"id": 705030225,
+					"content": "「风向是会转变的。」",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030226
+					]
+				},
+				{
+					"id": 705030226,
+					"content": "哦！那个卖唱的，也说过这种有道理的话啊。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030227
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030227,
+					"content": "优菈，你就继续按你的方式前进吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030228
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030228,
+					"content": "总有一天，你会改变大家对劳伦斯家族的印象！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030229
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030229,
+					"content": "要耐心哦。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030230
+					]
+				},
+				{
+					"id": 705030230,
+					"content": "嗯，谢谢你们…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030231
+					],
+					"speakerTitle": "优菈"
+				},
+				{
+					"id": 705030231,
+					"content": "我，我…咳！就聊到这里吧，我先回去了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030232
+					],
+					"speakerTitle": "优菈"
+				},
+				{
+					"id": 705030232,
+					"content": "要送送你吗？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030233
+					]
+				},
+				{
+					"id": 705030233,
+					"content": "不必。我现在不能想别的事…得好好记住这些话，回去赶紧写在纸上…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030234
+					],
+					"speakerTitle": "优菈"
+				},
+				{
+					"id": 705030234,
+					"content": "喝醉后的优菈，比平时坦率了不少。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030235
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030235,
+					"content": "但没有听到那句标志性的话，总感觉缺了点什么。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030236
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030236,
+					"content": "啊！等她酒醒之后，会不会气鼓鼓地威胁我们要把今天的事全部忘掉？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030237
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705030237,
+					"content": "说不定呢。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

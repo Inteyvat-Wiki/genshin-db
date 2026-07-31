@@ -1,0 +1,605 @@
+{
+	"id": 10202,
+	"type": "LQ",
+	"name": "\"สมบัติของกองอัศวิน\"",
+	"description": "\"ระเบิด\"... สมบัติของ Klee นั้นสามารถจัดการกับมือมืดที่ขโมยสมบัติได้สบาย ๆ จากนั้นเมื่อการระเบิดสิ้นสุดลง Klee ก็รีบหนีไป พวกคุณจึงตัดสินใจกลับไปยังกองอัศวินเพื่อรายงานให้ Jean ทราบถึงสถานการณ์ก่อน...",
+	"unlockDescription": "",
+	"chapter": "สมบัติที่แท้จริง",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1020201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "กลับกองอัศวินและรายงานต่อ Jean",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1020201,
+						0
+					],
+					"talkId": 1020201
+				}
+			]
+		},
+		{
+			"id": 1020202,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "พูดคุยกับ Jean",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						1020201,
+						3
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_PRESENT_AT_SPECIFIC_SCENE",
+					"rawParams": [
+						1004,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1020203,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "ออกจากออฟฟิศของ Jean",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1020201,
+						0
+					],
+					"talkId": 1020201
+				}
+			]
+		},
+		{
+			"id": 1020204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "หาประตูห้องขังของกองอัศวิน",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1020204,
+						0
+					],
+					"talkId": 1020204
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1020201,
+			"completionStepIds": [
+				1020201,
+				1020203
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1020201",
+							"2"
+						],
+						"stepId": 1020201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jean"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 102020101,
+					"content": "อ๊ะ! Klee ก็อยู่นี่!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020102
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020102,
+					"content": "หนู... ฮือออ ๆ ๆ ขอมอบตัว",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020103
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020103,
+					"content": "หาาาา?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020104
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020104,
+					"content": "หนู... ระเบิดของหนู... ระเบิดของหนูทำร้ายคน",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020105
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020105,
+					"content": "ฮืออ ๆ... ฝ่าฝืนกฎเหล็กการเอาชีวิตรอดไปซะแล้ว หนูคงจะไม่ได้เห็นแสงอาทิตย์อีกต่อไปแล้ว...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020106
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020107,
+					"content": "เดี๋ยวนะ น่าจะมีการเข้าใจผิด",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020108
+					]
+				},
+				{
+					"id": 102020106,
+					"content": "Klee ตอบฉันมาก่อน คนเจ็บล่ะ คนเจ็บอยู่ที่ไหน?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020107
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 102020109,
+					"content": "ที่ Klee ระเบิดปลิวไปน่ะ คือ Abyss Mage นะ",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020110
+					]
+				},
+				{
+					"id": 102020108,
+					"content": "เอ๋?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020109
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 102020110,
+					"content": "แต่... แต่ว่าคุณขนฟูแค่ขโมยของแค่นั้นเอง ระเบิดของหนูถึงกับ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020111
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020111,
+					"content": "อา... ก่อนหน้านี้ที่ฉันบอกไปว่า Abyss Mage เป็นพวก \"คนไม่ดี\" น่ะก็เป็นการเปรียบเปรยอย่างหนึ่งเท่านั้นล่ะนะ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020112
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020112,
+					"content": "Abyss Mage น่ะไม่ใช่คนหรอกนะ พวกมันคือ... พวกชั่วร้ายที่เป็นศัตรูกับเหล่ามนุษย์น่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020113
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020113,
+					"content": "คุณฟู ๆ... เป็นศัตรูกับมนุษย์? พวกชั่วร้าย?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020114
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020114,
+					"content": "เอ๋ เอ๋?! หนูงง... งงจนตามไม่ทันแล้ว...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020115
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020115,
+					"content": "อื้อ นี่คือสิ่งที่ฉันมองข้ามไปน่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020116
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 102020116,
+					"content": "เพราะว่าเธอยังเด็กเกินไป แต่ไหนแต่ไรฉันเลยยังไม่เคยบอกเรื่องพวกนี้",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020117
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 102020118,
+					"content": "อย่าบอกนะว่าเพราะ \"สมบัติที่แข็งแกร่งที่สุด\"?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020119
+					]
+				},
+				{
+					"id": 102020117,
+					"content": "ความเป็นจริงแล้วพวก Abyss Order น่ะเป็นพวกอสูรที่คอยคุกคาม Mondstadt มาตลอด พักหลังนี้ก็มีความเคลื่อนไหวอยู่รอบ ๆ นี้",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020118
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 102020119,
+					"content": "จริงสิ ฉันเข้าใจแล้ว!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020120
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020120,
+					"content": "เพราะพวกมันได้ยินข่าวลือเกี่ยวกับสมบัติ ก็เลยตามรอย Klee ไปงั้นสิ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020121
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020121,
+					"content": "ก็เหมือน ก็เหมือนกับตอนที่ฉันอยากได้ตอนแรก... อ๊ะ ไม่สิ อยากรู้ว่าคืออะไร!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020122
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020122,
+					"content": "เพราะงั้น... เพราะงั้น!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020123
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020123,
+					"content": "จากความดีที่เธอทำในครั้งนี้ Ludi Harpastum ครั้งต่อไปจะยอมให้เธอเข้าร่วมละกัน",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020124
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 102020125,
+					"content": "ส้มหล่นจังนะ",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020127
+					]
+				},
+				{
+					"id": 102020126,
+					"content": "ดีใจด้วยนะ",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020127
+					]
+				},
+				{
+					"id": 102020124,
+					"content": "Ludi Harpastum!! ว้าวว!!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020125,
+						102020126
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020127,
+					"content": "ถึงเวลาพี่เองก็ต้องมาด้วยนะ!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020128
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020128,
+					"content": "เย้ จบอย่างสวยงาม!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020129
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020129,
+					"content": "แต่ว่า...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020131
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 102020130,
+					"content": "แต่ว่า...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020131
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020131,
+					"content": "Klee \"สมบัติ\" ที่เธอซ่อนไว้น่ะ อยู่ที่ไหน?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020132
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 102020132,
+					"content": "อุ!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020133
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020133,
+					"content": "อย่าบอกนะว่าจะเอาไประเบิดปลาที่ Starfell Lake อีกน่ะ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020134
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 102020134,
+					"content": "หนะ... หนูเปล่านะ!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020135
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020136,
+					"content": "(แต่ว่ายังไงหัวหน้ากอง Jean ก็เห็นอยู่ดีนี่นา)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020137
+					]
+				},
+				{
+					"id": 102020135,
+					"content": "(เธอจ้องมองมาทางพวกเราอยู่นะ...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020136
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020137,
+					"content": "Klee.....?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020138
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 102020138,
+					"content": "อ่า! Klee จะไปรายงานตัวที่<color=#00E1FFFF>ห้องขัง</color>เดี๋ยวนี้แหละ...ฮือๆ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020139
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020139,
+					"content": "ไม่รู้ว่า Klee ถูกขังอยู่คนเดียวนี่จะเบื่อมั้ยนะ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 1020204,
+			"completionStepIds": [
+				1020204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1020204",
+							"2"
+						],
+						"stepId": 1020204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ห้องขัง"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 102020401,
+					"content": "ทายซิ ใครเอ่ยย?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020402
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020402,
+					"content": "อ๊ะ เสียงของ Paimon น้อยนี่นา!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020403,
+						102020404
+					],
+					"speakerTitle": "ห้องขัง"
+				},
+				{
+					"id": 102020403,
+					"content": "จะให้พวกเราปล่อยเธอออกไปมั้ย?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020405
+					]
+				},
+				{
+					"id": 102020405,
+					"content": "เอาสิงั้นก็... ไม่ ไม่ถูกต้อง Klee กำลังฝึกฝนตนเองอยู่ อย่ามาทำให้ไขว้เขวนะ!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020406
+					],
+					"speakerTitle": "ห้องขัง"
+				},
+				{
+					"id": 102020406,
+					"content": "ตลอดช่วงเวลาการกักขัง ฉันจะอยู่ที่นี่เพื่อทำ \"สมบัติ\" เวอร์ชันพิเศษของเทศกาล Ludi Harpastum...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020407
+					],
+					"speakerTitle": "ห้องขัง"
+				},
+				{
+					"id": 102020407,
+					"content": "\"สมบัติ\"...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020408
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020408,
+					"content": "หึหึ... หนูตั้งใจทำขึ้นเป็นรูปขนนกโดยเฉพาะเลยนะ! น่ารักมั้ยล่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020409,
+						102020410
+					],
+					"speakerTitle": "ห้องขัง"
+				},
+				{
+					"id": 102020409,
+					"content": "ระเบิดรูปขนนก...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020411
+					]
+				},
+				{
+					"id": 102020411,
+					"content": "รอให้ถึง Ludi Harpastum ก่อนเถอะ อื้อ! ทุกคนจะต้องชอบแน่!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020412
+					],
+					"speakerTitle": "ห้องขัง"
+				},
+				{
+					"id": 102020412,
+					"content": "เฮ้อ ถ้าเกิดหัวหน้ากอง Jean มาได้ยินประโยคนี้ล่ะก็...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020413
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020413,
+					"content": "เวลาการขังของ Klee คงต้องยืดออกไปอีกล่ะนะ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020410,
+					"content": "ความจริงก็คือระเบิดอีกแล้วงั้นสิ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020411
+					]
+				},
+				{
+					"id": 102020404,
+					"content": "อยากได้ของกินมั้ย?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020405
+					]
+				}
+			]
+		}
+	]
+}

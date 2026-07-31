@@ -1,0 +1,462 @@
+{
+	"id": 22042,
+	"type": "IQ",
+	"name": "鱼之味",
+	"description": "浅濑神社代宫司「寝子」似乎正在因为某事而烦恼…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2204201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "与寝子对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2204201,
+						0
+					],
+					"talkId": 2204201
+				}
+			]
+		},
+		{
+			"id": 2204202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "将鱼肉喂给小猫们",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2204203,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)检测玩家是否打猫$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						2204203,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2204204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "向寝子回报",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2204203,
+						0
+					],
+					"talkId": 2204203
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2204204,
+						0
+					],
+					"talkId": 2204204
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2204201,
+			"completionStepIds": [
+				2204201
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2204201",
+							"2"
+						],
+						"stepId": 2204201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"「寝子」"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220420101,
+					"content": "真是群不听话的孩子…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420102
+					],
+					"speakerTitle": "「寝子」"
+				},
+				{
+					"id": 220420102,
+					"content": "怎么了？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220420103
+					]
+				},
+				{
+					"id": 220420103,
+					"content": "是汝等啊，那群小家伙们又跑出去玩了，真是越来越不听话了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420104,
+						220420105
+					],
+					"speakerTitle": "「寝子」"
+				},
+				{
+					"id": 220420104,
+					"content": "要我帮什么忙？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220420106
+					]
+				},
+				{
+					"id": 220420106,
+					"content": "有了挂在神社外面的那些铁球，那群小家伙们应该知道怎么回来。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420107
+					],
+					"speakerTitle": "「寝子」"
+				},
+				{
+					"id": 220420107,
+					"content": "那群小家伙们，在外面疯一疯也好，免得到时候神社里来了人类，它们在人类面前疯玩，掉了神社的风度。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420108
+					],
+					"speakerTitle": "「寝子」"
+				},
+				{
+					"id": 220420108,
+					"content": "但它们要是玩得太过头…从太阳还在天上，一直饿到月亮到了天上就不好了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420109
+					],
+					"speakerTitle": "「寝子」"
+				},
+				{
+					"id": 220420109,
+					"content": "汝等，帮奴家拿些鱼过去，给那群小家伙们吃吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420110,
+						220420113
+					],
+					"speakerTitle": "「寝子」"
+				},
+				{
+					"id": 220420110,
+					"content": "我知道了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220420111
+					]
+				},
+				{
+					"id": 220420111,
+					"content": "接下来就把地图给寝子吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420112
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 220420112,
+					"content": "唔，汝还算是有点悟性…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420115
+					],
+					"speakerTitle": "「寝子」"
+				},
+				{
+					"id": 220420115,
+					"content": "好了，汝等快点去吧，奴家还得在这打理神社呢。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "「寝子」"
+				},
+				{
+					"id": 220420113,
+					"content": "这是地图…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220420114
+					]
+				},
+				{
+					"id": 220420114,
+					"content": "唔，汝还算是有点悟性…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420115
+					],
+					"speakerTitle": "「寝子」"
+				},
+				{
+					"id": 220420105,
+					"content": "我去找它们回来吗？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220420106
+					]
+				}
+			]
+		},
+		{
+			"id": 2204202,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2204202",
+							"2"
+						],
+						"stepId": 2204202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"「寝子」"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220420201,
+					"content": "好了，汝等快拿些鱼给那群小家伙们吃吧，奴家还得在这打理神社呢。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "「寝子」"
+				}
+			]
+		},
+		{
+			"id": 2204203,
+			"completionStepIds": [
+				2204204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2204203",
+							"2"
+						],
+						"stepId": 2204203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2204204",
+							"2"
+						],
+						"stepId": 2204204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"「寝子」"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220420301,
+					"content": "汝等回来了，喂过那群小家伙了吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420302
+					],
+					"speakerTitle": "「寝子」"
+				},
+				{
+					"id": 220420302,
+					"content": "喂过了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220420303
+					]
+				},
+				{
+					"id": 220420303,
+					"content": "这样就好了，谢谢汝等了，要不然这群小家伙肯定又会一直疯玩，然后在野外挨饿了，谢谢汝等帮忙。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420304
+					],
+					"speakerTitle": "「寝子」"
+				},
+				{
+					"id": 220420304,
+					"content": "唉，真是一群不听话的小家伙啊，这样子怎么能接待来神社的人类呢…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "「寝子」"
+				}
+			]
+		},
+		{
+			"id": 2204204,
+			"completionStepIds": [
+				2204204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2204203",
+							"3"
+						],
+						"stepId": 2204203,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2204204",
+							"2"
+						],
+						"stepId": 2204204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"「寝子」"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220420401,
+					"content": "汝等回来了啊。真奇怪，那群小家伙突然都跑回来了，还一副很害怕的样子。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420402
+					],
+					"speakerTitle": "「寝子」"
+				},
+				{
+					"id": 220420402,
+					"content": "难道，是在野外遇见了那种拿着棒子的毛茸茸人？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420403
+					],
+					"speakerTitle": "「寝子」"
+				},
+				{
+					"id": 220420403,
+					"content": "不过，这群小家伙回来了也好…汝怎么了？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420404
+					],
+					"speakerTitle": "「寝子」"
+				},
+				{
+					"id": 220420404,
+					"content": "其、其实是我…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220420405
+					]
+				},
+				{
+					"id": 220420405,
+					"content": "…真是难捉摸的人类啊！为什么会想做这件事呢？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420406
+					],
+					"speakerTitle": "「寝子」"
+				},
+				{
+					"id": 220420406,
+					"content": "想要和这群小家伙玩的话，就用普通的方式好了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420407
+					],
+					"speakerTitle": "「寝子」"
+				},
+				{
+					"id": 220420407,
+					"content": "喵！怪不得那群小家伙被吓成这样…奴家还要去安慰一下它们才好。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220420408
+					],
+					"speakerTitle": "「寝子」"
+				},
+				{
+					"id": 220420408,
+					"content": "真是的，果然不能期望所有的人类都和阿响一样…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "「寝子」"
+				}
+			]
+		}
+	]
+}

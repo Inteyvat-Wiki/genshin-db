@@ -1,0 +1,119 @@
+{
+	"id": 70675,
+	"type": "WQ",
+	"name": "Новая доска приглашений",
+	"description": "Кажется, Шу Юнь хочет вам что-то сказать...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_GUIDE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7067501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отправляйтесь в таверну «Кошкин хвост»",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7067501,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_ENTER_ROOM",
+					"rawParams": [
+						1076,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7067502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Шу Юнем",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7067501,
+						0
+					],
+					"talkId": 7067501
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7067501,
+			"completionStepIds": [
+				7067502
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7067502",
+							"2"
+						],
+						"stepId": 7067502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Шу Юнь"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706750101,
+					"content": "Господин Принц изменил доску приглашений, и теперь любой, кто получит приглашение, может немедленно зайти в специальную комнату, чтобы сразиться с тобой.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706750102
+					],
+					"speakerTitle": "Шу Юнь"
+				},
+				{
+					"id": 706750102,
+					"content": "Твоим друзьям не придётся преодолевать большие расстояния, чтобы попасть сюда. Более того, здесь любой сможет поучаствовать в дуэли.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706750103
+					],
+					"speakerTitle": "Шу Юнь"
+				},
+				{
+					"id": 706750103,
+					"content": "Что? Ты сомневаешься, что котам под силу подобные вещи? Похоже, ты ещё много не знаешь о господине Принце.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706750104
+					],
+					"speakerTitle": "Шу Юнь"
+				},
+				{
+					"id": 706750104,
+					"content": "Нет, похоже, ты совсем не понимаешь, на что способны кошки. В общем, можешь воспользоваться доской приглашений и пройти в специальную комнату для дуэлей!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Шу Юнь"
+				}
+			]
+		}
+	]
+}

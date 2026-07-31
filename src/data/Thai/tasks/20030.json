@@ -1,0 +1,442 @@
+{
+	"id": 20030,
+	"type": "WQ",
+	"name": "ยินดีต้อนรับสู่กิลด์นักผจญภัย",
+	"description": "Katheryne จากกิลด์นักผจญภัยได้ส่งคำเชิญมาถึงคุณ",
+	"unlockDescription": "สำเร็จเควสต์นี้เพื่อปลดล็อกฟังก์ชัน \"คู่มือนักผจญภัย\"",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_GUIDE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		309
+	],
+	"steps": [
+		{
+			"id": 2003001,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Paimon ขับรถ",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003002,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "พูดคุยกับ Katheryne สอบถามรายละเอียด",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003001,
+						0
+					],
+					"talkId": 2003001
+				}
+			]
+		},
+		{
+			"id": 2003003,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "พูดคุยกับ Katheryne สอบถามรายละเอียด",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003002,
+						0
+					],
+					"talkId": 2003002
+				}
+			]
+		},
+		{
+			"id": 2003004,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "คุยกับ Katheryne สอบถามรายละเอียด",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003002,
+						0
+					],
+					"talkId": 2003002
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2003001,
+			"completionStepIds": [
+				2003002
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003002",
+							"2"
+						],
+						"stepId": 2003002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Katheryne"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200300101,
+					"content": "ยินดีต้อนรับสู่ <color=#00E1FFFF>กิลด์นักผจญภัย</color> ฉันได้จับตาดูเธอมาพักหนึ่งแล้ว",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300102
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300102,
+					"content": "#จับตาดู {NICKNAME}? เราทำอะไรผิดไปงั้นเหรอ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300103
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 200300103,
+					"content": "ไม่มีอะไร การค้นหานักผจญภัยชั้นเลิศ นี่ก็เป็นงานอย่างหนึ่งของฉันล่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300104
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300104,
+					"content": "ฉันมองเห็นศักยภาพของนักผจญภัยในตำนานอยู่ภายในตัวเธอ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300105
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300105,
+					"content": "เหะๆ อันนี้ก็พอจะรู้นะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300106
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 200300106,
+					"content": "#ออกผจญภัยกับ {NICKNAME} มักจะให้ความรู้สึกปลอดภัยอยู่เสมอ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300107
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 200300107,
+					"content": "อย่างไรก็ตามในฐานะนักผจญภัยแล้ว ประสบการณ์นั้นสำคัญกว่าศักยภาพ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300108
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300108,
+					"content": "คุณต้องสะสม <color=#00E1FFFF>\"EXP ผจญภัย\"</color> ถึงจะสามารถเพิ่มระดับของ <color=#00E1FFFF>\"แรงก์ผจญภัย\"</color> ได้",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300109
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300109,
+					"content": "อย่ามัวเสียเวลา ยังไงให้ฉันเป็นคนอธิบายให้เด็กใหม่ฟังก็แล้วกันนะ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300110
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300110,
+					"content": "รอเดี๋ยว! พวกเราเป็นนักผจญภัยอย่างเป็นทางการแล้วเหรอ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300111
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 200300111,
+					"content": "วางใจเถอะ กิลด์นักผจญภัยน่ะไม่มีค่าใช้จ่ายหรอกนะ และก็ไม่ได้มีภาระผูกพันใด ๆ กับนักผจญภัยด้วย",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300112
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300112,
+					"content": "หรือจะพูดว่า การเข้าร่วมกิลด์น่ะมีแต่ข้อดี ไม่มีข้อเสียเลยก็ได้",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300113,
+						200300114
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300113,
+					"content": "โอเค...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200300116
+					]
+				},
+				{
+					"id": 200300116,
+					"content": "สรุปก็คือ ทุกครั้งที่ \"แรงก์ผจญภัย\" ของเธอเพิ่มขึ้น กิลด์นักผจญภัยก็จะมอบรางวัลให้กับเธอ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300117
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300117,
+					"content": "ถือว่านี่เป็นของขวัญต้อนรับคนใหม่ละกัน ช่วยตกลงด้วยตัวเองทีนะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300118
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300118,
+					"content": "รางวัลแรงก์ผจญภัย",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 200300114,
+					"content": "เอาข้อดีมาโชว์สิ!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200300115
+					]
+				},
+				{
+					"id": 200300115,
+					"content": "ฮ่าฮ่าฮ่า...เด็กใหม่เดี๋ยวนี้นี่ตรงดีนะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300116
+					],
+					"speakerTitle": "Katheryne"
+				}
+			]
+		},
+		{
+			"id": 2003002,
+			"completionStepIds": [
+				2003003,
+				2003004
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003003",
+							"2"
+						],
+						"stepId": 2003003,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Katheryne"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200300201,
+					"content": "ถ้างั้นก็ให้ฉันต้อนรับเธออย่างเป็นทางการเลยละกัน ดาวดวงใหม่แห่งพี่น้องนักผจญภัย!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300202
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300202,
+					"content": "นี่คือ <color=#00E1FFFF>คู่มือนักผจญภัย</color> ของเธอ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300203,
+						200300205
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300203,
+					"content": "คู่มือนักผจญภัย?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200300204
+					]
+				},
+				{
+					"id": 200300204,
+					"content": "เรื่องสำคัญอย่างการที่มีคนใหม่เข้ามานี้ แน่นอนต้องมีพิธีกรรมสักหน่อยล่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300207
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300207,
+					"content": "มันจะบันทึกข้อมูลจำนวนมากเกี่ยวกับคำขอและรางวัลของทางกิลด์",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300208
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300208,
+					"content": "ในขณะเดียวก็เป็นใบประกาศการเป็นสมาชิกของกิลด์ด้วย",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300209
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300209,
+					"content": "จริงสิ ยังมีอีกเรื่องหนึ่ง",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300210
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300210,
+					"content": "บางครั้งมันจะมีช่วงที่ยากในการเพิ่ม \"แรงก์ผจญภัย\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300211
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300211,
+					"content": "ถึงตอนนั้นจำเป็นจะต้องทำ \"เควสต์ที่ทำให้คนประทับใจ\" เพื่อรับการยอมรับจากทางกิลด์",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300212
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300212,
+					"content": "เควสต์...ที่ทำให้คนประทับใจ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300213
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 200300213,
+					"content": "พูดได้ว่าเป็น \"เควสต์เลื่อนขั้น\" เพื่อทะลุกำแพงของ \"แรงก์ผจญภัย\" ล่ะนะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300214
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300214,
+					"content": "ตอนนี้ยังไม่ถึงเวลา เมื่อเธอได้รับ Exp ที่เพียงพอ เดี๋ยวก็จะได้โอกาสที่จะได้รับการยอมรับจากทุกคนเองแหละ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300215
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300215,
+					"content": "งั้นวันนี้พอแค่นี้ก่อนนะ เดี๋ยวอีกหน่อยพวกเราจะได้พบกันบ่อย ๆ แน่นอน",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300216
+					],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300216,
+					"content": "สู้ ๆ นะคุณนักผจญภัย ไปให้ถึงดวงดาวและก้นเหว!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Katheryne"
+				},
+				{
+					"id": 200300205,
+					"content": "นี่คือ...แผ่นพับโฆษณา?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200300206
+					]
+				},
+				{
+					"id": 200300206,
+					"content": "พูดอย่างนี้ก็ได้ แต่ว่ามันมีประโยชน์มากเลยนะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300207
+					],
+					"speakerTitle": "Katheryne"
+				}
+			]
+		}
+	]
+}

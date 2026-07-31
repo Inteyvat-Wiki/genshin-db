@@ -1,0 +1,176 @@
+{
+	"id": 70708,
+	"type": "WQ",
+	"name": "Las flores de Alfred",
+	"description": "Alfred, de Mondstadt, necesita 3 cecilias.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Entrégale 3 cecilias a Alfred",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Alfred",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070802,
+						0
+					],
+					"talkId": 7070802
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070801,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070801",
+							"2"
+						],
+						"stepId": 7070801,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070801"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Alfred"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707080101,
+					"content": "Sobre las cecilias...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707080102
+					]
+				},
+				{
+					"id": 707080102,
+					"content": "¿Viste mi encargo? Gracias por venir hasta aquí.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707080103
+					],
+					"speakerTitle": "Alfred"
+				},
+				{
+					"id": 707080103,
+					"content": "¿Tienes las 3 cecilias que quería?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707080104,
+						707080105
+					],
+					"speakerTitle": "Alfred"
+				},
+				{
+					"id": 707080104,
+					"content": "Sí.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707080105,
+					"content": "Aún no.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707080106
+					]
+				},
+				{
+					"id": 707080106,
+					"content": "Cuando las hayas recogido, tráemelas rápido, por favor. No dejes que se marchiten.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Alfred"
+				}
+			]
+		},
+		{
+			"id": 7070802,
+			"completionStepIds": [
+				7070802
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070802",
+							"2"
+						],
+						"stepId": 7070802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Alfred"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707080201,
+					"content": "Estoy seguro de que a mi hija le gustarán mucho estas cecilias.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707080202
+					],
+					"speakerTitle": "Alfred"
+				},
+				{
+					"id": 707080202,
+					"content": "Gracias. Toma, acepta esto como agradecimiento.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Alfred"
+				}
+			]
+		}
+	]
+}

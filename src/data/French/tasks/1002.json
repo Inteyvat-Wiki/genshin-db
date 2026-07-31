@@ -1,0 +1,388 @@
+{
+	"id": 1002,
+	"type": "AQ",
+	"name": "Changement de plan",
+	"description": "Le Souverain de la Roche est bien descendu comme prévu ; mais c'est un triste spectacle qui apparaît une fois la fumée dissipée. Le corps inanimé de l'Archon Géo gît au milieu des offrandes brisées, et la confusion règne. Les Sept Étoiles ordonnent immédiatement que le coupable soit trouvé. Dans l'impossibilité de prouver votre innocence, vous n'avez d'autre choix que d'accepter l'aide de l'un des onze Exécuteurs des Fatui, Tartaglia. Suivant ses indications, vous partez trouver refuge à la demeure cachée des Adeptes, au Karst Jueyun...",
+	"unlockDescription": "",
+	"chapter": "La terre mystique aux mille rochers",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		1008,
+		1009,
+		1003
+	],
+	"prevMainQuestList": [
+		1000
+	],
+	"steps": [
+		{
+			"id": 100201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Rencontrez les Adeptes au Karst Jueyun.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1160,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 100202,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						100202,
+						0
+					],
+					"talkId": 100202
+				}
+			]
+		},
+		{
+			"id": 100203,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						100203,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 100204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Combat soutenu par les Adeptes.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 100205,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Parlez automatiquement à l'adepte. (Quête cachée)",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						100205,
+						0
+					],
+					"talkId": 100205
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 100202,
+			"completionStepIds": [
+				100202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"100202",
+							"2"
+						],
+						"stepId": 100202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 10020201,
+					"content": "Qui ose pénétrer dans l'enceinte sacrée du Karst Jueyun ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020202,
+						10020203
+					],
+					"speakerTitle": "Grave-Lune"
+				},
+				{
+					"id": 10020202,
+					"content": "#J'ai été {M#envoyé}{F#envoyée} ici.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10020203
+					]
+				},
+				{
+					"id": 10020203,
+					"content": "Regardez ça, s'il vous plaît...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10020204
+					]
+				},
+				{
+					"id": 10020204,
+					"content": "Un talisman de permission... Cela fait des années qu'on n'en a pas vu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020205
+					],
+					"speakerTitle": "Grave-Lune"
+				},
+				{
+					"id": 10020205,
+					"content": "Vous vous tenez en présence de Grave-Lune, lui-même. Quelle est la raison de votre présence ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020206
+					],
+					"speakerTitle": "Grave-Lune"
+				},
+				{
+					"id": 10020206,
+					"content": "En fait...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020207
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10020207,
+					"content": "#C'est l'assassin ! {M#Il}{F#Elle} a osé fuir au Karst Jueyun !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020208
+					],
+					"speakerTitle": "Instructeur des Millelithes"
+				},
+				{
+					"id": 10020208,
+					"content": "Chef, vous êtes sûr qu'on peut mettre les pieds ici ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020209
+					],
+					"speakerTitle": "Soldat des Millelithes"
+				},
+				{
+					"id": 10020209,
+					"content": "#O—On n'a pas le choix ! Notre priorité est de capturer {M#ce criminel}{F#cette criminelle} !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020210
+					],
+					"speakerTitle": "Instructeur des Millelithes"
+				},
+				{
+					"id": 10020210,
+					"content": "... Troubler nos frontières...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020211
+					],
+					"speakerTitle": "Grave-Lune"
+				},
+				{
+					"id": 10020211,
+					"content": "Renvoyez-les d'où ils viennent. Je ne tolèrerai aucune interruption.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Grave-Lune"
+				}
+			]
+		},
+		{
+			"id": 100205,
+			"completionStepIds": [
+				100205
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"100205",
+							"2"
+						],
+						"stepId": 100205,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Grave-Lune"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 10020501,
+					"content": "Excusez-moi, nous avons été importunés.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020502
+					],
+					"speakerTitle": "Grave-Lune"
+				},
+				{
+					"id": 10020502,
+					"content": "Eh bien...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020503
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 10020503,
+					"content": "Grotesque...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020504
+					],
+					"speakerTitle": "Grave-Lune"
+				},
+				{
+					"id": 10020504,
+					"content": "GROTESQUE !!!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020505
+					],
+					"speakerTitle": "Grave-Lune"
+				},
+				{
+					"id": 10020505,
+					"content": "Les Sept Étoiles me déçoivent...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020506
+					],
+					"speakerTitle": "Grave-Lune"
+				},
+				{
+					"id": 10020506,
+					"content": "Comment ont-elles pu laisser quelqu'un assassiner le Souverain de la Roche pendant la cérémonie...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020507
+					],
+					"speakerTitle": "Grave-Lune"
+				},
+				{
+					"id": 10020507,
+					"content": "Et oser en faire porter la responsabilité sur quelqu'un du public ?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020508
+					],
+					"speakerTitle": "Grave-Lune"
+				},
+				{
+					"id": 10020508,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020509
+					],
+					"speakerTitle": "Grave-Lune"
+				},
+				{
+					"id": 10020509,
+					"content": "#{M#Voyageur}{F#Voyageuse}, je suis au courant que vous avez été injustement {M#accusé}{F#accusée}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020510
+					],
+					"speakerTitle": "Grave-Lune"
+				},
+				{
+					"id": 10020510,
+					"content": "Et j'ai mon idée sur le vrai coupable, mais je dois consulter mes pairs pour confirmer mon intuition.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020511
+					],
+					"speakerTitle": "Grave-Lune"
+				},
+				{
+					"id": 10020511,
+					"content": "Partez. Prenez avec vous votre talisman de permission, et aidez-moi à faire passer un message.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020512,
+						10020513
+					],
+					"speakerTitle": "Grave-Lune"
+				},
+				{
+					"id": 10020512,
+					"content": "Qui devrai-je voir ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10020513
+					]
+				},
+				{
+					"id": 10020513,
+					"content": "Où devrai-je aller ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10020514
+					]
+				},
+				{
+					"id": 10020514,
+					"content": "Taille-Monts et Souffle-Nuages se trouvent souvent ici. Seul le destin décidera si vous les trouverez – seul le destin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020515
+					],
+					"speakerTitle": "Grave-Lune"
+				},
+				{
+					"id": 10020515,
+					"content": "Le Gardien Yaksha qu'on appelle aussi Dompteur de démons se trouve aux environs de l'Auberge Wangshu. Rendez-vous-y et cherchez-le là-bas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Grave-Lune"
+				}
+			]
+		}
+	]
+}

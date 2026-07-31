@@ -1,0 +1,521 @@
+{
+	"id": 70505,
+	"type": "WQ",
+	"name": "昨日佳釀",
+	"description": "「剛才，我看迪盧克老爺行色匆匆地走進了酒館。」 「哦？今天是老爺親自調酒嗎？那我可得去捧個場…來，扶我一把。」",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70504
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "與盧卡對話，進入酒館",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050501,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050502,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "為迪盧克調製指定飲品",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050502,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050503,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "將飲品交給迪盧克",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050502,
+						0
+					],
+					"talkId": 7050502
+				}
+			]
+		},
+		{
+			"id": 7050504,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "與迪盧克對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050501,
+						0
+					],
+					"talkId": 7050501
+				}
+			]
+		},
+		{
+			"id": 7050505,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往吧檯並完成營業準備",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7050406,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050501,
+			"completionStepIds": [
+				7050504
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050504",
+							"2"
+						],
+						"stepId": 7050504,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050502",
+							"2"
+						],
+						"stepId": 7050502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"迪盧克"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705050101,
+					"content": "迪盧克老爺！真難得！是今天剛好閒著沒事幹嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050102
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705050102,
+					"content": "#什麼叫閒著沒事幹。我收到了{F#妳}{M#你}們兼任酒保的消息，過來看看而已。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050103
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050103,
+					"content": "哇，情報太靈通了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050104
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705050104,
+					"content": "#所以，{NICKNAME}，當酒保的體驗如何？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050105
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050105,
+					"content": "才剛開始…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705050106
+					]
+				},
+				{
+					"id": 705050106,
+					"content": "是啊，迪盧克老爺問得太早啦，我們開張還沒多久呢。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050107
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705050107,
+					"content": "只是想問問第一感覺。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050108
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050108,
+					"content": "興奮嗎？還是困擾？有什麼感受，直說就好。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050109,
+						705050110
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050109,
+					"content": "還挺新奇的…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705050111
+					]
+				},
+				{
+					"id": 705050111,
+					"content": "原來如此。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050112
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050112,
+					"content": "不、不問問我嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050113
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705050113,
+					"content": "我的第一感覺是…好喝！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050114
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705050114,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050115
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050115,
+					"content": "#那就好，為{F#妳}{M#你}高興。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050116
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050116,
+					"content": "#能請{F#妳}{M#你}幫我調一杯蒼谷落日嗎？份量隨意。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050117
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050117,
+					"content": "明白了，請稍等片刻。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705050118
+					]
+				},
+				{
+					"id": 705050118,
+					"content": "嗯，不用著急。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050110,
+					"content": "有點手忙腳亂…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705050111
+					]
+				}
+			]
+		},
+		{
+			"id": 7050502,
+			"completionStepIds": [
+				7050503
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050503",
+							"2"
+						],
+						"stepId": 7050503,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"迪盧克"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705050201,
+					"content": "味道很不錯。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050202
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050202,
+					"content": "主要還是材料好！只要水果新鮮，就算什麼也不加都會很甜。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050203
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705050203,
+					"content": "那就感謝蒙德的土地吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050204
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050204,
+					"content": "…蒼谷落日，是我第一次調出的飲品。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050205
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050205,
+					"content": "那時還小，父親擺出了幾種材料，讓我自己動手嘗試。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050206
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050206,
+					"content": "沒有要求，也沒有提示，多半是為了看我的靈性吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050207
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050207,
+					"content": "最後我做出的，就是這樣一杯果汁。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050208
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050208,
+					"content": "欸，為、為什麼…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050209
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705050209,
+					"content": "父親也很詫異。但當時的我並未考慮其他因素，只知道果汁很甜。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050210
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050210,
+					"content": "現在想來，那是多麼幼稚又短淺的認知啊…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050211
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050211,
+					"content": "我不這麼認為。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705050212
+					]
+				},
+				{
+					"id": 705050212,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050213,
+						705050214
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050213,
+					"content": "對他來說一定也是好飲品。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705050215
+					]
+				},
+				{
+					"id": 705050215,
+					"content": "我沒有那樣想過…畢竟，當時父親什麼都沒說。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050216
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050216,
+					"content": "#不過，謝謝{F#妳}{M#你}。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050217
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050217,
+					"content": "#另外，有件東西想給{F#妳}{M#你}。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050218
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050218,
+					"content": "#…等{F#妳}{M#你}對酒保工作有更多體驗之後，再交給{F#妳}{M#你}比較好。以{F#妳}{M#你}的能力，一定能出色地完成這份工作。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050219
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050219,
+					"content": "我也會…幫忙打氣！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050220
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705050220,
+					"content": "#嗯，期待{F#妳}{M#你}們的成果。那我就先告辭了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705050221
+					],
+					"speakerTitle": "迪盧克"
+				},
+				{
+					"id": 705050221,
+					"content": "有空再來哦！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705050214,
+					"content": "他一定也覺得很美味。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705050215
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,1692 @@
+{
+	"id": 72813,
+	"type": "WQ",
+	"name": "Удобрений... продавец?",
+	"description": "Ивата с острова Ватацуми испытывает некоторые затруднения",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		72153,
+		12024
+	],
+	"steps": [
+		{
+			"id": 7281301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Иватой",
+			"finishConditions": []
+		},
+		{
+			"id": 7281302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Проверьте удобрения на следующий день",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						1,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7281303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Проверьте удобрения",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7281303,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7281304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Победите всех врагов",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7281305,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Иватой",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7281303,
+						0
+					],
+					"talkId": 7281303
+				}
+			]
+		},
+		{
+			"id": 7281306,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Вместе с Горо сходите посмотреть на подозрительную личность",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7281305,
+						0
+					],
+					"talkId": 7281305
+				}
+			]
+		},
+		{
+			"id": 7281307,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Найдите Каушика",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7281307,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7281308,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Каушиком",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7281307,
+						0
+					],
+					"talkId": 7281307
+				}
+			]
+		},
+		{
+			"id": 7281309,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Вернитесь к Горо вместе с Каушиком",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7281308,
+						0
+					],
+					"talkId": 7281308
+				}
+			]
+		},
+		{
+			"id": 7281310,
+			"order": 10,
+			"listShowType": "QUEST_SHOW",
+			"description": "Разыщите Ивату вместе с Алрани",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7281309,
+						0
+					],
+					"talkId": 7281309
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7281302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7281302",
+							"2"
+						],
+						"stepId": 7281302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ивата"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 728130201,
+					"content": "Надеюсь, на этот раз получится...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ивата"
+				}
+			]
+		},
+		{
+			"id": 7281303,
+			"completionStepIds": [
+				7281305
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7281305",
+							"2"
+						],
+						"stepId": 7281305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ивата",
+					"Горо",
+					"Паймон",
+					"Окубо Дайсукэ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 728130301,
+					"content": "#Спасибо, путешественн{F#ица}{M#ик}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130302
+					],
+					"speakerTitle": "Ивата"
+				},
+				{
+					"id": 728130302,
+					"content": "Я делал удобрения, когда вдруг не пойми откуда напали чудовища...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130303
+					],
+					"speakerTitle": "Ивата"
+				},
+				{
+					"id": 728130303,
+					"content": "#Это всё очень странно... Но хорошо, что ты {F#появилась}{M#появился} вовремя.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130304
+					],
+					"speakerTitle": "Ивата"
+				},
+				{
+					"id": 728130304,
+					"content": "Возможно, это удобрения...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728130305
+					]
+				},
+				{
+					"id": 728130305,
+					"content": "Правда? Я слышал, что этот запах - признак успеха.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130306
+					],
+					"speakerTitle": "Ивата"
+				},
+				{
+					"id": 728130306,
+					"content": "Ну да ладно. Подойди и посмотри, какую я сотворил кучу. Сейчас открою её и всё расскажу...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130307
+					],
+					"speakerTitle": "Ивата"
+				},
+				{
+					"id": 728130307,
+					"content": "Подожди!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130308
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130308,
+					"content": "Господин Горо? Я не знал, что вы сегодня будете проезжать рядом.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130309
+					],
+					"speakerTitle": "Ивата"
+				},
+				{
+					"id": 728130309,
+					"content": "В дозоре, Горо?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728130310
+					]
+				},
+				{
+					"id": 728130310,
+					"content": "Я... Не бери в голову.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130311
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130311,
+					"content": "Эта куча... Твоих рук дело?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130312
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130312,
+					"content": "#Ха-ха-ха, да. Это мы с {F#путешественницей}{M#путешественником} сделали.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130313
+					],
+					"speakerTitle": "Ивата"
+				},
+				{
+					"id": 728130313,
+					"content": "Господин Горо, вы тоже пришли, чтобы проверить удобрение?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130314
+					],
+					"speakerTitle": "Ивата"
+				},
+				{
+					"id": 728130314,
+					"content": "Вы как раз вовремя. Мы собирались...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130315
+					],
+					"speakerTitle": "Ивата"
+				},
+				{
+					"id": 728130315,
+					"content": "Подожди! Подожди минутку. Я здесь не для этого. Подожди, вообще-то, я здесь...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130316
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130316,
+					"content": "Что у него с лицом...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130317
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 728130317,
+					"content": "Давайте... переместимся куда-нибудь подальше...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728130318
+					]
+				},
+				{
+					"id": 728130318,
+					"content": "Хорошо, давайте так и сделаем.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130319
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130319,
+					"content": "Господин Горо, зачем вы здесь?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130320
+					],
+					"speakerTitle": "Ивата"
+				},
+				{
+					"id": 728130320,
+					"content": "В последнее время многие жители жалуются на ужасающую вонь...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130321
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130321,
+					"content": "Поэтому в целях безопасности я отправился на разведку, и в итоге проследовал по запаху до этого места.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130322
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130322,
+					"content": "Так я нашёл вас.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130323
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130323,
+					"content": "Ивата, я слышал, что ты занимаешься исследованием удобрений, но то, как ты это делаешь...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130324,
+						728130325
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130324,
+					"content": "Нарушает спокойствие.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728130326
+					]
+				},
+				{
+					"id": 728130326,
+					"content": "Именно. Ивата, не мог бы ты утилизировать это удобрение? Мы постараемся помочь тебе найти другой способ.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130327
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130327,
+					"content": "Генерал! Генерал Горо!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130328
+					],
+					"speakerTitle": "Окубо Дайсукэ"
+				},
+				{
+					"id": 728130328,
+					"content": "Я здесь. В чём дело?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130329
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130329,
+					"content": "Генерал, мы поймали подозрительного человека на окраине.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130330
+					],
+					"speakerTitle": "Окубо Дайсукэ"
+				},
+				{
+					"id": 728130330,
+					"content": "Она вела себя очень скрытно, называет себя... продавцом удобрений, или что-то в этом роде.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130331
+					],
+					"speakerTitle": "Окубо Дайсукэ"
+				},
+				{
+					"id": 728130331,
+					"content": "Мне показалось это крайне подозрительным, поэтому я задержал эту особу. Я подумал, что вам будет интересно присутствовать на допросе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130332
+					],
+					"speakerTitle": "Окубо Дайсукэ"
+				},
+				{
+					"id": 728130332,
+					"content": "Снова удобрения... За что мне всё это...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130333
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130333,
+					"content": "Я скоро подойду. Возвращайтесь к своим обязанностям.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130334
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130334,
+					"content": "Ивата, пожалуйста, реши вопрос с удобрениями. Мы обсудим это позже.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130335
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130335,
+					"content": "#{NICKNAME}, пойдём со мной.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130336,
+						728130337
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130336,
+					"content": "Хорошо.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728130338
+					]
+				},
+				{
+					"id": 728130338,
+					"content": "Продавец удобрений? Паймон всё это кажется очень знакомым... Вот только не могу вспомнить...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130339
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 728130339,
+					"content": "Ладно, проехали. Пойдём посмотрим, что случилось.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 728130337,
+					"content": "Продавец удобрений?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728130338
+					]
+				},
+				{
+					"id": 728130325,
+					"content": "Провокационно.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728130326
+					]
+				}
+			]
+		},
+		{
+			"id": 7281304,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7281306",
+							"2"
+						],
+						"stepId": 7281306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7281307",
+							"2"
+						],
+						"stepId": 7281307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7281308",
+							"2"
+						],
+						"stepId": 7281308,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7281309",
+							"2"
+						],
+						"stepId": 7281309,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ивата"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 728130401,
+					"content": "Я не думал, что удобрения такие вонючие...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ивата"
+				}
+			]
+		},
+		{
+			"id": 7281305,
+			"completionStepIds": [
+				7281306
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7281306",
+							"2"
+						],
+						"stepId": 7281306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Хироюки",
+					"Алрани",
+					"Горо",
+					"Окубо Дайсукэ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 728130501,
+					"content": "Стой на месте и не двигайся!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130502
+					],
+					"speakerTitle": "Хироюки"
+				},
+				{
+					"id": 728130502,
+					"content": "Я... я не двигаюсь! Вы попросили меня объясниться, и я объяснила, что я исследователь из Академии!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130503
+					],
+					"speakerTitle": "Алрани"
+				},
+				{
+					"id": 728130503,
+					"content": "Разве ты не говорила, что рекламируешь удобрения.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130504
+					],
+					"speakerTitle": "Хироюки"
+				},
+				{
+					"id": 728130504,
+					"content": "Я... Разве научный сотрудник из Академии не может одновременно рекламировать удобрения? Просто послушайте меня минутку...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130505
+					],
+					"speakerTitle": "Алрани"
+				},
+				{
+					"id": 728130505,
+					"content": "Это она?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130506
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130506,
+					"content": "Да, генерал!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130507
+					],
+					"speakerTitle": "Окубо Дайсукэ"
+				},
+				{
+					"id": 728130507,
+					"content": "Когда мы её поймали, она бродила по округе и что-то записывала.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130508
+					],
+					"speakerTitle": "Окубо Дайсукэ"
+				},
+				{
+					"id": 728130508,
+					"content": "Генерал, я уверен, что она шпион сёгуната.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130509
+					],
+					"speakerTitle": "Окубо Дайсукэ"
+				},
+				{
+					"id": 728130509,
+					"content": "Нет! И никогда им не была! Я уже говорила, что я научный сотрудник! Я просто собирала материал для своей диссертации!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130510
+					],
+					"speakerTitle": "Алрани"
+				},
+				{
+					"id": 728130510,
+					"content": "Не говори чепуху! Ты правда думаешь, что мы поверим, что ты вышла на поле боя ради диссертации? Ты определённо что-то замышляешь!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130511
+					],
+					"speakerTitle": "Хироюки"
+				},
+				{
+					"id": 728130511,
+					"content": "Единственное, что я замышляю, это написать диссертацию...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130512,
+						728130513
+					],
+					"speakerTitle": "Алрани"
+				},
+				{
+					"id": 728130512,
+					"content": "Ты...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728130514
+					]
+				},
+				{
+					"id": 728130514,
+					"content": "#{NICKNAME}! Как хорошо, что ты здесь. Объясни им уже, что я пишу диссертацию и не замышляю ничего плохого!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130515
+					],
+					"speakerTitle": "Алрани"
+				},
+				{
+					"id": 728130515,
+					"content": "Вы знакомы?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130516
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130516,
+					"content": "Можно и так сказать...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728130517
+					]
+				},
+				{
+					"id": 728130517,
+					"content": "Неужели выпускные экзамены загоняют исследователей из Сумеру так далеко...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130518
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130518,
+					"content": "Учитывая вашу манеру общения, вы в лучшем случае просто знакомые.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130519
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130519,
+					"content": "Что касается её статуса исследователя из Сумеру, то это она сама тебе сказала, так?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130520
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130520,
+					"content": "Да.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728130521
+					]
+				},
+				{
+					"id": 728130521,
+					"content": "Хм... Боюсь, что у нас нет ни одного убедительного доказательства.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130522
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130522,
+					"content": "#Но если ты уверен{F#а}, что она не шпионка, я тебе поверю.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130523
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130523,
+					"content": "Генерал, позвольте высказать предложение.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130524
+					],
+					"speakerTitle": "Окубо Дайсукэ"
+				},
+				{
+					"id": 728130524,
+					"content": "Вы помните Каушика? Того исследователя, который изучает культуру и историю нашего острова?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130525
+					],
+					"speakerTitle": "Окубо Дайсукэ"
+				},
+				{
+					"id": 728130525,
+					"content": "Он здесь уже достаточно долго, и мы точно знаем, что он учёный. Почему бы нам не попросить его сказать, является ли эта... продавщица удобрений исследователем?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130526
+					],
+					"speakerTitle": "Окубо Дайсукэ"
+				},
+				{
+					"id": 728130526,
+					"content": "#Хорошая идея. {NICKNAME}, можно попросить тебя привести сюда Каушика?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130527
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130527,
+					"content": "На всякий случай я останусь здесь и буду охранять эту... продавщицу удобрений.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130528
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130528,
+					"content": "Хорошо.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728130529
+					]
+				},
+				{
+					"id": 728130529,
+					"content": "Возвращайся как можно скорее.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130513,
+					"content": "Алрани?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728130514
+					]
+				}
+			]
+		},
+		{
+			"id": 7281306,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7281307",
+							"2"
+						],
+						"stepId": 7281307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7281308",
+							"2"
+						],
+						"stepId": 7281308,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Алрани"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 728130601,
+					"content": "Я... Я здесь, чтобы написать диссертацию. Почему я опять оказалась взаперти?..",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Алрани"
+				}
+			]
+		},
+		{
+			"id": 7281307,
+			"completionStepIds": [
+				7281308
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7281308",
+							"2"
+						],
+						"stepId": 7281308,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Каушик"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 728130701,
+					"content": "#Значение этого тотема... Хм? {NICKNAME}, у тебя ко мне какое-то дело?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130702
+					],
+					"speakerTitle": "Каушик"
+				},
+				{
+					"id": 728130702,
+					"content": "Кое-что случилось с Алрани...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728130703
+					]
+				},
+				{
+					"id": 728130703,
+					"content": "Алрани на острове Ватацуми? Что она здесь делает? Она ведь должна быть в Ли Юэ.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130704
+					],
+					"speakerTitle": "Каушик"
+				},
+				{
+					"id": 728130704,
+					"content": "Её арестовали солдаты...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728130705
+					]
+				},
+				{
+					"id": 728130705,
+					"content": "Что? Хотя... ничего удивительного в сложившейся ситуации...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130706
+					],
+					"speakerTitle": "Каушик"
+				},
+				{
+					"id": 728130706,
+					"content": "Не бери в голову. Давайте пойдём и поможем этой безрассудной девчонке...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Каушик"
+				}
+			]
+		},
+		{
+			"id": 7281308,
+			"completionStepIds": [
+				7281309
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7281309",
+							"2"
+						],
+						"stepId": 7281309,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Каушик",
+					"Алрани",
+					"Горо",
+					"Хироюки",
+					"Окубо Дайсукэ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 728130801,
+					"content": "Алрани! Это действительно ты! Но почему ты здесь, в Инадзуме? Разве ты не должна быть в Ли Юэ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130802
+					],
+					"speakerTitle": "Каушик"
+				},
+				{
+					"id": 728130802,
+					"content": "Это... это очень длинная история...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130803
+					],
+					"speakerTitle": "Алрани"
+				},
+				{
+					"id": 728130803,
+					"content": "Господин Каушик, вы знаете Алрани?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130804
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130804,
+					"content": "Вы генерал Горо?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130805
+					],
+					"speakerTitle": "Каушик"
+				},
+				{
+					"id": 728130805,
+					"content": "Вы правильно поняли. Мы с Алрани исследователи из Академии.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130806
+					],
+					"speakerTitle": "Каушик"
+				},
+				{
+					"id": 728130806,
+					"content": "Мы покинули Академию и занялись разными исследовательскими темами. Я не думал, что встречу её здесь...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130807
+					],
+					"speakerTitle": "Каушик"
+				},
+				{
+					"id": 728130807,
+					"content": "Но... Разве исследователи могут так просто покинуть Академию?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130808
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130808,
+					"content": "Я бы не сказал, что это просто. Дело в том, что мы с Алрани дриоши.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130809
+					],
+					"speakerTitle": "Каушик"
+				},
+				{
+					"id": 728130809,
+					"content": "Для нас обучение в путешествии - это часть исследовательского процесса. В этом случае нам разрешено покидать Академию.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130810
+					],
+					"speakerTitle": "Каушик"
+				},
+				{
+					"id": 728130810,
+					"content": "Генерал Горо, я могу поручиться за Алрани.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130811
+					],
+					"speakerTitle": "Каушик"
+				},
+				{
+					"id": 728130811,
+					"content": "Тогда всё в порядке.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130812
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130812,
+					"content": "Вы спасли меня... Спасибо вам!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130813
+					],
+					"speakerTitle": "Алрани"
+				},
+				{
+					"id": 728130813,
+					"content": "Хироюки, Окубо, возвращайтесь к своим обязанностям.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130814
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130814,
+					"content": "Да, генерал!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130815
+					],
+					"speakerTitle": "Хироюки"
+				},
+				{
+					"id": 728130815,
+					"content": "Да, генерал!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130816
+					],
+					"speakerTitle": "Окубо Дайсукэ"
+				},
+				{
+					"id": 728130816,
+					"content": "Простите, мисс Алрани. Мы отнеслись к вам с подозрением.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130817
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130817,
+					"content": "И хотя ваша репутация чиста, ваше вторжение на остров Ватацуми доставило нам немало хлопот.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130818
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130818,
+					"content": "А? Вы... собираетесь оштрафовать меня? У меня не так много моры...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130819
+					],
+					"speakerTitle": "Алрани"
+				},
+				{
+					"id": 728130819,
+					"content": "Поскольку ранее вы утверждали, что являетесь продавцом удобрений, да ещё и исследователем...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130820
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130820,
+					"content": "Вы можете кое-что для нас сделать. Здесь живёт человек по имени Ивата, который исследует удобрения. Пожалуйста, помогите ему.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130821
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130821,
+					"content": "Если вы поможете ему произвести удобрение, которое не будет доставлять неудобства людям, тогда вы можете свободно заниматься здесь исследованиями, как и господин Каушик.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130822
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130822,
+					"content": "Удобрения? Нет... я не...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130823,
+						728130824
+					],
+					"speakerTitle": "Алрани"
+				},
+				{
+					"id": 728130823,
+					"content": "Она справится.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728130825
+					]
+				},
+				{
+					"id": 728130825,
+					"content": "Алрани, это хорошая возможность собрать материал для исследования. Раз ты здесь, в Инадзуме, значит, твоя диссертация...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130826
+					],
+					"speakerTitle": "Каушик"
+				},
+				{
+					"id": 728130826,
+					"content": "Хм-м... хм-м...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130827
+					],
+					"speakerTitle": "Алрани"
+				},
+				{
+					"id": 728130827,
+					"content": "Вы знаете выпускные стандарты в Академии. Если вы не можете выпуститься несколько лет подряд...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130828
+					],
+					"speakerTitle": "Каушик"
+				},
+				{
+					"id": 728130828,
+					"content": "Я сделаю это! Я сделаю!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130829
+					],
+					"speakerTitle": "Алрани"
+				},
+				{
+					"id": 728130829,
+					"content": "Я изучала удобрения у господина Вахида... Я сделаю всё, вы и оглянуться не успеете!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130830,
+						728130831
+					],
+					"speakerTitle": "Алрани"
+				},
+				{
+					"id": 728130830,
+					"content": "Выпускной порождает взросление характера...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728130832
+					]
+				},
+				{
+					"id": 728130832,
+					"content": "Этот вопрос решён. Мисс Алрани, вопрос с удобрениями в ваших руках. У меня есть другие дела. Так что если позволите...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130833
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130833,
+					"content": "Ах да, пожалуйста, напомните Ивате, чтобы он... убрал своё удобрение подальше.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130834
+					],
+					"speakerTitle": "Горо"
+				},
+				{
+					"id": 728130834,
+					"content": "А я продолжу свои исследования. Если у тебя есть вопросы, Алрани, не стесняйся, спрашивай.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Каушик"
+				},
+				{
+					"id": 728130831,
+					"content": "Для выпуска требуется сильная воля...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728130832
+					]
+				},
+				{
+					"id": 728130824,
+					"content": "Предоставляю это тебе, Алрани.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728130825
+					]
+				}
+			]
+		},
+		{
+			"id": 7281309,
+			"completionStepIds": [
+				7281310
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7281310",
+							"2"
+						],
+						"stepId": 7281310,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ивата",
+					"Алрани"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 728130901,
+					"content": "#Ты вернул{F#ась}{M#ся}! Я избавился от этой кучи удобрений.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130902
+					],
+					"speakerTitle": "Ивата"
+				},
+				{
+					"id": 728130902,
+					"content": "Полагаю, мне придётся найти другое место для экспериментов...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130903
+					],
+					"speakerTitle": "Ивата"
+				},
+				{
+					"id": 728130903,
+					"content": "Хм? Это...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130904,
+						728130906
+					],
+					"speakerTitle": "Ивата"
+				},
+				{
+					"id": 728130904,
+					"content": "Помощница, которую нашёл генерал Горо.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728130905
+					]
+				},
+				{
+					"id": 728130905,
+					"content": "Здравствуйте! Меня зовут Алрани...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130909
+					],
+					"speakerTitle": "Алрани"
+				},
+				{
+					"id": 728130909,
+					"content": "Генерал Горо попросил меня помочь вам с исследованием удобрений.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130910
+					],
+					"speakerTitle": "Алрани"
+				},
+				{
+					"id": 728130910,
+					"content": "Мне очень приятно работать с вами.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130911
+					],
+					"speakerTitle": "Алрани"
+				},
+				{
+					"id": 728130911,
+					"content": "Отлично! Если у нас получится, то мы сможем посадить больше урожая здесь, на острове Ватацуми!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130912
+					],
+					"speakerTitle": "Ивата"
+				},
+				{
+					"id": 728130912,
+					"content": "Только не забывайте убирать удобрения подальше.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728130913
+					]
+				},
+				{
+					"id": 728130913,
+					"content": "А? О! Всё понял.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130914
+					],
+					"speakerTitle": "Ивата"
+				},
+				{
+					"id": 728130914,
+					"content": "Словом, мне тоже очень приятно работать с вами, мисс Алрани!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130915
+					],
+					"speakerTitle": "Ивата"
+				},
+				{
+					"id": 728130915,
+					"content": "Я сделаю всё возможное...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130916
+					],
+					"speakerTitle": "Алрани"
+				},
+				{
+					"id": 728130916,
+					"content": "Ради своей диссертации я горы сверну...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Алрани"
+				},
+				{
+					"id": 728130906,
+					"content": "Она специалист по удобрениям из Сумеру.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728130907
+					]
+				},
+				{
+					"id": 728130907,
+					"content": "Здравствуйте! Меня зовут Алрани... Подождите. Специалист по удобрениям?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130908
+					],
+					"speakerTitle": "Алрани"
+				},
+				{
+					"id": 728130908,
+					"content": "Ну... Я немного знакома с удобрениями.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728130909
+					],
+					"speakerTitle": "Алрани"
+				}
+			]
+		},
+		{
+			"id": 7281310,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7281307",
+							"2"
+						],
+						"stepId": 7281307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7281308",
+							"2"
+						],
+						"stepId": 7281308,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Горо"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 728131001,
+					"content": "Приведи Каушика. Чем скорее, тем лучше...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Горо"
+				}
+			]
+		},
+		{
+			"id": 7281311,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7281307",
+							"2"
+						],
+						"stepId": 7281307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7281308",
+							"2"
+						],
+						"stepId": 7281308,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Окубо Дайсукэ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 728131101,
+					"content": "Эта женщина совсем не похожа на учёного...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Окубо Дайсукэ"
+				}
+			]
+		},
+		{
+			"id": 7281312,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7281307",
+							"2"
+						],
+						"stepId": 7281307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7281308",
+							"2"
+						],
+						"stepId": 7281308,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Хироюки"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 728131201,
+					"content": "Очень подозрительная особа...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Хироюки"
+				}
+			]
+		}
+	]
+}

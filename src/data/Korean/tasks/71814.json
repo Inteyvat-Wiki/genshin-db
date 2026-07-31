@@ -1,0 +1,507 @@
+{
+	"id": 71814,
+	"type": "WQ",
+	"name": "바다에서 귀한 걸 얻다",
+	"description": "군옥각이 바다의 '그것'과 부딪힌 뒤로 바다 위에 군옥각의 잔해가 떠다니고 있다. 천암군 대건은 이 잔해를 치워줄 사람을 찾고 있다…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		11032
+	],
+	"steps": [
+		{
+			"id": 7181401,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		},
+		{
+			"id": 7181402,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "북쪽 부두에서 수면 위의 파편 청소하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7181403,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "남쪽 부두에서 수면 위의 파편 치우기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7181404,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "대건에게 보고하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7181403,
+						0
+					],
+					"talkId": 7181403
+				}
+			]
+		},
+		{
+			"id": 7181405,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "백문에게 상자 건네기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7181404,
+						0
+					],
+					"talkId": 7181404
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7181407,
+						0
+					],
+					"talkId": 7181407
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7181402,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"11015",
+							"0"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181402",
+							"2"
+						],
+						"stepId": 7181402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181403",
+							"2"
+						],
+						"stepId": 7181403,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181404",
+							"2"
+						],
+						"stepId": 7181404,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181405",
+							"2"
+						],
+						"stepId": 7181405,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"대건"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718140201,
+					"content": "에휴, 그 좋은 군옥각이 이렇게 사라지다니…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "대건"
+				}
+			]
+		},
+		{
+			"id": 7181403,
+			"completionStepIds": [
+				7181404
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181404",
+							"2"
+						],
+						"stepId": 7181404,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"대건"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718140301,
+					"content": "다 치웠나요?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140302
+					],
+					"speakerTitle": "대건"
+				},
+				{
+					"id": 718140302,
+					"content": "이런 걸 발견했어요…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718140303
+					]
+				},
+				{
+					"id": 718140303,
+					"content": "음… 모라는 가지셔도 돼요. 별로 많지도 않은데, 도와주신 거에 대한 보수인 셈 치죠",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140304
+					],
+					"speakerTitle": "대건"
+				},
+				{
+					"id": 718140304,
+					"content": "이 상자는 뭔지 잘 모르겠네요. 아니면 백문 씨한테 한번 물어보세요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140305
+					],
+					"speakerTitle": "대건"
+				},
+				{
+					"id": 718140305,
+					"content": "그녀는 월해정에서 근무하는데 아마 알지도 몰라요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "대건"
+				}
+			]
+		},
+		{
+			"id": 7181404,
+			"completionStepIds": [
+				7181405
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181405",
+							"2"
+						],
+						"stepId": 7181405,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"11015",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"백문"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718140401,
+					"content": "안녕하세요. 무슨 일인가요?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140402
+					],
+					"speakerTitle": "백문"
+				},
+				{
+					"id": 718140402,
+					"content": "바다에서 이걸 주웠어요…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718140403
+					]
+				},
+				{
+					"id": 718140403,
+					"content": "음? 한번 봐도 될까요?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140404
+					],
+					"speakerTitle": "백문"
+				},
+				{
+					"id": 718140404,
+					"content": "확실히 군옥각에 있던 물건이네요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140405
+					],
+					"speakerTitle": "백문"
+				},
+				{
+					"id": 718140405,
+					"content": "정확히 뭔가요…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718140406
+					]
+				},
+				{
+					"id": 718140406,
+					"content": "서류랑 아직 검토가 안 끝난 공문들이에요. 이렇게 멀쩡하다니 의외군요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140407
+					],
+					"speakerTitle": "백문"
+				},
+				{
+					"id": 718140407,
+					"content": "이것들이 있으면 업무량이 훨씬 줄어들 거예요. 지금은 뒷수습하느라 정신이 없거든요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140408
+					],
+					"speakerTitle": "백문"
+				},
+				{
+					"id": 718140408,
+					"content": "참, 이걸 갖다주셔서 정말 감사해요. 이건 답례니까 받아주세요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "백문"
+				}
+			]
+		},
+		{
+			"id": 7181407,
+			"completionStepIds": [
+				7181405
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181405",
+							"2"
+						],
+						"stepId": 7181405,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"11015",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"백문"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718140701,
+					"content": "안녕하세요. 무슨 일인가요?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140702
+					],
+					"speakerTitle": "백문"
+				},
+				{
+					"id": 718140702,
+					"content": "바다에서 이걸 주웠어요…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718140703
+					]
+				},
+				{
+					"id": 718140703,
+					"content": "음? 한번 봐도 될까요?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140704
+					],
+					"speakerTitle": "백문"
+				},
+				{
+					"id": 718140704,
+					"content": "확실히 군옥각에 있던 물건이네요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140705
+					],
+					"speakerTitle": "백문"
+				},
+				{
+					"id": 718140705,
+					"content": "정확히 뭔가요…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718140706
+					]
+				},
+				{
+					"id": 718140706,
+					"content": "서류랑 아직 검토가 안 끝난 공문들이에요. 아직도 이렇게 멀쩡하다니 정말 의외네요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140707
+					],
+					"speakerTitle": "백문"
+				},
+				{
+					"id": 718140707,
+					"content": "서류들의 유효 기간은 다 지났지만… 그래도 가져다주셔서 감사합니다. 이건 답례니까 받아주세요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "백문"
+				}
+			]
+		},
+		{
+			"id": 7181408,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"11015",
+							"1"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181402",
+							"2"
+						],
+						"stepId": 7181402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181403",
+							"2"
+						],
+						"stepId": 7181403,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181404",
+							"2"
+						],
+						"stepId": 7181404,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181405",
+							"2"
+						],
+						"stepId": 7181405,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"대건"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718140801,
+					"content": "그렇게 큰 군옥각을… 정말 재건할 줄이야…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "대건"
+				}
+			]
+		}
+	]
+}

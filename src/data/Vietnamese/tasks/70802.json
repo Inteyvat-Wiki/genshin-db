@@ -1,0 +1,931 @@
+{
+	"id": 70802,
+	"type": "WQ",
+	"name": "Bóng Hình Trắng Xóa - Hi Vọng",
+	"description": "Theo Joel nói, ngài Cyrus đã tìm được manh mối về cha của Joel...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		70804
+	],
+	"steps": [
+		{
+			"id": 7080201,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TIME_VAR_PASS_DAY",
+					"rawParams": [
+						70804,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Nói chuyện với Joel",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080201,
+						0
+					],
+					"talkId": 7080201
+				}
+			]
+		},
+		{
+			"id": 7080203,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đến Hiệp Hội Nhà Mạo Hiểm",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080202,
+						0
+					],
+					"talkId": 7080202
+				}
+			]
+		},
+		{
+			"id": 7080204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đến núi tuyết tìm manh mối",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7080204,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080205,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đánh bại tất cả ma vật",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080206,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Nói chuyện với Pallad",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080203,
+						0
+					],
+					"talkId": 7080203
+				}
+			]
+		},
+		{
+			"id": 7080207,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Nói chuyện với Cyrus",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080204,
+						0
+					],
+					"talkId": 7080204
+				}
+			]
+		},
+		{
+			"id": 7080208,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Báo cáo cho Joel",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080205,
+						0
+					],
+					"talkId": 7080205
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7080201,
+			"completionStepIds": [
+				7080202
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080202",
+							"2"
+						],
+						"stepId": 7080202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Joel"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020101,
+					"content": "Lần này có thật sẽ tìm thấy cha không...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020102
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020102,
+					"content": "Có tin tức của cha em chưa?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020103
+					]
+				},
+				{
+					"id": 708020103,
+					"content": "#Là {F#chị}{M#anh} sao.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020104
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020104,
+					"content": "Anh Pallad nói với em, hình như chú Cyrus đã tìm được tin tức có liên quan đến cha em.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020105
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020105,
+					"content": "Tuy rằng vẫn chưa thể xác nhận... nhưng anh Pallad nói, lần này manh mối họ tìm được rất hữu dụng, không chừng thật sự có thể tìm được cha.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020106
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020106,
+					"content": "Em muốn vào núi tuyết cùng họ, nhưng chú Cyrus bảo em ở lại trong doanh trại, khi nào có tin tức họ sẽ báo cho em...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020107
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020107,
+					"content": "#Nếu như có thể, {F#chị}{M#anh} giúp em đi hỏi tin tức ở chỗ chú Cyrus được không?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020108,
+						708020109
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020108,
+					"content": "Ừm.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020110
+					]
+				},
+				{
+					"id": 708020110,
+					"content": "Em, em sợ nghe được...tin dữ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020111
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020111,
+					"content": "#Tóm lại, nhờ {F#chị}{M#anh} đó!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020109,
+					"content": "Sao em không tự mình đi hỏi?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020110
+					]
+				}
+			]
+		},
+		{
+			"id": 7080202,
+			"completionStepIds": [
+				7080203
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080203",
+							"2"
+						],
+						"stepId": 7080203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus",
+					"Pallad Lỗ Mãng"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020201,
+					"content": "Ở đây sao...Pallad, bạn chắc chứ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020202
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020202,
+					"content": "Tôi chắc chắn, ngài Cyrus.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020203
+					],
+					"speakerTitle": "Pallad Lỗ Mãng"
+				},
+				{
+					"id": 708020203,
+					"content": "Mọi người đang nói về chuyện cha của Joel sao?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020204
+					]
+				},
+				{
+					"id": 708020204,
+					"content": "Đây chẳng phải Nhà Lữ Hành sao? Xem ra bạn từ chỗ Joel đến nhỉ.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020205
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020205,
+					"content": "Đứa trẻ đó, ngày nào cũng nhờ người hỏi thăm tin tức ở chỗ tôi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020206
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020206,
+					"content": "Tuy nhiên, lần này tôi muốn mang đến cho cậu ấy một tin tuyệt vời.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020207
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020207,
+					"content": "Thời gian trước, Hiệp Hội Nhà Mạo Hiểm chúng tôi vừa tổ chức một buổi \"Huấn Luyện Núi Tuyết\"...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020208
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020208,
+					"content": "Để tôi nói tiếp, ngài Cyrus.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020209
+					],
+					"speakerTitle": "Pallad Lỗ Mãng"
+				},
+				{
+					"id": 708020209,
+					"content": "Trên đường đến chỗ tham gia buổi huấn luyện đặc biệt đó, vì gió tuyết quá lớn nên tôi đã đi lệch đường.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020210
+					],
+					"speakerTitle": "Pallad Lỗ Mãng"
+				},
+				{
+					"id": 708020210,
+					"content": "Khi tôi đang mò mẫn tìm đường, tôi chợt nhìn thấy một bóng người mơ hồ trên vách đá.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020211
+					],
+					"speakerTitle": "Pallad Lỗ Mãng"
+				},
+				{
+					"id": 708020211,
+					"content": "Lúc đầu tôi nghĩ đó là một nhà mạo hiểm cũng lạc đường như tôi, vì vậy tôi đã gọi to.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020212
+					],
+					"speakerTitle": "Pallad Lỗ Mãng"
+				},
+				{
+					"id": 708020212,
+					"content": "Nhưng trước khi thu hút được sự chú ý của người đó...tiếng gọi của tôi đã thu hút bọn ma vật.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020213
+					],
+					"speakerTitle": "Pallad Lỗ Mãng"
+				},
+				{
+					"id": 708020213,
+					"content": "Ở một môi trường như núi tuyết, tôi không đủ tự tin để đánh bại lũ ma vật đó, nên đành phải rút lui.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020214
+					],
+					"speakerTitle": "Pallad Lỗ Mãng"
+				},
+				{
+					"id": 708020214,
+					"content": "Sau khi trở về, tôi nói chuyện này với ngài Cyrus.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020215,
+						708020217
+					],
+					"speakerTitle": "Pallad Lỗ Mãng"
+				},
+				{
+					"id": 708020215,
+					"content": "Bóng người đó là cha của Joel sao?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020216
+					]
+				},
+				{
+					"id": 708020216,
+					"content": "Chúng tôi cũng không chắc.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020218
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020218,
+					"content": "Dù sao thì ít nhất chúng ta cũng biết được có người bị kẹt trong núi tuyết, chúng ta phải cứu người thôi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020219
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020219,
+					"content": "Còn về chuyện người đó rốt cuộc có phải cha của Joel không...thì phải xem vận may.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020220
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020220,
+					"content": "Tóm lại, tôi đã cử người của hiệp hội có khả năng vào núi tuyết để đến đó tìm kiếm và giải cứu rồi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020221
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020221,
+					"content": "Tôi cũng chuẩn bị một chút, lát nữa sẽ đến núi tuyết tham gia tìm kiếm và giải cứu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020222,
+						708020223
+					],
+					"speakerTitle": "Pallad Lỗ Mãng"
+				},
+				{
+					"id": 708020222,
+					"content": "Để tôi đi cùng.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020224
+					]
+				},
+				{
+					"id": 708020224,
+					"content": "Bạn đồng ý giúp sao? Tuyệt quá, vậy chúng ta cùng xuất phát thôi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Pallad Lỗ Mãng"
+				},
+				{
+					"id": 708020223,
+					"content": "Tôi sẽ đánh bại lũ ma vật đó.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020224
+					]
+				},
+				{
+					"id": 708020217,
+					"content": "Có lẽ là một nhà mạo hiểm lạc đường nào đó...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020218
+					]
+				}
+			]
+		},
+		{
+			"id": 7080203,
+			"completionStepIds": [
+				7080206
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080206",
+							"2"
+						],
+						"stepId": 7080206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Pallad Lỗ Mãng"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020301,
+					"content": "Quanh đây an toàn hơn một chút rồi, cảm ơn nhé.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020302
+					],
+					"speakerTitle": "Pallad Lỗ Mãng"
+				},
+				{
+					"id": 708020302,
+					"content": "Về Joserf...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020303
+					]
+				},
+				{
+					"id": 708020303,
+					"content": "Haiz, lúc nãy tôi cũng không phát hiện ra manh mối gì mới.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020304
+					],
+					"speakerTitle": "Pallad Lỗ Mãng"
+				},
+				{
+					"id": 708020304,
+					"content": "Nhưng nếu xung quanh đã an toàn thì tôi cũng tiếp tục tìm kiếm đây.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020305
+					],
+					"speakerTitle": "Pallad Lỗ Mãng"
+				},
+				{
+					"id": 708020305,
+					"content": "Bạn hãy trở về hiệp hội trước, nói với ngài Cyrus là tôi đã bắt đầu tìm kiếm rồi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Pallad Lỗ Mãng"
+				}
+			]
+		},
+		{
+			"id": 7080204,
+			"completionStepIds": [
+				7080207
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080207",
+							"2"
+						],
+						"stepId": 7080207,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020401,
+					"content": "Nhà Lữ Hành, bạn về rồi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020402,
+						708020404
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020402,
+					"content": "Pallad đã bắt đầu tìm kiếm rồi.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020403
+					]
+				},
+				{
+					"id": 708020403,
+					"content": "Ừm, tên nhóc đó thỉnh thoảng cũng được việc đấy nhỉ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020406
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020406,
+					"content": "Sau khi sắp xếp xong tình báo, tôi cũng sẽ đến núi tuyết gặp Joel để nói rõ mọi chuyện.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020407
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020407,
+					"content": "Nhà Lữ Hành, hãy nói Joel chờ tôi, chút nữa tôi sẽ đến.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020408
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020408,
+					"content": "Sắp xếp tình báo cần chút thời gian, đừng để thằng bé sốt ruột.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020404,
+					"content": "Tìm được người đó thật sao?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020405
+					]
+				},
+				{
+					"id": 708020405,
+					"content": "Chuyện này tôi...không dám chắc chắn. Chỉ có thể nói chúng tôi sẽ cố gắng hết sức.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020406
+					],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		},
+		{
+			"id": 7080205,
+			"completionStepIds": [
+				7080208
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080208",
+							"2"
+						],
+						"stepId": 7080208,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Joel"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020501,
+					"content": "#{F#Chị}{M#Anh} giúp em thăm dò được tin tức gì rồi sao?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020502
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020502,
+					"content": "Tức là... chú Cyrus vẫn chưa tìm được cha em sao...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020503,
+						708020504
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020503,
+					"content": "Tin tưởng chú Cyrus đi.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020505
+					]
+				},
+				{
+					"id": 708020505,
+					"content": "#Ừm, em biết rồi. Đợi chú Cyrus đến em sẽ hỏi chú ấy. Cảm ơn {F#chị}{M#anh}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020506
+					],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020506,
+					"content": "Cha... cha rốt cuộc đang ở đâu...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Joel"
+				},
+				{
+					"id": 708020504,
+					"content": "Tìm được manh mối rồi.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708020505
+					]
+				}
+			]
+		},
+		{
+			"id": 7080206,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080203",
+							"2"
+						],
+						"stepId": 7080203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080204",
+							"2"
+						],
+						"stepId": 7080204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080205",
+							"2"
+						],
+						"stepId": 7080205,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080206",
+							"2"
+						],
+						"stepId": 7080206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080207",
+							"2"
+						],
+						"stepId": 7080207,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Joel"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020601,
+					"content": "#{F#Chị}{M#Anh}, hãy giúp em hỏi thăm tin tức chỗ chú Cyrus đi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Joel"
+				}
+			]
+		},
+		{
+			"id": 7080207,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080204",
+							"2"
+						],
+						"stepId": 7080204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080205",
+							"2"
+						],
+						"stepId": 7080205,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080206",
+							"2"
+						],
+						"stepId": 7080206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020701,
+					"content": "Phải tranh thủ thời gian...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		},
+		{
+			"id": 7080208,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080208",
+							"2"
+						],
+						"stepId": 7080208,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708020801,
+					"content": "Nhà Lữ Hành, hãy nói Joel chờ tôi, chút nữa tôi sẽ đến.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708020802
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 708020802,
+					"content": "Sắp xếp tình báo cần chút thời gian, đừng để thằng bé sốt ruột.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		}
+	]
+}

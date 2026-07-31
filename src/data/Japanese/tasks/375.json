@@ -1,0 +1,581 @@
+{
+	"id": 375,
+	"type": "AQ",
+	"name": "ウェンティの新しい計画",
+	"description": "ウェンティが言葉巧みに天空のライアーを騙し取ろうという計画は、案の定失敗した。そこで、ウェンティは新しい計画を思いつく。その計画はあなたの力が必要なようだ。",
+	"unlockDescription": "",
+	"chapter": "涙のない明日のために",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		376
+	],
+	"prevMainQuestList": [
+		374
+	],
+	"steps": [
+		{
+			"id": 37501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "ウェンティと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37501,
+						0
+					],
+					"talkId": 37501
+				}
+			]
+		},
+		{
+			"id": 37502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "夜に大聖堂に入る（18時~6時）",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_ROOM",
+					"rawParams": [
+						1005,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37503,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "地下室の奥に潜入し、天空のライアーを入手する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1044,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37504,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						37504,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37505,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						37505,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37506,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_MY_WORLD",
+					"rawParams": [
+						3,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37507,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						37506,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 37311,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37501",
+							"2"
+						],
+						"stepId": 37501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37502",
+							"2"
+						],
+						"stepId": 37502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ゴテリンデ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3730901,
+					"content": "最近、教会でいろいろと起ってるわね、よりによってこんな時に主教様がいないなんて…あら。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ゴテリンデ"
+				}
+			]
+		},
+		{
+			"id": 37406,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37501",
+							"3"
+						],
+						"stepId": 37501,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_NOT_EQUAL",
+						"rawParams": [
+							"37502",
+							"3"
+						],
+						"stepId": 37502,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ウェンティ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3740306,
+					"content": "恥ずかしがらないで、さあ、行って。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ウェンティ"
+				}
+			]
+		},
+		{
+			"id": 37501,
+			"completionStepIds": [
+				37501
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37406",
+							"3"
+						],
+						"stepId": 37406,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37501",
+							"2"
+						],
+						"stepId": 37501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ウェンティ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3750101,
+					"content": "はぁ、やはり君でもダメだったか…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750102
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3750102,
+					"content": "わ、わかってたのかよ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750103
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 3750103,
+					"content": "#まあ、騎士団のスーパールーキーの{NICKNAME}の実力を見たかっただけだからさ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750104
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3750104,
+					"content": "それにほら、勇者が村に伝わる宝剣を手にする——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750105
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3750105,
+					"content": "こんな展開、詩にするにはぴったりじゃないかい？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750106
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3750106,
+					"content": "なんか失礼だぞ、吟遊詩人。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750107
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 3750107,
+					"content": "誤解しないで、これはモンドに対して失望しているんだよ。勇者相手に宝剣をケチるなんてね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750108
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3750108,
+					"content": "さて、ちゃんとした方法で借りるのは無理みたいだから、別の手を使うしかないね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750109
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3750110,
+					"content": "……",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3750111
+					]
+				},
+				{
+					"id": 3750109,
+					"content": "自由意志を尊重して、君の意見を聞こう。どう盗ればいいと思う？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750110
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3750112,
+					"content": "盗みはしたくない！",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3750113
+					]
+				},
+				{
+					"id": 3750111,
+					"content": "さあ、話そう。好きなだけ話すことこそ、自由ってものだろう？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750112
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3750113,
+					"content": "はははっ、君、最初からそれはないよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750114
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3750114,
+					"content": "真面目に言うとさ、ボクより君のほうが向いてると思うんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750115
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3750115,
+					"content": "だってボクは歌うこと以外、長所といえる長所はないからね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750116
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3750116,
+					"content": "それにボクは一人ぼっち、捕まったら冤罪を晴らしてくれる人もいない。きっと重罪に問われる。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750117
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3750117,
+					"content": "泥棒して捕まったなら、別に冤罪じゃないだろ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750118
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 3750118,
+					"content": "#でも{NICKNAME}は違う。君はモンドに貢献した、騎士団の未来のスターだから。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750119
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3750119,
+					"content": "ミスしてもちゃんと説明したら、誤魔化せるかもしれない。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750120
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3750140,
+					"content": "それに、ここの守衛たちは夜になると帰っちゃうらしいよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3750141,
+					"content": "タイミングをちゃんと狙えば、ミスをしたくてもできないと思うんだ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3750120,
+					"content": "ミスを前提に考えるな！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750121
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 3750122,
+					"content": "さっき自分がバルバトスだって言った。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3750123
+					]
+				},
+				{
+					"id": 3750121,
+					"content": "#{NICKNAME}はどう思う？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750122
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3750123,
+					"content": "確かにそう言った気が…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750124
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3750125,
+					"content": "神なら、見て見ぬふりはできない。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3750126
+					]
+				},
+				{
+					"id": 3750124,
+					"content": "だから？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750125
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3750126,
+					"content": "おや、それはどうして？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750127
+					],
+					"speakerTitle": "ウェンティ"
+				},
+				{
+					"id": 3750128,
+					"content": "神じゃなくても、トワリンを助けたい。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3750129
+					]
+				},
+				{
+					"id": 3750127,
+					"content": "#{NICKNAME}の過去に関して、機会があったらまた教えるよ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750128
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 3750130,
+					"content": "「天空」を持って帰る。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 3750131,
+					"content": "「別れ」はもう見たくないから。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 3750129,
+					"content": "…ん？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750130,
+						3750131
+					],
+					"speakerTitle": "ウェンティ"
+				}
+			]
+		},
+		{
+			"id": 37504,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"42101",
+							"2"
+						],
+						"stepId": 42101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"アート"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3750202,
+					"content": "面倒だ…この地下室への入口は本当に<color=#00E1FFFF>昼間</color>ずっと守る必要があるのか…\\nおい！ここは通行禁止だぞ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750203
+					],
+					"speakerTitle": "アート"
+				},
+				{
+					"id": 3750203,
+					"content": "どうやら、<color=#00E1FFFF>夜</color>にこっそり入るしかないみたいだな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "パイモン"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,417 @@
+{
+	"id": 73028,
+	"type": "WQ",
+	"name": "羅因賈篇·陽卷",
+	"description": "在羅因賈和阿瑪茲亞的幫助下，獲知了機關碎片的所在地。其中之一就藏在被水淹沒的洞窟之下…",
+	"unlockDescription": "",
+	"chapter": "吉祥具書",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_RANK_ZERO_WQ",
+	"suggestTrackMainQuestList": [
+		73029,
+		73073
+	],
+	"prevMainQuestList": [
+		73073
+	],
+	"steps": [
+		{
+			"id": 7302801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "尋找被水淹沒的洞窟",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7302801,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133304025,
+						25011
+					]
+				}
+			]
+		},
+		{
+			"id": 7302802,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往下面的洞窟",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7302802,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133304026,
+						26009
+					]
+				}
+			]
+		},
+		{
+			"id": 7302803,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "尋找機關零件",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7302801,
+						0
+					],
+					"talkId": 7302801
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7302802,
+						0
+					],
+					"talkId": 7302802
+				}
+			]
+		},
+		{
+			"id": 7302804,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "降低水位",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133304025,
+						25011
+					]
+				}
+			]
+		},
+		{
+			"id": 7302805,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "再次降低水位",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133304026,
+						26009
+					]
+				}
+			]
+		},
+		{
+			"id": 7302806,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "尋找機關零件",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133304028,
+						28001
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7302801,
+			"completionStepIds": [
+				7302803
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7302803",
+							"2"
+						],
+						"stepId": 7302803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7305604",
+							"3"
+						],
+						"stepId": 7305604,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7305706",
+							"3"
+						],
+						"stepId": 7305706,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7305804",
+							"3"
+						],
+						"stepId": 7305804,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 730280101,
+					"content": "看來這裡也有大機器人的零件，要是讓加扎里先生看到的話，大概又要掏出他的那台留影機了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730280102
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 730280102,
+					"content": "說起來，之前蘭利遮說，秘密基地裡的大零件是蘭利遮搬過去的，該不會是真的吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730280103
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 730280103,
+					"content": "當然是真的，蘭利遮不騙那菈。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730280104,
+						730280105
+					],
+					"speakerTitle": "蘭利遮"
+				},
+				{
+					"id": 730280104,
+					"content": "果然…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730280106
+					]
+				},
+				{
+					"id": 730280106,
+					"content": "蘭利遮就是當初陪著孩子們在秘密基地裡玩耍的蘭那羅吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730280107
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 730280107,
+					"content": "不過蘭利遮也什麼都不記得了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730280108,
+						730280109
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 730280108,
+					"content": "或許和筆記裡的花有關吧…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730280110
+					]
+				},
+				{
+					"id": 730280110,
+					"content": "嗯，之前無郁稠林的蘭那羅把花花給我們之後，也忘記了所有的事情。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730280111
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 730280111,
+					"content": "或許他們三個也經歷過和我們一樣的冒險吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730280112
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 730280112,
+					"content": "#蘭利遮不知道{F#妳}{M#你}們說的是什麼，也想不起來。不過，和小那菈玩，很開心！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730280113
+					],
+					"speakerTitle": "蘭利遮"
+				},
+				{
+					"id": 730280113,
+					"content": "嗯，要一直開心喔，蘭利遮。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 730280109,
+					"content": "我們之前也遇到過…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730280110
+					]
+				},
+				{
+					"id": 730280105,
+					"content": "如果沒猜錯的話…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730280106
+					]
+				}
+			]
+		},
+		{
+			"id": 7302802,
+			"completionStepIds": [
+				7302803
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7302803",
+							"2"
+						],
+						"stepId": 7302803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 730280201,
+					"content": "看來這裡也有大機器人的零件，要是讓加扎里先生看到的話，大概又要掏出他的那台留影機挪不動步了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730280202
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 730280202,
+					"content": "不過說起來，之前蘭利遮說，秘密基地裡的大零件是蘭利遮搬過去的，是真的嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730280203
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 730280203,
+					"content": "是真的呀，蘭利遮不騙那菈。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730280204,
+						730280205
+					],
+					"speakerTitle": "蘭利遮"
+				},
+				{
+					"id": 730280204,
+					"content": "果然…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730280206
+					]
+				},
+				{
+					"id": 730280206,
+					"content": "蘭利遮就是當初陪著孩子們在秘密基地裡玩耍的蘭那羅吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730280207
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 730280207,
+					"content": "不過蘭利遮也什麼都不記得了…蘭那羅也會忘記過去的事情嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730280208
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 730280208,
+					"content": "「森林會記得一切。」",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730280209
+					]
+				},
+				{
+					"id": 730280209,
+					"content": "#蘭利遮不知道{F#妳}{M#你}們說的是什麼，也想不起來。不過，和小那菈玩，很開心！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730280210
+					],
+					"speakerTitle": "蘭利遮"
+				},
+				{
+					"id": 730280210,
+					"content": "嗯，要一直開心喔，蘭利遮。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 730280205,
+					"content": "如果沒猜錯的話…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730280206
+					]
+				}
+			]
+		}
+	]
+}

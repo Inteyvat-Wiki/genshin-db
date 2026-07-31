@@ -1,0 +1,480 @@
+{
+	"id": 79029,
+	"type": "WQ",
+	"name": "お宝の手がかり·フタフタ島",
+	"description": "海賊が残したお宝の手がかりがないか、フタフタ島の岩礁の辺りで探してみよう…",
+	"unlockDescription": "",
+	"chapter": "四ツ礁の宝探し",
+	"showType": "QUEST_SHOW",
+	"activityId": 5084,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		79020
+	],
+	"steps": [
+		{
+			"id": 7902901,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "フタフタ島付近の岩礁へ向かう",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7902901,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7902906,
+						2
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7902906,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7902902,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "辺りでお宝の手がかりを探す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6800285,
+						0
+					],
+					"talkId": 6800285
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7902906,
+						2
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7902906,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7902903,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "夜鴉船長と会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6800286,
+						0
+					],
+					"talkId": 6800286
+				}
+			]
+		},
+		{
+			"id": 7902904,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "夜鴉船長の指示に従って、霧の中を突き進む",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7902904,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7902905,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "島で宝物の手がかりを探す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101771,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101760,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7902906,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "夜鴉船長に手を貸してヒルチャールを倒す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7902907,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "夜鴉船長に報告する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6800288,
+						0
+					],
+					"talkId": 6800288
+				}
+			]
+		},
+		{
+			"id": 7902908,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6800285,
+						0
+					],
+					"talkId": 6800285
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7902901,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7902902",
+							"2"
+						],
+						"stepId": 7902902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7902908",
+							"2"
+						],
+						"stepId": 7902908,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"夜鴉船長"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790290101,
+					"content": "ここに彫像があるぞ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290102
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 790290102,
+					"content": "はぁ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290103
+					],
+					"speakerTitle": "夜鴉船長"
+				},
+				{
+					"id": 790290103,
+					"content": "なあ、どうしてこんな場所でため息なんかついてるんだ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290112
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 790290112,
+					"content": "私は…最近ずっと、この洞窟に住んでいる…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290113
+					],
+					"speakerTitle": "夜鴉船長"
+				},
+				{
+					"id": 790290113,
+					"content": "こんな洞窟に住んでるのか！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290114
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 790290114,
+					"content": "仕方ないのだ！劇団の役者やらが突然島にやってきて、毎日物を叩くものだから全然眠れんのだ…だから、少し静かな場所に移住したわけだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290104
+					],
+					"speakerTitle": "夜鴉船長"
+				},
+				{
+					"id": 790290104,
+					"content": "どこからかやって来たヒルチャールの群れが、私の休憩場所を占拠しやがった！だから仕方なく、ここにいるのだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290105
+					],
+					"speakerTitle": "夜鴉船長"
+				},
+				{
+					"id": 790290105,
+					"content": "はぁ…だからな、心の中で誓ったさ。もし誰かが助けてくれるなら、そいつに教えようとな…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290106
+					],
+					"speakerTitle": "夜鴉船長"
+				},
+				{
+					"id": 790290106,
+					"content": "何を教えるんだ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290107
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 790290107,
+					"content": "伝説の海賊の秘宝に関する手がかりさ！まあ、四分の一しか知らないのだがな…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290108
+					],
+					"speakerTitle": "夜鴉船長"
+				},
+				{
+					"id": 790290108,
+					"content": "四分の一の手がかり？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290109
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 790290109,
+					"content": "どうやら、君たちも宝を探しているようだな。どうだ、ヒルチャールを片付けてくれないか。そうしたら、手がかりの位置を教えてやろう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290110
+					],
+					"speakerTitle": "夜鴉船長"
+				},
+				{
+					"id": 790290110,
+					"content": "四つの手がかりが集まった日には、かつて海賊がここに残したお宝を見つけられるらしいぞ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290111
+					],
+					"speakerTitle": "夜鴉船長"
+				},
+				{
+					"id": 790290111,
+					"content": "よし、約束だからな！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "パイモン"
+				}
+			]
+		},
+		{
+			"id": 7902902,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7902903",
+							"2"
+						],
+						"stepId": 7902903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"夜鴉船長"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790290201,
+					"content": "どうだ、準備はできたか。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290202
+					],
+					"speakerTitle": "夜鴉船長"
+				},
+				{
+					"id": 790290202,
+					"content": "後ほど、私は君たちの先を行く。道中の岩礁を正しく行くルートを君たちに教えよう！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290203
+					],
+					"speakerTitle": "夜鴉船長"
+				},
+				{
+					"id": 790290203,
+					"content": "よし、あそこに石があるだろう。見えるか？まず、あの方向に行け！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "夜鴉船長"
+				}
+			]
+		},
+		{
+			"id": 7902907,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7902906",
+							"2"
+						],
+						"stepId": 7902906,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"夜鴉船長"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790290701,
+					"content": "どうだ、ヒルチャールは片付けてくれたか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "夜鴉船長"
+				}
+			]
+		},
+		{
+			"id": 7902908,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7902907",
+							"2"
+						],
+						"stepId": 7902907,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"夜鴉船長"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790290801,
+					"content": "おお、ヒルチャールをすべて片付けてくれたか！ありがとう！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290802
+					],
+					"speakerTitle": "夜鴉船長"
+				},
+				{
+					"id": 790290802,
+					"content": "よし、この海上にただよう謎の霧を抜け、手がかりを見つける方法を教えよう…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290803
+					],
+					"speakerTitle": "夜鴉船長"
+				},
+				{
+					"id": 790290803,
+					"content": "準備ができたら、岩礁の向こう側で待っててくれ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "夜鴉船長"
+				}
+			]
+		}
+	]
+}

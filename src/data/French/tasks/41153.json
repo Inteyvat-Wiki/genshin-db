@@ -1,0 +1,352 @@
+{
+	"id": 41153,
+	"type": "EQ",
+	"name": "Livraison spéciale : Auberge Wangshu",
+	"description": "L'Auberge Wangshu a besoin de livrer une commande spéciale...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 4115301,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Yanxiao.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4115301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 4115302,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Livrez le plat à Tingfang le taciturne.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4115302,
+						0
+					],
+					"talkId": 4115302
+				}
+			]
+		},
+		{
+			"id": 4115303,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Tingfang le taciturne.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4115306,
+						0
+					],
+					"talkId": 4115306
+				}
+			]
+		},
+		{
+			"id": 4115304,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4115304,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 4115301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115301",
+							"2"
+						],
+						"stepId": 4115301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Yanxiao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411530101,
+					"content": "D'accord, j'y vais.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411530102
+					]
+				},
+				{
+					"id": 411530102,
+					"content": "Ne traîne pas trop, alors.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Yanxiao"
+				}
+			]
+		},
+		{
+			"id": 4115302,
+			"completionStepIds": [
+				4115302
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115301",
+							"3"
+						],
+						"stepId": 4115301,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tingfang le taciturne"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411530201,
+					"content": "Ça devrait arriver bientôt...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tingfang le taciturne"
+				}
+			]
+		},
+		{
+			"id": 4115303,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115301",
+							"2"
+						],
+						"stepId": 4115301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Yanxiao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411530301,
+					"content": "Il paraît qu'il y a une commande spéciale...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411530302
+					]
+				},
+				{
+					"id": 411530302,
+					"content": "Tingfang m'a commandé une marmite de perche à dos noir. Il devrait être sur le chemin du Village de Qingce.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411530303
+					],
+					"speakerTitle": "Yanxiao"
+				},
+				{
+					"id": 411530303,
+					"content": "Le bouillon est la meilleure partie de ce plat, alors <color=#00E1FFFF>interdiction de planer ou d'escalader</color> ou tu risques d'en renverser partout. Puis, sois rapide aussi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411530304
+					],
+					"speakerTitle": "Yanxiao"
+				},
+				{
+					"id": 411530304,
+					"content": "Reviens me voir si jamais quelque chose t'arrive en cours de route.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Yanxiao"
+				}
+			]
+		},
+		{
+			"id": 4115304,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115301",
+							"2"
+						],
+						"stepId": 4115301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Yanxiao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411530401,
+					"content": "Je passe mon tour.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411530402
+					]
+				},
+				{
+					"id": 411530402,
+					"content": "#Tu m'as l'air bien {M#occupé}{F#occupée}... Tant pis, quelqu'un d'autre le fera.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Yanxiao"
+				}
+			]
+		},
+		{
+			"id": 4115305,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115301",
+							"2"
+						],
+						"stepId": 4115301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tingfang le taciturne"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411530501,
+					"content": "Ma commande devrait bientôt arriver...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tingfang le taciturne"
+				}
+			]
+		},
+		{
+			"id": 4115306,
+			"completionStepIds": [
+				4115303
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115303",
+							"2"
+						],
+						"stepId": 4115303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tingfang le taciturne"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411530601,
+					"content": "Voici votre commande.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411530602
+					]
+				},
+				{
+					"id": 411530602,
+					"content": "Merci beaucoup.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411530603
+					],
+					"speakerTitle": "Tingfang le taciturne"
+				},
+				{
+					"id": 411530603,
+					"content": "Yanxiao n'a pas perdu la main.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tingfang le taciturne"
+				}
+			]
+		}
+	]
+}

@@ -14,6 +14,8 @@ const genshin = {};
 const baseoptions = new Options(
     false, // dumpResult
     true, // matchNames
+    false, // matchFilenames
+    false, // matchFilenameOnly
     true, // matchAltNames
     false, // matchAliases
     false, // matchCategories
@@ -24,33 +26,38 @@ const baseoptions = new Options(
     false // v4PropsOnly
 );
 
+const SearchSource = {
+    Filenames: "filenames",
+    Names: "names",
+    AltNames: "altnames",
+    Aliases: "aliases",
+    Categories: "categories"
+}
 
-// returns an array of strings used for autocomplete aka fuzzy searching
-function buildQueryDict(querylangs, folder, opts) {
-    let dict = opts.matchCategories ? ['names'] : [];
+function getFolderCandidates(querylangs, folder, opts) {
+    let candidates = [];
+    if (opts.matchCategories)
+        candidates.push({ value: 'names', folder: folder, source: SearchSource.Categories });
     for (const lang of querylangs) {
         const index = getIndex(lang, folder);
         if (index === undefined) continue;
+        if (opts.matchFilenames && index.namemap)
+            candidates = candidates.concat(Object.keys(index.namemap).map(value => ({ value, folder, lang, source: SearchSource.Filenames })));
         if (opts.matchNames && index.namemap)
-            dict = dict.concat(Object.values(index.namemap));
+            candidates = candidates.concat(Object.values(index.namemap).map(value => ({ value, folder, lang, source: SearchSource.Names })));
         if (opts.matchAltNames)
-            dict = dict.concat(altnames.getAltNamesList(lang, folder));
+            candidates = candidates.concat(altnames.getAltNamesList(lang, folder).map(value => ({ value, folder, lang, source: SearchSource.AltNames })));
         if (opts.matchAliases && index.aliases)
-            dict = dict.concat(Object.keys(index.aliases));
+            candidates = candidates.concat(Object.keys(index.aliases).map(value => ({ value, folder, lang, source: SearchSource.Aliases })));
         if (opts.matchCategories && index.categories)
-            dict = dict.concat(Object.keys(index.categories));
+            candidates = candidates.concat(Object.keys(index.categories).map(value => ({ value, folder, lang, source: SearchSource.Categories })));
     }
-    return dict;
+    return candidates;
 }
 
-function autocomplete(input, dict, key) {
-    if (key) {
-        let result = fuzzysort.go(input, dict, { limit: 1, key: key })[0];
-        return result === undefined ? undefined : result.obj;
-    } else {
-        let result = fuzzysort.go(input, dict, { limit: 1 })[0];
-        return result === undefined ? undefined : result.target;
-    }
+function autocomplete(input, candidates) {
+    let result = fuzzysort.go(input, candidates, { limit: 1, key: 'value' })[0];
+    return result === undefined ? undefined : result.obj;
 }
 
 /**
@@ -63,7 +70,7 @@ function sanitizeOptions(opts) {
     if (!opts || typeof opts !== 'object') return;
 
     let sanOpts = {};
-    ['dumpResult', 'matchNames', 'matchAltNames', 'matchAliases', 'matchCategories', 'verboseCategories', 'v4Props', 'v4PropsOnly'].forEach(prop => {
+    ['dumpResult', 'matchNames', 'matchFilenames', 'matchFilenameOnly', 'matchAltNames', 'matchAliases', 'matchCategories', 'verboseCategories', 'v4Props', 'v4PropsOnly'].forEach(prop => {
         if (typeof opts[prop] === 'boolean') sanOpts[prop] = opts[prop];
     });
     opts.resultLanguage = language.format(opts.resultLanguage);
@@ -77,10 +84,66 @@ function sanitizeOptions(opts) {
 
 const MatchType = {
     None: "none",
+    Filenames: "filenames",
     Names: "names",
     AltNames: "altnames",
     Aliases: "aliases",
     Categories: "categories"
+}
+
+const matchTypeMap = {
+    [SearchSource.Filenames]: MatchType.Filenames,
+    [SearchSource.Names]: MatchType.Names,
+    [SearchSource.AltNames]: MatchType.AltNames,
+    [SearchSource.Aliases]: MatchType.Aliases,
+    [SearchSource.Categories]: MatchType.Categories
+}
+
+function getQueryCandidate(query, folders, opts) {
+    if (Array.isArray(folders)) {
+        return autocomplete("" + query, folders.reduce((accum, folder) => {
+            return accum.concat(getFolderCandidates(opts.queryLanguages, folder, opts));
+        }, []));
+    }
+
+    const candidate = autocomplete("" + query, getFolderCandidates(opts.queryLanguages, folders, opts));
+    if (candidate) return candidate;
+    return { folder: folders };
+}
+
+function resolveFilename(candidate, opts) {
+    if (!candidate || !candidate.source) return undefined;
+    const index = getIndex(candidate.lang, candidate.folder);
+    if (index === undefined) return undefined;
+
+    switch(candidate.source) {
+        case SearchSource.Filenames:
+            return index.namemap && index.namemap[candidate.value] !== undefined ? candidate.value : undefined;
+        case SearchSource.Names:
+            return index.names ? index.names[candidate.value] : undefined;
+        case SearchSource.AltNames:
+            return altnames.getFilename(candidate.lang, candidate.folder, candidate.value);
+        case SearchSource.Aliases:
+            return index.aliases ? index.aliases[candidate.value] : undefined;
+        case SearchSource.Categories:
+            return undefined;
+    }
+}
+
+function getCategoryResult(candidate, opts) {
+    if (!candidate || candidate.source !== SearchSource.Categories) return undefined;
+    const reslangindex = getIndex(opts.resultLanguage, candidate.folder);
+    if (reslangindex === undefined) return undefined;
+    const index = candidate.value === 'names' ? undefined : getIndex(candidate.lang, candidate.folder);
+    if (candidate.value !== 'names' && (index === undefined || !index.categories || index.categories[candidate.value] === undefined)) return undefined;
+
+    const filenames = candidate.value === 'names' ? Object.keys(reslangindex.namemap) : index.categories[candidate.value];
+    const result = filenames.reduce((accum, filename) => {
+        let res = opts.verboseCategories ? getData(opts.resultLanguage, candidate.folder, filename, opts.v4Props, opts.v4PropsOnly) : reslangindex.namemap[filename];
+        if (res !== undefined) accum.push(res);
+        return accum;
+    }, []);
+    return { filenames, result };
 }
 
 // TODO: if folder is undefined, search through every folder
@@ -91,70 +154,33 @@ const MatchType = {
  */
 function retrieveData(query, folders, opts, getfilename) {
     opts = Object.assign({}, baseoptions, sanitizeOptions(opts));
-    let queryMatch; // the query that we autocompleted
-    let folderMatch; // the folder that the queryMatch matched against
-    if (Array.isArray(folders)) {
-        const qdict = folders.reduce((accum, f) => {
-            return accum.concat(buildQueryDict(opts.queryLanguages, f, opts).map(e => ({ name: e, folder: f })));
-        }, []);
-        const result = autocomplete("" + query, qdict, 'name');
-        if (result) {
-            folderMatch = result.folder;
-            queryMatch = result.name;
-        }
-    } else {
-        folderMatch = folders;
-        queryMatch = autocomplete("" + query, buildQueryDict(opts.queryLanguages, folderMatch, opts));
+    if (opts.matchFilenameOnly) {
+        opts.matchFilenames = true;
+        opts.matchNames = false;
+        opts.matchAltNames = false;
+        opts.matchAliases = false;
+        opts.matchCategories = false;
     }
+    const candidate = getQueryCandidate(query, folders, opts);
+    const folderMatch = candidate ? candidate.folder : undefined;
 
-    if (queryMatch === undefined) { // no result;
+    if (!candidate || candidate.value === undefined) { // no result;
         return opts.dumpResult ? getDump(query, folders, undefined, folderMatch, MatchType.None, opts, undefined, undefined) : undefined;
     }
 
-    for (let lang of opts.queryLanguages) {
-        let langindex = getIndex(lang, folderMatch);
-        if (langindex === undefined) continue;
-
-        // check if queryMatch is in .names
-        if (opts.matchNames && langindex.names[queryMatch] !== undefined) {
-            const filename = langindex.names[queryMatch];
-            if (getfilename) return filename;
-            let result = getData(opts.resultLanguage, folderMatch, filename, opts.v4Props, opts.v4PropsOnly);
-            return opts.dumpResult ? getDump(query, folders, queryMatch, folderMatch, MatchType.Names, opts, filename, result) : result;
-        }
-
-        // check if queryMatch is in .altnames
-        if (opts.matchAltNames && altnames.getFilename(lang, folderMatch, queryMatch)) {
-            const filename = altnames.getFilename(lang, folderMatch, queryMatch);
-            if (getfilename) return filename;
-            let result = getData(opts.resultLanguage, folderMatch, filename, opts.v4Props, opts.v4PropsOnly);
-            return opts.dumpResult ? getDump(query, folders, queryMatch, folderMatch, MatchType.AltNames, opts, filename, result) : result;
-        }
-
-        // check if queryMatch is in .aliases
-        if (opts.matchAliases && langindex.aliases[queryMatch] !== undefined) {
-            const filename = langindex.aliases[queryMatch];
-            if (getfilename) return filename;
-            let result = getData(opts.resultLanguage, folderMatch, filename, opts.v4Props, opts.v4PropsOnly);
-            return opts.dumpResult ? getDump(query, folders, queryMatch, folderMatch, MatchType.Aliases, opts, filename, result) : result;
-        }
-
-        // check if queryMatch is in .categories or is 'names'
-        if (opts.matchCategories && (queryMatch === 'names' || langindex.categories[queryMatch] !== undefined)) {
-            let reslangindex = getIndex(opts.resultLanguage, folderMatch);
-            if (reslangindex === undefined) return undefined;
-
-            let tmparr = (queryMatch === 'names') ? Object.keys(reslangindex.namemap) : langindex.categories[queryMatch];
-            // change the array of filenames into an array of data objects or data names. ignores undefined results if any
-            let result = tmparr.reduce((accum, filename) => {
-                let res = opts.verboseCategories ? getData(opts.resultLanguage, folderMatch, filename, opts.v4Props, opts.v4PropsOnly) : reslangindex.namemap[filename];
-                if (res !== undefined) accum.push(res);
-                return accum;
-            }, []);
-            return opts.dumpResult ? getDump(query, folders, queryMatch, folderMatch, MatchType.Categories, opts, tmparr, result) : result;
-        }
+    const categoryResult = getCategoryResult(candidate, opts);
+    if (categoryResult) {
+        return opts.dumpResult ? getDump(query, folders, candidate.value, folderMatch, MatchType.Categories, opts, categoryResult.filenames, categoryResult.result) : categoryResult.result;
     }
-    return opts.dumpResult ? getDump(query, folders, queryMatch, folderMatch, MatchType.None, opts, undefined, undefined) : undefined;
+
+    const filename = resolveFilename(candidate, opts);
+    if (filename !== undefined) {
+        if (getfilename) return filename;
+        let result = getData(opts.resultLanguage, folderMatch, filename, opts.v4Props, opts.v4PropsOnly);
+        return opts.dumpResult ? getDump(query, folders, candidate.value, folderMatch, matchTypeMap[candidate.source], opts, filename, result) : result;
+    }
+
+    return opts.dumpResult ? getDump(query, folders, candidate.value, folderMatch, MatchType.None, opts, undefined, undefined) : undefined;
 }
 
 function getDump(query, folders, match, matchfolder, matchtype, options, filename, result) {
@@ -256,6 +282,26 @@ genshin.hyperlinks = genshin.hyperlink = function (query, opts) {
  */
 genshin.stories = genshin.story = function (query, opts) {
     return retrieveData(query, Folder.stories, opts);
+}
+
+/**
+ * Get data about a chapter.
+ * @param {string} query - Chapter name or chapter id.
+ * @param {object|Options} opts - The library options, see Valid Options.
+ * @returns {object} - The data found based on the query string and options parameter.
+ */
+genshin.chapters = genshin.chapter = function (query, opts) {
+    return retrieveData(query, Folder.chapters, opts);
+}
+
+/**
+ * Get data about a task / quest.
+ * @param {string} query - Task title or task id.
+ * @param {object|Options} opts - The library options, see Valid Options.
+ * @returns {object} - The data found based on the query string and options parameter.
+ */
+genshin.tasks = genshin.task = function (query, opts) {
+    return retrieveData(query, Folder.tasks, opts);
 }
 
 /**
@@ -441,6 +487,16 @@ genshin.dungeons = genshin.dungeon = function (query, opts) {
 }
 
 /**
+ * Get data about map layers
+ * @param {string} query - map layer name.
+ * @param {object|Options} opts - The library options, see [Valid Options](https://github.com/theBowja/genshin-db/blob/main/readme.md#genshindbsetoptionsopts)
+ * @returns {object} - The data found based on the query string and options parameter.
+ */
+genshin.maplayers = genshin.maplayer = function (query, opts) {
+    return retrieveData(query, Folder.maplayers, opts);
+}
+
+/**
  * Get data about adventure ranks
  * @param {string} query - adventure level
  * @param {object|Options} opts - The library options, see [Valid Options](https://github.com/theBowja/genshin-db/blob/main/readme.md#genshindbsetoptionsopts)
@@ -551,6 +607,8 @@ genshin.addAltName = function (language, folder, altname, query) {
     const options = new Options(
         false, // dumpResult
         true, // matchNames
+        false, // matchFilenames
+        false, // matchFilenameOnly
         false, // matchAltNames
         false, // matchAliases
         false, // matchCategories

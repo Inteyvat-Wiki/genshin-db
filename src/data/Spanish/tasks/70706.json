@@ -1,0 +1,176 @@
+{
+	"id": 70706,
+	"type": "WQ",
+	"name": "La petición de Timmie",
+	"description": "Timmie, de Mondstadt, necesita 10 espigas de trigo.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Entrégale 10 espigas de trigo a Timmie",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Timmie",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070602,
+						0
+					],
+					"talkId": 7070602
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070601,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070601",
+							"2"
+						],
+						"stepId": 7070601,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070601"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Timmie"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707060101,
+					"content": "Sobre el trigo...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707060102
+					]
+				},
+				{
+					"id": 707060102,
+					"content": "Oh, ¿viste mi encargo?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707060103
+					],
+					"speakerTitle": "Timmie"
+				},
+				{
+					"id": 707060103,
+					"content": "Bueno, ¿ya tienes las 10 espigas de trigo que quería?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707060104,
+						707060105
+					],
+					"speakerTitle": "Timmie"
+				},
+				{
+					"id": 707060104,
+					"content": "Sí.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707060105,
+					"content": "Aún no.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707060106
+					]
+				},
+				{
+					"id": 707060106,
+					"content": "Cuando las tengas, ven rápido, por favor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Timmie"
+				}
+			]
+		},
+		{
+			"id": 7070602,
+			"completionStepIds": [
+				7070602
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070602",
+							"2"
+						],
+						"stepId": 7070602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Timmie"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707060201,
+					"content": "Gracias, con estas será suficiente. Toma, acepta esto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707060202
+					],
+					"speakerTitle": "Timmie"
+				},
+				{
+					"id": 707060202,
+					"content": "Con este trigo se pueden hacer cosas deliciosas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Timmie"
+				}
+			]
+		}
+	]
+}

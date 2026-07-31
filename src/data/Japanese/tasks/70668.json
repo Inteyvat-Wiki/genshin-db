@@ -1,0 +1,298 @@
+{
+	"id": 70668,
+	"type": "WQ",
+	"name": "プレイヤーランク突破·3",
+	"description": "「七聖召喚」のプレイヤー協会はあなたをランク突破試練の資格を持つ者として認定した。突破挑戦の対戦に勝利して、「マスタープレイヤー」になろう！「七聖召喚」をぜひお楽しみください！",
+	"unlockDescription": "この任務をクリアすると「七聖召喚のプレイヤーランク」を突破できます",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_GUIDE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7066801,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LEAVE_SCENE",
+					"rawParams": [
+						79999,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7066802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "「キャッツテール」に行く",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7066801,
+						0
+					],
+					"talkId": 7066801
+				}
+			]
+		},
+		{
+			"id": 7066803,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "「リトルプリンス」と突破対戦をする",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GCG_LEVEL_WIN",
+					"rawParams": [
+						20003,
+						1
+					]
+				}
+			]
+		},
+		{
+			"id": 7066804,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "「リトルプリンス」と会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7066802,
+						0
+					],
+					"talkId": 7066802
+				}
+			]
+		},
+		{
+			"id": 7066805,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GCG_LEVEL_WIN",
+					"rawParams": [
+						20003,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7066801,
+			"completionStepIds": [
+				7066802
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066802",
+							"2"
+						],
+						"stepId": 7066802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066803",
+							"2"
+						],
+						"stepId": 7066803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"「リトルプリンス」"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706660101,
+					"content": "突破挑戦する！",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						706660102
+					]
+				},
+				{
+					"id": 706660102,
+					"content": "#にゃ…「もうカードプレイヤーランクの突破試練に参加すると言うのか。だが、{NICKNAME}には確かに挑戦資格があると言えよう。では早速…」",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706660103
+					],
+					"speakerTitle": "「リトルプリンス」"
+				},
+				{
+					"id": 706660103,
+					"content": "「今からジョインに突破試練に必要なフィールドをセットしてもらおう。気を付けたまえよ…」",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "「リトルプリンス」"
+				}
+			]
+		},
+		{
+			"id": 7066802,
+			"completionStepIds": [
+				7066804
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066804",
+							"2"
+						],
+						"stepId": 7066804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"「リトルプリンス」"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706680201,
+					"content": "にゃ！「本当にやるな。プレイヤーランクの試練突破、おめでとう！これで汝もマスタープレイヤーと言えよう！」",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706680202
+					],
+					"speakerTitle": "「リトルプリンス」"
+				},
+				{
+					"id": 706680202,
+					"content": "にゃ。「マスタープレイヤーになったということは…そのカードの腕前はもうこの道を進む多くの者よりも優れているという事だ。努力を惜しむ人には到達できない境地だな。」",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706680203
+					],
+					"speakerTitle": "「リトルプリンス」"
+				},
+				{
+					"id": 706680203,
+					"content": "「もちろん、努力を惜しむ人間には、我らが所詮娯楽でしかないゲームにコツコツと時間をかける理由など分かるはずがないだろう…」",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706680205
+					],
+					"speakerTitle": "「リトルプリンス」"
+				},
+				{
+					"id": 706680205,
+					"content": "にゃ！「汝に招待されたプレイヤーも、そのマスターの肩書きを獲得したことを聞けば、より真剣に汝との対局に立ち向かうだろう。」",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706680206
+					],
+					"speakerTitle": "「リトルプリンス」"
+				},
+				{
+					"id": 706680206,
+					"content": "「もしかすると、マスタープレイヤーになったことを聞いて初めて、挑戦を受けてもよかろう、と言うプレイヤーもいるかもしれんな…酒場にはそういう変わったやつもいるものだ。」",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706680207
+					],
+					"speakerTitle": "「リトルプリンス」"
+				},
+				{
+					"id": 706680207,
+					"content": "#にゃ…「では、{NICKNAME}…」",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706680208
+					],
+					"speakerTitle": "「リトルプリンス」"
+				},
+				{
+					"id": 706680208,
+					"content": "「『七聖召喚』を楽しんでくれたまえ！」",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "「リトルプリンス」"
+				}
+			]
+		},
+		{
+			"id": 7066803,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066804",
+							"0"
+						],
+						"stepId": 7066804,
+						"stateName": "QUEST_STATE_NONE"
+					},
+					{
+						"type": "QUEST_COND_GCG_WORLD_CHALLENGE_RESULT",
+						"rawParams": [
+							"-1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"「リトルプリンス」"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706660301,
+					"content": "#にゃ…「うむ、{NICKNAME}はもう少し慎重にならねばな。少し調整して、また後で挑戦してくれ。」",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706660302
+					],
+					"speakerTitle": "「リトルプリンス」"
+				},
+				{
+					"id": 706660302,
+					"content": "「試練をクリアできる実力はあると思うのだが…」",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "「リトルプリンス」"
+				}
+			]
+		}
+	]
+}

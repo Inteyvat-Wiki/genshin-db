@@ -1,0 +1,631 @@
+{
+	"id": 70508,
+	"type": "WQ",
+	"name": "月夜，泊船碼頭",
+	"description": "「跟你說，今天我遇到了位好客人。儀態優雅，談吐得當，出手還闊綽。」 「你賣出去了什麼？」 「商業機密。」",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70503,
+		70509
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "與盧卡對話，進入酒館",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050802,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "為凝光調製指定飲品",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050802,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050803,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "為北斗調製指定飲品",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050803,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050804,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "將飲品交給凝光和北斗",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050802,
+						0
+					],
+					"talkId": 7050802
+				}
+			]
+		},
+		{
+			"id": 7050805,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "與凝光和北斗對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050801,
+						0
+					],
+					"talkId": 7050801
+				}
+			]
+		},
+		{
+			"id": 7050806,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往吧檯並完成營業準備",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7050305,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050801,
+			"completionStepIds": [
+				7050805
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050805",
+							"2"
+						],
+						"stepId": 7050805,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050802",
+							"2"
+						],
+						"stepId": 7050802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050803",
+							"2"
+						],
+						"stepId": 7050803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"北斗",
+					"凝光"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705080101,
+					"content": "#哦！這不是{NICKNAME}嘛，來得正好，坐下喝兩杯？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080102
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080102,
+					"content": "#能在這裡見到{F#妳}{M#你}，真叫人高興。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080103
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080103,
+					"content": "兩位怎麼會來這裡？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080104
+					]
+				},
+				{
+					"id": 705080104,
+					"content": "等等，妳們倆該不會是結伴來的吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080105
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705080105,
+					"content": "這位大人心血來潮說要好好休個假，就決定來這一帶旅遊了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080106
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080106,
+					"content": "不過嘛，我倆對旅遊的理解好像不太一樣。山都沒上幾座，就到這裡歇腳了，真是富貴病啊。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080107
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080107,
+					"content": "這話說的，真叫人難過。我可是投妳所好，特意挑了能喝酒的地方。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080108
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080108,
+					"content": "只可惜大船長見多識廣，對這座小酒館意見頗多呢。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080109
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080109,
+					"content": "好吧，這頓我請，行了吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080110
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080110,
+					"content": "北斗要請客？那我們有份嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080111
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705080111,
+					"content": "派蒙，我們是酒保啦。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080112
+					]
+				},
+				{
+					"id": 705080112,
+					"content": "對哦，習慣性蹭上了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080113
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705080113,
+					"content": "兩位貴客，喝點什麼？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080114
+					]
+				},
+				{
+					"id": 705080114,
+					"content": "給我來一杯小杯樺樹吧，最好能酸一些。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080115
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080115,
+					"content": "大杯的暮色，謝啦。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080116
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080116,
+					"content": "明白了，請稍等片刻。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7050802,
+			"completionStepIds": [
+				7050804
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050804",
+							"2"
+						],
+						"stepId": 7050804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"凝光",
+					"北斗"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705080201,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080202
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080202,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080203
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080203,
+					"content": "怎、怎麼樣？妳們別不說話呀，我好緊張！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080204
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705080204,
+					"content": "嗯…憶苦思甜的味道呢。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080205
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080205,
+					"content": "白手起家的味道？得是什麼味兒啊。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080206
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080206,
+					"content": "呵呵…酸中帶甜，餘味很足。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080207
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080207,
+					"content": "唔…做小本生意卻發現賣水果賺不到錢的味道？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080208
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080208,
+					"content": "何必說得那麼明白呢。過去的事，就隨它去吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080209
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080209,
+					"content": "哈哈，誰能想到高高在上的天權星也有沿街兜售水果的歲月啊。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080210
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080210,
+					"content": "就像我，看著也不像漁民出身對吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080211
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080211,
+					"content": "怎麼會呢。要我說我的話…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080212
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080212,
+					"content": "北斗船長這雙一眼看透海水的眼睛，這副乘風破浪勇往直前的熱心腸，向來是像極了依海而生的人。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080213
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080213,
+					"content": "喂喂，這話可不是損我吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080214
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080214,
+					"content": "損妳又沒有什麼好處。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080215
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080215,
+					"content": "知道妳嘴巴厲害了。今天我請客，妳給我點到為止。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080216
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080216,
+					"content": "嗯…那我想多喝幾杯。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080217,
+						705080218
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080217,
+					"content": "是要續杯嗎？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080219
+					]
+				},
+				{
+					"id": 705080218,
+					"content": "竭誠為您服務！",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080219
+					]
+				},
+				{
+					"id": 705080219,
+					"content": "酒保，安排起來！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080220
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705080220,
+					"content": "氣勢不錯嘛！那我也再來一杯！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080221
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080234,
+					"content": "立刻為二人續杯…",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": []
+				},
+				{
+					"id": 705080221,
+					"content": "蒙德的果汁真不錯，要是每天都能喝到該多好。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080222
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080222,
+					"content": "嗯？開玩笑嗎？別告訴我妳想開通日落果貿易專線…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080223
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080223,
+					"content": "聽著有趣得很呢。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080224
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080224,
+					"content": "當真？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080225
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080225,
+					"content": "玩笑而已。相關貿易早就有一定規模了，不用我出手。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080226
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080226,
+					"content": "#{NICKNAME}，今天多謝了。哪天{F#妳}{M#你}要是想找份閒差，不妨來我身邊做專職酒保。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080227
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080227,
+					"content": "#也可以來「死兆星」號上。我們大夥都愛喝酒，{F#妳}{M#你}要是過來，就能一起喝酒吃肉了，保證過癮。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080228
+					],
+					"speakerTitle": "北斗"
+				},
+				{
+					"id": 705080228,
+					"content": "北斗船長這是在跟我競爭人才嗎？妳這又是何必，想喝旅行者親自調製的飲品，來群玉閣上就行。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080229
+					],
+					"speakerTitle": "凝光"
+				},
+				{
+					"id": 705080229,
+					"content": "（我真受歡迎！）",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080230
+					]
+				},
+				{
+					"id": 705080230,
+					"content": "#她們好像偷偷把{F#妳}{M#你}賣了呢…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080231,
+						705080232
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 705080231,
+					"content": "有機會的話…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 705080232,
+					"content": "一定都去，一定都去…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

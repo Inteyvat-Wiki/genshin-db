@@ -1,0 +1,226 @@
+{
+	"id": 360,
+	"type": "AQ",
+	"name": "Navegar en la brisa",
+	"description": "La Caballera Exploradora, que se hace llamar Amber, se ofrece a escoltarte a Mondstadt. Sin embargo, debe terminar su misión primero: eliminar todos los Hilichurls que deambulan por las afueras de la ciudad.",
+	"unlockDescription": "",
+	"chapter": "El forastero que atrapó el viento",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		356
+	],
+	"prevMainQuestList": [
+		354
+	],
+	"steps": [
+		{
+			"id": 36001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Elimina a los Hilichurls errantes",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 36003,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Elimina a los Hilichurls del campamento cercano",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 36004,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Amber",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						36001,
+						0
+					],
+					"talkId": 36001
+				}
+			]
+		},
+		{
+			"id": 36005,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Continúa avanzando hacia Mondstadt",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1024,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 36001,
+			"completionStepIds": [
+				36004
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"36004",
+							"2"
+						],
+						"stepId": 36004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Amber"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3600101,
+					"content": "¡Ja! ¡Pan comido!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600102
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600102,
+					"content": "#Tengo que admitir que eres buen{F#a}{M#o} combatiendo...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600103
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600103,
+					"content": "Gracias por tu ayuda. ¿Cómo te sentiste durante el combate?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600104,
+						3600105
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600104,
+					"content": "No sudé ni una gota.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3600106
+					]
+				},
+				{
+					"id": 3600106,
+					"content": "Ahora que lo mencionas, ¿cómo es que los Hilichurls terminaron aquí?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600107
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3600107,
+					"content": "Estas criaturas no suelen acampar tan cerca de las ciudades.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600108
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3600108,
+					"content": "Exacto. Normalmente suelen merodear por el campo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600109
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600109,
+					"content": "Pero, debido a la aparición del dragón Stormterror, últimamente nuestras huertas han sido destruidas, y las rutas comerciales se han visto afectadas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600110
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600110,
+					"content": "Cuando la tormenta azota, siempre hay gente herida, así que los Caballeros de Favonius hemos estado ocupados defendiendo el área.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600111
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600111,
+					"content": "Entonces, ¿estas alimañas se han ido acercando a la ciudad?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600112
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3600112,
+					"content": "Así es. Pero al despejar el campamento ayudamos a que la zona sea más segura.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600113
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600113,
+					"content": "¡Acompáñenme! No sería una caballera responsable si no les escoltara hasta la ciudad.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600105,
+					"content": "Es más difícil de lo que pensaba.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3600106
+					]
+				}
+			]
+		}
+	]
+}

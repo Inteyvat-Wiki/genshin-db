@@ -1,0 +1,480 @@
+{
+	"id": 79029,
+	"type": "WQ",
+	"name": "Pista do Tesouro: Ilhas Gêmeas",
+	"description": "Vá até o recife das Ilhas Gêmeas e veja se os piratas deixaram alguma pista relacionada com o tesouro...",
+	"unlockDescription": "",
+	"chapter": "Tesouros dos Quatro Recifes",
+	"showType": "QUEST_SHOW",
+	"activityId": 5084,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		79020
+	],
+	"steps": [
+		{
+			"id": 7902901,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Vá até o recife perto das Ilhas Gêmeas",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7902901,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7902906,
+						2
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7902906,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7902902,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Procure a pista do tesouro nas proximidades",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6800285,
+						0
+					],
+					"talkId": 6800285
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7902906,
+						2
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7902906,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7902903,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com o Capitão dos Corvos Noturnos",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6800286,
+						0
+					],
+					"talkId": 6800286
+				}
+			]
+		},
+		{
+			"id": 7902904,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Atravesse o nevoeiro de acordo com as instruções do Capitão dos Corvos Noturnos",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7902904,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7902905,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Procure na ilha uma pista para o tesouro escondido",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101771,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101760,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7902906,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Ajude o Capitão dos Corvos Noturnos a se livrar dos Hilichurls",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7902907,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Informe ao Capitão dos Corvos Noturnos",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6800288,
+						0
+					],
+					"talkId": 6800288
+				}
+			]
+		},
+		{
+			"id": 7902908,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6800285,
+						0
+					],
+					"talkId": 6800285
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7902901,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7902902",
+							"2"
+						],
+						"stepId": 7902902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7902908",
+							"2"
+						],
+						"stepId": 7902908,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Capitão dos Corvos Noturnos"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790290101,
+					"content": "Tem uma estátua aqui...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290102
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790290102,
+					"content": "*Suspiro*...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290103
+					],
+					"speakerTitle": "Capitão dos Corvos Noturnos"
+				},
+				{
+					"id": 790290103,
+					"content": "Olá, porque você está suspirando à entrada dessa caverna...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290112
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790290112,
+					"content": "Tenho vivido dentro dessa caverna recentemente...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290113
+					],
+					"speakerTitle": "Capitão dos Corvos Noturnos"
+				},
+				{
+					"id": 790290113,
+					"content": "Não acredito que você vive numa caverna dessas!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290114
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790290114,
+					"content": "Eu não tive escolha! Um monte de atores vieram para a ilha e começaram a fazer uma bagunça durante todo o dia e noite. Eu nem conseguia dormir por causa deles... Então encontrei um lugar mais tranquilo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290104
+					],
+					"speakerTitle": "Capitão dos Corvos Noturnos"
+				},
+				{
+					"id": 790290104,
+					"content": "Mas, do nada, um bando de Hilichurls tomou conta do meu lugar de descanso e eu fui deixado lá fora ao frio!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290105
+					],
+					"speakerTitle": "Capitão dos Corvos Noturnos"
+				},
+				{
+					"id": 790290105,
+					"content": "Suspiro... Jurei a mim mesmo que se alguém pudesse me ajudar, eu lhes diria...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290106
+					],
+					"speakerTitle": "Capitão dos Corvos Noturnos"
+				},
+				{
+					"id": 790290106,
+					"content": "Diria o quê?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290107
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790290107,
+					"content": "Diga à pessoa que me ajudou a encontrar a pista para o lendário tesouro secreto do pirata! Embora só conheça 25%...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290108
+					],
+					"speakerTitle": "Capitão dos Corvos Noturnos"
+				},
+				{
+					"id": 790290108,
+					"content": "Um quarto da pista?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290109
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790290109,
+					"content": "Parece que vocês também são caçadores de tesouros secretos. Que tal ajudar-me com os Hilichurls lá dentro e eu lhes direi a localização da pista.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290110
+					],
+					"speakerTitle": "Capitão dos Corvos Noturnos"
+				},
+				{
+					"id": 790290110,
+					"content": "Dizem que se você conseguir quatro pistas, você encontrará o tesouro deixado pelos piratas que o enterraram aqui!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290111
+					],
+					"speakerTitle": "Capitão dos Corvos Noturnos"
+				},
+				{
+					"id": 790290111,
+					"content": "Combinado!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 7902902,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7902903",
+							"2"
+						],
+						"stepId": 7902903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Capitão dos Corvos Noturnos"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790290201,
+					"content": "E então, tudo pronto?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290202
+					],
+					"speakerTitle": "Capitão dos Corvos Noturnos"
+				},
+				{
+					"id": 790290202,
+					"content": "Logo eu irei em frente e lhe mostrarei como navegar corretamente nos recifes em seu caminho!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290203
+					],
+					"speakerTitle": "Capitão dos Corvos Noturnos"
+				},
+				{
+					"id": 790290203,
+					"content": "Certo, veja aquela pedra ali, antes de mais nada, você tem que ir naquela direção primeiro!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Capitão dos Corvos Noturnos"
+				}
+			]
+		},
+		{
+			"id": 7902907,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7902906",
+							"2"
+						],
+						"stepId": 7902906,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Capitão dos Corvos Noturnos"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790290701,
+					"content": "E então, já se livrou dos Hilichurl lá dentro?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Capitão dos Corvos Noturnos"
+				}
+			]
+		},
+		{
+			"id": 7902908,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7902907",
+							"2"
+						],
+						"stepId": 7902907,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Capitão dos Corvos Noturnos"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790290801,
+					"content": "Já tratou dos Hilichurls lá dentro? Fico agradecido!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290802
+					],
+					"speakerTitle": "Capitão dos Corvos Noturnos"
+				},
+				{
+					"id": 790290802,
+					"content": "Muito bem, te mostrarei como atravessar a neblina e encontrar a pista...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790290803
+					],
+					"speakerTitle": "Capitão dos Corvos Noturnos"
+				},
+				{
+					"id": 790290803,
+					"content": "#Procure-me quando estiver pront{M#o}{F#a}, estarei do outro lado do recife!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Capitão dos Corvos Noturnos"
+				}
+			]
+		}
+	]
+}

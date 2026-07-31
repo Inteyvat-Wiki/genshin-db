@@ -1,0 +1,217 @@
+{
+	"id": 71040,
+	"type": "WQ",
+	"name": "初识暗渊毒瘴现",
+	"description": "与志琼一起，调查层岩下变异的奇特环境，拍摄有关黑泥的照片。",
+	"unlockDescription": "",
+	"chapter": "层岩巨渊深游记",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_RANK_ZERO_WQ",
+	"suggestTrackMainQuestList": [
+		71041,
+		71037
+	],
+	"prevMainQuestList": [
+		71037
+	],
+	"steps": [
+		{
+			"id": 7104001,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往第一处变异点进行调查",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7104001,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7104002,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "击败被黑泥影响的怪物",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7104003,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往第二处变异点进行调查",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7104005,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "调查在此驻足的人的痕迹",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						99902,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7104008,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "播放夜阑cutscene$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7104008,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7104009,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "调查「黑泥」",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7104004,
+						0
+					],
+					"talkId": 7104004
+				}
+			]
+		},
+		{
+			"id": 7104010,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往第一处变异点进行调查",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7104002,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7104001",
+							"2"
+						],
+						"stepId": 7104001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 710400201,
+					"content": "拍照",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "拍摄"
+				}
+			]
+		},
+		{
+			"id": 7104004,
+			"completionStepIds": [
+				7104009
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7104009",
+							"2"
+						],
+						"stepId": 7104009,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"派蒙",
+					"志琼"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 710400401,
+					"content": "这个好像就是我们之前见过的那种…黑糊糊的东西呢…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710400402
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 710400402,
+					"content": "欸？你们来之前就见过吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710400403
+					],
+					"speakerTitle": "志琼"
+				},
+				{
+					"id": 710400403,
+					"content": "对呀，瑾武姐还要我们警告你小心呢！你又不听…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				}
+			]
+		}
+	]
+}

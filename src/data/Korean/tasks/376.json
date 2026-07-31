@@ -1,0 +1,920 @@
+{
+	"id": 376,
+	"type": "AQ",
+	"name": "도망",
+	"description": "벤티의 계획을 거의 완벽하게 수행하여 천공의 하프를 손에 넣기 직전에 낯선 이가 나타나 천공의 하프를 가져간다. 경비병이 여행자 일행의 인기척을 느끼고 쫓아온다. 일행은 성당을 허겁지겁 탈출한다",
+	"unlockDescription": "",
+	"chapter": "눈물 없는 내일을 위해",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		377
+	],
+	"prevMainQuestList": [
+		375
+	],
+	"steps": [
+		{
+			"id": 37601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "대성당에서 탈출하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1031,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "윈드 필드를 이용해 성당에서 도망치기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1070,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37603,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "처음으로 가기 실패",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37604,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "술집으로 들어가 숨기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_ROOM",
+					"rawParams": [
+						1009,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37605,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "다이루크의 질문에 답하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37604,
+						0
+					],
+					"talkId": 37604
+				}
+			]
+		},
+		{
+			"id": 37606,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "술집 위층에 숨기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1034,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37607,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "위병이 떠나기를 기다리기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37606,
+						0
+					],
+					"talkId": 37606
+				}
+			]
+		},
+		{
+			"id": 37608,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "다이루크와 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37607,
+						0
+					],
+					"talkId": 37607
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 37604,
+			"completionStepIds": [
+				37605
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37604",
+							"3"
+						],
+						"stepId": 37604,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37605",
+							"2"
+						],
+						"stepId": 37605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"다이루크"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3760401,
+					"content": "다이루크 어르신, 이번 주 장부입니다",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760402
+					],
+					"speakerTitle": "찰스"
+				},
+				{
+					"id": 3760402,
+					"content": "역시 이번 폭풍으로 장사에 큰 타격을 입었군",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760403
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760403,
+					"content": "빨리 이 재앙이 지나갔으면 좋겠네요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760404
+					],
+					"speakerTitle": "찰스"
+				},
+				{
+					"id": 3760404,
+					"content": "주인장, 우리… 좀 은밀한 곳이 필요한데…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760405
+					],
+					"speakerTitle": "벤티"
+				},
+				{
+					"id": 3760405,
+					"content": "2층으로 가봐. 2층엔 사람이 적어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760406
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760406,
+					"content": "하지만 넌 음유시인이잖아? 눈에 띄는 자리가 좋을 텐데",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760407
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760407,
+					"content": "아하하, 공연은 다음에 하고 먼저 올라갈게, 나중에 봐~!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760408
+					],
+					"speakerTitle": "벤티"
+				},
+				{
+					"id": 3760408,
+					"content": "저들을 잘 감시해. 저 시인은 뭔가 수상하단 말이지. 무슨 상황인지 알아봐야겠어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760409
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760409,
+					"content": "음… 누구에게 물어보시려고요?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760410
+					],
+					"speakerTitle": "찰스"
+				},
+				{
+					"id": 3760410,
+					"content": "몬드성의 「경비병」들에게 물어봐야지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "다이루크"
+				}
+			]
+		},
+		{
+			"id": 37605,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37606",
+							"2"
+						],
+						"stepId": 37606,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"다이루크"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3760411,
+					"content": "왜 아직 안 올라갔나? 아주 급해 보이는데",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "다이루크"
+				}
+			]
+		},
+		{
+			"id": 37606,
+			"completionStepIds": [
+				37607
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37606",
+							"3"
+						],
+						"stepId": 37606,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37607",
+							"2"
+						],
+						"stepId": 37607,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"다이루크"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3760601,
+					"content": "다이루크 어르신, 좀도둑 둘 못 보셨나요?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760602
+					],
+					"speakerTitle": "오토"
+				},
+				{
+					"id": 3760602,
+					"content": "무슨 일인가? 왜 이렇게 많은 사람이 출동했지?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760603
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760603,
+					"content": "소식 못 들으셨나요? 좀도둑 둘이 천공의 하프를 훔쳐갔습니다!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760604
+					],
+					"speakerTitle": "마일스"
+				},
+				{
+					"id": 3760604,
+					"content": "오? 그것참 이상하군",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760605
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760605,
+					"content": "그러게 말입니다. 천공의 하프는 바람의 신께서 친히 연주하신 보물입니다. 그렇게 귀한 문화유산을——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760606
+					],
+					"speakerTitle": "마일스"
+				},
+				{
+					"id": 3760606,
+					"content": "팔 수도 없는 물건을 훔칠 바엔 차라리 내 술 저장실을 털고 말지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760607
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760607,
+					"content": "…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760608
+					],
+					"speakerTitle": "오토"
+				},
+				{
+					"id": 3760608,
+					"content": "아, 실없는 소리를 해서 미안하네. 하나는 노랗고 하나는 초록색인 두 놈이 저쪽으로 간 것 같네",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760609
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760609,
+					"content": "감사합니다, 다이루크 어르신!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "마일스"
+				}
+			]
+		},
+		{
+			"id": 37607,
+			"completionStepIds": [
+				37608
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37607",
+							"3"
+						],
+						"stepId": 37607,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37608",
+							"2"
+						],
+						"stepId": 37608,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"다이루크"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3760701,
+					"content": "오늘은 뭘 마실까…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760702
+					],
+					"speakerTitle": "벤티"
+				},
+				{
+					"id": 3760702,
+					"content": "찬장 뒤에서 찾아낸 술을 내려놓지 그래",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760703
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760703,
+					"content": "…차가운 걸 마시고 싶어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760704
+					],
+					"speakerTitle": "벤티"
+				},
+				{
+					"id": 3760704,
+					"content": "그것보다 내 질문에 잘 대답해야 할 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760705
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760705,
+					"content": "먼저 좀 마실게. 계산한다니까… 공연으로 갚을게",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760706
+					],
+					"speakerTitle": "벤티"
+				},
+				{
+					"id": 3760706,
+					"content": "아직 술을 살 수 없는 나이 같은데…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760707
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760708,
+					"content": "일단 내 질문에 먼저 답해",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3760709
+					]
+				},
+				{
+					"id": 3760710,
+					"content": "이분은 누구야?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3760711
+					]
+				},
+				{
+					"id": 3760707,
+					"content": "그건 걱정하지 마. 내가 처음 술을 마셨을 때 당신은——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760708,
+						3760710
+					],
+					"speakerTitle": "벤티"
+				},
+				{
+					"id": 3760709,
+					"content": "「저 사람은 누구냐」고 물으려 했지?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760711
+					],
+					"speakerTitle": "벤티"
+				},
+				{
+					"id": 3760711,
+					"content": "필시 이분이 바로 <color=#00E1FFFF>다이루크</color> 어르신일 거야. 술집 주인장 배후의… 음 그러니까 더 높은 주인장",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760712
+					],
+					"speakerTitle": "벤티"
+				},
+				{
+					"id": 3760712,
+					"content": "아주 유명한 사람이야. 참고로 난 이 사람 술집에서 빚은 민들레주를 좋아해",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760713
+					],
+					"speakerTitle": "벤티"
+				},
+				{
+					"id": 3760713,
+					"content": "대부분 돈이 없어서 잔으로밖에 못 마시지만…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760714
+					],
+					"speakerTitle": "벤티"
+				},
+				{
+					"id": 3760714,
+					"content": "방금 경비병한테 좀도둑 이야기를 들었는데",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760715
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760715,
+					"content": "천공의 하프를 훔치려 하다니 대단하군",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760716
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760716,
+					"content": "바보라면 천 년에 한 번 나올까 말까 한 바보 중의 바보지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760717
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760717,
+					"content": "우리가 훔친 게 아냐! 이건 오해야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760718
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 3760718,
+					"content": "이쪽은 기사단의 떠오르는 샛별이야. 이런 사람이 왜 몬드의 성물을 훔치려 하겠어?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760719
+					],
+					"speakerTitle": "벤티"
+				},
+				{
+					"id": 3760719,
+					"content": "떠오르는 샛별…? 아, 그게 바로 자네였군",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760720
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760721,
+					"content": "사실 친한 사이는 아니에요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3760723
+					]
+				},
+				{
+					"id": 3760722,
+					"content": "그저 연주 한번 들어준 관계라고 할 수 있죠",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3760723
+					]
+				},
+				{
+					"id": 3760720,
+					"content": "그래, 이 음유시인과는 친한 사이인가?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760721,
+						3760722
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760723,
+					"content": "음… 여행자의 신분으로 위기에 빠진 몬드에 도움의 손길을 뻗다니",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760724
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760724,
+					"content": "이런 사람이 기사단에 들어가다니 아깝구만",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760725
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760725,
+					"content": "페보니우스 기사단은… 풍마룡 문제에 계속 몸을 사리고 있어. 일 처리가 아주 비효율적이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760726
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760726,
+					"content": "외교적으로도 <color=#00E1FFFF>「우인단」</color>에 밀리고 또 보수적이고",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760727
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760727,
+					"content": "칫… 그만두지. 나도 더 이야기하기 싫으니",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760728
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760728,
+					"content": "보아하니 다이루크 어르신은 페보니우스 기사단을 무척 싫어하나 보네",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760729
+					],
+					"speakerTitle": "벤티"
+				},
+				{
+					"id": 3760729,
+					"content": "가려는 길이 다른 것뿐이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760730
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760730,
+					"content": "몬드라는 이 도시에 나도 바라는 게 있거든…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760731
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760731,
+					"content": "그럼 내 질문에 대답해. 어째서 천공의 하프를 훔치려 했지?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760732
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760732,
+					"content": "정말 알고 싶어? 기사단과 관련된 성가신 일에 말려들 수도 있는데?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760733
+					],
+					"speakerTitle": "벤티"
+				},
+				{
+					"id": 3760733,
+					"content": "…괜찮아. 나야말로 기사단에 성가신 존재이니까",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760734
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760734,
+					"content": "그럼 내가 진실이 담긴 이야기를 노래하면, 믿어줄 거야?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760735
+					],
+					"speakerTitle": "벤티"
+				},
+				{
+					"id": 3760735,
+					"content": "상황을 보고 판단하지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760736
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760736,
+					"content": "그럼~ 내 연주에 비용을 지불할 테야?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760737
+					],
+					"speakerTitle": "벤티"
+				},
+				{
+					"id": 3760737,
+					"content": "보수는 5모라부터 천공의 하프야. 내용에 따라 정하지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760738
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760738,
+					"content": "좋아. 그럼 한 곡 뽑아볼게——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760739
+					],
+					"speakerTitle": "벤티"
+				},
+				{
+					"id": 3760739,
+					"content": "아까의 서사시는 대체…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760740
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760740,
+					"content": "이건 중요한 비밀인데 왜 내게 이걸 알려주는 거지?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760741
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760741,
+					"content": "왜냐고? 음, 바람의 흐름이 바뀌고 있으니까",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760742
+					],
+					"speakerTitle": "벤티"
+				},
+				{
+					"id": 3760742,
+					"content": "——어때, 다이루크 어르신?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760743
+					],
+					"speakerTitle": "벤티"
+				},
+				{
+					"id": 3760743,
+					"content": "재미있군",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760744
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760744,
+					"content": "내게 시간을 줘, 다리를 놔줄 테니…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760745
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760745,
+					"content": "이방인, 자네는 기사단 일원이라 의심을 받지 않는 것 같아",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760746
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760746,
+					"content": "수배 전단에는 금발이라고만 나와 있으니까 경비병들에게 발각되지 않을 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760747
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760747,
+					"content": "하지만 음유시인은 술집 밖으로 나가지 않는 게 좋을 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760748
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760748,
+					"content": "알았어! 난 술집이 마음에 들어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760749
+					],
+					"speakerTitle": "벤티"
+				},
+				{
+					"id": 3760749,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760750
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3760750,
+					"content": "그럼 내일 밤 술집 영업이 끝나면 여기서 만나지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760751
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 4820221,
+					"content": "내가 <color=#00E1FFFF>표시한 노선을 따라</color> 종점까지 날아가기만 하면 돼",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820222
+					],
+					"speakerTitle": "엠버"
+				}
+			]
+		}
+	]
+}

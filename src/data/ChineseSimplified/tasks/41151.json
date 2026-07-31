@@ -1,0 +1,343 @@
+{
+	"id": 41151,
+	"type": "EQ",
+	"name": "万民鲜食",
+	"description": "璃月港的万民堂里有一份特别订单正等待着派送…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 4115101,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "与卯师傅对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4115101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 4115102,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "将餐品送给寡言的廷方",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4115102,
+						0
+					],
+					"talkId": 4115102
+				}
+			]
+		},
+		{
+			"id": 4115103,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "与寡言的廷方对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4115106,
+						0
+					],
+					"talkId": 4115106
+				}
+			]
+		},
+		{
+			"id": 4115104,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4115104,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 4115101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115101",
+							"2"
+						],
+						"stepId": 4115101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"卯师傅"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411510101,
+					"content": "我这就送过去。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411510102
+					]
+				},
+				{
+					"id": 411510102,
+					"content": "那就麻烦你了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "卯师傅"
+				}
+			]
+		},
+		{
+			"id": 4115102,
+			"completionStepIds": [
+				4115102
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115101",
+							"3"
+						],
+						"stepId": 4115101,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"寡言的廷方"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411510201,
+					"content": "嗯…怎么还没来…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "寡言的廷方"
+				}
+			]
+		},
+		{
+			"id": 4115103,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115101",
+							"2"
+						],
+						"stepId": 4115101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"卯师傅"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411510301,
+					"content": "听说有特别订单…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411510302
+					]
+				},
+				{
+					"id": 411510302,
+					"content": "有个叫廷方的家伙点了一份香嫩椒椒鸡，说之后送去。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411510303
+					],
+					"speakerTitle": "卯师傅"
+				},
+				{
+					"id": 411510303,
+					"content": "这个香嫩椒椒鸡，<color=#00E1FFFF>路上不要乱飞瞎爬，尤其是记得不要沾任何元素，还要限定时间内送到</color>。错了一项这口感就全完了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411510304
+					],
+					"speakerTitle": "卯师傅"
+				},
+				{
+					"id": 411510304,
+					"content": "如果路上出事了，你回来找我，我重新为客人再做一份。不能辱没了万民堂名声。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "卯师傅"
+				}
+			]
+		},
+		{
+			"id": 4115104,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115101",
+							"2"
+						],
+						"stepId": 4115101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"卯师傅"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411510401,
+					"content": "还有别的事。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411510402
+					]
+				},
+				{
+					"id": 411510402,
+					"content": "好吧，那你先忙吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "卯师傅"
+				}
+			]
+		},
+		{
+			"id": 4115105,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115101",
+							"2"
+						],
+						"stepId": 4115101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"寡言的廷方"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411510501,
+					"content": "嗯…还没来…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "寡言的廷方"
+				}
+			]
+		},
+		{
+			"id": 4115106,
+			"completionStepIds": [
+				4115103
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115103",
+							"2"
+						],
+						"stepId": 4115103,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"寡言的廷方"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411510601,
+					"content": "这是您订的餐。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411510602
+					]
+				},
+				{
+					"id": 411510602,
+					"content": "收到了。有劳了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "寡言的廷方"
+				}
+			]
+		}
+	]
+}

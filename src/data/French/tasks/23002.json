@@ -1,0 +1,955 @@
+{
+	"id": 23002,
+	"type": "IQ",
+	"name": "Attaché en pays étranger",
+	"description": "Un attaché étranger venu d'Inazuma travaille dur...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2300201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Hanbei.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2300201,
+						0
+					],
+					"talkId": 2300201
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2300205,
+						0
+					],
+					"talkId": 2300205
+				}
+			]
+		},
+		{
+			"id": 2300202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Allez ramasser des champignons.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						2300202,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101955,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2300203,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Ramassez des champignons.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101955,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2300204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Donnez les champignons à Hanbei.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						2300201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2300205,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Hanbei.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2300203,
+						0
+					],
+					"talkId": 2300203
+				}
+			]
+		},
+		{
+			"id": 2300206,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Hanbei.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2300204,
+						0
+					],
+					"talkId": 2300204
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2300201,
+			"completionStepIds": [
+				2300201
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2300201",
+							"2"
+						],
+						"stepId": 2300201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"23002",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hanbei"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230020101,
+					"content": "Cette boutique a des champignons de bonne qualité. Je la note sur la liste des achats...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020102
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020102,
+					"content": "Hanbei ? J'ai l'impression d'avoir déjà entendu ce nom...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020103,
+						230020104
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 230020103,
+					"content": "Est-ce que c'est... celui qu'on a rencontré à Tatarasuna...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020105
+					]
+				},
+				{
+					"id": 230020105,
+					"content": "Oh ! C'est le procrastinateur qui a mis le Fourneau Mikage sens dessus dessous !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020106,
+						230020107
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 230020106,
+					"content": "Il a été nommé « attaché étranger »...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020108
+					]
+				},
+				{
+					"id": 230020108,
+					"content": "Il est vraiment à Sumeru. Je pensais que cette histoire d'attaché étranger était une plaisanterie...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020109
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 230020109,
+					"content": "Hein ? Une personne aux cheveux blonds... accompagnée d'une petite chose qui flotte à côté...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020110
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020110,
+					"content": "#Vous seriez donc {M#ce fameux voyageur}{F#cette fameuse voyageuse} ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020111,
+						230020112
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020111,
+					"content": "Oui, c'est moi.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020114
+					]
+				},
+				{
+					"id": 230020114,
+					"content": "#Haha, c'est vous ! Yousuke vous a {M#mentionné}{F#mentionnée} dans sa lettre, en disant que vous aviez aidé monsieur Xavier à réparer le Fourneau Mikage.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020115
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020115,
+					"content": "*soupir* J'ai honte d'avoir raté ça. J'étais débordé par la paperasse quand vous avez réparé le Fourneau Mikage...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020116
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020116,
+					"content": "La paperasse est-elle plus importante que le Fourneau Mikage ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020117
+					]
+				},
+				{
+					"id": 230020117,
+					"content": "Il faudrait revoir l'ordre de vos priorités !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020118
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 230020118,
+					"content": "De quoi parlez-vous ? Si je ne m'occupais pas de la paperasse, comment les travaux d'entretien du Fourneau Mikage pourraient-ils être réalisés en bonne et due forme ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020119
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020119,
+					"content": "Regardez, il faut évacuer les habitants avoisinants, préparer les matériaux pour la réparation, mobiliser les réparateurs et coordonner les besoins de production avec chaque partie...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020120
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020120,
+					"content": "Sans paperasse, cela ne serait pas possible.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020121
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020121,
+					"content": "Il est exactement comme ce que Toranosuke a décrit...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020122
+					]
+				},
+				{
+					"id": 230020122,
+					"content": "Il est fidèle à sa réputation...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020123
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 230020123,
+					"content": "Toranosuke... Il ne se soucie pas du tout de l'aspect administratif des choses. Quand on travaille avec lui, une montagne de travail supplémentaire nous attend toujours.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020124
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020124,
+					"content": "Cependant, je ne suis maintenant plus en charge du Fourneau Mikage. Je travaille comme attaché étranger à Sumeru pour la gestion du commerce de champignons.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020125
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020125,
+					"content": "#Hum... {M#Voyageur}{F#Voyageuse}, Yousuke m'a parlé de vos exploits et vous me paraissez fiable.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020126
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020126,
+					"content": "Pourriez-vous donc me rendre un service ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020127
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020127,
+					"content": "Je suis actuellement à la recherche d'un fournisseur de champignons stable et de confiance. J'ai aussi rencontré de nombreux marchands ici.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020128
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020128,
+					"content": "Les échantillons de champignons qu'ils m'ont apportés ont tous été méticuleusement sélectionnés...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020129
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020129,
+					"content": "Je pense qu'il faut s'intéresser aux lieux où poussent les champignons pour être certain de la qualité de la marchandise proposée.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020130
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020130,
+					"content": "Mais comme vous pouvez le constater, je n'ai aucune expérience de terrain. Si je me rendais seul dans la forêt, mes chances de revenir vivant seraient assez maigres.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020131
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020131,
+					"content": "C'est la raison pour laquelle je vous demande de m'aider à cueillir des champignons dans la forêt et de me les rapporter ici...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020132,
+						230020133
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020132,
+					"content": "On pourrait le faire, j'imagine...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020134
+					]
+				},
+				{
+					"id": 230020134,
+					"content": "C'est d'accord ? Très bien ! Ne vous inquiétez pas pour la récompense, j'ai déjà préparé toute la documentation contractuelle.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020135
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020135,
+					"content": "Regardez ici. Tout d'abord, votre contrat de travail, ensuite le calcul de la rémunération, le document concernant l'obligation d'informer et l'accord de confidentialité... Ah oui, la carte de la zone de production de champignons...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020136
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020136,
+					"content": "#Vous avez soigneusement vérifié tous les documents avec Hanbei. Cette démarche vous a {M#fatigué}{F#fatiguée}...",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": [
+						230020137
+					]
+				},
+				{
+					"id": 230020137,
+					"content": "Très bien. Maintenant que vous avez pris connaissance de tous les documents, je vais d'abord les remettre au Shogunat et ensuite, nous finaliserons le tout dès que nous aurons l'approbation.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020138
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020138,
+					"content": "Mais d'ici-là, je vous paierai de ma poche. Après tout, je dois absolument acheter ces champignons sans attendre.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020139
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020139,
+					"content": "Bien sûr, je résumerai cela au Shogunat dans un document. Votre rémunération sera imposable, bien entendu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020140
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020140,
+					"content": "J—Je vais aller cueillir des champignons !",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020141
+					]
+				},
+				{
+					"id": 230020141,
+					"content": "Hein ? Ah... Je m'en remets donc à vous...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020142
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020142,
+					"content": "J'espère que nous ne rencontrerons pas d'ennuis. Ça m'inquiète vraiment...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020143,
+						230020145
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 230020143,
+					"content": "Je suis ici pour le surveiller.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020144
+					]
+				},
+				{
+					"id": 230020144,
+					"content": "Ah bon ? Bon, tu as raison...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020147
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 230020147,
+					"content": "Hmm ? Vous avez l'air de vous méfier... Ne vous inquiétez pas, j'ai fait tous les préparatifs, il n'y aura aucun problème de processus.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020148
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020148,
+					"content": "On ne parlait pas de ce genre de problème... Bref, allons d'abord dans la forêt pour cueillir ses champignons.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 230020145,
+					"content": "Je me demande quel autre désastre ce type causera cette fois.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020146
+					]
+				},
+				{
+					"id": 230020146,
+					"content": "Hé ! Si ça se produit, personne ici ne pourra nous aider !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020147
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 230020133,
+					"content": "Négocions d'abord la récompense.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020134
+					]
+				},
+				{
+					"id": 230020112,
+					"content": "Voici Paimon...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020113
+					]
+				},
+				{
+					"id": 230020113,
+					"content": "Je ne suis pas la « petite chose qui flotte », je m'appelle Paimon !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020114
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 230020107,
+					"content": "Il est venu ici pour le commerce de champignons...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020108
+					]
+				},
+				{
+					"id": 230020104,
+					"content": "C'est celui dont Toranosuke et Yousuke parlaient...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020105
+					]
+				}
+			]
+		},
+		{
+			"id": 2300202,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"2300201"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2300202",
+							"2"
+						],
+						"stepId": 2300202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2300203",
+							"2"
+						],
+						"stepId": 2300203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2300204",
+							"2"
+						],
+						"stepId": 2300204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hanbei"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230020201,
+					"content": "Alors ? Avez-vous cueilli les champignons ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Hanbei"
+				}
+			]
+		},
+		{
+			"id": 2300203,
+			"completionStepIds": [
+				2300205
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2300205",
+							"2"
+						],
+						"stepId": 2300205,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_NUM_LESS_THAN",
+						"rawParams": [
+							"101955",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hanbei"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230020301,
+					"content": "Très bien, ça devrait suffire. Ils ont l'air beaux et frais...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020302
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020302,
+					"content": "Voici votre récompense, merci à vous !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020303
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020303,
+					"content": "Brut ou net ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020304
+					]
+				},
+				{
+					"id": 230020304,
+					"content": "Net, évidemment. Ne vous inquiétez pas, vous n'aurez pas besoin de retourner à Inazuma pour payer des impôts.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020305
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020305,
+					"content": "Par contre, je ne sais pas si la politique fiscale du Shogunat a été révisée depuis.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020306
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020306,
+					"content": "Hum, je vais trouver du temps pour écrire à Yousuke sur le sujet.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Hanbei"
+				}
+			]
+		},
+		{
+			"id": 2300204,
+			"completionStepIds": [
+				2300206
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2300206",
+							"2"
+						],
+						"stepId": 2300206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PACK_HAVE_ITEM",
+						"rawParams": [
+							"101955",
+							"1"
+						]
+					},
+					{
+						"type": "QUEST_COND_PACK_HAVE_ITEM",
+						"rawParams": [
+							"101955",
+							"2"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hanbei"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230020401,
+					"content": "Très bien, ça devrait suffire. Ils ont l'air beaux et frais...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020402
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020402,
+					"content": "J'ai aussi cueilli d'autres champignons.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020403
+					]
+				},
+				{
+					"id": 230020403,
+					"content": "Hahaha, c'est encore mieux ! Veuillez me donner ces champignons, je vais les prendre en compte pour augmenter votre récompense.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020404
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020404,
+					"content": "Voici votre récompense, merci à vous !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020405
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020405,
+					"content": "Brut ou net ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020406
+					]
+				},
+				{
+					"id": 230020406,
+					"content": "Net. Ne vous inquiétez pas, vous n'aurez pas besoin de retourner à Inazuma pour payer des impôts.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020407
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020407,
+					"content": "Par contre, je ne sais pas si la politique fiscale du Shogunat a été révisée depuis.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020408
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020408,
+					"content": "Hum, je vais trouver du temps pour écrire à Yousuke sur le sujet.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Hanbei"
+				}
+			]
+		},
+		{
+			"id": 2300205,
+			"completionStepIds": [
+				2300201
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2300201",
+							"2"
+						],
+						"stepId": 2300201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"23002",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hanbei"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230020501,
+					"content": "Ces champignons ne me semblent pas très fiables...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020502
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020502,
+					"content": "Il a l'air inquiet, pourquoi ? ... Ne me dis pas qu'il s'est encore attiré des ennuis ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020503
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 230020503,
+					"content": "#{M#Voyageur}{F#Voyageuse}, vous voilà. Les champignons que vous avez apportés sont vraiment de bonne qualité.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020504
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020504,
+					"content": "Pourriez-vous m'aider une fois de plus à en cueillir ? Je voudrais faire une comparaison avec les champignons d'autres fournisseurs.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020505,
+						230020507
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020505,
+					"content": "Je m'en occupe.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020506
+					]
+				},
+				{
+					"id": 230020506,
+					"content": "Bien, je compte sur vous.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020507,
+					"content": "Combien de fournisseurs avez-vous trouvés ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230020508
+					]
+				},
+				{
+					"id": 230020508,
+					"content": "Euh, peut-être cinq ou six, mais la qualité de leurs champignons n'est pas très constante. Ça m'inquiète un peu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230020509
+					],
+					"speakerTitle": "Hanbei"
+				},
+				{
+					"id": 230020509,
+					"content": "Je vais continuer de chercher d'autres fournisseurs et quant à la cueillette des champignons, je m'en remets à vous.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Hanbei"
+				}
+			]
+		}
+	]
+}

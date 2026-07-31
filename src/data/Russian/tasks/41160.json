@@ -1,0 +1,352 @@
+{
+	"id": 41160,
+	"type": "EQ",
+	"name": "Свежий заказ",
+	"description": "Особый заказ ждёт своей доставки в ресторане «Народный выбор»...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 4116001,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с шеф-поваром Мао",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4116001,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 4116002,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отнесите еду молчаливому Тин Фану",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4116002,
+						0
+					],
+					"talkId": 4116002
+				}
+			]
+		},
+		{
+			"id": 4116003,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с молчаливым Тин Фаном",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4116006,
+						0
+					],
+					"talkId": 4116006
+				}
+			]
+		},
+		{
+			"id": 4116004,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4116004,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 4116001,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4116001",
+							"2"
+						],
+						"stepId": 4116001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Шеф-повар Мао"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411600101,
+					"content": "Сейчас же доставлю.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411600102
+					]
+				},
+				{
+					"id": 411600102,
+					"content": "Ну, рассчитываю на тебя.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411600103
+					],
+					"speakerTitle": "Шеф-повар Мао"
+				},
+				{
+					"id": 411600103,
+					"content": "Аккуратно. <color=#00E1FFFF>Не трогай странные элементы и старайся не пораниться</color>.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Шеф-повар Мао"
+				}
+			]
+		},
+		{
+			"id": 4116002,
+			"completionStepIds": [
+				4116002
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4116001",
+							"3"
+						],
+						"stepId": 4116001,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Молчаливый Тин Фан"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411600201,
+					"content": "Так. Хочется. Есть.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Молчаливый Тин Фан"
+				}
+			]
+		},
+		{
+			"id": 4116003,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4116001",
+							"2"
+						],
+						"stepId": 4116001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Шеф-повар Мао"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411600301,
+					"content": "#Я слышал{F#а}, что есть особый заказ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411600302
+					]
+				},
+				{
+					"id": 411600302,
+					"content": "Да. Человек по имени Тин Фан заказал суп из украшений и пошёл к озеру Цинсю.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411600303
+					],
+					"speakerTitle": "Шеф-повар Мао"
+				},
+				{
+					"id": 411600303,
+					"content": "Не знаю, что у него там за дела, но наше заведение гарантирует безупречный вкус. Всегда.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411600304
+					],
+					"speakerTitle": "Шеф-повар Мао"
+				},
+				{
+					"id": 411600304,
+					"content": "Пожалуйста, помоги доставить этот суп. <color=#00E1FFFF>Не летай</color>, а то прольётся.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Шеф-повар Мао"
+				}
+			]
+		},
+		{
+			"id": 4116004,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4116001",
+							"2"
+						],
+						"stepId": 4116001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Шеф-повар Мао"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411600401,
+					"content": "Мне некогда.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411600402
+					]
+				},
+				{
+					"id": 411600402,
+					"content": "Ладно, я что-нибудь придумаю...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Шеф-повар Мао"
+				}
+			]
+		},
+		{
+			"id": 4116005,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4116001",
+							"2"
+						],
+						"stepId": 4116001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Молчаливый Тин Фан"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411600501,
+					"content": "Хм...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Молчаливый Тин Фан"
+				}
+			]
+		},
+		{
+			"id": 4116006,
+			"completionStepIds": [
+				4116003
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4116003",
+							"2"
+						],
+						"stepId": 4116003,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Молчаливый Тин Фан"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411600601,
+					"content": "Вот ваш заказ.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411600602
+					]
+				},
+				{
+					"id": 411600602,
+					"content": "Спасибо! Шеф Мао готовит лучше, чем Янь Сяо.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Молчаливый Тин Фан"
+				}
+			]
+		}
+	]
+}

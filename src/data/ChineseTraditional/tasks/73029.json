@@ -1,0 +1,186 @@
+{
+	"id": 73029,
+	"type": "WQ",
+	"name": "羅因賈篇·陰卷",
+	"description": "在羅因賈和阿瑪茲亞的幫助下，獲知了機關碎片的所在地。其中之一就藏在降諸魔山深處的洞穴中…",
+	"unlockDescription": "",
+	"chapter": "吉祥具書",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_RANK_ZERO_WQ",
+	"suggestTrackMainQuestList": [
+		73028,
+		73073
+	],
+	"prevMainQuestList": [
+		73073
+	],
+	"steps": [
+		{
+			"id": 7302901,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "尋找可以進入的洞窟",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133304380,
+						380001
+					]
+				}
+			]
+		},
+		{
+			"id": 7302902,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "解除死域",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133304226,
+						226019
+					]
+				}
+			]
+		},
+		{
+			"id": 7302903,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "繼續前進",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7302901,
+						0
+					],
+					"talkId": 7302901
+				}
+			]
+		},
+		{
+			"id": 7302904,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "尋找機關零件",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133304030,
+						30001
+					]
+				}
+			]
+		},
+		{
+			"id": 7302905,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往標記出的地點",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7302901,
+			"completionStepIds": [
+				7302903
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7302903",
+							"2"
+						],
+						"stepId": 7302903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 730290101,
+					"content": "看這邊植物的情況，這個洞裡面該不會是…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730290102,
+						730290103
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 730290102,
+					"content": "是死域。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730290104
+					]
+				},
+				{
+					"id": 730290104,
+					"content": "#嗚嗚，是無留陀，那菈{NICKNAME}要保護蘭利遮。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730290105
+					],
+					"speakerTitle": "蘭利遮"
+				},
+				{
+					"id": 730290105,
+					"content": "我們會保護你的啦！有我們在，蘭利遮不用怕無留陀。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730290106
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 730290106,
+					"content": "#{NICKNAME}，如果阿瑪茲亞爺爺沒搞錯的話，「阿麥塔機關」的碎片應該就在這個裡面了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730290107
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 730290107,
+					"content": "像之前一樣先把死域解除掉吧！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 730290103,
+					"content": "是無留陀。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						730290104
+					]
+				}
+			]
+		}
+	]
+}

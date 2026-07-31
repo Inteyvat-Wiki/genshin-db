@@ -1,0 +1,564 @@
+{
+	"id": 70507,
+	"type": "WQ",
+	"name": "Semerbak Aroma Teh",
+	"description": "\"Kelihatannya ada pelanggan yang sangat aneh di kedai ....\" \"Yah, memang tidak banyak ditemui orang yang menarik sesuai harapan. Gimana kalau kita periksa orang ini barengan?\" \"Tidak jadi deh ... Kayaknya aku juga tidak bakal bicara apa pun kalau sudah sampai di hadapannya.\"",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70506
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Luka dan masuk ke Tavern",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050701,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050702,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Raciklah minuman yang ditentukan untuk Zhongli",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050702,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050703,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Berikan minumannya kepada Zhongli",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050702,
+						0
+					],
+					"talkId": 7050702
+				}
+			]
+		},
+		{
+			"id": 7050704,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Zhongli",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050701,
+						0
+					],
+					"talkId": 7050701
+				}
+			]
+		},
+		{
+			"id": 7050705,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Pergi ke bar dan selesaikan persiapan bisnis",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7050606,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050701,
+			"completionStepIds": [
+				7050704
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050704",
+							"2"
+						],
+						"stepId": 7050704,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050702",
+							"2"
+						],
+						"stepId": 7050702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Zhongli"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705070101,
+					"content": "ZHONG-ZHONGLI?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070102
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070102,
+					"content": "Ah, halo Pengembara. Senang berjumpa denganmu. Kabarmu baik?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070103
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070103,
+					"content": "Se-Sebentar ... Zhongli ngapain ada di sini??",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070104
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070104,
+					"content": "Ketika berkelana, tentulah aku tidak semestinya membatasi tempat tujuanku. Kota angin yang bebas dan makmur ini tentunya layak untuk dikunjungi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070105
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070105,
+					"content": "Dan tentunya ini sebuah kejutan yang menyenangkan, dapat bertemu kalian di sini.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070106,
+						705070107
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070106,
+					"content": "Mau minum apa?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070108
+					]
+				},
+				{
+					"id": 705070108,
+					"content": "Satu Misty Garden. Aku lebih suka teh yang pekat, terima kasih.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070107,
+					"content": "Kita bisa ngobrol sambil minum teh.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070108
+					]
+				}
+			]
+		},
+		{
+			"id": 7050702,
+			"completionStepIds": [
+				7050703
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050703",
+							"2"
+						],
+						"stepId": 7050703,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Zhongli"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705070201,
+					"content": "Silakan, maaf menunggu!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070202
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070202,
+					"content": "Silakan.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070203
+					]
+				},
+				{
+					"id": 705070203,
+					"content": "Ah, teh yang jernih, warnanya pun indah. Rasa yang pekat disertai oleh harum bunga dan buah yang saling melengkapi. Bagus.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070204
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070204,
+					"content": "Wuih, jadi Zhongli juga serba tahu untuk urusan teh ya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070205
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070205,
+					"content": "Kalau Paimon sih biasanya langsung teguk saja, terus bilang, \"Mmm, rasanya enak banget nih buat Paimon sih.\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070206
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070206,
+					"content": "Menikmati teh yang disajikan dengan sepenuh hati, berarti menghargai orang yang menyeduhnya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070207
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070207,
+					"content": "Teh yang bagus sukar didapat. Orang yang mampu menyeduh teh yang sesuai dengan suasana dan perasaan, bahkan lebih langka lagi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070208,
+						705070209
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070208,
+					"content": "Kamu terlalu memuji.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070210
+					]
+				},
+				{
+					"id": 705070210,
+					"content": "Oh, Paimon ngerti nih.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070211
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070211,
+					"content": "Jadi, mau enggak kamu ajarin Paimon cara menikmati teh kayak kamu? Tadi kayaknya kamu cium dulu aroma tehnya, baru diminum. Gitu, kan?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070212
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070212,
+					"content": "Betul.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070213
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070213,
+					"content": "Setiap jenis teh punya keunikannya masing-masing. Semakin sering minum, maka kamu akan semakin paham di mana letak perbedaannya. Hirup aromanya untuk mengetahui kualitas daun teh yang dipakai.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070214
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070214,
+					"content": "Teh yang kurang baik mutunya mengeluarkan aroma yang sedikit apek dan berbau hangus. Teh dengan mutu terbaik memberikan aroma yang lembut namun menenangkan.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070215
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070215,
+					"content": "Kalau ingin bicara lebih jauh, dalam adat minum teh Liyue, ada cangkir khusus yang digunakan untuk menghirup dan memahami aroma apa yang keluar dari tehnya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070216
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070216,
+					"content": "Astaga, jadi selama ini Paimon beneran enggak ngerti apa-apa soal teh ya ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070217
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070217,
+					"content": "Tidak apa. Pengetahuan tak ada habisnya, dan tidak ada kata terlambat untuk belajar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070218
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070218,
+					"content": "Sebagai pemula, kamu boleh mulai dengan melihat warnanya, menghirup aromanya, dan terakhir ... menyeruput tehnya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070219
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070219,
+					"content": "Ingat, apa pun harus dipelajari sesuai urutannya. Dari yang dangkal, menuju yang dalam.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070220,
+						705070221
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070220,
+					"content": "Hari ini aku dapat ilmu baru lagi ....",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070222
+					]
+				},
+				{
+					"id": 705070222,
+					"content": "Desa Qiaoying yang ada di sebelah barat laut Liyue terkenal akan industri teh mereka. Pergilah ke sana kalau ada kesempatan.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070223
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070223,
+					"content": "Yang kuajarkan pada kalian hari ini hampir semuanya hanya kebiasaanku sendiri saja, kebiasaan seorang warga Liyue yang kolot dan ketinggalan zaman.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070224
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070224,
+					"content": "Setiap daerah memiliki kebudayaan minum tehnya masing-masing. Ingat, di mana bumi dipijak, di situ langit dijunjung.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070225
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070225,
+					"content": "Paimon ngerti kok! Tapi Paimon enggak yakin bakalan ingat semuanya sih.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070226
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070226,
+					"content": "Seperti biasa.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070227
+					]
+				},
+				{
+					"id": 705070227,
+					"content": "#Terima kasih untuk tehnya, {NICKNAME}. Tidak rugi mampir kemari.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070228
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070228,
+					"content": "Kalau suatu hari nanti kamu buka kedai teh, aku pasti akan rajin berkunjung.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070229
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070229,
+					"content": "Kami sibuk sih, jadi mungkin enggak bakal punya waktu buat urus kedai teh ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070230
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070230,
+					"content": "Yah, siapa tahu ya.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070231
+					]
+				},
+				{
+					"id": 705070231,
+					"content": "Kalau ada kesempatan, aku akan mendukung.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070232
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070232,
+					"content": "Baiklah, hari ini sampai di sini dulu. Aku tidak akan menyita waktu kalian lagi. Semoga pekerjaan barumu ini lancar selalu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070233,
+						705070234
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070233,
+					"content": "Dadah!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070235
+					]
+				},
+				{
+					"id": 705070235,
+					"content": "Ah, iya. Seperti biasa, tagihkan saja ke Wangsheng Funeral Parlor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070236
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070236,
+					"content": "Hati-hati di jalan ya! Salam buat bu Direktur~",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070234,
+					"content": "Eh, bonnya ....",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070235
+					]
+				},
+				{
+					"id": 705070221,
+					"content": "Aku mau tahu lebih banyak lagi.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070222
+					]
+				},
+				{
+					"id": 705070209,
+					"content": "Aku jadi malu ....",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070210
+					]
+				}
+			]
+		}
+	]
+}

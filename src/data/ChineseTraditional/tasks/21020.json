@@ -1,0 +1,191 @@
+{
+	"id": 21020,
+	"type": "WQ",
+	"name": "懷寶應自珍",
+	"description": "在一間被「遺蹟守衛」把守著的地下室中，有著一封殘破的信。寫信的尋寶者相信，在這片歸離原上，有一堆能夠實現心願的篝火…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2102000,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "任務的開啟",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102000,
+						0
+					],
+					"talkId": 2102000
+				}
+			]
+		},
+		{
+			"id": 2102010,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "點燃篝火",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2102020,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "擊敗來敵",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2102021,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "閱讀筆記",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102020,
+						0
+					],
+					"talkId": 2102020
+				}
+			]
+		},
+		{
+			"id": 2102022,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "尋找藏寶處",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2102000,
+			"completionStepIds": [
+				2102000
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102000",
+							"2"
+						],
+						"stepId": 2102000,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210200001,
+					"content": "「…這就是所謂的『貪心不足』吧，如果只是把這個地下室裡的寶藏拿走，沒再想去找那個什麼鬼篝火許願，我也不會觸動機關，被那個大傢伙堵在這裡…我是出不去了」",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210200002
+					],
+					"speakerTitle": "一封殘破的信"
+				},
+				{
+					"id": 210200002,
+					"content": "「如果誰有本事幹掉那個大傢伙進來的話，就去找那個篝火隨便許個什麼願吧，嘿嘿，我會好好…祝福你的！」",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "一封殘破的信"
+				}
+			]
+		},
+		{
+			"id": 2102020,
+			"completionStepIds": [
+				2102021
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102021",
+							"2"
+						],
+						"stepId": 2102021,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102022",
+							"2"
+						],
+						"stepId": 2102022,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210202001,
+					"content": "「…什麼能實現心願的篝火，都是扯淡！但是在篝火底下，埋著的那些寶貝可是實實在在的…不過大姐頭說，把那紙條原樣留在原地，我們就在這篝火旁等著，自然有人來自投羅網，只要篝火一燃，嘿嘿嘿，又是一筆好買賣…」",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210202002
+					],
+					"speakerTitle": "筆跡潦草的筆記"
+				},
+				{
+					"id": 210202002,
+					"content": "「…不過，這麼多寶貝一口氣也帶不走，按大姐頭的意思，就先埋在<color=#00E1FFFF>翠玦坡裡最高的山頭上</color>，那山頭上還有棵枯了的大樹，大姐頭應該很容易看見…」",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "筆跡潦草的筆記"
+				}
+			]
+		}
+	]
+}

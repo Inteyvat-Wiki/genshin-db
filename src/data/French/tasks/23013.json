@@ -1,0 +1,1163 @@
+{
+	"id": 23013,
+	"type": "IQ",
+	"name": "L'hymne de Garcia : Objet clé",
+	"description": "Garcia et Lutong semblent être troublés par quelque chose...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2301301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Garcia.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2301301,
+						0
+					],
+					"talkId": 2301301
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2301311,
+						0
+					],
+					"talkId": 2301311
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2301350,
+						0
+					],
+					"talkId": 2301350
+				}
+			]
+		},
+		{
+			"id": 2301302,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Récupérez de la bave de Blob fraîche.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2301303,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Retournez voir Garcia.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2301303,
+						0
+					],
+					"talkId": 2301303
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2301352,
+						0
+					],
+					"talkId": 2301352
+				}
+			]
+		},
+		{
+			"id": 2301304,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						2301304,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						2301301,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2301301,
+			"completionStepIds": [
+				2301301
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2301301",
+							"2"
+						],
+						"stepId": 2301301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_VAR_EQ",
+						"rawParams": [
+							"42020",
+							"1",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Garcia",
+					"Lutong"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230130101,
+					"content": "Mon cher Lutong, êtes-vous sûr que l'endroit que nous recherchons est bien ici ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130102
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230130102,
+					"content": "J'en suis sûr, monsieur Garcia. C'est là qu'il y a le plus souvent des Blobs.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130103
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230130103,
+					"content": "Je n'ai aucun doute que c'est là que les Blobs se rassemblent, ce qui m'inquiète, c'est...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130104
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230130104,
+					"content": "... Vous ne trouvez pas qu'il y a trop de Blobs ici ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130105
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230130105,
+					"content": "Monsieur Garcia, c'est ce qui arrive quand on manque de fonds.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130106,
+						230130107
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230130106,
+					"content": "Garcia ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230130108
+					]
+				},
+				{
+					"id": 230130108,
+					"content": "#{M#Voyageur}{F#Voyageuse} ! Quelle chance de vous voir ici à Sumeru.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130109
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230130109,
+					"content": "Qu'est-ce que vous faites ici ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230130110
+					]
+				},
+				{
+					"id": 230130110,
+					"content": "Hahaha, je suis ici pour...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130111
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230130111,
+					"content": "... Chercher des ennuis...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130112
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230130112,
+					"content": "... Vivre l'aventure. Merci, Lutong. Est-ce que vous pourriez juste...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130113
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230130113,
+					"content": "Comme vous voudrez, monsieur.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130114
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230130114,
+					"content": "Bon, revenons-en au sujet. Je suis ici pour trouver de la bave de Blob pour fabriquer du lubrifiant pour mon Arithmétrice.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130115
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230130115,
+					"content": "Mais d'une part, la bave de Blob vendue sur le marché est généralement de mauvaise qualité en raison de la durée de stockage. Et d'autre part...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130116
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230130116,
+					"content": "... Monsieur Garcia a acheté trop de livres...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130117
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230130117,
+					"content": "... D'autre part, on a eu beaucoup de dépenses... de première nécessité ! Ce qui nous a laissés à court d'argent.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130118
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230130118,
+					"content": "C'est pourquoi nous sommes ici pour essayer d'obtenir directement de la bave de Blob fraîche.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130119
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230130119,
+					"content": "Mais comme vous pouvez le voir, mon cher Lutong, malgré ses origines liyuéennes, ne connaît ni les arts martiaux ni la cuisine.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130120
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230130120,
+					"content": "Je m'y connais quand même en comptabilité avec les règles fiscales compliquées du Bureau des affaires civiles...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130121
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230130121,
+					"content": "... Et moi, je ne peux quand même pas me permettre de taper quelqu'un avec les pièces de mon Arithmétrice.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130122
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230130122,
+					"content": "Vous avez besoin d'un coup de main ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230130123
+					]
+				},
+				{
+					"id": 230130123,
+					"content": "Dans un sens...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130124
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230130124,
+					"content": "Oui.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130125
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230130125,
+					"content": "Lutong, est-ce que... euh, est-ce qu'on a encore de l'argent ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130126
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230130126,
+					"content": "#Après avoir payé {M#le voyageur}{F#la voyageuse}, je pense qu'on pourra encore trouver un moyen de survivre.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130127
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230130127,
+					"content": "#Parfait ! {M#Voyageur}{F#Voyageuse}, s'il vous plaît, rapportez-moi de la bave de Blob, je vous en supplie.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230130107,
+					"content": "Qu'est-ce qui vous amène ici ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230130108
+					]
+				}
+			]
+		},
+		{
+			"id": 2301302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2301302",
+							"2"
+						],
+						"stepId": 2301302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_VAR_LT",
+						"rawParams": [
+							"42024",
+							"0",
+							"2"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Garcia",
+					"Lutong"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230130201,
+					"content": "Lutong, nos économies...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130202
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230130202,
+					"content": "On trouvera un moyen de s'en sortir, monsieur Garcia.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130203
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230130203,
+					"content": "Il y a un vieux dicton à Liyue qui dit : « Quand on arrive au pied d'une montagne, il y a toujours un chemin. ». Je pense qu'il convient parfaitement à la situation actuelle.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130204
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230130204,
+					"content": "Ça veut dire que même si une montagne nous barre la route, il y a toujours un moyen de la franchir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130205
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230130205,
+					"content": "Ah, c'est une jolie métaphore. Ça me donne l'impression que la situation n'est pas si dramatique.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130206
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230130206,
+					"content": "Monsieur Garcia, est-ce que vous pensez que la personne qui a écrit cette phrase a trouvé un moyen de franchir la montagne ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130207
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230130207,
+					"content": "Hein ? Oh non...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Garcia"
+				}
+			]
+		},
+		{
+			"id": 2301303,
+			"completionStepIds": [
+				2301303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2301303",
+							"2"
+						],
+						"stepId": 2301303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Garcia"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230130301,
+					"content": "#{M#Voyageur}{F#Voyageuse}, vous avez trouvé de la bave de Blob ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130302
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230130302,
+					"content": "Oui, la voilà.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230130303
+					]
+				},
+				{
+					"id": 230130303,
+					"content": "Super ! Ça devrait suffire. Je vais pouvoir commencer les essais à mon retour. Avec ce lubrifiant, mon Arithmétrice devrait pouvoir...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130304
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230130304,
+					"content": "Je dois retourner à mes recherches. Lutong, je vous laisse vous occuper du reste.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130305
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230130305,
+					"content": "Oui, monsieur.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130306
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230130306,
+					"content": "#{M#Voyageur}{F#Voyageuse}, veuillez accepter cette récompense. Merci beaucoup.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130307
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230130307,
+					"content": "Et euh... À mon avis, on pourrait avoir besoin de votre aide plus tard.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130308
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230130308,
+					"content": "Ne vous inquiétez pas, tant que je suis en charge de la comptabilité, vous recevrez une rémunération raisonnable.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130309
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230130309,
+					"content": "... *soupir* La raison pour laquelle je voyage avec monsieur Garcia est que je ne veux pas passer toute ma vie à faire des comptes dans un département du Bureau des affaires civiles de Liyue, comme mes parents.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130310
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230130310,
+					"content": "Mais maintenant... En plus d'aider monsieur Garcia dans ses calculs, je suis obligé de m'occuper de ses comptes...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230130311
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230130311,
+					"content": "C'est peut-être le destin...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Lutong"
+				}
+			]
+		},
+		{
+			"id": 2301311,
+			"completionStepIds": [
+				2301301
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2301301",
+							"2"
+						],
+						"stepId": 2301301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_VAR_GT",
+						"rawParams": [
+							"42020",
+							"1",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lutong",
+					"Garcia"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230131101,
+					"content": "Monsieur Garcia, encore une fois, je vous suggère sincèrement de vendre quelques livres pour récolter des fonds.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230131102
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230131102,
+					"content": "Mais non ! Pas question ! Cher Lutong, vous me demandez de vendre mon âme !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230131103
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230131103,
+					"content": "Mais monsieur, le problème en fait est que personne ne voudrait payer pour votre âme.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230131104,
+						230131105
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230131104,
+					"content": "Qu'est-ce que vous faites encore ici ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230131106
+					]
+				},
+				{
+					"id": 230131106,
+					"content": "#{M#Voyageur}{F#Voyageuse} ? Qu'est-ce qui vous amène ici ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230131107
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230131107,
+					"content": "Euh... Mon dernier essai a échoué, j'ai eu un problème avec la dilution de la bave de Blob...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230131108
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230131108,
+					"content": "Au lieu de lubrifier les roulements de l'Arithmétrice, le lubrifiant que j'ai fabriqué les faisait se gripper encore plus.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230131109
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230131109,
+					"content": "Alors, j'ai besoin de plus de bave de Blob pour mes expériences. Pouvez-vous...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230131110,
+						230131111
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230131110,
+					"content": "Je m'en occupe.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230131120
+					]
+				},
+				{
+					"id": 230131120,
+					"content": "#{M#Voyageur}{F#Voyageuse}, s'il vous plaît, apportez-moi de la bave de Blob. Je vous donnerai une bonne récompense.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230131111,
+					"content": "Vous n'avez aucun moyen de gagner de l'argent ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230131112
+					]
+				},
+				{
+					"id": 230131112,
+					"content": "Ce n'est pas que nous n'avons aucun moyen de gagner de l'argent...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230131113
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230131113,
+					"content": "... C'est que nous n'avons pas la capacité de gagner de l'argent.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230131114
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230131114,
+					"content": "Merci pour la précision, Lutong.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230131115
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230131115,
+					"content": "Hélas, c'est un peu gênant à admettre... J'ai dit que j'avais construit une Arithmétrice, mais cette machine est assez limitée.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230131116
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230131116,
+					"content": "En fait, cette machine ne peut même pas faire le calcul de manière totalement autonome. Je dois faire beaucoup de travail manuel pour l'aider.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230131117
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230131117,
+					"content": "Mais bien sûr... Je vais la perfectionner ! Je suis intimement convaincu que mon Arithmétrice sera une grande invention !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230131118
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230131118,
+					"content": "Une... Une invention qui fera date dans l'histoire ! Et après, je suis sûr que je trouverai un moyen de gagner de l'argent...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230131119
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230131119,
+					"content": "M—Mais avant ça...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230131120
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230131105,
+					"content": "Vous avez encore besoin de bave de Blob ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230131106
+					]
+				}
+			]
+		},
+		{
+			"id": 2301350,
+			"completionStepIds": [
+				2301301
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2301301",
+							"2"
+						],
+						"stepId": 2301301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_VAR_EQ",
+						"rawParams": [
+							"42024",
+							"0",
+							"2"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lutong",
+					"Garcia"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230135001,
+					"content": "Monsieur, on dirait bien que c'est l'endroit que nous cherchions. Maintenant, il ne nous reste plus qu'à embaucher quelques personnes...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230135002
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230135002,
+					"content": "Monsieur ? Monsieur Garcia, est-ce que vous m'écoutez ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230135003
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230135003,
+					"content": "Hmm ? Euh... Bien sûr que je vous écoute. Eh bien, rentrons embaucher quelqu'un, cela ne devrait pas nous prendre trop de temps.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230135004
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230135004,
+					"content": "Ça... Ça va ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230135005
+					]
+				},
+				{
+					"id": 230135005,
+					"content": "#Hahaha, ce n'est rien, {M#voyageur}{F#voyageuse}... Je vais très bien. Pourquoi pensez-vous le contraire, hmm ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230135006
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230135006,
+					"content": "Je me consacre en ce moment corps et âme à mes recherches pour l'Arithmétrice, et je sens que je ne suis plus qu'à un pas du succès.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230135007
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230135007,
+					"content": "Si ça ne vous dérange pas, pourriez-vous m'amener un peu de bave de Blob ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230135008
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230135008,
+					"content": "Je n'ai plus besoin de m'embêter à rentrer en ville pour embaucher quelqu'un puisque vous êtes là. Et puis, je vais pouvoir vous offrir une plus grosse récompense comme je viens de gagner un peu d'argent.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230135009,
+						230135010
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230135009,
+					"content": "Comptez sur moi.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230135011
+					]
+				},
+				{
+					"id": 230135011,
+					"content": "#Bien, alors je compte sur vous, {M#voyageur}{F#voyageuse}. Je dois encore réfléchir à la manière dont je dois modifier la structure de l'Arithmétrice.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230135010,
+					"content": "Ce n'est pas un problème...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230135011
+					]
+				}
+			]
+		},
+		{
+			"id": 2301351,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2301302",
+							"2"
+						],
+						"stepId": 2301302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_VAR_EQ",
+						"rawParams": [
+							"42024",
+							"0",
+							"2"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lutong"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230135101,
+					"content": "#{M#Voyageur}{F#Voyageuse}, vous tombez vraiment bien.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230135102,
+						230135103
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230135102,
+					"content": "Garcia...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230135104
+					]
+				},
+				{
+					"id": 230135104,
+					"content": "Évidemment que c'est à cause de mademoiselle Kaia. Monsieur Garcia n'en parle pas, mais il est de plus en plus distrait dans son travail.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230135105
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230135105,
+					"content": "Et puis, il ne va plus à ce café. À chaque fois, c'est moi qu'il envoie.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230135106
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230135106,
+					"content": "Même monsieur Ahangar m'a dit qu'il pouvait parler avec monsieur Garcia si c'était nécessaire.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230135107
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230135107,
+					"content": "Je ne sais pas non plus comment aider monsieur Garcia à s'en sortir. Après tout, je n'ai aucune expérience en la matière.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230135108
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230135108,
+					"content": "*soupir* On dirait bien qu'un fossé de plus me sépare de monsieur Garcia...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230135103,
+					"content": "Son comportement, c'est à cause de...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230135104
+					]
+				}
+			]
+		},
+		{
+			"id": 2301352,
+			"completionStepIds": [
+				2301303
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2301303",
+							"2"
+						],
+						"stepId": 2301303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_DAILY_TASK_VAR_EQ",
+						"rawParams": [
+							"42024",
+							"0",
+							"2"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Garcia"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230135201,
+					"content": "#{M#Voyageur}{F#Voyageuse}, vous avez trouvé de la bave de Blob ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230135202
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230135202,
+					"content": "Et voici.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230135203
+					]
+				},
+				{
+					"id": 230135203,
+					"content": "#Très bien, cela suffira. Lutong, pouvez-vous d'abord donner la récompense {M#au voyageur}{F#à la voyageuse} ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230135204
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230135204,
+					"content": "Je vais jeter un œil à la qualité de ces baves de Blob...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230135205
+					],
+					"speakerTitle": "Garcia"
+				},
+				{
+					"id": 230135205,
+					"content": "#Voici votre récompense. Encore merci pour votre aide, {M#voyageur}{F#voyageuse}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230135206
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230135206,
+					"content": "Repassez donc nous voir quand vous aurez le temps.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230135207
+					],
+					"speakerTitle": "Lutong"
+				},
+				{
+					"id": 230135207,
+					"content": "J'aurai peut-être besoin d'un coup de main, si l'état psychologique de monsieur Garcia se dégrade.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Lutong"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,176 @@
+{
+	"id": 70707,
+	"type": "WQ",
+	"name": "Букет Альфреда",
+	"description": "Альфреду из Мондштадта нужны три ветряные астры.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте Альфреду 3 ветряные астры",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070701,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Альфредом",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070702,
+						0
+					],
+					"talkId": 7070702
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070701",
+							"2"
+						],
+						"stepId": 7070701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070701"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Альфред"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707070101,
+					"content": "Насчёт ветряных астр...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707070102
+					]
+				},
+				{
+					"id": 707070102,
+					"content": "Вы по поводу поручения? Спасибо, что пришли...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707070103
+					],
+					"speakerTitle": "Альфред"
+				},
+				{
+					"id": 707070103,
+					"content": "Вы уже собрали три ветряные астры?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707070104,
+						707070105
+					],
+					"speakerTitle": "Альфред"
+				},
+				{
+					"id": 707070104,
+					"content": "Да.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707070105,
+					"content": "Пока ещё нет.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707070106
+					]
+				},
+				{
+					"id": 707070106,
+					"content": "Как соберёте - несите скорее, а то вдруг облетят.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Альфред"
+				}
+			]
+		},
+		{
+			"id": 7070702,
+			"completionStepIds": [
+				7070702
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070702",
+							"2"
+						],
+						"stepId": 7070702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Альфред"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707070201,
+					"content": "Моя дочка будет очень рада этим астрам.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707070202
+					],
+					"speakerTitle": "Альфред"
+				},
+				{
+					"id": 707070202,
+					"content": "Это вам. Спасибо большое.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Альфред"
+				}
+			]
+		}
+	]
+}

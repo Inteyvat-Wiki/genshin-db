@@ -1,0 +1,176 @@
+{
+	"id": 70711,
+	"type": "WQ",
+	"name": "漢のジャックと漢の道",
+	"description": "モンドの漢のジャックはモンド風焼き魚を3つ必要としている。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7071101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "モンド風焼き魚を漢のジャックに3つ渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7071101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7071102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "漢のジャックと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7071102,
+						0
+					],
+					"talkId": 7071102
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7071101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071101",
+							"2"
+						],
+						"stepId": 7071101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7071101"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"漢のジャック"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707110101,
+					"content": "モンド風焼き魚について…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707110102
+					]
+				},
+				{
+					"id": 707110102,
+					"content": "依頼を見てくれたのかしら？よかった。モンド風焼き魚を3つ、持って来てくれたかしら？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707110103,
+						707110104
+					],
+					"speakerTitle": "漢のジャック"
+				},
+				{
+					"id": 707110103,
+					"content": "持って来たよ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707110104,
+					"content": "まだ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707110105
+					]
+				},
+				{
+					"id": 707110105,
+					"content": "そう。なら、モンド風焼き魚を3つ、用意出来たら早く持って来てちょうだい。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "漢のジャック"
+				}
+			]
+		},
+		{
+			"id": 7071102,
+			"completionStepIds": [
+				7071102
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071102",
+							"2"
+						],
+						"stepId": 7071102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"漢のジャック"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707110201,
+					"content": "んー、モンド風焼き魚の香りは最高ね…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707110202
+					],
+					"speakerTitle": "漢のジャック"
+				},
+				{
+					"id": 707110202,
+					"content": "そうだわ。これを受け取ってちょうだい。手伝ってくれてありがとう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707110203
+					],
+					"speakerTitle": "漢のジャック"
+				},
+				{
+					"id": 707110203,
+					"content": "これを食べたら力が強くなるのかしら…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "漢のジャック"
+				}
+			]
+		}
+	]
+}

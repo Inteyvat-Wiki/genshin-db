@@ -1,0 +1,626 @@
+{
+	"id": 72804,
+	"type": "WQ",
+	"name": "Die eigene Scham auslöschen",
+	"description": "Asukara hat den Aufenthaltsort der Kairagi entdeckt. Die Zeit für einen Rückkampf ist gekommen, um seine Waffe zurückzuerobern ...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7280401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Asakura.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7280401,
+						0
+					],
+					"talkId": 7280401
+				}
+			]
+		},
+		{
+			"id": 7280403,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Besiege den Kairagi.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7280404,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Verhöre den Kairagi.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7280402,
+						0
+					],
+					"talkId": 7280402
+				}
+			]
+		},
+		{
+			"id": 7280405,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Geh zu dem Lager des Kairagi.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7280403,
+						0
+					],
+					"talkId": 7280403
+				}
+			]
+		},
+		{
+			"id": 7280406,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Besiege die Untergebenen des Kairagi-Anführers.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7280407,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Asakura.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7280404,
+						0
+					],
+					"talkId": 7280404
+				}
+			]
+		},
+		{
+			"id": 7280408,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Geh zu dem Lager der Kairagi.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7280402,
+			"completionStepIds": [
+				7280404
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7280404",
+							"2"
+						],
+						"stepId": 7280404,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"„Kairagi“",
+					"Asakura"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 728040206,
+					"content": "Autsch! Bleib zurück, Krieger! Woher hast du diese Hilfe bekommen ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040207
+					],
+					"speakerTitle": "„Kairagi“"
+				},
+				{
+					"id": 728040207,
+					"content": "Schurke! Gib mir sofort meine Waffe zurück!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040208
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 728040208,
+					"content": "Ich kann nicht glauben, dass du immer noch über diese Waffe nachdenkst ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040209
+					],
+					"speakerTitle": "„Kairagi“"
+				},
+				{
+					"id": 728040209,
+					"content": "Ich bin nur hier, um meine Waffe zu holen. Du sagst mir, wo die Waffe ist, und ich lasse dich am Leben.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040210
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 728040210,
+					"content": "Das ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040211,
+						728040212
+					],
+					"speakerTitle": "„Kairagi“"
+				},
+				{
+					"id": 728040211,
+					"content": "Mach keinen Blödsinn mit ihm.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728040213
+					]
+				},
+				{
+					"id": 728040213,
+					"content": "Aah! Halt! Warum bist du so aufgeregt? Ich habe nicht gesagt, dass ich nicht helfen würde!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040214
+					],
+					"speakerTitle": "„Kairagi“"
+				},
+				{
+					"id": 728040214,
+					"content": "Diese ... diese Waffe, unser Boss bewahrt sie im Versteck auf, also wenn du sie willst, geh einfach zu ihm in das Lager dort drüben!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040215
+					],
+					"speakerTitle": "„Kairagi“"
+				},
+				{
+					"id": 728040215,
+					"content": "Hmpf, na wenigstens bist du zur Vernunft gekommen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040216
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 728040216,
+					"content": "O ihr Krieger, ich bin ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040217
+					],
+					"speakerTitle": "„Kairagi“"
+				},
+				{
+					"id": 728040217,
+					"content": "Raus!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728040218
+					]
+				},
+				{
+					"id": 728040218,
+					"content": "Ja!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040219
+					],
+					"speakerTitle": "„Kairagi“"
+				},
+				{
+					"id": 728040219,
+					"content": "Er ist nicht sehr gut im Kämpfen, aber er ist gut im Weglaufen!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040220
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 728040220,
+					"content": "So entschlossen ließ er seinen Begleiter zurück ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728040221
+					]
+				},
+				{
+					"id": 728040221,
+					"content": "Die Kairagi sind letztlich nur ein wilder Haufen, der sich für den Profit versammelt hat und von Loyalität oder Überzeugung keine Ahnung hat.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040222
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 728040222,
+					"content": "Es ist normal für sie, dass, wenn sie auf Ärger treffen, ihre erste Reaktion ist, die Sachen zu packen und abzuhauen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040223
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 728040223,
+					"content": "Aber zum Glück hatte ich dich hier, um mir zu helfen. Ich bezweifle, dass sie sonst so leicht kapitulieren würden.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040224
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 728040224,
+					"content": "Aber als Nächstes müssen wir direkt zum Basislager der Kairagi aufbrechen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040225
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 728040225,
+					"content": "Wie im vorherigen Plan vorgesehen, werde ich direkt den Anführer erledigen und den Rest der Nachzügler dir überlassen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040226,
+						728040227
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 728040226,
+					"content": "Ich werde das übernehmen.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728040228
+					]
+				},
+				{
+					"id": 728040228,
+					"content": "Dann bitte!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 728040227,
+					"content": "Ich schlage zehn auf einmal.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728040228
+					]
+				},
+				{
+					"id": 728040212,
+					"content": "Lass uns einfach den nächsten Typen finden ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728040213
+					]
+				}
+			]
+		},
+		{
+			"id": 7280403,
+			"completionStepIds": [
+				7280405
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7280405",
+							"2"
+						],
+						"stepId": 7280405,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"„Kairagi“-Anführer"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 728040301,
+					"content": "Du? Hahahaha, ist das nicht der Junge vom letzten Mal? Was, du bist wieder hier, um meine Kollektion zu vervollständigen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040302
+					],
+					"speakerTitle": "„Kairagi“-Anführer"
+				},
+				{
+					"id": 728040302,
+					"content": "Ich bin hier, um meine Waffe zurückzuholen!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040303
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 728040303,
+					"content": "Na ja ... Nicht schlecht, ein bisschen Mut. Aber es zu wagen, hier mit nur einem Helfer reinzuplatzen, da schaust du zu sehr auf mich herab.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040304
+					],
+					"speakerTitle": "„Kairagi“-Anführer"
+				},
+				{
+					"id": 728040304,
+					"content": "Aber für die Frechheit, hierherzukommen, gebe ich dir eine Chance. Komm! Lass uns das dort drüben regeln.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040305
+					],
+					"speakerTitle": "„Kairagi“-Anführer"
+				},
+				{
+					"id": 728040305,
+					"content": "#Aber gut ... Meine Männer können natürlich nicht untätig sein. Hast du nicht {M#einen Helfer}{F#eine Helferin} mitgebracht? Lassen wir {M#ihn}{F#sie} mit ihnen spielen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040306,
+						728040307
+					],
+					"speakerTitle": "„Kairagi“-Anführer"
+				},
+				{
+					"id": 728040306,
+					"content": "Komm schon!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728040308
+					]
+				},
+				{
+					"id": 728040308,
+					"content": "#Hahaha, du hast eine ziemlich große Klappe. Jungs, schlagt {F#sie}{M#ihn} zu Tode!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040309
+					],
+					"speakerTitle": "„Kairagi“-Anführer"
+				},
+				{
+					"id": 728040309,
+					"content": "Was dich betrifft, lass uns dort drüben kämpfen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040310
+					],
+					"speakerTitle": "„Kairagi“-Anführer"
+				},
+				{
+					"id": 728040310,
+					"content": "Dann überlasse ich es dir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040311
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 728040311,
+					"content": "Ich werde das übernehmen.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728040312
+					]
+				},
+				{
+					"id": 728040312,
+					"content": "Ich kann dir nicht genug danken. Ich werde ihn sofort erledigen und zurückkommen, um dir zu helfen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040313
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 728040313,
+					"content": "Du hast eine große Klappe. Wenn du mich besiegen willst, dann versuch es doch!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "„Kairagi“-Anführer"
+				},
+				{
+					"id": 728040307,
+					"content": "Ich habe nur Angst, dass ich nicht genug Spaß haben werde.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728040308
+					]
+				}
+			]
+		},
+		{
+			"id": 7280404,
+			"completionStepIds": [
+				7280407
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7280407",
+							"2"
+						],
+						"stepId": 7280407,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Asakura"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 728040406,
+					"content": "Dein Atem ist so ruhig, diese Kairagi sind wirklich keine Gegner für dich.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040407
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 728040407,
+					"content": "Sieht aus, als hättest du auch gewonnen.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728040408
+					]
+				},
+				{
+					"id": 728040408,
+					"content": "Das stimmt, obwohl ich zu meiner Schande zugeben muss, dass ich ich ihm aufgrund einer Finte seinerseits erlaubte, mit einem einzigen Stich meines Speers zu entkommen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040409
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 728040409,
+					"content": "Aber er ist so schwer verletzt, dass ich nicht glaube, dass er für ein paar Jahre in der Lage sein wird, wieder hervorzutreten und Ärger zu machen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040410
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 728040410,
+					"content": "Vor allem aber besiegte ich ihn mit meinen eigenen Händen und holte mir auch die Waffe zurück, um die Schande vollständig zu beseitigen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040411
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 728040411,
+					"content": "Herzlichen Glückwunsch, Asakura.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728040412
+					]
+				},
+				{
+					"id": 728040412,
+					"content": "Ich weiß es wirklich zu schätzen. Ich persönlich kann jetzt noch nicht aufgeben!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040413
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 728040413,
+					"content": "All das begann, weil meine Kampfkünste noch nicht überragend genug sind. Ich werde auch in Zukunft mein hartes Training verdoppeln und meine Kampfkünste verfeinern.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040414
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 728040414,
+					"content": "Also ... Bitte hilf mir und komm öfter her, um mit mir zu üben!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040415
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 728040415,
+					"content": "Oh ja, und bitte nimm dies hier. Es ist nicht viel ... Aber es ist ein Zeichen meiner Wertschätzung.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728040416
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 728040416,
+					"content": "Vielen Dank nochmal.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Asakura"
+				}
+			]
+		}
+	]
+}

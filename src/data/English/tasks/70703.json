@@ -1,0 +1,167 @@
+{
+	"id": 70703,
+	"type": "WQ",
+	"name": "Connor's Brew",
+	"description": "The Dawn Winery's Connor requires three sets of Dandelion Seeds.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Give three sets of Dandelions Seeds to Connor",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Connor",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070302,
+						0
+					],
+					"talkId": 7070302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070301",
+							"2"
+						],
+						"stepId": 7070301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070301"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707030101,
+					"content": "So, I hear you need dandelions...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707030102
+					]
+				},
+				{
+					"id": 707030102,
+					"content": "Oh, you must have seen my commission, then. Well, what about it? Have you gathered three sets of Dandelion Seeds?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707030103,
+						707030104
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707030103,
+					"content": "Here they are.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707030104,
+					"content": "Not yet.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707030105
+					]
+				},
+				{
+					"id": 707030105,
+					"content": "Not yet, eh... Well, be sure to give them to me once you've got them. I need to start brewing wine soon.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Connor"
+				}
+			]
+		},
+		{
+			"id": 7070302,
+			"completionStepIds": [
+				7070302
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070302",
+							"2"
+						],
+						"stepId": 7070302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707030201,
+					"content": "Yes... These Dandelion Seeds should last me for a while.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707030202
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707030202,
+					"content": "Please accept this. Thanks for helping me out.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Connor"
+				}
+			]
+		}
+	]
+}

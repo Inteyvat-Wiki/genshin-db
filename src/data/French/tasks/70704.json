@@ -1,0 +1,185 @@
+{
+	"id": 70704,
+	"type": "WQ",
+	"name": "Le vin artisanal de Connor",
+	"description": "Connor, du Domaine de l'Aurore, aurait besoin de 3 pistils de fleur enflammée.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Donnez 3 pistils de fleur enflammée à Connor.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070401,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070402,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Connor.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070402,
+						0
+					],
+					"talkId": 7070402
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070401,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070401",
+							"2"
+						],
+						"stepId": 7070401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070401"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707040101,
+					"content": "Besoin de pistils de fleur enflammée ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707040102
+					]
+				},
+				{
+					"id": 707040102,
+					"content": "En effet, c'est bien moi qui en ai demandé. Vous êtes rapide...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707040103
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707040103,
+					"content": "Alors, vous avez collecté les trois pistils de fleur enflammée ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707040104,
+						707040105
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707040104,
+					"content": "Tenez.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707040105,
+					"content": "Pas encore.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707040106
+					]
+				},
+				{
+					"id": 707040106,
+					"content": "Bon, revenez me voir quand vous les aurez, mais dépêchez-vous. J'en ai besoin pour le brassage de l'alcool.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Connor"
+				}
+			]
+		},
+		{
+			"id": 7070402,
+			"completionStepIds": [
+				7070402
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070402",
+							"2"
+						],
+						"stepId": 7070402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707040201,
+					"content": "Bien, voilà qui devrait suffire. Tenez, pour vous remercier.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707040202
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707040202,
+					"content": "Je me demande si ça suffira à personnaliser cette cuvée...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707040203
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707040203,
+					"content": "Mais je suis sûr que ça sera une expérience qui vaudra le détour de toute façon.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Connor"
+				}
+			]
+		}
+	]
+}

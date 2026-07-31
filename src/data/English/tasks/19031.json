@@ -1,0 +1,370 @@
+{
+	"id": 19031,
+	"type": "LQ",
+	"name": "Sudden Discomfort",
+	"description": "You and Chongyun successfully enter the Test of Courage, but as you track the evil spirits, Chongyun suddenly experiences a rush of unstable yang energy and must rest. To prevent his constitution from going out of control, you look for something that might help suppress his pure-yang spirit...",
+	"unlockDescription": "",
+	"chapter": "Signs of Evil",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		19032,
+		19035
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1903101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						103601,
+						1903109
+					]
+				}
+			]
+		},
+		{
+			"id": 1903102,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Look for Cryo Whopperflower Nectar",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_CLEAR_GROUP_MONSTER",
+					"rawParams": [
+						133102915,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1903103,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Look for Cryo Slime Condensate",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_CLEAR_GROUP_MONSTER",
+					"rawParams": [
+						133102916,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1903104,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to the staff",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1903102,
+						0
+					],
+					"talkId": 1903102
+				}
+			]
+		},
+		{
+			"id": 1903105,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						103601,
+						1903110
+					]
+				}
+			]
+		},
+		{
+			"id": 1903106,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to the staff",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1903102,
+						0
+					],
+					"talkId": 1903102
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1903101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1903105",
+							"3"
+						],
+						"stepId": 1903105,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Chongyun"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 190310101,
+					"content": "Sorry for troubling you again...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190310102
+					],
+					"speakerTitle": "Chongyun"
+				},
+				{
+					"id": 190310102,
+					"content": "Just be careful while collecting the ingredients...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Chongyun"
+				}
+			]
+		},
+		{
+			"id": 1903102,
+			"completionStepIds": [
+				1903104,
+				1903106
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1903104",
+							"2"
+						],
+						"stepId": 1903104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1903106",
+							"2"
+						],
+						"stepId": 1903106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Fu San'er"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 1903102101,
+					"content": "It's dangerous to walk alone here, isn't it?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102102
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102102,
+					"content": "You have no idea who... or what you'll meet.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102103,
+						1903102104
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102103,
+					"content": "...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102105
+					]
+				},
+				{
+					"id": 1903102105,
+					"content": "Hmm, you seem to be pretty calm. You know, there's a saying, \"you can't keep your shoes dry if you keep walking along the river.\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102106
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102106,
+					"content": "You're bound to run into something in such a strange and eerie place...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102107
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102107,
+					"content": "And what you encounter here could become a nightmare that haunts you for the rest of your life.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102108,
+						1903102109
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102108,
+					"content": "Oh, really?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102110
+					]
+				},
+				{
+					"id": 1903102110,
+					"content": "Huh? How are you so calm? People usually run away in terror before I can even finish a sentence.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102111,
+						1903102114
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102111,
+					"content": "You look like just another average person to me.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102112
+					]
+				},
+				{
+					"id": 1903102112,
+					"content": "Yeah... but a more sophisticated way to play a ghost is to create a creepy atmosphere that scares people psychologically.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102113
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102113,
+					"content": "In which case, my appearance becomes irrelevant.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102117
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102117,
+					"content": "*sigh* Besides, I'll never be able to scare someone like you who doesn't believe in ghosts to begin with.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102118
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102118,
+					"content": "Sounds like you're just slacking off to me...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102119
+					]
+				},
+				{
+					"id": 1903102119,
+					"content": "Hey, that's not true! Oh, I'd better go find some wimps to scare now!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102120
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102120,
+					"content": "You should go back and find your partner. He might be terrified by now.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102114,
+					"content": "Don't you have a costume or anything like that?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102115
+					]
+				},
+				{
+					"id": 1903102115,
+					"content": "Yes, I have one, but it's too hot to wear... and besides, a more sophisticated way to play a ghost is to create a creepy atmosphere that scares people psychologically.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102116
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102116,
+					"content": "In which case, my appearance becomes irrelevant.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102117
+					],
+					"speakerTitle": "Fu San'er"
+				},
+				{
+					"id": 1903102109,
+					"content": "Sorry, I don't get it... What are you doing here?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102110
+					]
+				},
+				{
+					"id": 1903102104,
+					"content": "Hello.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102105
+					]
+				}
+			]
+		}
+	]
+}

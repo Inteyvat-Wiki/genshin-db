@@ -1,0 +1,370 @@
+{
+	"id": 19031,
+	"type": "LQ",
+	"name": "Внезапное неудобство",
+	"description": "Вы с Чун Юнем проходите Испытание смелости и на полпути получаете подсказки у злого духа. Чун Юнь внезапно испытывает прилив нестабильной энергии Ян и должен отдохнуть. Чтобы Чун Юнь не потерял контроль, вы ищете что-то, что может помочь подавить его нестабильную энергию Ян...",
+	"unlockDescription": "",
+	"chapter": "Заметки о поиске злых духов",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		19032,
+		19035
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1903101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						103601,
+						1903109
+					]
+				}
+			]
+		},
+		{
+			"id": 1903102,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Найдите нектар Крио попрыгуньи",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_CLEAR_GROUP_MONSTER",
+					"rawParams": [
+						133102915,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1903103,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Найдите слизь Крио слайма",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_CLEAR_GROUP_MONSTER",
+					"rawParams": [
+						133102916,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1903104,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с работниками",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1903102,
+						0
+					],
+					"talkId": 1903102
+				}
+			]
+		},
+		{
+			"id": 1903105,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						103601,
+						1903110
+					]
+				}
+			]
+		},
+		{
+			"id": 1903106,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с работниками",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1903102,
+						0
+					],
+					"talkId": 1903102
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1903101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1903105",
+							"3"
+						],
+						"stepId": 1903105,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Чун Юнь"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 190310101,
+					"content": "Прости, что опять доставляю тебе неприятности.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						190310102
+					],
+					"speakerTitle": "Чун Юнь"
+				},
+				{
+					"id": 190310102,
+					"content": "#При сборе ингредиентов будь осторож{F#на}{M#ен}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Чун Юнь"
+				}
+			]
+		},
+		{
+			"id": 1903102,
+			"completionStepIds": [
+				1903104,
+				1903106
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1903104",
+							"2"
+						],
+						"stepId": 1903104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1903106",
+							"2"
+						],
+						"stepId": 1903106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Фу Саньэр"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 1903102101,
+					"content": "Разгуливать здесь в одиночку слишком опасно, хм?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102102
+					],
+					"speakerTitle": "Фу Саньэр"
+				},
+				{
+					"id": 1903102102,
+					"content": "Никогда не знаешь, кто... или что встретится на пути.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102103,
+						1903102104
+					],
+					"speakerTitle": "Фу Саньэр"
+				},
+				{
+					"id": 1903102103,
+					"content": "...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102105
+					]
+				},
+				{
+					"id": 1903102105,
+					"content": "#Хм, что-то ты очень споко{F#йна}{M#ен}. Есть такая поговорка: «нельзя ходить вдоль реки, не намочив ног».",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102106
+					],
+					"speakerTitle": "Фу Саньэр"
+				},
+				{
+					"id": 1903102106,
+					"content": "#Если блуждаешь по таким жутким местам, будь готов{F#а} столкнуться с чем-нибудь... потусторонним.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102107
+					],
+					"speakerTitle": "Фу Саньэр"
+				},
+				{
+					"id": 1903102107,
+					"content": "То, что ты здесь увидишь, будет преследовать тебя в кошмарах до самой смерти!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102108,
+						1903102109
+					],
+					"speakerTitle": "Фу Саньэр"
+				},
+				{
+					"id": 1903102108,
+					"content": "Что, серьёзно?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102110
+					]
+				},
+				{
+					"id": 1903102110,
+					"content": "#Что за дела, почему ты так споко{F#йна}{M#ен}? Обычно я не успеваю договорить, как все разбегаются в ужасе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102111,
+						1903102114
+					],
+					"speakerTitle": "Фу Саньэр"
+				},
+				{
+					"id": 1903102111,
+					"content": "Всё потому, что передо мной самый обычный человек.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102112
+					]
+				},
+				{
+					"id": 1903102112,
+					"content": "Может и так, но лучший способ изображать привидение - это создавать зловещую атмосферу, играя на потаённых человеческих страхах.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102113
+					],
+					"speakerTitle": "Фу Саньэр"
+				},
+				{
+					"id": 1903102113,
+					"content": "И в этом случае мой вид значения не имеет.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102117
+					],
+					"speakerTitle": "Фу Саньэр"
+				},
+				{
+					"id": 1903102117,
+					"content": "Ну а людей вроде тебя мне ни за что не напугать, как ни старайся.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102118
+					],
+					"speakerTitle": "Фу Саньэр"
+				},
+				{
+					"id": 1903102118,
+					"content": "Мне кажется, что ты просто отлыниваешь от работы.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102119
+					]
+				},
+				{
+					"id": 1903102119,
+					"content": "#Ты неправ{F#а}. Да, пойду-ка я напугаю какого-нибудь трусишку.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102120
+					],
+					"speakerTitle": "Фу Саньэр"
+				},
+				{
+					"id": 1903102120,
+					"content": "А ты лучше возвращайся к своему спутнику. Он наверняка где-нибудь под кустиком дрожит от страха.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Фу Саньэр"
+				},
+				{
+					"id": 1903102114,
+					"content": "Неужели у тебя нет никакого наряда?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102115
+					]
+				},
+				{
+					"id": 1903102115,
+					"content": "Есть, но в нём невозможно дышать... К тому же наиболее искусный способ играть привидение - это перебирать те струны души, которые отзываются страхом.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102116
+					],
+					"speakerTitle": "Фу Саньэр"
+				},
+				{
+					"id": 1903102116,
+					"content": "И в этом случае мой вид значения не имеет.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						1903102117
+					],
+					"speakerTitle": "Фу Саньэр"
+				},
+				{
+					"id": 1903102109,
+					"content": "Несусветица какая-то... Скажи-ка, что это ты тут делаешь?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102110
+					]
+				},
+				{
+					"id": 1903102104,
+					"content": "Привет.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						1903102105
+					]
+				}
+			]
+		}
+	]
+}

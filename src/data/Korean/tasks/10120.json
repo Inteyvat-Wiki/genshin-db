@@ -1,0 +1,1688 @@
+{
+	"id": 10120,
+	"type": "LQ",
+	"name": "과거의 먹구름",
+	"description": "페보니우스 기사단의 진이 여행자에게 특별한 부탁을 하려는 것 같다. 기사단 본부에 가보자",
+	"unlockDescription": "",
+	"chapter": "바다로 돌아가지 않는 파도",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		10121
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1012001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "기사단의 진과 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1012001,
+						0
+					],
+					"talkId": 1012001
+				}
+			]
+		},
+		{
+			"id": 1012002,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "성에서 옛 귀족 찾기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1012003,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "성벽 근처에 있는 사람과 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1012002,
+						0
+					],
+					"talkId": 1012002
+				}
+			]
+		},
+		{
+			"id": 1012004,
+			"order": 10,
+			"listShowType": "QUEST_SHOW",
+			"description": "기사단으로 돌아가 대책 논의하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1012005,
+			"order": 11,
+			"listShowType": "QUEST_SHOW",
+			"description": "엠버와 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1012003,
+						0
+					],
+					"talkId": 1012003
+				}
+			]
+		},
+		{
+			"id": 1012006,
+			"order": 12,
+			"listShowType": "QUEST_SHOW",
+			"description": "바람맞이 산으로 가서 유라 찾기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1012007,
+			"order": 13,
+			"listShowType": "QUEST_SHOW",
+			"description": "근처의 우인단 처치하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1012008,
+			"order": 20,
+			"listShowType": "QUEST_SHOW",
+			"description": "한 소녀가 마지막 우인단을 처치하는 것 목격하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1012008,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1012009,
+			"order": 21,
+			"listShowType": "QUEST_SHOW",
+			"description": "유라와 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1012004,
+						0
+					],
+					"talkId": 1012004
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1012001,
+			"completionStepIds": [
+				1012001
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1012001",
+							"2"
+						],
+						"stepId": 1012001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"진",
+					"페이몬"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 101200101,
+					"content": "명예 기사, 바쁜데 와줘서 고마워",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200102
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 101200102,
+					"content": "바로 본론으로 들어가지. 기사단에서 네게 특수한 의뢰를 맡길 생각이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200103,
+						101200105
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 101200103,
+					"content": "기사단은 여전히 바쁘군요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200104
+					]
+				},
+				{
+					"id": 101200104,
+					"content": "응, 요새 일이 끊이질 않네. 나뿐만 아니라 몬드에 남은 기사단 일원 모두 눈코 뜰 새 없이 바빠",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200107
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 101200107,
+					"content": "최근에 기사단 일원들에게 보고받은 바에 따르면, 로렌스 가문 사람들이 우인단과 긴밀히 접촉하고 있다고 해",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200108
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 101200108,
+					"content": "우인단, 또 그놈들이야?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200109
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200109,
+					"content": "근데 로렌스 가문이라니, 그 사람들은 뭔데?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200110
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200110,
+					"content": "과거, 몬드엔 옛 귀족의 통치를 받던 암흑기가 있었어. 고탑 왕에게서 되찾은 자유는 다시 억압되고 노예 제도가 성행했었지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200111
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 101200111,
+					"content": "초대 「민들레 기사」 바네사가 혁명을 일으켜 옛 귀족의 통치를 뒤집고 페보니우스 기사단을 세운 덕분에 지금의 몬드가 있는 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200112
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 101200112,
+					"content": "그때 몬드를 고통에 몰아넣은 옛 귀족이 바로 로렌스 가문이고",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200113
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 101200113,
+					"content": "아, 이제 알 것 같아. 그 나쁜 놈들의 후예가 우인단과 일을 꾸미고 있구나?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200114
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200114,
+					"content": "아직은 심증뿐이고 확실한 증거는 없어. 사실 이 일을 조사하려고 너희를 부른 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200115,
+						101200116
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 101200115,
+					"content": "왜 하필 저예요?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200117
+					]
+				},
+				{
+					"id": 101200117,
+					"content": "휴, 옛 귀족과 기사단은 줄곧 적대적인 관계였거든",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200118
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 101200118,
+					"content": "기사단은 오랫동안 양측의 관계를 개선하려 노력했지만, 옛 귀족의 후예들은 여전히 기사단을 원수로 생각하고 있어…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200119
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 101200119,
+					"content": "우리가 어떤 태도로 접근하든 소용없었고 오히려 그들은 격한 거부 반응을 보였지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200120
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 101200120,
+					"content": "「조사」라는 명분으로 곧장 찾아가도 되지만, 혐의를 찾아내지 못한다면 그들은 우릴 더욱 불신할 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200121
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 101200121,
+					"content": "그럼 예전에 들였던 노력은 전부 물거품이 될 거고",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200122
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 101200122,
+					"content": "저도 「명예 기사」인데…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200123
+					]
+				},
+				{
+					"id": 101200123,
+					"content": "아무리 봐도 네가 이 일의 적임자 같아",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200124
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 101200124,
+					"content": "굳이 신분을 강조할 필요 없어. 넌 이 성에 속한 「다수」가 아니라 멀리서 온 여행자니까, 그렇게 접근한다면 그 귀족과 공통점을 찾을 수 있을 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200125
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 101200125,
+					"content": "그리고 우호적인 관계가 되면 우인단에 관련된 일을 자연히 알게 되겠지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200126
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 101200126,
+					"content": "역시 진 단장은 대단해! 이런 생각을 다 해내다니",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200127
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200127,
+					"content": "과찬이야. 외교 문제를 처리하다 보니 경험이 쌓인 것뿐인걸",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200128
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 101200128,
+					"content": "그 로렌스 가문 사람의 이름은 슈베르트야. 요새 몬드 북쪽 성벽 근처에서 산책을 즐긴다더군",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200129
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 101200129,
+					"content": "좀 어울리기 힘든 성격이라는데, 차분하게 다가가면 별문제 없을 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200130,
+						101200131
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 101200130,
+					"content": "제게 맡기세요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200132
+					]
+				},
+				{
+					"id": 101200132,
+					"content": "의뢰를 받아줘서 고마워. 무슨 문제가 생기면 나도 최선을 다해 도울게",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 101200131,
+					"content": "잘됐으면 좋겠네요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200132
+					]
+				},
+				{
+					"id": 101200116,
+					"content": "이건 기사단 내부의 일이잖아요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200117
+					]
+				},
+				{
+					"id": 101200105,
+					"content": "역시 진 단장님답네요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200106
+					]
+				},
+				{
+					"id": 101200106,
+					"content": "상황이 되면 너와 더 이야기 나누고 싶지만, 몬드성의 안전이 최우선이라 말이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200107
+					],
+					"speakerTitle": "진"
+				}
+			]
+		},
+		{
+			"id": 1012002,
+			"completionStepIds": [
+				1012003
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1012003",
+							"2"
+						],
+						"stepId": 1012003,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"???",
+					"페이몬"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 101200201,
+					"content": "응? 너흰 누구야?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200202
+					],
+					"speakerTitle": "슈베르트"
+				},
+				{
+					"id": 101200202,
+					"content": "안녕, 우린…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200203
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200203,
+					"content": "안녕이라고?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200204,
+						101200206
+					],
+					"speakerTitle": "슈베르트"
+				},
+				{
+					"id": 101200204,
+					"content": "아, 안녕하세요…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200205
+					]
+				},
+				{
+					"id": 101200205,
+					"content": "안녕? 내가 잘못 들은 건 아니겠지?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200208
+					],
+					"speakerTitle": "슈베르트"
+				},
+				{
+					"id": 101200208,
+					"content": "흥, 거칠고 경박한 것들. 감히 제멋대로 말을 걸다니",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200209
+					],
+					"speakerTitle": "슈베르트"
+				},
+				{
+					"id": 101200209,
+					"content": "내가 누군지 모르는 걸 보니, 역시 무지한 외지인인가 보군. 난 진정한 귀족의 후예 슈베르트·로렌스야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200210
+					],
+					"speakerTitle": "슈베르트"
+				},
+				{
+					"id": 101200210,
+					"content": "내게 말을 걸고 싶으면 정제된 어휘를 써야 한다고! 이렇게 되는 대로 내뱉는 건 정말이지 못 들어주겠어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200211
+					],
+					"speakerTitle": "슈베르트"
+				},
+				{
+					"id": 101200211,
+					"content": "내 말 알아들었으면, 바로 한쪽 무릎을 꿇고 겸손하게 사과와 인사를 올려. 그게 올바른 예절이라고!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200212
+					],
+					"speakerTitle": "슈베르트"
+				},
+				{
+					"id": 101200212,
+					"content": "엥? 그런 복잡한 예절에 대해서는 들어본 적이 없는데?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200213
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200213,
+					"content": "흥, 모두가 예의범절을 중시하던 시대엔 이런 예절이 귀족을 대하는 기본 상식이었다고!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200214
+					],
+					"speakerTitle": "슈베르트"
+				},
+				{
+					"id": 101200214,
+					"content": "귀족에게 예의를 표하지 않으면 채찍질은 기본이었지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200215
+					],
+					"speakerTitle": "슈베르트"
+				},
+				{
+					"id": 101200215,
+					"content": "허나 지금은 규칙도 예의도 다 무너졌어. 세상이 엉망진창이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200216,
+						101200217
+					],
+					"speakerTitle": "슈베르트"
+				},
+				{
+					"id": 101200216,
+					"content": "너무 번거로운 것 같아요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200218
+					]
+				},
+				{
+					"id": 101200218,
+					"content": "뭐라고? 옛 귀족의 권위를 문제 삼는 것이냐?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200219
+					],
+					"speakerTitle": "슈베르트"
+				},
+				{
+					"id": 101200219,
+					"content": "잘 들어. 로렌스 가문이 몰락하긴 했지만, 우리 후예들은 가문의 영광을 되찾을 기회를 찾고 있다고",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200220
+					],
+					"speakerTitle": "슈베르트"
+				},
+				{
+					"id": 101200220,
+					"content": "사람들이 해이해져도 난 귀족의 우아함과 예절을 지킬 거야. 우린 날 때부터 그들과 다른 존재니까",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200221
+					],
+					"speakerTitle": "슈베르트"
+				},
+				{
+					"id": 101200221,
+					"content": "전 아무 말도 안 했는데…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200222
+					]
+				},
+				{
+					"id": 101200222,
+					"content": "그만하자. 네 행동거지만 봐도 짜증이 나. 너 같은 평민과는 말도 섞기 싫어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200223
+					],
+					"speakerTitle": "슈베르트"
+				},
+				{
+					"id": 101200223,
+					"content": "그리고 너한테 예절을 가르칠 의무 따위도 없잖아",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200224
+					],
+					"speakerTitle": "슈베르트"
+				},
+				{
+					"id": 101200224,
+					"content": "난 중요한 일이 있어서 이만 가야겠어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "슈베르트"
+				},
+				{
+					"id": 101200217,
+					"content": "그래서 옛 귀족이 몰락했나 봐요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200218
+					]
+				},
+				{
+					"id": 101200206,
+					"content": "왜 그러세요?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200207
+					]
+				},
+				{
+					"id": 101200207,
+					"content": "왜 그러냐고? 내가 잘못 들은 건 아니겠지?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200208
+					],
+					"speakerTitle": "슈베르트"
+				}
+			]
+		},
+		{
+			"id": 1012003,
+			"completionStepIds": [
+				1012005
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1012005",
+							"2"
+						],
+						"stepId": 1012005,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"엠버",
+					"페이몬"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 101200301,
+					"content": "우와, 「명예 기사」 아냐?! 정찰을 나가려던 참이었는데 여기서 널 만나다니!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200302
+					],
+					"speakerTitle": "엠버"
+				},
+				{
+					"id": 101200302,
+					"content": "엥? 표정이 왜 그래? 무슨 언짢은 일이라도 있었어?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200303
+					],
+					"speakerTitle": "엠버"
+				},
+				{
+					"id": 101200303,
+					"content": "진 단장에게 의뢰를 받았는데… 일을 망친 것 같아",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200304,
+						101200305
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200304,
+					"content": "말하자면 길어",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200306
+					]
+				},
+				{
+					"id": 101200306,
+					"content": "낙담하지 마. 실패는 늘 있는 일이잖아. 나도 매번 쓸모 있는 정보만 수집해오는 건 아니라구",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200307
+					],
+					"speakerTitle": "엠버"
+				},
+				{
+					"id": 101200307,
+					"content": "그러니까 기운 내!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200308,
+						101200309
+					],
+					"speakerTitle": "엠버"
+				},
+				{
+					"id": 101200308,
+					"content": "고마워",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200310
+					]
+				},
+				{
+					"id": 101200310,
+					"content": "헤헤, 아, 그럼 내가 방법을 생각해볼게. 대체 무슨 일이 있었길래 그래?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200311
+					],
+					"speakerTitle": "엠버"
+				},
+				{
+					"id": 101200311,
+					"content": "진 단장이 우리한테 슈베르트·로렌스라는 사람이랑 친해져 보라고 부탁했거든",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200312
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200312,
+					"content": "근데 그 사람은 성격이 진짜 이상하더라구. 우리 말은 제대로 듣지도 않고…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200313
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200313,
+					"content": "아하, 나 그 사람 알아! 너희한테 예절도 모른다고 했지?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200314,
+						101200315
+					],
+					"speakerTitle": "엠버"
+				},
+				{
+					"id": 101200314,
+					"content": "너도 알고 있구나",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200316
+					]
+				},
+				{
+					"id": 101200316,
+					"content": "하하, 나도 몇 번이나 지적 받았다구. 로렌스 가문 사람들은 좀 이상한 걸 따진단 말이지~",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200317
+					],
+					"speakerTitle": "엠버"
+				},
+				{
+					"id": 101200317,
+					"content": "엥? 가문 사람들이 전부 그 모양이란 말이야?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200318
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200318,
+					"content": "귀족은 귀족답게 굴어야 한다는 마인드거든, 이해는 가지만… 음, 시대에 뒤떨어진 사람들 같긴 해",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200319
+					],
+					"speakerTitle": "엠버"
+				},
+				{
+					"id": 101200319,
+					"content": "하지만 그 가문에도 특이 케이스는 있어. 바로 내 파트너 유라!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200320
+					],
+					"speakerTitle": "엠버"
+				},
+				{
+					"id": 101200320,
+					"content": "파, 파트너?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200321
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200321,
+					"content": "응, 유라는 로렌스 가문 출신이지만 기사단 제4 소대 소대장이기도 해",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200322,
+						101200323
+					],
+					"speakerTitle": "엠버"
+				},
+				{
+					"id": 101200322,
+					"content": "로렌스 가문은 기사단을 원수로 생각한다던데",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200324
+					]
+				},
+				{
+					"id": 101200324,
+					"content": "유라는 특별하거든. 그녀는 가문 사람들과 달리 자기만의 생각과 행동 방식이 있어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200325
+					],
+					"speakerTitle": "엠버"
+				},
+				{
+					"id": 101200325,
+					"content": "쉽게 말해, 그녀한테 가문의 규칙 따윈 안중에도 없단 말이지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200326
+					],
+					"speakerTitle": "엠버"
+				},
+				{
+					"id": 101200326,
+					"content": "아, 하지만 로렌스 가문 사람과 사귀는 법은 유라가 잘 알고 있어. 그녀를 만나보면 내 말이 무슨 뜻인지 바로 알 수 있을 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200327
+					],
+					"speakerTitle": "엠버"
+				},
+				{
+					"id": 101200327,
+					"content": "호기심 돋는걸!? 진 단장은 로렌스 가문 사람인 유라가 있는데도 왜 우리한테 일을 맡긴 걸까?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200328
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200328,
+					"content": "그건 설명하자면 좀 복잡해. 간단히 말하자면, 유라는 기사단에 입단한 것 때문에 가문 사람들에게 미움을 받고 있거든…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200329
+					],
+					"speakerTitle": "엠버"
+				},
+				{
+					"id": 101200329,
+					"content": "그들 눈에 유라는 적이자 배신자일 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200330,
+						101200331
+					],
+					"speakerTitle": "엠버"
+				},
+				{
+					"id": 101200330,
+					"content": "별난 사람이구나",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200332
+					]
+				},
+				{
+					"id": 101200332,
+					"content": "헤헤, 사실 유라는 친해지기 되게 쉬워. 유라한테 힘들었던 점을 솔직히 털어놓으면 분명 슈베르트와 사귀는 법을 알려줄 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200333
+					],
+					"speakerTitle": "엠버"
+				},
+				{
+					"id": 101200333,
+					"content": "유라는 아침에 야외로 순찰을 간 것 같아. 바람맞이 산 근처로 가면 만날 수 있을 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200334
+					],
+					"speakerTitle": "엠버"
+				},
+				{
+					"id": 101200334,
+					"content": "응응, 고마워, 엠버~ 그럼 우린 유라를 만나러 가볼게!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200335
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200335,
+					"content": "다 잘될 거야! 나도 출발해야겠어!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "엠버"
+				},
+				{
+					"id": 101200331,
+					"content": "그 맘을 알 것도 같아…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200332
+					]
+				},
+				{
+					"id": 101200323,
+					"content": "로렌스 가문 사람도 기사단에 입단할 수 있어?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200324
+					]
+				},
+				{
+					"id": 101200315,
+					"content": "너도 당해봤구나",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200316
+					]
+				},
+				{
+					"id": 101200309,
+					"content": "역시 엠버답네",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200310
+					]
+				},
+				{
+					"id": 101200305,
+					"content": "우리가 잘못한 건 아냐",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200306
+					]
+				}
+			]
+		},
+		{
+			"id": 1012004,
+			"completionStepIds": [
+				1012009
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1012009",
+							"2"
+						],
+						"stepId": 1012009,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"유라",
+					"페이몬"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 101200401,
+					"content": "너희 움직임이 날쌔구나. 내가 오랫동안 노리고 있던 놈들인데…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200402
+					],
+					"speakerTitle": "유라"
+				},
+				{
+					"id": 101200402,
+					"content": "이제 모든 공이 다 너희에게 돌아가겠어! 이게 바로 「먼저 먹는 놈이 임자」라는 건가? …제길, 이 원한, 기억해 두겠어!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200403
+					],
+					"speakerTitle": "유라"
+				},
+				{
+					"id": 101200403,
+					"content": "…엥?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200404
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200404,
+					"content": "잠깐, 원한이라뇨?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200405
+					]
+				},
+				{
+					"id": 101200405,
+					"content": "그래, 원한. 여기서 시끄러운 소리가 나길래 급히 와봤더니, 네가 우인단을 몰아붙이고 있었어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200406
+					],
+					"speakerTitle": "유라"
+				},
+				{
+					"id": 101200406,
+					"content": "내가 나서지 않았다면 공은 고사하고 귀찮은 일만 생겼겠지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200407
+					],
+					"speakerTitle": "유라"
+				},
+				{
+					"id": 101200407,
+					"content": "그래도 네가 안 다쳐서 다행이야. 이렇게 많은 우인단과 싸우는 건 위험하거든",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200408,
+						101200409
+					],
+					"speakerTitle": "유라"
+				},
+				{
+					"id": 101200408,
+					"content": "우인단과의 전투라면 익숙한 편이죠",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200410
+					]
+				},
+				{
+					"id": 101200410,
+					"content": "무슨 말을 하는 건지는 모르겠지만, 걱정해줘서 고마워",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200411
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200411,
+					"content": "엥? 내가 왜 원수를 걱정한다는 거지?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200412
+					],
+					"speakerTitle": "유라"
+				},
+				{
+					"id": 101200412,
+					"content": "방금 전에 「네가 안 다쳐서 다행이야」라며…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200413
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200413,
+					"content": "아, 내 말은 너희가 다쳤다면 공을 빼앗기는 건 물론이고, 너흴 몬드성까지 데려다줘야 하니까——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200414
+					],
+					"speakerTitle": "유라"
+				},
+				{
+					"id": 101200414,
+					"content": "그럼 너흰 나한테 또 한 번 폐를 끼치게 될 테고, 이 원한도 더 깊어졌을 거란 뜻이었어!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200415
+					],
+					"speakerTitle": "유라"
+				},
+				{
+					"id": 101200415,
+					"content": "그 말이 그런 뜻이었어?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200416
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200416,
+					"content": "설마 당신이 유라?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200417
+					]
+				},
+				{
+					"id": 101200417,
+					"content": "그래, 맞아",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200418
+					],
+					"speakerTitle": "유라"
+				},
+				{
+					"id": 101200418,
+					"content": "역시, 어쩐지 좀 이상하더라! 대화가 안 통하는 정도는 아니지만…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200419
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200419,
+					"content": "처음 만난 사람한테 「이상하다고」 하는 건, 귀족의 예절이 아니더라도 그냥 무례한 것 같은데?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200420
+					],
+					"speakerTitle": "유라"
+				},
+				{
+					"id": 101200420,
+					"content": "그나저나, 내 이름은 어떻게 아는 거지?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200421
+					],
+					"speakerTitle": "유라"
+				},
+				{
+					"id": 101200421,
+					"content": "네가 말한 예절 문제랑 관련이 있어. 얜 페보니우스 기사단의 명예 기사고, 우린 슈베르트·로렌스라고 하는 귀족을 조사하려던 참이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200422
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200422,
+					"content": "근데 그 사람은 예절을 엄청 중시해서 우리랑은 말 섞기도 싫어하더라구",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200423
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200423,
+					"content": "하하하, 그랬군. 그분은 내 숙부신데 원래 그래",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200424
+					],
+					"speakerTitle": "유라"
+				},
+				{
+					"id": 101200424,
+					"content": "근데 조사는 왜 하려는 건데?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200425
+					],
+					"speakerTitle": "유라"
+				},
+				{
+					"id": 101200425,
+					"content": "우인단과 뭔가를 꾸미는 듯해요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200426
+					]
+				},
+				{
+					"id": 101200426,
+					"content": "그렇구나, 하하. 배짱 좋네, 내 앞에서 가족의 험담을 하다니. 이 원한도, 기억해두겠어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200427
+					],
+					"speakerTitle": "유라"
+				},
+				{
+					"id": 101200427,
+					"content": "아니, 이건 진 단장의 부탁이라고! 그리고 아직 확실한 건 아냐!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200428,
+						101200429
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200428,
+					"content": "궁금하지 않아요?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200430
+					]
+				},
+				{
+					"id": 101200430,
+					"content": "몬드성 시민들 눈에 로렌스 가문은 몹쓸 집안이잖아. 유언비어로 의심을 받아도 이상할 건 없지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200431
+					],
+					"speakerTitle": "유라"
+				},
+				{
+					"id": 101200431,
+					"content": "응, 맞아. 옛날엔 잔학한 통치자였으니까 평판이 좋을 리 없지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200432
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200432,
+					"content": "너도 그렇게 생각하는구나…? 그럼 이 원한 역시 기억해둬야겠군",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200433
+					],
+					"speakerTitle": "유라"
+				},
+				{
+					"id": 101200433,
+					"content": "네가 먼저 말한 거잖아?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200434
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200434,
+					"content": "하하하, 재밌군, 재밌어. 첫 만남부터 원한을 3번이나 맺다니, 이렇게 재밌는 사람은 오랜만이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200435,
+						101200436
+					],
+					"speakerTitle": "유라"
+				},
+				{
+					"id": 101200435,
+					"content": "이게 「재밌는 일」인가요?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200437
+					]
+				},
+				{
+					"id": 101200437,
+					"content": "로렌스 가문의 예절을 배우기 위해 날 찾아온 거지? 그래야 숙부와 얘기할 수 있을 테니까",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200438
+					],
+					"speakerTitle": "유라"
+				},
+				{
+					"id": 101200438,
+					"content": "응, 엠버한테 소개받고 왔어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200439
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200439,
+					"content": "좋아, 바로 가르쳐줄게. 일단 몬드성으로 돌아가자. 사람 있는 곳이 훈련하기 더 편할 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200440,
+						101200441
+					],
+					"speakerTitle": "유라"
+				},
+				{
+					"id": 101200440,
+					"content": "원한을 기억해둔다면서요?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200442
+					]
+				},
+				{
+					"id": 101200442,
+					"content": "아냐, 둘은 별개야. 단장 대행의 부탁이자 엠버의 추천도 받았는데 체면은 차려줘야지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "유라"
+				},
+				{
+					"id": 101200441,
+					"content": "이 틈에 복수하려는 건 아니죠?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200442
+					]
+				},
+				{
+					"id": 101200436,
+					"content": "엄청 즐거워 보이네요…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200437
+					]
+				},
+				{
+					"id": 101200429,
+					"content": "걱정되지 않아요?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200430
+					]
+				},
+				{
+					"id": 101200409,
+					"content": "난 싸움에 자신 있어요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200410
+					]
+				}
+			]
+		},
+		{
+			"id": 1012006,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1012002",
+							"2"
+						],
+						"stepId": 1012002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"진"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 101200601,
+					"content": "슈베르트는 좀 감정적인 사람이라 친해지기 어렵대",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200602
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 101200602,
+					"content": "하지만 차분하게 다가가면 좋은 관계를 맺을 수 있을 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "진"
+				}
+			]
+		},
+		{
+			"id": 1012007,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"99902",
+							"2"
+						],
+						"stepId": 99902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"헤르타"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 101200701,
+					"content": "슈베르트에 대해…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						101200702
+					]
+				},
+				{
+					"id": 101200702,
+					"content": "이상한 옛 귀족 말씀이신가요? 그 사람은 못 봤어요, 죄송해요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200703
+					],
+					"speakerTitle": "헤르타"
+				},
+				{
+					"id": 101200703,
+					"content": "로렌스 가문 사람들은 페보니우스 기사 앞에 모습을 드러내기를 꺼려해요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200704
+					],
+					"speakerTitle": "헤르타"
+				},
+				{
+					"id": 101200704,
+					"content": "그래도 괜찮아요. 군수품 조달에 문제가 생기면 귀찮아지거든요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200705
+					],
+					"speakerTitle": "헤르타"
+				},
+				{
+					"id": 101200705,
+					"content": "한번 위쪽으로 가보세요, 그 사람이 있을지도 몰라요",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "헤르타"
+				}
+			]
+		},
+		{
+			"id": 1012008,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1012002",
+							"2"
+						],
+						"stepId": 1012002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1012003",
+							"2"
+						],
+						"stepId": 1012003,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"미셸"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 101200801,
+					"content": "안녕, 이 근처에서 슈베르트라는 귀족을 본 적 있어?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200802
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 101200802,
+					"content": "음… 그런 이름은 처음인데. 하지만 요새 이곳에 자주 나타나는 이상한 사람이 있긴 해",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200803
+					],
+					"speakerTitle": "미셸"
+				},
+				{
+					"id": 101200803,
+					"content": "여기저기 돌아다니면서 때론 그림을 그리기도 하고, 대체 뭘 하려는 건지 모르겠어…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101200804
+					],
+					"speakerTitle": "미셸"
+				},
+				{
+					"id": 101200804,
+					"content": "너희들이 찾는 게 그 사람이라면, 성벽 쪽으로 가봐",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "미셸"
+				}
+			]
+		},
+		{
+			"id": 1012011,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"99902",
+							"2"
+						],
+						"stepId": 99902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"엠버"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 101201101,
+					"content": "바람맞이 산에 가면 유라를 찾을 수 있을 거야!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						101201102
+					],
+					"speakerTitle": "엠버"
+				},
+				{
+					"id": 101201102,
+					"content": "유라는 내 파트너니까 분명 너흴 도와줄 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "엠버"
+				}
+			]
+		}
+	]
+}

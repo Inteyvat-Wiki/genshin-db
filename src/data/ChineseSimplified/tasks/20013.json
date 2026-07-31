@@ -1,0 +1,299 @@
+{
+	"id": 20013,
+	"type": "IQ",
+	"name": "此路不通？",
+	"description": "杰克正去一处新的冒险地点探险，但是在醉汉峡却被路障拦截，遭到丘丘人的围攻。消灭丘丘人，解救杰克。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2001301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "前去查看详请",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001302,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)击败附近怪物$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "消灭所有魔物并摧毁路障",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "与杰克对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001303,
+						0
+					],
+					"talkId": 2001303
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2001301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001302",
+							"2"
+						],
+						"stepId": 2001302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"杰克"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200130101,
+					"content": "快来救救我！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "杰克"
+				}
+			]
+		},
+		{
+			"id": 2001302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001302",
+							"3"
+						],
+						"stepId": 2001302,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001303",
+							"2"
+						],
+						"stepId": 2001303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"杰克"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200130201,
+					"content": "原来是旅行者，实在是太感谢了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130202
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 200130202,
+					"content": "你能再帮我一个小忙吗…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130203
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 200130203,
+					"content": "这个路障竖在这里，把我的冒险之路给截断了…。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130204
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 200130204,
+					"content": "你能帮我把这个路障清理掉吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130205,
+						200130206
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 200130205,
+					"content": "没问题。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200130207
+					]
+				},
+				{
+					"id": 200130207,
+					"content": "唉，要是能像你一样，我早就成为个伟大的冒险家了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 200130206,
+					"content": "还有别的事。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200130208
+					]
+				},
+				{
+					"id": 200130208,
+					"content": "别啊，我伟大的冒险之旅可不能终结在此，拜托你帮帮我吧！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "杰克"
+				}
+			]
+		},
+		{
+			"id": 2001303,
+			"completionStepIds": [
+				2001304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001304",
+							"2"
+						],
+						"stepId": 2001304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"杰克"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200130301,
+					"content": "太感谢你了，旅行者。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130302
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 200130302,
+					"content": "我本来是想去斯坦利先生冒险过的地方看看，但是没想到半路上遇见了这群家伙…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130303
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 200130303,
+					"content": "我的实力还是太弱了，假如是斯坦利先生，肯定能把这群家伙全部消灭。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130304
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 200130304,
+					"content": "要是你愿意和我一起去冒险…还是算了，不能事事都依靠别人。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130305
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 200130305,
+					"content": "我要接着往前走了，这个给你，我在路上摘了好多做干粮…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130306
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 200130306,
+					"content": "不过，这也不能叫「干粮」，对吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "杰克"
+				}
+			]
+		}
+	]
+}

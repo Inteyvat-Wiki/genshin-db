@@ -1,0 +1,154 @@
+{
+	"id": 381,
+	"type": "AQ",
+	"name": "숨겨진 눈물",
+	"description": "드발린의 흔적은 몬드 곳곳에 있다. 그중 눈물 한 방울이 숲속의 폐허에 떨어져 있다",
+	"unlockDescription": "",
+	"chapter": "눈물 없는 내일을 위해",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		380,
+		382,
+		383
+	],
+	"prevMainQuestList": [
+		379
+	],
+	"steps": [
+		{
+			"id": 38101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "숲속의 폐허로 가기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						38101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 38102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "숲속의 폐허에 진입하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_DUNGEON",
+					"rawParams": [
+						10,
+						40
+					]
+				}
+			]
+		},
+		{
+			"id": 38103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "가디언 몬스터 처치하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 38104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "바람 드래곤의 눈물 획득하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100160,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 38105,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "대화 숨기기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						38105,
+						0
+					],
+					"talkId": 38105
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 38105,
+			"completionStepIds": [
+				38105
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"38105",
+							"2"
+						],
+						"stepId": 38105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"진"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3800113,
+					"content": "수집 성공! 진짜 힘들었네",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3800114
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 3800114,
+					"content": "방심하지 마. 풍마룡의 상황은 여전히 위험해",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3800115
+					],
+					"speakerTitle": "다이루크"
+				},
+				{
+					"id": 3800115,
+					"content": "게다가… 「우인단」 쪽에서 움직일 지도 몰라",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "다이루크"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,201 @@
+{
+	"id": 19118,
+	"type": "LQ",
+	"name": "Um presente para os cães e gatos",
+	"description": "Você se encontra com Thoma de novo, e ele trouxe um belo suéter.",
+	"unlockDescription": "",
+	"chapter": "Rotina de Serviços Domésticos",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1911801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fotografe o cachorro e o gato que estão vagando de ângulos diferentes (0/2)",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1911801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1911802,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Coloque suéteres nos cães e gatos com Thoma",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						105001,
+						1911802
+					]
+				}
+			]
+		},
+		{
+			"id": 1911803,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Espere até o dia seguinte (08:00 - 24:00)",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						1,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1911804,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com Thoma",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						105001,
+						1911803
+					]
+				}
+			]
+		},
+		{
+			"id": 1911805,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fotografe o cachorro e o gato que estão vagando de ângulos diferentes (1/2)",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1911805,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1911806,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1911806,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1911803,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1911801",
+							"2"
+						],
+						"stepId": 1911801,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1911805",
+							"2"
+						],
+						"stepId": 1911805,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Thoma"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191180301,
+					"content": "#Que fofos... {NICKNAME}, vamos ajudá-los a tirar algumas fotos.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Thoma"
+				}
+			]
+		},
+		{
+			"id": 1911804,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1911801",
+							"2"
+						],
+						"stepId": 1911801,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": []
+		},
+		{
+			"id": 1911805,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1911805",
+							"2"
+						],
+						"stepId": 1911805,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": []
+		}
+	]
+}

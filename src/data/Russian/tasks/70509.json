@@ -1,0 +1,550 @@
+{
+	"id": 70509,
+	"type": "WQ",
+	"name": "Безупречный осенний иней",
+	"description": "«Беловолосая дама, проходящая мимо, - Адепт из Ли Юэ?» «Не могу сказать. А ты?» «Я тоже...»",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70503,
+		70508
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050901,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Лукой и войдите в таверну",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050901,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050902,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Приготовьте Шэнь Хэ напиток",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050902,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050903,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте напиток Шэнь Хэ",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050902,
+						0
+					],
+					"talkId": 7050902
+				}
+			]
+		},
+		{
+			"id": 7050904,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Шэнь Хэ",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050901,
+						0
+					],
+					"talkId": 7050901
+				}
+			]
+		},
+		{
+			"id": 7050905,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отправляйтесь к стойке и подготовьтесь к началу работы",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7050305,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050901,
+			"completionStepIds": [
+				7050904
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050904",
+							"2"
+						],
+						"stepId": 7050904,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050902",
+							"2"
+						],
+						"stepId": 7050902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Шэнь Хэ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705090101,
+					"content": "#Привет, {NICKNAME}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090102
+					],
+					"speakerTitle": "Шэнь Хэ"
+				},
+				{
+					"id": 705090102,
+					"content": "Привет-привет! Возможно, Паймон и удивилась бы при виде тебя, но мы уже встретили так много друзей здесь...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090103
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705090103,
+					"content": "Что?! Погоди, это же Шэнь Хэ! Вот это да!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090104
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705090104,
+					"content": "Это место нелегко найти. «Доля ангелов»... Названьице довольно труднопроизносимое.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090105
+					],
+					"speakerTitle": "Шэнь Хэ"
+				},
+				{
+					"id": 705090105,
+					"content": "Господин Чжун Ли любезно рассказал мне о вас и баре. Такой галантный.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090106
+					],
+					"speakerTitle": "Шэнь Хэ"
+				},
+				{
+					"id": 705090106,
+					"content": "Рассказал? Ты проделала такой путь только для того, чтобы выпить?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090107
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705090107,
+					"content": "Ага.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090108
+					],
+					"speakerTitle": "Шэнь Хэ"
+				},
+				{
+					"id": 705090108,
+					"content": "Потому что... мы друзья.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090109
+					],
+					"speakerTitle": "Шэнь Хэ"
+				},
+				{
+					"id": 705090109,
+					"content": "Что бы ты хотела заказать?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090110
+					]
+				},
+				{
+					"id": 705090110,
+					"content": "Вот меню!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090111
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705090111,
+					"content": "Стража Борея? Хм... Борей? Северный ветер?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090112
+					],
+					"speakerTitle": "Шэнь Хэ"
+				},
+				{
+					"id": 705090112,
+					"content": "Ну, наверняка это связано с Волком Севера. Так что да, северный...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090113
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705090113,
+					"content": "Карамельные шишки... А как их пить-то?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090114
+					],
+					"speakerTitle": "Шэнь Хэ"
+				},
+				{
+					"id": 705090114,
+					"content": "О, Паймон пробовала. На самом деле, это просто карамельный кофе. А шишки... Шишки указывают на цвет!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090115
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705090115,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090116
+					],
+					"speakerTitle": "Шэнь Хэ"
+				},
+				{
+					"id": 705090116,
+					"content": "Эти названия сбивают с толку. Совершенно ничего не понятно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090117
+					],
+					"speakerTitle": "Шэнь Хэ"
+				},
+				{
+					"id": 705090117,
+					"content": "Выберите вы за меня. Что-нибудь по вкусу как цветки цинсинь или стеклянные колокольчики.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090118
+					],
+					"speakerTitle": "Шэнь Хэ"
+				},
+				{
+					"id": 705090118,
+					"content": "Такие лекарственные травы здесь не растут. Если ты хочешь чего-то горького, то пусть это будет кофе...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090119
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705090119,
+					"content": "Может, чего-нибудь сладкого?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090120
+					]
+				},
+				{
+					"id": 705090120,
+					"content": "Ладно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090121
+					],
+					"speakerTitle": "Шэнь Хэ"
+				},
+				{
+					"id": 705090121,
+					"content": "Это хорошая идея. Ты долго практиковалась в искусстве Адептов. Пришло время для чего-то нового!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090122
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705090122,
+					"content": "А давай приготовим Шэнь Хэ Заснеженный поцелуй! В самый раз для неё.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				}
+			]
+		},
+		{
+			"id": 7050902,
+			"completionStepIds": [
+				7050903
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050903",
+							"2"
+						],
+						"stepId": 7050903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Шэнь Хэ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705090201,
+					"content": "Хм, так сладко, мягко и совершенно не горько. Что это?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090202
+					],
+					"speakerTitle": "Шэнь Хэ"
+				},
+				{
+					"id": 705090202,
+					"content": "Это называется Заснеженный поцелуй! Взбитое до пены молоко с добавлением фруктового сока. Он словно покрыт слоем снега.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090203
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705090203,
+					"content": "Только не спрашивай, почему это называется поцелуем... Паймон тоже не понимает. Наверно, просто такая уловка, чтобы продать побольше!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090204
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705090204,
+					"content": "Уловка?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090205
+					],
+					"speakerTitle": "Шэнь Хэ"
+				},
+				{
+					"id": 705090205,
+					"content": "А? Разве нет? Паймон просто так сказала... Ну... или это чтобы сделать название поромантичнее!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090206
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705090206,
+					"content": "Романтичнее?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090207
+					],
+					"speakerTitle": "Шэнь Хэ"
+				},
+				{
+					"id": 705090207,
+					"content": "Уф... Трудно объяснить! Хватит заставлять Паймон что-то выдумывать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090208,
+						705090209
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705090208,
+					"content": "Молочная пена не имеет особого вкуса...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090210
+					]
+				},
+				{
+					"id": 705090210,
+					"content": "Да-да.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090211,
+						705090212
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705090211,
+					"content": "В тот момент, когда ты чувствуешь сладость сока...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090213
+					]
+				},
+				{
+					"id": 705090213,
+					"content": "Ох...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090214
+					],
+					"speakerTitle": "Шэнь Хэ"
+				},
+				{
+					"id": 705090214,
+					"content": "Кажется, теперь я понимаю.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090215
+					],
+					"speakerTitle": "Шэнь Хэ"
+				},
+				{
+					"id": 705090215,
+					"content": "Да? Правда?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090216
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705090216,
+					"content": "Подождите-ка! А почему Паймон теперь совсем запуталась?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090217
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705090217,
+					"content": "Иногда, бродя по горам, я ем чудесные травы. И я видела тот миг, когда новый росток пробивается сквозь почву.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090218
+					],
+					"speakerTitle": "Шэнь Хэ"
+				},
+				{
+					"id": 705090218,
+					"content": "Восторг, что я почувствовала, и правда был похож на то, что я испытываю сейчас.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090219
+					],
+					"speakerTitle": "Шэнь Хэ"
+				},
+				{
+					"id": 705090219,
+					"content": "#Спасибо за помощь с этими непонятными названиями, {NICKNAME}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090220
+					],
+					"speakerTitle": "Шэнь Хэ"
+				},
+				{
+					"id": 705090220,
+					"content": "Возможно, мне когда-нибудь снова понадобятся твои услуги.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Шэнь Хэ"
+				},
+				{
+					"id": 705090212,
+					"content": "...она как росток, пробивающийся сквозь лёд, чтобы поцеловать тебя...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090213
+					]
+				},
+				{
+					"id": 705090209,
+					"content": "Она как снег на вершине горы...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090210
+					]
+				}
+			]
+		}
+	]
+}

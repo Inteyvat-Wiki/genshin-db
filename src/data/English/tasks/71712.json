@@ -1,0 +1,176 @@
+{
+	"id": 71712,
+	"type": "WQ",
+	"name": "Geri's Gastro-Nostalgia",
+	"description": "Geri needs two servings of Flaming Red Bolognese.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7171201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Give two servings of Flaming Red Bolognese to Geri",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7171201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7171202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Geri",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7171202,
+						0
+					],
+					"talkId": 7171202
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7171201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7171201",
+							"2"
+						],
+						"stepId": 7171201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7171201"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Geri"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717120101,
+					"content": "About Flaming Red Bolognese...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717120102
+					]
+				},
+				{
+					"id": 717120102,
+					"content": "Oh right, you must've seen my commission then. Have you prepared two dishes of Flaming Red Bolognese?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717120103,
+						717120104
+					],
+					"speakerTitle": "Geri"
+				},
+				{
+					"id": 717120103,
+					"content": "I certainly have, here they are.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717120104,
+					"content": "Not yet...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717120105
+					]
+				},
+				{
+					"id": 717120105,
+					"content": "Aw alright, just let me know as soon as they're ready.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717120106
+					],
+					"speakerTitle": "Geri"
+				},
+				{
+					"id": 717120106,
+					"content": "I can't even remember the last time I had Flaming Red Bolognese.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Geri"
+				}
+			]
+		},
+		{
+			"id": 7171202,
+			"completionStepIds": [
+				7171202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7171202",
+							"2"
+						],
+						"stepId": 7171202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Geri"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717120201,
+					"content": "Mm-hmm! These Flaming Red Bolognese taste just like I remember.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717120202
+					],
+					"speakerTitle": "Geri"
+				},
+				{
+					"id": 717120202,
+					"content": "Here, please take these. Thanks for bringing me the food!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Geri"
+				}
+			]
+		}
+	]
+}

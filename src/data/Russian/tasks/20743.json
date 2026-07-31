@@ -1,0 +1,297 @@
+{
+	"id": 20743,
+	"type": "WQ",
+	"name": "Проблема с ветром",
+	"description": "Винокурня «Рассвет» серьёзно пострадала от недавних ураганов. Эльзер пытается восстановить порядок...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		384
+	],
+	"steps": [
+		{
+			"id": 2074301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Эльзером",
+			"finishConditions": []
+		},
+		{
+			"id": 2074302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Очистите дорогу от монстров и других препятствий",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2074303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Очистите дорогу от монстров и других препятствий",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2074304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Очистите дорогу от монстров и других препятствий",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2074305,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						207430201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2074306,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Эльзером",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2074320,
+						0
+					],
+					"talkId": 2074320
+				}
+			]
+		},
+		{
+			"id": 2074307,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2074302,
+						0
+					],
+					"talkId": 2074302
+				}
+			]
+		},
+		{
+			"id": 2074308,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						207430801,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2074310,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2074305",
+							"2"
+						],
+						"stepId": 2074305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Эльзер"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 207431001,
+					"content": "Если винокурня будет простаивать и дальше, то как я объясню это господину Дилюку...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207431002
+					],
+					"speakerTitle": "Эльзер"
+				},
+				{
+					"id": 207431002,
+					"content": "#Путешественн{F#ица}{M#ик}, если вы встретите господина Дилюка, вы не могли бы рассказать ему об этом?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207431003
+					],
+					"speakerTitle": "Эльзер"
+				},
+				{
+					"id": 207431003,
+					"content": "Он не слишком много внимания уделяет своему бизнесу, и этому делу тоже...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Эльзер"
+				}
+			]
+		},
+		{
+			"id": 2074320,
+			"completionStepIds": [
+				2074306
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2074306",
+							"2"
+						],
+						"stepId": 2074306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Эльзер"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 207432001,
+					"content": "Вы уже расчистили торговые пути?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207432002
+					],
+					"speakerTitle": "Эльзер"
+				},
+				{
+					"id": 207432002,
+					"content": "Они чисты как никогда.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						207432003
+					]
+				},
+				{
+					"id": 207432003,
+					"content": "Замечательно! Теперь работа винокурни будет потихоньку восстанавливаться.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207432004
+					],
+					"speakerTitle": "Эльзер"
+				},
+				{
+					"id": 207432004,
+					"content": "На самом деле, мне нужно доложить об этом господину Дилюку...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207432005
+					],
+					"speakerTitle": "Эльзер"
+				},
+				{
+					"id": 207432005,
+					"content": "Но он опять исчез. Его нет нигде, и на винокурне никто не знает, куда он делся.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207432006
+					],
+					"speakerTitle": "Эльзер"
+				},
+				{
+					"id": 207432006,
+					"content": "Аделинда лишь сказала: «Господин Дилюк отлучился по личным делам», и всё. Она совершенно не беспокоится.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207432007
+					],
+					"speakerTitle": "Эльзер"
+				},
+				{
+					"id": 207432007,
+					"content": "А, ладно. Подожду, когда господин Дилюк вернётся. Мне надо серьёзно поговорить с ним...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Эльзер"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,176 @@
+{
+	"id": 70712,
+	"type": "WQ",
+	"name": "克罗丽丝的植物研究",
+	"description": "蒙德的克罗丽丝需要三朵塞西莉亚花。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7071201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "将三朵塞西莉亚花交给克罗丽丝",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7071201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7071202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "与克罗丽丝对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7071202,
+						0
+					],
+					"talkId": 7071202
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7071201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071201",
+							"2"
+						],
+						"stepId": 7071201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7071201"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"克罗丽丝"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707120101,
+					"content": "关于塞西莉亚花…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707120102
+					]
+				},
+				{
+					"id": 707120102,
+					"content": "嗯？你是看到了我的委托吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707120103
+					],
+					"speakerTitle": "克罗丽丝"
+				},
+				{
+					"id": 707120103,
+					"content": "那你把三朵塞西莉亚花都搜集齐了吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707120104,
+						707120105
+					],
+					"speakerTitle": "克罗丽丝"
+				},
+				{
+					"id": 707120104,
+					"content": "搜集齐了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707120105,
+					"content": "还没有。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707120106
+					]
+				},
+				{
+					"id": 707120106,
+					"content": "好吧，那你搜集齐了之后，就请快点拿来给我吧，我的研究正等着用呢。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "克罗丽丝"
+				}
+			]
+		},
+		{
+			"id": 7071202,
+			"completionStepIds": [
+				7071202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071202",
+							"2"
+						],
+						"stepId": 7071202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"克罗丽丝"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707120201,
+					"content": "嗯…这些应该就足够我研究了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707120202
+					],
+					"speakerTitle": "克罗丽丝"
+				},
+				{
+					"id": 707120202,
+					"content": "这些东西给你，请收下吧，谢谢你帮我的忙。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "克罗丽丝"
+				}
+			]
+		}
+	]
+}

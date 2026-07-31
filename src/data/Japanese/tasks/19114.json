@@ -1,0 +1,248 @@
+{
+	"id": 19114,
+	"type": "LQ",
+	"name": "大々的な宣伝",
+	"description": "城内でトーマの家政科の授業を宣伝し、より多くの人に参加してもらう。",
+	"unlockDescription": "",
+	"chapter": "家司の日頃の業務",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1911401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "スミレウリ、鳥肉、小麦粉をそれぞれ1つ入手する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						110001,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101211,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100064,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1911402,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "城内の商人に家政科の授業を宣伝する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						105001,
+						1911402
+					]
+				}
+			]
+		},
+		{
+			"id": 1911403,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "城内の主婦に家政科の授業を宣伝する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						105001,
+						1911403
+					]
+				}
+			]
+		},
+		{
+			"id": 1911404,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "城内の老人に家政科の授業を宣伝する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						105001,
+						1911404
+					]
+				}
+			]
+		},
+		{
+			"id": 1911405,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "社奉行の庭に行って家政科の授業に参加する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						105001,
+						1911405
+					]
+				}
+			]
+		},
+		{
+			"id": 1911406,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "社奉行所に戻って最後の準備をする",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						105001,
+						1911406
+					]
+				}
+			]
+		},
+		{
+			"id": 1911407,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "翌日（8時~24時）まで待つ",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						1,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1911408,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "集めた家政科の授業の材料をトーマに渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						105001,
+						1911407
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1911407,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1911401",
+							"2"
+						],
+						"stepId": 1911401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"トーマ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191140701,
+					"content": "まだ足りないようだね…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191140702
+					],
+					"speakerTitle": "トーマ"
+				},
+				{
+					"id": 191140702,
+					"content": "必要なのは<color=#00E1FFFF>スミレウリ</color>、<color=#00E1FFFF>鳥肉</color>、それに<color=#00E1FFFF>小麦粉</color>だ。任せたよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "トーマ"
+				}
+			]
+		},
+		{
+			"id": 1911408,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1911406",
+							"2"
+						],
+						"stepId": 1911406,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"永野"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191140309,
+					"content": "君の授業が役に立つものなら、周りの人に広める。もし君の腕前が未熟であれば、私がみなに教えるのもやぶさかではない。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191140310
+					],
+					"speakerTitle": "永野"
+				},
+				{
+					"id": 191140310,
+					"content": "では、ご訪問をお待ちしております。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191140311
+					],
+					"speakerTitle": "トーマ"
+				},
+				{
+					"id": 191140311,
+					"content": "さて…これで宣伝も終わったし、社奉行所に戻ろうか。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "トーマ"
+				}
+			]
+		}
+	]
+}

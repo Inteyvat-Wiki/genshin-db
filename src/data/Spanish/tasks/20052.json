@@ -1,0 +1,410 @@
+{
+	"id": 20052,
+	"type": "IQ",
+	"name": "¡Anna, la aventurera!",
+	"description": "Anna, de Mondstadt, ya logró convertirse en aventurera.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2005201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Anna",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2005201,
+						0
+					],
+					"talkId": 2005201
+				}
+			]
+		},
+		{
+			"id": 2005202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Completa el encargo del Gremio de Aventureros con Anna",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2005203,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Completa el encargo del Gremio de Aventureros con Anna",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2005204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Anna",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2005202,
+						0
+					],
+					"talkId": 2005202
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2005201,
+			"completionStepIds": [
+				2005201
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2005201",
+							"2"
+						],
+						"stepId": 2005201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Anna"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200520101,
+					"content": "Muy bien... ¡Hoy tenemos otro encargo por cumplir!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520102,
+						200520106
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520102,
+					"content": "Estás muy motivada.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200520103
+					]
+				},
+				{
+					"id": 200520103,
+					"content": "¡Por supuesto! ¡Ser una aventurera es muy divertido!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520104
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520104,
+					"content": "Pero... Jeje, todavía me queda mucho por aprender sobre los encargos.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520105
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520105,
+					"content": "#Viajer{F#a}{M#o}, ¿podrías acompañarme a completar otro encargo? Quiero hacerte más preguntas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520108
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520108,
+					"content": "¡Entonces, vamos! El encargo de hoy es...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520109
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520109,
+					"content": "Oh... Es escoltar un globo de carga... de nuevo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520106,
+					"content": "¿Quieres que te acompañe?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200520107
+					]
+				},
+				{
+					"id": 200520107,
+					"content": "¿Lo harías? Jeje, tengo muchas preguntas que me gustaría hacerte.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520108
+					],
+					"speakerTitle": "Anna"
+				}
+			]
+		},
+		{
+			"id": 2005202,
+			"completionStepIds": [
+				2005204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2005203",
+							"3"
+						],
+						"stepId": 2005203,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2005204",
+							"2"
+						],
+						"stepId": 2005204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Anna"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200520201,
+					"content": "#¡Listo! Gracias, viajer{F#a}{M#o}. El encargo fue viento en popa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520202
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520202,
+					"content": "Pero... ¿todos los encargos son como este?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520203,
+						200520205
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520203,
+					"content": "Hay otros tipos de encargos.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200520204
+					]
+				},
+				{
+					"id": 200520204,
+					"content": "#No te oyes muy entusiasmad{F#a}{M#o}...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520207
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520207,
+					"content": "Ya veo... ¡Está bien! ¡Entonces tendré que seguir esforzándome!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520208
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520208,
+					"content": "Cuando tenga suficiente dinero, ¡me llevaré a mi hermano y a mis padres de viaje!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520209
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520209,
+					"content": "Mi hermano siempre ha querido viajar, pero... como yo estaba enferma, tuvo que quedarse a cuidarme.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520210
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520210,
+					"content": "Ahora ya me siento mejor, ¡y ya me convertí en una aventurera!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520211
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520211,
+					"content": "Jeje, es hora de cumplir los sueños de mi hermano.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520205,
+					"content": "Pronto lo entenderás...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200520206
+					]
+				},
+				{
+					"id": 200520206,
+					"content": "Oye, no pongas esa cara...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520207
+					],
+					"speakerTitle": "Anna"
+				}
+			]
+		},
+		{
+			"id": 2005203,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2005201",
+							"3"
+						],
+						"stepId": 2005201,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Anthony"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200520301,
+					"content": "#Viajer{F#a}{M#o}, por favor, cuida de Anna. La emoción se le ha subido a la cabeza...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520302
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200520302,
+					"content": "¿No quieres que sea una aventurera?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200520303
+					]
+				},
+				{
+					"id": 200520303,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520304
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200520304,
+					"content": "Respeto los deseos de mi hermana.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520305
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200520305,
+					"content": "Ahora que se recuperó de su enfermedad, tiene la oportunidad de perseguir sus sueños.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520306
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200520306,
+					"content": "Como su hermano, yo... la apoyaré incondicionalmente.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520307
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200520307,
+					"content": "Es todo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Anthony"
+				}
+			]
+		}
+	]
+}

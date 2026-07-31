@@ -1,0 +1,370 @@
+{
+	"id": 41141,
+	"type": "EQ",
+	"name": "Livraison spéciale : Auberge Wangshu",
+	"description": "L'Auberge Wangshu a besoin de livrer une commande spéciale...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 4114101,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Yanxiao.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4114101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 4114102,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Livrez le plat à Ling'guan.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4114102,
+						0
+					],
+					"talkId": 4114102
+				}
+			]
+		},
+		{
+			"id": 4114103,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Ling'guan.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4114106,
+						0
+					],
+					"talkId": 4114106
+				}
+			]
+		},
+		{
+			"id": 4114104,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4114104,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 4114101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4114101",
+							"2"
+						],
+						"stepId": 4114101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Yanxiao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411410101,
+					"content": "J'y vais.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411410102
+					]
+				},
+				{
+					"id": 411410102,
+					"content": "Ça marche, ne traîne pas trop.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411410103
+					],
+					"speakerTitle": "Yanxiao"
+				},
+				{
+					"id": 411410103,
+					"content": "Assure-toi d'<color=#00E1FFFF>éviter les monstres à tout prix. La nourriture est fichue si tu te fais toucher par des éléments ou si tu te prends des coups.</color>",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411410104
+					],
+					"speakerTitle": "Yanxiao"
+				},
+				{
+					"id": 411410104,
+					"content": "Le client n'en voudra pas si c'est le cas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411410105
+					],
+					"speakerTitle": "Yanxiao"
+				},
+				{
+					"id": 411410105,
+					"content": "Bref, je te laisse. Ne fais pas trop attendre le client.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Yanxiao"
+				}
+			]
+		},
+		{
+			"id": 4114102,
+			"completionStepIds": [
+				4114102
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4114101",
+							"3"
+						],
+						"stepId": 4114101,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ling'guan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411410201,
+					"content": "J'attends ici depuis des lustres, où est ma commande...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ling'guan"
+				}
+			]
+		},
+		{
+			"id": 4114103,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4114101",
+							"2"
+						],
+						"stepId": 4114101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Yanxiao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411410301,
+					"content": "Il paraît qu'il y a une commande spéciale...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411410302
+					]
+				},
+				{
+					"id": 411410302,
+					"content": "Ling'guan, une de nos clientes, a commandé du tofu aux amandes tout à l'heure et m'a demandé de le faire livrer au Marais Dihua.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411410303
+					],
+					"speakerTitle": "Yanxiao"
+				},
+				{
+					"id": 411410303,
+					"content": "#Mais nous sommes débordés à l'auberge, alors je n'ai pas pu faire cette livraison moi-même. Ça te dérange d'y aller à ma place ? Tu seras {M#récompensé}{F#récompensée}, ça va de soi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Yanxiao"
+				}
+			]
+		},
+		{
+			"id": 4114104,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4114101",
+							"2"
+						],
+						"stepId": 4114101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Yanxiao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411410401,
+					"content": "J'ai d'autres Brutocollinus à fouetter...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411410402
+					]
+				},
+				{
+					"id": 411410402,
+					"content": "#D'accord, {M#jeune homme}{F#jeune femme}. Je trouverai quelqu'un d'autre pour la faire ou j'irai moi-même dans le pire des cas...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Yanxiao"
+				}
+			]
+		},
+		{
+			"id": 4114105,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4114101",
+							"2"
+						],
+						"stepId": 4114101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ling'guan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411410501,
+					"content": "J'attends ici depuis des lustres, où est ma commande...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ling'guan"
+				}
+			]
+		},
+		{
+			"id": 4114106,
+			"completionStepIds": [
+				4114103
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4114103",
+							"2"
+						],
+						"stepId": 4114103,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ling'guan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411410601,
+					"content": "La voici.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411410602
+					]
+				},
+				{
+					"id": 411410602,
+					"content": "Vaut mieux tard que jamais ! Ce tofu aux amandes a l'air appétissant...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411410603
+					],
+					"speakerTitle": "Ling'guan"
+				},
+				{
+					"id": 411410603,
+					"content": "Merci ! Ça va me faire du bien après toute cette marche.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ling'guan"
+				}
+			]
+		}
+	]
+}

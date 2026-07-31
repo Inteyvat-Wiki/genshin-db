@@ -1,0 +1,363 @@
+{
+	"id": 71121,
+	"type": "WQ",
+	"name": "",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		71102,
+		71120
+	],
+	"steps": [
+		{
+			"id": 7112101,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7112102,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7112102,
+						0
+					],
+					"talkId": 7112102
+				}
+			]
+		},
+		{
+			"id": 7112103,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7112103,
+						0
+					],
+					"talkId": 7112103
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7112151,
+						0
+					],
+					"talkId": 7112151
+				}
+			]
+		},
+		{
+			"id": 7112104,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_GADGET_STATE_CHANGE",
+					"rawParams": [
+						133116019,
+						19056
+					]
+				}
+			]
+		},
+		{
+			"id": 7112105,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7112103,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7112102,
+			"completionStepIds": [
+				7112102
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7112102",
+							"2"
+						],
+						"stepId": 7112102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Mercante strano"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 711210201,
+					"content": "Grazie mille, non so come ringraziarvi! Aaaah, tutta la merce sarebbe andata persa senza di voi!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						711210202
+					],
+					"speakerTitle": "Mercante strano"
+				},
+				{
+					"id": 711210202,
+					"content": "Non ho molti soldi con me, ma vi prego di accettare questa ricompensa. Non fate complimenti.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						711210203
+					],
+					"speakerTitle": "Mercante strano"
+				},
+				{
+					"id": 711210203,
+					"content": "Wow, sei troppo gentile!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						711210204
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 711210204,
+					"content": "È ora dei saluti, allora. Spero che ci rivedremo!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Mercante strano"
+				}
+			]
+		},
+		{
+			"id": 7112103,
+			"completionStepIds": [
+				7112103
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7112104",
+							"3"
+						],
+						"stepId": 7112104,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7112102",
+							"3"
+						],
+						"stepId": 7112102,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Mercante strano"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 711210301,
+					"content": "#P-Per favore, risparmiatemi, o {F#magnanime eroine}{M#magnanimi eroi}... Aspettate, siete voi?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						711210302
+					],
+					"speakerTitle": "Mercante strano"
+				},
+				{
+					"id": 711210302,
+					"content": "...Uh? Sei tu?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						711210303
+					]
+				},
+				{
+					"id": 711210303,
+					"content": "Ehi, ehi, che coincidenza, eh...? Eheheh, perché non tornate a fare quello che stavate facendo? Ora, se volete scusarmi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						711210304
+					],
+					"speakerTitle": "Mercante strano"
+				},
+				{
+					"id": 711210304,
+					"content": "Ti suggerisco di dare un'occhiata a quali oggetti di valore hanno lasciato. Ah, non badare a me, mi sono già segnato tutto... Restituirò tutto quello che devo restituire.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						711210305
+					],
+					"speakerTitle": "Mercante strano"
+				},
+				{
+					"id": 711210305,
+					"content": "Aspetta...!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						711210306
+					]
+				},
+				{
+					"id": 711210306,
+					"content": "Non c'è bisogno, ci rivedremo sicuramente!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Mercante strano"
+				}
+			]
+		},
+		{
+			"id": 7112151,
+			"completionStepIds": [
+				7112103
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7112104",
+							"3"
+						],
+						"stepId": 7112104,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7112101",
+							"4"
+						],
+						"stepId": 7112101,
+						"stateName": "QUEST_STATE_FAILED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7112102",
+							"4"
+						],
+						"stepId": 7112102,
+						"stateName": "QUEST_STATE_FAILED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Mercante strano"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 711215101,
+					"content": "#G-Grande {M#eroe valoroso}{F#eroina valorosa}! Ti prego, risparmiami la vita! Non sono uno di loro!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						711215102
+					],
+					"speakerTitle": "Mercante strano"
+				},
+				{
+					"id": 711215102,
+					"content": "E allora chi saresti?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						711215103
+					]
+				},
+				{
+					"id": 711215103,
+					"content": "Io?! Sono... Oh... È una storia lunga...? Hanno rubato delle cose, e il mio padrone mi ha chiesto di segnarle in un documento e restituirle, tutto qua.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						711215104
+					],
+					"speakerTitle": "Mercante strano"
+				},
+				{
+					"id": 711215104,
+					"content": "Beh, dato che hai scacciato tutti i ladri, e il mio lavoro qui è finito, io me ne vado, se non ti dispiace!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						711215105
+					],
+					"speakerTitle": "Mercante strano"
+				},
+				{
+					"id": 711215105,
+					"content": "Un momento...!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						711215106
+					]
+				},
+				{
+					"id": 711215106,
+					"content": "Non c'è bisogno, ci rivedremo sicuramente!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Mercante strano"
+				}
+			]
+		}
+	]
+}

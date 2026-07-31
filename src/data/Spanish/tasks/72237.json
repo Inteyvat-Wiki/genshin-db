@@ -1,0 +1,581 @@
+{
+	"id": 72237,
+	"type": "WQ",
+	"name": "Antígono",
+	"description": "Te enteras de cierta historia en la celda colgante y vas a buscar...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		72177
+	],
+	"steps": [
+		{
+			"id": 7223701,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Obtén «Lo ocurrido antes del sol y la luna»",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100931,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7223702,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con la ilusión de la celda",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7223701,
+						0
+					],
+					"talkId": 7223701
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7223708,
+						0
+					],
+					"talkId": 7223708
+				}
+			]
+		},
+		{
+			"id": 7223703,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con la ilusión de la celda",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7223702,
+						0
+					],
+					"talkId": 7223702
+				}
+			]
+		},
+		{
+			"id": 7223704,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Busca a Antei",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7223704,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7223705,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con la ilusión de Antei",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7223703,
+						0
+					],
+					"talkId": 7223703
+				}
+			]
+		},
+		{
+			"id": 7223706,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Encuentra el Guardián de las Ruinas abandonado",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7223706,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7223707,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Activa el Guardián de las Ruinas",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7223708,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con la ilusión de Antei",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7223705,
+						0
+					],
+					"talkId": 7223705
+				}
+			]
+		},
+		{
+			"id": 7223709,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Obtén el núcleo de la máquina de las ruinas",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101654,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7223703,
+			"completionStepIds": [
+				7223705
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7223705",
+							"2"
+						],
+						"stepId": 7223705,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Antei"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722370301,
+					"content": "Ustedes son...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370302
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370302,
+					"content": "¿Eres Antei?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370303
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722370303,
+					"content": "Sí, ese soy yo. Me siento... un tanto extraño...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370304
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370304,
+					"content": "Recuerdo perseguir a esos sinvergüenzas, extraer el núcleo y arrojarlo a un campamento. Después de eso, me sentí un tanto mareado por mis heridas, que no dejaban de empeorar...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370305
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370305,
+					"content": "#Pero cuando desperté y {F#las}{M#los} vi, comencé a sentirme bien. Díganme, ¿estoy en ese momento en el que uno parece mejorar antes de morir?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370306
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370306,
+					"content": "...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722370307
+					]
+				},
+				{
+					"id": 722370307,
+					"content": "... No, eso no importa ahora. ¿Vinieron a arrestarme de nuevo? Ya probé mi inocencia.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370308
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370308,
+					"content": "Fueron esos tipos de Khaenri'ah, ellos robaron los libros de la biblioteca. Aunque me asignaron como uno de sus guardaespaldas, ¡nunca podría haber estado coludido con ellos!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370309
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370309,
+					"content": "Seguí a su grupo de diplomáticos hasta aquí y los derroté a todos.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370310
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370310,
+					"content": "Pero invertí demasiado tiempo en derrotar a una criatura mecánica que venía con ellos. Al final, fui capaz de extraerle el núcleo, pero me hirieron gravemente en el intento.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370311
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370311,
+					"content": "Cuando la máquina quedó deshabilitada se precipitó sobre el libro perdido. Ahora es imposible recuperarlo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370312
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370312,
+					"content": "Guau, los jibashiri del reino de Byakuya son tipos intimidantes...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370313
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722370313,
+					"content": "Esperen, ¿ustedes no son jibashiri o aprendices? *Suspira*, qué mas da. Los jibashiri fueron conocidos como héroes que lucharon contra los Dragartos de las Profundidades, pero con el tiempo acabaron convirtiéndose en agentes de la ley, en jueces del inframundo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370314
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370314,
+					"content": "El núcleo se halla en el campamento. Vayan ustedes para verlo con sus propios ojos si no me creen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Antei"
+				}
+			]
+		},
+		{
+			"id": 7223704,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7223705",
+							"3"
+						],
+						"stepId": 7223705,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_NOT_RECEIVE",
+						"rawParams": [
+							"7223708",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Antei"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722370401,
+					"content": "Una vez escuché a un diplomático de la Isla Narukami hablar sobre una criatura llamada “pájaro”. Tiene alas y puede volar a través del cielo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370402
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370402,
+					"content": "Es fascinante, ¿pueden imaginarlo?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370403
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370403,
+					"content": "Hay quien piensa que son mensajeros de los dioses, que vinieron para anunciar el destino de los humanos.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370404
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370404,
+					"content": "Y que si un exiliado acaba muriendo a la intemperie, esa criatura vendrá a alimentarse con su cadáver.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370405
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370405,
+					"content": "Este tipo de criaturas me fascinan. Si sigo con vida después de esta, tendré un pájaro como mascota sin dudarlo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Antei"
+				}
+			]
+		},
+		{
+			"id": 7223705,
+			"completionStepIds": [
+				7223708
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7223708",
+							"2"
+						],
+						"stepId": 7223708,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Antei"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722370501,
+					"content": "¿Consiguieron el libro?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370502
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370502,
+					"content": "¡Lo tenemos! En efecto, eres inocente, Antei.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370503
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722370503,
+					"content": "Por lo que dijeron antes, puedo percibir que ustedes no son jibashiri, qué pena. Podrían haberme declarado como inocente in situ.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370504
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370504,
+					"content": "Así podría haber probado mi inocencia de inmediato.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370505
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370505,
+					"content": "Ahora siento que recuperé energías, pero todavía me noto un tanto exhausto por la gran cantidad de sangre que perdí antes... No puedo dejar de pensar que podría morir en cualquier momento...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370506
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370506,
+					"content": "Uh...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370507
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722370507,
+					"content": "#*Suspira*, hay algo que me gustaría preguntarles, {F#forasteras}{M#forasteros}. Si fui acusado injustamente por el reino de Byakuya, ¿eso todavía cuenta como un delito?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370508
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370508,
+					"content": "...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722370509
+					]
+				},
+				{
+					"id": 722370509,
+					"content": "Si a mí, debido a mi estado de ánimo alterado, Oomikami de Tokoyo me dejó aquí como una sombra del pecado, ¿cuenta como una transgresión?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370510
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370510,
+					"content": "Yo... ¿soy culpable?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370511
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370511,
+					"content": "No, eres inocente.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722370512
+					]
+				},
+				{
+					"id": 722370512,
+					"content": "#{NICKNAME}, ten cuidado con lo que dices. Si él se percata de... ese asunto, desaparecerá.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370513
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 722370513,
+					"content": "Solo eres una sombra que Antei dejó atrás.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722370514
+					]
+				},
+				{
+					"id": 722370514,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370515
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370515,
+					"content": "Eres inocente, y yo haré que todo el mundo lo sepa.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722370516
+					]
+				},
+				{
+					"id": 722370516,
+					"content": "Jaja, ¿eso es todo? Así que solo soy una sombra que permanece después de mi muerte.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722370517
+					],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370517,
+					"content": "Y... soy inocente.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Antei"
+				},
+				{
+					"id": 722370518,
+					"content": "Antei recita fragmentos de pasajes...\\n“¿Qué ley divina incumplí? ¿Por qué los desafortunados dependen de los dioses?\\n¿Tienen sentido mis acciones ahora que me han culpado de pecador por mi gran devoción?”.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Antei"
+				}
+			]
+		}
+	]
+}

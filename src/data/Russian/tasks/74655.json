@@ -1,0 +1,167 @@
+{
+	"id": 74655,
+	"type": "WQ",
+	"name": "Молочный забег Пабана",
+	"description": "Пабану нужны 8 бутылок молока.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7465501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте Пабану 8 бутылок молока",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7465501,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7465502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Пабан",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7465502,
+						0
+					],
+					"talkId": 7465502
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7465501,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465501",
+							"2"
+						],
+						"stepId": 7465501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7465501"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Пабан"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746550101,
+					"content": "Тебе нужно молоко?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746550102
+					]
+				},
+				{
+					"id": 746550102,
+					"content": "Вы и есть тот поставщик, который должен прийти на торги?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746550103
+					],
+					"speakerTitle": "Пабан"
+				},
+				{
+					"id": 746550103,
+					"content": "Принесли пробники молочных продуктов? Можете отдать их мне.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746550106,
+						746550104
+					],
+					"speakerTitle": "Пабан"
+				},
+				{
+					"id": 746550106,
+					"content": "Вот твои образцы.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 746550104,
+					"content": "Ещё нет.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746550105
+					]
+				},
+				{
+					"id": 746550105,
+					"content": "#Тогда поторопитесь. Вы не {F#единственная}{M#единственный}, кто хочет заключить договор на поставку.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Пабан"
+				}
+			]
+		},
+		{
+			"id": 7465502,
+			"completionStepIds": [
+				7465502
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465502",
+							"2"
+						],
+						"stepId": 7465502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Пабан"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746550201,
+					"content": "Хорошо, я возьму. Здесь оплата за ваши продукты и услуги, о результатах торгов будет сообщено позднее.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Пабан"
+				}
+			]
+		}
+	]
+}

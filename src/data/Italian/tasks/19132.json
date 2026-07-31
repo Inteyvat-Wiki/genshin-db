@@ -1,0 +1,502 @@
+{
+	"id": 19132,
+	"type": "LQ",
+	"name": "Ordinaria amministrazione",
+	"description": "Secondo l'agenda, la prima cosa da fare è svegliare Ningguang...",
+	"unlockDescription": "",
+	"chapter": "Ritorno alla Dimora di giada",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		19133,
+		19134
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1913201,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Ningguang",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						102701,
+						201
+					]
+				}
+			]
+		},
+		{
+			"id": 1913202,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fai colazione con Ningguang",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						102701,
+						202
+					]
+				}
+			]
+		},
+		{
+			"id": 1913203,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Cerca Lanyang per prendere i vestiti su misura",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1913204,
+						0
+					],
+					"talkId": 1913204
+				}
+			]
+		},
+		{
+			"id": 1913204,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dai i vestiti su misura a Ningguang",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						1913204,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1913205,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Ningguang",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						102701,
+						203
+					]
+				}
+			]
+		},
+		{
+			"id": 1913206,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Vai al Padiglione Liuli per il banchetto",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						102701,
+						20401
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						102701,
+						20402
+					]
+				}
+			]
+		},
+		{
+			"id": 1913207,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Attendi fino al giorno successivo (07:00-08:00)",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						1,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1913208,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sveglia Ningguang",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1913209,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						1913204,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1913203,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"99902",
+							"2"
+						],
+						"stepId": 99902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ningguang"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191320301,
+					"content": "",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ningguang"
+				}
+			]
+		},
+		{
+			"id": 1913204,
+			"completionStepIds": [
+				1913203
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1913203",
+							"2"
+						],
+						"stepId": 1913203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lanyang"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191320401,
+					"content": "Ciao, come posso aiutarti?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191320402
+					],
+					"speakerTitle": "Lanyang"
+				},
+				{
+					"id": 191320402,
+					"content": "Sono qui per ritirare un cambio di vestiti per Ningguang.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						191320403
+					]
+				},
+				{
+					"id": 191320403,
+					"content": "Ah, sì, certamente. Aspetta un momento, vado a prenderlo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191320404
+					],
+					"speakerTitle": "Lanyang"
+				},
+				{
+					"id": 191320404,
+					"content": "Dopo una lunga attesa, finalmente Lanyang fa ritorno.",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": [
+						191320405
+					]
+				},
+				{
+					"id": 191320405,
+					"content": "Ecco a te. Prego, portalo a Lady Ningguang.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191320406
+					],
+					"speakerTitle": "Lanyang"
+				},
+				{
+					"id": 191320406,
+					"content": "Ci hai messo un po'.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						191320407
+					]
+				},
+				{
+					"id": 191320407,
+					"content": "Sì, questa intera stanza è colma di oggetti personali di Lady Ningguang. Non ci sono solo vestiti, ma anche gioielli e ornamenti di ogni tipo...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191320408
+					],
+					"speakerTitle": "Lanyang"
+				},
+				{
+					"id": 191320408,
+					"content": "Lady Ningguang ci ha da poco chiesto di riorganizzare questa stanza. Ce ne stiamo occupando proprio ora ed è tutto sottosopra. Ecco perché c'ho messo un po' a portarti quel completo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191320409,
+						191320410
+					],
+					"speakerTitle": "Lanyang"
+				},
+				{
+					"id": 191320409,
+					"content": "(Sembra che Ningguang abbia una collezione personale immensa...)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						191320411
+					]
+				},
+				{
+					"id": 191320411,
+					"content": "#Comunque, ora puoi prenderlo. Grazie per essere passat{F#a}{M#o} a ritirarlo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Lanyang"
+				},
+				{
+					"id": 191320410,
+					"content": "(Immagino che sia un tipico problema da persone ricche.)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						191320411
+					]
+				}
+			]
+		},
+		{
+			"id": 1913205,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1913204",
+							"2"
+						],
+						"stepId": 1913204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"1913204"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ningguang"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191320501,
+					"content": "#L'hai preso, {NICKNAME}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ningguang"
+				}
+			]
+		},
+		{
+			"id": 1913211,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1913204",
+							"2"
+						],
+						"stepId": 1913204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lanyang"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191321101,
+					"content": "Per favore, porta questi indumenti a Lady Ningguang. Grazie.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Lanyang"
+				}
+			]
+		},
+		{
+			"id": 1913212,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"99902",
+							"3"
+						],
+						"stepId": 99902,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lanyang"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191321201,
+					"content": "",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Lanyang"
+				}
+			]
+		},
+		{
+			"id": 1913214,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1913206",
+							"2"
+						],
+						"stepId": 1913206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hongru"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191321401,
+					"content": "È tutto pronto. Prego, mangia pure.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Hongru"
+				}
+			]
+		},
+		{
+			"id": 1913215,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"99902",
+							"3"
+						],
+						"stepId": 99902,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hongru"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191321501,
+					"content": "Grazie della visita.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Hongru"
+				}
+			]
+		}
+	]
+}

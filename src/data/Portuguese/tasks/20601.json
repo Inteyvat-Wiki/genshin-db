@@ -1,0 +1,702 @@
+{
+	"id": 20601,
+	"type": "WQ",
+	"name": "Uma dádiva dos deuses?",
+	"description": "Mesmo no meio da tempestade, Cyrus da Guilda de Aventureiros parece estar se preparando para a ação...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		357,
+		309
+	],
+	"steps": [
+		{
+			"id": 2060101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com Cyrus",
+			"finishConditions": []
+		},
+		{
+			"id": 2060102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Rastreie o paradeiro de Jack",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2060103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Rastreie o paradeiro de Jack",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2060104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Resgate Jack dos Hilichurls",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2060105,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Falar com o Jack",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2060105,
+						0
+					],
+					"talkId": 2060105
+				}
+			]
+		},
+		{
+			"id": 2060106,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Limpe o acampamento",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2060107,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com Cyrus",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2060107,
+						0
+					],
+					"talkId": 2060107
+				}
+			]
+		},
+		{
+			"id": 2060108,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2060106,
+						0
+					],
+					"talkId": 2060106
+				}
+			]
+		},
+		{
+			"id": 2060109,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com Cyrus",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2060108,
+						0
+					],
+					"talkId": 2060108
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2060104,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060101",
+							"3"
+						],
+						"stepId": 2060101,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_NOT_RECEIVE",
+						"rawParams": [
+							"2060107",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010401,
+					"content": "Para onde terá ido o Bennett? *Suspiro* Em um momento como este, ainda... Espero que ele não tenha se deparado com nenhum problema...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		},
+		{
+			"id": 2060105,
+			"completionStepIds": [
+				2060105
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060105",
+							"2"
+						],
+						"stepId": 2060105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010501,
+					"content": "Aah! Isso... Dói...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010502
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010502,
+					"content": "Muito obrigado. Pensei que não conseguiria voltar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010503
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010503,
+					"content": "Como você se sente?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010504
+					]
+				},
+				{
+					"id": 206010504,
+					"content": "Haha? É apenas um ferimento leve. Não tem problema.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010505
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010505,
+					"content": "Eu vi uns Hilichurls se reunindo aí no acampamento. Parecia que eles estavam fazendo problemas, portanto, decidi segui-los.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010506
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010506,
+					"content": "Mas eu fiquei tão perto deles, e fui descoberto por eles.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010507
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010507,
+					"content": "Não se preocupe comigo. Por favor, vá lá expulsar os Hilichurls ali na frente.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010508
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010508,
+					"content": "Está chegando cada vez mais, não podemos deixar fazer como quiserem.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010509
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010509,
+					"content": "E quanto a mim... Eu sei como cuidar de mim mesmo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				}
+			]
+		},
+		{
+			"id": 2060106,
+			"completionStepIds": [
+				2060108
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060108",
+							"2"
+						],
+						"stepId": 2060108,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010601,
+					"content": "Você já acabou de expulsar todos os Hilichurls, não é?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010602
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010602,
+					"content": "Sim.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010603
+					]
+				},
+				{
+					"id": 206010603,
+					"content": "Você é incrível. Se eu fosse incrível como você...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010604
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010604,
+					"content": "Eu também quero deixar o meu nome marcado na história de derrotar o dragão ou salvar o mundo, mas enfim, ainda não consegui expulsar os Hilichurls.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010605
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010605,
+					"content": "Urg... De qualquer forma, eu... Isto é constrangedor, mas eu tenho algo a lhe pedir...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010606
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010606,
+					"content": "Na verdade, vim para o Templo do Vento Milenar porque em breve farei o teste de Rank de Aventura...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010607
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010607,
+					"content": "Se eu mostrar que eu sou capaz, a minha classificação poderia aumentar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010608
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010608,
+					"content": "Mas nunca pensei que eu ia destruir tudo, até quase perdi a minha vida.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010609
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010609,
+					"content": "P-posso pedir que por favor não diga nada ao senhor Cyrus sobre isso? Eu realmente estaria em mal bocados se isso afetasse minha classificação...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010610,
+						206010612
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010610,
+					"content": "Não contarei a ninguém...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010611
+					]
+				},
+				{
+					"id": 206010611,
+					"content": "Muito obrigado. Na próxima vez não vou ser precipitado de novo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010612,
+					"content": "Isso não é muito bom.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010613
+					]
+				},
+				{
+					"id": 206010613,
+					"content": "Eu sei que não é, e o Cyrus sempre diz que os aventureiros \"devem ser honestos consigo mesmo\"...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010614
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010614,
+					"content": "*Suspiro* Espero que o Cyrus não fique chateado comigo...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				}
+			]
+		},
+		{
+			"id": 2060107,
+			"completionStepIds": [
+				2060107
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060108",
+							"2"
+						],
+						"stepId": 2060108,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010701,
+					"content": "Oi, Jack, finalmente você voltou. O que aconteceu à sua perna?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010702
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010702,
+					"content": "O que houve?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010703
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010703,
+					"content": "O Jack improvisou e ficou ferido...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010704
+					]
+				},
+				{
+					"id": 206010704,
+					"content": "É exatamente o que eu imaginei. *Suspiro* Ele não ouviu o que eu disse e repetiu o mesmo erro...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010705
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010705,
+					"content": "Eu compreendo que ele quer mostrar a sua capacidade, mas...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010706
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010706,
+					"content": "Deixa para lá, já conheço toda a história. Vou falar com o Jack.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010707
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010707,
+					"content": "Este é para você, uma recompensa da sua aventura.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		},
+		{
+			"id": 2060108,
+			"completionStepIds": [
+				2060109
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060109",
+							"2"
+						],
+						"stepId": 2060109,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010801,
+					"content": "Você voltou, bem como o Jack, mas a perna ficou ferida?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010802
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010802,
+					"content": "O que houve?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010803,
+						206010807
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010803,
+					"content": "O Jack parecia muito corajoso na luta.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010804
+					]
+				},
+				{
+					"id": 206010804,
+					"content": "Você também lutou com ele? É assim que ficou ferido?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010805
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010805,
+					"content": "Coragem é uma coisa preciosa sim, mas espero que ele seja mais robusto. Um bom Aventureiro é um Aventureiro que fica vivo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010806
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010806,
+					"content": "Viajante, a coragem de você e do Jack vale muitos elogios. Aceite isto, é a sua recompensa da aventurar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010807,
+					"content": "O Jack improvisou e ficou ferido...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010808
+					]
+				},
+				{
+					"id": 206010808,
+					"content": "É exatamente o que eu imaginei. *Suspiro* Ele não ouviu o que eu disse e repetiu o mesmo erro...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010809
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010809,
+					"content": "Eu compreendo que ele quer mostrar a sua capacidade, mas...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010810
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010810,
+					"content": "Deixa para lá, já conheço toda a história. Vou falar com o Jack.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010811
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010811,
+					"content": "Este é para você, uma recompensa da sua aventura.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		},
+		{
+			"id": 2060109,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060109",
+							"2"
+						],
+						"stepId": 2060109,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206011001,
+					"content": "Espero que a minha classificação não seja afetada.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206011002
+					],
+					"speakerTitle": "Jack"
+				}
+			]
+		}
+	]
+}

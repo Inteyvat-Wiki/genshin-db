@@ -1,0 +1,167 @@
+{
+	"id": 71704,
+	"type": "WQ",
+	"name": "阿桂的药材需求",
+	"description": "璃月港的阿桂需要十份薄荷。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "将十份薄荷交给阿桂",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170401,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170402,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "与阿桂对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170402,
+						0
+					],
+					"talkId": 7170402
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170401,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170401",
+							"2"
+						],
+						"stepId": 7170401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170401"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"阿桂"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717040101,
+					"content": "关于薄荷…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717040102
+					]
+				},
+				{
+					"id": 717040102,
+					"content": "咦？你是看到我的委托了吧，十份薄荷已经搜集齐了吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717040103,
+						717040104
+					],
+					"speakerTitle": "阿桂"
+				},
+				{
+					"id": 717040103,
+					"content": "已经搜集齐了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717040104,
+					"content": "还没有…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717040105
+					]
+				},
+				{
+					"id": 717040105,
+					"content": "那你搜集齐了之后，就请尽快拿过来吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "阿桂"
+				}
+			]
+		},
+		{
+			"id": 7170402,
+			"completionStepIds": [
+				7170402
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170402",
+							"2"
+						],
+						"stepId": 7170402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"阿桂"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717040201,
+					"content": "薄荷…薄荷…嗯，这些应该够用了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717040202
+					],
+					"speakerTitle": "阿桂"
+				},
+				{
+					"id": 717040202,
+					"content": "这些东西给你，请收下吧，谢谢你帮忙。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "阿桂"
+				}
+			]
+		}
+	]
+}

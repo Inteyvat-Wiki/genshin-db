@@ -1,0 +1,176 @@
+{
+	"id": 70702,
+	"type": "WQ",
+	"name": "Bahan yang Dibutuhkan Connor",
+	"description": "Connor dari Dawn Winery membutuhkan sepuluh Wheat.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Berikan sepuluh Wheat kepada Connor",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Connor",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070202,
+						0
+					],
+					"talkId": 7070202
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070201",
+							"2"
+						],
+						"stepId": 7070201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070201"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707020101,
+					"content": "Tentang Wheat...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707020102
+					]
+				},
+				{
+					"id": 707020102,
+					"content": "Kamu... ah, kamu melihat permintaan komisi dariku ya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707020103
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707020103,
+					"content": "Wheat... apa kamu sudah mengumpulkan sepuluh Wheat？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707020104,
+						707020105
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707020104,
+					"content": "Sudah dikumpulkan.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707020105,
+					"content": "Masih belum...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707020106
+					]
+				},
+				{
+					"id": 707020106,
+					"content": "Setelah kamu mengumpulkan semuanya, berikan kepadaku ya. Aku akan istirahat sebentar lagi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Connor"
+				}
+			]
+		},
+		{
+			"id": 7070202,
+			"completionStepIds": [
+				7070202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070202",
+							"2"
+						],
+						"stepId": 7070202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707020201,
+					"content": "Coba kulihat... hm, seharusnya Wheat ini sudah cukup.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707020202
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707020202,
+					"content": "Terima kasih banyak, tolong terimalah ini sebagai tanda terima kasihku...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Connor"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,564 @@
+{
+	"id": 70507,
+	"type": "WQ",
+	"name": "Окружённый ароматом чая",
+	"description": "«Кажется, в таверне появился очень необычный клиент...» «Не каждый день кто-то вызывает твой интерес. Хочешь, подойдём к нему вместе?» «Забудь... Даже если я пойду, то не посмею произнести при нём и слова».",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70506
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Лукой и войдите в таверну",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050701,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050702,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Приготовьте Чжун Ли напиток",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050702,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050703,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте напиток Чжун Ли",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050702,
+						0
+					],
+					"talkId": 7050702
+				}
+			]
+		},
+		{
+			"id": 7050704,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Чжун Ли",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050701,
+						0
+					],
+					"talkId": 7050701
+				}
+			]
+		},
+		{
+			"id": 7050705,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отправляйтесь к стойке и подготовьтесь к началу работы",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7050606,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050701,
+			"completionStepIds": [
+				7050704
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050704",
+							"2"
+						],
+						"stepId": 7050704,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050702",
+							"2"
+						],
+						"stepId": 7050702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Чжун Ли"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705070101,
+					"content": "Ч-чжун Ли!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070102
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705070102,
+					"content": "#А, путешественни{F#ца}{M#к}, рад тебя видеть. Надеюсь, у тебя всё хорошо?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070103
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070103,
+					"content": "П-погоди... Чжун Ли, что ты тут делаешь?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070104
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705070104,
+					"content": "Раз мне суждено странствовать по миру, то я иду туда, куда заблагорассудится. Свободное и процветающее Царство ветров - прекрасное место, ничем не хуже других.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070105
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070105,
+					"content": "И встретить вас здесь - приятнейший из сюрпризов.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070106,
+						705070107
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070106,
+					"content": "Каким напитком тебя угостить?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070108
+					]
+				},
+				{
+					"id": 705070108,
+					"content": "Один Туманный сад. Я предпочитаю чай покрепче. Благодарю.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070107,
+					"content": "Мы могли бы поболтать за чашкой чая.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070108
+					]
+				}
+			]
+		},
+		{
+			"id": 7050702,
+			"completionStepIds": [
+				7050703
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050703",
+							"2"
+						],
+						"stepId": 7050703,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Чжун Ли"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705070201,
+					"content": "Извини за задержку!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070202
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705070202,
+					"content": "Надеюсь, тебе понравится.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070203
+					]
+				},
+				{
+					"id": 705070203,
+					"content": "М-м-м, прозрачный настой чая приятного оттенка. Его насыщенный вкус дополняется цветочными и фруктовыми нотками. Чудесно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070204
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070204,
+					"content": "Ого, Чжун Ли очень даже хорошо разбирается в чае.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070205
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705070205,
+					"content": "Паймон обычно просто прихлёбывает чай со словами: «М-м-м, вкуснятинка».",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070206
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705070206,
+					"content": "Смакуя чай, ты проявляешь уважение к человеку, его заварившему.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070207
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070207,
+					"content": "Хороший чай трудно найти, а тех, кто умеет заваривать чай, подходящий под настроение и случай, - и подавно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070208,
+						705070209
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070208,
+					"content": "Ты мне льстишь...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070210
+					]
+				},
+				{
+					"id": 705070210,
+					"content": "О, Паймон поняла.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070211
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705070211,
+					"content": "А ты можешь научить Паймон так же смаковать чай? Ты вроде сначала нюхаешь его, а потом пьёшь, да?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070212
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705070212,
+					"content": "Верно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070213
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070213,
+					"content": "Каждый вид чая уникален. Чем больше пьёшь, тем лучше понимаешь нюансы. А вдохнув аромат, можно узнать о качестве чая.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070214
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070214,
+					"content": "Низкосортные чаи попахивают затхлостью и гарью, в то время как чаи с нежным, но успокаивающим ароматом обычно более высокого качества.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070215
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070215,
+					"content": "Если хочется узнать больше, то, согласно древним традициям Ли Юэ, вам поможет Кубок ароматов. Его наполняют чаем, чтобы вкусить аромат.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070216
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070216,
+					"content": "О нет... Паймон столько всего упустила...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070217
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705070217,
+					"content": "Не переживай. Знания безграничны, а учиться никогда не поздно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070218
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070218,
+					"content": "Новичкам следует сначала оценить цвет, затем вдохнуть аромат... и наконец сделать глоток.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070219
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070219,
+					"content": "Помни, что освоить можно что угодно, если всё делать надлежащим порядком.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070220,
+						705070221
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070220,
+					"content": "Сколько нового.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070222
+					]
+				},
+				{
+					"id": 705070222,
+					"content": "Деревня Цяоин на северо-западе Ли Юэ славится своими чаями. При случае обязательно туда загляните.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070223
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070223,
+					"content": "Ведь я просто старомодный житель Ли Юэ, болтающий о своих привычках.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070224
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070224,
+					"content": "В каждом регионе есть свои чайные традиции и культура. А местные традиции всегда нужно уважать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070225
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070225,
+					"content": "Всё понятно! Вот только вряд ли Паймон сможет всё это запомнить...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070226
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705070226,
+					"content": "Типичная Паймон.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070227
+					]
+				},
+				{
+					"id": 705070227,
+					"content": "#Благодарю за превосходный чай, {NICKNAME}. Это добавило ценности к поездке сюда.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070228
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070228,
+					"content": "Если у тебя когда-нибудь будет свой чайный домик, я непременно стану завсегдатаем.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070229
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070229,
+					"content": "Ну, у нас и без этого дел по горло. Чайный домик - это хлопотно. Не думаю, что у нас появится время.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070230
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705070230,
+					"content": "Кто знает, кто знает...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070231
+					]
+				},
+				{
+					"id": 705070231,
+					"content": "Как бы то ни было, вы заручились моей поддержкой.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070232
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070232,
+					"content": "Давайте на этом и простимся. Больше не буду отнимать ваше время. И всего наилучшего в новом занятии.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070233,
+						705070234
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070233,
+					"content": "Пока.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070235
+					]
+				},
+				{
+					"id": 705070235,
+					"content": "Ах да, счёт... Ритуальное бюро «Ваншэн» всё оплатит.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070236
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 705070236,
+					"content": "Береги себя и передавай привет директору!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 705070234,
+					"content": "Погоди, а как же счёт...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070235
+					]
+				},
+				{
+					"id": 705070221,
+					"content": "Я хочу узнать больше.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070222
+					]
+				},
+				{
+					"id": 705070209,
+					"content": "Мне даже неловко...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070210
+					]
+				}
+			]
+		}
+	]
+}

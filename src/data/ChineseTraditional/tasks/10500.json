@@ -1,0 +1,1964 @@
+{
+	"id": 10500,
+	"type": "LQ",
+	"name": "占星術與五十年之約",
+	"description": "#{F#妳}{M#你}和派蒙來到了璃月港外，打算出發去冒險…",
+	"unlockDescription": "",
+	"chapter": "在此世的星空之外",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		10501
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1050001,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "詢問攔路少女的來意",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1050001,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1050002,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "詢問攔路少女的來意",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1050001,
+						0
+					],
+					"talkId": 1050001
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1050009,
+						0
+					],
+					"talkId": 1050009
+				}
+			]
+		},
+		{
+			"id": 1050003,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "陪同莫娜，向朱老闆道別",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1050002,
+						0
+					],
+					"talkId": 1050002
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1050008,
+						0
+					],
+					"talkId": 1050008
+				}
+			]
+		},
+		{
+			"id": 1050004,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "引來史萊姆，找回朱老闆的戒指",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_INTERACT_GADGET",
+					"rawParams": [
+						70300052,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1050005,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "消滅史萊姆，尋找戒指",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1050006,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "將戒指還給朱老闆",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1050003,
+						0
+					],
+					"talkId": 1050003
+				}
+			]
+		},
+		{
+			"id": 1050007,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往璃月港外",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1050008,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "與派蒙對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1050007,
+						0
+					],
+					"talkId": 1050007
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1050001,
+			"completionStepIds": [
+				1050002
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050002",
+							"2"
+						],
+						"stepId": 1050002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"莫娜"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000101,
+					"content": "為、為什麼妳會知道這件事！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000102
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000102,
+					"content": "因為我所掌握的，是真正的「占星術」。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000103
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000103,
+					"content": "沒什麼疑問的話，我們就出發吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000104,
+						105000105
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000104,
+					"content": "到處都是疑問！",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000106
+					]
+				},
+				{
+					"id": 105000106,
+					"content": "唉，真麻煩，那我耐心一點解釋吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000107
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000107,
+					"content": "我的名字是阿斯托洛吉斯·莫娜·梅姬斯圖斯，考慮到記錯我的名字會非常失禮，通常我會允許別人叫我莫娜。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000108
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000108,
+					"content": "我是占星術士，現在正要替我的師父，去蒙德城拿一個箱子。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000109
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000109,
+					"content": "這是她和一位朋友，在五十年前定下的約定。但現在她上了年紀，行動很不方便，只能靠我了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000110
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000110,
+					"content": "拿回箱子…這件事聽起來和我們沒什麼關係？為什麼要拉我們一起走呢？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000111
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000111,
+					"content": "這個嘛…因為我還想和那個保管箱子的傢伙較量較量。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000112
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000112,
+					"content": "師父和她的朋友在神秘學方面鬥了一輩子，也沒能分出勝負。要是我能贏，那我不就比師父還厲害了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000113,
+						105000115
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000113,
+					"content": "想證明自己的實力嗎…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000114
+					]
+				},
+				{
+					"id": 105000114,
+					"content": "咳咳，準確來說，是證明「占星術」的實力和地位。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000117
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000117,
+					"content": "不過，透過我占星後的觀察，現在師父的朋友離開了蒙德，保管箱子的是她的繼承者。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000118
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000118,
+					"content": "和我一樣，那位繼承者一定也是青出於藍而勝於藍嘛，可不能掉以輕心。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000119
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000119,
+					"content": "#這場較量，我想穩操勝券，考慮之後，我就想到了{F#妳}{M#你}！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000120,
+						105000122
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000120,
+					"content": "我…也不會占星啊。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000121
+					]
+				},
+				{
+					"id": 105000121,
+					"content": "#話題是怎麼突然跳到{F#她}{M#他}身上的？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000123
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000123,
+					"content": "從師父那裡傳承下來的知識，是要一直傳承下去的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000124
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000124,
+					"content": "假如我去見她的時候，已經帶上了我的徒弟，那不就領先於她了嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000125
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000125,
+					"content": "#而{F#妳}{M#你}又是蒙德的大英雄，身分也配得上我。所以…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000126,
+						105000127
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000126,
+					"content": "我拒絕。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000128
+					]
+				},
+				{
+					"id": 105000128,
+					"content": "#哎呀，不要{F#妳}{M#你}真的當我的徒弟，只需要{F#妳}{M#你}演一場戲就好。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000129
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000129,
+					"content": "#再說了，跟我一起去拿箱子，這件事對{F#妳}{M#你}來說是有好處的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000130
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000130,
+					"content": "#等我見到那個繼承者，就有機會與她互相交流知識，{F#妳}{M#你}的命運我就能看得更清楚了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000131
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000131,
+					"content": "#到時候更遠的、更模糊的事，比如神明、血親什麼的，我都能給{F#妳}{M#你}答案。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000132
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000132,
+					"content": "那、那確實是比我們一個一個國家找起來，要快多了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000133,
+						105000134
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000133,
+					"content": "條件聽起來很美好。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000135
+					]
+				},
+				{
+					"id": 105000135,
+					"content": "哼哼，明智之選，那我們就出發吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000136
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000136,
+					"content": "不過，在離開之前，我有個地方想去一下。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000134,
+					"content": "那…只能奉陪了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000135
+					]
+				},
+				{
+					"id": 105000127,
+					"content": "怎麼突然就變成妳的徒弟了？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000128
+					]
+				},
+				{
+					"id": 105000122,
+					"content": "是怎麼突然跳到我這裡的？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000123
+					]
+				},
+				{
+					"id": 105000115,
+					"content": "簡單來說，就是愛面子嘛。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000116
+					]
+				},
+				{
+					"id": 105000116,
+					"content": "說什麼呢！主要還是想藉這個機會，證明「占星術」的實力和地位！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000117
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000105,
+					"content": "首先，請問妳是？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000106
+					]
+				}
+			]
+		},
+		{
+			"id": 1050002,
+			"completionStepIds": [
+				1050003
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050003",
+							"2"
+						],
+						"stepId": 1050003,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"46622",
+							"3"
+						],
+						"stepId": 46622,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"朱老闆"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000201,
+					"content": "（客棧開在這種地方，生意當然不會好了…）",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000202
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000202,
+					"content": "莫娜，妳來得正好！妳來的路上，看見了一個玉石戒指嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000203
+					],
+					"speakerTitle": "朱老闆"
+				},
+				{
+					"id": 105000203,
+					"content": "玉石戒指？好像沒什麼印象。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000204
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000204,
+					"content": "這可麻煩了…我的寶貝戒指一不留神就被史萊姆吞掉了，那可是我母親留給我的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000205
+					],
+					"speakerTitle": "朱老闆"
+				},
+				{
+					"id": 105000205,
+					"content": "嗯？這種事有莫娜在就不用擔心了吧。她的占星術那麼厲害…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000206
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000206,
+					"content": "那可不行，占星術是用來洞察真實、觀測命運的嚴肅知識，可不是用來打雜的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000207
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000207,
+					"content": "但妳之前不是說，老闆很照顧妳嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000208
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000208,
+					"content": "這是尊嚴，也是心境的問題，占星術士如果認為占星術能解決一切，就會被星空放棄。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000209
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000209,
+					"content": "占卜會失去指引的能力，再也看不透前方的迷霧，所以，原則就是原則。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000210
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000210,
+					"content": "有這麼厲害的能力居然不用來賺錢，太可惜了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000211
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000211,
+					"content": "#唉，本來說如果{F#妳}{M#你}們願意，我可以出兩萬摩拉作酬謝的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000212
+					],
+					"speakerTitle": "朱老闆"
+				},
+				{
+					"id": 105000212,
+					"content": "兩萬…！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000213,
+						105000214
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000213,
+					"content": "妳怎麼了？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000215
+					]
+				},
+				{
+					"id": 105000215,
+					"content": "沒、沒有啊？只是，覺得…能撿到戒指的人，運氣真好啊，這樣就能賺兩萬摩拉。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000216,
+						105000217
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000216,
+					"content": "妳剛剛才說了占星術士的尊嚴。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000218
+					]
+				},
+				{
+					"id": 105000218,
+					"content": "咳咳，是這樣沒錯，不過呢…老闆做生意這麼辛苦，願意花大錢去找這個戒指，它一定意義非凡吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000219
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000219,
+					"content": "就這麼走了也不太好，我們努力找一下吧。就算不用占星術，或許也有另外的辦法。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000220
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000220,
+					"content": "她和我想得一模一樣。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000221
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000221,
+					"content": "#{NICKNAME}，這件事就交給{F#妳}{M#你}吧！這是師父交給{F#妳}{M#你}的第一個任務！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000222,
+						105000223
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000222,
+					"content": "真沒辦法…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000224
+					]
+				},
+				{
+					"id": 105000224,
+					"content": "嗯…既然是被史萊姆吞了，那可以用「元素誘餌」把附近的史萊姆全都引過來吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000225
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000225,
+					"content": "還記得嗎？就是幫迪盧克老爺提煉過的，那個「元素誘餌」。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000226
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000226,
+					"content": "其實…嘿嘿，我悄悄帶了一點在身上！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000227,
+						105000229
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000227,
+					"content": "不愧是妳！",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000228
+					]
+				},
+				{
+					"id": 105000228,
+					"content": "作為搭檔，我很可靠吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000231
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000231,
+					"content": "#看起來，{F#妳}{M#你}們有好辦法了？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000232
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000232,
+					"content": "嗯，我們去去就來！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000229,
+					"content": "該不會是想嘴饞的時候…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000230
+					]
+				},
+				{
+					"id": 105000230,
+					"content": "哎呀，細節就不用在意啦。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000231
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000223,
+					"content": "又變成我的事了…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000224
+					]
+				},
+				{
+					"id": 105000217,
+					"content": "妳剛剛才說了原則就是原則。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000218
+					]
+				},
+				{
+					"id": 105000214,
+					"content": "妳的表情有點奇怪。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000215
+					]
+				}
+			]
+		},
+		{
+			"id": 1050003,
+			"completionStepIds": [
+				1050006
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050006",
+							"2"
+						],
+						"stepId": 1050006,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"朱老闆"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000301,
+					"content": "就是這個，就是這個！我還以為永遠都見不到它了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000302
+					],
+					"speakerTitle": "朱老闆"
+				},
+				{
+					"id": 105000302,
+					"content": "#居然真的找到了，{F#妳}{M#你}們挺厲害的嘛。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000303
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000303,
+					"content": "朱老闆，像這種珍貴的東西，一定要好好保管，下次可能就沒這麼好運了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000304
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000304,
+					"content": "沒錯沒錯，要是弄丟了我母親送我的這第二百五十三個戒指，我都不知道怎麼回家交待。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000305,
+						105000306,
+						105000307
+					],
+					"speakerTitle": "朱老闆"
+				},
+				{
+					"id": 105000305,
+					"content": "…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000308
+					]
+				},
+				{
+					"id": 105000308,
+					"content": "哦，可能有些小誤會。我家裡有三座玉石礦，家母為了讓我討個好媳婦，就準備了很多玉石首飾當傳家寶。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000309
+					],
+					"speakerTitle": "朱老闆"
+				},
+				{
+					"id": 105000309,
+					"content": "加起來大概有五百多件吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000310
+					],
+					"speakerTitle": "朱老闆"
+				},
+				{
+					"id": 105000310,
+					"content": "那你為什麼還要在這裡開客棧啊！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000311
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000311,
+					"content": "太早繼承了家業，難免會覺得單調和枯燥嘛。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000312
+					],
+					"speakerTitle": "朱老闆"
+				},
+				{
+					"id": 105000312,
+					"content": "#總之非常感謝{F#妳}{M#你}們，這是答應要給{F#妳}{M#你}們的摩拉，請一定收下。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000313
+					],
+					"speakerTitle": "朱老闆"
+				},
+				{
+					"id": 105000313,
+					"content": "那我…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000314
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000314,
+					"content": "那我就不客氣了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000315,
+						105000316
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000315,
+					"content": "出手好快！",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000317
+					]
+				},
+				{
+					"id": 105000317,
+					"content": "明明功勞和苦勞都是我們的！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000318
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000318,
+					"content": "弟子就要有弟子的樣子，怎麼能和師父邀功呢？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000319,
+						105000321
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000319,
+					"content": "說得也對…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000320
+					]
+				},
+				{
+					"id": 105000320,
+					"content": "#{NICKNAME}，不是說好「師徒」只是演戲而已嗎！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000323
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000323,
+					"content": "現在就要開始練習呀，不然到了蒙德就穿幫了。那個繼承者八成和我一樣，是非常聰明的…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000324
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000324,
+					"content": "咕咕咕——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000325
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000325,
+					"content": "唔…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000326
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000326,
+					"content": "好像有什麼特別響亮的聲音？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000327
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000327,
+					"content": "哦，對了，妳應該有一兩天都沒吃飯了吧？因為沒…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000328
+					],
+					"speakerTitle": "朱老闆"
+				},
+				{
+					"id": 105000328,
+					"content": "嗚啊啊啊啊——！住嘴！住嘴！沒那回事！別管那個了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000329
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000329,
+					"content": "——嗯！我突然覺得，這件事弟子確實也有功勞，乾脆用這筆錢請弟子吃頓好的吧！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000330
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000330,
+					"content": "往北邊走有家<color=#00E1FFFF>「望舒客棧」</color>，聽說那裡的飯菜特別美味，我們就去那邊嚐嚐。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000331
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000331,
+					"content": "不用感謝我，這都是一個可靠的師父應該做的！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000332
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000332,
+					"content": "她說要請我們吃飯？！我沒聽錯吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000333,
+						105000335
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000333,
+					"content": "「快追上去吧」，我替妳說了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000334
+					]
+				},
+				{
+					"id": 105000334,
+					"content": "快追上去吧！有好吃的！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000335,
+					"content": "「她真是個好人」，我替妳說了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000336
+					]
+				},
+				{
+					"id": 105000336,
+					"content": "她真是個好人！嘿嘿，吃好吃的去啦！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000321,
+					"content": "沒說真的當妳的弟子吧？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000322
+					]
+				},
+				{
+					"id": 105000322,
+					"content": "就是，就是！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000323
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000316,
+					"content": "連派蒙都不是對手！",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000317
+					]
+				},
+				{
+					"id": 105000306,
+					"content": "……",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000308
+					]
+				},
+				{
+					"id": 105000307,
+					"content": "………",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000308
+					]
+				}
+			]
+		},
+		{
+			"id": 1050005,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050004",
+							"2"
+						],
+						"stepId": 1050004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"朱老闆"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000501,
+					"content": "那就拜託你們了，那個戒指真的對我非常重要。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "朱老闆"
+				}
+			]
+		},
+		{
+			"id": 1050006,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050004",
+							"2"
+						],
+						"stepId": 1050004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"莫娜"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000601,
+					"content": "#這可是師父交給{F#妳}{M#你}的第一個任務，不要搞砸了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000602
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000602,
+					"content": "#如果對{F#妳}{M#你}而言實在太難了的話，哼哼，那時候我再出手吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "莫娜"
+				}
+			]
+		},
+		{
+			"id": 1050007,
+			"completionStepIds": [
+				1050008
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050008",
+							"2"
+						],
+						"stepId": 1050008,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"派蒙"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000701,
+					"content": "找到了！就是這個戒指吧！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000702
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000702,
+					"content": "這麼漂亮，肯定值不少錢…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000703
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000703,
+					"content": "啊，我可沒想什麼歪主意！我們快把它還給<color=#00E1FFFF>朱老闆</color>吧！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				}
+			]
+		},
+		{
+			"id": 1050008,
+			"completionStepIds": [
+				1050003
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050003",
+							"2"
+						],
+						"stepId": 1050003,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"朱老闆"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000201,
+					"content": "（客棧開在這種地方，生意當然不會好了…）",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000202
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000202,
+					"content": "莫娜，妳來得正好！妳來的路上，看見了一個玉石戒指嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000203
+					],
+					"speakerTitle": "朱老闆"
+				},
+				{
+					"id": 105000203,
+					"content": "玉石戒指？好像沒什麼印象。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000204
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000204,
+					"content": "這可麻煩了…我的寶貝戒指一不留神就被史萊姆吞掉了，那可是我母親留給我的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000205
+					],
+					"speakerTitle": "朱老闆"
+				},
+				{
+					"id": 105000205,
+					"content": "嗯？這種事有莫娜在就不用擔心了吧。她的占星術那麼厲害…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000206
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000206,
+					"content": "那可不行，占星術是用來洞察真實、觀測命運的嚴肅知識，可不是用來打雜的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000207
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000207,
+					"content": "但妳之前不是說，老闆很照顧妳嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000208
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000208,
+					"content": "這是尊嚴，也是心境的問題，占星術士如果認為占星術能解決一切，就會被星空放棄。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000209
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000209,
+					"content": "占卜會失去指引的能力，再也看不透前方的迷霧，所以，原則就是原則。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000210
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000210,
+					"content": "有這麼厲害的能力居然不用來賺錢，太可惜了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000211
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000211,
+					"content": "#唉，本來說如果{F#妳}{M#你}們願意，我可以出兩萬摩拉作酬謝的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000212
+					],
+					"speakerTitle": "朱老闆"
+				},
+				{
+					"id": 105000213,
+					"content": "妳怎麼了？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000215
+					]
+				},
+				{
+					"id": 105000214,
+					"content": "妳的表情有點奇怪。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000215
+					]
+				},
+				{
+					"id": 105000212,
+					"content": "兩萬…！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000213,
+						105000214
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000216,
+					"content": "妳剛剛才說了占星術士的尊嚴。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000218
+					]
+				},
+				{
+					"id": 105000217,
+					"content": "妳剛剛才說了原則就是原則。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000218
+					]
+				},
+				{
+					"id": 105000215,
+					"content": "沒、沒有啊？只是，覺得…能撿到戒指的人，運氣真好啊，這樣就能賺兩萬摩拉。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000216,
+						105000217
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000218,
+					"content": "咳咳，是這樣沒錯，不過呢…老闆做生意這麼辛苦，願意花大錢去找這個戒指，它一定意義非凡吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000219
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000219,
+					"content": "就這麼走了也不太好，我們努力找一下吧。就算不用占星術，或許也有另外的辦法。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000220
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000220,
+					"content": "她和我想得一模一樣。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000221
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000222,
+					"content": "真沒辦法…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000224
+					]
+				},
+				{
+					"id": 105000223,
+					"content": "又變成我的事了…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000224
+					]
+				},
+				{
+					"id": 105000221,
+					"content": "#{NICKNAME}，這件事就交給{F#妳}{M#你}吧！這是師父交給{F#妳}{M#你}的第一個任務！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000222,
+						105000223
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000224,
+					"content": "嗯…既然是被史萊姆吞了，那可以用「元素誘餌」把附近的史萊姆全都引過來吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000225
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000825,
+					"content": "你知道嗎？晨曦酒莊在釀酒的時候，意外提煉出一種東西。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000826
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000826,
+					"content": "雖然配方保密，但對史萊姆有很強的吸引效果。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000827
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000227,
+					"content": "不愧是妳！",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000228
+					]
+				},
+				{
+					"id": 105000229,
+					"content": "該不會是想嘴饞的時候…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000230
+					]
+				},
+				{
+					"id": 105000226,
+					"content": "其實…嘿嘿，我悄悄帶了一點在身上！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000227,
+						105000229
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000228,
+					"content": "作為搭檔，我很可靠吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000231
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000230,
+					"content": "哎呀，細節就不用在意啦。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000231
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000231,
+					"content": "#看起來，{F#妳}{M#你}們有好辦法了？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000232
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000232,
+					"content": "嗯，我們去去就來！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				}
+			]
+		},
+		{
+			"id": 1050009,
+			"completionStepIds": [
+				1050002
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1050002",
+							"2"
+						],
+						"stepId": 1050002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"50001",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"莫娜"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 105000902,
+					"content": "好久不見。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000904
+					]
+				},
+				{
+					"id": 105000903,
+					"content": "是莫娜！",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000904
+					]
+				},
+				{
+					"id": 105000901,
+					"content": "#能輕易看穿這種秘密，難道還不能喚起{F#妳}{M#你}的記憶嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000902,
+						105000903
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000904,
+					"content": "啊，我想起來了！是那個占星術士！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000905
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000905,
+					"content": "沒錯，正是我，阿斯托洛吉斯·莫娜·梅姬斯圖斯。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000906
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000906,
+					"content": "#這次前來，是想要{F#妳}{M#你}們跟我去一趟蒙德，拿回一個屬於我師父的箱子。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000907
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000109,
+					"content": "這是她和一位朋友，在五十年前定下的約定。但現在她上了年紀，行動很不方便，只能靠我了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000110
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000110,
+					"content": "拿回箱子…這件事聽起來和我們沒什麼關係？為什麼要拉我們一起走呢？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000111
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000111,
+					"content": "這個嘛…因為我還想和那個保管箱子的傢伙較量較量。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000112
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000911,
+					"content": "想證明自己的實力嗎…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000912
+					]
+				},
+				{
+					"id": 105000913,
+					"content": "簡單來說，就是愛面子嘛。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000914
+					]
+				},
+				{
+					"id": 105000112,
+					"content": "師父和她的朋友在神秘學方面鬥了一輩子，也沒能分出勝負。要是我能贏，那我不就比師父還厲害了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000113,
+						105000115
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000114,
+					"content": "咳咳，準確來說，是證明「占星術」的實力和地位。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000117
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000116,
+					"content": "說什麼呢！主要還是想藉這個機會，證明「占星術」的實力和地位！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000117
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000117,
+					"content": "不過，透過我占星後的觀察，現在師父的朋友離開了蒙德，保管箱子的是她的繼承者。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000118
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000118,
+					"content": "和我一樣，那位繼承者一定也是青出於藍而勝於藍嘛，可不能掉以輕心。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000119
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000918,
+					"content": "我…也不會占星啊。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000919
+					]
+				},
+				{
+					"id": 105000920,
+					"content": "是怎麼突然跳到我這裡的？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000921
+					]
+				},
+				{
+					"id": 105000119,
+					"content": "#這場較量，我想穩操勝券，考慮之後，我就想到了{F#妳}{M#你}！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000120,
+						105000122
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000121,
+					"content": "#話題是怎麼突然跳到{F#她}{M#他}身上的？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000123
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000123,
+					"content": "從師父那裡傳承下來的知識，是要一直傳承下去的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000124
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000124,
+					"content": "假如我去見她的時候，已經帶上了我的徒弟，那不就領先於她了嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000125
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000924,
+					"content": "我拒絕。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000926
+					]
+				},
+				{
+					"id": 105000925,
+					"content": "怎麼突然就變成妳的徒弟了？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000926
+					]
+				},
+				{
+					"id": 105000125,
+					"content": "#而{F#妳}{M#你}又是蒙德的大英雄，身分也配得上我。所以…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000126,
+						105000127
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000128,
+					"content": "#哎呀，不要{F#妳}{M#你}真的當我的徒弟，只需要{F#妳}{M#你}演一場戲就好。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000129
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000129,
+					"content": "#再說了，跟我一起去拿箱子，這件事對{F#妳}{M#你}來說是有好處的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000130
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000130,
+					"content": "#等我見到那個繼承者，就有機會與她互相交流知識，{F#妳}{M#你}的命運我就能看得更清楚了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000131
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000131,
+					"content": "#到時候更遠的、更模糊的事，比如神明、血親什麼的，我都能給{F#妳}{M#你}答案。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000132
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000133,
+					"content": "條件聽起來很美好。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000135
+					]
+				},
+				{
+					"id": 105000134,
+					"content": "那…只能奉陪了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						105000135
+					]
+				},
+				{
+					"id": 105000132,
+					"content": "那、那確實是比我們一個一個國家找起來，要快多了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000133,
+						105000134
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 105000135,
+					"content": "哼哼，明智之選，那我們就出發吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						105000136
+					],
+					"speakerTitle": "莫娜"
+				},
+				{
+					"id": 105000136,
+					"content": "不過，在離開之前，我有個地方想去一下。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "莫娜"
+				}
+			]
+		}
+	]
+}

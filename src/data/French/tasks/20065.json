@@ -1,0 +1,306 @@
+{
+	"id": 20065,
+	"type": "IQ",
+	"name": "Eileen, apprentie chevalier",
+	"description": "Eileen travaille très dur en vue de devenir un jour chevalier, mais ses efforts ne semblent pas suffire. Elle aurait bien besoin d'un coup de pouce...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2006501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Eileen.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2006501,
+						0
+					],
+					"talkId": 2006501
+				}
+			]
+		},
+		{
+			"id": 2006502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Détruisez tous les mannequins en 2 s.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2006503,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Eileen.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2006503,
+						0
+					],
+					"talkId": 2006503
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2006501,
+			"completionStepIds": [
+				2006501
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006501",
+							"2"
+						],
+						"stepId": 2006501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Eileen"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200650101,
+					"content": "Qu'est-ce que je suis censée faire ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200650102
+					],
+					"speakerTitle": "Eileen"
+				},
+				{
+					"id": 200650102,
+					"content": "Qu'est-ce qu'il t'arrive ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200650103
+					]
+				},
+				{
+					"id": 200650103,
+					"content": "Je m'entraîne pour la sélection de l'Ordre de Favonius.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200650104
+					],
+					"speakerTitle": "Eileen"
+				},
+				{
+					"id": 200650104,
+					"content": "Mais je suis loin d'être aussi puissante que Jean...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200650105
+					],
+					"speakerTitle": "Eileen"
+				},
+				{
+					"id": 200650105,
+					"content": "Je pense que je devrais me concentrer davantage sur la technique que sur la force.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200650106
+					],
+					"speakerTitle": "Eileen"
+				},
+				{
+					"id": 200650106,
+					"content": "Par exemple, je me demandais comment je pourrais casser tous ces mannequins en un coup...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200650107
+					],
+					"speakerTitle": "Eileen"
+				},
+				{
+					"id": 200650107,
+					"content": "Ils sont beaucoup plus résistants qu'ils n'en ont l'air... Je ne sais pas comment mon père les a obtenus, mais ça n'a pas dû être facile.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Eileen"
+				}
+			]
+		},
+		{
+			"id": 2006502,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006501",
+							"3"
+						],
+						"stepId": 2006501,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006502",
+							"2"
+						],
+						"stepId": 2006502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Eileen"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200650201,
+					"content": "Alors, tu as trouvé ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200650202
+					],
+					"speakerTitle": "Eileen"
+				},
+				{
+					"id": 200650202,
+					"content": "Non, pas encore.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200650203
+					]
+				},
+				{
+					"id": 200650203,
+					"content": "Les aventuriers que j'ai rencontrés étaient tous pareils.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200650204
+					],
+					"speakerTitle": "Eileen"
+				},
+				{
+					"id": 200650204,
+					"content": "Ils sont doués pour se battre contre des monstres, mais quand il s'agit de casser des mannequins...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200650205
+					],
+					"speakerTitle": "Eileen"
+				},
+				{
+					"id": 200650205,
+					"content": "Ils vont même jusqu'à renforcer les mannequins, comme si c'était trop facile pour eux...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200650206
+					],
+					"speakerTitle": "Eileen"
+				},
+				{
+					"id": 200650206,
+					"content": "Si c'est un défi qu'ils cherchent, pourquoi ne pas juste aller affronter un gros méchant monstre dans la nature ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Eileen"
+				}
+			]
+		},
+		{
+			"id": 2006503,
+			"completionStepIds": [
+				2006503
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006502",
+							"3"
+						],
+						"stepId": 2006502,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006503",
+							"2"
+						],
+						"stepId": 2006503,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Eileen"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200650301,
+					"content": "On a réussi !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200650302
+					],
+					"speakerTitle": "Eileen"
+				},
+				{
+					"id": 200650302,
+					"content": "Ah. C'est comme ça qu'il fallait faire ? J'y aurais jamais pensé.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200650303
+					],
+					"speakerTitle": "Eileen"
+				},
+				{
+					"id": 200650303,
+					"content": "Merci ! Je vais essayer moi aussi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Eileen"
+				}
+			]
+		}
+	]
+}

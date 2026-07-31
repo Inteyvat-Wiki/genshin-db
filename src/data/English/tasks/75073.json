@@ -1,0 +1,610 @@
+{
+	"id": 75073,
+	"type": "WQ",
+	"name": "",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		75000
+	],
+	"steps": [
+		{
+			"id": 7507301,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7507302,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7507301,
+						0
+					],
+					"talkId": 7507301
+				}
+			]
+		},
+		{
+			"id": 7507303,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7507303,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7507304,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7507305,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7507306,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7507303,
+						0
+					],
+					"talkId": 7507303
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7507304,
+						0
+					],
+					"talkId": 7507304
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7507301,
+			"completionStepIds": [
+				7507302
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7507302",
+							"2"
+						],
+						"stepId": 7507302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Conulaf"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 750730101,
+					"content": "Ah, my savior! Thank you for your help in... defeating these hilichurls.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730102
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730102,
+					"content": "I was just standing on the cliff admiring the scenery, and one of them knocked me right out. By the time I woke up, I was trapped in here.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730103
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730103,
+					"content": "It's locked. The key... Ah, right, the key is in that chest over there. Could I trouble you to do me a teensy weensy favor?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730104
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730104,
+					"content": "I'd be eternally, utterly grateful if you would...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Conulaf"
+				}
+			]
+		},
+		{
+			"id": 7507302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7507301",
+							"3"
+						],
+						"stepId": 7507301,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7507305",
+							"0"
+						],
+						"stepId": 7507305,
+						"stateName": "QUEST_STATE_NONE"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7507305",
+							"2"
+						],
+						"stepId": 7507305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7507305",
+							"1"
+						],
+						"stepId": 7507305,
+						"stateName": "QUEST_STATE_UNSTARTED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Conulaf"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 750730201,
+					"content": "Oh please, my savior, this place is so high up, and there are so many Qucusaurs about. You cannot possibly leave me alone here in this cage...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Conulaf"
+				}
+			]
+		},
+		{
+			"id": 7507303,
+			"completionStepIds": [
+				7507306
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7507306",
+							"2"
+						],
+						"stepId": 7507306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7507301",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Conulaf"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							-1090.68,
+							266.915,
+							9297.5
+						],
+						"pointId": 10455
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							-1092.925,
+							267.256,
+							9299.437
+						],
+						"pointId": 8705
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 750730301,
+					"content": "*sob* Freedom! Freedom from this prison at last!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730302
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730302,
+					"content": "This hot air balloon keeps on swaying this way and that. Heh, who knows, perhaps a gust of wind shall come and blow the whole thing down...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730303
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730303,
+					"content": "Even Granny Itztli would not be able to save us then, I fear.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730304
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730304,
+					"content": "Who are you, anyway, and how did you wind up here?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						750730305
+					]
+				},
+				{
+					"id": 750730305,
+					"content": "Ah, yes, I haven't introduced myself. Call me Conulaf, a trainee priest of the Masters of the Night-Wind...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730306
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730306,
+					"content": "As the title suggests, I'm currently in training to be a priest. I've stayed within our tribe all my life, so the elders told me, \"why don't you go out and see the world?\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730307
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730307,
+					"content": "And so they kicked me out of the tribe under the guise of training—",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730308
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730308,
+					"content": "Still, I wouldn't call getting caught by hilichurls the good kind of \"seeing the world,\" would you, my savior?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730309,
+						750730311
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730309,
+					"content": "Adventuring on your own's dangerous stuff...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						750730310
+					]
+				},
+				{
+					"id": 750730310,
+					"content": "Indeed, indeed! Were it not for you, I don't know how long I'd have remained trapped in there...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730313
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730313,
+					"content": "In any case, thank you so much for saving me, my dear savior... Now, after all this wind I've been subjected to, I should head down before giving my continued training more consideration...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730314
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730314,
+					"content": "I don't have much on me, but in my family, we repay kindness when it is shown to us, so let me give you these!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730311,
+					"content": "Well, so long as you're strong enough...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						750730312
+					]
+				},
+				{
+					"id": 750730312,
+					"content": "Heh... I fear you're not fooling me with that. There just aren't many adventurers as strong as you are in this world...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730313
+					],
+					"speakerTitle": "Conulaf"
+				}
+			]
+		},
+		{
+			"id": 7507304,
+			"completionStepIds": [
+				7507306
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7507306",
+							"2"
+						],
+						"stepId": 7507306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7507301",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Conulaf"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							-1090.68,
+							266.915,
+							9297.5
+						],
+						"pointId": 10455
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							-1092.925,
+							267.256,
+							9299.437
+						],
+						"pointId": 8705
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 750730401,
+					"content": "*sob* Freedom! Freedom from this prison at last!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730402
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730402,
+					"content": "This hot air balloon keeps on swaying this way and that. Heh, who knows, perhaps a gust of wind shall come and blow the whole thing down...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730403
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730403,
+					"content": "Even Granny Itztli would not be able to save us then, I fear.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730404
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730404,
+					"content": "What happened to you this time?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						750730405
+					]
+				},
+				{
+					"id": 750730405,
+					"content": "Ah, it's you, my savior! I did not expect to run into— I mean, have you save me again during our respective travels...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730406
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730406,
+					"content": "Ah, did I not say previously that my name is Conulaf, a trainee priest of the Masters of the Night-Wind?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730407
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730407,
+					"content": "As the title suggests, I'm currently in training to be a priest. I've stayed within our tribe all my life, so the elders told me, \"why don't you go out and see the world?\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730408
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730408,
+					"content": "And so they kicked me out of the tribe under the guise of training—",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730409
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730409,
+					"content": "Still, I wouldn't call getting caught by hilichurls the good kind of \"seeing the world,\" would you, my savior?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730410,
+						750730412
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730410,
+					"content": "Adventuring on your own's dangerous stuff...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						750730411
+					]
+				},
+				{
+					"id": 750730411,
+					"content": "Indeed, indeed! Were it not for you, I don't know how long I'd have remained trapped in there...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730414
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730414,
+					"content": "In any case, thank you so much for saving me, my dear savior... Now, after all this wind I've been subjected to, I should head down before giving my continued training more consideration...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730415
+					],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730415,
+					"content": "I don't have much on me, but in my family, we repay kindness when it is shown to us, so let me give you these!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Conulaf"
+				},
+				{
+					"id": 750730412,
+					"content": "You'll be fine so long as you're strong enough.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						750730413
+					]
+				},
+				{
+					"id": 750730413,
+					"content": "Heh... I fear you're not fooling me with that. There just aren't many adventurers as skilled as you are in this world...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						750730414
+					],
+					"speakerTitle": "Conulaf"
+				}
+			]
+		}
+	]
+}

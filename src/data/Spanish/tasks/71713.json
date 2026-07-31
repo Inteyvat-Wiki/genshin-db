@@ -1,0 +1,176 @@
+{
+	"id": 71713,
+	"type": "WQ",
+	"name": "Pedazos de hierro para el Maestro Zhang",
+	"description": "El Maestro Zhang, de Liyue, necesita 10 pedazos de hierro.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7171301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Entrégale 10 pedazos de hierro al Maestro Zhang",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7171301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7171302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con el Maestro Zhang",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7171302,
+						0
+					],
+					"talkId": 7171302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7171301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7171301",
+							"2"
+						],
+						"stepId": 7171301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7171301"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Maestro Zhang"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717130101,
+					"content": "Sobre los pedazos de hierro...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717130102
+					]
+				},
+				{
+					"id": 717130102,
+					"content": "Sí, ese es mi encargo. Dentro de poco, me quedaré sin pedazos de hierro...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717130103
+					],
+					"speakerTitle": "Maestro Zhang"
+				},
+				{
+					"id": 717130103,
+					"content": "¿Y bien? ¿Trajiste los 10 pedazos de hierro que quería?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717130104,
+						717130105
+					],
+					"speakerTitle": "Maestro Zhang"
+				},
+				{
+					"id": 717130104,
+					"content": "Sí.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717130105,
+					"content": "Hummm, no.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717130106
+					]
+				},
+				{
+					"id": 717130106,
+					"content": "Cuando los tengas, tráemelos rápido, por favor. Hay clientes que están esperando.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Maestro Zhang"
+				}
+			]
+		},
+		{
+			"id": 7171302,
+			"completionStepIds": [
+				7171302
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7171302",
+							"2"
+						],
+						"stepId": 7171302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Maestro Zhang"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717130201,
+					"content": "Humm... Sí, esto debería servirme para un tiempo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717130202
+					],
+					"speakerTitle": "Maestro Zhang"
+				},
+				{
+					"id": 717130202,
+					"content": "Toma, esto es para ti. Gracias por tu ayuda.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Maestro Zhang"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,226 @@
+{
+	"id": 360,
+	"type": "AQ",
+	"name": "與輕風同行",
+	"description": "#少女名為安柏，身為偵察騎士的她提出護送{F#妳}{M#你}們前往蒙德。但是在那之前，她得先解決城外四處遊蕩的丘丘人，這是她此次出城的任務。",
+	"unlockDescription": "",
+	"chapter": "捕風的異鄉人",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		356
+	],
+	"prevMainQuestList": [
+		354
+	],
+	"steps": [
+		{
+			"id": 36001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "消滅遊蕩的丘丘人",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 36003,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "清理附近的丘丘人營地",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 36004,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "與安柏對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						36001,
+						0
+					],
+					"talkId": 36001
+				}
+			]
+		},
+		{
+			"id": 36005,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "繼續前往蒙德城",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1024,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 36001,
+			"completionStepIds": [
+				36004
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"36004",
+							"2"
+						],
+						"stepId": 36004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"安柏"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3600101,
+					"content": "呼，小菜一碟。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600102
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 3600102,
+					"content": "#不過沒想到，原來{F#妳}{M#你}也不是沒有戰鬥能力的路人…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600103
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 3600103,
+					"content": "#謝謝{F#妳}{M#你}剛才的支援啦，這一戰感覺如何？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600104,
+						3600105
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 3600104,
+					"content": "輕輕鬆鬆。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3600106
+					]
+				},
+				{
+					"id": 3600106,
+					"content": "說起來，「丘丘人」怎麼會出現在這裡呢？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600107
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 3600107,
+					"content": "這種生物，通常不會在離城市這麼近的地方建立營地吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600108
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 3600108,
+					"content": "是啊。它們本該只在荒野遊蕩才對。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600109
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 3600109,
+					"content": "但最近風魔龍經常出現，果園被摧毀，商路也受到了影響。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600110
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 3600110,
+					"content": "風暴爆發時又經常有人受傷…所以騎士團要分心防禦。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600111
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 3600111,
+					"content": "所以這些煩人的生物，活動範圍就越來越近？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600112
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 3600112,
+					"content": "是呀。不過今天又清理了一個營地，還是很有收穫的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600113
+					],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 3600113,
+					"content": "#跟我來吧！認真負責的好騎士要護送{F#妳}{M#你}們進城了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "安柏"
+				},
+				{
+					"id": 3600105,
+					"content": "勉勉強強。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3600106
+					]
+				}
+			]
+		}
+	]
+}

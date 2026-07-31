@@ -1,0 +1,298 @@
+{
+	"id": 70668,
+	"type": "WQ",
+	"name": "Défi d'élévation - 3",
+	"description": "#L'Association des joueurs d'Invocation des Sept a déterminé que vous êtes {F#qualifiée}{M#qualifié} pour le défi d'élévation. Remportez le défi et devenez {F#une joueuse}{M#un joueur} maître ! Que le plaisir vous accompagne dans le monde de l'Invocation des Sept !",
+	"unlockDescription": "Terminez cette quête pour pouvoir commencer les défis d'élévation de l'Invocation des Sept.",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_GUIDE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7066801,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LEAVE_SCENE",
+					"rawParams": [
+						79999,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7066802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Rendez-vous à La Queue de Chat.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7066801,
+						0
+					],
+					"talkId": 7066801
+				}
+			]
+		},
+		{
+			"id": 7066803,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Faites un duel d'élévation avec Prince.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GCG_LEVEL_WIN",
+					"rawParams": [
+						20003,
+						1
+					]
+				}
+			]
+		},
+		{
+			"id": 7066804,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Prince.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7066802,
+						0
+					],
+					"talkId": 7066802
+				}
+			]
+		},
+		{
+			"id": 7066805,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GCG_LEVEL_WIN",
+					"rawParams": [
+						20003,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7066801,
+			"completionStepIds": [
+				7066802
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066802",
+							"2"
+						],
+						"stepId": 7066802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066803",
+							"2"
+						],
+						"stepId": 7066803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Prince"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706660101,
+					"content": "Je suis là pour un défi d'élévation !",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						706660102
+					]
+				},
+				{
+					"id": 706660102,
+					"content": "#Miaou... (« Oh, un défi d'élévation ? Eh bien, c'est vrai que tu es déjà {M#qualifié}{F#qualifiée} pour participer à cette épreuve. Bon... »)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706660103
+					],
+					"speakerTitle": "Prince"
+				},
+				{
+					"id": 706660103,
+					"content": "#(« Je vais dire à Shuyun de préparer le défi. Et reste {M#prudent}{F#prudente}... »)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Prince"
+				}
+			]
+		},
+		{
+			"id": 7066802,
+			"completionStepIds": [
+				7066804
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066804",
+							"2"
+						],
+						"stepId": 7066804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Prince"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706680201,
+					"content": "#Miaou ! (« Incroyable ! Félicitations pour avoir réussi le défi. Tu es maintenant {M#un joueur}{F#une joueuse} maître ! »)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706680202
+					],
+					"speakerTitle": "Prince"
+				},
+				{
+					"id": 706680202,
+					"content": "#Miaou. (« Être {M#un joueur maître}{F#une joueuse maître} signifie que... ta technique a dépassé celle de nombreuses personnes qui étudient ce jeu. Ceux qui ne font pas assez d'efforts ne pourront jamais atteindre ce niveau. »)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706680203
+					],
+					"speakerTitle": "Prince"
+				},
+				{
+					"id": 706680203,
+					"content": "(« Bien sûr, ils ne comprennent pas pourquoi nous consacrons inlassablement des heures à un jeu qu'ils jouent juste pour le plaisir... »)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706680205
+					],
+					"speakerTitle": "Prince"
+				},
+				{
+					"id": 706680205,
+					"content": "Miaou ! (« Si les joueurs que tu invites savent que tu as obtenu le titre de maître, ils prendront leurs parties avec toi plus au sérieux. »)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706680206
+					],
+					"speakerTitle": "Prince"
+				},
+				{
+					"id": 706680206,
+					"content": "#(« Peut-être que certains joueurs ne voudront jouer que les parties qu'ils ont préparées en apprenant que tu es {M#un joueur maître}{F#une joueuse maître}... Il y a aussi des loufoques du genre dans la taverne. »)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706680207
+					],
+					"speakerTitle": "Prince"
+				},
+				{
+					"id": 706680207,
+					"content": "#Miaou... (« Alors, {NICKNAME}... »)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706680208
+					],
+					"speakerTitle": "Prince"
+				},
+				{
+					"id": 706680208,
+					"content": "(« Que le plaisir t'accompagne dans le monde de l'Invocation des Sept ! »)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Prince"
+				}
+			]
+		},
+		{
+			"id": 7066803,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066804",
+							"0"
+						],
+						"stepId": 7066804,
+						"stateName": "QUEST_STATE_NONE"
+					},
+					{
+						"type": "QUEST_COND_GCG_WORLD_CHALLENGE_RESULT",
+						"rawParams": [
+							"-1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Prince"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706660301,
+					"content": "#Miaou... (« Hmm... Essaye d'être un peu plus {M#prudent}{F#prudente} et de faire des ajustements à ton deck avant ta prochaine tentative. »)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706660302
+					],
+					"speakerTitle": "Prince"
+				},
+				{
+					"id": 706660302,
+					"content": "(« Je suis sûr que tu es capable de réussir cette épreuve... »)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Prince"
+				}
+			]
+		}
+	]
+}

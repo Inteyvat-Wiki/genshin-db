@@ -1,0 +1,316 @@
+{
+	"id": 75113,
+	"type": "WQ",
+	"name": "",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		75046
+	],
+	"steps": [
+		{
+			"id": 7511301,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7511301,
+						0
+					],
+					"talkId": 7511301
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7511302,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_GLOBAL_VAR_EQUAL",
+					"rawParams": [
+						7511301,
+						0
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					-2414.682,
+					219.929,
+					9752.246
+				],
+				"pointId": 10659
+			}
+		},
+		{
+			"id": 7511303,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7511304,
+						0
+					],
+					"talkId": 7511304
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7511301,
+			"completionStepIds": [
+				7511301
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_B_OR_ETCAND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7511301",
+							"2"
+						],
+						"stepId": 7511301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7511302",
+							"0"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7511302",
+							"2"
+						],
+						"stepId": 7511302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7511302",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Urubamba"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 751130101,
+					"content": "Kind warrior, all my saurians are safe and sound, and all thanks to you!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130106
+					],
+					"speakerTitle": "Urubamba"
+				},
+				{
+					"id": 751130106,
+					"content": "You've shown such courage and kindness that I, Urubamba, would be honored to help you train for the Warrior's Challenge, completely free of charge!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130104,
+						751130105
+					],
+					"speakerTitle": "Urubamba"
+				},
+				{
+					"id": 751130104,
+					"content": "Let's begin!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 751130105,
+					"content": "Give me a moment to prep...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7511302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7511302",
+							"2"
+						],
+						"stepId": 7511302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7511302",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Urubamba"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 751130201,
+					"content": "Once you've made up your mind, don't think too much about it. Just give it your all!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Urubamba"
+				}
+			]
+		},
+		{
+			"id": 7511304,
+			"completionStepIds": [
+				7511303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7511303",
+							"2"
+						],
+						"stepId": 7511303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Urubamba"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							-2396.456,
+							225.299,
+							9765.566
+						],
+						"pointId": 10657
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							-2400.91,
+							224.938,
+							9765.562
+						],
+						"pointId": 10889
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							-2400.619,
+							225.076,
+							9766.605
+						],
+						"pointId": 10890
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 751130401,
+					"content": "Wow, I'd never have guessed you'd do so well — I clearly underestimated you!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130402
+					],
+					"speakerTitle": "Urubamba"
+				},
+				{
+					"id": 751130402,
+					"content": "To think that after all that preparation, the challenge prizes would end up being scooped up, just like that, by a total stranger passing through... It almost sounds...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130403
+					],
+					"speakerTitle": "Urubamba"
+				},
+				{
+					"id": 751130403,
+					"content": "...Like one of those heroic tales, straight out of a woven scroll!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130405
+					],
+					"speakerTitle": "Urubamba"
+				},
+				{
+					"id": 751130405,
+					"content": "Maybe someday your heroic deeds will end up being woven into our legends too? In fact, when I put it like that... it sounds quite likely!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130406
+					],
+					"speakerTitle": "Urubamba"
+				},
+				{
+					"id": 751130406,
+					"content": "So, how about a quick selfie together, hero? Who knows, this photo might just become my source of future bragging rights!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Urubamba"
+				}
+			]
+		}
+	]
+}

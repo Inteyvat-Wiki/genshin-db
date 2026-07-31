@@ -1,0 +1,580 @@
+{
+	"id": 72149,
+	"type": "WQ",
+	"name": "\"Watatsumi'nin Kalbi\"",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "Mehtaplı Derinlikler",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_RANK_ZERO_WQ",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		72145,
+		72146,
+		72147,
+		72148
+	],
+	"steps": [
+		{
+			"id": 7214901,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sangonomiya Tapınağına geri dön ve Tsuyuko ile konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7214902,
+						0
+					],
+					"talkId": 7214902
+				}
+			]
+		},
+		{
+			"id": 7214902,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "\"Watatsumi'nin Kalbi\"ne giden kapıyı aç.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7214903,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "\"Kalp\" mührüne git.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7214904,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Son mührü kır.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7214905,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Derinliklerin Anahtarını al.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7214906,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Tsuyuko ile konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7214903,
+						0
+					],
+					"talkId": 7214903
+				}
+			]
+		},
+		{
+			"id": 7214907,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7214901,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7214901,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214904",
+							"3"
+						],
+						"stepId": 7214904,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214905",
+							"2"
+						],
+						"stepId": 7214905,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tsuyuko"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721490101,
+					"content": "(Görünüşe göre Bayan Tsuyuko bir şeyler düşünüyor, rahatsız etmesek iyi olacak.)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tsuyuko"
+				}
+			]
+		},
+		{
+			"id": 7214902,
+			"completionStepIds": [
+				7214901
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214901",
+							"2"
+						],
+						"stepId": 7214901,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tsuyuko",
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721490201,
+					"content": "#Tekrar hoş geldin {NICKNAME}. Senin için yapabileceğim bir şey var mı?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490202
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490202,
+					"content": "Verdiğin görev hakkında...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490203
+					]
+				},
+				{
+					"id": 721490203,
+					"content": "Dört Ruh İncisini de bulduk!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490204
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 721490204,
+					"content": "Öyle mi? Çok teşekkür ederim, size güvenebileceğimi biliyordum! O halde \"kalp\" mührünün kilidini açmamıza bir adım kaldı.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490205
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490205,
+					"content": "Sakıncası yoksa ikinizin de benimle gelmesini rica edeceğim.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490206
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490206,
+					"content": "#Bu kadar gelmişiz, biraz daha yürümekten ne zarar gelir! Değil mi {NICKNAME}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490207,
+						721490208
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 721490207,
+					"content": "Peki.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490209
+					]
+				},
+				{
+					"id": 721490209,
+					"content": "Kaybedecek vaktimiz yok. Hadi!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490208,
+					"content": "Bence sorun yok.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490209
+					]
+				}
+			]
+		},
+		{
+			"id": 7214903,
+			"completionStepIds": [
+				7214906
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214905",
+							"3"
+						],
+						"stepId": 7214905,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214906",
+							"2"
+						],
+						"stepId": 7214906,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tsuyuko",
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721490301,
+					"content": "Hım...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490302
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490302,
+					"content": "Bayan Tsuyuko?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490303
+					]
+				},
+				{
+					"id": 721490303,
+					"content": "Ah, kusura bakmayın. Dalmışım.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490304
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490304,
+					"content": "Sayenizde Mehtaplı Derinliklerin Anahtarı artık elimizde.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490305
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490305,
+					"content": "Matkaplı Derinlikler Anahtarı mı? O da ne?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490306
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 721490306,
+					"content": "Haha, \"Derinliklerin Anahtarı\" desen de olur. Yabancıların her bir şeyin adını doğru söylemesini beklemiyoruz.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490307
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490307,
+					"content": "Enkanomiya'nın girişini açmak için bunu kullanacağız. Omikami'mizin dökülen kanından yapıldı...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490308
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490308,
+					"content": "En azından efsanelerde böyle geçiyor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490309
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490309,
+					"content": "Ah...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490310
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 721490310,
+					"content": "Garipleştikçe garipleşiyor...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490311
+					]
+				},
+				{
+					"id": 721490311,
+					"content": "Haha! Gerçekten hiç de gizemli değil! Aslında durum tam tersi!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490312
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490312,
+					"content": "Şimdi Kutsal Rahibe ile görüşüp onay vermesini, ardından ruh damarının akışının doğru olmasını bekleyeceğiz...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490313
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490313,
+					"content": "Böylece Enkanomiya'ya inebiliriz.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490314
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490314,
+					"content": "Bir dakika, o zaman biz bütün bunları niye yaptık?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490315
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 721490315,
+					"content": "Yolculuğunuz esnasında kazanımlarınız oldu, değil mi?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490316
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490316,
+					"content": "Mesela... Sangonomiya Tapınağının ebedi dostluğunu kazandınız! Watatsumi Adası bundan böyle sizi her zaman dostça karşılayacak!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490317
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490317,
+					"content": "Daha somut bir şeyi tercih ederim.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490318
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 721490318,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490319
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490319,
+					"content": "Kayıtlarımıza göre Ruh İncileri saf birinin çağrısına yanıt verecek, Anahtar da sadece kalbi su gibi berrak olan için bir araya gelecek.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490320
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490320,
+					"content": "O metinlerde ne yazdığına pek inanmam ama Watatsumi Adası'nda olan biteni tersine çevirebileceğine inanıyorum.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490321
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490321,
+					"content": "Öyleyse, Enkanomiya'ya inme zamanı geldiğinde...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490322,
+						721490323
+					],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490322,
+					"content": "Tekrar karşılaşacağız, değil mi?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490325
+					]
+				},
+				{
+					"id": 721490325,
+					"content": "O halde görüşmek üzere!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tsuyuko"
+				},
+				{
+					"id": 721490323,
+					"content": "Bir fal kağıdı daha mı çekeceksin?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						721490324
+					]
+				},
+				{
+					"id": 721490324,
+					"content": "Hehe, fal kağıdında oldukça şanslıyımdır. Tekrar karşılaşacağımıza eminim.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						721490325
+					],
+					"speakerTitle": "Tsuyuko"
+				}
+			]
+		},
+		{
+			"id": 7214904,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7214907",
+							"2"
+						],
+						"stepId": 7214907,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7214901"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 721490401,
+					"content": "Üzerine balık sembolü oyulmuş tuhaf, ışık saçan bir mühür...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "\"Kalp\" Mührü"
+				}
+			]
+		}
+	]
+}

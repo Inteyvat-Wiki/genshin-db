@@ -1,0 +1,702 @@
+{
+	"id": 20601,
+	"type": "WQ",
+	"name": "天赐良机？",
+	"description": "虽然在风暴之中，冒险家协会的塞琉斯先生却正在摩拳擦掌…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		357,
+		309
+	],
+	"steps": [
+		{
+			"id": 2060101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "与塞琉斯对话",
+			"finishConditions": []
+		},
+		{
+			"id": 2060102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "寻找杰克的踪迹",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2060103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "寻找杰克的踪迹",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2060104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "解救被围困的杰克",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2060105,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "与杰克对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2060105,
+						0
+					],
+					"talkId": 2060105
+				}
+			]
+		},
+		{
+			"id": 2060106,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "清理营地",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2060107,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "与塞琉斯对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2060107,
+						0
+					],
+					"talkId": 2060107
+				}
+			]
+		},
+		{
+			"id": 2060108,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "与杰克对话$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2060106,
+						0
+					],
+					"talkId": 2060106
+				}
+			]
+		},
+		{
+			"id": 2060109,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "与塞琉斯对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2060108,
+						0
+					],
+					"talkId": 2060108
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2060104,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060101",
+							"3"
+						],
+						"stepId": 2060101,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_NOT_RECEIVE",
+						"rawParams": [
+							"2060107",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"塞琉斯"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010401,
+					"content": "班尼特这小子又跑到哪去了，唉，这个关头…他可别再出什么意外…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "塞琉斯"
+				}
+			]
+		},
+		{
+			"id": 2060105,
+			"completionStepIds": [
+				2060105
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060105",
+							"2"
+						],
+						"stepId": 2060105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"杰克"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010501,
+					"content": "嘶，疼…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010502
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 206010502,
+					"content": "谢谢你，我还以为自己回不去了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010503
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 206010503,
+					"content": "你怎么样？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010504
+					]
+				},
+				{
+					"id": 206010504,
+					"content": "哈，一点小伤…呃！一点…小伤，我没问题。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010505
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 206010505,
+					"content": "我是因为发现一群丘丘人正在向前面的营地里集结，觉得它们想要做什么，才跟了上去。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010506
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 206010506,
+					"content": "…但我跟踪调查的时候靠得太近，不小心就被它们发现了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010507
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 206010507,
+					"content": "不说这个了，不用担心我，请快点去把前面的丘丘人都清理掉！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010508
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 206010508,
+					"content": "它们的数量越来越多，绝不能让它们的阴谋得逞。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010509
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 206010509,
+					"content": "至于我…我会照顾好我自己的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "杰克"
+				}
+			]
+		},
+		{
+			"id": 2060106,
+			"completionStepIds": [
+				2060108
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060108",
+							"2"
+						],
+						"stepId": 2060108,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"杰克"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010601,
+					"content": "你已经清理掉那个营地了吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010602
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 206010602,
+					"content": "是的。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010603
+					]
+				},
+				{
+					"id": 206010603,
+					"content": "你的实力可真强啊，要是我能像你一样优秀就好了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010604
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 206010604,
+					"content": "我也想留下斩杀恶龙、拯救世界的传说，但到头来连丘丘人都没法胜过…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010605
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 206010605,
+					"content": "呃，那个…虽然很不好意思，但是我有件事拜托你…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010606
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 206010606,
+					"content": "其实我这次之所以会去千风神殿调查，是因为我马上就要「冒险等阶评定」了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010607
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 206010607,
+					"content": "我想着如果能在这个时候展现出实力的话，等阶评定一定会顺利不少。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010608
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 206010608,
+					"content": "但是没想到，实力没展现出来，反而差点把自己给赔进去。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010609
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 206010609,
+					"content": "能，能拜托你，别把我的惨样告诉塞琉斯先生吗？要是真的影响到「冒险等阶评定」，那我就真的惨了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010610,
+						206010612
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 206010610,
+					"content": "我知道了…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010611
+					]
+				},
+				{
+					"id": 206010611,
+					"content": "太谢谢你了！我以后一定不会再这么鲁莽了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 206010612,
+					"content": "这样不好。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010613
+					]
+				},
+				{
+					"id": 206010613,
+					"content": "我知道这样不好，塞琉斯先生也说「冒险家应该直面自己」…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010614
+					],
+					"speakerTitle": "杰克"
+				},
+				{
+					"id": 206010614,
+					"content": "但是…唉，算了，希望塞琉斯先生不会太生我的气…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "杰克"
+				}
+			]
+		},
+		{
+			"id": 2060107,
+			"completionStepIds": [
+				2060107
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060108",
+							"2"
+						],
+						"stepId": 2060108,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"塞琉斯"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010701,
+					"content": "你回来了，杰克也回来了，但是一瘸一拐的…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010702
+					],
+					"speakerTitle": "塞琉斯"
+				},
+				{
+					"id": 206010702,
+					"content": "到底发生什么了？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010703
+					],
+					"speakerTitle": "塞琉斯"
+				},
+				{
+					"id": 206010703,
+					"content": "杰克因为冒进受伤了…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010704
+					]
+				},
+				{
+					"id": 206010704,
+					"content": "果然和我想的一样，唉…平时我和他说的话，他都没怎么记得。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010705
+					],
+					"speakerTitle": "塞琉斯"
+				},
+				{
+					"id": 206010705,
+					"content": "虽然我也理解他想要证明自己的心思，但是…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010706
+					],
+					"speakerTitle": "塞琉斯"
+				},
+				{
+					"id": 206010706,
+					"content": "算了，这件事我已经了解了，杰克那边我会去和他谈谈。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010707
+					],
+					"speakerTitle": "塞琉斯"
+				},
+				{
+					"id": 206010707,
+					"content": "这是给你的，算是你冒险的奖励吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "塞琉斯"
+				}
+			]
+		},
+		{
+			"id": 2060108,
+			"completionStepIds": [
+				2060109
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060109",
+							"2"
+						],
+						"stepId": 2060109,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"塞琉斯"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010801,
+					"content": "你回来了，杰克也回来了，但是一瘸一拐的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010802
+					],
+					"speakerTitle": "塞琉斯"
+				},
+				{
+					"id": 206010802,
+					"content": "到底发生什么了？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010803,
+						206010807
+					],
+					"speakerTitle": "塞琉斯"
+				},
+				{
+					"id": 206010803,
+					"content": "杰克战斗时很英勇。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010804
+					]
+				},
+				{
+					"id": 206010804,
+					"content": "你和他并肩作战了吗？原来他是这么受伤的…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010805
+					],
+					"speakerTitle": "塞琉斯"
+				},
+				{
+					"id": 206010805,
+					"content": "唉，英勇是好事…但我宁愿他更加稳重一些，毕竟，活下来的冒险家才是冒险家。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010806
+					],
+					"speakerTitle": "塞琉斯"
+				},
+				{
+					"id": 206010806,
+					"content": "旅行者，你和杰克的勇气都值得嘉奖，这些东西你拿着，算是你冒险的奖励吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "塞琉斯"
+				},
+				{
+					"id": 206010807,
+					"content": "杰克因为冒进受伤了…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010808
+					]
+				},
+				{
+					"id": 206010808,
+					"content": "果然和我想的一样，唉…平时我和他说的话，他都没怎么记得。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010809
+					],
+					"speakerTitle": "塞琉斯"
+				},
+				{
+					"id": 206010809,
+					"content": "虽然我也理解他想要证明自己的心思，但是…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010810
+					],
+					"speakerTitle": "塞琉斯"
+				},
+				{
+					"id": 206010810,
+					"content": "算了，这件事我已经了解了，杰克那边我会去和他谈谈。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010811
+					],
+					"speakerTitle": "塞琉斯"
+				},
+				{
+					"id": 206010811,
+					"content": "这是给你的，算是你冒险的奖励吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "塞琉斯"
+				}
+			]
+		},
+		{
+			"id": 2060109,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060109",
+							"2"
+						],
+						"stepId": 2060109,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"杰克"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206011001,
+					"content": "唉，希望我的「冒险等阶评定」不会受到影响…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206011002
+					],
+					"speakerTitle": "杰克"
+				}
+			]
+		}
+	]
+}

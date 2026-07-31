@@ -1,0 +1,321 @@
+{
+	"id": 20741,
+	"type": "WQ",
+	"name": "風神とモンド",
+	"description": "災難が去り、シスターグレイスは風神に感謝を捧げたいようだ…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		10113
+	],
+	"steps": [
+		{
+			"id": 2074101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "グレイスと会話する",
+			"finishConditions": []
+		},
+		{
+			"id": 2074102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "蒲公英をグレイスに渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100057,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2074103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "蒲公英の種をグレイスに渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2074110,
+						0
+					],
+					"talkId": 2074110
+				}
+			]
+		},
+		{
+			"id": 2074104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "風神像の手の上で蒲公英を撒く",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_INTERACT_GADGET",
+					"rawParams": [
+						70710009,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2074105,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "グレイスと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2074120,
+						0
+					],
+					"talkId": 2074120
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2074110,
+			"completionStepIds": [
+				2074103
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2074103",
+							"2"
+						],
+						"stepId": 2074103,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"グレイス"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 207411001,
+					"content": "蒲公英は手に入れたかしら？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207411002
+					],
+					"speakerTitle": "グレイス"
+				},
+				{
+					"id": 207411002,
+					"content": "手に入れた。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						207411003
+					]
+				},
+				{
+					"id": 207411003,
+					"content": "これで十分ね、ここで少し待ってて…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207411004
+					],
+					"speakerTitle": "グレイス"
+				},
+				{
+					"id": 207411004,
+					"content": "…バルバトス様、聞いてください…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207411005
+					],
+					"speakerTitle": "グレイス"
+				},
+				{
+					"id": 207411005,
+					"content": "わぁ…あんなに話して、シスターは敬虔だな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207411006
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 207411006,
+					"content": "…「吟遊野郎」はちゃんと聞いてるといいな…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207411007
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 207411007,
+					"content": "さて、この蒲公英の種を神像の上で撒いてくれるかしら？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207411008
+					],
+					"speakerTitle": "グレイス"
+				},
+				{
+					"id": 207411008,
+					"content": "本当は私が行くべきだけど…私の身体能力だと、登れたとしても降りることは難しいと思うわ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207411009
+					],
+					"speakerTitle": "グレイス"
+				},
+				{
+					"id": 207411009,
+					"content": "だからお願いね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "グレイス"
+				}
+			]
+		},
+		{
+			"id": 2074120,
+			"completionStepIds": [
+				2074105
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2074105",
+							"2"
+						],
+						"stepId": 2074105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"グレイス"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 207412001,
+					"content": "蒲公英の種を撒いてくれたかしら？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207412002,
+						207412003
+					],
+					"speakerTitle": "グレイス"
+				},
+				{
+					"id": 207412002,
+					"content": "撒いたよ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						207412005
+					]
+				},
+				{
+					"id": 207412005,
+					"content": "何があっても、私の声をバルバトス様に届けたかったからね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207412006
+					],
+					"speakerTitle": "グレイス"
+				},
+				{
+					"id": 207412006,
+					"content": "手伝ってくれてありがとう。さあ、お礼を受け取って。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "グレイス"
+				},
+				{
+					"id": 207412003,
+					"content": "きっと風と共に遠くまで飛べる。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						207412004
+					]
+				},
+				{
+					"id": 207412004,
+					"content": "よかった、これでバルバトス様も気付いてくれるはずだわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						207412005
+					],
+					"speakerTitle": "グレイス"
+				}
+			]
+		},
+		{
+			"id": 2074190,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2074102",
+							"2"
+						],
+						"stepId": 2074102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2074104",
+							"2"
+						],
+						"stepId": 2074104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"グレイス"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 207419001,
+					"content": "バルバトス様が私の声を聞いてくれますように…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "グレイス"
+				}
+			]
+		}
+	]
+}

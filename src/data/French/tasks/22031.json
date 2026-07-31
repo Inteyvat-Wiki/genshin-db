@@ -1,0 +1,528 @@
+{
+	"id": 22031,
+	"type": "IQ",
+	"name": "L'entraînement ne s'arrête jamais !",
+	"description": "Asakura, ayant pu récupérer son arme, est toujours à la recherche de quelqu'un pour l'aider à s'entraîner aux arts martiaux...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2203101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Trouvez Asakura, l'émetteur de l'ordre de mission.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2203101,
+						0
+					],
+					"talkId": 2203101
+				}
+			]
+		},
+		{
+			"id": 2203102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Asakura.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2203105,
+						0
+					],
+					"talkId": 2203105
+				}
+			]
+		},
+		{
+			"id": 2203103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Terminez votre entraînement avec Asakura.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2203104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Asakura.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2203104,
+						0
+					],
+					"talkId": 2203104
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2203101,
+			"completionStepIds": [
+				2203101
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2203101",
+							"2"
+						],
+						"stepId": 2203101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Asakura"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220310101,
+					"content": "Lance droite... Ha !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310102
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 220310102,
+					"content": "#Je suis {M#venu}{F#venue} m'entraîner avec vous.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220310103
+					]
+				},
+				{
+					"id": 220310103,
+					"content": "Oh ! C'est vous, vous acceptez à nouveau ma mission ? Merci beaucoup !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310104
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 220310104,
+					"content": "J'ai de la chance que quelqu'un d'aussi doué que vous accepte de s'entraîner avec moi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310105,
+						220310110
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 220310105,
+					"content": "Votre maniement de la lance s'est beaucoup amélioré depuis la dernière fois.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220310106
+					]
+				},
+				{
+					"id": 220310106,
+					"content": "Haha... Ne dites pas de bêtises.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310107
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 220310107,
+					"content": "De ce que j'ai entendu dire, les lances ont été créées dans le but de permettre aux gens sans grande maîtrise des arts martiaux de pouvoir combattre.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310108
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 220310108,
+					"content": "Cette arme est longue et pointue. Même si la personne qui la tient ne sait pas la manier correctement, elle reste intimidante rien qu'en la brandissant.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310109
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 220310109,
+					"content": "Cependant, sur le même principe... Je pense que les fourches de jardinage ont l'air plus imposantes...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 220310110,
+					"content": "N'avez-vous pas déjà récupéré votre arme ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220310111
+					]
+				},
+				{
+					"id": 220310111,
+					"content": "Oui, mais ça ne veut pas dire que je dois arrêter de m'entraîner.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310112
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 220310112,
+					"content": "Je suis déjà tombé sur des Oni des mers comme ce type, mais rien ne dit que je ne croiserai pas d'ennemis plus forts à l'avenir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310113
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 220310113,
+					"content": "Je ne permettrai pas que mon arme tombe à nouveau entre les mains de l'ennemi et que mon honneur de samouraï soit à nouveau bafoué.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Asakura"
+				}
+			]
+		},
+		{
+			"id": 2203102,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2203102",
+							"2"
+						],
+						"stepId": 2203102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Asakura"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220310201,
+					"content": "*soupir* Assez parlé, je ne veux pas vous faire perdre votre temps.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Asakura"
+				}
+			]
+		},
+		{
+			"id": 2203103,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Asakura"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220310301,
+					"content": "Vous aviez l'air distrait. Vos déplacements étaient désordonnés et vos attaques ne se valaient pas toutes en puissance...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310302
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 220310302,
+					"content": "Nous ne pouvons pas continuer comme ça. Préparez-vous d'abord et nous reprendrons plus tard.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Asakura"
+				}
+			]
+		},
+		{
+			"id": 2203104,
+			"completionStepIds": [
+				2203104
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2203104",
+							"2"
+						],
+						"stepId": 2203104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Asakura"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220310401,
+					"content": "*halète* Vos compétences surpassent vraiment les miennes, et de loin...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310402
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 220310402,
+					"content": "Je serai plus sympa la prochaine fois...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220310403
+					]
+				},
+				{
+					"id": 220310403,
+					"content": "Non ! S'il vous plaît, ne retenez pas votre force. Je ne pourrai pas m'améliorer sans un bon entraînement.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310404
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 220310404,
+					"content": "Étant donné votre force, je suis certain que vous avez dû vous entraîner très dur.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310405
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 220310405,
+					"content": "Pardonnez-moi, mais je suis vraiment curieux de savoir comment vous avez fait.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310406,
+						220310408
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 220310406,
+					"content": "#Un énorme dragon m'a {M#entraîné}{F#entraînée} à planer un jour.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220310407
+					]
+				},
+				{
+					"id": 220310407,
+					"content": "V—Vous avez plané avec un dragon ? C'est difficile à imaginer...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310410
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 220310410,
+					"content": "... Rien de spécial.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220310411
+					]
+				},
+				{
+					"id": 220310411,
+					"content": "#Hahaha, vraiment ? Dans ce cas, vous êtes exceptionnellement {M#talentueux}{F#talentueuse}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310412
+					],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 220310412,
+					"content": "#Merci de vous être {M#entraîné}{F#entraînée} avec moi. Je me souviendrai de notre combat. Prenez ceci en remerciement.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Asakura"
+				},
+				{
+					"id": 220310408,
+					"content": "Un loup géant m'aide à améliorer mes compétences de combat.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220310409
+					]
+				},
+				{
+					"id": 220310409,
+					"content": "C'est très brave de votre part. J'aurais aimé vous voir vous battre avec lui...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310410
+					],
+					"speakerTitle": "Asakura"
+				}
+			]
+		},
+		{
+			"id": 2203105,
+			"completionStepIds": [
+				2203102
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2203102",
+							"2"
+						],
+						"stepId": 2203102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Asakura"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220310501,
+					"content": "Commençons.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220310502
+					]
+				},
+				{
+					"id": 220310502,
+					"content": "Oui, restez sur vos gardes.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Asakura"
+				}
+			]
+		},
+		{
+			"id": 2203106,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2203102",
+							"2"
+						],
+						"stepId": 2203102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Asakura"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220310601,
+					"content": "J'ai besoin de temps pour me préparer.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220310602
+					]
+				},
+				{
+					"id": 220310602,
+					"content": "#Prenez le temps qu'il faut. Faites-moi savoir quand vous êtes {M#prêt}{F#prête}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Asakura"
+				}
+			]
+		},
+		{
+			"id": 2203111,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Asakura"
+				],
+				"points": []
+			},
+			"dialogs": []
+		}
+	]
+}

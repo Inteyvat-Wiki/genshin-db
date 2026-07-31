@@ -1,0 +1,158 @@
+{
+	"id": 72717,
+	"type": "WQ",
+	"name": "Kozue's Ironwork",
+	"description": "Narukami Island's Kozue requests 10 Iron Chunks.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7271701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Give ten Iron Chunks to Kozue",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7271701,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7271702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Kozue",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7271702,
+						0
+					],
+					"talkId": 7271702
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7271701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271701",
+							"2"
+						],
+						"stepId": 7271701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7271701"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kozue"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727170101,
+					"content": "Interested in Iron Chunks?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727170102
+					]
+				},
+				{
+					"id": 727170102,
+					"content": "Are you here about my commission? If so, I guess you've already got those 10 Iron Chunks ready, right?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727170105,
+						727170103
+					],
+					"speakerTitle": "Kozue"
+				},
+				{
+					"id": 727170105,
+					"content": "Here they are.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 727170103,
+					"content": "I haven't got them yet.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727170104
+					]
+				},
+				{
+					"id": 727170104,
+					"content": "Okay, well go get them, then bring them here.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kozue"
+				}
+			]
+		},
+		{
+			"id": 7271702,
+			"completionStepIds": [
+				7271702
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271702",
+							"2"
+						],
+						"stepId": 7271702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kozue"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727170201,
+					"content": "Mm... yep, that's 10. I'll hand them to Taroumaru shortly.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kozue"
+				}
+			]
+		}
+	]
+}

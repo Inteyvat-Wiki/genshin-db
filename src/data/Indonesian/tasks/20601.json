@@ -1,0 +1,702 @@
+{
+	"id": 20601,
+	"type": "WQ",
+	"name": "Kesempatan dari Surga?",
+	"description": "Meskipun dalam, Cyrus dari Adventurers' Guild tetap bersemangat untuk bertarung...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		357,
+		309
+	],
+	"steps": [
+		{
+			"id": 2060101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Cyrus",
+			"finishConditions": []
+		},
+		{
+			"id": 2060102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Lacak jejak Jack",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2060103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Lacak jejak Jack",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2060104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Selamatkan Jack dari Hilichurl",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2060105,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Jack",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2060105,
+						0
+					],
+					"talkId": 2060105
+				}
+			]
+		},
+		{
+			"id": 2060106,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bersihkan kemah",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2060107,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Cyrus",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2060107,
+						0
+					],
+					"talkId": 2060107
+				}
+			]
+		},
+		{
+			"id": 2060108,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2060106,
+						0
+					],
+					"talkId": 2060106
+				}
+			]
+		},
+		{
+			"id": 2060109,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Cyrus",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2060108,
+						0
+					],
+					"talkId": 2060108
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2060104,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060101",
+							"3"
+						],
+						"stepId": 2060101,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_NOT_RECEIVE",
+						"rawParams": [
+							"2060107",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010401,
+					"content": "Ke mana anak bernama Bennett itu pergi? *huff* Di saat seperti ini... aku harap dia tidak menimbulkan masalah lagi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		},
+		{
+			"id": 2060105,
+			"completionStepIds": [
+				2060105
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060105",
+							"2"
+						],
+						"stepId": 2060105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010501,
+					"content": "*arghhh* Sakit...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010502
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010502,
+					"content": "Terima kasih. Aku kira aku tidak akan kembali hari ini.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010503
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010503,
+					"content": "Bagaimana keadaanmu?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010504
+					]
+				},
+				{
+					"id": 206010504,
+					"content": "Ha, hanya sedikit... *argh* sakit! Hanya sedikit saja, aku baik-baik saja.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010505
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010505,
+					"content": "Aku menemukan sekelompok Hilichurl berkumpul di perkemahan di depan, dan aku curiga bahwa mereka mungkin merencanakan sesuatu. Jadi aku pun mengikuti mereka...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010506
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010506,
+					"content": "... Tapi aku terlalu dekat, dan mereka menyadari keberadaanku.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010507
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010507,
+					"content": "Tidak perlu khawatir dengan hal itu, atau aku— Tolong bantu untuk menghabisi para Hilichurl itu!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010508
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010508,
+					"content": "Jumlah mereka semakin bertambah. Kita tidak bisa membiarkan rencana mereka berhasil.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010509
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010509,
+					"content": "Dan aku... aku akan menjaga diriku sendiri.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				}
+			]
+		},
+		{
+			"id": 2060106,
+			"completionStepIds": [
+				2060108
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060108",
+							"2"
+						],
+						"stepId": 2060108,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010601,
+					"content": "Kamu sudah membereskan mereka, ya?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010602
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010602,
+					"content": "Ya.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010603
+					]
+				},
+				{
+					"id": 206010603,
+					"content": "Kamu benar-benar kuat. Kalau saja aku bisa sekuat kamu...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010604
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010604,
+					"content": "Aku juga ingin tinggal untuk membantai naga dan menyelamatkan dunia seperti dalam cerita legenda, tapi mengalahkan sekelompok Hilichurl saja aku tidak bisa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010605
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010605,
+					"content": "Ugh... Itu, aku... Meskipun tidak enak, tapi ada hal sesuatu yang ingin kutanyakan padamu...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010606
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010606,
+					"content": "Sebenarnya aku datang ke Thousand Winds Temple karena aku akan segera mengikuti tes peringkat petualang...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010607
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010607,
+					"content": "Aku pikir peringkatku akan naik dengan mudah kalau aku bisa menunjukkan kemampuanku kali ini.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010608
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010608,
+					"content": "Tapi aku tidak mengira bahwa tidak ada yang bisa kutunjukkan, bahkan aku hampir kehilangan nyawa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010609
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010609,
+					"content": "Bi-bisakah kamu tidak memberi tahu Cyrus tentang hal ini? Aku pasti akan gawat kalau hal ini sampai memengaruhi peringkatku...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010610,
+						206010612
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010610,
+					"content": "Baik, aku mengerti...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010611
+					]
+				},
+				{
+					"id": 206010611,
+					"content": "Benar-benar terima kasih! Aku janji lain kali aku tidak akan ceroboh!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010612,
+					"content": "Seperti itu tidak baik...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010613
+					]
+				},
+				{
+					"id": 206010613,
+					"content": "Aku tahu itu bukan hal yang baik, dan Cyrus selalu mengatakan bahwa seorang petualang harus jujur dengan dirinya sendiri...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010614
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 206010614,
+					"content": "Tapi... *huff* lupakan saja. Aku hanya bisa berharap dia tidak marah besar padaku...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				}
+			]
+		},
+		{
+			"id": 2060107,
+			"completionStepIds": [
+				2060107
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060108",
+							"2"
+						],
+						"stepId": 2060108,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010701,
+					"content": "Kamu sudah kembali, Jack juga. Tapi kenapa dia jalannya pincang...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010702
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010702,
+					"content": "Apa yang sudah terjadi?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010703
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010703,
+					"content": "Dia terluka karena tidak berhati-hati...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010704
+					]
+				},
+				{
+					"id": 206010704,
+					"content": "Seperti yang ada di pikiranku. *huff* Dia pasti tidak mendengarkan apa yang selalu aku katakan padanya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010705
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010705,
+					"content": "Aku mengerti dia ingin membuktikan dirinya, tapi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010706
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010706,
+					"content": "Sudahlah, aku sudah mengerti apa yang terjadi. Aku akan berbicara dengan Jack.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010707
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010707,
+					"content": "Ini untukkmu, anggap saja sebagai upahmu karena bertualang.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		},
+		{
+			"id": 2060108,
+			"completionStepIds": [
+				2060109
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060109",
+							"2"
+						],
+						"stepId": 2060109,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cyrus"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206010801,
+					"content": "Kamu sudah kembali, Jack juga. Tapi kenapa dia jalannya pincang...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010802
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010802,
+					"content": "Apa yang sudah terjadi?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010803,
+						206010807
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010803,
+					"content": "Jack bertarung dengan berani.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010804
+					]
+				},
+				{
+					"id": 206010804,
+					"content": "Oh, kamu bertarung bersamanya? Ternyata dia terluka karena itu...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010805
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010805,
+					"content": "*huff* Berani itu baik... tapi aku lebih suka kalau dia bisa lebih stabil. Bagaimanapun, seseorang hanya bisa menjadi petualang kalau dia tetap hidup.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010806
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010806,
+					"content": "Pengembara, keberanianmu juga patut dipuji. Ambil hadiah ini sebagai imbalan untukmu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010807,
+					"content": "Dia terluka karena tidak berhati-hati...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						206010808
+					]
+				},
+				{
+					"id": 206010808,
+					"content": "Seperti yang ada di pikiranku. *huff* Dia pasti tidak mendengarkan apa yang selalu aku katakan padanya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010809
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010809,
+					"content": "Aku mengerti dia ingin membuktikan dirinya, tapi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010810
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010810,
+					"content": "Sudahlah, aku sudah mengerti apa yang terjadi. Aku akan berbicara dengan Jack.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206010811
+					],
+					"speakerTitle": "Cyrus"
+				},
+				{
+					"id": 206010811,
+					"content": "Ini untukkmu, anggap saja sebagai upahmu karena bertualang.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Cyrus"
+				}
+			]
+		},
+		{
+			"id": 2060109,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2060109",
+							"2"
+						],
+						"stepId": 2060109,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 206011001,
+					"content": "*huff* Aku hanya berharap hal ini tidak memengaruhi peringkatku...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						206011002
+					],
+					"speakerTitle": "Jack"
+				}
+			]
+		}
+	]
+}

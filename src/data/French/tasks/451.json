@@ -1,0 +1,746 @@
+{
+	"id": 451,
+	"type": "LQ",
+	"name": "Territoire des Loups",
+	"description": "Vous avez décidé avec Paimon d'aller explorer le Territoire des Loups, un lieu que les hommes ne visitent guère, ignorant tout des dangers qui s'y trouvent...",
+	"unlockDescription": "",
+	"chapter": "La signification de lupical",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		452
+	],
+	"prevMainQuestList": [
+		396,
+		485
+	],
+	"steps": [
+		{
+			"id": 45101,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Rendez-vous au Territoire des Loups.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1051,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45102,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Parlez à Paimon.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						45101,
+						0
+					],
+					"talkId": 45101
+				}
+			]
+		},
+		{
+			"id": 45103,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Éliminez les Blobs.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45104,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Remerciez le garçon pour son aide.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						45103,
+						0
+					],
+					"talkId": 45103
+				}
+			]
+		},
+		{
+			"id": 45105,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Obtenez suffisamment de viande crue.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100061,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						45105,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45106,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Donnez la viande crue à Razor.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						45106,
+						0
+					],
+					"talkId": 45106
+				}
+			]
+		},
+		{
+			"id": 45107,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Paimon.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						45107,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45108,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Astuce de chasse",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						45108,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 45109,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Rendez-vous au Territoire des loups",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						45109,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 45101,
+			"completionStepIds": [
+				45102
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45107",
+							"2"
+						],
+						"stepId": 45107,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510101,
+					"content": "#Nous voilà {M#arrivés}{F#arrivées} sur le Territoire des Loups. Les habitants de Mondstadt n'y mettent pas souvent les pieds.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510102
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510102,
+					"content": "Ce lieu est proche de la cité, mais l'environnement est intact. La loi de la nature règne ici.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510103
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510103,
+					"content": "Et aussi la loi du plus fort. Les Blobs qu'on trouve dans cette zone sont énooooormes.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510104
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510104,
+					"content": "Ah tiens, en voilà.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510105
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510105,
+					"content": "... Ils nous ont repérés ! Préparons-nous à les combattre !",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 45103,
+			"completionStepIds": [
+				45104
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45104",
+							"2"
+						],
+						"stepId": 45104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Razor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510301,
+					"content": "M—Merci... Aaah ! Des loups ! Au secours !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510303
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510303,
+					"content": "Pas besoin... s'inquiéter. Les loups sont... amis à moi. Qui vous êtes ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510304
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510304,
+					"content": "#Oh, nous sommes juste des {M#voyageurs}{F#voyageuses} ordinaires.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510305
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510305,
+					"content": "Pas ordinaires, vous deux. Votre odeur... *sniff* familière...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510306
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510306,
+					"content": "Euh, tu veux dire qu'on sent mauvais ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510307
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510307,
+					"content": "Vous sentez pareil que l'Ordre de Favonius. Ils sont amis avec moi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510308,
+						4510309
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510308,
+					"content": "Comment tu t'appelles ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						4510310
+					]
+				},
+				{
+					"id": 4510310,
+					"content": "Je suis Razor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510311
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510311,
+					"content": "Tu fais aussi partie de l'Ordre de Favonius ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510312
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510312,
+					"content": "Non.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510314
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510314,
+					"content": "Hein ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510315
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510315,
+					"content": "Une meute de loups ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						4510316
+					]
+				},
+				{
+					"id": 4510316,
+					"content": "Oui, c'est ma famille.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510317
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510317,
+					"content": "C'est ta famille ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510318
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510318,
+					"content": "Oui, ils m'ont élevé. Nous sommes une famille.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510319
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510319,
+					"content": "J'ai tellement de questions qui me passent par la tête tout de suite...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510320
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510320,
+					"content": "#Ils sont en colère contre moi. J'ai gâché leur embuscade parce que je vous ai {M#aidés}{F#aidées}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510321
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510321,
+					"content": "#Ne t'en fais pas, {NICKNAME} te capturera un beau sanglier pour te remercier !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510322
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510322,
+					"content": "#{M#Il}{F#Elle} est plus {M#fort}{F#forte} qu'elle en a l'air.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510323
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510323,
+					"content": "Pas la peine. La meute va mourir de faim si on attend...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510324
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510324,
+					"content": "Mais non ~ On va réussir ! Attends sagement ici.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510309,
+					"content": "Tu fais aussi partie de l'Ordre de Favonius ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						4510313
+					]
+				},
+				{
+					"id": 4510313,
+					"content": "Je suis Razor. Pas un chevalier.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510314
+					],
+					"speakerTitle": "Razor"
+				}
+			]
+		},
+		{
+			"id": 45105,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45105",
+							"2"
+						],
+						"stepId": 45105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Razor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510501,
+					"content": "... Vous voulez vraiment nous donner votre aide ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510502
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510502,
+					"content": "Les loups chassent avec instinct. Ça marche, mais tendre des pièges est très amusant.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510503
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510503,
+					"content": "On fait le piège, puis on chasse sanglier. Oui ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510504
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510504,
+					"content": "J'espère que l'explosion n'éclatera pas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Razor"
+				}
+			]
+		},
+		{
+			"id": 45106,
+			"completionStepIds": [
+				45106
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45106",
+							"2"
+						],
+						"stepId": 45106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PACK_HAVE_ITEM",
+						"rawParams": [
+							"100061",
+							"3"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Razor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510601,
+					"content": "T'as vu ça ?! Je te l'avais dit qu'on réussirait !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510602
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510602,
+					"content": "Merci, mais...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510603
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510603,
+					"content": "Les loups ont 5 ou 6 sangliers à chaque chasse... *soupir* Ils auront encore faim ce soir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510604
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510604,
+					"content": "Oh...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510605
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510605,
+					"content": "Pas grave, merci quand même.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510606
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510606,
+					"content": "Tu as ramené plus de sangliers que l'autre chevalier, la fille en rouge très flambante.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510607
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510607,
+					"content": "Elle aurait sans doute mis la montagne à feu, et tous les sangliers... morts.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510608
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510608,
+					"content": "Je dois partir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510609
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510609,
+					"content": "Vous êtes en danger ici. Faites attention.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510610
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510610,
+					"content": "Quel enfant étrange...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510611
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510611,
+					"content": "Une fille en rouge très flambante ? Au sein de l'Ordre de Favonius ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510612
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 4510612,
+					"content": "T'as une idée de qui ça pourrait bien être ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 45107,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"45106",
+							"2"
+						],
+						"stepId": 45106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_NUM_LESS_THAN",
+						"rawParams": [
+							"100061",
+							"3"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Razor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 4510501,
+					"content": "... Vous voulez vraiment nous donner votre aide ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510502
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510502,
+					"content": "Les loups chassent avec instinct. Ça marche, mais tendre des pièges est très amusant.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510503
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510503,
+					"content": "On fait le piège, puis on chasse sanglier. Oui ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4510504
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 4510504,
+					"content": "J'espère que l'explosion n'éclatera pas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Razor"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,164 @@
+{
+	"id": 76072,
+	"type": "WQ",
+	"name": "(test)盗宝团被抓情景$UNRELEASED",
+	"description": "(test)父任务描述$UNRELEASED",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7607201,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)踩圈刷新NPC$UNRELEASED$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7607201,
+						0
+					],
+					"talkId": 7607201
+				}
+			]
+		},
+		{
+			"id": 7607202,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)找出了宝藏，group通知了$UNRELEASED$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7607203,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)对话后结束$UNRELEASED$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7607202,
+						0
+					],
+					"talkId": 7607202
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7607201,
+			"completionStepIds": [
+				7607201
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7607201",
+							"2"
+						],
+						"stepId": 7607201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"（test）守夜人看守$UNRELEASED"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 760720101,
+					"content": "(test)说明这些盗宝团因为盗猎被抓，同时也说还有提灯的失窃也和他们相关$UNRELEASED",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760720102
+					],
+					"speakerTitle": "（test）守夜人看守$UNRELEASED"
+				},
+				{
+					"id": 760720102,
+					"content": "(test)喊冤嘴硬不承认盗窃，但有点心虚$UNRELEASED",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "（test）被抓获的盗宝团$UNRELEASED"
+				}
+			]
+		},
+		{
+			"id": 7607202,
+			"completionStepIds": [
+				7607203
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7607203",
+							"2"
+						],
+						"stepId": 7607203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"（test）守夜人看守$UNRELEASED"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 760720201,
+					"content": "(test)果然还藏了！跟我回去数罪并罚！$UNRELEASED",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760720202
+					],
+					"speakerTitle": "（test）守夜人看守$UNRELEASED"
+				},
+				{
+					"id": 760720202,
+					"content": "(test)饶命啊！我错了！灯是我们偷的，别的都是攒的私房钱啊！$UNRELEASED",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760720203
+					],
+					"speakerTitle": "（test）被抓获的盗宝团$UNRELEASED"
+				},
+				{
+					"id": 760720203,
+					"content": "(test)守夜人回收了提灯，其余的留做你的报酬，押送着罪犯离开了。$UNRELEASED",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

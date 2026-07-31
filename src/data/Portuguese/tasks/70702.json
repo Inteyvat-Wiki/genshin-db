@@ -1,0 +1,176 @@
+{
+	"id": 70702,
+	"type": "WQ",
+	"name": "Pedido de Materiais para Fermentação de Vinho de Connor",
+	"description": "Connor da Adega do Alvorecer precisa de 10 Trigos.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dê 10 Trigos para Connor",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com Connor",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070202,
+						0
+					],
+					"talkId": 7070202
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070201",
+							"2"
+						],
+						"stepId": 7070201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070201"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707020101,
+					"content": "Sobre Trigo...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707020102
+					]
+				},
+				{
+					"id": 707020102,
+					"content": "Você... Ah. Você viu minha missão, não?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707020103
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707020103,
+					"content": "Você coletou 10 trigos?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707020104,
+						707020105
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707020104,
+					"content": "Sim.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707020105,
+					"content": "Ainda não...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707020106
+					]
+				},
+				{
+					"id": 707020106,
+					"content": "Assim que você coletar, traga-os para mim. Agora vou descansar um pouco...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Connor"
+				}
+			]
+		},
+		{
+			"id": 7070202,
+			"completionStepIds": [
+				7070202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070202",
+							"2"
+						],
+						"stepId": 7070202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707020201,
+					"content": "Deixe me ver... Esses trigos são suficientes.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707020202
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707020202,
+					"content": "Obrigado, fique com isto para você...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Connor"
+				}
+			]
+		}
+	]
+}

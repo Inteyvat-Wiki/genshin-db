@@ -1,0 +1,347 @@
+{
+	"id": 354,
+	"type": "AQ",
+	"name": "Chevalier du vent",
+	"description": "Alors que vous avanciez vers Mondstadt, vous avez interrompu la rencontre entre un gigantesque dragon et un étrange jeune homme. Perplexe, vous continuez votre chemin, lorsqu'une fille répondant au nom d'« Amber » vous barre la route.",
+	"unlockDescription": "",
+	"chapter": "Le voyageur qui attrapa le vent",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		360
+	],
+	"prevMainQuestList": [
+		355
+	],
+	"steps": [
+		{
+			"id": 35401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Continuez de vous diriger vers Mondstadt.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1018,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 35402,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à la fille.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						35404,
+						0
+					],
+					"talkId": 35404
+				}
+			]
+		},
+		{
+			"id": 35403,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Allez à l'endroit indiqué par Amber.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1103,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 35404,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Utilisez Amber pour éliminer le Blob en l'air.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 35405,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						35405,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 35404,
+			"completionStepIds": [
+				35402
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"35402",
+							"2"
+						],
+						"stepId": 35402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Amber"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3540401,
+					"content": "#Que Barbatos te protège, {M#étranger}{F#étrangère} !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3540402
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3540402,
+					"content": "Je suis Amber, Éclaireuse de l'Ordre de Favonius.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3540403
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3540403,
+					"content": "Vous n'êtes pas des habitants de Mondstadt ! Que faites-vous ici ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3540404
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3540404,
+					"content": "Calme-toi, nous ne voulons aucun mal...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3540405
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3540405,
+					"content": "C'est ce que les gens suspects disent toujours.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3540406
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3540406,
+					"content": "#Bonjour, je m'appelle {NICKNAME}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3540407
+					]
+				},
+				{
+					"id": 3540407,
+					"content": "... Quel nom étrange.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3540408
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3540408,
+					"content": "Et cette... mascotte, qu'est-ce que c'est ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3540409,
+						3540412
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3540409,
+					"content": "C'est mon amie.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3540410
+					]
+				},
+				{
+					"id": 3540410,
+					"content": "Ça ne fait que deux mois qu'on voyage ensemble, mais...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3540411
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3540411,
+					"content": "#{M#Nous sommes les meilleurs amis du monde !}{F#Nous sommes les meilleures amies du monde !}",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3540414
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3540414,
+					"content": "En gros, vous êtes compagnons de voyage, c'est ça ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3540415
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3540415,
+					"content": "Il y a un dragon qui a été aperçu dans les environs de Mondstadt. Pour votre sécurité, vous feriez mieux de gagner la cité le plus vite possible.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3540416
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3540416,
+					"content": "Ce n'est pas très loin d'ici. Je vais vous accompagner.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3540417
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3540417,
+					"content": "Tu n'as pas autre chose à faire ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3540418
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3540418,
+					"content": "Ne t'inquiète pas, je peux faire plusieurs choses à la fois.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3540419
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3540419,
+					"content": "Et puis, je ne sais toujours pas si je peux vous faire confiance !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3540420,
+						3540421
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3540420,
+					"content": "Tu n'as pas l'air de nous faire confiance.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3540422
+					]
+				},
+				{
+					"id": 3540422,
+					"content": "C'est vrai... Pardon. Ces paroles n'étaient pas dignes d'un chevalier.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3540423
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3540423,
+					"content": "#Je vous présente mes excuses, étranges... euh, honorables {M#voyageurs}{F#voyageuses}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3540424
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3540424,
+					"content": "Ces excuses sonnent tellement faux !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3540425
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3540425,
+					"content": "Tu as un problème avec le langage prescrit par le Code de l'Ordre de Favonius ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3540421,
+					"content": "C'est pas très gentil de dire ça.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3540422
+					]
+				},
+				{
+					"id": 3540412,
+					"content": "C'est mon casse-croûte en cas d'urgence.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3540413
+					]
+				},
+				{
+					"id": 3540413,
+					"content": "Hé ! C'est pas sympa ! Je préfère encore être une mascotte !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3540414
+					],
+					"speakerTitle": "Paimon"
+				}
+			]
+		}
+	]
+}

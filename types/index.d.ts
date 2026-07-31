@@ -3,6 +3,7 @@
 /// <reference path="./folders/adventureranks.d.ts" />
 /// <reference path="./folders/animals.d.ts" />
 /// <reference path="./folders/artifacts.d.ts" />
+/// <reference path="./folders/chapters.d.ts" />
 /// <reference path="./folders/characters.d.ts" />
 /// <reference path="./folders/constellations.d.ts" />
 /// <reference path="./folders/domains.d.ts" />
@@ -12,11 +13,13 @@
 /// <reference path="./folders/foods.d.ts" />
 /// <reference path="./folders/geographies.d.ts" />
 /// <reference path="./folders/hyperlinks.d.ts" />
+/// <reference path="./folders/maplayers.d.ts" />
 /// <reference path="./folders/materials.d.ts" />
 /// <reference path="./folders/namecards.d.ts" />
 /// <reference path="./folders/outfits.d.ts" />
 /// <reference path="./folders/rarity.d.ts" />
 /// <reference path="./folders/stories.d.ts" />
+/// <reference path="./folders/tasks.d.ts" />
 /// <reference path="./folders/talentmaterialtypes.d.ts" />
 /// <reference path="./folders/talents.d.ts" />
 // <reference path="./folders/weaponmaterialtypes.d.ts" />
@@ -111,6 +114,8 @@ declare module "genshin-db" {
 	export interface QueryOptions {
 		dumpResult?: boolean;
 		matchNames?: boolean;
+		matchFilenames?: boolean;
+		matchFilenameOnly?: boolean;
 		matchAltNames?: boolean;
 		matchAliases?: boolean;
 		matchCategories?: boolean;
@@ -124,11 +129,13 @@ declare module "genshin-db" {
 	export const adventureranks: QueryFunction<AdventureRank>;
 	export const animals: QueryFunction<Animal>;
 	export const artifacts: QueryFunction<Artifact>;
+	export const chapters: QueryFunction<Chapter>;
 	export const characters: QueryFunction<Character>;
 	export const constellations: QueryFunction<Constellation>;
 	export const crafts: QueryFunction<Craft>;
 	export const domains: QueryFunction<Domain>;
 	export const dungeons: QueryFunction<Dungeon>;
+	export const maplayers: QueryFunction<MapLayer>;
 	export const elements: QueryFunction<Element>; 
 	export const enemies: QueryFunction<Enemy>;
 	export const foods: QueryFunction<Food>;
@@ -140,6 +147,7 @@ declare module "genshin-db" {
 	/** @deprecated */
 	export const rarity: QueryFunction<Rarity>;
 	export const stories: QueryFunction<Story>;
+	export const tasks: QueryFunction<Task>;
 	export const talentmaterialtypes: QueryFunction<TalentMaterial>;
 	export const talents: QueryFunction<Talent>;
 	// export const weaponmaterialtypes: QueryFunction<WeaponMaterial>;

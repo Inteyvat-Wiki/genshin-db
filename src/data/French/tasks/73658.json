@@ -1,0 +1,167 @@
+{
+	"id": 73658,
+	"type": "WQ",
+	"name": "Des roses sumériennes pour Kourosh",
+	"description": "Kourosh, du Grand bazar, a besoin de 10 roses sumériennes.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7365801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Donnez 10 roses sumériennes à Kourosh.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7365801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7365802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Kourosh.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7365802,
+						0
+					],
+					"talkId": 7365802
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7365801,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7365801",
+							"2"
+						],
+						"stepId": 7365801,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7365801"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kourosh"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 736580101,
+					"content": "À propos des roses sumériennes...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						736580102
+					]
+				},
+				{
+					"id": 736580102,
+					"content": "Vous m'apportez des roses sumériennes ? J'avais justement envie de me changer les idées avec des fleurs fraîches.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736580103
+					],
+					"speakerTitle": "Kourosh"
+				},
+				{
+					"id": 736580103,
+					"content": "Bien, avez-vous mes 10 roses sumériennes ? Si oui, donnez-les-moi toutes en même temps.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736580106,
+						736580104
+					],
+					"speakerTitle": "Kourosh"
+				},
+				{
+					"id": 736580106,
+					"content": "Et voilà.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 736580104,
+					"content": "Pas encore.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						736580105
+					]
+				},
+				{
+					"id": 736580105,
+					"content": "Ah, cette vie est si cruelle. Même les fleurs m'abandonnent.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kourosh"
+				}
+			]
+		},
+		{
+			"id": 7365802,
+			"completionStepIds": [
+				7365802
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7365802",
+							"2"
+						],
+						"stepId": 7365802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kourosh"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 736580201,
+					"content": "Merci, elles sont si belles. Si seulement ma prochaine représentation pouvait être aussi parfaite qu'elles.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kourosh"
+				}
+			]
+		}
+	]
+}

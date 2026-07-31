@@ -1,0 +1,167 @@
+{
+	"id": 74652,
+	"type": "WQ",
+	"name": "缪妮的黄油需求",
+	"description": "缪妮需要3份黄油。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7465201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "将3份黄油交给缪妮",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7465201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7465202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "与缪妮对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7465202,
+						0
+					],
+					"talkId": 7465202
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7465201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465201",
+							"2"
+						],
+						"stepId": 7465201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7465201"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"缪妮"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746520101,
+					"content": "关于黄油…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746520102
+					]
+				},
+				{
+					"id": 746520102,
+					"content": "每次想吃点面包，黄油总是不够抹的，我觉得以后我还是随身带黄油好了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746520103
+					],
+					"speakerTitle": "缪妮"
+				},
+				{
+					"id": 746520103,
+					"content": "黄油你都准备好了对吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746520106,
+						746520104
+					],
+					"speakerTitle": "缪妮"
+				},
+				{
+					"id": 746520106,
+					"content": "准备好了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 746520104,
+					"content": "还没有。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746520105
+					]
+				},
+				{
+					"id": 746520105,
+					"content": "我要的可不少，还是等你准备好了再一起给我吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "缪妮"
+				}
+			]
+		},
+		{
+			"id": 7465202,
+			"completionStepIds": [
+				7465202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465202",
+							"2"
+						],
+						"stepId": 7465202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"缪妮"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746520201,
+					"content": "太好了，黄油，我的黄油…没有黄油我宁愿不吃面包。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "缪妮"
+				}
+			]
+		}
+	]
+}

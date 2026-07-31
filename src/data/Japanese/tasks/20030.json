@@ -1,0 +1,442 @@
+{
+	"id": 20030,
+	"type": "WQ",
+	"name": "冒険者協会へようこそ",
+	"description": "冒険者協会のキャサリンからの招待を受けた。",
+	"unlockDescription": "この任務をクリアすると「冒険の証」が開放されます",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_GUIDE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		309
+	],
+	"steps": [
+		{
+			"id": 2003001,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "0",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003002,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "キャサリンと会話し、詳しいことを聞く",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003001,
+						0
+					],
+					"talkId": 2003001
+				}
+			]
+		},
+		{
+			"id": 2003003,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "キャサリンと会話し、詳しいことを聞く",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003002,
+						0
+					],
+					"talkId": 2003002
+				}
+			]
+		},
+		{
+			"id": 2003004,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "キャサリンと会話し、詳しいことを聞く",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003002,
+						0
+					],
+					"talkId": 2003002
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2003001,
+			"completionStepIds": [
+				2003002
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003002",
+							"2"
+						],
+						"stepId": 2003002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"キャサリン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200300101,
+					"content": "<color=#00E1FFFF>冒険者協会</color>へようこそ。あなたのことは観察させてもらいました。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300102
+					],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300102,
+					"content": "#{NICKNAME}を観察？こいつなんかしたのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300103
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 200300103,
+					"content": "いえいえ、優秀な冒険者を見つけることも、私の仕事ですから。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300104
+					],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300104,
+					"content": "あなたから、伝説の冒険者たちと肩を並べられるほどの素質を感じます。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300105
+					],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300105,
+					"content": "へへっ、それはオイラも分かるぞ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300106
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 200300106,
+					"content": "#{NICKNAME}と一緒にいると、安心できるんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300107
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 200300107,
+					"content": "でも冒険者にとって素質よりも経験のほうが大事です。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300108
+					],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300108,
+					"content": "<color=#00E1FFFF>「冒険経験」</color>を積み重ねることで<color=#00E1FFFF>「冒険ランク」</color>が上がります。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300109
+					],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300109,
+					"content": "早速、新しく入ってきた冒険者に紹介しますね…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300110
+					],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300110,
+					"content": "待って！オイラたちもう正式な冒険者になったのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300111
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 200300111,
+					"content": "安心してください。冒険者協会には会費を払う必要も、強制的な義務もありませんから。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300112
+					],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300112,
+					"content": "つまり、協会に入ったらメリットだらけ、デメリットはありません。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300113,
+						200300114
+					],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300113,
+					"content": "分かった…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200300116
+					]
+				},
+				{
+					"id": 200300116,
+					"content": "とにかく、「冒険ランク」が上がる度、冒険者協会から報酬をもらえます。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300117
+					],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300117,
+					"content": "これは協会から新人へ贈るプレゼントです、確認してくださいね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300118
+					],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300118,
+					"content": "冒険ランク報酬",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 200300114,
+					"content": "今メリットがほしい！",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200300115
+					]
+				},
+				{
+					"id": 200300115,
+					"content": "はは…今時の新人は率直ですね…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300116
+					],
+					"speakerTitle": "キャサリン"
+				}
+			]
+		},
+		{
+			"id": 2003002,
+			"completionStepIds": [
+				2003003,
+				2003004
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003003",
+							"2"
+						],
+						"stepId": 2003003,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"キャサリン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200300201,
+					"content": "改めて入会を歓迎します、冒険者の新星！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300202
+					],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300202,
+					"content": "これはあなたの<color=#00E1FFFF>「冒険の証」</color>です。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300203,
+						200300205
+					],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300203,
+					"content": "証書もあるの？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200300204
+					]
+				},
+				{
+					"id": 200300204,
+					"content": "新人の加入はとても大事なことですから、当然です。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300207
+					],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300207,
+					"content": "これには協会の依頼や報酬に関する情報がたくさん載ってますから。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300208
+					],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300208,
+					"content": "会員の証明でもあるからね、きちんと保管してくださいね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300209
+					],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300209,
+					"content": "それと、もうひとつ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300210
+					],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300210,
+					"content": "「冒険ランク」が上がりにくいと感じる時がたまにあると思いますが、",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300211
+					],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300211,
+					"content": "その時は「印象に残る任務」をクリアすることで協会の認可をもらえますよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300212
+					],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300212,
+					"content": "印象に残る任務…？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300213
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 200300213,
+					"content": "「冒険ランク」の上限を突破するための「突破任務」と言ったほうがいいかもしれませんね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300214
+					],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300214,
+					"content": "今はまだその時じゃないですが、あなたの「経験」が多くなれば、みんなの認可をもらえるチャンスも増えてくるはずです。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300215
+					],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300215,
+					"content": "では今日はここまでにしましょう。これからどんどん会う機会も増えると思いますから。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300216
+					],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300216,
+					"content": "頑張ってくださいね、冒険者さん。星と深淵を目指せ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "キャサリン"
+				},
+				{
+					"id": 200300205,
+					"content": "これは…宣伝冊子？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200300206
+					]
+				},
+				{
+					"id": 200300206,
+					"content": "そう思ってもいいですけど、機能性は侮れませんよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200300207
+					],
+					"speakerTitle": "キャサリン"
+				}
+			]
+		}
+	]
+}

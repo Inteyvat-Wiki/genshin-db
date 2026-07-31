@@ -1,0 +1,299 @@
+{
+	"id": 20013,
+	"type": "IQ",
+	"name": "¿Camino bloqueado?",
+	"description": "Jack se dirigía a un nuevo lugar en busca de aventuras, pero se encontró bajo el ataque de Hilichurls en la Garganta de los Borrachos. Derrota a los Hilichurls y salva a Jack.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2001301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Ve a ver detalles",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001302,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Derrota a los monstruos cercanos",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Elimina a todos los monstruos y destruye los obstáculos",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Jack",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001303,
+						0
+					],
+					"talkId": 2001303
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2001301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001302",
+							"2"
+						],
+						"stepId": 2001302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200130101,
+					"content": "¡Rápido! ¡Ayúdenme!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				}
+			]
+		},
+		{
+			"id": 2001302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001302",
+							"3"
+						],
+						"stepId": 2001302,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001303",
+							"2"
+						],
+						"stepId": 2001303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200130201,
+					"content": "#¡Así que eras tú, viajer{F#a}{M#o}! Estoy agradecido contigo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130202
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130202,
+					"content": "¿Puedo pedirte un favor?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130203
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130203,
+					"content": "Este obstáculo aquí es lo único que se interpone entre mi aventura y yo...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130204
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130204,
+					"content": "¿Puedes deshacerte de él por mí?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130205,
+						200130206
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130205,
+					"content": "No hay problema.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200130207
+					]
+				},
+				{
+					"id": 200130207,
+					"content": "*Suspira*, desearía ser como tú... ¡Ya sería un aventurero veterano!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130206,
+					"content": "#Lo siento, estoy un poco ocupad{F#a}{M#o}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200130208
+					]
+				},
+				{
+					"id": 200130208,
+					"content": "Por favor, te lo ruego... ¡No puedo dejar que mi aventura termine aquí!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				}
+			]
+		},
+		{
+			"id": 2001303,
+			"completionStepIds": [
+				2001304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001304",
+							"2"
+						],
+						"stepId": 2001304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200130301,
+					"content": "#Muchas gracias, viajer{F#a}{M#o}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130302
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130302,
+					"content": "Quería visitar los lugares a los que se aventuró Stanley, pero no pensé que a mitad del camino fuera a encontrarme con estos sujetos.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130303
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130303,
+					"content": "Es que no soy lo suficientemente fuerte... Seguramente Stanley no habría tenido problemas para tratar con un grupo como ese.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130304
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130304,
+					"content": "¿Por qué no te unes a mí? ¡Anímate!... Bueno, olvídalo... No puedo dejar que alguien más haga mis aventuras por mí.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130305
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130305,
+					"content": "Ya me voy. Esto es para ti, he reunido muchos en el camino para complementar mis suministros de raciones.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130306
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130306,
+					"content": "... Aunque no son exactamente raciones...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				}
+			]
+		}
+	]
+}

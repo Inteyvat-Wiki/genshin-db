@@ -1,0 +1,839 @@
+{
+	"id": 20073,
+	"type": "IQ",
+	"name": "Emergency Supplies",
+	"description": "Riese is preparing emergency supplies to protect some reckless adventurers from getting in trouble on Dragonspine...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2007301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Riese",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2007301,
+						0
+					],
+					"talkId": 2007301
+				}
+			]
+		},
+		{
+			"id": 2007302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Place the food supplies at the first location",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						2007301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2007303,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Place the food supplies at the third location",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						2007303,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2007304,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Place the food supplies at the second location",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						2007302,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2007305,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						200730801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2007306,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Report back to Riese",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2007302,
+						0
+					],
+					"talkId": 2007302
+				}
+			]
+		},
+		{
+			"id": 2007307,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2007308,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						200730801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2007309,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2007301,
+			"completionStepIds": [
+				2007301
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007301",
+							"2"
+						],
+						"stepId": 2007301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Riese"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200730101,
+					"content": "Traveler! Wonderful timing. Could you do me a favor?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730102
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730102,
+					"content": "What do you need?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200730103
+					]
+				},
+				{
+					"id": 200730103,
+					"content": "As you've no doubt seen, the conditions up here are horrendous. Even experienced adventurers would not dare to claim that they can handle all that Dragonspine can throw at them.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730104
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730104,
+					"content": "I have orders from the Acting Grand Master to stand guard here and warn all citizens not to go up the mountain.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730105
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730105,
+					"content": "However, while I have been able to persuade many citizens not to do so, those adventurers...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730106
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730106,
+					"content": "I'm sure you know what I mean when I say that there's no use trying to convince them. They just want to go up that mountain.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730107
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730107,
+					"content": "I've lost count of the number of matters I've had to resolve involving the adventurers... But they just keep coming anyway, and their ranks never thin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730108
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730108,
+					"content": "Trying to manage them all is an impossible task... As such, I've decided to prepare some supplies for them in designated spots on Dragonspine.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730109
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730109,
+					"content": "In this way, those adventurers who have suffered a reverse and are preparing to turn back will have more opportunities to extricate themselves from the mountain.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730110
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730110,
+					"content": "However, if some reckless fool drunk on their good fortune were to get too far up, then they'd only have themselves to rely on...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730111
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730111,
+					"content": "So, could you help bring these supplies up the mountain?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730112,
+						200730114
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730112,
+					"content": "Leave it up to me.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200730113
+					]
+				},
+				{
+					"id": 200730113,
+					"content": "I shall be counting on you, then. *sigh* If only those adventurers had as good a sword-arm and as sensible a head on their shoulders as you do...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730117
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730117,
+					"content": "I've marked three locations out on your map. You simply have to place <color=#00E1FFFF>one serving of Ham</color> at each place.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730118
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730118,
+					"content": "*sigh* I wish those adventurers had a little more self-awareness...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730114,
+					"content": "Will they be of any use?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200730115
+					]
+				},
+				{
+					"id": 200730115,
+					"content": "Whether they will or not... It's better to have them than not.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730116
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730116,
+					"content": "In such terrible conditions as the ones we have on this mountain, the more supplies we have, the better. All told, I'm counting on your help.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730117
+					],
+					"speakerTitle": "Riese"
+				}
+			]
+		},
+		{
+			"id": 2007302,
+			"completionStepIds": [
+				2007306
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007306",
+							"2"
+						],
+						"stepId": 2007306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Riese"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200730201,
+					"content": "Have you placed all the supplies?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730202
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730202,
+					"content": "They're all where they need to be.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200730203
+					]
+				},
+				{
+					"id": 200730203,
+					"content": "That's wonderful. I can rest easy now.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730204
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730204,
+					"content": "Still, I hope that those who go up the mountain will come sufficiently prepared and that they shan't have to use these emergency foodstuffs.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730205
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730205,
+					"content": "Come to think of it, your clothes seem a little thin, too. Is this the latest fashion in Mondstadt or something?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730206
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200730206,
+					"content": "Whatever the case, please take these as a token of my thanks, and go put on some extra layers.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Riese"
+				}
+			]
+		},
+		{
+			"id": 2007303,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007302",
+							"2"
+						],
+						"stepId": 2007302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"2007301"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200730301,
+					"content": "This is an emergency supply point. If you should need anything, you may help yourself to the materials here.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730302
+					],
+					"speakerTitle": "Emergency Supply Point"
+				},
+				{
+					"id": 200730302,
+					"content": "Dragonspine is a dangerous place. Please do not go too far in.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730303
+					],
+					"speakerTitle": "Emergency Supply Point"
+				},
+				{
+					"id": 200730303,
+					"content": "Place Supplies",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200730303
+					]
+				}
+			]
+		},
+		{
+			"id": 2007304,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007304",
+							"2"
+						],
+						"stepId": 2007304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"2007302"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200730401,
+					"content": "This is an emergency supply point. If you should need anything, you may help yourself to the materials here.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730402
+					],
+					"speakerTitle": "Emergency Supply Point"
+				},
+				{
+					"id": 200730402,
+					"content": "Dragonspine is a dangerous place. Please do not go too far in.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730403
+					],
+					"speakerTitle": "Emergency Supply Point"
+				},
+				{
+					"id": 200730403,
+					"content": "Place Supplies",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200730403
+					]
+				}
+			]
+		},
+		{
+			"id": 2007305,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007303",
+							"2"
+						],
+						"stepId": 2007303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"2007303"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007307",
+							"3"
+						],
+						"stepId": 2007307,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200730501,
+					"content": "This is an emergency supply point. If you should need anything, you may help yourself to the materials here.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730502
+					],
+					"speakerTitle": "Emergency Supply Point"
+				},
+				{
+					"id": 200730502,
+					"content": "Dragonspine is a dangerous place. Please do not go too far in.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200730503
+					],
+					"speakerTitle": "Emergency Supply Point"
+				},
+				{
+					"id": 200730503,
+					"content": "Place Supplies",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200730503
+					]
+				}
+			]
+		},
+		{
+			"id": 2007313,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007302",
+							"3"
+						],
+						"stepId": 2007302,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007304",
+							"2"
+						],
+						"stepId": 2007304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007306",
+							"2"
+						],
+						"stepId": 2007306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007303",
+							"2"
+						],
+						"stepId": 2007303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200731301,
+					"content": "This is an emergency supply point. If you should need anything, you may help yourself to the materials here.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200731302
+					],
+					"speakerTitle": "Emergency Supply Point"
+				},
+				{
+					"id": 200731302,
+					"content": "Dragonspine is a dangerous place. Please do not go too far in.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Emergency Supply Point"
+				}
+			]
+		},
+		{
+			"id": 2007314,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007304",
+							"3"
+						],
+						"stepId": 2007304,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007303",
+							"2"
+						],
+						"stepId": 2007303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007306",
+							"2"
+						],
+						"stepId": 2007306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200731401,
+					"content": "This is an emergency supply point. If you should need anything, you may help yourself to the materials here.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200731402
+					],
+					"speakerTitle": "Emergency Supply Point"
+				},
+				{
+					"id": 200731402,
+					"content": "Dragonspine is a dangerous place. Please do not go too far in.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Emergency Supply Point"
+				}
+			]
+		},
+		{
+			"id": 2007315,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007306",
+							"2"
+						],
+						"stepId": 2007306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200731501,
+					"content": "This is an emergency supply point. If you should need anything, you may help yourself to the materials here.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200731502
+					],
+					"speakerTitle": "Emergency Supply Point"
+				},
+				{
+					"id": 200731502,
+					"content": "Dragonspine is a dangerous place. Please do not go too far in.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Emergency Supply Point"
+				}
+			]
+		},
+		{
+			"id": 2007316,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007302",
+							"2"
+						],
+						"stepId": 2007302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007304",
+							"2"
+						],
+						"stepId": 2007304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2007303",
+							"2"
+						],
+						"stepId": 2007303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Riese"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200731601,
+					"content": "Don't forget, you need to go to three locations, and deposit <color=#00E1FFFF>one serving of Ham</color> at each place.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200731602
+					],
+					"speakerTitle": "Riese"
+				},
+				{
+					"id": 200731602,
+					"content": "I wish those adventurers had a little more self-awareness...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Riese"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,550 @@
+{
+	"id": 70509,
+	"type": "WQ",
+	"name": "Es Musim Gugur yang Tak Bernoda",
+	"description": "\"Menurutmu, wanita berambut putih yang lewat tadi adalah Adeptus dari Liyue?\" \"Aku tidak tahu. Kamu tahu?\" \"Aku juga tidak tahu ...\"",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70503,
+		70508
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050901,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Luka dan masuk ke Tavern",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050901,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050902,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Raciklah minuman yang ditentukan untuk Shenhe",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050902,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050903,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Berikan minumannya kepada Shenhe",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050902,
+						0
+					],
+					"talkId": 7050902
+				}
+			]
+		},
+		{
+			"id": 7050904,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Shenhe",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050901,
+						0
+					],
+					"talkId": 7050901
+				}
+			]
+		},
+		{
+			"id": 7050905,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Pergi ke bar dan selesaikan persiapan bisnis",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7050305,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050901,
+			"completionStepIds": [
+				7050904
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050904",
+							"2"
+						],
+						"stepId": 7050904,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050902",
+							"2"
+						],
+						"stepId": 7050902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Shenhe"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705090101,
+					"content": "#Halo, {NICKNAME}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090102
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090102,
+					"content": "Hai! Paimon bakalan lebih kaget lihat ada kamu di sini kalau tadi belum kedatangan teman-teman kita yang lain ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090103
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090103,
+					"content": "WADUH! SHENHE? Astaga, ini baru ngagetin!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090104
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090104,
+					"content": "Tempat ini lumayan susah dicari. Angel's Share ... namanya susah dilafalkan.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090105
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090105,
+					"content": "Untungnya, ada Tuan Zhongli yang berbaik hati menunjukkan arah.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090106
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090106,
+					"content": "Kamu enggak tahu jalan? Eh, tunggu ... kamu jauh-jauh ke sini cuma mau minum?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090107
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090107,
+					"content": "Ya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090108
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090108,
+					"content": "Tidak apa-apa, kan kita teman.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090109
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090109,
+					"content": "Mau minum apa?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090110
+					]
+				},
+				{
+					"id": 705090110,
+					"content": "Ini menunya!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090111
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090111,
+					"content": "Boreal Watch ya ... Hmm, \"Boreal\" maksudnya iklim dingin?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090112
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090112,
+					"content": "Yah, kata \"Boreal\" di sini harusnya merujuk ke Wolf of the North. Jadi kamu benar, dingin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090113
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090113,
+					"content": "Caramel Pinecone ... bisa diminum?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090114
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090114,
+					"content": "Oh, Paimon sudah cobain yang itu! Itu kopi karamel biasa sih, \"Pine\" di sini maksudnya warnanya!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090115
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090115,
+					"content": "....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090116
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090116,
+					"content": "Nama-nama ini bikin bingung. Tidak masuk akal.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090117
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090117,
+					"content": "Sudahlah, terserah kamu saja. Yang penting rasanya mirip denga Qingxin atau Violetgrass.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090118
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090118,
+					"content": "Tanaman obat semacam itu tidak tumbuh di wilayah sini. Kalau mau minum yang pahit-pahit, pilihannya paling cuma kopi doang ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090119
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090119,
+					"content": "Mau coba yang manis-manis?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090120
+					]
+				},
+				{
+					"id": 705090120,
+					"content": "Boleh.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090121
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090121,
+					"content": "Ide bagus tuh. Kamu sudah latihan ilmu Adeptus segitu lama. Waktunya coba hal baru!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090122
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090122,
+					"content": "Kita bikin Snow-Covered Kiss saja buat Shenhe! Namanya cocok banget kan sama orangnya!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 7050902,
+			"completionStepIds": [
+				7050903
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050903",
+							"2"
+						],
+						"stepId": 7050903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Shenhe"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705090201,
+					"content": "Hmm, manis dan lembut. Tidak ada pahitnya sama sekali. Apa ini?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090202
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090202,
+					"content": "Namanya Snow-Covered Kiss! Kocok susu sampai berbusa, lalu tuangin ke atas jus buah. Mirip salju kan!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090203
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090203,
+					"content": "Jangan tanya kenapa ada kata \"kiss\" di namanya ya! Soalnya Paimon juga enggak ngerti. Palingan juga cuma trik pemasaran doang biar lebih laku!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090204
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090204,
+					"content": "Trik pemasaran?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090205
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090205,
+					"content": "Eh? Bukan ya? Paimon cuma nebak saja sih. Mungkin maksudnya lebih ke sesuatu yang bau-bau romantis!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090206
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090206,
+					"content": "Romantis?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090207
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090207,
+					"content": "Aduh ... gimana jelasinnya ini? Sudah dong, Paimon capek bikin cerita terus ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090208,
+						705090209
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090208,
+					"content": "Busa susu ini tidak terlalu berasa ....",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090210
+					]
+				},
+				{
+					"id": 705090210,
+					"content": "Hmm, nah betul itu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090211,
+						705090212
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090211,
+					"content": "Begitu manisnya jus buah menyentuh bibirmu ....",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090213
+					]
+				},
+				{
+					"id": 705090213,
+					"content": "Oh.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090214
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090214,
+					"content": "Begitu ya. Sepertinya aku sudah mengerti sekarang.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090215
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090215,
+					"content": "Eh? Masa?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090216
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090216,
+					"content": "Lah, kok malah jadi Paimon sih yang bingung?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090217
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705090217,
+					"content": "Aku kadang mengunyah tanaman obat Adeptus ketika ada di pegunungan. Aku pernah menyaksikan saat-saat tunas baru muncul dari tanah.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090218
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090218,
+					"content": "Rasa tegang yang muncul dalam hati di saat itu ... mirip dengan yang kurasakan sekarang.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090219
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090219,
+					"content": "#{NICKNAME}, terima kasih sudah menjelaskan nama-nama aneh ini padaku.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705090220
+					],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090220,
+					"content": "Mungkin aku akan perlu bantuanmu lagi suatu hari nanti.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Shenhe"
+				},
+				{
+					"id": 705090212,
+					"content": "Rasanya seperti tunas yang menyembul menembus salju untuk menciummu ....",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090213
+					]
+				},
+				{
+					"id": 705090209,
+					"content": "Mirip dengan salju di pegunungan ....",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705090210
+					]
+				}
+			]
+		}
+	]
+}

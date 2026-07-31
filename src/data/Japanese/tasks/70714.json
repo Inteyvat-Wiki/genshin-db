@@ -1,0 +1,185 @@
+{
+	"id": 70714,
+	"type": "WQ",
+	"name": "カーニズム、ブロック",
+	"description": "清泉町のブロックは鳥肉を6つ必要としている。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7071401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "鳥肉をブロックに6つ渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7071401,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7071402,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "ブロックと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7071402,
+						0
+					],
+					"talkId": 7071402
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7071401,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071401",
+							"2"
+						],
+						"stepId": 7071401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7071401"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ブロック"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707140101,
+					"content": "鳥肉について…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707140102
+					]
+				},
+				{
+					"id": 707140102,
+					"content": "依頼を見たの？よかった、ちょうどいいところに来てくれたよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707140103
+					],
+					"speakerTitle": "ブロック"
+				},
+				{
+					"id": 707140103,
+					"content": "どう？鳥肉を6つ集め終わった？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707140104,
+						707140105
+					],
+					"speakerTitle": "ブロック"
+				},
+				{
+					"id": 707140104,
+					"content": "集め終わった。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707140105,
+					"content": "まだ…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707140106
+					]
+				},
+				{
+					"id": 707140106,
+					"content": "集め終わったら早く持って来てね。料理に使うものなの。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ブロック"
+				}
+			]
+		},
+		{
+			"id": 7071402,
+			"completionStepIds": [
+				7071402
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071402",
+							"2"
+						],
+						"stepId": 7071402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ブロック"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707140201,
+					"content": "これは上等な鳥肉だね…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707140202
+					],
+					"speakerTitle": "ブロック"
+				},
+				{
+					"id": 707140202,
+					"content": "ありがとう。これをあげるよ。受け取って。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707140203
+					],
+					"speakerTitle": "ブロック"
+				},
+				{
+					"id": 707140203,
+					"content": "新しい肉料理を開発したら、あんたが最初に食べてね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ブロック"
+				}
+			]
+		}
+	]
+}

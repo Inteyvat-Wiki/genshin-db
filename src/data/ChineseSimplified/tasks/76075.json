@@ -1,0 +1,184 @@
+{
+	"id": 76075,
+	"type": "WQ",
+	"name": "(test)月之塔后方祭坛任务$UNRELEASED",
+	"description": "(test)查明神秘祭坛的真相$UNRELEASED",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7607501,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)搜寻附近遗迹里散落的信息$UNRELEASED$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					5655.602,
+					200,
+					10273.69
+				],
+				"pointId": 14372
+			}
+		},
+		{
+			"id": 7607502,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)在祭坛处尝试进行祭祀$UNRELEASED$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7607501,
+						0
+					],
+					"talkId": 7607501
+				}
+			]
+		},
+		{
+			"id": 7607503,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)解决深渊袭击$UNRELEASED$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					5756.533,
+					202.817,
+					10361.73
+				],
+				"pointId": 14373
+			}
+		},
+		{
+			"id": 7607504,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)重新完成祭祀$UNRELEASED$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7607502,
+						0
+					],
+					"talkId": 7607502
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7607501,
+			"completionStepIds": [
+				7607502
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7607502",
+							"2"
+						],
+						"stepId": 7607502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 760750101,
+					"content": "(test)按照收集到的信息，正要进行祭祀。进行到一半，还没完成时……$UNRELEASED",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760750102
+					],
+					"speakerTitle": "(test)开始祭祀$UNRELEASED"
+				},
+				{
+					"id": 760750102,
+					"content": "(test祭祀的步骤引来了深渊袭击$UNRELEASED",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "(test)开始祭祀$UNRELEASED"
+				}
+			]
+		},
+		{
+			"id": 7607502,
+			"completionStepIds": [
+				7607504
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7607504",
+							"2"
+						],
+						"stepId": 7607504,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 760750201,
+					"content": "(test)按顺序完成祭祀$UNRELEASED",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						760750202
+					],
+					"speakerTitle": "(test)开始祭祀$UNRELEASED"
+				},
+				{
+					"id": 760750202,
+					"content": "(test)雕像闪烁了一下，月灵们环绕在了雕像周围$UNRELEASED",
+					"roleType": "TALK_ROLE_NEED_CLICK_BLACK_SCREEN",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

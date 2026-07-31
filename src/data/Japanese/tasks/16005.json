@@ -1,0 +1,91 @@
+{
+	"id": 16005,
+	"type": "LQ",
+	"name": "幕間の小休憩",
+	"description": "魔法の本には、まだ次の章に関する手がかりが示されていない。少し休んだら、ドゥリンを探しに行こう…",
+	"unlockDescription": "",
+	"chapter": "物語という名の魔法",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1600501,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1600501,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1600502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "魔法の本に次の章のヒントが示されるのを待つ",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TIME_VAR_PASS_DAY",
+					"rawParams": [
+						16005,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1600031,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1600502",
+							"2"
+						],
+						"stepId": 1600502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ドゥリン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 160003101,
+					"content": "アリスさんは、いつでもあの物語の世界に戻れるって言ってたね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						160003102
+					],
+					"speakerTitle": "ドゥリン"
+				},
+				{
+					"id": 160003102,
+					"content": "もしまた行きたくなったら、二人でボクのところに来てね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ドゥリン"
+				}
+			]
+		}
+	]
+}

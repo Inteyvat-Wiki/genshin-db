@@ -1,0 +1,961 @@
+{
+	"id": 374,
+	"type": "AQ",
+	"name": "Venti's Plan",
+	"description": "Stopped at last, Venti explained that he had tried and failed to cleanse Dvalin's curse during their previous meeting. Now, he has been forced to rely on the Holy Lyre der Himmel's power if he is to restore Dvalin.",
+	"unlockDescription": "",
+	"chapter": "For a Tomorrow Without Tears",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		375
+	],
+	"prevMainQuestList": [
+		373
+	],
+	"steps": [
+		{
+			"id": 37401,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to Venti",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1028,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37402,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "See how Venti borrows the Holy Lyre",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37402,
+						0
+					],
+					"talkId": 37402
+				}
+			]
+		},
+		{
+			"id": 37403,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						37403,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37404,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Venti",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37403,
+						0
+					],
+					"talkId": 37403
+				}
+			]
+		},
+		{
+			"id": 37405,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						37405,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37406,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to the sister",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37404,
+						0
+					],
+					"talkId": 37404
+				}
+			]
+		},
+		{
+			"id": 37407,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to the Cathedral with Venti",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37407,
+						0
+					],
+					"talkId": 37407
+				}
+			]
+		},
+		{
+			"id": 37408,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						37408,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 37310,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37403",
+							"3"
+						],
+						"stepId": 37403,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_NOT_EQUAL",
+						"rawParams": [
+							"37404",
+							"3"
+						],
+						"stepId": 37404,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Gotelinde"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3730901,
+					"content": "The Church has been a mess recently, and the Seneschal is not here... *sigh*",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Gotelinde"
+				}
+			]
+		},
+		{
+			"id": 37402,
+			"completionStepIds": [
+				37402
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37401",
+							"3"
+						],
+						"stepId": 37401,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37402",
+							"2"
+						],
+						"stepId": 37402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Venti"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3740201,
+					"content": "Let me handle this...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740202
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740202,
+					"content": "Hello there, Sister.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740203
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740203,
+					"content": "May the Anemo God bless you, young bard. How can I help you?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740204
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740204,
+					"content": "Actually, I know a secret that can save Mondstadt from its current predicament.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740205
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740205,
+					"content": "Oh, what a blessing from the God of Anemo!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740206
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740206,
+					"content": "But you should report that to the Knights of Favonius. Why have you come to me?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740207
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740207,
+					"content": "Hahaha, because you, dear sister, are able to help!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740208
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740208,
+					"content": "I'd like to borrow... the Holy Lyre. With it, I'll be able to help Stormterror—",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740209
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740209,
+					"content": "Please see yourselves out.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740210
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740210,
+					"content": "What?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740211
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740211,
+					"content": "It's a vicious dragon indeed, but once the Acting Grand Master makes up her mind, nothing can stand in the Knights' way.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740212
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740212,
+					"content": "That's simply not acceptable. Wouldn't Stormterror end up getting killed that way?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740213
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740213,
+					"content": "That foolish beast betrayed the winds. Not even the God of Anemo themselves would forgive it!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740214
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740214,
+					"content": "Wow...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740215
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740215,
+					"content": "Please, I beg of you!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740216
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740216,
+					"content": "I'm afraid not, little bard.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740217
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740217,
+					"content": "(Strange... Somehow I feel so bad rejecting this sweet child...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740218
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740218,
+					"content": "Then... I guess I'm left with no other choice.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740219
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740219,
+					"content": "I cannot hide anymore!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740220
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740220,
+					"content": "My disciples, rejoice! Behold, the <color=#00E1FFFF>God of Anemo, Barbatos</color> has descended!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740221
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740221,
+					"content": "Shocked, aren't you? Don't you just want to cry out and rejoice? How does it feel to finally meet the god you've been serving?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740222
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740222,
+					"content": "If there's nothing else, I'll be going back to handle the Cathedral's paperwork now.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740223
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740223,
+					"content": "Wait—",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Venti"
+				}
+			]
+		},
+		{
+			"id": 37403,
+			"completionStepIds": [
+				37404
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37403",
+							"3"
+						],
+						"stepId": 37403,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37404",
+							"2"
+						],
+						"stepId": 37404,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Venti"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3740301,
+					"content": "Eh? She didn't even bat an eyelid.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740302
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740302,
+					"content": "But, I have at least learned what I wanted to know.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740303
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740303,
+					"content": "She didn't deny that the Cathedral is enshrining the Holy Lyre.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740304
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740304,
+					"content": "#Now, {NICKNAME}, since you're the hotshot of the Knights of Favonius...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740305
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740305,
+					"content": "Maybe you can give it a shot.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Venti"
+				}
+			]
+		},
+		{
+			"id": 37404,
+			"completionStepIds": [
+				37406
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37405",
+							"3"
+						],
+						"stepId": 37405,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37406",
+							"2"
+						],
+						"stepId": 37406,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Gotelinde"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3740401,
+					"content": "Barbatos bless you.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740402,
+						3740404
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740402,
+					"content": "Hello.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740403
+					]
+				},
+				{
+					"id": 3740403,
+					"content": "Ah, it's you! The newcomer of the Knights of Favonius, aren't you?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740406
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740406,
+					"content": "So what brings you here? Tasks from the Acting Grand Master?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740411
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740411,
+					"content": "Yes, actually. The Knights of Favonius would like to borrow the Holy Lyre...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740412
+					]
+				},
+				{
+					"id": 3740412,
+					"content": "Is that so?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740413
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740413,
+					"content": "Not that I don't trust you. It's just that a suspicious bard came looking to borrow the Holy Lyre as well.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740414
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740414,
+					"content": "He's full of nonsense and even called himself Barbatos. He must be up to something.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740415
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740415,
+					"content": "There are regulations in place for the use of the Holy Lyre. Currently, it's only used in Ludi Harpastum.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740416
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740416,
+					"content": "Signed documents from the Grand Master, Seneschal, and Community Representative are all required.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740417
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740417,
+					"content": "So, may I see the document from the Knights of Favonius?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740418,
+						3740419,
+						3740420
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740418,
+					"content": "The Grand Master didn't mention it...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740422
+					]
+				},
+				{
+					"id": 3740422,
+					"content": "A signed document is required. Without it, there's not much I can do.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740423
+					],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740423,
+					"content": "Now, if you'll excuse me. I really am quite busy as of late.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Gotelinde"
+				},
+				{
+					"id": 3740419,
+					"content": "I'm sorry, I forgot to bring it here.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740422
+					]
+				},
+				{
+					"id": 3740420,
+					"content": "Paimon ate it on our way here.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740421
+					]
+				},
+				{
+					"id": 3740421,
+					"content": "Hey!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740422
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3740404,
+					"content": "#I am the Honorary Knight of Favonius, {NICKNAME}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740405
+					]
+				},
+				{
+					"id": 3740405,
+					"content": "I know you. You and Amber saved Mondstadt that day.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740406
+					],
+					"speakerTitle": "Gotelinde"
+				}
+			]
+		},
+		{
+			"id": 37405,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37404",
+							"3"
+						],
+						"stepId": 37404,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_NOT_EQUAL",
+						"rawParams": [
+							"37405",
+							"3"
+						],
+						"stepId": 37405,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Venti"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3740306,
+					"content": "Don't be shy. Go.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Venti"
+				}
+			]
+		},
+		{
+			"id": 37407,
+			"completionStepIds": [
+				37407
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37407",
+							"2"
+						],
+						"stepId": 37407,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Venti"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3740701,
+					"content": "So this... \"Holy Lyre der Himmel\" is...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740702
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3740702,
+					"content": "One of the most treasured items in Mondstadt. It's the lyre that Barbatos used to play.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740703
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740703,
+					"content": "With it, perhaps I can help Dvalin draw his gentle nature back out of this nightmare he's going through.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740704
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740704,
+					"content": "Will it really stop Stormterror from causing more damage?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740705
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3740705,
+					"content": "Of course. I'm the best bard in the world.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740706
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740706,
+					"content": "There's not a single song I do not know, no matter if it's from the past, present, or future.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740707
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740707,
+					"content": "Look me in the eyes. Do you not find me trustworthy?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740708,
+						3740709,
+						3740710
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740708,
+					"content": "...just what is that in your eyes!?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740711
+					]
+				},
+				{
+					"id": 3740711,
+					"content": "Hahaha, that one doesn't work on a bard.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740712
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740712,
+					"content": "So how can we get the Holy Lyre?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740713
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3740713,
+					"content": "It's said that it's enshrined deep within the Cathedral, somewhere safe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3740714
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740714,
+					"content": "I'll go take a look around. You can come if you want.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3740709,
+					"content": "Look into my eyes. What are you hiding?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740711
+					]
+				},
+				{
+					"id": 3740710,
+					"content": "The color of your eyes is like the sky in my hometown.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3740711
+					]
+				}
+			]
+		},
+		{
+			"id": 37503,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"42101",
+							"2"
+						],
+						"stepId": 42101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Otto"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3750202,
+					"content": "Man, this stinks. Having to stand around here all <color=#00E1FFFF>day</color> long, having to guard this entrance.\\nHey! Don't move! You can't go down there!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3750203
+					],
+					"speakerTitle": "Otto"
+				},
+				{
+					"id": 3750203,
+					"content": "Seems we're gonna have to wait until <color=#00E1FFFF>nightfall</color> to sneak in...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,256 @@
+{
+	"id": 79031,
+	"type": "WQ",
+	"name": "Pista do Tesouro: Ilha Pudim",
+	"description": "Vá até o recife da Ilha Pudim e veja se os piratas deixaram alguma pista relacionada com o tesouro...",
+	"unlockDescription": "",
+	"chapter": "Tesouros dos Quatro Recifes",
+	"showType": "QUEST_SHOW",
+	"activityId": 5084,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		79020
+	],
+	"steps": [
+		{
+			"id": 7903101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Vá até o recife perto da Ilha Pudim",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7903101,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101773,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7903105,
+						2
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7903105,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7903102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Procure por uma pista para encontrar o tesouro nas proximidades",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101799,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7903105,
+						2
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7903105,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7903103,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Siga as instruções do Caderno de Rota para procurar pistas sobre o tesouro escondido",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101800,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7903104,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Siga as instruções do Caderno de Rota para procurar pistas sobre o tesouro escondido",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						101773,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7903105,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com Paimon",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7903102,
+						0
+					],
+					"talkId": 7903102
+				}
+			]
+		},
+		{
+			"id": 7903106,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com Paimon",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7903103,
+						0
+					],
+					"talkId": 7903103
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7903102,
+			"completionStepIds": [
+				7903105
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7903105",
+							"2"
+						],
+						"stepId": 7903105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790310201,
+					"content": "Deixe Paimon ver, aqui diz...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790310205
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790310205,
+					"content": "#Hum... Quando as folhas estiverem vermelhas... É um pouco confuso, {NICKNAME}. Onde eles querem que a gente vá?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 7903103,
+			"completionStepIds": [
+				7903106
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7903106",
+							"2"
+						],
+						"stepId": 7903106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 790310301,
+					"content": "Ugh, Paimon achou que tínhamos encontrado! Mas é como da última vez...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790310302
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790310302,
+					"content": "\"Quando as folhas ficam vermelhas e amarelas, você pode ver uma torre ao oeste da ilha.\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790310303
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790310303,
+					"content": "Oh, Paimon já entendeu! Uma torre... Isso só pode significar uma coisa!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						790310304
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 790310304,
+					"content": "#{NICKNAME}, temos que modificar as montanhas para que fiquem assim.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		}
+	]
+}

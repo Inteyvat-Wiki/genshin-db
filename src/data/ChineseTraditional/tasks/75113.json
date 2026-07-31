@@ -1,0 +1,316 @@
+{
+	"id": 75113,
+	"type": "WQ",
+	"name": "",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		75046
+	],
+	"steps": [
+		{
+			"id": 7511301,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7511301,
+						0
+					],
+					"talkId": 7511301
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7511302,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_GLOBAL_VAR_EQUAL",
+					"rawParams": [
+						7511301,
+						0
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					-2414.682,
+					219.929,
+					9752.246
+				],
+				"pointId": 10659
+			}
+		},
+		{
+			"id": 7511303,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7511304,
+						0
+					],
+					"talkId": 7511304
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7511301,
+			"completionStepIds": [
+				7511301
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_B_OR_ETCAND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7511301",
+							"2"
+						],
+						"stepId": 7511301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7511302",
+							"0"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7511302",
+							"2"
+						],
+						"stepId": 7511302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7511302",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"烏魯班巴"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 751130101,
+					"content": "好心的勇士，我的小龍全都安然無恙，多虧有你幫忙！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130106
+					],
+					"speakerTitle": "烏魯班巴"
+				},
+				{
+					"id": 751130106,
+					"content": "像你這種又善良又有勇氣的人，我烏魯班巴願意無償幫助你進行「勇士挑戰」訓練！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130104,
+						751130105
+					],
+					"speakerTitle": "烏魯班巴"
+				},
+				{
+					"id": 751130104,
+					"content": "現在開始吧！",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 751130105,
+					"content": "讓我稍做準備…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7511302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7511302",
+							"2"
+						],
+						"stepId": 7511302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7511302",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"烏魯班巴"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 751130201,
+					"content": "一旦決定了，不要多想，盡力往前衝就好！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "烏魯班巴"
+				}
+			]
+		},
+		{
+			"id": 7511304,
+			"completionStepIds": [
+				7511303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7511303",
+							"2"
+						],
+						"stepId": 7511303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"烏魯班巴"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							-2396.456,
+							225.299,
+							9765.566
+						],
+						"pointId": 10657
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							-2400.91,
+							224.938,
+							9765.562
+						],
+						"pointId": 10889
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							-2400.619,
+							225.076,
+							9766.605
+						],
+						"pointId": 10890
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 751130401,
+					"content": "啊，我倒是沒想到你能衝出這麼好的成績，是我小看人了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130402
+					],
+					"speakerTitle": "烏魯班巴"
+				},
+				{
+					"id": 751130402,
+					"content": "精心準備好的挑戰獎品被半路殺出來的陌生人輕鬆拿走，這種事…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130403
+					],
+					"speakerTitle": "烏魯班巴"
+				},
+				{
+					"id": 751130403,
+					"content": "簡直就像織物裡說的英雄故事！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130405
+					],
+					"speakerTitle": "烏魯班巴"
+				},
+				{
+					"id": 751130405,
+					"content": "說不定將來你也會成為被寫進織物裡的英雄，嗯…很有可能！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						751130406
+					],
+					"speakerTitle": "烏魯班巴"
+				},
+				{
+					"id": 751130406,
+					"content": "英雄，要不要一起來留個影？將來有一天，說不定我還能拿這張畫片出去吹吹牛。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "烏魯班巴"
+				}
+			]
+		}
+	]
+}

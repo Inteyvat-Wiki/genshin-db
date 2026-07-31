@@ -1,0 +1,214 @@
+{
+	"id": 20008,
+	"type": "IQ",
+	"name": "포동포동한 대규모 폭동!",
+	"description": "슬라임이 갑자기 몬드성 부두에서 출현했다. 부두 근처의 아서도 휘말린 듯하다…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2000801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "부두로 가서 정황 확인하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "슬라임 처치하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000803,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "아서와 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000801,
+						0
+					],
+					"talkId": 2000801
+				}
+			]
+		},
+		{
+			"id": 2000804,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "이상 정황이 있는 곳으로 가기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000805,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "「바람」으로 먼지 제거하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000806,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "모든 슬라임 처치하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2000801,
+			"completionStepIds": [
+				2000803
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000802",
+							"3"
+						],
+						"stepId": 2000802,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"아서"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200080101,
+					"content": "고마워. 네 덕분에 살았어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080102
+					],
+					"speakerTitle": "아서"
+				},
+				{
+					"id": 200080102,
+					"content": "이 슬라임들이 갑자기 나타났어. 너무 갑작스러워서 도망도 못 가고 포위됐잖아",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080103
+					],
+					"speakerTitle": "아서"
+				},
+				{
+					"id": 200080103,
+					"content": "우리 아빠한테 절대 말하지 마. 아빠는 요새 주위의 슬라임이 너무 사납다며 집에 얌전히 있으라고 하셨어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080104
+					],
+					"speakerTitle": "아서"
+				},
+				{
+					"id": 200080104,
+					"content": "게다가 슬라임이 몬드성 주변에 나타나기 시작했어. 난 며칠 동안 집에만 있다가 오늘 몰래 빠져나온 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080105
+					],
+					"speakerTitle": "아서"
+				},
+				{
+					"id": 200080105,
+					"content": "원한다면 앞으로 가서 봐봐. 슬라임이 있다면 놈들을 처치해줘",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200080106,
+						200080107
+					],
+					"speakerTitle": "아서"
+				},
+				{
+					"id": 200080106,
+					"content": "알겠어",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200080108
+					]
+				},
+				{
+					"id": 200080108,
+					"content": "다행이다! 드디어 안심하고 놀러 갈 수 있게 됐어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "아서"
+				},
+				{
+					"id": 200080107,
+					"content": "다른 급한 일이 또 있어",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200080109
+					]
+				},
+				{
+					"id": 200080109,
+					"content": "하, 하지만 아빠한테는 말씀 못 드려…. 이 일은 처리할 수 있는 사람은 너뿐이야. 부탁해!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "아서"
+				}
+			]
+		}
+	]
+}

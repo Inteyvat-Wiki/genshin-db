@@ -1,0 +1,688 @@
+{
+	"id": 20007,
+	"type": "IQ",
+	"name": "緊急整備",
+	"description": "エレンは獲物をモンド城に運んでいる最中、ヒルチャールに襲撃された…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2000701,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "全ての魔物を倒す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000702,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "エレンと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000707,
+						0
+					],
+					"talkId": 2000707
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000708,
+						0
+					],
+					"talkId": 2000708
+				}
+			]
+		},
+		{
+			"id": 2000703,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "木材を集める",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100306,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000704,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "丈夫な木の板をエレンに渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000703,
+						0
+					],
+					"talkId": 2000703
+				}
+			]
+		},
+		{
+			"id": 2000705,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "全ての魔物を倒す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000706,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "エレンと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000709,
+						0
+					],
+					"talkId": 2000709
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000710,
+						0
+					],
+					"talkId": 2000710
+				}
+			]
+		},
+		{
+			"id": 2000707,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "ロープを集める",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100308,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000708,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "ロープをエレンに渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000706,
+						0
+					],
+					"talkId": 2000706
+				}
+			]
+		},
+		{
+			"id": 2000709,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "詳細を確認する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1127,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2000701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000701",
+							"3"
+						],
+						"stepId": 2000701,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000702",
+							"2"
+						],
+						"stepId": 2000702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"エレン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070101,
+					"content": "#ありがとう、{NICKNAME}、よかった、終わったかと思ったよ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070102
+					],
+					"speakerTitle": "エレン"
+				},
+				{
+					"id": 200070102,
+					"content": "この貨物車には狩人たちの成果が入ってるんだ、モンドに届けてくれとドゥラフさんに頼まれたんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070103
+					],
+					"speakerTitle": "エレン"
+				},
+				{
+					"id": 200070103,
+					"content": "か、狩りは得意じゃないけど、運搬くらいならできるはずだって最初は思ったけど…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070104
+					],
+					"speakerTitle": "エレン"
+				},
+				{
+					"id": 200070104,
+					"content": "急に襲われてしまってな。きっとこの獲物たちが良すぎて、アイツらもほしくなったに決まってる。でも君が来てくれてよかった。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070105
+					],
+					"speakerTitle": "エレン"
+				},
+				{
+					"id": 200070105,
+					"content": "えっと、申し訳ないけど…さっき襲われた時、貨物車も壊されたんだ。ここを出るためには、まず車を直さないと。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070106
+					],
+					"speakerTitle": "エレン"
+				},
+				{
+					"id": 200070106,
+					"content": "周りの林に使える材料があるはずだけど、獲物がここにあるから、あまり離れたくないんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070107
+					],
+					"speakerTitle": "エレン"
+				},
+				{
+					"id": 200070107,
+					"content": "よければ、<color=#00E1FFFF>丈夫な木の板</color>を探してきてくれないかな？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "エレン"
+				}
+			]
+		},
+		{
+			"id": 2000702,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000703",
+							"2"
+						],
+						"stepId": 2000703,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"エレン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070201,
+					"content": "いくつか部品を直して、モンドまで持つようにすればいいんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070202
+					],
+					"speakerTitle": "エレン"
+				},
+				{
+					"id": 200070202,
+					"content": "周りの林に使える材料があるはずだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "エレン"
+				}
+			]
+		},
+		{
+			"id": 2000703,
+			"completionStepIds": [
+				2000704
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000704",
+							"2"
+						],
+						"stepId": 2000704,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"エレン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070301,
+					"content": "これで十分だよ。あと少し時間があれば…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070302
+					],
+					"speakerTitle": "エレン"
+				},
+				{
+					"id": 200070302,
+					"content": "ん…旅人、アイツらまた来たよ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "エレン"
+				}
+			]
+		},
+		{
+			"id": 2000704,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000705",
+							"3"
+						],
+						"stepId": 2000705,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000706",
+							"2"
+						],
+						"stepId": 2000706,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"エレン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070401,
+					"content": "ありがとう！アイツらもしつこいな、そんなに獲物が欲しいのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070402
+					],
+					"speakerTitle": "エレン"
+				},
+				{
+					"id": 200070402,
+					"content": "こんなにいい獲物を狩ることができたのはドゥラフさんのおかげだよ。僕も彼のような狩人になりたいな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070403
+					],
+					"speakerTitle": "エレン"
+				},
+				{
+					"id": 200070403,
+					"content": "はあ、その前に、まずは車を城内に入れないと。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070404
+					],
+					"speakerTitle": "エレン"
+				},
+				{
+					"id": 200070404,
+					"content": "すまない、もうすぐ車を直せたんだけど、さっきのでまた問題が出たんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070405
+					],
+					"speakerTitle": "エレン"
+				},
+				{
+					"id": 200070405,
+					"content": "でもこれ以上ここにいると危険になるだけだから、急いで車を直さないと。車にロープがあるはずだが、きっとあのヒルチャールに捨てられたんだな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070406
+					],
+					"speakerTitle": "エレン"
+				},
+				{
+					"id": 200070406,
+					"content": "旅人、この周りに<color=#00E1FFFF>ロープ</color>はないか探してくれないかな？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "エレン"
+				}
+			]
+		},
+		{
+			"id": 2000705,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000707",
+							"2"
+						],
+						"stepId": 2000707,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"エレン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070501,
+					"content": "ロープは周りの林にあるはずだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "エレン"
+				}
+			]
+		},
+		{
+			"id": 2000706,
+			"completionStepIds": [
+				2000708
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000707",
+							"3"
+						],
+						"stepId": 2000707,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000708",
+							"2"
+						],
+						"stepId": 2000708,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"エレン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070601,
+					"content": "これでいいかな。いつバラバラになってもおかしくないけど、モンドまでもつならいいんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070602
+					],
+					"speakerTitle": "エレン"
+				},
+				{
+					"id": 200070602,
+					"content": "ありがとう！先に出発するよ。清泉町に来たら僕のところに来て、一緒に酒を飲もう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200070603
+					],
+					"speakerTitle": "エレン"
+				},
+				{
+					"id": 200070603,
+					"content": "…飲んでもドゥラフさんのようにはならないからさ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "エレン"
+				}
+			]
+		},
+		{
+			"id": 2000707,
+			"completionStepIds": [
+				2000702
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"エレン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070701,
+					"content": "分かった。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200070702
+					]
+				},
+				{
+					"id": 200070702,
+					"content": "よかった！ここで待ってるから、できれば早く、アイツらが戻ってくる前に…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "エレン"
+				}
+			]
+		},
+		{
+			"id": 2000708,
+			"completionStepIds": [
+				2000702
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"エレン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070801,
+					"content": "他に急用がある。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200070802
+					]
+				},
+				{
+					"id": 200070802,
+					"content": "アイツらがまだ近くにいるかもしれないから、頼む！手を貸してほしい！この通りだ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "エレン"
+				}
+			]
+		},
+		{
+			"id": 2000709,
+			"completionStepIds": [
+				2000706
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"エレン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200070901,
+					"content": "分かった。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200070902
+					]
+				},
+				{
+					"id": 200070902,
+					"content": "ありがとう、周りの林にあるはずだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "エレン"
+				}
+			]
+		},
+		{
+			"id": 2000710,
+			"completionStepIds": [
+				2000706
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"エレン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200071001,
+					"content": "他に用事がある。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200071002
+					]
+				},
+				{
+					"id": 200071002,
+					"content": "これで最後だ！あとはロープさえあれば、自分でなんとかするから、頼む！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "エレン"
+				}
+			]
+		}
+	]
+}

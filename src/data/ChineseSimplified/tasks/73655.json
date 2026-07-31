@@ -1,0 +1,167 @@
+{
+	"id": 73655,
+	"type": "WQ",
+	"name": "卡姆拉的树莓需求",
+	"description": "奥摩斯港的卡姆拉需要十五个树莓。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7365501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "将十五个树莓交给卡姆拉",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7365501,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7365502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "与卡姆拉对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7365502,
+						0
+					],
+					"talkId": 7365502
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7365501,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7365501",
+							"2"
+						],
+						"stepId": 7365501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7365501"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"卡姆拉"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 736550101,
+					"content": "关于树莓…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						736550102
+					]
+				},
+				{
+					"id": 736550102,
+					"content": "我知道了，你是看到委托来送树莓的对吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736550103
+					],
+					"speakerTitle": "卡姆拉"
+				},
+				{
+					"id": 736550103,
+					"content": "那么，十五个树莓你准备好了吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736550106,
+						736550104
+					],
+					"speakerTitle": "卡姆拉"
+				},
+				{
+					"id": 736550106,
+					"content": "准备好了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 736550104,
+					"content": "还没有。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						736550105
+					]
+				},
+				{
+					"id": 736550105,
+					"content": "那我还是等你准备好之后再取货吧，毕竟是要晾果干，哪有人会一颗一颗的晾。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "卡姆拉"
+				}
+			]
+		},
+		{
+			"id": 7365502,
+			"completionStepIds": [
+				7365502
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7365502",
+							"2"
+						],
+						"stepId": 7365502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"卡姆拉"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 736550201,
+					"content": "我一会儿就拿回去晾起来，下次出门看海的时候就又有树莓果干吃了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "卡姆拉"
+				}
+			]
+		}
+	]
+}

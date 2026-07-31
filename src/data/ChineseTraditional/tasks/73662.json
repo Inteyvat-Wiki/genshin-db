@@ -1,0 +1,158 @@
+{
+	"id": 73662,
+	"type": "WQ",
+	"name": "阿拉耶什的果醬需求",
+	"description": "奧摩斯港的阿拉耶什需要兩罐果醬。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7366201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "將兩罐果醬交給阿拉耶什",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7366201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7366202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "與阿拉耶什對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7366202,
+						0
+					],
+					"talkId": 7366202
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7366201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7366201",
+							"2"
+						],
+						"stepId": 7366201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7366201"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"阿拉耶什"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 736620101,
+					"content": "關於果醬…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						736620102
+					]
+				},
+				{
+					"id": 736620102,
+					"content": "#看來{F#妳}{M#你}對做果醬很有自信啊，那兩罐果醬{F#妳}{M#你}也準備好了吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736620105,
+						736620103
+					],
+					"speakerTitle": "阿拉耶什"
+				},
+				{
+					"id": 736620105,
+					"content": "準備好了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 736620103,
+					"content": "還沒有。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						736620104
+					]
+				},
+				{
+					"id": 736620104,
+					"content": "只有一罐的話，沒幾天就吃完了，我至少要兩罐。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "阿拉耶什"
+				}
+			]
+		},
+		{
+			"id": 7366202,
+			"completionStepIds": [
+				7366202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7366202",
+							"2"
+						],
+						"stepId": 7366202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"阿拉耶什"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 736620201,
+					"content": "#顏色很不錯啊，{F#妳}{M#你}果然很擅長做果醬，以後我還找{F#妳}{M#你}訂。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "阿拉耶什"
+				}
+			]
+		}
+	]
+}

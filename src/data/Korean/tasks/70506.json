@@ -1,0 +1,617 @@
+{
+	"id": 70506,
+	"type": "WQ",
+	"name": "민들레, 장미, 풍차 국화",
+	"description": "「진 단장도 술집에 간 거야? 도대체 무슨 일이지?」 「호들갑은, 진 단장이잖아. 게다가 정말 무슨 일 있으면 술집에 가지 않았겠지」",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70507
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "루카와 대화하고 술집 들어가기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050602,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "리사에게 지정 음료 만들어주기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050602,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050603,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "진에게 지정 음료 만들어주기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050603,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050604,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "리사, 진에게 음료 건네주기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050602,
+						0
+					],
+					"talkId": 7050602
+				}
+			]
+		},
+		{
+			"id": 7050605,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "리사와 진과 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050601,
+						0
+					],
+					"talkId": 7050601
+				}
+			]
+		},
+		{
+			"id": 7050606,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "카운터로 가서 영업 준비하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050601,
+			"completionStepIds": [
+				7050605
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050605",
+							"2"
+						],
+						"stepId": 7050605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050602",
+							"2"
+						],
+						"stepId": 7050602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050603",
+							"2"
+						],
+						"stepId": 7050603,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"리사",
+					"진"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705060101,
+					"content": "안녕, 귀염둥이. 반가워",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060102
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 705060102,
+					"content": "이런 곳에서 만날 일은 거의 없겠지만, 지금 내 기분도 리사랑 같아",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060103
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 705060103,
+					"content": "어머, 「이런 곳」이라니? 술집은 릴랙스하기 아주 좋은 곳이라고",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060104
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 705060104,
+					"content": "넌 상상도 못 할 거야. 이 바쁘신 분을 의자에서 일으켜서 데려오는 데 얼마나 오래 걸렸는지 알아?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060105
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 705060105,
+					"content": "여기 온 지 얼마 되지도 않았는데, 진 얼굴 좀 봐. 또 근심이 가득해…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060106
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 705060106,
+					"content": "리사…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060107
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 705060107,
+					"content": "기사단은 업무가 많으니까요…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060108
+					]
+				},
+				{
+					"id": 705060108,
+					"content": "맞아. 진은 단장 대행이니까 당연히 기사단 일이 마음에 걸리겠지!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060109
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 705060109,
+					"content": "그런데 그런 말 있잖아…「기왕 왔으니까 즐겨라!」",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060110
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 705060110,
+					"content": "쟤한테 맛있는 거 만들어 달라고 해. 마시면 기분이 좋아질 거야!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060111
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 705060111,
+					"content": "기분 전환하는 셈 치고요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060112
+					]
+				},
+				{
+					"id": 705060112,
+					"content": "휴~ 릴랙스하는 법을 배워야 하는 건 진뿐인 것 같네",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060113
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 705060113,
+					"content": "귀염둥이, 러브 포엠 한 잔 부탁해. 중간 사이즈로, 달콤하게",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060114
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 705060114,
+					"content": "진은? 뭐 마실래?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060115
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 705060115,
+					"content": "나는… 커피면 돼. 중간 사이즈로",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060116
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 705060116,
+					"content": "진 단장은 평소에 커피 많이 마시지 않아? 다른 걸 마셔봐",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060117
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 705060117,
+					"content": "고마워, 근데 잠 깨는 걸 마시고 싶어서…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060118
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 705060118,
+					"content": "네, 잠시만 기다려주세요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060119
+					]
+				},
+				{
+					"id": 705060119,
+					"content": "응, 부탁할게",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "진"
+				}
+			]
+		},
+		{
+			"id": 7050602,
+			"completionStepIds": [
+				7050604
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050604",
+							"2"
+						],
+						"stepId": 7050604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"리사",
+					"진"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705060201,
+					"content": "아… 바로 이 달콤한 맛이야. 좋은데?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060202
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 705060202,
+					"content": "커피 향이 진하네. 쓴맛도 적당하고",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060203
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 705060203,
+					"content": "마음에 든다니 다행이에요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060204
+					]
+				},
+				{
+					"id": 705060204,
+					"content": "…리사가 한 말, 사실 나도 이해해",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060205
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 705060205,
+					"content": "오?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060206
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 705060206,
+					"content": "요새 내 부족한 면을 자주 반성하거든. 업무 효율도, 일 처리 솜씨도… 전부 고쳐야 할 부분투성이야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060207
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 705060207,
+					"content": "이런 스트레스가 아무래도 리사한테까지 전달됐나 봐…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060208
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 705060208,
+					"content": "전혀 이해를 못 했네요…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060209
+					]
+				},
+				{
+					"id": 705060209,
+					"content": "어?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060210
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 705060210,
+					"content": "맞아, 역시 귀염둥이는 바로 알아챈다니까",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060211
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 705060211,
+					"content": "난 네가 너무 무리하길래, 술이나 차를 마시면서 기분 전환하라고 데려온 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060212
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 705060212,
+					"content": "근데 술집에 와서도 계속 일 생각뿐이라니. 그래서 약간 서운한 거지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060213
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 705060213,
+					"content": "계속 이렇게 긴장 상태로 있다간 조만간 쓰러질 거야",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060214
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 705060214,
+					"content": "맞아요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060215
+					]
+				},
+				{
+					"id": 705060215,
+					"content": "#{NICKNAME}, 너도 그렇게 생각해?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060216
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 705060216,
+					"content": "음, 그러니까… 휴식을 하는 게 나에게 가장 큰 도전이라는 거지?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060217
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 705060217,
+					"content": "리월 속담에 「적절한 긴장과 이완이 중요하다」라는 말이 있어요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060218
+					]
+				},
+				{
+					"id": 705060218,
+					"content": "맞아! 일할 땐 일하고, 쉴 땐 쉬어야지. 너희 둘을 반반씩 섞으면 딱 좋을 텐데 말이야!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060219
+					],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 705060219,
+					"content": "그게 뭐야…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060220
+					]
+				},
+				{
+					"id": 705060220,
+					"content": "풉…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060221
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 705060221,
+					"content": "알, 알겠어…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060222
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 705060222,
+					"content": "고마워. 여기 와서 음료 마시면서 기분도 한결 나아졌어. 그래서 리사와 케이아가 술집을 좋아하는 걸까?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060223
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 705060223,
+					"content": "그렇기도 하고, 아니기도 해. 중요한 건 바텐더가 누구냐는 거지",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060224
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 705060224,
+					"content": "오늘은 귀염둥이 덕분에 진을 설득할 수 있었어. 정말 입담이 좋다니까",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060225,
+						705060226
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 705060225,
+					"content": "별것 아니에요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060227
+					]
+				},
+				{
+					"id": 705060227,
+					"content": "후후, 그럼 우린 먼저 가 볼게",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060228
+					],
+					"speakerTitle": "리사"
+				},
+				{
+					"id": 705060228,
+					"content": "나중에 기회 되면, 여기 와서 쉬는 걸 고려해 봐야겠어",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705060229
+					],
+					"speakerTitle": "진"
+				},
+				{
+					"id": 705060229,
+					"content": "응응, 조심히 가!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "페이몬"
+				},
+				{
+					"id": 705060226,
+					"content": "도움이 됐다니 다행이에요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705060227
+					]
+				}
+			]
+		}
+	]
+}

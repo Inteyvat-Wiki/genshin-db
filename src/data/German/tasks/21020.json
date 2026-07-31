@@ -1,0 +1,191 @@
+{
+	"id": 21020,
+	"type": "WQ",
+	"name": "Ein Schatz für mich ganz allein",
+	"description": "In einem Keller, bewacht von einem Ruinenwächter, lag ein alter Brief, in dem jemand beschreibt, dass sich auf der Guili-Ebene ein Lagerfeuer befinden muss, das Wünsche erfüllt.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2102000,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102000,
+						0
+					],
+					"talkId": 2102000
+				}
+			]
+		},
+		{
+			"id": 2102010,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Entzünde das Lagerfeuer.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2102020,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Besiege die nahenden Gegner.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2102021,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Lies die Notizen.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2102020,
+						0
+					],
+					"talkId": 2102020
+				}
+			]
+		},
+		{
+			"id": 2102022,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Finde den Ort, an dem der Schatz versteckt ist.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2102000,
+			"completionStepIds": [
+				2102000
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102000",
+							"2"
+						],
+						"stepId": 2102000,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210200001,
+					"content": "„Das wird wohl die altbekannte Habgier sein. Wenn ich mit dem Schatz aus dem Keller einfach nach Hause spaziert wäre und nicht auch noch einen Wunsch bei diesem Lagerfeuer hätte machen wollen, hätte ich jetzt nicht das Problem, dass ich die Vorrichtung ausgelöst habe und mich dieses Monstrum aufhält. Ich bin jetzt hier gefangen.“",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210200002
+					],
+					"speakerTitle": "Zerrissener Brief"
+				},
+				{
+					"id": 210200002,
+					"content": "„Sollte es jemand drauf haben, dieses Ungetüm zu erledigen, soll derjenige ruhig zum Lagerfeuer gehen und sich etwas wünschen. Ich wünsche demjenigen jedenfalls viel Glück dabei, haha!“",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Zerrissener Brief"
+				}
+			]
+		},
+		{
+			"id": 2102020,
+			"completionStepIds": [
+				2102021
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102021",
+							"2"
+						],
+						"stepId": 2102021,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2102022",
+							"2"
+						],
+						"stepId": 2102022,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210202001,
+					"content": "„Dass das Lagerfeuer Wünsche erfüllen kann, ist Unsinn! Die unter dem Lagerfeuer begrabenen Schätze jedoch sind echt ... Sie aber sagte dann, lass die Notiz so wie sie ist, wir warten neben dem Lagerfeuer, natürlich geht uns jemand ins Netz, solange nur das Lagerfeuer brennt, hehehe. Ein weiteres gutes Geschäft für uns ...“",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210202002
+					],
+					"speakerTitle": "Handgeschriebene Notiz"
+				},
+				{
+					"id": 210202002,
+					"content": "„Andererseits sind so viele Schätze für einen allein zu viel zum Tragen. Die Chefin sagt, ich soll den Rest erstmal am <color=#00E1FFFF>am höchsten Punkt des Cuijue-Hangs</color> vergraben, dort steht ein alter, verdorrter Baum, den kann die Chefin bestimmt nicht übersehen ...“",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Handgeschriebene Notiz"
+				}
+			]
+		}
+	]
+}

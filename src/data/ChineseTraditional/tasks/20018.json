@@ -1,0 +1,669 @@
+{
+	"id": 20018,
+	"type": "IQ",
+	"name": "緊急修理",
+	"description": "瑪伽正準備運貨去清泉鎮，但是貨車卻被丘丘人襲擊，貨物和他自己都陷入了危險的境地…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2001801,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "消滅所有魔物",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001802,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "和瑪伽對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001807,
+						0
+					],
+					"talkId": 2001807
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001808,
+						0
+					],
+					"talkId": 2001808
+				}
+			]
+		},
+		{
+			"id": 2001803,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "收集木材",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100306,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001804,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "將結實的木板交給瑪伽",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001803,
+						0
+					],
+					"talkId": 2001803
+				}
+			]
+		},
+		{
+			"id": 2001805,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "消滅所有魔物",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001806,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "和瑪伽對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001809,
+						0
+					],
+					"talkId": 2001809
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001810,
+						0
+					],
+					"talkId": 2001810
+				}
+			]
+		},
+		{
+			"id": 2001807,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "收集繩索",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100308,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001808,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "將繩索交給瑪伽",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001806,
+						0
+					],
+					"talkId": 2001806
+				}
+			]
+		},
+		{
+			"id": 2001809,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "前去查看詳情",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1138,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2001801,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001801",
+							"3"
+						],
+						"stepId": 2001801,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001802",
+							"2"
+						],
+						"stepId": 2001802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"害怕的瑪伽"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200180101,
+					"content": "#謝謝{F#妳}{M#你}，旅行者，嗚，我就知道，我肯定會把工作給搞砸…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180102
+					],
+					"speakerTitle": "害怕的瑪伽"
+				},
+				{
+					"id": 200180102,
+					"content": "就是運一車酒而已我都能搞砸，我到底能做成什麼事情呀。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180103
+					],
+					"speakerTitle": "害怕的瑪伽"
+				},
+				{
+					"id": 200180103,
+					"content": "這麼下去肯定會被酒莊開除，康納先生說不定早就覺得我工作能力不行，埃澤先生也許把我的辭退信都擬好了，完了，全都完了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180104
+					],
+					"speakerTitle": "害怕的瑪伽"
+				},
+				{
+					"id": 200180104,
+					"content": "你…你冷靜點…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200180105
+					]
+				},
+				{
+					"id": 200180105,
+					"content": "唉，我肯定完蛋了，但是這車酒還是要運到才行。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180106
+					],
+					"speakerTitle": "害怕的瑪伽"
+				},
+				{
+					"id": 200180106,
+					"content": "#車也被打壞了…旅行者，能麻煩{F#妳}{M#你}幫我找點材料來嗎？只要一塊<color=#00E1FFFF>結實的木板</color>就行了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "害怕的瑪伽"
+				}
+			]
+		},
+		{
+			"id": 2001802,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001803",
+							"2"
+						],
+						"stepId": 2001803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"害怕的瑪伽"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200180201,
+					"content": "樹林裡應該就能找到<color=#00E1FFFF>結實的木板</color>了，找到後就給我吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "害怕的瑪伽"
+				}
+			]
+		},
+		{
+			"id": 2001803,
+			"completionStepIds": [
+				2001804
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001804",
+							"2"
+						],
+						"stepId": 2001804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"害怕的瑪伽"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200180301,
+					"content": "這些就足夠了，我應該，應該很快就能把車修好…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180302
+					],
+					"speakerTitle": "害怕的瑪伽"
+				},
+				{
+					"id": 200180302,
+					"content": "那群傢伙怎麼又來了！旅行者，幫幫我！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "害怕的瑪伽"
+				}
+			]
+		},
+		{
+			"id": 2001804,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001805",
+							"3"
+						],
+						"stepId": 2001805,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001806",
+							"2"
+						],
+						"stepId": 2001806,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"害怕的瑪伽"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200180401,
+					"content": "#呼…謝謝，旅行者，還好有{F#妳}{M#你}在。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180402
+					],
+					"speakerTitle": "害怕的瑪伽"
+				},
+				{
+					"id": 200180402,
+					"content": "不過這麼一弄，這車我已經不知道怎麼修了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180403
+					],
+					"speakerTitle": "害怕的瑪伽"
+				},
+				{
+					"id": 200180403,
+					"content": "這裡是壞的，那裡也是壞的…這就算是勉強修好了，走著走著也會散架。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180404
+					],
+					"speakerTitle": "害怕的瑪伽"
+				},
+				{
+					"id": 200180404,
+					"content": "算了，總之先把車弄到鎮裡去，再慢慢想辦法吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180405
+					],
+					"speakerTitle": "害怕的瑪伽"
+				},
+				{
+					"id": 200180405,
+					"content": "我記得車上有繩子來著…肯定是被那群傢伙拿走了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180406
+					],
+					"speakerTitle": "害怕的瑪伽"
+				},
+				{
+					"id": 200180406,
+					"content": "旅行者，幫我去旁邊樹林裡找找看吧，如果<color=#00E1FFFF>繩子</color>在那就好了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "害怕的瑪伽"
+				}
+			]
+		},
+		{
+			"id": 2001805,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001807",
+							"2"
+						],
+						"stepId": 2001807,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"害怕的瑪伽"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200180501,
+					"content": "幫我去旁邊樹林裡找找看吧，如果<color=#00E1FFFF>繩子</color>在那就好了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "害怕的瑪伽"
+				}
+			]
+		},
+		{
+			"id": 2001806,
+			"completionStepIds": [
+				2001808
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001807",
+							"3"
+						],
+						"stepId": 2001807,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001808",
+							"2"
+						],
+						"stepId": 2001808,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"害怕的瑪伽"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200180601,
+					"content": "#謝謝{F#妳}{M#你}，旅行者，就先這樣吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180602
+					],
+					"speakerTitle": "害怕的瑪伽"
+				},
+				{
+					"id": 200180602,
+					"content": "勉強能到清泉鎮，把貨卸了之後，我再回去向酒莊報告情況。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200180603
+					],
+					"speakerTitle": "害怕的瑪伽"
+				},
+				{
+					"id": 200180603,
+					"content": "就是不知道埃澤先生看見車被破壞成這樣，我會不會被當場開除啊…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "害怕的瑪伽"
+				}
+			]
+		},
+		{
+			"id": 2001807,
+			"completionStepIds": [
+				2001802
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"害怕的瑪伽"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200180701,
+					"content": "好的，別擔心…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200180702
+					]
+				},
+				{
+					"id": 200180702,
+					"content": "#那就拜託{F#妳}{M#你}了，我…我想想怎麼才能把車修好。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "害怕的瑪伽"
+				}
+			]
+		},
+		{
+			"id": 2001808,
+			"completionStepIds": [
+				2001802
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"害怕的瑪伽"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200180801,
+					"content": "還有別的事。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200180802
+					]
+				},
+				{
+					"id": 200180802,
+					"content": "#別，不要，要是我自己來，肯定又會搞砸的，只能拜託{F#妳}{M#你}了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "害怕的瑪伽"
+				}
+			]
+		},
+		{
+			"id": 2001809,
+			"completionStepIds": [
+				2001806
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"害怕的瑪伽"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200180901,
+					"content": "明白了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200180902
+					]
+				},
+				{
+					"id": 200180902,
+					"content": "#那就麻煩{F#妳}{M#你}了，我，我接著看看車的狀況。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "害怕的瑪伽"
+				}
+			]
+		},
+		{
+			"id": 2001810,
+			"completionStepIds": [
+				2001806
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"害怕的瑪伽"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200181001,
+					"content": "還有別的事。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200181002
+					]
+				},
+				{
+					"id": 200181002,
+					"content": "#嗚…這裡只有{F#妳}{M#你}能幫我，拜託了——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "害怕的瑪伽"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,581 @@
+{
+	"id": 71803,
+	"type": "WQ",
+	"name": "Die Angelegenheiten der Abenteurergilde",
+	"description": "Lan scheint sich wegen einigen Missionen, die die Abenteurergilde unternommen hat, Sorgen zu machen ...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		1025
+	],
+	"steps": [
+		{
+			"id": 7180301,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		},
+		{
+			"id": 7180302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Besiege den Steinhaut-Lawachurl.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180303,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Unterhalte dich mit der komischen Katze.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180303,
+						0
+					],
+					"talkId": 7180303
+				}
+			]
+		},
+		{
+			"id": 7180305,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bringe Gräupchen zu Lan.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180304,
+						0
+					],
+					"talkId": 7180304
+				}
+			]
+		},
+		{
+			"id": 7180306,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180305,
+						0
+					],
+					"talkId": 7180305
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7180302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180301",
+							"3"
+						],
+						"stepId": 7180301,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718030201,
+					"content": "<color=#00E1FFFF>Gräupchen</color>, mmh ... Die Beschreibung reicht aus, aber eine verrirte Katze in der Wildnis zu finden, wird nicht leicht.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Lan"
+				}
+			]
+		},
+		{
+			"id": 7180303,
+			"completionStepIds": [
+				7180304
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180304",
+							"2"
+						],
+						"stepId": 7180304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Gräupchen"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718030301,
+					"content": "Miau ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030302
+					],
+					"speakerTitle": "Gräupchen"
+				},
+				{
+					"id": 718030302,
+					"content": "Wie? Was hat eine Katze hier verloren?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030303
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030303,
+					"content": "Miau ... Miaaaauu ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030304,
+						718030308
+					],
+					"speakerTitle": "Gräupchen"
+				},
+				{
+					"id": 718030304,
+					"content": "Eine graue Katze ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030305
+					]
+				},
+				{
+					"id": 718030305,
+					"content": "Eine graute Katze, verirrt in der Wildnis ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030306
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030306,
+					"content": "Ah, Lan erwähnte eine Suchmission nach einer grauen Katze. Vielleicht ist sie das! Paimon fällt ein, dass sie Ash oder so genannt wird ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030307
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030307,
+					"content": "Wer hätte gedacht, dass wir sie hier finden ... Hat sie sich die ganze Zeit hier versteckt?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030311
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030311,
+					"content": "Der Steinhaut-Lawachurl hat wohl alle von hier ferngehalten, und da sie zu ängstlich war, um zu verschwinden, hat sie sich hier versteckt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030312
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030312,
+					"content": "Was für ein Glück, dass wir aufgetaucht sind, sonst hätte sie hier noch lange gewartet, oder?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030313
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030313,
+					"content": "Miau ... Miau, miau!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030314,
+						718030317
+					],
+					"speakerTitle": "Gräupchen"
+				},
+				{
+					"id": 718030314,
+					"content": "Miau ... Miaaaauu ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030315
+					]
+				},
+				{
+					"id": 718030315,
+					"content": "He, was machst du da? Paimon denkt nicht, dass sie dich verstehen kann ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030316
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030316,
+					"content": "Bringen wir sie zurück zu Lan, sie kann die Katze dann ihrem Besitzer zurückbringen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030319
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030319,
+					"content": "Miau ... Miau, miau!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030320,
+						718030322
+					],
+					"speakerTitle": "Gräupchen"
+				},
+				{
+					"id": 718030320,
+					"content": "Miau ... Miau, miau!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030321
+					]
+				},
+				{
+					"id": 718030321,
+					"content": "Oh, komm schon. Sie wird dich nicht verstehen, wie sehr du sie auch imitierst. Bringen wir sie schnell zurück.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030322,
+					"content": "Sie scheint einverstanden zu sein.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030323
+					]
+				},
+				{
+					"id": 718030323,
+					"content": "Wie hast du ... egal. Bringen wir sie zurück zu Lan.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030317,
+					"content": "Bringen wir die Katze zu Lan.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030318
+					]
+				},
+				{
+					"id": 718030318,
+					"content": "Jupp, mehr können wir nicht tun. Sie wird die Katze zum Auftraggeber bringen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030319
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030308,
+					"content": "Vielleicht ist es Gräupchen ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030309
+					]
+				},
+				{
+					"id": 718030309,
+					"content": "Eine graute Katze, verirrt in der Wildnis ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030310
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718030310,
+					"content": "Richtig! Lan hat diese Suchmission erwähnt, nicht wahr? Hmm. Wer hätte gedacht, dass wir sie hier finden ... Hat sie sich die ganze Zeit hier versteckt?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030311
+					],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 7180304,
+			"completionStepIds": [
+				7180305
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180305",
+							"2"
+						],
+						"stepId": 7180305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718030401,
+					"content": "Hast du den Steinhaut-Lawachurl besiegt?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030402,
+						718030404
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030402,
+					"content": "Ja klar, habe ich.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030403
+					]
+				},
+				{
+					"id": 718030403,
+					"content": "Danke, damit hast du uns geholfen. Da diese Mission erledigt ist, haben wir einen Beweis für die Kompetenz der Gilde.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030404,
+					"content": "Wir haben ihn besiegt und Gräupchen haben wir auch gefunden ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030405
+					]
+				},
+				{
+					"id": 718030405,
+					"content": "Danke, damit hast du uns geh... wie bitte?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Lan"
+				}
+			]
+		},
+		{
+			"id": 7180305,
+			"completionStepIds": [
+				7180306
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_QUEST_VAR_EQUAL",
+						"rawParams": [
+							"1",
+							"1",
+							"71803"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718030501,
+					"content": "Miau ... Miau, miau!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030502
+					],
+					"speakerTitle": "Gräupchen"
+				},
+				{
+					"id": 718030502,
+					"content": "Diese Katze ist ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030503
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030503,
+					"content": "Das könnte Gräupchen sein.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030504
+					]
+				},
+				{
+					"id": 718030504,
+					"content": "Gib mir einen Moment, um die Merkmal zu überprüfen, die im Missionsauftrag stehen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030505
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030505,
+					"content": "Mal sehen ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030506
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030506,
+					"content": "Es kommt hin. Das scheint die Katze zu sein, nach der wir suchen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030508
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030508,
+					"content": "Der Auftraggeber wird erfreut sein.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030509
+					]
+				},
+				{
+					"id": 718030509,
+					"content": "Ha! Nach all den Geschehnissen geht es wieder um vermisste Katzen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030510
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030510,
+					"content": "Was soll ich dazu nur sagen ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030511
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030511,
+					"content": "Ich melde das dem Auftraggeber. Vielen Dank! Bitte nimm dies als Entschädigung für deine Mühe und deine Hilfe.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030512
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030512,
+					"content": "Hmm, der Auftraggeber dieser Katzenmission scheint umgezogen zu sein. Es wird eine Weile dauern, ihn zu finden.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030513
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030513,
+					"content": "Ich kümmere mich inzwischen um den kleinen Streuner.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030514
+					],
+					"speakerTitle": "Lan"
+				},
+				{
+					"id": 718030514,
+					"content": "Miaumiau, miau!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Gräupchen"
+				}
+			]
+		}
+	]
+}

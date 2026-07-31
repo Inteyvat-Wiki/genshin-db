@@ -1,0 +1,294 @@
+{
+	"id": 20035,
+	"type": "IQ",
+	"name": "Clé perdue",
+	"description": "Wyatt, qui escorte les convois de marchandises, est un grand amateur de vin. Il a malheureusement perdu sa clé après avoir trop bu... Suivez ses traces de pas pour remettre la main dessus et la lui rapporter.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2003501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Allez voir Wyatt.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003501,
+						0
+					],
+					"talkId": 2003501
+				}
+			]
+		},
+		{
+			"id": 2003502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Trouvez la clé grâce à votre vue élémentaire.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003504,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Donnez la clé à Wyatt.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003504,
+						0
+					],
+					"talkId": 2003504
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2003501,
+			"completionStepIds": [
+				2003501
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003501",
+							"2"
+						],
+						"stepId": 2003501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Wyatt"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200350101,
+					"content": "Ah ! Vous tombez à pic !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350102
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200350102,
+					"content": "Hier soir, j'étais en route vers Mondstadt pour livrer de la marchandise quand tout à coup, des boules lumineuses sont apparues sur mon chemin !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350103
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200350103,
+					"content": "Je me suis retrouvé attiré vers elles... et comme j'étais ivre, je me suis rendu compte trop tard que je me faisais attaquer par des Blobs...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350104
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200350104,
+					"content": "J'ai pris mes jambes à mon cou, mais je me suis perdu dans la panique. Ça m'a pris une éternité pour retrouver mon chariot et la cerise sur le gâteau : j'ai perdu ma <color=#00E1FFFF>clé</color>...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350105
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200350105,
+					"content": "Pouvez-vous la retrouver ? Elle doit bien être dans le coin... J'ai vraiment l'impression qu'elle est sous mon nez.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350106,
+						200350108
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200350106,
+					"content": "Bien sûr.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200350107
+					]
+				},
+				{
+					"id": 200350107,
+					"content": "Génial ! C'est tellement grand par ici, je ne sais pas par où commencer...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200350108,
+					"content": "J'ai une autre urgence...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200350109
+					]
+				},
+				{
+					"id": 200350109,
+					"content": "C'est tellement grand par ici, je ne sais pas par où commencer. Vous êtes la seule personne qui puisse m'aider !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Wyatt"
+				}
+			]
+		},
+		{
+			"id": 2003502,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003501",
+							"3"
+						],
+						"stepId": 2003501,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003502",
+							"2"
+						],
+						"stepId": 2003502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Wyatt"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200350201,
+					"content": "Avez-vous trouvé ma clé ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350202
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200350202,
+					"content": "#Non, {M#désolé}{F#désolée}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200350203
+					]
+				},
+				{
+					"id": 200350203,
+					"content": "Bon courage ! Vous en avez besoin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Wyatt"
+				}
+			]
+		},
+		{
+			"id": 2003504,
+			"completionStepIds": [
+				2003504
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003502",
+							"3"
+						],
+						"stepId": 2003502,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Wyatt"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200350401,
+					"content": "Alors ? Cette clé ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350402
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200350402,
+					"content": "C'est celle-là ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200350403
+					]
+				},
+				{
+					"id": 200350403,
+					"content": "Oui ! Je promets que ça ne m'arrivera plus. Fini les verres en trop !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200350404
+					],
+					"speakerTitle": "Wyatt"
+				},
+				{
+					"id": 200350404,
+					"content": "Prenez-les, c'est un cadeau pour m'avoir aidé.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Wyatt"
+				}
+			]
+		}
+	]
+}

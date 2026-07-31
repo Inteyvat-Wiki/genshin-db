@@ -1,0 +1,302 @@
+{
+	"id": 11004,
+	"type": "LQ",
+	"name": "Present From the Past",
+	"description": "Xiangling took a keen interest in the rumor that the ruins contain a gigantic Cryo Regisvine, and ran inside to investigate. Worried about her safety, you quickly follow the impetuous chef.",
+	"unlockDescription": "",
+	"chapter": "Mondstadt Gastronomy Trip",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		11005
+	],
+	"prevMainQuestList": [
+		11003
+	],
+	"steps": [
+		{
+			"id": 1100401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Catch up to Xiangling in the ruins",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_DUNGEON",
+					"rawParams": [
+						1010,
+						125
+					]
+				}
+			]
+		},
+		{
+			"id": 1100402,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go into the depths of the ruins in search of ingredients",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1100403,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Xiangling",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1100403,
+						0
+					],
+					"talkId": 1100403
+				}
+			]
+		},
+		{
+			"id": 1100498,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(Dialog after encountering giant mist flower)",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1100498,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1100499,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(Dialog after defeating enemies in first combat zone of dungeon)",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1100403,
+			"completionStepIds": [
+				1100403
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1100403",
+							"2"
+						],
+						"stepId": 1100403,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Xiangling"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110040301,
+					"content": "♪ Got myself a Cryo Regisvine, cook it up for dinner time... ♪",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040302
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110040302,
+					"content": "♪ Even better if it's paired with a bit of swine... ♪",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040303,
+						110040305
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110040303,
+					"content": "Stop encouraging her!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110040304
+					]
+				},
+				{
+					"id": 110040304,
+					"content": "Lighten up a little! What in the world could bring more joy than finding rare ingredients?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040307
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110040307,
+					"content": "Wait, there's something else here too!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040308
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110040308,
+					"content": "This must be the boar that hunter was chasing.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040309
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110040309,
+					"content": "But Paimon's never seen one with this pattern before.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040310
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110040310,
+					"content": "Where have I seen this before? Hmm... Aha! It was in the \"Historia Naturalis Liyue\"!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040311
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110040311,
+					"content": "This pattern is unmistakable. It belongs to a breed of boar that went extinct 300 years ago!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040312
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110040312,
+					"content": "Wow! How is this one still alive after so long!?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040313,
+						110040315
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110040313,
+					"content": "Accidental cryopreservation?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110040314
+					]
+				},
+				{
+					"id": 110040314,
+					"content": "Could be...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040317
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110040317,
+					"content": "I read that this boar was hunted to extinction because its meat was so highly prized.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040318
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110040318,
+					"content": "Cryo Regisvine and extinct boar. Not one, but two priceless treasures!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040319
+					],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110040319,
+					"content": "This'll be our winning ticket.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110040320
+					]
+				},
+				{
+					"id": 110040320,
+					"content": "Right. Now let's get back to Springvale!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Xiangling"
+				},
+				{
+					"id": 110040315,
+					"content": "Won the genetic lottery?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110040316
+					]
+				},
+				{
+					"id": 110040316,
+					"content": "Paimon's pretty sure that's not really possible...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040317
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 110040305,
+					"content": "♪ Wash 'em down with a glass of wine... ♪",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110040306
+					]
+				},
+				{
+					"id": 110040306,
+					"content": "Hee-hee... Your version just ruins it.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110040307
+					],
+					"speakerTitle": "Xiangling"
+				}
+			]
+		}
+	]
+}

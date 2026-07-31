@@ -1,0 +1,167 @@
+{
+	"id": 72714,
+	"type": "WQ",
+	"name": "陸的鳥蛋需求",
+	"description": "鳴神島的陸需要8個鳥蛋。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7271401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "將8個鳥蛋交給陸",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7271401,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7271402,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "與陸對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7271402,
+						0
+					],
+					"talkId": 7271402
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7271401,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271401",
+							"2"
+						],
+						"stepId": 7271401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7271401"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"陸"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727140101,
+					"content": "關於鳥蛋…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727140102
+					]
+				},
+				{
+					"id": 727140102,
+					"content": "如果有了鳥蛋，我也能像鳥媽媽那樣孵出小鳥來吧，好想跟小鳥一起玩啊…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727140103
+					],
+					"speakerTitle": "陸"
+				},
+				{
+					"id": 727140103,
+					"content": "#所以我送出了那個委託，那八個鳥蛋{F#妳}{M#你}準備好了嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727140106,
+						727140104
+					],
+					"speakerTitle": "陸"
+				},
+				{
+					"id": 727140106,
+					"content": "準備好了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 727140104,
+					"content": "還沒有。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727140105
+					]
+				},
+				{
+					"id": 727140105,
+					"content": "那請在準備好了之後快點拿給我吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "陸"
+				}
+			]
+		},
+		{
+			"id": 7271402,
+			"completionStepIds": [
+				7271402
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271402",
+							"2"
+						],
+						"stepId": 7271402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"陸"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727140201,
+					"content": "#嗚哇，謝謝{F#妳}{M#你}！我會小心對待它們的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "陸"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,927 @@
+{
+	"id": 20069,
+	"type": "IQ",
+	"name": "Freschezza floreale",
+	"description": "I fiori non rimangono freschi a lungo. Flora, la proprietaria del Sussurro dei Fiori, ha pensato ad alcuni modi per conservarli meglio...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2006901,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parla con Flora",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2006901,
+						0
+					],
+					"talkId": 2006901
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2006903,
+						0
+					],
+					"talkId": 2006903
+				}
+			]
+		},
+		{
+			"id": 2006902,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Raggiungi la Statua dei Sette al Picco del Drago e lascia un contenitore lì vicino",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_INTERACT_GADGET",
+					"rawParams": [
+						70710239,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2006903,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sconfiggi tutti gli avversari",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2006904,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Lascia un pacchetto vicino alla caverna",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_INTERACT_GADGET",
+					"rawParams": [
+						70710232,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2006905,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Torna da Flora",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2006902,
+						0
+					],
+					"talkId": 2006902
+				}
+			]
+		},
+		{
+			"id": 2006906,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2006907,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Raggiungi il Picco del Drago e lascia un contenitore accanto a uno specchio d'acqua",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_INTERACT_GADGET",
+					"rawParams": [
+						70710240,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2006908,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Raggiungi la caverna sul Picco del Drago e lascia un pacchetto lì vicino",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2006909,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Chiedi scusa a Flora",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2006904,
+						0
+					],
+					"talkId": 2006904
+				}
+			]
+		},
+		{
+			"id": 2006912,
+			"order": 12,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2006901,
+			"completionStepIds": [
+				2006901
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006901",
+							"2"
+						],
+						"stepId": 2006901,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"40002",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Flora"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200690101,
+					"content": "Anche questi fiori non hanno un bell'aspetto. Che peccato...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690102
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690102,
+					"content": "C'è qualcosa che non va?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690103
+					]
+				},
+				{
+					"id": 200690103,
+					"content": "Beh, molte persone tendono a comprare dei fiori singoli come regalo, quindi, di solito, ne taglio alcuni proprio per questo motivo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690104
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690104,
+					"content": "Ma i fiori che taglio non rimangono freschi a lungo. Se non vengono venduti, appassiscono...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690105
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690105,
+					"content": "In passato ho provato diversi metodi, ma i fiori appassiscono comunque a fine giornata.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690106
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690106,
+					"content": "Chissà se c'è un modo per conservare quei fiori più a lungo...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690107,
+						200690111
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690107,
+					"content": "Conservazione, mmh?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690108
+					]
+				},
+				{
+					"id": 200690108,
+					"content": "Ho sentito dire a Sara del Buon Cacciatore che di solito loro mettono gli ingredienti che non utilizzano in un luogo fresco, o li conservano usando dei blocchi di ghiaccio...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690109
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690109,
+					"content": "Ho provato anch'io questi metodi, ma i fiori conservati usando i blocchi di ghiaccio finiscono sempre per avere un aspetto strano.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690110
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690110,
+					"content": "Non appassiscono, ma non li definirei neanche freschi... E in ogni caso, non sarebbero più presentabili...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690114
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690114,
+					"content": "Ho chiesto a diverse persone, incluso il signor Sayid... Sai chi è, vero? Il ricercatore.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690115
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690115,
+					"content": "Un giorno, quando è venuto a comprare dei fiori, mi ha detto che una volta aveva letto in un libro come refrigerare i fiori.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690116
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690116,
+					"content": "Nello specifico... Si tratta di usare un contenitore per conservare i fiori per poi posizionarlo vicino a dei blocchi di ghiaccio.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690117
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690117,
+					"content": "Ha detto anche che se volessi fare degli esperimenti, il posto più adatto sarebbe l'ambiente a basse temperature del Picco del Drago.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690118
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690118,
+					"content": "Ma ho sentito dire che il Picco del Drago è un posto molto pericoloso, e non ho trovato nessun avventuriere disposto ad aiutarmi con così poco preavviso...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690119
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690119,
+					"content": "#Viaggiat{F#rice}{M#ore}, potresti aiutarmi a seppellire questi tre contenitori di fiori nella neve del Picco del Drago?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690120,
+						200690121
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690120,
+					"content": "Consideralo fatto.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690122
+					]
+				},
+				{
+					"id": 200690122,
+					"content": "Grazie per l'aiuto. Fammi pensare... Ho sentito che il Picco del Drago è enorme, e ha un sacco di zone differenti, il che potrebbe portare a risultati piuttosto diversi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690123
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690123,
+					"content": "Forse potrebbe essere utile fare un confronto...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690124
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690124,
+					"content": "Per favore, aiutami a disporre questi fiori <color=#00E1FFFF>vicino alla Statua dei Sette</color>, <color=#00E1FFFF>vicino a uno specchio d'acqua</color> e... <color=#00E1FFFF>all'ingresso di una caverna</color>.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690121,
+					"content": "Dove dovrei seppellirli?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690122
+					]
+				},
+				{
+					"id": 200690111,
+					"content": "Meglio venderli tutti il giorno stesso, allora.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690112
+					]
+				},
+				{
+					"id": 200690112,
+					"content": "Sarebbe la cosa migliore, ma rimangono sempre un paio di fiori invenduti.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690113
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690113,
+					"content": "So che si tratta solo di uno o due fiori, ma non voglio lasciarli appassire.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690114
+					],
+					"speakerTitle": "Flora"
+				}
+			]
+		},
+		{
+			"id": 2006902,
+			"completionStepIds": [
+				2006905
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006905",
+							"2"
+						],
+						"stepId": 2006905,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"40002",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Flora"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200690201,
+					"content": "In che stato sono i fiori?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690202
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690202,
+					"content": "Sottoterra.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690203
+					]
+				},
+				{
+					"id": 200690203,
+					"content": "Grazie. Li lasceremo lì sulla montagna per un po'.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690204
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690204,
+					"content": "Eheh, grazie mille per avermi aiutata. Ti prego di accettare questo per il disturbo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690205
+					],
+					"speakerTitle": "Flora"
+				}
+			]
+		},
+		{
+			"id": 2006903,
+			"completionStepIds": [
+				2006901
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006901",
+							"2"
+						],
+						"stepId": 2006901,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"40002",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Flora"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200690301,
+					"content": "Anche questi fiori non hanno un bell'aspetto. Che peccato...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690302
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690302,
+					"content": "C'è qualcosa che non va?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690303
+					]
+				},
+				{
+					"id": 200690303,
+					"content": "Beh, molte persone tendono a comprare dei fiori singoli come regalo, quindi, di solito, ne taglio alcuni proprio per questo motivo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690304
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690304,
+					"content": "Ma i fiori che taglio non rimangono freschi a lungo. Se non vengono venduti, appassiscono...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690305
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690305,
+					"content": "In passato ho provato diversi metodi, ma i fiori appassiscono comunque a fine giornata.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690306
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690306,
+					"content": "Chissà se c'è un modo per conservare quei fiori più a lungo...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690307,
+						200690311
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690307,
+					"content": "Conservazione, mmh?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690308
+					]
+				},
+				{
+					"id": 200690308,
+					"content": "Ho sentito dire a Sara del Buon Cacciatore che di solito loro mettono gli ingredienti che non utilizzano in un luogo fresco, o li conservano usando dei blocchi di ghiaccio...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690309
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690309,
+					"content": "Ho provato anch'io questi metodi, ma i fiori conservati usando i blocchi di ghiaccio finiscono sempre per avere un aspetto strano.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690310
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690310,
+					"content": "Non appassiscono, ma non li definirei neanche freschi... E in ogni caso, non sarebbero più presentabili...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690314
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690314,
+					"content": "Ho chiesto a diverse persone, incluso il signor Sayid... Sai chi è, vero? Il ricercatore.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690315
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690315,
+					"content": "Un giorno, quando è venuto a comprare dei fiori, mi ha detto che una volta aveva letto in un libro come refrigerare i fiori.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690316
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690316,
+					"content": "Nello specifico... Si tratta di usare un contenitore per conservare i fiori per poi posizionarlo vicino a dei blocchi di ghiaccio.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690317
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690317,
+					"content": "Ha detto anche che se volessi fare degli esperimenti, il posto più adatto sarebbe l'ambiente a basse temperature del Picco del Drago.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690318
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690318,
+					"content": "Ma ho sentito dire che il Picco del Drago è un posto molto pericoloso, e non ho trovato nessun avventuriere disposto ad aiutarmi con così poco preavviso...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690319
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690319,
+					"content": "#Viaggiat{F#rice}{M#ore}, potresti aiutarmi a seppellire questi tre contenitori di fiori nella neve del Picco del Drago?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690320,
+						200690321
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690320,
+					"content": "Consideralo fatto.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690322
+					]
+				},
+				{
+					"id": 200690322,
+					"content": "Grazie per l'aiuto. Fammi pensare... Ho sentito che il Picco del Drago è enorme, e ha un sacco di zone differenti, il che potrebbe portare a risultati piuttosto diversi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690323
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690323,
+					"content": "Forse potrebbe essere utile fare un confronto...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690324
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690324,
+					"content": "Per favore, aiutami a disporre questi fiori <color=#00E1FFFF>vicino alla Statua dei Sette</color> e <color=#00E1FFFF>all'ingresso di una caverna sulla montagna</color>.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690325
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690325,
+					"content": "Poi, vorrei che trovassi una zona <color=#00E1FFFF>con dell'acqua sulla montagna</color>. Un lago o uno stagno andranno bene... Basta seppellire i fiori ai margini dello specchio d'acqua.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690326
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690326,
+					"content": "Ti prego di fare particolare attenzione a non danneggiarli questa volta.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690321,
+					"content": "Dove dovrei seppellirli?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690322
+					]
+				},
+				{
+					"id": 200690311,
+					"content": "Meglio venderli tutti il giorno stesso, allora.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690312
+					]
+				},
+				{
+					"id": 200690312,
+					"content": "Sarebbe la cosa migliore, ma rimangono sempre un paio di fiori invenduti.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690313
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690313,
+					"content": "So che si tratta solo di uno o due fiori, ma non voglio lasciarli appassire.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690314
+					],
+					"speakerTitle": "Flora"
+				}
+			]
+		},
+		{
+			"id": 2006904,
+			"completionStepIds": [
+				2006909
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006909",
+							"2"
+						],
+						"stepId": 2006909,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"40002",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Flora"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200690401,
+					"content": "In che stato sono i fiori?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690402
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690402,
+					"content": "Mi dispiace...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690403
+					]
+				},
+				{
+					"id": 200690403,
+					"content": "Eh? Che cosa è successo?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690404
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690404,
+					"content": "Per sbaglio ho rovinato i fiori e il contenitore...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200690405
+					]
+				},
+				{
+					"id": 200690405,
+					"content": "P-Per sbaglio?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690406
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690406,
+					"content": "Uff... Avevo scelto appositamente quei fiori. Fiori del genere non si trovano ovunque...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690407
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690407,
+					"content": "#Il Picco del Drago è davvero pericoloso se neanche {F#un'avventuriera}{M#un avventuriere} come te è in grado di proteggere un contenitore...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690408
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690408,
+					"content": "Comunque, grazie per avermi aiutata. Ti prego di prendere questo in segno di riconoscenza. Ora, se vuoi scusarmi, devo prendermi cura dei miei fiori.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200690409
+					],
+					"speakerTitle": "Flora"
+				},
+				{
+					"id": 200690409,
+					"content": "*sospira* Forse dovrei provare il metodo suggerito da Sara...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Flora"
+				}
+			]
+		},
+		{
+			"id": 2006999,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006901",
+							"3"
+						],
+						"stepId": 2006901,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_NOT_RECEIVE",
+						"rawParams": [
+							"2006909",
+							"1"
+						]
+					},
+					{
+						"type": "QUEST_COND_QUEST_NOT_RECEIVE",
+						"rawParams": [
+							"2006905",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Flora"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200699904,
+					"content": "Il signor Sayid conosce davvero tante cose. Chissà se anche le persone dell'Akademiya di Sumeru conservano i fiori...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Flora"
+				}
+			]
+		}
+	]
+}

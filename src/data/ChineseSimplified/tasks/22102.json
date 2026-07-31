@@ -1,0 +1,338 @@
+{
+	"id": 22102,
+	"type": "IQ",
+	"name": "花洲有客栈",
+	"description": "因为望舒客栈周围时常有魔物侵扰，淮安正在为此发愁…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2210201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "与淮安对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2210201,
+						0
+					],
+					"talkId": 2210201
+				}
+			]
+		},
+		{
+			"id": 2210202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "清剿附近的魔物",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2210203,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "向淮安回报",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2210203,
+						0
+					],
+					"talkId": 2210203
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2210201,
+			"completionStepIds": [
+				2210201
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2210201",
+							"2"
+						],
+						"stepId": 2210201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"淮安"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 221020101,
+					"content": "真是麻烦哪…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020102
+					],
+					"speakerTitle": "淮安"
+				},
+				{
+					"id": 221020102,
+					"content": "怎么了？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						221020103
+					]
+				},
+				{
+					"id": 221020103,
+					"content": "您看我这黑眼圈，我已经多少天没睡过好觉了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020104
+					],
+					"speakerTitle": "淮安"
+				},
+				{
+					"id": 221020104,
+					"content": "您见过客栈里的客人吗？那真是，一个比一个会折腾，我们这客栈这么高，也真有人敢往下跳…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020105
+					],
+					"speakerTitle": "淮安"
+				},
+				{
+					"id": 221020105,
+					"content": "算了，我刚从城里订了批菜，现在估计快要到了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020106
+					],
+					"speakerTitle": "淮安"
+				},
+				{
+					"id": 221020106,
+					"content": "这路上的怪物啊，肯定也不会乖乖休息，能劳烦您帮我去清一清路吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020107,
+						221020108
+					],
+					"speakerTitle": "淮安"
+				},
+				{
+					"id": 221020107,
+					"content": "我知道了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						221020109
+					]
+				},
+				{
+					"id": 221020109,
+					"content": "那就拜托您了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "淮安"
+				},
+				{
+					"id": 221020108,
+					"content": "这家客栈…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						221020110
+					]
+				},
+				{
+					"id": 221020110,
+					"content": "「广收天下客，遍听四海声」…我是这么想来着。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020111
+					],
+					"speakerTitle": "淮安"
+				},
+				{
+					"id": 221020111,
+					"content": "不过，其实也就是间客栈，就是地方偏了点，客人多了点，没什么了不起的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020112
+					],
+					"speakerTitle": "淮安"
+				},
+				{
+					"id": 221020112,
+					"content": "那么，就万事拜托您了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "淮安"
+				}
+			]
+		},
+		{
+			"id": 2210202,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2210201",
+							"3"
+						],
+						"stepId": 2210201,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2210202",
+							"2"
+						],
+						"stepId": 2210202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"淮安"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 221020201,
+					"content": "怎么样？周围的怪物都清干净了吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020202
+					],
+					"speakerTitle": "淮安"
+				},
+				{
+					"id": 221020202,
+					"content": "还没有。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						221020203
+					]
+				},
+				{
+					"id": 221020203,
+					"content": "请您快些吧，这厨子快没菜下锅了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020204
+					],
+					"speakerTitle": "淮安"
+				},
+				{
+					"id": 221020204,
+					"content": "实在不行，我得自己出去一趟了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "淮安"
+				}
+			]
+		},
+		{
+			"id": 2210203,
+			"completionStepIds": [
+				2210203
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2210202",
+							"3"
+						],
+						"stepId": 2210202,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2210203",
+							"2"
+						],
+						"stepId": 2210203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"淮安"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 221020301,
+					"content": "怎么样？周围的怪物都清干净了吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020302
+					],
+					"speakerTitle": "淮安"
+				},
+				{
+					"id": 221020302,
+					"content": "已经清干净了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						221020303
+					]
+				},
+				{
+					"id": 221020303,
+					"content": "那就好，辛苦您了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221020304
+					],
+					"speakerTitle": "淮安"
+				},
+				{
+					"id": 221020304,
+					"content": "这是报酬您拿好。要是以后路过，您记得过来光顾。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "淮安"
+				}
+			]
+		}
+	]
+}

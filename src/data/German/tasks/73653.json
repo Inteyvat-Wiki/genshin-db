@@ -1,0 +1,167 @@
+{
+	"id": 73653,
+	"type": "WQ",
+	"name": "Amirs Bitte um Rohes Fleisch",
+	"description": "Amir aus Gandharva braucht acht Stücke rohes Fleisch.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7365301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bringe Amir acht Stücke rohes Fleisch.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7365301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7365302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Amir.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7365302,
+						0
+					],
+					"talkId": 7365302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7365301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7365301",
+							"2"
+						],
+						"stepId": 7365301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7365301"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Amir"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 736530101,
+					"content": "Über das rohe Fleisch ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						736530102
+					]
+				},
+				{
+					"id": 736530102,
+					"content": "Ja, richtig. Ich habe tatsächlich eine Mission zu rohem Fleisch erteilt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736530103
+					],
+					"speakerTitle": "Amir"
+				},
+				{
+					"id": 736530103,
+					"content": "Hast du genug rohes Fleisch bekommen? Ich brauche acht Stücke.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736530106,
+						736530104
+					],
+					"speakerTitle": "Amir"
+				},
+				{
+					"id": 736530106,
+					"content": "Hier sind sie.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 736530104,
+					"content": "Noch nicht.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						736530105
+					]
+				},
+				{
+					"id": 736530105,
+					"content": "Acht Stücke rohes Fleisch sind nicht gerade wenig. Melde dich bei mir wieder, wenn du sie beisammen hast.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Amir"
+				}
+			]
+		},
+		{
+			"id": 7365302,
+			"completionStepIds": [
+				7365302
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7365302",
+							"2"
+						],
+						"stepId": 7365302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Amir"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 736530201,
+					"content": "Die Qualität ist sehr gut. Danke. Jetzt brauchen die Rettungshunde nicht zu hungern.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Amir"
+				}
+			]
+		}
+	]
+}

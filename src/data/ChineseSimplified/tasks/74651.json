@@ -1,0 +1,167 @@
+{
+	"id": 74651,
+	"type": "WQ",
+	"name": "布吕诺的鲜花需求",
+	"description": "布吕诺需要5支虹彩蔷薇。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7465101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "将5支虹彩蔷薇交给布吕诺",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7465101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7465102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "与布吕诺对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7465102,
+						0
+					],
+					"talkId": 7465102
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7465101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465101",
+							"2"
+						],
+						"stepId": 7465101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7465101"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"布吕诺"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746510101,
+					"content": "关于虹彩蔷薇…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746510102
+					]
+				},
+				{
+					"id": 746510102,
+					"content": "是的，我的确给报纸投过稿，希望有人能送我一束虹彩蔷薇。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746510103
+					],
+					"speakerTitle": "布吕诺"
+				},
+				{
+					"id": 746510103,
+					"content": "你是来帮我实现这个愿望的吗？你带来的花一定非常美丽。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746510106,
+						746510104
+					],
+					"speakerTitle": "布吕诺"
+				},
+				{
+					"id": 746510106,
+					"content": "准备好了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 746510104,
+					"content": "请稍等。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746510105
+					]
+				},
+				{
+					"id": 746510105,
+					"content": "没关系，多久我都可以等，感谢你愿意帮我实现这个愿望。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "布吕诺"
+				}
+			]
+		},
+		{
+			"id": 7465102,
+			"completionStepIds": [
+				7465102
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465102",
+							"2"
+						],
+						"stepId": 7465102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"布吕诺"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746510201,
+					"content": "太好了，谢谢你。美好的鲜花能给人带来生活的信心，愿你拥有美好的一天。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "布吕诺"
+				}
+			]
+		}
+	]
+}

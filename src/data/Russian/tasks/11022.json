@@ -1,0 +1,788 @@
+{
+	"id": 11022,
+	"type": "LQ",
+	"name": "Руины под замком",
+	"description": "Экспедиция по поиску останков Осиала вернулась из каменного леса Гуюнь с пустыми руками. Споры между Вань Янь и Климентом не прекращались ни на минуту. Во время одной из перепалок Вань Янь упомянула об Архонте Соли. Чтобы экспедиция не прошла даром, Климент решил направить группу на поиски реликвий этого божества.",
+	"unlockDescription": "",
+	"chapter": "Соляной цветок",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		11023
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1102201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Направляйтесь в Солёные земли",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1102201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1102202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с членами экспедиции",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1102202,
+						0
+					],
+					"talkId": 1102202
+				}
+			]
+		},
+		{
+			"id": 1102203,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Найдите точку обзора, с которой можно сложить узор",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1102203,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1102204,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Активируйте элементальные монументы согласно подсказке Чжун Ли",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1102205,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1102206,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Направляйтесь к снятой печати",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1102206,
+						0
+					],
+					"talkId": 1102206
+				}
+			]
+		},
+		{
+			"id": 1102207,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Направляйтесь ко второму механизму",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1102207,
+						0
+					],
+					"talkId": 1102207
+				}
+			]
+		},
+		{
+			"id": 1102208,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Направляйтесь к первому механизму",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1102208,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1102209,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1102209,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1102108,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1102106",
+							"3"
+						],
+						"stepId": 1102106,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1102201",
+							"2"
+						],
+						"stepId": 1102201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Вань Янь",
+					"Климент"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110210801,
+					"content": "Ты! Да ты просто скупердяй!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110210802
+					],
+					"speakerTitle": "Вань Янь"
+				},
+				{
+					"id": 110210802,
+					"content": "Ну, а ты кто? Днями роешься в земельке в надежде найти что-нибудь ценное. Пыль одна в голове!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110210803
+					],
+					"speakerTitle": "Климент"
+				},
+				{
+					"id": 110210803,
+					"content": "Опять ругаются... Что ж, не будем им мешать...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Паймон"
+				}
+			]
+		},
+		{
+			"id": 1102202,
+			"completionStepIds": [
+				1102202
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1102202",
+							"2"
+						],
+						"stepId": 1102202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Чжун Ли"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110220201,
+					"content": "Я слышал, что в Солёных землях когда-то жил народ Архонта Соли. Поэтому, хе-хе... Здесь повсюду должны валяться драгоценные реликвии.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220202
+					],
+					"speakerTitle": "Климент"
+				},
+				{
+					"id": 110220202,
+					"content": "По легенде подданные Хеврии жили в достатке.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220203
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 110220203,
+					"content": "Легенда эта ходит уже давно. Орды старьёвщиков и Похитителей сокровищ, должно быть, не оставили здесь почти ничего ценного.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220204
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 110220204,
+					"content": "Просто шикарно... Знал бы я, что всё уже тут подчистили, то не стал бы сюда соваться.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220205
+					],
+					"speakerTitle": "Климент"
+				},
+				{
+					"id": 110220205,
+					"content": "Что же до этого... Здесь есть пещера, которая ведёт в связанные с Архонтом Соли руины. Отсюда название «Солёные земли» и пошло.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220206
+					],
+					"speakerTitle": "Вань Янь"
+				},
+				{
+					"id": 110220206,
+					"content": "Вот только вход в руины запечатан загадочной силой, и печать эту ещё никто не смог разбить.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220223
+					],
+					"speakerTitle": "Вань Янь"
+				},
+				{
+					"id": 110220223,
+					"content": "Я хоть и нашла механизм, который, похоже, связан с печатью, но когда активировала его, печать даже не шелохнулась.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220207
+					],
+					"speakerTitle": "Вань Янь"
+				},
+				{
+					"id": 110220207,
+					"content": "Поэтому пока что происхождение печати и способ от неё избавиться занимают первое место в моём изучении Архонта Соли.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220208,
+						110220209
+					],
+					"speakerTitle": "Вань Янь"
+				},
+				{
+					"id": 110220208,
+					"content": "Связана ли она с народом Архонта соли?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110220210
+					]
+				},
+				{
+					"id": 110220210,
+					"content": "Не знаю. Реальных доказательств этому нет. Но я уверена, что за печатью скрывается давно забытая истина.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220211
+					],
+					"speakerTitle": "Вань Янь"
+				},
+				{
+					"id": 110220211,
+					"content": "Архонт Соли была богиней милосердной, пользовалась всеобщей любовью и обладала великой силой. Вряд ли у неё были какие-нибудь постыдные тайны.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220212
+					],
+					"speakerTitle": "Вань Янь"
+				},
+				{
+					"id": 110220212,
+					"content": "Поэтому, скорее всего, что-то скрыть хочет её убийца, Моракс.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220213
+					],
+					"speakerTitle": "Вань Янь"
+				},
+				{
+					"id": 110220213,
+					"content": "На Властелина Камня это непохоже...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220214
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 110220214,
+					"content": "Кому какое дело? Мне кажется, что в руинах нас ждут сокровища Архонта Соли!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220215
+					],
+					"speakerTitle": "Климент"
+				},
+				{
+					"id": 110220215,
+					"content": "Ты что, совсем не слушал? Ай... Даже если внутри целая гора сокровищ, туда не войти не разбив печать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220216
+					],
+					"speakerTitle": "Вань Янь"
+				},
+				{
+					"id": 110220216,
+					"content": "Ой, но ведь с нами господин Чжун Ли! Похоже, он знает всё, и какая-то там печать не сможет его озадачить.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220217
+					],
+					"speakerTitle": "Климент"
+				},
+				{
+					"id": 110220217,
+					"content": "Эта печать выглядит древней. Даже господин Чжун Ли может не знать всех её секретов...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220218
+					],
+					"speakerTitle": "Вань Янь"
+				},
+				{
+					"id": 110220218,
+					"content": "...Кое-что о ней мне известно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220219
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 110220219,
+					"content": "...Что-о-о?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220220
+					],
+					"speakerTitle": "Вань Янь"
+				},
+				{
+					"id": 110220220,
+					"content": "О печати ходят слухи, которые могут показаться разрозненными, но из них всё-таки можно узнать, как её снять.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220221
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 110220221,
+					"content": "Госпожа Вань Янь упомянула о связанном с печатью механизмом. Давайте же сходим и взглянем на него.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220222
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 110220222,
+					"content": "Ну, раз так говорит господин Чжун Ли... Тогда следуйте за мной.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Вань Янь"
+				},
+				{
+					"id": 110220209,
+					"content": "Имеет ли она отношение к Властелину Камня?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110220210
+					]
+				}
+			]
+		},
+		{
+			"id": 1102206,
+			"completionStepIds": [
+				1102206
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1102206",
+							"2"
+						],
+						"stepId": 1102206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Чжун Ли"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110220601,
+					"content": "Перед тем как войти в руины, я озвучу предложение, которое поможет вам избежать мелких ссор, как в каменном лесу Гуюнь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220602
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 110220602,
+					"content": "Прошу, говорите.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220603
+					],
+					"speakerTitle": "Вань Янь"
+				},
+				{
+					"id": 110220603,
+					"content": "Подпишите друг с другом контракт. В нём будет сказано, что каждый из вас сможет по очереди взять по одному предмету из сокровищ, что мы найдём.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220604
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 110220604,
+					"content": "Чтобы показать искренность своих намерений, я на сокровища претендовать не буду - вы всё поделите между собой.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220605
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 110220605,
+					"content": "Мне тоже ничего не нужно.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						110220606
+					]
+				},
+				{
+					"id": 110220606,
+					"content": "Ты что, это же такая возможность! Не стоит её отвергать так быстро!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220607
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 110220607,
+					"content": "Я против! То есть... Почему я обязан делить всё поровну с этой недотёпой? Нет, так не пойдёт!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220608
+					],
+					"speakerTitle": "Климент"
+				},
+				{
+					"id": 110220608,
+					"content": "И я не согласна! Хм! Он лишь осквернит реликвии Архонта Соли! Я этого не допущу.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220609
+					],
+					"speakerTitle": "Вань Янь"
+				},
+				{
+					"id": 110220609,
+					"content": "Тогда... Если вы не подпишете контракт, я больше не буду вас консультировать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220610
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 110220610,
+					"content": "В поисках сокровищ и ловушек в этих руинах вам придётся положиться на собственный опыт.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220611
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 110220611,
+					"content": "Ты, ты... Не верю своим ушам! Ладно. Даже половины сокровищ этих доселе запечатанных руин должно хватить, чтобы разжиться.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220612
+					],
+					"speakerTitle": "Климент"
+				},
+				{
+					"id": 110220612,
+					"content": "Если вы хотите, чтобы я подписала контракт, я его подпишу. Но при одном условии, господин Чжун Ли.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220613
+					],
+					"speakerTitle": "Вань Янь"
+				},
+				{
+					"id": 110220613,
+					"content": "Если мы обнаружим истину за Архонтом Соли, прошу рассудить справедливо, даже если она может навредить Мораксу.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220614
+					],
+					"speakerTitle": "Вань Янь"
+				},
+				{
+					"id": 110220614,
+					"content": "Я принимаю эти условия.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220615
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 110220615,
+					"content": "Ну что ж, пойдёмте.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Чжун Ли"
+				}
+			]
+		},
+		{
+			"id": 1102207,
+			"completionStepIds": [
+				1102207
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1102207",
+							"2"
+						],
+						"stepId": 1102207,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Чжун Ли"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 110220701,
+					"content": "Это место выглядит знакомо... Вспомнила! Здесь должно быть несколько элементальных монументов. Вы говорите, что они со всем этим связаны?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220702
+					],
+					"speakerTitle": "Вань Янь"
+				},
+				{
+					"id": 110220702,
+					"content": "Когда я изучала печать в прошлый раз, меня сопровождал человек с Глазом Бога.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220703
+					],
+					"speakerTitle": "Вань Янь"
+				},
+				{
+					"id": 110220703,
+					"content": "Когда мы активировали монументы, ничего не произошло, и они потухли.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220704
+					],
+					"speakerTitle": "Вань Янь"
+				},
+				{
+					"id": 110220704,
+					"content": "Потому что их нужно активировать не все вместе, а в определённом порядке, иначе печати не снять.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220705
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 110220705,
+					"content": "Разгадка кроется в легендах о Войне Архонтов.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220706
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 110220706,
+					"content": "«Тяньхэн на <color=#00E1FFFF>юге</color>, Яогуан на <color=#00E1FFFF>востоке</color>, Заоблачный предел на <color=#00E1FFFF>западе</color>, Цинцэ на <color=#00E1FFFF>севере</color> - унылы и безжизненны. Земли Ли Юэ велики, но пристанища в них не найти».",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220707
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 110220707,
+					"content": "На юге... А что было на востоке? Почему жители Ли Юэ не могут выражаться понятным языком?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220708
+					],
+					"speakerTitle": "Климент"
+				},
+				{
+					"id": 110220708,
+					"content": "К-кажется, я где-то уже это слышала!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220709
+					],
+					"speakerTitle": "Вань Янь"
+				},
+				{
+					"id": 110220709,
+					"content": "А как же. Смысл этого предложения тоже касается Архонта Соли.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220710
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 110220710,
+					"content": "Чтобы предоставить убежище своему народу, пострадавшему от Войны Архонтов, милосердная богиня обошла весь Ли Юэ.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220711
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 110220711,
+					"content": "В те времена, когда боги сражались друг с другом, и повсюду бушевало пламя битвы, даже одно мирное мгновение было роскошью.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220712
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 110220712,
+					"content": "Наконец, она нашла убежище именно здесь - в том месте, которое мы называем Солёными землями.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220713
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 110220713,
+					"content": "Как жаль... В итоге это мирное место разрушил Моракс.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220714
+					],
+					"speakerTitle": "Вань Янь"
+				},
+				{
+					"id": 110220714,
+					"content": "Довольно историй о древности. Теперь, когда у нас есть ключ к загадке, давайте скорее разобьём печать! Главное, что мы сможем войти в руины, а остальное неважно!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220715
+					],
+					"speakerTitle": "Климент"
+				},
+				{
+					"id": 110220715,
+					"content": "#<color=#00E1FFFF>«Тяньхэн на юге, Яогуан на востоке, Заоблачный предел на западе, Цинцэ на севере».</color> Подумай, {NICKNAME}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						110220716
+					],
+					"speakerTitle": "Чжун Ли"
+				},
+				{
+					"id": 110220716,
+					"content": "С помощью этой подсказки ты сможешь решить загадку.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Чжун Ли"
+				}
+			]
+		}
+	]
+}

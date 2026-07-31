@@ -1,0 +1,352 @@
+{
+	"id": 41152,
+	"type": "EQ",
+	"name": "Livraison spéciale : Le Bon Chasseur",
+	"description": "Le Bon Chasseur a besoin de livrer une commande spéciale...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 4115201,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Sara.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4115201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 4115202,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Livrez le plat à Silio.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4115202,
+						0
+					],
+					"talkId": 4115202
+				}
+			]
+		},
+		{
+			"id": 4115203,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Silio.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4115206,
+						0
+					],
+					"talkId": 4115206
+				}
+			]
+		},
+		{
+			"id": 4115204,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4115204,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 4115201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115201",
+							"2"
+						],
+						"stepId": 4115201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411520101,
+					"content": "D'accord, j'y vais.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411520102
+					]
+				},
+				{
+					"id": 411520102,
+					"content": "Merveilleux ! Merci infiniment.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411520103
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 411520103,
+					"content": "<color=#00E1FFFF>Restez loin des éléments</color> sur votre chemin et faites bien attention à ne pas vous blesser.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		},
+		{
+			"id": 4115202,
+			"completionStepIds": [
+				4115202
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115201",
+							"3"
+						],
+						"stepId": 4115201,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Silio"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411520201,
+					"content": "J'ai trop faim...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Silio"
+				}
+			]
+		},
+		{
+			"id": 4115203,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115201",
+							"2"
+						],
+						"stepId": 4115201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411520301,
+					"content": "Il paraît qu'il y a une commande spéciale...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411520302
+					]
+				},
+				{
+					"id": 411520302,
+					"content": "Silio a commandé une galette de pomme de terre mondstadtoise et souhaiterait se faire livrer à peu près... maintenant !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411520303
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 411520303,
+					"content": "Cette galette est fragile, elle se cassera si vous bougez dans tous les sens. Il faudrait aussi la <color=#00E1FFFF>livrer à temps</color> pour qu'elle conserve son croustillant.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411520304
+					],
+					"speakerTitle": "Sara"
+				},
+				{
+					"id": 411520304,
+					"content": "Si quelque chose venait à vous arriver, vous n'avez qu'à revenir me voir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		},
+		{
+			"id": 4115204,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115201",
+							"2"
+						],
+						"stepId": 4115201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411520401,
+					"content": "J'ai autre chose à faire...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411520402
+					]
+				},
+				{
+					"id": 411520402,
+					"content": "Oh ? Très bien... Je vais demander de l'aide à quelqu'un d'autre. Les environs sont dangereux ces derniers temps...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Sara"
+				}
+			]
+		},
+		{
+			"id": 4115205,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115201",
+							"2"
+						],
+						"stepId": 4115201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Silio"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411520501,
+					"content": "Ah, j'ai vraiment la dalle. C'était mon seul repas du jour...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Silio"
+				}
+			]
+		},
+		{
+			"id": 4115206,
+			"completionStepIds": [
+				4115203
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4115203",
+							"2"
+						],
+						"stepId": 4115203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Silio"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411520601,
+					"content": "Voici votre commande.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411520602
+					]
+				},
+				{
+					"id": 411520602,
+					"content": "#Vous êtes enfin {M#arrivé}{F#arrivée}, merci !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Silio"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,204 @@
+{
+	"id": 71011,
+	"type": "WQ",
+	"name": "Rastros en Tianchiu",
+	"description": "Hay una estela extraña en el Valle Tianchiu que parece tener relación con la historia del lugar...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		309
+	],
+	"steps": [
+		{
+			"id": 7101101,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						34763,
+						0
+					],
+					"talkId": 34763
+				}
+			]
+		},
+		{
+			"id": 7101102,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						34768,
+						0
+					],
+					"talkId": 34768
+				}
+			]
+		},
+		{
+			"id": 7101103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Descubre el secreto del Valle Tianchiu",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7101104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Derrota a los Ladrones de Tesoros",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7101105,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Obtén el tesoro",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 34763,
+			"completionStepIds": [
+				7101101
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7101101",
+							"2"
+						],
+						"stepId": 7101101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3476301,
+					"content": "“Hace tiempo, los Adeptus al horizonte partieron, y las ruinas del palacio en la miseria se vieron. Con tristeza miro este montón de tierra, que una vez fue una ciudad con grandeza”.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Inscripción antigua"
+				}
+			]
+		},
+		{
+			"id": 34768,
+			"completionStepIds": [
+				7101102
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7101101",
+							"3"
+						],
+						"stepId": 7101101,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7101102",
+							"2"
+						],
+						"stepId": 7101102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3476801,
+					"content": "Guau... No se entiende nada de lo que hay escrito en esta estela de piedra.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3476802
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3476802,
+					"content": "Es decir, que estas pueden ser unas ruinas o el rastro de un Adeptus. ¿Cuál de ambas será?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3476803
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3476803,
+					"content": "#Aquí dice: “sigue el rastro hasta el Valle Tianchiu”... Eso significa que, al menos, podemos estar segur{F#as}{M#os} de que lo que se menciona en la estela de piedra ocurrió en el Valle Tianchiu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3476804
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3476804,
+					"content": "Bueno, no tenemos otra opción más que investigar los alrededores. Tal vez encontremos algo...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		}
+	]
+}

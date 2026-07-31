@@ -1,0 +1,298 @@
+{
+	"id": 70668,
+	"type": "WQ",
+	"name": "Yükseltme Mücadelesi III",
+	"description": "Dehanın Yakarışı Kart Oyunu Oyuncular Birliği, Yükseltme Mücadelesi için yeterli olduğunu tespit etti. Mücadeleyi kazan ve Usta Oyuncu ol! Umarız Dehanın Yakarışı Kart Oyunu ile eğlenirsin!",
+	"unlockDescription": "Dehanın Yakarışı Kart Oyunu Oyuncu Yükseltme Mücadelesine başlamak için bu görevi tamamla.",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_GUIDE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7066801,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LEAVE_SCENE",
+					"rawParams": [
+						79999,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7066802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Kedi Kuyruğu'na git.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7066801,
+						0
+					],
+					"talkId": 7066801
+				}
+			]
+		},
+		{
+			"id": 7066803,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Prens ile Yükseltme Mücadelesi düellosunu bitir.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GCG_LEVEL_WIN",
+					"rawParams": [
+						20003,
+						1
+					]
+				}
+			]
+		},
+		{
+			"id": 7066804,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Prens ile konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7066802,
+						0
+					],
+					"talkId": 7066802
+				}
+			]
+		},
+		{
+			"id": 7066805,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GCG_LEVEL_WIN",
+					"rawParams": [
+						20003,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7066801,
+			"completionStepIds": [
+				7066802
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066802",
+							"2"
+						],
+						"stepId": 7066802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066803",
+							"2"
+						],
+						"stepId": 7066803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Prens"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706660101,
+					"content": "Yükseltme Mücadelesi için geldim!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						706660102
+					]
+				},
+				{
+					"id": 706660102,
+					"content": "Miyav... (Hı? Yükseltme Mücadelesi mi? Anladım... Mücadele için yeterlisin. Pekala...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706660103
+					],
+					"speakerTitle": "Prens"
+				},
+				{
+					"id": 706660103,
+					"content": "\"Shuyun'a mücadeleyi hazırlamasını söyleyeceğim. Dikkatli ol!\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Prens"
+				}
+			]
+		},
+		{
+			"id": 7066802,
+			"completionStepIds": [
+				7066804
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066804",
+							"2"
+						],
+						"stepId": 7066804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Prens"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706680201,
+					"content": "Miyav! (Harika! Yükseltme Mücadelesini tamamladığın için tebrikler. Artık Usta bir oyuncusun!)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706680202
+					],
+					"speakerTitle": "Prens"
+				},
+				{
+					"id": 706680202,
+					"content": "Miyav. (Usta oyuncu demek... Tekniğin, oyunla uğraşan çoğu kişininkinden daha iyi demektir. Yeterince çaba sarf etmeden o seviyeye gelinmez.)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706680203
+					],
+					"speakerTitle": "Prens"
+				},
+				{
+					"id": 706680203,
+					"content": "(Tabii yalnızca eğlenmek için oynadıkları bir oyuna neden bu kadar zaman harcadığımızı anlayamıyorlar...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706680205
+					],
+					"speakerTitle": "Prens"
+				},
+				{
+					"id": 706680205,
+					"content": "Miyav! (Davet ettiğin oyuncular Usta unvanı aldığını öğrendiklerinde sana karşı oynarken daha ciddi olurlar.)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706680206
+					],
+					"speakerTitle": "Prens"
+				},
+				{
+					"id": 706680206,
+					"content": "(Belki bazı oyuncular da kurdukları oyunda onlara meydan okumana Usta oyuncu olduğunu duyduktan sonra müsaade ederler... Handa cidden tuhaf adamlar var.)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706680207
+					],
+					"speakerTitle": "Prens"
+				},
+				{
+					"id": 706680207,
+					"content": "#Miyav... ({NICKNAME}...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706680208
+					],
+					"speakerTitle": "Prens"
+				},
+				{
+					"id": 706680208,
+					"content": "(Dehanın Yakarışı Kart Oyunu dünyasında eğlence seninle olsun!)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Prens"
+				}
+			]
+		},
+		{
+			"id": 7066803,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7066804",
+							"0"
+						],
+						"stepId": 7066804,
+						"stateName": "QUEST_STATE_NONE"
+					},
+					{
+						"type": "QUEST_COND_GCG_WORLD_CHALLENGE_RESULT",
+						"rawParams": [
+							"-1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Prens"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706660301,
+					"content": "Miyav... (Bu sefer şanssızdın... Bir dahakine daha dikkatli ol, hatta belki bir sonraki denemenden önce destende birkaç değişiklik yapabilirsin.)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706660302
+					],
+					"speakerTitle": "Prens"
+				},
+				{
+					"id": 706660302,
+					"content": "(Bu mücadeleyi tamamlayabileceğine inanıyorum.)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Prens"
+				}
+			]
+		}
+	]
+}

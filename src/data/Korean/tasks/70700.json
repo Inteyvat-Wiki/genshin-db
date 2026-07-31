@@ -1,0 +1,176 @@
+{
+	"id": 70700,
+	"type": "WQ",
+	"name": "헬렌의 목관리 특효차",
+	"description": "몬드성의 헬렌은 달콤달콤꽃이 10송이 필요하다",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "헬렌에게 달콤달콤꽃 10송이 건네기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070001,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070002,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "헬렌과 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070002,
+						0
+					],
+					"talkId": 7070002
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070001,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070001",
+							"2"
+						],
+						"stepId": 7070001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070001"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"헬렌"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707000101,
+					"content": "달콤달콤꽃에 대해…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707000102
+					]
+				},
+				{
+					"id": 707000102,
+					"content": "내 의뢰를 본 거야? 드디어 날 도울 사람이 생기다니, 다행이야….",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707000103
+					],
+					"speakerTitle": "헬렌"
+				},
+				{
+					"id": 707000103,
+					"content": "달콤달콤꽃 10송이 모아왔니?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707000104,
+						707000105
+					],
+					"speakerTitle": "헬렌"
+				},
+				{
+					"id": 707000104,
+					"content": "모아왔어요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707000105,
+					"content": "아직이요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707000106
+					]
+				},
+				{
+					"id": 707000106,
+					"content": "그래… 다 모으면 빨리 좀 갖다줘. 목이 점점 더 아파….",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "헬렌"
+				}
+			]
+		},
+		{
+			"id": 7070002,
+			"completionStepIds": [
+				7070002
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070002",
+							"2"
+						],
+						"stepId": 7070002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"헬렌"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707000201,
+					"content": "좋았어, 도와줘서 고마워. 이걸 받아줘",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707000202
+					],
+					"speakerTitle": "헬렌"
+				},
+				{
+					"id": 707000202,
+					"content": "좀 이따 차로 끓여서 좀 마셔야겠어. 목이 좀 나으면 좋겠네…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "헬렌"
+				}
+			]
+		}
+	]
+}

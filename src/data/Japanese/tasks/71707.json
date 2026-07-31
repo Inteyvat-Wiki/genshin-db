@@ -1,0 +1,167 @@
+{
+	"id": 71707,
+	"type": "WQ",
+	"name": "言笑の食材のリクエスト",
+	"description": "望舒旅館の言笑はベーコンを2つ必要としている。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "ベーコンを言笑に2つ渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170701,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "言笑と会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170702,
+						0
+					],
+					"talkId": 7170702
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170701",
+							"2"
+						],
+						"stepId": 7170701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170701"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"言笑"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717070101,
+					"content": "ベーコンについて…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717070102
+					]
+				},
+				{
+					"id": 717070102,
+					"content": "うん、俺の依頼だ。ベーコンを2つ持って来てくれたか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717070103,
+						717070104
+					],
+					"speakerTitle": "言笑"
+				},
+				{
+					"id": 717070103,
+					"content": "準備できた。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717070104,
+					"content": "まだ…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717070105
+					]
+				},
+				{
+					"id": 717070105,
+					"content": "用意ができたらすぐに持って来てくれ。はあ、あのただ飯食い野郎が俺を待ってるんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "言笑"
+				}
+			]
+		},
+		{
+			"id": 7170702,
+			"completionStepIds": [
+				7170702
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170702",
+							"2"
+						],
+						"stepId": 7170702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"言笑"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717070201,
+					"content": "うん…これだけあれば足りるだろう。あのただ飯食い野郎もそんなに食べないはずだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717070202
+					],
+					"speakerTitle": "言笑"
+				},
+				{
+					"id": 717070202,
+					"content": "おっと、そうだった。報酬だ、受け取れ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "言笑"
+				}
+			]
+		}
+	]
+}

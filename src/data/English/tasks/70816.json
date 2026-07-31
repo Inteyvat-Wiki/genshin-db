@@ -1,0 +1,234 @@
+{
+	"id": 70816,
+	"type": "WQ",
+	"name": "Solo Venture",
+	"description": "While investigating the movements of monsters at the Thousand Winds Temple, Jack was discovered due to his recklessness and attacked. Jack somehow made it back to Mondstadt, but he seems to have left something important behind at the Temple...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		372
+	],
+	"steps": [
+		{
+			"id": 7081601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Jack",
+			"finishConditions": []
+		},
+		{
+			"id": 7081602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to the Thousand Winds Temple and look for Jack's lost items",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						7081601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7081603,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to the Thousand Winds Temple and look for Jack's lost items",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						7081601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7081604,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7081602,
+						3
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7081603,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7081605,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7081604,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7081606,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Report back to Jack",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7081603,
+						0
+					],
+					"talkId": 7081603
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7081602,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081605",
+							"2"
+						],
+						"stepId": 7081605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708160201,
+					"content": "I need to be more cautious in the future.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708160202
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 708160202,
+					"content": "But not too careful, because... *sigh*",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				}
+			]
+		},
+		{
+			"id": 7081603,
+			"completionStepIds": [
+				7081606
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7081606",
+							"2"
+						],
+						"stepId": 7081606,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708160301,
+					"content": "Did you manage to find them?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708160302
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 708160302,
+					"content": "Got them right here.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708160303
+					]
+				},
+				{
+					"id": 708160303,
+					"content": "Whew, that's a relief. I've always been using this map, so I've put down a lot of markings onto it. Losing it would have been a disaster.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708160304
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 708160304,
+					"content": "And if I had really lost my handbook, I don't know how I would have asked Katheryne for a new one.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708160305
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 708160305,
+					"content": "I mean, what a joke, for an adventurer to lose their handbook during an adventure...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708160306
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 708160306,
+					"content": "Thanks, I'll keep these things close from now on. Please take these as a token of my appreciation.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				}
+			]
+		}
+	]
+}

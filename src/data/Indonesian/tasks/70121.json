@@ -1,0 +1,223 @@
+{
+	"id": 70121,
+	"type": "WQ",
+	"name": "Negeri yang Tertutup Salju",
+	"description": "Di pegunungan yang tertutup salju, kamu menemukan sebuah jurnal aneh yang sepertinya mencatat rahasia suatu kerajaan. Mungkin seseorang di kemah mengetahui petunjuk yang berhubungan dengannya...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7012101,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100693,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100645,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100692,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7012102,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7012101,
+						0
+					],
+					"talkId": 7012101
+				}
+			]
+		},
+		{
+			"id": 7012103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Tanyakan para peneliti tentang petunjuk yang berhubungan dengan jurnal",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7012102,
+						0
+					],
+					"talkId": 7012102
+				}
+			]
+		},
+		{
+			"id": 7012104,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100692,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100693,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100645,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7012105,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Pergi ke perkemahan di puncak untuk mencari jurnal",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100693,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7012106,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Pergi ke Ruang Rahasia untuk menemukan jurnal",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100645,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7012107,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Berikan jurnal yang terkumpul kepada Stevens",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7012103,
+						0
+					],
+					"talkId": 7012103
+				}
+			]
+		},
+		{
+			"id": 7012109,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Pergi ke barat daya ruang bawah tanah reruntuhan untuk mencari jurnal",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100692,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7012101,
+			"completionStepIds": [
+				7012102
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7012102",
+							"2"
+						],
+						"stepId": 7012102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paimon"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 701210101,
+					"content": "Eh? Apa ini? Sebuah jurnal?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701210102
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 701210102,
+					"content": "Sepertinya ini adalah jurnal yang ditinggalkan oleh orang yang pernah datang ke sini sebelumnya...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						701210103
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 701210103,
+					"content": "#{NICKNAME}, mungkin saja ada orang yang tertarik tentang buku catatan sejarah ini, ayo kita tanyakan ke peneliti di perkemahan.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		}
+	]
+}

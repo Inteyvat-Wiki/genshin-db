@@ -1,0 +1,1055 @@
+{
+	"id": 71802,
+	"type": "WQ",
+	"name": "Un'offerta agli Adepti",
+	"description": "Trovi le tracce di un Adeptus in cima al Monte Aocang...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		1016,
+		1009
+	],
+	"steps": [
+		{
+			"id": 7180201,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Offri la zuppa di gemme deliziosa",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						1103509,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 7180203,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Raggiungi la dimora dell'Adepta e cerca i progetti",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100583,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180204,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Consegna i progetti a Vestale delle nuvole",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180205,
+						0
+					],
+					"talkId": 7180205
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180212,
+						0
+					],
+					"talkId": 7180212
+				}
+			]
+		},
+		{
+			"id": 7180205,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		},
+		{
+			"id": 7180206,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Disponi i progetti di fronte a Vestale delle nuvole",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180202,
+						0
+					],
+					"talkId": 7180202
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180213,
+						0
+					],
+					"talkId": 7180213
+				}
+			]
+		},
+		{
+			"id": 7180207,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fai visita a Vestale delle nuvole",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180203,
+						0
+					],
+					"talkId": 7180203
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180210,
+						0
+					],
+					"talkId": 7180210
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7180202,
+			"completionStepIds": [
+				7180206
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180206",
+							"2"
+						],
+						"stepId": 7180206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Vestale delle nuvole"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718020201,
+					"content": "Questi sono invero i progetti della Dimora celeste di costei. Bene, molto bene.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020202
+					],
+					"speakerTitle": "Vestale delle nuvole"
+				},
+				{
+					"id": 718020202,
+					"content": "Non hai ancora detto che cosa...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020203
+					]
+				},
+				{
+					"id": 718020203,
+					"content": "Davvero hai altre domande da porre a costei? *sospira* E sia, considerando che è stata compiuta un'offerta...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020204
+					],
+					"speakerTitle": "Vestale delle nuvole"
+				},
+				{
+					"id": 718020204,
+					"content": "A costei sono giunte voci di una certa Dimora di giada, sospesa nel cielo sopra Liyue ed eretta dai mortali.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020205
+					],
+					"speakerTitle": "Vestale delle nuvole"
+				},
+				{
+					"id": 718020205,
+					"content": "Sembra che i mortali badino alle dimensioni più d'ogni altra cosa, e che su tal base abbiano dichiarato che tale dimora non ha eguali nel mondo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020206
+					],
+					"speakerTitle": "Vestale delle nuvole"
+				},
+				{
+					"id": 718020206,
+					"content": "Umpf! Tali sono i limiti della comprensione degli umani, che li rendono incapaci di concepire l'ingegno degli Adepti.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020207
+					],
+					"speakerTitle": "Vestale delle nuvole"
+				},
+				{
+					"id": 718020207,
+					"content": "Altro che Dimora di giada! Una minima occhiata al più banale dei capolavori meccanici di costei la rivelerebbe per quel che è veramente: un'opera del tutto futile e noiosa...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020208
+					],
+					"speakerTitle": "Vestale delle nuvole"
+				},
+				{
+					"id": 718020208,
+					"content": "Non sai proprio perdere...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020209
+					]
+				},
+				{
+					"id": 718020209,
+					"content": "Fandonie! Costei non è una perdente né difetta di conoscenze... Costei non prova che pena per quegli sciocchi mortali! Ciechi all'ingegno degli Adepti, abbagliati dagli artifici più primitivi...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020210
+					],
+					"speakerTitle": "Vestale delle nuvole"
+				},
+				{
+					"id": 718020210,
+					"content": "Costei teme che i progressi della meccanica degli umani prenderanno una piega infelice. Spetta a costei indicare loro il cammino glorioso.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020211
+					],
+					"speakerTitle": "Vestale delle nuvole"
+				},
+				{
+					"id": 718020211,
+					"content": "La questione è conclusa. Ora lascia tosto questo luogo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Vestale delle nuvole"
+				}
+			]
+		},
+		{
+			"id": 7180203,
+			"completionStepIds": [
+				7180207
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180207",
+							"2"
+						],
+						"stepId": 7180207,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718020301,
+					"content": "Dichiara senza indugio le tue intenzioni! Bada a non sprecare il prezioso tempo di costei, ché ha una miriade d'incombenze ad attenderla!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020302
+					],
+					"speakerTitle": "Visita la dimora dell'Adeptus"
+				},
+				{
+					"id": 718020302,
+					"content": "Volevo solo sapere come stai...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020303
+					]
+				},
+				{
+					"id": 718020303,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020304
+					],
+					"speakerTitle": "Visita la dimora dell'Adeptus"
+				},
+				{
+					"id": 718020304,
+					"content": "Una cosa mai sentita, invero... Sei qui perché ti curi del benessere di costei e non per soddisfare un tuo desiderio?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020305
+					],
+					"speakerTitle": "Visita la dimora dell'Adeptus"
+				},
+				{
+					"id": 718020305,
+					"content": "E sia! La mente dei mortali opera in modi misteriosi... che non sempre vale la pena di esplorare.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020306
+					],
+					"speakerTitle": "Visita la dimora dell'Adeptus"
+				},
+				{
+					"id": 718020306,
+					"content": "Data la tua palese inattività del momento... avresti tempo per un piccolo favore?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020307
+					],
+					"speakerTitle": "Visita la dimora dell'Adeptus"
+				},
+				{
+					"id": 718020307,
+					"content": "Tempo addietro, in seguito a una modesta illuminazione durante i miei studi di meccanica, costei ha edificato per sé una Dimora celeste sospesa nell'aria.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020308
+					],
+					"speakerTitle": "Visita la dimora dell'Adeptus"
+				},
+				{
+					"id": 718020308,
+					"content": "Tale Dimora celeste era costituita principalmente da Plaustrite e poggiava su una moltitudine di ulteriori invenzioni brillanti... In verità, l'invenzione più sbalorditiva era... Non importa, non potresti capirlo nemmeno qualora lo spiegassi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020309
+					],
+					"speakerTitle": "Visita la dimora dell'Adeptus"
+				},
+				{
+					"id": 718020309,
+					"content": "Una volta ultimata la Dimora celeste, i progetti rimasero in loco.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020310
+					],
+					"speakerTitle": "Visita la dimora dell'Adeptus"
+				},
+				{
+					"id": 718020310,
+					"content": "Costei vi appose un sigillo, figurandosi che una persona dall'indubbia affinità con l'architettura sarebbe riuscita a ottenerli. Tuttavia, ad oggi, il sigillo permane.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020311
+					],
+					"speakerTitle": "Visita la dimora dell'Adeptus"
+				},
+				{
+					"id": 718020311,
+					"content": "Oramai, avere i progetti custoditi lassù non è altro che un inutile fastidio. Pertanto costei ti chiede se potresti recuperarli dalla Dimora celeste.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020312,
+						718020314
+					],
+					"speakerTitle": "Visita la dimora dell'Adeptus"
+				},
+				{
+					"id": 718020312,
+					"content": "Certo!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020313
+					]
+				},
+				{
+					"id": 718020313,
+					"content": "Quanto entusiasmo. Non indugiare, dunque: recapitali presso la residenza di costei quando li avrai trovati. È lì che costei ti aspetterà.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Visita la dimora dell'Adeptus"
+				},
+				{
+					"id": 718020314,
+					"content": "Che cosa ne farai?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718020315
+					]
+				},
+				{
+					"id": 718020315,
+					"content": "Ovviamente, costei ha le sue ragioni. Ma non avere la presunzione di poter comprendere un'idea concepita dalla mente di un'Adepta.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020316
+					],
+					"speakerTitle": "Visita la dimora dell'Adeptus"
+				},
+				{
+					"id": 718020316,
+					"content": "Non indugiare oltre: recapitali presso la residenza di costei quando li avrai trovati. È lì che costei ti aspetterà.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Visita la dimora dell'Adeptus"
+				}
+			]
+		},
+		{
+			"id": 7180204,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180203",
+							"2"
+						],
+						"stepId": 7180203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718020401,
+					"content": "Non avete ancora preso possesso dei progetti? Ma sono proprio lì, nella Dimora celeste...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020402
+					],
+					"speakerTitle": "Visita la dimora dell'Adeptus"
+				},
+				{
+					"id": 718020402,
+					"content": "Uff, come fa a sapere che non li abbiamo ancora presi?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718020403
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718020403,
+					"content": "Quei progetti sono frutto dell'ingegno di costei. Non dovrebbe percepirli, se fossero già al suo cospetto? Recuperateli immantinente!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Visita la dimora dell'Adeptus"
+				}
+			]
+		},
+		{
+			"id": 7180205,
+			"completionStepIds": [
+				7180204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180204",
+							"2"
+						],
+						"stepId": 7180204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718020501,
+					"content": "Costei vede che hai ottenuto i progetti. Non gingillarti, consegnali tosto!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Visita la dimora dell'Adeptus"
+				}
+			]
+		},
+		{
+			"id": 7180210,
+			"completionStepIds": [
+				7180207
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180207",
+							"2"
+						],
+						"stepId": 7180207,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1103509",
+							"3"
+						],
+						"stepId": 1103509,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718021001,
+					"content": "Trovare gli Adepti a Jueyun non è un'impresa facile. Eppure, hai deciso di presentarti comunque...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021002
+					],
+					"speakerTitle": "Visita la dimora dell'Adeptus",
+					"speakerSubtitle": "Voce leggermente distorta?"
+				},
+				{
+					"id": 718021002,
+					"content": "#P-Porca pupazza! È già andata al Porto di Liyue? È tornata qui di soppiatto mentre eravamo {F#distratte}{M#distratti}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021003
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021003,
+					"content": "La sua voce... ha qualcosa di strano.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021004
+					]
+				},
+				{
+					"id": 718021004,
+					"content": "Ah, beh... Temevamo che qualcuno avrebbe rubato qualcosa a casa tua. Non era nostra intenzione disturbarti.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021005
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021005,
+					"content": "...Costei avrebbe un compito da affidarvi. Se lo porterete a termine, avrete libero accesso alla sua dimora.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021006,
+						718021007
+					],
+					"speakerTitle": "Visita la dimora dell'Adeptus",
+					"speakerSubtitle": "Voce leggermente distorta?"
+				},
+				{
+					"id": 718021006,
+					"content": "Sembra stia parlando da sola, ormai...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021008
+					]
+				},
+				{
+					"id": 718021008,
+					"content": "Ehm, stai dicendo che non è davvero lei che parla, ma una specie di macchinario che si è lasciata dietro?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021009
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021009,
+					"content": "Ere addietro, in seguito a una modesta illuminazione durante i suoi studi di meccanica, costei edificò per sé una Dimora celeste sospesa nell'aria.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021010
+					],
+					"speakerTitle": "Visita la dimora dell'Adeptus",
+					"speakerSubtitle": "Voce leggermente distorta?"
+				},
+				{
+					"id": 718021010,
+					"content": "Quando la Dimora fu completata, costei rifletté su quanto fosse raro poter incontrare un Adeptus, e ivi lasciò un progetto affinché qualcuno lo trovasse.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021011
+					],
+					"speakerTitle": "Visita la dimora dell'Adeptus",
+					"speakerSubtitle": "Voce leggermente distorta?"
+				},
+				{
+					"id": 718021011,
+					"content": "Prima di poter entrare nella dimora di costei, recuperate il progetto. Quando lo avrete fatto, potremo parlare ancora.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021012
+					],
+					"speakerTitle": "Visita la dimora dell'Adeptus",
+					"speakerSubtitle": "Voce leggermente distorta?"
+				},
+				{
+					"id": 718021012,
+					"content": "Ehm, nobile Adepta?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021013
+					]
+				},
+				{
+					"id": 718021013,
+					"content": "Vestale delle nuvole? Xian... ehm... Nobile Xianyun?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021014
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021014,
+					"content": "Recuperate il progetto e completate il compito che vi è stato assegnato. Quando lo avrete fatto, potremo parlare ancora.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021015
+					],
+					"speakerTitle": "Visita la dimora dell'Adeptus",
+					"speakerSubtitle": "Voce leggermente distorta?"
+				},
+				{
+					"id": 718021015,
+					"content": "Continua a parlare da sola e non ci considera minimamente, eh?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021016,
+						718021017
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021016,
+					"content": "È sicuramente una macchina.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021018
+					]
+				},
+				{
+					"id": 718021018,
+					"content": "Ma di solito le guardie meccaniche non sono più... aggressive?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021019,
+						718021020
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021019,
+					"content": "Immagino che voglia andarci piano.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021021
+					]
+				},
+				{
+					"id": 718021021,
+					"content": "Beh, perché non andiamo a prenderlo, allora? Poi torniamo qui e diamo un'occhiata all'interno.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021022
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021022,
+					"content": "Hihi, Paimon vuole proprio sapere che tipo di macchina ha lasciato là dentro.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021020,
+					"content": "#Sono un po' {F#preoccupata}{M#preoccupato} per quel progetto...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021021
+					]
+				},
+				{
+					"id": 718021017,
+					"content": "Ha iniziato a ripetere sempre la stessa cosa...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021018
+					]
+				},
+				{
+					"id": 718021007,
+					"content": "Mi chiedo se la voce non provenga da un qualche dispositivo...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021008
+					]
+				}
+			]
+		},
+		{
+			"id": 7180211,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180203",
+							"2"
+						],
+						"stepId": 7180203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1103509",
+							"3"
+						],
+						"stepId": 1103509,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718021101,
+					"content": "Ere addietro, in seguito a una modesta illuminazione durante i suoi studi di meccanica, costei edificò per sé una Dimora celeste sospesa nell'aria.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021102
+					],
+					"speakerTitle": "Visita la dimora dell'Adeptus",
+					"speakerSubtitle": "Voce leggermente distorta?"
+				},
+				{
+					"id": 718021102,
+					"content": "Quando la Dimora fu completata, costei rifletté su quanto fosse raro poter incontrare un Adeptus, e ivi lasciò un progetto affinché qualcuno lo trovasse.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021103
+					],
+					"speakerTitle": "Visita la dimora dell'Adeptus",
+					"speakerSubtitle": "Voce leggermente distorta?"
+				},
+				{
+					"id": 718021103,
+					"content": "Prima di poter entrare nella dimora di costei, recuperate il progetto. Quando lo avrete fatto, potremo parlare ancora.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Visita la dimora dell'Adeptus",
+					"speakerSubtitle": "Voce leggermente distorta?"
+				}
+			]
+		},
+		{
+			"id": 7180212,
+			"completionStepIds": [
+				7180204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180204",
+							"2"
+						],
+						"stepId": 7180204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1103509",
+							"3"
+						],
+						"stepId": 1103509,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718021201,
+					"content": "Il progetto è stato recuperato, su di voi è disceso il fato adeptico. Fatevi avanti per ricevere udienza.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Visita la dimora dell'Adeptus",
+					"speakerSubtitle": "Voce leggermente distorta?"
+				}
+			]
+		},
+		{
+			"id": 7180213,
+			"completionStepIds": [
+				7180206
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180206",
+							"2"
+						],
+						"stepId": 7180206,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1103509",
+							"3"
+						],
+						"stepId": 1103509,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718021301,
+					"content": "Ehm, ma che...? È un tavolo... con sopra una semplice scatola!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021302,
+						718021303
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021302,
+					"content": "È un tavolo adeptico.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021304
+					]
+				},
+				{
+					"id": 718021304,
+					"content": "#Siete {F#giunte}{M#giunti} in questo loco, e costei sa già cosa cercate...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021305
+					],
+					"speakerTitle": "Vestale delle nuvole...?"
+				},
+				{
+					"id": 718021305,
+					"content": "Oh, ha ripreso a parlare!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021306
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021306,
+					"content": "Componete il vostro desiderio e riponetelo nel baule. Sarà costei a prendere la decisione finale.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021307
+					],
+					"speakerTitle": "Vestale delle nuvole...?"
+				},
+				{
+					"id": 718021307,
+					"content": "Avete affrontato mille perigli con cuore intrepido, il vostro è un dono assai raro. Pertanto, questi tesori vi spettano di diritto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021308
+					],
+					"speakerTitle": "Vestale delle nuvole...?"
+				},
+				{
+					"id": 718021308,
+					"content": "#Evvai!! Hihi, Paimon sapeva che non ci avresti {F#fatto andare}{M#fatti andare} via a mani vuote!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021309
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021309,
+					"content": "La voce ha detto: \"Componete il vostro desiderio e riponetelo nel baule\". Significa che dobbiamo scrivere il desiderio su un foglio e metterlo nella scatola?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021310,
+						718021311
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021310,
+					"content": "Meglio pensare a qualcosa che sia degno di un Adeptus...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021312
+					]
+				},
+				{
+					"id": 718021312,
+					"content": "Sì, è vero. Tanto vale... andare direttamente da Xianyun, se ci viene in mente qualcosa, hihi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021313
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021313,
+					"content": "Quindi lasciamo qui i progetti e ce ne andiamo, ok?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021314
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021314,
+					"content": "Certo che non c'è veramente niente, in questo posto. Probabilmente si è portata dietro tutto quanto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021315
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021315,
+					"content": "Mi chiedo cosa avesse in mente, quando ha predisposto questi dispositivi...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021316
+					]
+				},
+				{
+					"id": 718021316,
+					"content": "Paimon non ne ha idea...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718021317
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021317,
+					"content": "Ma potremmo chiederglielo la prossima volta che la vediamo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 718021311,
+					"content": "Formulare un desiderio a qualcuno che conosciamo fa un po' strano...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021312
+					]
+				},
+				{
+					"id": 718021303,
+					"content": "Con una scatola adeptica.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718021304
+					]
+				}
+			]
+		}
+	]
+}

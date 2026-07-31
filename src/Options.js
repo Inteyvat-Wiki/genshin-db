@@ -7,6 +7,8 @@ class Options {
      * 
      * @param {boolean} dumpResult - If true, returns additional data such as the query, folder, what matched, the options, and the filename. The results of the search is found in the 'result' property. 
      * @param {boolean} matchNames - Allows autocomplete matching of data names.
+     * @param {boolean} matchFilenames - Allows autocomplete matching of data filenames.
+     * @param {boolean} matchFilenameOnly - Allows autocomplete matching of data filenames only.
      * @param {boolean} matchAltNames - Allows autocomplete matching of alternate or custom names.
      * @param {boolean} matchAliases - Allows autocomplete matching of data-defined aliases.
      * @param {boolean} matchCategories - Allows autocomplete matching of categories. If true, returns an array of the categories that matched.
@@ -19,6 +21,8 @@ class Options {
      */
     constructor(dumpResult=undefined,
                 matchNames=undefined,
+                matchFilenames=undefined,
+                matchFilenameOnly=undefined,
                 matchAltNames=undefined,
                 matchAliases=undefined,
                 matchCategories=undefined,
@@ -30,6 +34,8 @@ class Options {
                 matchExactOnly=undefined) {
         this.dumpResult = dumpResult;
         this.matchNames = matchNames;
+        this.matchFilenames = matchFilenames;
+        this.matchFilenameOnly = matchFilenameOnly;
         this.matchAltNames = matchAltNames;
         this.matchAliases = matchAliases;
         this.matchCategories = matchCategories;

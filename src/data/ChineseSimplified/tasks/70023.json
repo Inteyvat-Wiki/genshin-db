@@ -1,0 +1,387 @@
+{
+	"id": 70023,
+	"type": "WQ",
+	"name": "互通有无？",
+	"description": "与艾拉·马斯克一同前去与丘丘人交流，或许是一段新友谊的开始…？",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5024,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7002301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "与另一个愿意交流的丘丘人对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7002301,
+						0
+					],
+					"talkId": 7002301
+				}
+			]
+		},
+		{
+			"id": 7002302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "向丘丘人交付物品",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7002303,
+						0
+					],
+					"talkId": 7002303
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7002304,
+						0
+					],
+					"talkId": 7002304
+				}
+			]
+		},
+		{
+			"id": 7002303,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "（test）成功交付$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7002303,
+						0
+					],
+					"talkId": 7002303
+				}
+			]
+		},
+		{
+			"id": 7002304,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "（test）失败交付回滚$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7002304,
+						0
+					],
+					"talkId": 7002304
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7002301,
+			"completionStepIds": [
+				7002301
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7002301",
+							"2"
+						],
+						"stepId": 7002301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"丘丘人",
+					"艾拉·马斯克"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700230101,
+					"content": "Ya!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700230102
+					],
+					"speakerTitle": "丘丘人"
+				},
+				{
+					"id": 700230102,
+					"content": "Mimi ika yaya nye! Mimi tomo, mimi mani ye.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700230103
+					],
+					"speakerTitle": "艾拉·马斯克"
+				},
+				{
+					"id": 700230103,
+					"content": "Mani. Mi muhe mani. Unu du mani! Hahahahaha.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700230104
+					],
+					"speakerTitle": "丘丘人"
+				},
+				{
+					"id": 700230104,
+					"content": "这家伙讲了一个丘丘人语言的笑话，把自己乐到了。它们精神太贫瘠了，看着真可怜。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700230105
+					],
+					"speakerTitle": "艾拉·马斯克"
+				},
+				{
+					"id": 700230105,
+					"content": "Mi muhe <color=#00E1FFFF>kucha gusha</color>. Kucha gusha dada. Unu gusha dada!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700230106
+					],
+					"speakerTitle": "丘丘人"
+				},
+				{
+					"id": 700230106,
+					"content": "它想要…唔…不管了，只要查看我的手册就能找到的！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "艾拉·马斯克"
+				}
+			]
+		},
+		{
+			"id": 7002302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7002302",
+							"2"
+						],
+						"stepId": 7002302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7001902"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"丘丘人"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700230201,
+					"content": "Mi muhe unu boya gusha.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700230202
+					],
+					"speakerTitle": "丘丘人"
+				},
+				{
+					"id": 700230202,
+					"content": "（是这个吗？）",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7002303,
+			"completionStepIds": [
+				7002302,
+				7002303
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7002303",
+							"2"
+						],
+						"stepId": 7002303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"丘丘人",
+					"派蒙"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700230308,
+					"content": "Hola！丘丘人语言的「你好」是这样说的吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700230309
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 700230309,
+					"content": "它好像要告诉我们关于那个奇怪的丘丘人的情报呢。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700230301
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 700230301,
+					"content": "Yeye dada! Mosi mita!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700230302
+					],
+					"speakerTitle": "丘丘人"
+				},
+				{
+					"id": 700230302,
+					"content": "Hahahaha, kucha gusha unu gusha. Unu kucha si!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700230303
+					],
+					"speakerTitle": "丘丘人"
+				},
+				{
+					"id": 700230303,
+					"content": "Wei? Odomu tomo zido mi! <color=#00E1FFFF>Mosi aba nunu</color>！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700230304
+					],
+					"speakerTitle": "丘丘人"
+				},
+				{
+					"id": 700230305,
+					"content": "Mosi mita dada!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						700230307
+					]
+				},
+				{
+					"id": 700230306,
+					"content": "Tomo, valo!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						700230307
+					]
+				},
+				{
+					"id": 700230304,
+					"content": "<color=#00E1FFFF>Mosi aba nunu</color>…手册上有写这句话的含义吗…？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700230305,
+						700230306
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 700230307,
+					"content": "Valo, mi tomo!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "丘丘人"
+				}
+			]
+		},
+		{
+			"id": 7002304,
+			"completionStepIds": [
+				7002302,
+				7002304
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7002304",
+							"2"
+						],
+						"stepId": 7002304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"丘丘人",
+					"派蒙"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700230401,
+					"content": "Nye nye nye. Kucha, gusha. Hahahaha. Kucha gusha, kucha, gusha. Hahaha.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700230402
+					],
+					"speakerTitle": "丘丘人"
+				},
+				{
+					"id": 700230402,
+					"content": "似乎不对。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700230403
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 700230403,
+					"content": "（但它笑的好开心…）",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

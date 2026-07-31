@@ -1,0 +1,176 @@
+{
+	"id": 72715,
+	"type": "WQ",
+	"name": "Kanras Gedanken",
+	"description": "Kanra von der Insel Narukami möchte 5 Sakura-Blüten haben.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7271501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Gib Kanra fünf Sakura-Blüten.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7271501,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7271502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Kanra.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7271502,
+						0
+					],
+					"talkId": 7271502
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7271501,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271501",
+							"2"
+						],
+						"stepId": 7271501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7271501"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kanra"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727150101,
+					"content": "Suchst du nach Sakura-Blüten?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727150102
+					]
+				},
+				{
+					"id": 727150102,
+					"content": "Du hast meinen Auftrag gesehen? Konntest du mir 5 Sakura-Blüten besorgen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727150105,
+						727150103
+					],
+					"speakerTitle": "Kanra"
+				},
+				{
+					"id": 727150105,
+					"content": "Hier sind sie.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 727150103,
+					"content": "Noch nicht.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727150104
+					]
+				},
+				{
+					"id": 727150104,
+					"content": "Gut. Du weißt ja, wo du mich findest, wenn du sie hast.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kanra"
+				}
+			]
+		},
+		{
+			"id": 7271502,
+			"completionStepIds": [
+				7271502
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271502",
+							"2"
+						],
+						"stepId": 7271502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kanra"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727150201,
+					"content": "Ich danke dir. Seit der Mann, den ich liebe, in den Krieg gezogen ist, habe ich nichts mehr von ihm gehört ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727150202
+					],
+					"speakerTitle": "Kanra"
+				},
+				{
+					"id": 727150202,
+					"content": "Es vergeht kein Tag, an dem ich mir keine Sorgen um ihn mache. Der Anblick der Blüten der Heiligen Sakura beruhigt mich ein wenig.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727150203
+					],
+					"speakerTitle": "Kanra"
+				},
+				{
+					"id": 727150203,
+					"content": "Er schwor mir nämlich bei der Heiligen Sakura, dass er heil zurückkehren würde.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kanra"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,334 @@
+{
+	"id": 70006,
+	"type": "WQ",
+	"name": "Mutual Exchange",
+	"description": "You go with Ella Musk to communicate with the hilichurls. Perhaps this might be the start of a new friendship...?",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5024,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70020
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7000601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to the hilichurl",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7000601,
+						0
+					],
+					"talkId": 7000601
+				}
+			]
+		},
+		{
+			"id": 7000602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Give an item to the hilichurl",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7000603,
+						0
+					],
+					"talkId": 7000603
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7000604,
+						0
+					],
+					"talkId": 7000604
+				}
+			]
+		},
+		{
+			"id": 7000603,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7000603,
+						0
+					],
+					"talkId": 7000603
+				}
+			]
+		},
+		{
+			"id": 7000604,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7000604,
+						0
+					],
+					"talkId": 7000604
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7000601,
+			"completionStepIds": [
+				7000601
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7000601",
+							"2"
+						],
+						"stepId": 7000601,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hilichurl",
+					"Ella Musk"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700060102,
+					"content": "Mi muhe mosi! Mi muhe mita, <color=#00E1FFFF>mita movo lata</color>!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700060103
+					],
+					"speakerTitle": "Hilichurl"
+				},
+				{
+					"id": 700060103,
+					"content": "Oh, it's hungry... Let's see what it wants, shall we?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700060104
+					],
+					"speakerTitle": "Ella Musk"
+				},
+				{
+					"id": 700060104,
+					"content": "It appears to want... some sort of meat? But I'm not sure what, exactly, so could you please check the handbook?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ella Musk"
+				}
+			]
+		},
+		{
+			"id": 7000602,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7000602",
+							"2"
+						],
+						"stepId": 7000602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7000602"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hilichurl"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700060201,
+					"content": "Mani mi <color=#00E1FFFF>mita movo lata</color>!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700060202
+					],
+					"speakerTitle": "Hilichurl"
+				},
+				{
+					"id": 700060202,
+					"content": "(Is it this one?)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7000603,
+			"completionStepIds": [
+				7000602,
+				7000603
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7000603",
+							"2"
+						],
+						"stepId": 7000603,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hilichurl",
+					"Ella Musk"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700060301,
+					"content": "Yeye tomo! Mosi mita!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700060302
+					],
+					"speakerTitle": "Hilichurl"
+				},
+				{
+					"id": 700060302,
+					"content": "Mosi mita!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						700060303
+					]
+				},
+				{
+					"id": 700060303,
+					"content": "Success!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700060304
+					],
+					"speakerTitle": "Ella Musk"
+				},
+				{
+					"id": 700060304,
+					"content": "Du odomu tomo dala?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700060305
+					],
+					"speakerTitle": "Ella Musk"
+				},
+				{
+					"id": 700060305,
+					"content": "Mi mito nye. Ya zido mito, mi mito! Mi zido!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700060306
+					],
+					"speakerTitle": "Hilichurl"
+				},
+				{
+					"id": 700060306,
+					"content": "It said... it also doesn't know, but it knows someone else who knows. And it marked their location on the Map for us!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700060307
+					],
+					"speakerTitle": "Ella Musk"
+				},
+				{
+					"id": 700060307,
+					"content": "So let's find them!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ella Musk"
+				}
+			]
+		},
+		{
+			"id": 7000604,
+			"completionStepIds": [
+				7000602,
+				7000604
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7000604",
+							"2"
+						],
+						"stepId": 7000604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Hilichurl"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 700060401,
+					"content": "Gusha! Mani nye!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						700060402
+					],
+					"speakerTitle": "Hilichurl"
+				},
+				{
+					"id": 700060402,
+					"content": "I think we got it wrong...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

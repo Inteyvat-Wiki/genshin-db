@@ -1,0 +1,906 @@
+{
+	"id": 21034,
+	"type": "IQ",
+	"name": "Где же Скрытый клинок?",
+	"description": "Кажется, мисс Лань передумала искать Скрытый клинок.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2103401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с мисс Лань",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2103402,
+						0
+					],
+					"talkId": 2103402
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2103403,
+						0
+					],
+					"talkId": 2103403
+				}
+			]
+		},
+		{
+			"id": 2103402,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Победите всех врагов",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2103403,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Победите всех врагов",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2103404,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с мисс Лань",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2103405,
+						0
+					],
+					"talkId": 2103405
+				}
+			]
+		},
+		{
+			"id": 2103405,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с мисс Лань",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2103406,
+						0
+					],
+					"talkId": 2103406
+				}
+			]
+		},
+		{
+			"id": 2103406,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2103402,
+						0
+					],
+					"talkId": 2103402
+				}
+			]
+		},
+		{
+			"id": 2103407,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2103403,
+						0
+					],
+					"talkId": 2103403
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2103401,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2103401",
+							"2"
+						],
+						"stepId": 2103401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"2103401",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мисс Лань"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210340101,
+					"content": "Хм, наверное, он здесь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340102,
+						210340103
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340102,
+					"content": "Мисс Лань?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210340104
+					]
+				},
+				{
+					"id": 210340104,
+					"content": "#Путешественни{F#ца}{M#к}, не ожидала тебя здесь встретить...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340105
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340105,
+					"content": "#Помнишь рукоять меча, которую ты для меня отыскал{F#а}? Оказалось, когда-то она действительно была частью Скрытого клинка.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340106
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340106,
+					"content": "Забавно - я смогла опознать её по метке, которую сама же украдкой вырезала, когда была маленькой...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340107
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340107,
+					"content": "Я тогда просила брата, чтобы он отдал мне Скрытый клинок, если решит взять себе новый меч.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340108
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340108,
+					"content": "Ха-ха, мы и подумать не могли... что от Скрытого клинка мне достанется одна рукоять. Получается... Скрытый клинок и правда превратился в обломки.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340109
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340109,
+					"content": "Ладно, не будем об этом. Раз уж мы встретились, хочу попросить тебя ещё об одном одолжении.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340110
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340110,
+					"content": "Впереди находятся два лагеря монстров. Эти монстры собрали в округе немало сломанного оружия и оттащили его к себе в логово. Не знаю, зачем оно им понадобилось.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340111
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340111,
+					"content": "Гильдия искателей приключений решила очистить окрестности от монстров. Эта задача должна была стать очередным поручением Гильдии, но я решила, что не хочу им делиться. Быть может, здесь меня ждут осколки Скрытого клинка...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340112
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340112,
+					"content": "#Путешественни{F#ца}{M#к}, давай разделимся, и каждый пойдёт зачищать свой лагерь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340113
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340113,
+					"content": "В лагере слева засела толпа хиличурлов. С одним хиличурлом ты справишься без труда...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340114
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340114,
+					"content": "Но там их очень и очень много. Если они накинутся на тебя целой толпой, придётся постараться...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340115
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340115,
+					"content": "Справа - лавачурл с каменным панцирем. Думаю, ты и без меня знаешь, как он опасен...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340116
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340116,
+					"content": "Я попросила тебя о помощи, так что выбор за тобой.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340103,
+					"content": "Что ты тут делаешь?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210340104
+					]
+				}
+			]
+		},
+		{
+			"id": 2103402,
+			"completionStepIds": [
+				2103401,
+				2103406
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2103401",
+							"2"
+						],
+						"stepId": 2103401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мисс Лань"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210340201,
+					"content": "Я пойду налево.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210340202
+					]
+				},
+				{
+					"id": 210340202,
+					"content": "Хорошо, тогда я пойду в другую сторону. Что ж, не будем терять времени.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Мисс Лань"
+				}
+			]
+		},
+		{
+			"id": 2103403,
+			"completionStepIds": [
+				2103401,
+				2103407
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2103401",
+							"2"
+						],
+						"stepId": 2103401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мисс Лань"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210340301,
+					"content": "Я пойду направо.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210340302
+					]
+				},
+				{
+					"id": 210340302,
+					"content": "Хорошо, тогда я пойду в другую сторону. Что ж, не будем терять времени.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Мисс Лань"
+				}
+			]
+		},
+		{
+			"id": 2103404,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2103401",
+							"3"
+						],
+						"stepId": 2103401,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2103402",
+							"2"
+						],
+						"stepId": 2103402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2103403",
+							"2"
+						],
+						"stepId": 2103403,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мисс Лань"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210340401,
+					"content": "#Как дела? Всех монстров одолел{F#а}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340402
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340402,
+					"content": "Ты что... уже расправилась со своими монстрами?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210340403
+					]
+				},
+				{
+					"id": 210340403,
+					"content": "А? Да, конечно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340404
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340404,
+					"content": "Я всё-таки глава Гильдии искателей приключений Ли Юэ. А они всего лишь кучка обычных монстров.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Мисс Лань"
+				}
+			]
+		},
+		{
+			"id": 2103405,
+			"completionStepIds": [
+				2103404
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2103404",
+							"2"
+						],
+						"stepId": 2103404,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мисс Лань"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210340501,
+					"content": "#Ну что, путешественни{F#ца}{M#к}, с монстрами в лагере покончено?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340502,
+						210340503
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340502,
+					"content": "Всё чисто.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210340504
+					]
+				},
+				{
+					"id": 210340504,
+					"content": "Всего лишь горстка обычных монстров, это было легко. И мне повезло, я нашла обломок длинного меча. Ценная находка.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340505
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340505,
+					"content": "У меня ничего нет...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210340506
+					]
+				},
+				{
+					"id": 210340506,
+					"content": "Не расстраивайся. Зато теперь я знаю, что там можно не искать. Спасибо.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340507
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340507,
+					"content": "Вот твоё вознаграждение, спасибо за работу.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340508,
+						210340509
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340508,
+					"content": "Если удастся собрать все осколки...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210340510
+					]
+				},
+				{
+					"id": 210340510,
+					"content": "Идея очень простая... Я хочу выковать новый Скрытый клинок.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340511
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340511,
+					"content": "Чертежи, в которых было описано устройство Скрытого клинка, утеряны... И я не знаю, какие материалы использовались при ковке... Но обязательно что-нибудь придумаю.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340512
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340512,
+					"content": "Если я правда смогу выковать новый Скрытый клинок, мой брат наверняка... Эх...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340509,
+					"content": "Зачем ты собираешь эти осколки?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210340510
+					]
+				},
+				{
+					"id": 210340503,
+					"content": "Как дела у тебя?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210340504
+					]
+				}
+			]
+		},
+		{
+			"id": 2103406,
+			"completionStepIds": [
+				2103405
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2103405",
+							"2"
+						],
+						"stepId": 2103405,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мисс Лань"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210340601,
+					"content": "#Ну что, путешественни{F#ца}{M#к}, с монстрами в лагере покончено?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340602,
+						210340603
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340602,
+					"content": "Всё чисто.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210340604
+					]
+				},
+				{
+					"id": 210340604,
+					"content": "Всего лишь горстка обычных монстров, это было легко... Но я не нашла там ничего интересного, просто груда металлолома...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340605
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340605,
+					"content": "А тебе удалось что-нибудь найти?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340606
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340606,
+					"content": "#Я наш{F#ла}{M#ёл} вот это.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210340607
+					]
+				},
+				{
+					"id": 210340607,
+					"content": "Гм... Это же осколок меча... Спасибо! Мне нужно его внимательно изучить.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340608
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340608,
+					"content": "#Спасибо тебе, путешественни{F#ца}{M#к}! Прими это в качестве моей благодарности.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340609,
+						210340610
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340609,
+					"content": "Если удастся собрать все осколки...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210340611
+					]
+				},
+				{
+					"id": 210340611,
+					"content": "Идея очень простая... Я хочу выковать новый Скрытый клинок.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340612
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340612,
+					"content": "Чертежи, в которых было описано устройство Скрытого клинка, утеряны... И я не знаю, какие материалы использовались при ковке... Но обязательно что-нибудь придумаю.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340613
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340613,
+					"content": "Если я правда смогу выковать новый Скрытый клинок, мой брат наверняка... Эх...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340610,
+					"content": "Зачем ты собираешь эти осколки?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210340611
+					]
+				},
+				{
+					"id": 210340603,
+					"content": "Как дела у тебя?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210340604
+					]
+				}
+			]
+		},
+		{
+			"id": 2103407,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"99902",
+							"3"
+						],
+						"stepId": 99902,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мисс Лань"
+				],
+				"points": []
+			},
+			"dialogs": []
+		},
+		{
+			"id": 2103408,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2103401",
+							"2"
+						],
+						"stepId": 2103401,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"2103401",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Мисс Лань"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 210340801,
+					"content": "Хм, наверное, он здесь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340802,
+						210340803
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340802,
+					"content": "Мисс Лань?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210340804
+					]
+				},
+				{
+					"id": 210340804,
+					"content": "#{NICKNAME}! Какая удача, что мы снова встретились!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340805
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340805,
+					"content": "Да, я снова нашла в Гильдии несколько... хе-хе, «подходящих» поручений.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340806
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340806,
+					"content": "Всё как в прошлый раз. И мне снова нужна твоя помощь, чтобы избавиться от монстров.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340807
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340807,
+					"content": "В лагере слева засела толпа хиличурлов. С одним хиличурлом ты справишься без труда...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340808
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340808,
+					"content": "Но там их очень и очень много. Если они накинутся на тебя целой толпой, придётся постараться...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340809
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340809,
+					"content": "Справа - лавачурл с каменным панцирем. Думаю, ты и без меня знаешь, как он опасен...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						210340810
+					],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340810,
+					"content": "Я попросила тебя о помощи, так что выбор за тобой.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Мисс Лань"
+				},
+				{
+					"id": 210340803,
+					"content": "Ты всё ищешь осколки своего меча?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						210340804
+					]
+				}
+			]
+		}
+	]
+}

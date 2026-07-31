@@ -1,0 +1,154 @@
+{
+	"id": 381,
+	"type": "AQ",
+	"name": "Lágrimas ocultas",
+	"description": "Hay rastros de Dvalin distribuidos por toda Mondstadt. De ellos, una de sus lágrimas se cayó en las ruinas del bosque.",
+	"unlockDescription": "",
+	"chapter": "Por un mañana sin lágrimas",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		380,
+		382,
+		383
+	],
+	"prevMainQuestList": [
+		379
+	],
+	"steps": [
+		{
+			"id": 38101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Ve a las ruinas en el bosque",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						38101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 38102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Entra en las ruinas del bosque",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_DUNGEON",
+					"rawParams": [
+						10,
+						40
+					]
+				}
+			]
+		},
+		{
+			"id": 38103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Derrota a los Guardianes de las Ruinas",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 38104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Consigue una lágrima de Dvalin",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100160,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 38105,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						38105,
+						0
+					],
+					"talkId": 38105
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 38105,
+			"completionStepIds": [
+				38105
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"38105",
+							"2"
+						],
+						"stepId": 38105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jean"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3800113,
+					"content": "¡Ya lo tenemos todo! No fue nada fácil.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3800114
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3800114,
+					"content": "Es muy temprano para relajarnos. Aún nos falta hacernos cargo de Stormterror.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3800115
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3800115,
+					"content": "Además, puede ser que los Fatui estén planeando algo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Diluc"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,167 @@
+{
+	"id": 70703,
+	"type": "WQ",
+	"name": "Nguyên liệu ủ rượu Connor cần",
+	"description": "Connor tại Tửu Trang Dawn cần 3 Hạt Bồ Công Anh.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đưa 3 Hạt Bồ Công Anh giao cho Connor",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Nói chuyện với Connor",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070302,
+						0
+					],
+					"talkId": 7070302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070301",
+							"2"
+						],
+						"stepId": 7070301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070301"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707030101,
+					"content": "Về Hạt Bồ Công Anh...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707030102
+					]
+				},
+				{
+					"id": 707030102,
+					"content": "Bạn nhìn thấy uỷ thác của tôi nhỉ, thế nào, đã tìm đủ ba phần Hạt Bồ Công Anh chưa?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707030103,
+						707030104
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707030103,
+					"content": "Tìm đủ rồi.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707030104,
+					"content": "Vẫn chưa.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707030105
+					]
+				},
+				{
+					"id": 707030105,
+					"content": "Vẫn chưa có ư... Vậy sau khi bạn tìm đủ, hãy mau đem đến cho tôi nhé, tôi đang cần gấp để ủ rượu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Connor"
+				}
+			]
+		},
+		{
+			"id": 7070302,
+			"completionStepIds": [
+				7070302
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070302",
+							"2"
+						],
+						"stepId": 7070302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707030201,
+					"content": "Ừm... từng này Hạt Bồ Công Anh chắc là đủ dùng một khoảng thời gian rồi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707030202
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707030202,
+					"content": "Bạn hãy nhân lấy những thứ này nhé, cảm ơn bạn giúp đỡ.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Connor"
+				}
+			]
+		}
+	]
+}

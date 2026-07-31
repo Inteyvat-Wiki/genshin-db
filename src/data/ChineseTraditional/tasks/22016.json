@@ -1,0 +1,1830 @@
+{
+	"id": 22016,
+	"type": "WQ",
+	"name": "全能美食隊·吃飽的重要性",
+	"description": "全能美食隊的芭爾瓦涅似乎正因為某事而焦急著…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2201601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "與芭爾瓦涅對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2201601,
+						0
+					],
+					"talkId": 2201601
+				}
+			]
+		},
+		{
+			"id": 2201602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "與旭東會合",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						2201602,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2201603,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "與旭東對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2201602,
+						0
+					],
+					"talkId": 2201602
+				}
+			]
+		},
+		{
+			"id": 2201604,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "搜索前方",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						2201604,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						2201606,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 2201605,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "打倒所有魔物",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2201606,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2201607,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "向前搜索龜井宗久的蹤跡",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2201608,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "與龜井宗久對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2201604,
+						0
+					],
+					"talkId": 2201604
+				}
+			]
+		},
+		{
+			"id": 2201609,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "與朱莉對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2201603,
+						0
+					],
+					"talkId": 2201603
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2201602,
+			"completionStepIds": [
+				2201603
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2201603",
+							"2"
+						],
+						"stepId": 2201603,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"旭東"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220160201,
+					"content": "#芭爾瓦涅…還有旅行者，{F#妳}{M#你}怎麼來了？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160202,
+						220160205
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160202,
+					"content": "我來幫忙。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160203
+					]
+				},
+				{
+					"id": 220160203,
+					"content": "是嗎…多謝了，朱莉那傢伙好像往更深處去了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160204
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160204,
+					"content": "#那裡魔物眾多，只憑我們兩個，應該很難對付得過來，有{F#妳}{M#你}幫忙再好不過了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160210
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160210,
+					"content": "我們這就出發吧，朱莉應該就在樹林裡面。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160205,
+					"content": "來跟你要那頓大餐。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160206
+					]
+				},
+				{
+					"id": 220160206,
+					"content": "沒問題，不過只憑我一個人，應該沒法做那頓大餐。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160207
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160207,
+					"content": "#旅行者，請{F#妳}{M#你}先幫我個忙，和我們一起去把朱莉找回來，怎麼樣？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160208
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160208,
+					"content": "朱莉那傢伙應該走得很深了，那裡魔物眾多，只憑我們兩個，應該很難對付得過來。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160209
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160209,
+					"content": "#把朱莉找回來之後，我就給{F#妳}{M#你}兌現那頓大餐。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160210
+					],
+					"speakerTitle": "旭東"
+				}
+			]
+		},
+		{
+			"id": 2201603,
+			"completionStepIds": [
+				2201609
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2201609",
+							"2"
+						],
+						"stepId": 2201609,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"芭爾瓦涅",
+					"旭東",
+					"朱莉"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220160301,
+					"content": "你、你這傢伙…要是把鍋子砸壞了，我們還用什麼做飯啊！？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160302
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160302,
+					"content": "別小看璃月的鑄鍋技術，我這口鍋可是專門用來練習顛鍋的特製鑄鐵鍋，可不會輕易壞掉。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160303
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160303,
+					"content": "再說了，只是幾個魔物而已。連魔物都沒法砸倒，還算什麼鐵鍋。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160304
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160304,
+					"content": "你對這口鐵鍋的期望未免太高了些…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160305,
+						220160308,
+						220160312
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160305,
+					"content": "旭東可真是有氣勢。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160306
+					]
+				},
+				{
+					"id": 220160306,
+					"content": "那是當然了，這可是做廚師的必修課。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160307
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160307,
+					"content": "完全沒聽說過好嗎？！為什麼廚師要學習用鐵鍋砸翻魔物啊！？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160315
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160315,
+					"content": "好了，朱莉，我們現在趕緊離開這裡…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160316
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160316,
+					"content": "等、等一下，快去幫幫大叔，他一個人去樹林裡和那些海亂鬼戰鬥了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160317
+					],
+					"speakerTitle": "朱莉"
+				},
+				{
+					"id": 220160317,
+					"content": "海亂鬼？不是魔物嗎？為什麼還會和那種傢伙扯上關係…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160318
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160318,
+					"content": "我、我之後會解釋的…快去幫幫大叔吧，他只有一個人…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160319
+					],
+					"speakerTitle": "朱莉"
+				},
+				{
+					"id": 220160319,
+					"content": "我知道了。旅行者，請再和我們同行一段吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160320,
+						220160321
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160320,
+					"content": "我知道了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160325
+					]
+				},
+				{
+					"id": 220160325,
+					"content": "我們快點出發吧，走了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160321,
+					"content": "你要和海亂鬼戰鬥嗎？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160322
+					]
+				},
+				{
+					"id": 220160322,
+					"content": "那是當然，我這口鍋可是在躍躍欲試。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160323
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160323,
+					"content": "而且，廚師可不能臨陣脫逃啊。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160324
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160324,
+					"content": "都說了，不要對廚師和鐵鍋有這種過高的期待！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160325
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160308,
+					"content": "那麼，這口鍋在哪裡才買得到呢？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160309
+					]
+				},
+				{
+					"id": 220160309,
+					"content": "哈哈哈，問得好，我是找「寒鋒鐵器」的那個大叔特別鑄造的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160310
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160310,
+					"content": "#據說大叔還往裡面加入了一些從層岩巨淵裡開掘出來的材料。如果{F#妳}{M#你}想買的話，直接去找他就好了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160311
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160311,
+					"content": "不過我聽說層岩巨淵已經封鎖很久了。就算現在找他，他也沒法做了吧…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160315
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160312,
+					"content": "芭爾瓦涅的氣勢也很足。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160313
+					]
+				},
+				{
+					"id": 220160313,
+					"content": "#咦？那個啊…哈哈哈，我只不過就是往那些魔物頭上丟了幾本書而已，還是靠{F#妳}{M#你}才擊退了魔物。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160314
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160314,
+					"content": "等等，我的那本《與神性同行》第六卷呢？不、不會也丟出去了吧…我還沒看完呢！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160315
+					],
+					"speakerTitle": "芭爾瓦涅"
+				}
+			]
+		},
+		{
+			"id": 2201604,
+			"completionStepIds": [
+				2201608
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2201608",
+							"2"
+						],
+						"stepId": 2201608,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"龜井宗久",
+					"朱莉",
+					"旭東",
+					"芭爾瓦涅"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220160401,
+					"content": "咳…咳，居然被那群惡徒逼成這樣，讓各位見笑了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160402
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160402,
+					"content": "大叔，你沒事吧…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160403
+					],
+					"speakerTitle": "朱莉"
+				},
+				{
+					"id": 220160403,
+					"content": "只不過是輸了幾招，沒有大問題。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160404
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160404,
+					"content": "朱莉，現在妳可以把事情的來龍去脈好好說一下了吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160405
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160405,
+					"content": "全都說清楚，不然我這些書可就白丟了，啊…書頁都皺了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160406
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160406,
+					"content": "事情很簡單啦…就是，我想要送點吃的東西給大叔。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160407
+					],
+					"speakerTitle": "朱莉"
+				},
+				{
+					"id": 220160407,
+					"content": "我說妳啊…只不過是見了一面而已，為什麼就這麼信任…他了啊！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160408
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160408,
+					"content": "大叔一定是好人！那個時候他明明都那麼餓了，還願意把食物分給我們。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160409
+					],
+					"speakerTitle": "朱莉"
+				},
+				{
+					"id": 220160409,
+					"content": "餓肚子的時候，還願意把食物分給人家的人，肯定是好人！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160410
+					],
+					"speakerTitle": "朱莉"
+				},
+				{
+					"id": 220160410,
+					"content": "這善惡觀還真是純粹初始又機械…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160411
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160411,
+					"content": "妳也許並不是生活在提瓦特大陸，而是生活在什麼童話世界吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160412
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160412,
+					"content": "哈哈哈，但是我覺得朱莉說得沒錯。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160413
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160413,
+					"content": "我覺得，能在餓肚子的時候也保持氣度的人，一定不會是壞人。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160414
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160414,
+					"content": "這邏輯還真是簡單直接…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160415
+					]
+				},
+				{
+					"id": 220160415,
+					"content": "總之，朱莉妳接著往下說吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160416
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160416,
+					"content": "我就做了點野菇雞肉串，想去第一次遇見大叔的地方碰碰運氣。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160417
+					],
+					"speakerTitle": "朱莉"
+				},
+				{
+					"id": 220160417,
+					"content": "然後，我就過去那裡，結果真的看見了大叔。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160418
+					],
+					"speakerTitle": "朱莉"
+				},
+				{
+					"id": 220160418,
+					"content": "但我剛想和大叔打招呼，突然發現他在和幾個海亂鬼對峙，好像還在說什麼。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160419
+					],
+					"speakerTitle": "朱莉"
+				},
+				{
+					"id": 220160419,
+					"content": "我剛想先離遠點，但是卻被海亂鬼發現了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160420
+					],
+					"speakerTitle": "朱莉"
+				},
+				{
+					"id": 220160420,
+					"content": "接下來，就由在下說吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160421
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160421,
+					"content": "那些…人，其中有幾位在下的「舊友」，之前和在下一起，在幕府效力。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160422
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160422,
+					"content": "在稻妻橫生變故後，我們先後都離開了幕府，各自謀生。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160423,
+						220160425,
+						220160427
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160423,
+					"content": "剛才就是他們的謀生手段？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160424
+					]
+				},
+				{
+					"id": 220160424,
+					"content": "…正是。我們除了揮劍之外，也沒有什麼謀生手段。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160432
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160432,
+					"content": "在那之後，他們成為了那樣的「海亂鬼」，以劫掠為生。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160433
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160433,
+					"content": "而在下不願與他們為伍，就一直在四處遊蕩，想找些工作。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160434
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160434,
+					"content": "但聽說了我是離開幕府的武士後，也沒有人敢雇傭我做事。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160435
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160435,
+					"content": "然後，就如同閣下所見，我只能去野外搜刮些食物果腹。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160436
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160436,
+					"content": "最近幾天，我的那些前同僚們似乎缺了人手，所以每天都來勸我入夥，我也每次都拒絕。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160437
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160437,
+					"content": "今天…朱莉小姐出現後，他們還以為我投靠了哪家，想要把他們給吃掉。所以就向我們發動了攻擊。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160438,
+						220160440
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160438,
+					"content": "完全不講理…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160439
+					]
+				},
+				{
+					"id": 220160439,
+					"content": "他們從來不講什麼道理。但處於他們那種境地…確實也沒有什麼道理好講。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160444
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160444,
+					"content": "然後，大叔就去對付那些壞蛋，我就留在原地等他回來，但是卻突然有一群魔物冒了出來…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160445
+					],
+					"speakerTitle": "朱莉"
+				},
+				{
+					"id": 220160445,
+					"content": "妳應該能夠對付它們吧？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160446
+					]
+				},
+				{
+					"id": 220160446,
+					"content": "平時是可以啦。但今天早上走的時候沒吃東西，肚子很餓，沒什麼力氣。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160447
+					],
+					"speakerTitle": "朱莉"
+				},
+				{
+					"id": 220160447,
+					"content": "而且被那群海亂鬼發現的時候，野菇雞肉串也都弄丟了…還好有大叔保護我。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160448,
+						220160449
+					],
+					"speakerTitle": "朱莉"
+				},
+				{
+					"id": 220160448,
+					"content": "這就是吃早餐的重要性。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160450
+					]
+				},
+				{
+					"id": 220160450,
+					"content": "但是，稻妻還有很多那樣不講道理的海亂鬼吧，我們還得在稻妻待一段時間，總感覺很危險…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160451
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160451,
+					"content": "而且憑我們幾個人，對付一些弱小魔物還湊合，但還是不太好對付這群懂武藝的傢伙…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160452
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160452,
+					"content": "唔…大叔，你剛才說，你在找工作對吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160453
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160453,
+					"content": "如果願意的話，要不要和我們同行？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160454
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160454,
+					"content": "好耶！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160455
+					],
+					"speakerTitle": "朱莉"
+				},
+				{
+					"id": 220160455,
+					"content": "可是，他不是離開幕府的武士嗎？這種身分在稻妻，會不會惹上麻煩…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160456
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160456,
+					"content": "…沒錯，在下身分特殊，如果與各位同行，說不定會害各位惹上各種麻煩。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160457
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160457,
+					"content": "哈哈哈，我倒覺得沒關係。我們只是到處去尋找食材做飯而已。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160458
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160458,
+					"content": "以大叔這種身分，做這種完全和幕府和武士搭不上關係的事才最合適。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160459
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160459,
+					"content": "要是大叔真的去給人做護衛，或者幫人守門的話，反而會引人猜忌。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160460
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160460,
+					"content": "而且，大叔這樣子的好人卻被迫餓著肚子，我覺得是十分沒有道理的事。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160461
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160461,
+					"content": "身為廚師，我可看不過去。雖然其他的事沒法管，但我至少要管一管他的飯。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160462
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160462,
+					"content": "閣下，您…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160463
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160463,
+					"content": "嘿嘿，怎麼樣大叔，你願意和我們同行嗎？工錢雖然開不了多少，但飯一定夠。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160464
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160464,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160465
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160465,
+					"content": "在下，從命。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160466
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160466,
+					"content": "好耶——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160467
+					],
+					"speakerTitle": "朱莉"
+				},
+				{
+					"id": 220160467,
+					"content": "這也算是好事吧，算是好事…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160468
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160468,
+					"content": "好的！大家辛苦了這麼久，肚子都要餓扁了，雖然這裡不太好起灶…但我還是能想辦法做點食物的…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160469
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160469,
+					"content": "#旅行者，{F#妳}{M#你}也別忙了，我來搞定就好，{F#妳}{M#你}就在這裡等著開飯吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160470
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160470,
+					"content": "那麼，開始動手了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160471
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160471,
+					"content": "這樣就行了…哈哈，用剩飯做的「飯糰」，雖然有點粗糙…但填飽肚子應該夠了，大家開吃吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160472
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160472,
+					"content": "#對了旅行者，這一路上謝謝{F#妳}{M#你}了，這份食譜給{F#妳}{M#你}。這是宗久大叔剛給我的，我也給{F#妳}{M#你}抄了一份。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160473
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160473,
+					"content": "#他說這是他在幕府的時候記下的食譜，據說還挺有特色的，有興趣的話，{F#妳}{M#你}也研究一下吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160474
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160474,
+					"content": "好了好了，不多說了，快點開動吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160449,
+					"content": "以後一定要記得吃早餐喔。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160450
+					]
+				},
+				{
+					"id": 220160440,
+					"content": "他們也太敏感了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160441
+					]
+				},
+				{
+					"id": 220160441,
+					"content": "處於他們那種境地，敏感也是正常的…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160442
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160442,
+					"content": "但我猜，其實他們也只是想要藉著這個理由，徹底把我這個「不聽話」的人斬了，以此立威吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160443
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160443,
+					"content": "畢竟，我三番五次地拒絕他們，肯定也讓他們面子掛不住了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160444
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160425,
+					"content": "難道，那些海亂鬼都是…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160426
+					]
+				},
+				{
+					"id": 220160426,
+					"content": "也並不盡然。但總歸都是些向弱者揮劍的懦夫罷了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160432
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160427,
+					"content": "你為什麼要離開幕府？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160428
+					]
+				},
+				{
+					"id": 220160428,
+					"content": "只不過是…不能認同幕府在稻妻施行的某種做法罷了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160429
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160429,
+					"content": "我只是一介武夫，也並不知道那種做法究竟是否有益於國家。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160430
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160430,
+					"content": "我只知道那種做法與我心中的想法有悖，所以，我選擇了離開。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160431
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160431,
+					"content": "呵呵，也許是我太過古板，不知變通了吧…讓您見笑了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160432
+					],
+					"speakerTitle": "龜井宗久"
+				}
+			]
+		},
+		{
+			"id": 2201605,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2201608",
+							"3"
+						],
+						"stepId": 2201608,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"旭東"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220160501,
+					"content": "總算是吃飽了…呃…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160502,
+						220160513
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160502,
+					"content": "你為什麼要幫他？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160503
+					]
+				},
+				{
+					"id": 220160503,
+					"content": "#{F#妳}{M#你}說宗久大叔？那當然是出於廚師的職業道德了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160504
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160504,
+					"content": "開玩笑的。但我是真的不願意看見大叔這樣的好人餓肚子。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160505
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160505,
+					"content": "不，或者說…我不想看見任何一個人餓肚子。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160506
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160506,
+					"content": "饑餓是一種很可怕的感覺，我…感受過這種感覺。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160507
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160507,
+					"content": "在饑餓感的逼迫下…人會做出很可怕的事。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160508
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160508,
+					"content": "我想，如果這個世界上人人都能吃飽吃好，或許，就能避免很多壞事發生了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160509
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160509,
+					"content": "雖然我一個人沒法做到這種事，但我至少能做個廚師，努力讓我身邊的人吃飽吃好。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160510
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160510,
+					"content": "哈哈哈，說白了，我就是想要讓大家都能吃飽吃好而已，是不是個很沒意思的理想？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160511
+					],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160511,
+					"content": "是個很偉大的理想。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160512
+					]
+				},
+				{
+					"id": 220160512,
+					"content": "#嘿嘿，多謝啦。呃…不說了，{F#妳}{M#你}快再吃點，可別剩下了，剩飯可是大罪過。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "旭東"
+				},
+				{
+					"id": 220160513,
+					"content": "再見。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160514
+					]
+				},
+				{
+					"id": 220160514,
+					"content": "#{F#妳}{M#你}要走了嗎？不然…再吃點？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "旭東"
+				}
+			]
+		},
+		{
+			"id": 2201606,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2201608",
+							"3"
+						],
+						"stepId": 2201608,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"朱莉"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220160601,
+					"content": "嘿嘿，其實還挺好吃的，我還要再吃一點…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160602,
+						220160606,
+						220160609
+					],
+					"speakerTitle": "朱莉"
+				},
+				{
+					"id": 220160602,
+					"content": "妳為什麼要送吃的給他？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160603
+					]
+				},
+				{
+					"id": 220160603,
+					"content": "嗯…我就是不想看見大叔餓肚子嘛。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160604
+					],
+					"speakerTitle": "朱莉"
+				},
+				{
+					"id": 220160604,
+					"content": "而且，上次見到大叔的時候，他好像很難過的樣子，我覺得，說不定就是因為沒吃飽的原因。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160605
+					],
+					"speakerTitle": "朱莉"
+				},
+				{
+					"id": 220160605,
+					"content": "所以我想要給大叔送點吃的，只要吃飽了，大叔也許就不會那麼難過了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "朱莉"
+				},
+				{
+					"id": 220160606,
+					"content": "妳為什麼會相信他？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160607
+					]
+				},
+				{
+					"id": 220160607,
+					"content": "那是…冒險家的直覺喔。我可是很會分辨好人和壞蛋的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160608
+					],
+					"speakerTitle": "朱莉"
+				},
+				{
+					"id": 220160608,
+					"content": "而且我真的覺得，在餓肚子的時候還把食物分給別人…只有好人才會做這樣的事。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "朱莉"
+				},
+				{
+					"id": 220160609,
+					"content": "再見。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160610
+					]
+				},
+				{
+					"id": 220160610,
+					"content": "再見。我以後一定會記得吃早飯…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "朱莉"
+				}
+			]
+		},
+		{
+			"id": 2201607,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2201608",
+							"3"
+						],
+						"stepId": 2201608,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"芭爾瓦涅"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220160701,
+					"content": "這兩個人實在是…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160702,
+						220160705,
+						220160713
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160702,
+					"content": "妳好像還是不太信任他？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160703
+					]
+				},
+				{
+					"id": 220160703,
+					"content": "#{F#妳}{M#你}說龜井宗久嗎？那當然了…我們見都沒見過這個人幾次，怎麼能輕易信任他。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160704
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160704,
+					"content": "…但是，雖然我不相信龜井宗久，但我還是會相信旭東的判斷。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160705,
+					"content": "妳來自教令院？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160706
+					]
+				},
+				{
+					"id": 220160706,
+					"content": "我…算是吧，我本來是從教令院出來遊學的，在璃月遇見了旭東。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160707
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160707,
+					"content": "他打算去四處旅行研究食譜，我研究的課題恰好也和美食有關。在和他討論過幾次之後，我們就一起同行了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160708
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160708,
+					"content": "我們首先去了蒙德，在那裡被一堆魔物圍住了，還好朱莉過來幫忙趕走了它們。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160709
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160709,
+					"content": "她聽說我們想要四處旅行尋找美食之後，就也加入了我們。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160710
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160710,
+					"content": "雖然她說自己本來就打算四處冒險，但我總感覺，這傢伙就是想要吃好吃的而已…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160711
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160711,
+					"content": "我們下一站應該會去須彌，我的課題也研究得差不多了，也該回教令院一趟了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160712
+					],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160712,
+					"content": "哼，等到了須彌，一定要讓他們感受一下須彌的特色美食…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "芭爾瓦涅"
+				},
+				{
+					"id": 220160713,
+					"content": "再見。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160714
+					]
+				},
+				{
+					"id": 220160714,
+					"content": "嗯，再見。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "芭爾瓦涅"
+				}
+			]
+		},
+		{
+			"id": 2201608,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2201608",
+							"3"
+						],
+						"stepId": 2201608,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"龜井宗久"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220160801,
+					"content": "閣下，請問有什麼事嗎？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160802,
+						220160807,
+						220160814,
+						220160819
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160802,
+					"content": "你為什麼會答應旭東？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160803
+					]
+				},
+				{
+					"id": 220160803,
+					"content": "正如旭東閣下說的，目前…如果我想要吃飽的話，為他工作是最好的選擇。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160804
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160804,
+					"content": "而且，朱莉小姐和旭東閣下，我認為都是品德高尚之人，與他們同行是我的榮幸。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160805
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160805,
+					"content": "芭爾瓦涅閣下…是一個心思縝密的人，她對我有所警戒也屬正常。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160806
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160806,
+					"content": "而且她也僅是警戒，並未排斥我，這就…足夠了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160807,
+					"content": "你真的一直在外遊蕩嗎？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160808
+					]
+				},
+				{
+					"id": 220160808,
+					"content": "在下自然不會說謊。從幕府離開後，我就一直在外徘徊。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160809
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160809,
+					"content": "一般來說，我會用野果來填肚子，運氣好的話，會有一些獵物。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160810
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160810,
+					"content": "我偶爾也會幫助一些需要幫助的人，例如擊退魔物或者海亂鬼，這樣也會得到一些報酬。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160811
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160811,
+					"content": "呵呵…對我這種除了揮劍外別無長處的人來說，工作的機會實在有點少。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160812
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160812,
+					"content": "更不用說我還有「離開幕府」這種背景在，人們總是會把我和海亂鬼聯想在一起，如此…就更難找到工作了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160813
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160813,
+					"content": "我在稻妻也沒什麼居所，也沒有親眷可投奔，除了在外遊蕩，我也沒有地方可去了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160814,
+					"content": "你為什麼要離開幕府？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160815
+					]
+				},
+				{
+					"id": 220160815,
+					"content": "只不過是…不能認同幕府在稻妻施行的某種做法罷了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160816
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160816,
+					"content": "我只是一介武夫，也並不知道那種做法究竟是否有益於國家。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160817
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160817,
+					"content": "我只知道那種做法與我心中的想法有悖，所以，我選擇了離開。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220160818
+					],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160818,
+					"content": "呵呵，也許是我太過古板，不知變通了吧…讓您見笑了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "龜井宗久"
+				},
+				{
+					"id": 220160819,
+					"content": "再見。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220160820
+					]
+				},
+				{
+					"id": 220160820,
+					"content": "再見，閣下。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "龜井宗久"
+				}
+			]
+		}
+	]
+}

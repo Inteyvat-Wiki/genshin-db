@@ -1,0 +1,154 @@
+{
+	"id": 381,
+	"type": "AQ",
+	"name": "Hidden Tears",
+	"description": "Dvalin's footprints are all over Mondstadt, and one of his tears fell upon a ruin deep within the forest.",
+	"unlockDescription": "",
+	"chapter": "For a Tomorrow Without Tears",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		380,
+		382,
+		383
+	],
+	"prevMainQuestList": [
+		379
+	],
+	"steps": [
+		{
+			"id": 38101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to the ruins in the woods",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						38101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 38102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Enter the ruins in the woods",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_DUNGEON",
+					"rawParams": [
+						10,
+						40
+					]
+				}
+			]
+		},
+		{
+			"id": 38103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Defeat all opponents in the ruin",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 38104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Obtain Dvalin's Tear",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						100160,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 38105,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						38105,
+						0
+					],
+					"talkId": 38105
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 38105,
+			"completionStepIds": [
+				38105
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"38105",
+							"2"
+						],
+						"stepId": 38105,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jean"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3800113,
+					"content": "*sigh* We're done gathering! That was hard...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3800114
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3800114,
+					"content": "It's too early to relax. We're still not done with Stormterror.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3800115
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3800115,
+					"content": "Besides, the Fatui could also be planning something...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Diluc"
+				}
+			]
+		}
+	]
+}

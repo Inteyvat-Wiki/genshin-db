@@ -1,0 +1,176 @@
+{
+	"id": 73660,
+	"type": "WQ",
+	"name": "アリナのサウマラタ蓮のリクエスト",
+	"description": "スメールシティのアリナはサウマラタ蓮を5本必要としている。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7366001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "アリナにサウマラタ蓮を5本渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7366001,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7366002,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "アリナと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7366002,
+						0
+					],
+					"talkId": 7366002
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7366001,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7366001",
+							"2"
+						],
+						"stepId": 7366001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7366001"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"アリナ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 736600107,
+					"content": "机の上に置くなら、サウマラタ蓮とスメールローズ、どっちがいいかな？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736600101
+					],
+					"speakerTitle": "アリナ"
+				},
+				{
+					"id": 736600101,
+					"content": "サウマラタ蓮について…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						736600102
+					]
+				},
+				{
+					"id": 736600102,
+					"content": "そう、あのサウマラタ蓮を収集する依頼は、私が出したの。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736600103
+					],
+					"speakerTitle": "アリナ"
+				},
+				{
+					"id": 736600103,
+					"content": "サウマラタ蓮を5つ、用意できた？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						736600106,
+						736600104
+					],
+					"speakerTitle": "アリナ"
+				},
+				{
+					"id": 736600106,
+					"content": "用意できた。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 736600104,
+					"content": "まだ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						736600105
+					]
+				},
+				{
+					"id": 736600105,
+					"content": "5つないと部屋を飾るのに少し足りない…アルミンにも見てもらいたいのに…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "アリナ"
+				}
+			]
+		},
+		{
+			"id": 7366002,
+			"completionStepIds": [
+				7366002
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7366002",
+							"2"
+						],
+						"stepId": 7366002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"アリナ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 736600201,
+					"content": "やった、ありがとう。砂漠ではこんなに綺麗なサウマラタ蓮は見られないの。後でアルミンも呼んで見せてあげようっと。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "アリナ"
+				}
+			]
+		}
+	]
+}

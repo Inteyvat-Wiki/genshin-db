@@ -1,0 +1,335 @@
+{
+	"id": 22105,
+	"type": "IQ",
+	"name": "Гости издалека",
+	"description": "Люди замечают подозрительное движение вокруг постоялого двора «Ваншу». Верр Голдет переживает за безопасность постояльцев...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2210501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Верр Голдет",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2210501,
+						0
+					],
+					"talkId": 2210501
+				}
+			]
+		},
+		{
+			"id": 2210502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Проверьте подозрительное место",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2210503,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Победите всех монстров",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2210504,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Вернитесь к Верр Голдет",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2210503,
+						0
+					],
+					"talkId": 2210503
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2210501,
+			"completionStepIds": [
+				2210501
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2210501",
+							"2"
+						],
+						"stepId": 2210501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Верр Голдет"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 221050101,
+					"content": "Ох...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221050102
+					],
+					"speakerTitle": "Верр Голдет"
+				},
+				{
+					"id": 221050102,
+					"content": "Что произошло?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						221050103
+					]
+				},
+				{
+					"id": 221050103,
+					"content": "У меня вечно такое ощущение, что вокруг постоялого двора происходит что-то нехорошее.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221050104
+					],
+					"speakerTitle": "Верр Голдет"
+				},
+				{
+					"id": 221050104,
+					"content": "А наши постояльцы очень впечатлительны...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221050105
+					],
+					"speakerTitle": "Верр Голдет"
+				},
+				{
+					"id": 221050105,
+					"content": "При малейшем беспокойстве они могут разбить окно или сломать дверь. Иногда даже рамы вываливаются.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221050106
+					],
+					"speakerTitle": "Верр Голдет"
+				},
+				{
+					"id": 221050106,
+					"content": "К счастью, эти постояльцы восстанавливают ущерб сами. Но после каждого такого ремонта мы остаёмся с дверьми и окнами, которые никак не подходят под общий стиль гостиницы...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221050107
+					],
+					"speakerTitle": "Верр Голдет"
+				},
+				{
+					"id": 221050107,
+					"content": "Можно попросить тебя проверить, что происходит снаружи? Если заметишь что-нибудь странное, пожалуйста, разберись с этим. А я останусь здесь принимать гостей.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221050108,
+						221050109
+					],
+					"speakerTitle": "Верр Голдет"
+				},
+				{
+					"id": 221050108,
+					"content": "Хорошо.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						221050110
+					]
+				},
+				{
+					"id": 221050110,
+					"content": "Большое спасибо!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Верр Голдет"
+				},
+				{
+					"id": 221050109,
+					"content": "Что не так с этими людьми...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						221050111
+					]
+				},
+				{
+					"id": 221050111,
+					"content": "#Не будь так строг{F#а} к ним. Жизнь вечных приключений неизбежно воспитывает в тебе осторожность, бдительность и постоянное чувство тревоги.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221050112
+					],
+					"speakerTitle": "Верр Голдет"
+				},
+				{
+					"id": 221050112,
+					"content": "Пожалуйста, осмотри окрестности. Уверена, что ты не найдёшь ничего особенно опасного.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Верр Голдет"
+				}
+			]
+		},
+		{
+			"id": 2210502,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2210503",
+							"2"
+						],
+						"stepId": 2210503,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2210502",
+							"2"
+						],
+						"stepId": 2210502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Верр Голдет"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 221050201,
+					"content": "Готово?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221050202
+					],
+					"speakerTitle": "Верр Голдет"
+				},
+				{
+					"id": 221050202,
+					"content": "Пока ещё нет.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						221050203
+					]
+				},
+				{
+					"id": 221050203,
+					"content": "Поторопись. К вечеру гости становятся более раздражительными.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Верр Голдет"
+				}
+			]
+		},
+		{
+			"id": 2210503,
+			"completionStepIds": [
+				2210504
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2210504",
+							"2"
+						],
+						"stepId": 2210504,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Верр Голдет"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 221050301,
+					"content": "Готово?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221050302
+					],
+					"speakerTitle": "Верр Голдет"
+				},
+				{
+					"id": 221050302,
+					"content": "Да.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						221050303
+					]
+				},
+				{
+					"id": 221050303,
+					"content": "Отлично! Сегодня гости будут спать спокойно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						221050304
+					],
+					"speakerTitle": "Верр Голдет"
+				},
+				{
+					"id": 221050304,
+					"content": "Вот награда за твои труды. Ещё раз спасибо!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Верр Голдет"
+				}
+			]
+		}
+	]
+}

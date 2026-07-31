@@ -1,0 +1,167 @@
+{
+	"id": 72719,
+	"type": "WQ",
+	"name": "Заказ руды от Ята Коки",
+	"description": "Ята Коки с острова Наруками хочет получить 5 кусков белого железа.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7271901,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте Яте Коки 5 обломков белого железа",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7271901,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7271902,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Ятой Коки",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7271902,
+						0
+					],
+					"talkId": 7271902
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7271901,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271901",
+							"2"
+						],
+						"stepId": 7271901,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7271901"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ята Коки"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727190101,
+					"content": "Вы искали обломки белого железа?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727190102
+					]
+				},
+				{
+					"id": 727190102,
+					"content": "Если клинок затупится в бою, наточить его как следует прямо на месте не получится. Уж лучше попрошу господина Амэному заранее выковать мне новый: острый и блестящий.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727190103
+					],
+					"speakerTitle": "Ята Коки"
+				},
+				{
+					"id": 727190103,
+					"content": "Вы приняли моё поручение? Если это так, полагаю, вы принесли мне 5 обломков белого железа?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						727190106,
+						727190104
+					],
+					"speakerTitle": "Ята Коки"
+				},
+				{
+					"id": 727190106,
+					"content": "Да, вот.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 727190104,
+					"content": "Пока ещё нет.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						727190105
+					]
+				},
+				{
+					"id": 727190105,
+					"content": "Ладно, принесите их мне, как только получите.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ята Коки"
+				}
+			]
+		},
+		{
+			"id": 7271902,
+			"completionStepIds": [
+				7271902
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7271902",
+							"2"
+						],
+						"stepId": 7271902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ята Коки"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 727190201,
+					"content": "Огромное спасибо! Вот, примите этот небольшой подарок в знак моей благодарности.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ята Коки"
+				}
+			]
+		}
+	]
+}

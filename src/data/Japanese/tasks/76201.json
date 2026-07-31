@@ -1,0 +1,514 @@
+{
+	"id": 76201,
+	"type": "WQ",
+	"name": "植物調査・宿影花",
+	"description": "ナシャタウンの北、クーヴァキが弱いエリアにも宿影花が生息している…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7620101,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7620101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7620102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "指定された場所に向かい、調査を開始する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7620101,
+						0
+					],
+					"talkId": 7620101
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					1825.854,
+					209.632,
+					9564.927
+				],
+				"pointId": 15872
+			}
+		},
+		{
+			"id": 7620103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "宿影花を採集する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						121546,
+						0
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					1815.74,
+					214.932,
+					9584.25
+				],
+				"pointId": 15873
+			}
+		},
+		{
+			"id": 7620104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "ヴィサと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7620102,
+						0
+					],
+					"talkId": 7620102
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7620101,
+			"completionStepIds": [
+				7620102
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7620102",
+							"2"
+						],
+						"stepId": 7620102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PLAYER_CURRENT_AVATAR",
+						"rawParams": [
+							"10000130",
+							"0",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 762010101,
+					"content": "手早く調査の準備を整えた…",
+					"roleType": "TALK_ROLE_NEED_CLICK_BLACK_SCREEN",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7620102,
+			"completionStepIds": [
+				7620104
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7620104",
+							"2"
+						],
+						"stepId": 7620104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ヴィサ",
+					"メッタ"
+				],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							1819.919,
+							212.139,
+							9583.548
+						],
+						"pointId": 16326
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							1821.29,
+							212.391,
+							9584.688
+						],
+						"pointId": 16327
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							1819.141,
+							212.557,
+							9587.804
+						],
+						"pointId": 16474
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							1818.338,
+							212.534,
+							9585.296
+						],
+						"pointId": 16475
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 762010201,
+					"content": "…メッタのいじわる。オレはただ、君に冒険の途中でも楽しく過ごしてほしかっただけなのに、なんでそんなこと言うんだよ、うぅ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010202
+					],
+					"speakerTitle": "ヴィサ"
+				},
+				{
+					"id": 762010202,
+					"content": "その思いつきで行動する癖を直さないと、誰にも受け入れてもらえなくなっちゃうよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010203
+					],
+					"speakerTitle": "メッタ"
+				},
+				{
+					"id": 762010203,
+					"content": "思いつきなんかじゃないよ。オ、オレだって考えてるんだから…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010204
+					],
+					"speakerTitle": "ヴィサ"
+				},
+				{
+					"id": 762010204,
+					"content": "考えね…ふーん。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010205
+					],
+					"speakerTitle": "メッタ"
+				},
+				{
+					"id": 762010205,
+					"content": "またそうやって適当に流すんだ…もう、メッタとは口きいてあげない。後で後悔しても知らないからね！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010206
+					],
+					"speakerTitle": "ヴィサ"
+				},
+				{
+					"id": 762010206,
+					"content": "…あっ、リンネアお姉ちゃん！聞いてよ、メッタが——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010207
+					],
+					"speakerTitle": "ヴィサ"
+				},
+				{
+					"id": 762010207,
+					"content": "ヴィサはたどたどしく、先ほどの出来事を話した。どうやら子供たちの間でよくある些細な揉め事のようだ…",
+					"roleType": "TALK_ROLE_NEED_CLICK_BLACK_SCREEN",
+					"nextDialogs": [
+						762010208
+					]
+				},
+				{
+					"id": 762010208,
+					"content": "どう考えても、私は悪くないよね？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010209
+					],
+					"speakerTitle": "メッタ"
+				},
+				{
+					"id": 762010209,
+					"content": "お、オレだって悪くないよ！そうでしょ、リンネアお姉ちゃん…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010210
+					],
+					"speakerTitle": "ヴィサ"
+				},
+				{
+					"id": 762010210,
+					"content": "うーん…確かに、そういうことってあるよね。誰も間違ってないのに、思うような結果にならないんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010211
+					],
+					"speakerTitle": "リンネア"
+				},
+				{
+					"id": 762010211,
+					"content": "そうそう、まさに宿影花が象徴する霜月の子の姉妹の物語みたいにね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010212
+					],
+					"speakerTitle": "リンネア"
+				},
+				{
+					"id": 762010212,
+					"content": "姉妹の物語？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010213
+					],
+					"speakerTitle": "ヴィサ"
+				},
+				{
+					"id": 762010213,
+					"content": "うん。昔々、霜月の子の姉妹がいたの。性格はまったく違ってて、まるで赤と青の宿影花みたいだったんだって。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010214
+					],
+					"speakerTitle": "リンネア"
+				},
+				{
+					"id": 762010214,
+					"content": "二人は自分が正しいと思うことをしたんだけど、それが原因で別の道を歩むことになったんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010215
+					],
+					"speakerTitle": "リンネア"
+				},
+				{
+					"id": 762010215,
+					"content": "言い伝えでは、姉はその後多くの命を救ったにもかかわらず、妹はずっと自分を見捨てた姉を許さなくて…結局、姉妹は死ぬまで再会することはなかったんだって。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010216
+					],
+					"speakerTitle": "リンネア"
+				},
+				{
+					"id": 762010216,
+					"content": "霜月の子にそんな物語があったなんて…初めて聞いたよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010217
+					],
+					"speakerTitle": "メッタ"
+				},
+				{
+					"id": 762010217,
+					"content": "オレも…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010218
+					],
+					"speakerTitle": "ヴィサ"
+				},
+				{
+					"id": 762010218,
+					"content": "私も吟遊詩人から聞いた話だから、もしかしたら脚色されてるかもしれないね…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010219
+					],
+					"speakerTitle": "リンネア"
+				},
+				{
+					"id": 762010219,
+					"content": "なんだ、作り話だったの？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010220
+					],
+					"speakerTitle": "メッタ"
+				},
+				{
+					"id": 762010220,
+					"content": "まあ、たとえ物語が作り話だとしても、理屈は間違ってないよね？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010221
+					],
+					"speakerTitle": "リンネア"
+				},
+				{
+					"id": 762010221,
+					"content": "彼女たちは二人とも、自分は間違ってない、自分の選択こそが正しいと信じ込んでた。でもその選択が、二人を永遠に引き裂いてしまったんだよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010222
+					],
+					"speakerTitle": "リンネア"
+				},
+				{
+					"id": 762010222,
+					"content": "自分が正しいと証明するために、友達を失うという代償を払わなきゃいけないとしたら…君たちならどうするのかな？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010223
+					],
+					"speakerTitle": "リンネア"
+				},
+				{
+					"id": 762010223,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010224
+					],
+					"speakerTitle": "ヴィサ"
+				},
+				{
+					"id": 762010224,
+					"content": "……",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010225
+					],
+					"speakerTitle": "メッタ"
+				},
+				{
+					"id": 762010225,
+					"content": "まあ、たまには冒険の途中で計画外のことがあっても悪くないかもね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010226
+					],
+					"speakerTitle": "メッタ"
+				},
+				{
+					"id": 762010226,
+					"content": "…うん！よくよく考えたら、メッタがオレと一緒に冒険できる時間だって貴重なんだし、ちゃんと考えなきゃ、結局ぜんぜん遊べずに終わっちゃうかもしれないね…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010227
+					],
+					"speakerTitle": "ヴィサ"
+				},
+				{
+					"id": 762010227,
+					"content": "今度は…今度は、もっとちゃんと計画を立てるようにするよ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010228
+					],
+					"speakerTitle": "ヴィサ"
+				},
+				{
+					"id": 762010228,
+					"content": "ふふっ、二人が仲直りできてよかった。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010229
+					],
+					"speakerTitle": "リンネア"
+				},
+				{
+					"id": 762010229,
+					"content": "今度ヴィサと冒険してる時に珍しい石を拾ったら、「スペランザ」に持ってくね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						762010230
+					],
+					"speakerTitle": "メッタ"
+				},
+				{
+					"id": 762010230,
+					"content": "やった！じゃあ、先にお礼を言っておくね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "リンネア"
+				}
+			]
+		},
+		{
+			"id": 7620103,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7620102",
+							"2"
+						],
+						"stepId": 7620102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PLAYER_CURRENT_NOT_AVATAR",
+						"rawParams": [
+							"10000130",
+							"0",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 762010301,
+					"content": "（近くに調査すべきものがありそうだ。現地の生態系に詳しい<color=#FFCC33FF>リンネア</color>なら、何か収穫があるかもしれない…）",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,290 @@
+{
+	"id": 20001,
+	"type": "IQ",
+	"name": "¿Camino bloqueado?",
+	"description": "Mientras Quinn transportaba fruta de regreso a Mondstadt, su camino fue bloqueado cerca del Templo de los Mil Vientos, y un grupo de Hilichurls lo emboscó. Derrota a los Hilichurls y salva a Quinn.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2000101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dirígete a ver detalles",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000102,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Derrota a los monstruos cercanos",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Elimina a todos los monstruos y destruye los obstáculos",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Quinn",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000110,
+						0
+					],
+					"talkId": 2000110
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2000102,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000102",
+							"2"
+						],
+						"stepId": 2000102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Quinn"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200010201,
+					"content": "¡Rápido! ¡Ayúdenme!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Quinn"
+				}
+			]
+		},
+		{
+			"id": 2000109,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000102",
+							"3"
+						],
+						"stepId": 2000102,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000103",
+							"2"
+						],
+						"stepId": 2000103,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Quinn"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200010901,
+					"content": "Gracias por ahuyentar a esos sujetos.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200010902
+					],
+					"speakerTitle": "Quinn"
+				},
+				{
+					"id": 200010902,
+					"content": "Gracias a Los Siete que viniste. *Suspira*, pero estoy atrapado aquí mientras este obstáculo siga en pie.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200010903
+					],
+					"speakerTitle": "Quinn"
+				},
+				{
+					"id": 200010903,
+					"content": "Si esto sigue así por más tiempo, toda la fruta se irá a la basura... Después de pasar tanto tiempo recogiéndola...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200010904
+					],
+					"speakerTitle": "Quinn"
+				},
+				{
+					"id": 200010904,
+					"content": "¿Puedes hacerte cargo del obstáculo por mí?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200010905,
+						200010906
+					],
+					"speakerTitle": "Quinn"
+				},
+				{
+					"id": 200010905,
+					"content": "No hay problema.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200010907
+					]
+				},
+				{
+					"id": 200010907,
+					"content": "Maravilloso. ¡No puedo agradecerles lo suficiente!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Quinn"
+				},
+				{
+					"id": 200010906,
+					"content": "#Lo siento, estoy un poco ocupad{F#a}{M#o}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200010908
+					]
+				},
+				{
+					"id": 200010908,
+					"content": "¿Oh, en serio? Pensé que si ayudas a alguien, lo haces hasta el final... En fin, eres la única esperanza que tengo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Quinn"
+				}
+			]
+		},
+		{
+			"id": 2000110,
+			"completionStepIds": [
+				2000104
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000104",
+							"2"
+						],
+						"stepId": 2000104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Quinn"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200011001,
+					"content": "#Muchas gracias, viajer{F#a}{M#o}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200011002
+					],
+					"speakerTitle": "Quinn"
+				},
+				{
+					"id": 200011002,
+					"content": "Mi plan era recoger fruta aquí y luego venderla en la ciudad.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200011003
+					],
+					"speakerTitle": "Quinn"
+				},
+				{
+					"id": 200011003,
+					"content": "No contaba con que me detuviera un obstáculo en el camino... y luego ellos me tendieron una trampa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200011004
+					],
+					"speakerTitle": "Quinn"
+				},
+				{
+					"id": 200011004,
+					"content": "Bien, voy a volver a la ciudad de Mondstadt. ¡Pasa por la tienda si alguna vez estás en la ciudad!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200011005
+					],
+					"speakerTitle": "Quinn"
+				},
+				{
+					"id": 200011005,
+					"content": "Toma esto como agradecimiento. Siempre encontrarás fruta fresca conmigo, ¡incluso Beatrix viene a molestarme todos los días!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Quinn"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,842 @@
+{
+	"id": 41135,
+	"type": "WQ",
+	"name": "สายลมแห่งห้วงคำนึง",
+	"description": "มีอุกกาบาตหล่นลงมาในป่า Godwin อัศวินแห่ง Favonius รู้สึกค่อนข้างกังวล",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 2001,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 4113501,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4113501,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 4113502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "พูดคุยกับ Godwin",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4113501,
+						0
+					],
+					"talkId": 4113501
+				}
+			]
+		},
+		{
+			"id": 4113503,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "กวาดล้างค่าย Hilichurl",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 4113504,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "กวาดล้างค่าย Hilichurl",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 4113505,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "กลับไปรายงานให้ Godwin รู้",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4113503,
+						0
+					],
+					"talkId": 4113503
+				}
+			]
+		},
+		{
+			"id": 4113506,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "ไปหา Glory ที่ Mondstadt",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4113504,
+						0
+					],
+					"talkId": 4113504
+				}
+			]
+		},
+		{
+			"id": 4113507,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "มอบ Dandelion Seed ให้แก่ Godwin",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4113505,
+						0
+					],
+					"talkId": 4113505
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 4113501,
+			"completionStepIds": [
+				4113502
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4113502",
+							"2"
+						],
+						"stepId": 4113502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Godwin"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411350101,
+					"content": "ไม่รู้ว่า Glory เป็นยังไงบ้าง...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350102
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350102,
+					"content": "ทำไมเหรอ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411350103
+					]
+				},
+				{
+					"id": 411350103,
+					"content": "เธอ...คือนักเดินทางสินะ ตอนนี้ในป่าอันตรายมาก",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350104
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350104,
+					"content": "ถ้าเธออยากหาที่หลบภัยที่ปลอดภัย ก็รีบกลับไปในเมือง Mondstadt เถอะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350105
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350105,
+					"content": "เธอไม่กลับเข้าเมืองเหรอ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411350106
+					]
+				},
+				{
+					"id": 411350106,
+					"content": "ฉะ...ฉันยังไม่กลับหรอก เพราะฉันคือหนึ่งในอัศวินแห่ง Favonius... ในช่วงเวลาแบบนี้จะถอยไม่ได้เด็ดขาด",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350107
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350107,
+					"content": "ถึงแม้ฉันจะยังกลับไปช่วย Mondstadt ไม่ได้เพราะเหตุผลบางอย่าง แต่ฉันก็สามารถทำอย่างอื่นอยู่ในป่าได้",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350108
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350108,
+					"content": "หลังจากที่อุกกาบาตตกลงมา ก็มีมอนสเตอร์หลายตัวได้รับผลกระทบ ทำให้พวกมันดุร้ายมากยิ่งขึ้น",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350109
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350109,
+					"content": "ถ้าปล่อยไว้ไม่จัดการล่ะก็ จะต้องเกิดหายนะแน่ ฉันกำลังจะไปกำจัดพวกมันให้หมด",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350110
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350110,
+					"content": "เธอคนเดียวจะไหวเหรอ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411350111
+					]
+				},
+				{
+					"id": 411350111,
+					"content": "หึ ถึงแม้มอนสเตอร์พวกนั้นจะมีมากมาย... แต่ขอแค่ระวังตัวดี ๆ ก็ไม่น่าจะมีปัญหา",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350112
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350112,
+					"content": "แต่ฉันไปจัดการพวกมันแค่คนเดียว ไม่รู้ว่าจะใช้เวลานานแค่ไหนน่ะสิ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350113
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350113,
+					"content": "นักเดินทาง เธอช่วยฉันจัดการค่ายมอนสเตอร์หน่อยได้มั้ย?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350114,
+						411350116
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350114,
+					"content": "ให้ฉันจัดการเอง",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411350115
+					]
+				},
+				{
+					"id": 411350115,
+					"content": "งั้นก็รบกวนเธอด้วยนะ ช่วยได้มากจริง ๆ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350116,
+					"content": "ทำไมไม่ไปขอความช่วยเหลือจากกองอัศวินล่ะ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411350117
+					]
+				},
+				{
+					"id": 411350117,
+					"content": "ขอความช่วยเหลือจากกองอัศวิน... หึ ไม่ได้หรอก... ฉันค่อนข้างลำบากใจน่ะ เธออย่าถามถึงเลยนะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350118
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350118,
+					"content": "เธอช่วยหน่อยเถอะนะ ถ้ากำจัดค่ายมอนสเตอร์พวกนั้นได้ ก็ถือว่าได้ช่วยงานกองอัศวินแล้วล่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Godwin"
+				}
+			]
+		},
+		{
+			"id": 4113502,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4113502",
+							"3"
+						],
+						"stepId": 4113502,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4113503",
+							"2"
+						],
+						"stepId": 4113503,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Godwin"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411350201,
+					"content": "ผู้บัญชาการไปอยู่ไหนนะ... เกิดเรื่องใหญ่ขนาดนี้ ไม่รู้ว่าเขารู้เรื่องบ้างรึยัง...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350202
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350202,
+					"content": "แต่ ต่อให้เขารู้เรื่องแล้ว ก็คงกลับมาไม่ได้ในทันที เอ่...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Godwin"
+				}
+			]
+		},
+		{
+			"id": 4113503,
+			"completionStepIds": [
+				4113505
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4113505",
+							"2"
+						],
+						"stepId": 4113505,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Godwin"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411350301,
+					"content": "เธอจัดการมอนสเตอร์พวกนั้นเรียบร้อยแล้วเหรอ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350302
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350302,
+					"content": "จัดการเรียบร้อยแล้ว",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411350303
+					]
+				},
+				{
+					"id": 411350303,
+					"content": "ขอบคุณมากนะ นักเดินทาง มอนสเตอร์พวกนั้นไม่น่าจะออกมาอาละวาดแล้วล่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350304
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350304,
+					"content": "เธอเองก็รีบกลับเข้าเมืองเถอะ ให้เธอออกมาในป่าภายใต้สถานการณ์แบบนี้ ต้องขอโทษด้วยจริง ๆ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350305
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350305,
+					"content": "หึ ตอนที่...เธอกลับไปในเมือง ช่วยฉันสังเกตเรื่องนึงได้มั้ย?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350306
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350306,
+					"content": "ง่ายมาก ๆ! ก็ แค่ช่วยสังเกตก็พอ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350307
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350307,
+					"content": "เรื่องอะไรกันแน่?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411350308
+					]
+				},
+				{
+					"id": 411350308,
+					"content": "หลังจากที่เธอกลับถึงเมืองแล้ว ช่วยไปดู Glory หน่อยสิว่าเป็นยังไงบ้าง?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350309
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350309,
+					"content": "เธอน่าจะอยู่ในเมืองตลอด ก็ไม่น่าจะมีอันตรายอะไร แต่ฉันก็ยังไม่ค่อยวางใจน่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350310
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350310,
+					"content": "ขอร้องเธอช่วยไปดูเธอหน่อยนะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350311
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350311,
+					"content": "ฉันรู้แล้ว",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411350312
+					]
+				},
+				{
+					"id": 411350312,
+					"content": "ขอบคุณนะ นักเดินทาง จริงสิ เธอ...อย่าบอก Glory นะว่าฉันอยู่ที่นี่ บะ...บอกว่าฉันยังปฏิบัติภารกิจอยู่ที่ไหนสักแห่งที่ไกล ๆ ก็แล้วกัน",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350313
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350313,
+					"content": "รบกวนเธอด้วยนะ ขอเธอช่วยบอกเธอตามนี้นะ ฉันมีเหตุผลส่วนตัวน่ะ ขอร้องล่ะ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Godwin"
+				}
+			]
+		},
+		{
+			"id": 4113504,
+			"completionStepIds": [
+				4113506
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4113506",
+							"2"
+						],
+						"stepId": 4113506,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Glory"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411350401,
+					"content": "หวังว่า Godwin จะปลอดภัย...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350402
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 411350402,
+					"content": "Godwin ขอร้องให้ฉันมาเยี่ยมเธอ",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411350403
+					]
+				},
+				{
+					"id": 411350403,
+					"content": "Godwin? ธะ เธอรู้มั้ยว่าเขาอยู่ไหน? ฉันไม่ได้ข่าวของเขามานานแล้ว เป็นห่วงเขาตลอดเลย",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350404
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 411350404,
+					"content": "เขายังปฏิบัติภารกิจอยู่ในที่ที่ห่างไกล",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411350405
+					]
+				},
+				{
+					"id": 411350405,
+					"content": "ยะ...อย่างนั้นเหรอ? งั้นก็ได้",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350406
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 411350406,
+					"content": "ถ้าไม่มีอุกกาบาตพวกนี้ ฉันก็อยากจะไปถามกองอัศวินเรื่องที่อยู่ของเขา...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350407
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 411350407,
+					"content": "ฉันอยู่ในเมืองตลอดก็เลยปลอดภัย แต่เขาน่าจะไปปฏิบัติภารกิจในป่า ถ้าทุกที่ในโลกต่างมีอุกกาบาตตกลงมาล่ะก็ งั้น...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350408
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 411350408,
+					"content": "เฮ้อ หวังว่าเขาจะปลอดภัยนะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350409
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 411350409,
+					"content": "เขาจะต้องปลอดภัยแน่นอน",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411350410
+					]
+				},
+				{
+					"id": 411350410,
+					"content": "ขอบคุณเธอมากนะ ถ้าเป็นอย่างนั้นก็ดีมากเลย จริงสิ เธอพอจะช่วยอะไรฉันหน่อยได้มั้ย?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350411
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 411350411,
+					"content": "ฉันซื้อเมล็ดแดนดิไลออนจาก Flora มา ตอนแรกว่าจะหาคนไปช่วยโปรยเมล็ดนี่จากที่สูง ๆ... ให้ลมพัดพาพวกมันไปให้ Godwin",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350412
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 411350412,
+					"content": "แต่ตอนนี้เธอเองก็เห็นสถานการณ์ในเมืองเป็นยังไง ฉันหาคนช่วยไม่ได้เลย",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350413
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 411350413,
+					"content": "แต่ตอนนี้เธอมาพอดี เธอช่วยเอาเมล็ดแดนดิไลออนพวกนี้ไปให้ Godwin หน่อยได้มั้ย?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350414
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 411350414,
+					"content": "ไม่มีปัญหา",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411350415
+					]
+				},
+				{
+					"id": 411350415,
+					"content": "ขอบคุณเธอนะ ตอนนี้เขาอยู่ในที่ที่ห่างไกล คงเพราะเขาไปปฏิบัติภารกิจกับผู้บัญชาการคนนั้นน่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350416
+					],
+					"speakerTitle": "Glory"
+				},
+				{
+					"id": 411350416,
+					"content": "เธอช่วยเอาเมล็ดแดนดิไลออนนี้ไปให้เขาทีนะ ฝากบอกเขาว่าฉันสบายดี แล้วก็...ให้เขาระวังตัวด้วย",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Glory"
+				}
+			]
+		},
+		{
+			"id": 4113505,
+			"completionStepIds": [
+				4113507
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4113507",
+							"2"
+						],
+						"stepId": 4113507,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Godwin"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411350501,
+					"content": "นักเดินทาง เธอเจอ Glory มั้ย?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350502
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350502,
+					"content": "Glory เป็นยังไงบ้าง? เธอสบายดีมั้ย? บาดเจ็บรึเปล่า? จริงสิ...เธออยู่ในเมืองตลอดนี่นา แต่...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350503
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350503,
+					"content": "นี่คือเมล็ดแดนดิไลออนที่เธอฝากมาให้",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411350504
+					]
+				},
+				{
+					"id": 411350504,
+					"content": "เอ๋? เมล็ดแดนดิไลออน...นี่เป็นสไตล์ของเธอเลย เฮ้อ หวังว่า Glory จะไม่โกรธฉันนะ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350505
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350505,
+					"content": "ขอบคุณที่เธออุตส่าห์ช่วยนะ ฉันมีของตอบแทนให้เธอ ช่วยรับไว้ด้วยเถอะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411350506
+					],
+					"speakerTitle": "Godwin"
+				},
+				{
+					"id": 411350506,
+					"content": "เฮ้อ ถ้าผู้บัญชาการกลับมาล่ะก็ คงไม่มีปัญหาอะไรแล้ว...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Godwin"
+				}
+			]
+		},
+		{
+			"id": 4113506,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4113506",
+							"2"
+						],
+						"stepId": 4113506,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4113505",
+							"3"
+						],
+						"stepId": 4113505,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Godwin"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411350601,
+					"content": "เฮ้อ ถ้าผู้บัญชาการกลับมาล่ะก็ คงไม่มีปัญหาอะไรแล้ว...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Godwin"
+				}
+			]
+		},
+		{
+			"id": 4113507,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4113506",
+							"3"
+						],
+						"stepId": 4113506,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4113507",
+							"2"
+						],
+						"stepId": 4113507,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Glory"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411350701,
+					"content": "หวังว่า Godwin จะปลอดภัย...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Glory"
+				}
+			]
+		}
+	]
+}

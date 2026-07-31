@@ -1,0 +1,167 @@
+{
+	"id": 70705,
+	"type": "WQ",
+	"name": "Connor'ın Şarap Mayası",
+	"description": "Şafak Şaraphanesinden Connor, üç adet Sis Çiçeği Tepeciği istiyor.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Connor'a üç adet Sis Çiçeği Tepeciği ver.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070501,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Connor ile konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070502,
+						0
+					],
+					"talkId": 7070502
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070501,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070501",
+							"2"
+						],
+						"stepId": 7070501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070501"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707050101,
+					"content": "Kuşlar, birilerinin Sis Çiçeği Tepeciğine ihtiyacı olduğunu söyledi...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707050102
+					]
+				},
+				{
+					"id": 707050102,
+					"content": "Ah, verdiğim görev ilanını görmüşsün. Üç adet Sis Çiçeği Tepeciği getirdin mi peki?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707050103,
+						707050104
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707050103,
+					"content": "Al bakalım.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707050104,
+					"content": "Henüz değil.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707050105
+					]
+				},
+				{
+					"id": 707050105,
+					"content": "O halde lütfen acele et. Onları şarap mayalamak için kullanacağım.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Connor"
+				}
+			]
+		},
+		{
+			"id": 7070502,
+			"completionStepIds": [
+				7070502
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070502",
+							"2"
+						],
+						"stepId": 7070502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707050201,
+					"content": "Aman da aman... Bu Sis Çiçeği Tepecikleri ne kadar da kaliteli.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707050202
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707050202,
+					"content": "Memnuniyetimin göstergesi olarak lütfen bunları kabul et.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Connor"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,226 @@
+{
+	"id": 360,
+	"type": "AQ",
+	"name": "Dem Wind hinterher",
+	"description": "Die junge Kundschafterin mit dem Namen Amber möchte euch nach Mondstadt begleiten. Davor muss sie jedoch erst ihren eigenen Auftrag abschließen, die Hilichurle in der Gegend zu beseitigen.",
+	"unlockDescription": "",
+	"chapter": "Der Fremde, der den Wind fing",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		356
+	],
+	"prevMainQuestList": [
+		354
+	],
+	"steps": [
+		{
+			"id": 36001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Vernichte die herumlaufenden Hilichurle.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 36003,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Beseitige das Hilichurl-Lager in der Nähe.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 36004,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Amber.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						36001,
+						0
+					],
+					"talkId": 36001
+				}
+			]
+		},
+		{
+			"id": 36005,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Geh weiter bis nach Mondstadt.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1024,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 36001,
+			"completionStepIds": [
+				36004
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"36004",
+							"2"
+						],
+						"stepId": 36004,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Amber"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3600101,
+					"content": "Ha, das war doch ein Klacks!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600102
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600102,
+					"content": "Ich muss aber zugeben, dass ich diesen Kampfstil von dir nicht erwartet hätte.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600103
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600103,
+					"content": "Danke für deine Unterstützung eben. Wie hat es sich angefühlt?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600104,
+						3600105
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600104,
+					"content": "Locker-flockig.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3600106
+					]
+				},
+				{
+					"id": 3600106,
+					"content": "Da wir schon darüber reden, wieso tauchen die Hilichurle hier überhaupt auf?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600107
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3600107,
+					"content": "Diese Kreaturen schlagen ihre Lager doch normalerweise nicht so nah an Städten auf.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600108
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3600108,
+					"content": "Genau. Eigentlich sollten sie sich mehr in der freien Wildnis tummeln.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600109
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600109,
+					"content": "Aber seit dem Auftauchen von Sturmschrecken haben sie die Obstplantage zerstört und die Handelswege gefährdet.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600110
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600110,
+					"content": "Wenn die Stürme ausbrechen, werden immer einige verletzt. Deshalb hat der Ritterorden alle Hände damit zu tun, das Gebiet zu verteidigen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600111
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600111,
+					"content": "Diese lästigen Dinger kommen also immer näher?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600112
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3600112,
+					"content": "Das stimmt. Dafür haben wir heute wieder ein Lager beseitigt. Das ist schon mal ein Anfang.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3600113
+					],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600113,
+					"content": "Und jetzt folgt mir einfach! Als verantwortungsbewusster Ritter werde ich euch bis in die Stadt begleiten.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Amber"
+				},
+				{
+					"id": 3600105,
+					"content": "Echt heftig.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3600106
+					]
+				}
+			]
+		}
+	]
+}

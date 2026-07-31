@@ -1,0 +1,91 @@
+{
+	"id": 16005,
+	"type": "LQ",
+	"name": "Interlúdio: Um Momento de Descanso",
+	"description": "O livro não dá nenhuma dica nova por enquanto. Você decide descansar um pouco antes de encontrar Durin de novo...",
+	"unlockDescription": "",
+	"chapter": "A Magia Conhecida Como Contar Histórias",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1600501,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1600501,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1600502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Espere até que o livro revele dicas para o próximo capítulo",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TIME_VAR_PASS_DAY",
+					"rawParams": [
+						16005,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1600031,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1600502",
+							"2"
+						],
+						"stepId": 1600502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Durin"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 160003101,
+					"content": "Tia Alice disse que podemos retornar ao mundo da história a qualquer momento.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						160003102
+					],
+					"speakerTitle": "Durin"
+				},
+				{
+					"id": 160003102,
+					"content": "Se você quiser conferir de novo, venha me procurar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Durin"
+				}
+			]
+		}
+	]
+}

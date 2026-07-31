@@ -1,0 +1,576 @@
+{
+	"id": 20040,
+	"type": "IQ",
+	"name": "新的风暴尚未出现",
+	"description": "芬德修女想要登上瞭望塔，但似乎被什么挡住了，她正在思索通过的方法…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2004001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "与芬德修女对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2004001,
+						0
+					],
+					"talkId": 2004001
+				}
+			]
+		},
+		{
+			"id": 2004002,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "清剿烽火台上的魔物",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2004003,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "与芬德修女对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2004002,
+						0
+					],
+					"talkId": 2004002
+				}
+			]
+		},
+		{
+			"id": 2004004,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "登上瞭望塔",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						2004004,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2004007,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "与芬德修女对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2004004,
+						0
+					],
+					"talkId": 2004004
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2004001,
+			"completionStepIds": [
+				2004001
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2004001",
+							"2"
+						],
+						"stepId": 2004001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"芬德"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200400101,
+					"content": "唉，到底怎么过去呢…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400102
+					],
+					"speakerTitle": "芬德"
+				},
+				{
+					"id": 200400102,
+					"content": "哦…您找我有什么事吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400103
+					],
+					"speakerTitle": "芬德"
+				},
+				{
+					"id": 200400103,
+					"content": "您在这做什么？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200400104
+					]
+				},
+				{
+					"id": 200400104,
+					"content": "我正准备去望风角的瞭望塔，去看看海上是不是有风暴在聚集。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400105
+					],
+					"speakerTitle": "芬德"
+				},
+				{
+					"id": 200400105,
+					"content": "可是前面有一群怪物挡住了路…我在思考怎么过去。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400106
+					],
+					"speakerTitle": "芬德"
+				},
+				{
+					"id": 200400106,
+					"content": "哦，不用担心，我没有让您代我去瞭望的意思。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400107
+					],
+					"speakerTitle": "芬德"
+				},
+				{
+					"id": 200400107,
+					"content": "这是我的职责，也是我个人的坚持而已。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400108
+					],
+					"speakerTitle": "芬德"
+				},
+				{
+					"id": 200400108,
+					"content": "您忙您的去吧，我自己再好好想想办法…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "芬德"
+				}
+			]
+		},
+		{
+			"id": 2004002,
+			"completionStepIds": [
+				2004003
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2004002",
+							"3"
+						],
+						"stepId": 2004002,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2004003",
+							"2"
+						],
+						"stepId": 2004003,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"芬德"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200400201,
+					"content": "您还有什么事吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400202
+					],
+					"speakerTitle": "芬德"
+				},
+				{
+					"id": 200400202,
+					"content": "前面已经安全了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200400203
+					]
+				},
+				{
+					"id": 200400203,
+					"content": "咦？感谢风神…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400204
+					],
+					"speakerTitle": "芬德"
+				},
+				{
+					"id": 200400204,
+					"content": "不，不对，抱歉，我应该感谢的是您才对。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400205
+					],
+					"speakerTitle": "芬德"
+				},
+				{
+					"id": 200400205,
+					"content": "我该怎么回报您呢…哦，对了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400206
+					],
+					"speakerTitle": "芬德"
+				},
+				{
+					"id": 200400206,
+					"content": "请您来瞭望塔顶吧，我在那等着您。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "芬德"
+				}
+			]
+		},
+		{
+			"id": 2004003,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2004002",
+							"2"
+						],
+						"stepId": 2004002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"芬德"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200400301,
+					"content": "唔…如果跑得够快，能不能直接爬上去呢…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "芬德"
+				}
+			]
+		},
+		{
+			"id": 2004004,
+			"completionStepIds": [
+				2004007
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2004004",
+							"3"
+						],
+						"stepId": 2004004,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2004007",
+							"2"
+						],
+						"stepId": 2004007,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"芬德"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200400401,
+					"content": "嗯…今天也是风平浪静的一天。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400402
+					],
+					"speakerTitle": "芬德"
+				},
+				{
+					"id": 200400402,
+					"content": "我的家族受到温妮莎大人命令，世代在此为蒙德守望风暴，",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400403
+					],
+					"speakerTitle": "芬德"
+				},
+				{
+					"id": 200400403,
+					"content": "虽然自从有了巴巴托斯大人的庇护，蒙德再也没有受到风暴的侵扰，瞭望台也逐渐废置了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400404
+					],
+					"speakerTitle": "芬德"
+				},
+				{
+					"id": 200400404,
+					"content": "但即使是这样，我还是会不由自主地想去瞭望塔上看看。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400405,
+						200400408
+					],
+					"speakerTitle": "芬德"
+				},
+				{
+					"id": 200400405,
+					"content": "辛苦了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200400406
+					]
+				},
+				{
+					"id": 200400406,
+					"content": "谢谢你，但是说到我的「职责」…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400407
+					],
+					"speakerTitle": "芬德"
+				},
+				{
+					"id": 200400407,
+					"content": "我倒宁愿永远不去真正履行它。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400410
+					],
+					"speakerTitle": "芬德"
+				},
+				{
+					"id": 200400410,
+					"content": "好了，谢谢您帮我，这些风车菊是给您的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400411
+					],
+					"speakerTitle": "芬德"
+				},
+				{
+					"id": 200400411,
+					"content": "在之前，我的家族常以风车菊的生长程度，来判断一个地区的风力大小。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400412
+					],
+					"speakerTitle": "芬德"
+				},
+				{
+					"id": 200400412,
+					"content": "丝毫无风的地方，或者暴风侵袭的地方，都不会有风车菊存在。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400413
+					],
+					"speakerTitle": "芬德"
+				},
+				{
+					"id": 200400413,
+					"content": "只有在蒙德这样温柔的风中，它才会顺利地生长。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400414
+					],
+					"speakerTitle": "芬德"
+				},
+				{
+					"id": 200400414,
+					"content": "真希望，它们能一直这么顺利地生长下去啊…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "芬德"
+				},
+				{
+					"id": 200400408,
+					"content": "是很辛苦的历史啊…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200400409
+					]
+				},
+				{
+					"id": 200400409,
+					"content": "是的，希望那段历史永远不再重演。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400410
+					],
+					"speakerTitle": "芬德"
+				}
+			]
+		},
+		{
+			"id": 2004005,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2004002",
+							"2"
+						],
+						"stepId": 2004002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"派蒙"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200400501,
+					"content": "虽然她话是这么说，但是前面的怪物很多呢。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400502
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 200400502,
+					"content": "我们去帮芬德小姐扫除一下周围吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400503
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 200400503,
+					"content": "看她认真的样子，搞不好会想着直接冲过去…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400504,
+						200400505
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 200400504,
+					"content": "没问题。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200400506
+					]
+				},
+				{
+					"id": 200400506,
+					"content": "嗯，认真的人就应该得到帮助呢。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 200400505,
+					"content": "真有人会认真到这种地步吗？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200400507
+					]
+				},
+				{
+					"id": 200400507,
+					"content": "那种是最糟糕的情况啦。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200400508
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 200400508,
+					"content": "为了不让这种情况发生，我们快点去扫除魔物吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				}
+			]
+		}
+	]
+}

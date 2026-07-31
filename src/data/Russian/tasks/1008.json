@@ -1,0 +1,1066 @@
+{
+	"id": 1008,
+	"type": "AQ",
+	"name": "Творец Гор",
+	"description": "По указанию Владыки Лун вы прибываете к горе Хулао, чтобы встретиться с Творцом Гор.",
+	"unlockDescription": "",
+	"chapter": "Загадочная земля тысячи камней",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		1009,
+		1003,
+		1018
+	],
+	"prevMainQuestList": [
+		1002
+	],
+	"steps": [
+		{
+			"id": 100801,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отыщите Творца Гор",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ADD_QUEST_PROGRESS",
+					"rawParams": [
+						100801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 100802,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						100802,
+						0
+					],
+					"talkId": 100802
+				}
+			]
+		},
+		{
+			"id": 100803,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 100804,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Освободите человека из янтарной ловушки",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 100805,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Ли Даном",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						100805,
+						0
+					],
+					"talkId": 100805
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						100898,
+						0
+					],
+					"talkId": 100898
+				}
+			]
+		},
+		{
+			"id": 100806,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Ли Даном и Ли Дином",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						100806,
+						0
+					],
+					"talkId": 100806
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						100897,
+						0
+					],
+					"talkId": 100897
+				}
+			]
+		},
+		{
+			"id": 100807,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Встретьтесь с Творцом Гор",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						100807,
+						0
+					],
+					"talkId": 100807
+				}
+			]
+		},
+		{
+			"id": 100808,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						100808,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 100802,
+			"completionStepIds": [
+				100802
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"100802",
+							"2"
+						],
+						"stepId": 100802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ли Дин"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 10080201,
+					"content": "Сжальтесь надо мной, могучий Адепт! Молю вас, пощадите меня и моего братца... Отпустите нас!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080202
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10080202,
+					"content": "Всё в порядке?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10080203
+					]
+				},
+				{
+					"id": 10080203,
+					"content": "#Ты... Ты... Ты кто так{F#ая}{M#ой}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080204
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10080204,
+					"content": "Мы тебя первые спросили!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080205
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 10080205,
+					"content": "Ох... Если вы безопасно прошли в Заоблачный предел, это может означать только одно...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080206
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10080206,
+					"content": "Вы посланники Адептов! Вас отправили сюда, чтобы спасти меня и моего брата!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080207
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10080207,
+					"content": "О чём это он?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080208
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 10080208,
+					"content": "Прошу, смилуйтесь, могучие посланники просветлённых Адептов! Я умоляю о помощи! Мы с братом пришли сюда только из-за бедности... Мы услышали о несметных сокровищах, что таит гора Хулао...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080209
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10080209,
+					"content": "Как же глупо мы поступили... Но мы всего лишь хотели поправить финансовое состояние нашей семьи...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080210
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10080210,
+					"content": "Мы поднялись по <color=#00E1FFFF>тропинке высоко в горы</color>, но вдруг янтарь... он поглотил моего брата, Ли Дана!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080211
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10080211,
+					"content": "Я бросился прочь... Я бежал, что есть мочи... И только сейчас до меня дошло, что мы перешли священные границы и за это понесли наказание...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080212
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10080212,
+					"content": "Я понятия не имею, как спасти брата, поэтому я начал молить Адептов о помощи. И вот ко мне явились двое посланников...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080213
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10080213,
+					"content": "Что ты несёшь? Мы никакие не посланники Адептов! Мы сами тоже ищем Адептов, как и все.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080214
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 10080214,
+					"content": "Нет! Нет-нет-нет! Вы посланники! Вы должны быть посланниками...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080215
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10080215,
+					"content": "Я не знаю, какой именно янтарь схватил моего брата... Прошу вас, спасите его! Умоляю, проявите хоть немножко милосердия Адептов...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080216,
+						10080218
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10080216,
+					"content": "Хорошо... Я посмотрю, что можно сделать.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10080217
+					]
+				},
+				{
+					"id": 10080217,
+					"content": "Спасибо. Спасибо вам, могучие посланники просветлённых Адептов. Я обещаю, что впредь буду вести себя хорошо!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10080218,
+					"content": "О твоём преступлении и раскаянии мне известно.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10080219
+					]
+				},
+				{
+					"id": 10080219,
+					"content": "Ого! Когда ты так разговариваешь, несложно поверить в то, что ты на самом деле посланник Адептов!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080220
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 10080220,
+					"content": "Хвала Адептам горы Хулао и их могучим посланникам! Мы больше никогда не будем совершать таких глупых поступков!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ли Дин"
+				}
+			]
+		},
+		{
+			"id": 100806,
+			"completionStepIds": [
+				100806
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"100806",
+							"2"
+						],
+						"stepId": 100806,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"100802",
+							"3"
+						],
+						"stepId": 100802,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ли Дин"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 10080601,
+					"content": "Благодарю за спасение моего брата, могучие посланники просветлённых Адептов.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080602
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10080602,
+					"content": "Ты встречал Адептов?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10080603
+					]
+				},
+				{
+					"id": 10080603,
+					"content": "Что? Нет... Мы только слышали, что они живут где-то на горе Хулао...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080604
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10080604,
+					"content": "Но простым смертным редко удаётся воочию увидеть Адептов...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080605
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10080605,
+					"content": "В отличие от вас... Вы ведь их посланники. Вы стоите совсем на другом уровне...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080606
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10080606,
+					"content": "В любом случае мы уже слишком долго находимся на территории Адептов без разрешения. Пора продолжать путь. Спасибо вам, могучие посланники Адептов...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080607
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10080607,
+					"content": "Да, спасибо вам, посланники...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080608
+					],
+					"speakerTitle": "Ли Дан"
+				},
+				{
+					"id": 10080608,
+					"content": "Вот было бы здорово, если бы мы и вправду были посланниками Адептов...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080609
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 10080609,
+					"content": "Судя по всему, у этого Адепта достаточно скверный характер...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080610
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 10080610,
+					"content": "Но мы же не сделали ничего плохого? Поэтому у нас не должно возникнуть никаких проблем...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10089601
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 10089601,
+					"content": "Кто посмел проникнуть в мои владения? Кто освободил вора из заточения?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10089602
+					],
+					"speakerTitle": "Творец Гор"
+				},
+				{
+					"id": 10089602,
+					"content": "Глупые смертные, понесите же заслуженное наказание!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Творец Гор"
+				}
+			]
+		},
+		{
+			"id": 100807,
+			"completionStepIds": [
+				100807
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"100807",
+							"2"
+						],
+						"stepId": 100807,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Творец Гор"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 10080701,
+					"content": "Вы вторгаетесь в заповедную гору Хулао, вы уничтожаете мои янтарные ловушки, вы даруете вору свободу, не имея на то ни малейшего права!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080702
+					],
+					"speakerTitle": "Творец Гор"
+				},
+				{
+					"id": 10080702,
+					"content": "Действия вора оскорбили Адепта, но то, что натворили вы, - переходит все возможные границы!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080703
+					],
+					"speakerTitle": "Творец Гор"
+				},
+				{
+					"id": 10080703,
+					"content": "Подождите! Мы можем всё объяснить!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080704,
+						10080706
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 10080704,
+					"content": "Вот, смотрите...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10080705
+					]
+				},
+				{
+					"id": 10080705,
+					"content": "Печать согласия! Не знал, что такие ещё остались в мире смертных...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080708
+					],
+					"speakerTitle": "Творец Гор"
+				},
+				{
+					"id": 10080708,
+					"content": "Это... Печать согласия? Удивительно, что в мире смертных ещё остались подобные вещи...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080709
+					],
+					"speakerTitle": "Творец Гор"
+				},
+				{
+					"id": 10080709,
+					"content": "На заре времён Властелин Камня лично даровал их простым смертным.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080710
+					],
+					"speakerTitle": "Творец Гор"
+				},
+				{
+					"id": 10080710,
+					"content": "Говорите. Я хочу знать, что привело вас ко мне.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080711
+					],
+					"speakerTitle": "Творец Гор"
+				},
+				{
+					"id": 10080711,
+					"content": "Проявите мудрость и говорите правду. Вряд ли вам удастся меня обмануть.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080712
+					],
+					"speakerTitle": "Творец Гор"
+				},
+				{
+					"id": 10080712,
+					"content": "Властелин Камня... убит?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080713
+					],
+					"speakerTitle": "Творец Гор"
+				},
+				{
+					"id": 10080713,
+					"content": "Во время Церемонии Сошествия?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080714
+					],
+					"speakerTitle": "Творец Гор"
+				},
+				{
+					"id": 10080714,
+					"content": "Кто же в Ли Юэ... во всём мире посмел бы на подобную измену? Или стоит спросить, у кого хватило бы на это сил?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080715
+					],
+					"speakerTitle": "Творец Гор"
+				},
+				{
+					"id": 10080715,
+					"content": "Властелин Камня поручил Адептам защищать Ли Юэ, и мы с честью выполняли свой долг. Чем лучше жили граждане города, тем выше мы уходили в горы. Это был жест доброй воли к человечеству.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080716
+					],
+					"speakerTitle": "Творец Гор"
+				},
+				{
+					"id": 10080716,
+					"content": "Но теперь... Когда Властелина Камня больше нет...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080717
+					],
+					"speakerTitle": "Творец Гор"
+				},
+				{
+					"id": 10080717,
+					"content": "#Путешественни{F#ца}{M#к}, ты прин{F#есла}{M#ёс} мне дурную весть. Я знаю, почему Владыка Лун послал за мной.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080718
+					],
+					"speakerTitle": "Творец Гор"
+				},
+				{
+					"id": 10080718,
+					"content": "Мне нужно закончить некоторые дела, требующие моего внимания. После этого я встречусь с другими Адептами.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080719
+					],
+					"speakerTitle": "Творец Гор"
+				},
+				{
+					"id": 10080719,
+					"content": "А что происходит с этим янтарём?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10080720
+					]
+				},
+				{
+					"id": 10080720,
+					"content": "Паймон знает! В книжках говорится, что у Адептов есть магические силы. Похоже, что это действительно так...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080721
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 10080721,
+					"content": "Трава - это волосы Адептов, а реки - их слюни... Ну и с янтарём должно быть что-то в этом духе...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080722,
+						10080723
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 10080722,
+					"content": "Получается, дождь - это слёзы Адептов?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10080724
+					]
+				},
+				{
+					"id": 10080724,
+					"content": "...Вы несёте полную чушь! Этот янтарь производят особые цветы, наскальные подсолнухи.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080725
+					],
+					"speakerTitle": "Творец Гор"
+				},
+				{
+					"id": 10080725,
+					"content": "Чаще всего эти цветы растут под землёй. Если наступить на такой цветок, то попадёшь в янтарную ловушку.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080726
+					],
+					"speakerTitle": "Творец Гор"
+				},
+				{
+					"id": 10080726,
+					"content": "Когда я поселился здесь, я посадил множество наскальных подсолнухов, чтобы сохранить тишину и спокойствие в этом месте. На протяжении долгих лет они помогали мне сохранять покой. А ещё в эти ловушки попало много разных интересных вещиц...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080727
+					],
+					"speakerTitle": "Творец Гор"
+				},
+				{
+					"id": 10080727,
+					"content": "Получается, что этот янтарь... живой?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080728
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 10080728,
+					"content": "Получается, что так. Поэтому я не могу так просто оставить это место, и подвергнуть риску жизни невиновных.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080729
+					],
+					"speakerTitle": "Творец Гор"
+				},
+				{
+					"id": 10080729,
+					"content": "Я отправлюсь в путь, как только разберусь с этой проблемой. Я полагаю, что вы отправитесь в путь намного раньше.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Творец Гор"
+				},
+				{
+					"id": 10080723,
+					"content": "Янтарь - это кристаллизованные Адепты? Мерзость...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10080724
+					]
+				},
+				{
+					"id": 10080706,
+					"content": "Нас послал Владыка Лун...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10080707
+					]
+				},
+				{
+					"id": 10080707,
+					"content": "Владыка Лун... послал ко мне обычных смертных?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080708
+					],
+					"speakerTitle": "Творец Гор"
+				}
+			]
+		},
+		{
+			"id": 100897,
+			"completionStepIds": [
+				100806
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"100806",
+							"2"
+						],
+						"stepId": 100806,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"100802",
+							"4"
+						],
+						"stepId": 100802,
+						"stateName": "QUEST_STATE_FAILED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ли Дин"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 10089701,
+					"content": "Братец рассказал мне, как вы его спасли! Спасибо вам!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10089702
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10089702,
+					"content": "Эх... У нашей семьи ничего не осталось... Мы услышали о сокровищах в янтарных ловушках горы Хулао и решили испытать удачу...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10089703
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10089703,
+					"content": "О чём мы только думали? Мы планировали найти сокровища и взять ровно столько, сколько нужно для пропитания нашей семьи...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10089704
+					],
+					"speakerTitle": "Ли Дан"
+				},
+				{
+					"id": 10089704,
+					"content": "В итоге Адепт наказал нас за жадность. Янтарная ловушка поглотила меня, и если бы не ваша помощь, то не знаю, когда бы я выбрался на волю...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10089705
+					],
+					"speakerTitle": "Ли Дан"
+				},
+				{
+					"id": 10089706,
+					"content": "...Посланников?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10089707
+					]
+				},
+				{
+					"id": 10089709,
+					"content": "О твоём преступлении и раскаянии мне известно.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10089710
+					]
+				},
+				{
+					"id": 10089705,
+					"content": "К счастью, Адепт проявил милосердие и направил нам на помощь двух могучих посланников...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10089706,
+						10089709
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10089707,
+					"content": "Да! Вы двое спасли жизнь моему брату, пока я молил Адепта о прощении прямо здесь на вершине горы!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10089708
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10089708,
+					"content": "Значит, вы - посланники Адепта!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10089712
+					],
+					"speakerTitle": "Ли Дан"
+				},
+				{
+					"id": 10089710,
+					"content": "Ого! А у тебя здорово получается изображать посланника Адептов!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10089711
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 10089711,
+					"content": "Спасибо... Мы с братом приносим искренние извинения. Мы больше так не будем...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10089712
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10089712,
+					"content": "Мы счастливы получить благословение Адептов и отныне начнём вести честную жизнь. Даже если ради этого нам придётся работать портовыми грузчиками...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10089713
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10089713,
+					"content": "В любом случае мы уже слишком долго находимся на территории Адептов без разрешения. Пора продолжать путь. Спасибо вам, могучие посланники Адептов...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10089714
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10089714,
+					"content": "Да, спасибо вам, посланники...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10089715
+					],
+					"speakerTitle": "Ли Дан"
+				},
+				{
+					"id": 10089715,
+					"content": "Вот было бы здорово, если бы мы и вправду были посланниками Адептов...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10089716
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 10080609,
+					"content": "Судя по всему, у этого Адепта достаточно скверный характер...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10080610
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 10080610,
+					"content": "Но мы же не сделали ничего плохого? Поэтому у нас не должно возникнуть никаких проблем...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10089601
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 10089601,
+					"content": "Кто посмел проникнуть в мои владения? Кто освободил вора из заточения?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10089602
+					],
+					"speakerTitle": "Творец Гор"
+				},
+				{
+					"id": 10089602,
+					"content": "Глупые смертные, понесите же заслуженное наказание!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Творец Гор"
+				}
+			]
+		},
+		{
+			"id": 100899,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"100802",
+							"3"
+						],
+						"stepId": 100802,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"100803",
+							"2"
+						],
+						"stepId": 100803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ли Дин"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 10089901,
+					"content": "Пожалуйста, спасите моего брата. Я не знаю, какой именно янтарь его поглотил...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10089902
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10089902,
+					"content": "Я точно уверен в том, что мы <color=#00E1FFFF>не сходили с этой тропы</color>. Янтарь должен быть где-то по пути на вершину.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10089903
+					],
+					"speakerTitle": "Ли Дин"
+				},
+				{
+					"id": 10089903,
+					"content": "Могущественные посланники Адептов, умоляю вас, спасите его...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ли Дин"
+				}
+			]
+		}
+	]
+}

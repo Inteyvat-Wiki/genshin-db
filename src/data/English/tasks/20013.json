@@ -1,0 +1,299 @@
+{
+	"id": 20013,
+	"type": "IQ",
+	"name": "Blocked?",
+	"description": "Jack was on his way to a new adventure spot, but has found himself under attack by hilichurls at Drunkard Gorge. Defeat the hilichurls and save Jack.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2001301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go check the details",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001302,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Defeat the nearby enemies",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Defeat all opponents and destroy the roadblocks",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2001304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Jack",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2001303,
+						0
+					],
+					"talkId": 2001303
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2001301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001302",
+							"2"
+						],
+						"stepId": 2001302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200130101,
+					"content": "Help!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				}
+			]
+		},
+		{
+			"id": 2001302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001302",
+							"3"
+						],
+						"stepId": 2001302,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001303",
+							"2"
+						],
+						"stepId": 2001303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200130201,
+					"content": "Traveler, it's you! Thank you so much.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130202
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130202,
+					"content": "Can I ask you for a favor...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130203
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130203,
+					"content": "This roadblock here is the only thing getting between me and my adventure...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130204
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130204,
+					"content": "Can you get rid of it for me?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130205,
+						200130206
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130205,
+					"content": "Sure.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200130207
+					]
+				},
+				{
+					"id": 200130207,
+					"content": "*sigh* I wish I was more like you... I'd be a veteran Adventurer by now!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130206,
+					"content": "I'd love to, but I have to get going.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200130208
+					]
+				},
+				{
+					"id": 200130208,
+					"content": "Please, I'm begging you... I can't let this be where my adventure ends!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				}
+			]
+		},
+		{
+			"id": 2001303,
+			"completionStepIds": [
+				2001304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2001304",
+							"2"
+						],
+						"stepId": 2001304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jack"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200130301,
+					"content": "Thank you so much, Traveler.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130302
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130302,
+					"content": "I was on my way to check out somewhere Stanley once went on an adventure. Had I known they would show up...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130303
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130303,
+					"content": "I'm just not strong enough... I know for a fact that Stanley would have had no problem dealing with a group like that.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130304
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130304,
+					"content": "Why don't you join me? Join me! ...Ugh, never mind, I can't have someone else doing even my adventuring for me...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130305
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130305,
+					"content": "I'm going to get moving. This is for you, I've gathered loads on the way to supplement my rations.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200130306
+					],
+					"speakerTitle": "Jack"
+				},
+				{
+					"id": 200130306,
+					"content": "...Even though they're not exactly rations.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jack"
+				}
+			]
+		}
+	]
+}

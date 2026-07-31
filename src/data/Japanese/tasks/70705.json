@@ -1,0 +1,167 @@
+{
+	"id": 70705,
+	"type": "WQ",
+	"name": "コナーの醸造材料のリクエスト",
+	"description": "アカツキワイナリーのコナーは霧氷花の花蕊を3つ必要としている。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "霧氷花の花蕊をコナーに3つ渡す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070501,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "コナーと会話する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070502,
+						0
+					],
+					"talkId": 7070502
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070501,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070501",
+							"2"
+						],
+						"stepId": 7070501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070501"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"コナー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707050101,
+					"content": "霧氷花の花蕊について…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707050102
+					]
+				},
+				{
+					"id": 707050102,
+					"content": "俺の依頼を見てきたのだな。どうだ？霧氷花の花蕊を3つ集められたか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707050103,
+						707050104
+					],
+					"speakerTitle": "コナー"
+				},
+				{
+					"id": 707050103,
+					"content": "集めて来たよ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707050104,
+					"content": "まだ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707050105
+					]
+				},
+				{
+					"id": 707050105,
+					"content": "なら早くしてくれ。醸造に必要なんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "コナー"
+				}
+			]
+		},
+		{
+			"id": 7070502,
+			"completionStepIds": [
+				7070502
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070502",
+							"2"
+						],
+						"stepId": 7070502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"コナー"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707050201,
+					"content": "うん、なかなか質のいい霧氷花の花蕊だ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707050202
+					],
+					"speakerTitle": "コナー"
+				},
+				{
+					"id": 707050202,
+					"content": "これをやる、受け取ってくれ。手助けありがとう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "コナー"
+				}
+			]
+		}
+	]
+}

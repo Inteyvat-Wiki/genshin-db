@@ -1,0 +1,864 @@
+{
+	"id": 22006,
+	"type": "IQ",
+	"name": "Objet perdu",
+	"description": "Bao'er dit avoir perdu un objet précieux, et le cherche désespérément. Elle aurait bien besoin d'aide...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2200601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Discutez avec Bao'er.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2200601,
+						0
+					],
+					"talkId": 2200601
+				}
+			]
+		},
+		{
+			"id": 2200602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Cherchez l'objet perdu par Bao'er.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2200603,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Aidez Soraya.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2200604,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Soraya.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2200603,
+						0
+					],
+					"talkId": 2200603
+				}
+			]
+		},
+		{
+			"id": 2200605,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Discutez avec Bao'er.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2200605,
+						0
+					],
+					"talkId": 2200605
+				}
+			]
+		},
+		{
+			"id": 2200606,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Discutez avec Bao'er.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2200606,
+						0
+					],
+					"talkId": 2200606
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2200601,
+			"completionStepIds": [
+				2200601
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2200601",
+							"2"
+						],
+						"stepId": 2200601,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Bao'er"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220060101,
+					"content": "Mais où est-il passé...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060102
+					],
+					"speakerTitle": "Bao'er"
+				},
+				{
+					"id": 220060102,
+					"content": "Qu'est-ce que tu as – encore – perdu ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060103
+					]
+				},
+				{
+					"id": 220060103,
+					"content": "Je n'ai rien perdu cette fois... Je cherche toujours ! Mais je n'arrive pas à remettre la main dessus !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060104
+					],
+					"speakerTitle": "Bao'er"
+				},
+				{
+					"id": 220060104,
+					"content": "Où est-ce qu'il peut bien être ? Après tous les efforts que ça m'a coûté de déterminer sa position...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060105
+					],
+					"speakerTitle": "Bao'er"
+				},
+				{
+					"id": 220060105,
+					"content": "Aide-moi à mettre la main dessus, d'accord ? On ne peut pas laisser un tel objet au milieu de nulle part !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060106,
+						220060107
+					],
+					"speakerTitle": "Bao'er"
+				},
+				{
+					"id": 220060106,
+					"content": "D'accord...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060108
+					]
+				},
+				{
+					"id": 220060108,
+					"content": "Chercher par là-bas, moi je continue à chercher ici.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060109
+					],
+					"speakerTitle": "Bao'er"
+				},
+				{
+					"id": 220060109,
+					"content": "Il faut qu'on le retrouve !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Bao'er"
+				},
+				{
+					"id": 220060107,
+					"content": "C'est quoi comme relique cette fois-ci...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060110
+					]
+				},
+				{
+					"id": 220060110,
+					"content": "C'est un, euh... C'est super ancien en tout cas, ça remonte à des centaines d'années – non, à la Guerre des Archons même !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060111
+					],
+					"speakerTitle": "Bao'er"
+				},
+				{
+					"id": 220060111,
+					"content": "Enfin, c'est une relique très précieuse et qui ne doit pas rester perdue ! Allez, en chasse !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Bao'er"
+				}
+			]
+		},
+		{
+			"id": 2200602,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2200602",
+							"2"
+						],
+						"stepId": 2200602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Bao'er"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220060201,
+					"content": "Mais où est-il passé...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060202
+					],
+					"speakerTitle": "Bao'er"
+				},
+				{
+					"id": 220060202,
+					"content": "C'est quoi comme relique cette fois-ci...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060203
+					]
+				},
+				{
+					"id": 220060203,
+					"content": "C'est un, euh... C'est super ancien en tout cas, ça remonte à des centaines d'années – non, à la Guerre des Archons même !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060204
+					],
+					"speakerTitle": "Bao'er"
+				},
+				{
+					"id": 220060204,
+					"content": "Enfin, c'est une relique très précieuse et qui ne doit pas rester perdue ! Allez, en chasse !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Bao'er"
+				}
+			]
+		},
+		{
+			"id": 2200603,
+			"completionStepIds": [
+				2200604
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2200604",
+							"2"
+						],
+						"stepId": 2200604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Soraya"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220060301,
+					"content": "#Merci, {M#voyageur}{F#voyageuse}... C'était terrifiant, dis donc. Ces Pilleurs sont de plus en plus dangereux.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060302
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060302,
+					"content": "Et tu es...?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060303
+					]
+				},
+				{
+					"id": 220060303,
+					"content": "Ah, je m'appelle Soraya ; je vais où mes recherches me portent.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060304
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060304,
+					"content": "Il y a quelques jours, j'ai suivi des indices qui m'ont amenée dans des ruines, où j'ai trouvé une plaque de jade narrant la Guerre des Archons.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060305
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060305,
+					"content": "Mais je l'avais à peine récupérée que je me suis fait attaquer par des Pilleurs de trésors... J'ai couru comme j'ai pu, mais ils ne m'ont pas lâchée.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060306
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060306,
+					"content": "Heureusement que vous étiez là, où alors la plaque et moi étions bonnes pour pas mal d'ennuis. Merci.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060307
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060307,
+					"content": "Tu es aussi une chercheuse ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060308
+					]
+				},
+				{
+					"id": 220060308,
+					"content": "... « aussi » ? Il y en a d'autres par ici ? De qui s'agit-il ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060309
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060309,
+					"content": "Bao'er... Attends voir. J'ai entendu un des Pilleurs qui me coursaient se plaindre qu'une Bao'er gardait tous les trésors pour elle...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060310
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060310,
+					"content": "Sacrée coïncidence non ? Tu pourrais me décrire la personne ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060311
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060311,
+					"content": "Voilà ce qui s'est passé...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060312
+					]
+				},
+				{
+					"id": 220060312,
+					"content": "... Alors cette Bao'er est en train de chercher les lieux que j'avais marqués. Ça fait beaucoup de coïncidences, tu ne trouves pas ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060313
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060313,
+					"content": "S'il s'agit comme je le pense d'un membre des Pilleurs, alors ils devaient me suivre depuis un bon moment...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060314
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060314,
+					"content": "Et cette Bao'er veut les trésors pour elle seule, et est partie toute seule à leur recherche. Mais la zone étant trop grande pour elle...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060315
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060315,
+					"content": "#On dirait bien qu'elle t'a {M#utilisé}{F#utilisée}, j'en ai peur. Et je parie qu'elle avait repéré le coin depuis un bon moment ; ses confrères et moi sommes juste arrivés avant toi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060316
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060316,
+					"content": "Pas de quoi s'inquiéter, c'est juste une hypothèse ; mais ce nom, Bao'er... Ça ressemble à un faux, ou un nom de code peut-être.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060317
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060317,
+					"content": "Hum, pourrais-je te demander de l'embobiner ? Il ne faut pas que cette plaque de jade tombe dans de mauvaises mains.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060318,
+						220060319
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060318,
+					"content": "Pas de problème !",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060320
+					]
+				},
+				{
+					"id": 220060320,
+					"content": "Merci. En effet... Elle aura des doutes.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060321
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060321,
+					"content": "J'ai une bricole ici qui ne vaut pas grand-chose, ça devrait faire l'affaire.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060322
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060322,
+					"content": "Elle n'en tirera pas grand-chose, mais ça suffira à lever ses doutes pour le moment.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060325
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060325,
+					"content": "Bien ! Vas-y vite. Tu as peut-être vaincu ses amis, mais elle l'ignore si elle voyage seule.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060326
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060326,
+					"content": "Ah ! Si par hasard elle te redemande de partir à la recherche d'un autre objet, n'hésite pas à revenir me voir si tu le trouves. Je suis souvent à l'Auberge Wangshu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060327
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060327,
+					"content": "*soupir* Je suis limitée dans mes actions, mais je sais au moins conserver une relique historique en sécurité quand il le faut... C'est toujours ça, j'imagine.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060319,
+					"content": "Mais si je reviens les mains vides...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060323
+					]
+				},
+				{
+					"id": 220060323,
+					"content": "Hum, pas faux... Bon. J'ai ici une babiole qui ne vaut pas grand-chose ; prends-la.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060324
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060324,
+					"content": "Elle n'en tirera pas grand-chose, mais ça suffira à lever ses doutes pour le moment.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060325
+					],
+					"speakerTitle": "Soraya"
+				}
+			]
+		},
+		{
+			"id": 2200604,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2200605",
+							"2"
+						],
+						"stepId": 2200605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Soraya"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220060401,
+					"content": "05 Test de discussion d'inactivité de Soraya (pour Bao'er)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Soraya"
+				}
+			]
+		},
+		{
+			"id": 2200605,
+			"completionStepIds": [
+				2200605
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2200605",
+							"2"
+						],
+						"stepId": 2200605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Bao'er"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220060501,
+					"content": "05 Test de discussion de Bao'er (pour Bao'er)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Bao'er"
+				}
+			]
+		},
+		{
+			"id": 2200606,
+			"completionStepIds": [
+				2200606
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2200606",
+							"2"
+						],
+						"stepId": 2200606,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Bao'er"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220060601,
+					"content": "Dis donc, ça t'a pris longtemps ? Tu as trouvé quelque chose ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060602,
+						220060603
+					],
+					"speakerTitle": "Bao'er"
+				},
+				{
+					"id": 220060602,
+					"content": "Oui... Ceci.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060604
+					]
+				},
+				{
+					"id": 220060604,
+					"content": "Hum, c'est pas si mal, mais... Ça n'a rien à voir avec ce que je cherchais.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060605
+					],
+					"speakerTitle": "Bao'er"
+				},
+				{
+					"id": 220060605,
+					"content": "Enfin, c'est toujours ça de pris, hein ! Laisse-le moi, j'en prendrai soin. Ne t'inquiète pas, je veillerai à ce qu'on en prenne bien soin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060609
+					],
+					"speakerTitle": "Bao'er"
+				},
+				{
+					"id": 220060609,
+					"content": "Merci ! Tiens, en récompense.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060610
+					],
+					"speakerTitle": "Bao'er"
+				},
+				{
+					"id": 220060610,
+					"content": "Ah, mais cette autre relique perdue au milieu de nulle part...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Bao'er"
+				},
+				{
+					"id": 220060603,
+					"content": "C'est ça que tu cherches ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060606
+					]
+				},
+				{
+					"id": 220060606,
+					"content": "Hum, c'est pas si mal, mais... Ce n'est pas ce que je cherchais.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060607
+					],
+					"speakerTitle": "Bao'er"
+				},
+				{
+					"id": 220060607,
+					"content": "Enfin... Tu ne sais pas comment protéger les objets à grande valeur historique, tu risques de l'abîmer tu sais.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060608
+					],
+					"speakerTitle": "Bao'er"
+				},
+				{
+					"id": 220060608,
+					"content": "Mieux vaut que tu me le laisses, je veillerai à ce qu'on en prenne bien soin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060609
+					],
+					"speakerTitle": "Bao'er"
+				}
+			]
+		},
+		{
+			"id": 2200607,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2200606",
+							"2"
+						],
+						"stepId": 2200606,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Soraya"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220060701,
+					"content": "Bénis soient les Archons, la plaque de jade est intacte.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060702,
+						220060706
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060702,
+					"content": "Pourquoi tu ne leur as pas laissé quand ils t'ont attaquée ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060703
+					]
+				},
+				{
+					"id": 220060703,
+					"content": "Une relique est supposée être étudiée par les chercheurs, servir d'inspiration pour les artistes, être objet d'admiration de la part des hommes...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060704
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060704,
+					"content": "Mais en aucun cas elle ne peut servir de vulgaire moyen de gagner de l'argent pour des voleurs. C'est la déshonorer de faire ça, tu sais... Et c'est aussi insulter l'histoire.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060705
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060705,
+					"content": "Ce type de personne... Je ne peux pas les sentir, crois-moi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060706,
+					"content": "Cette plaque de jade...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220060707
+					]
+				},
+				{
+					"id": 220060707,
+					"content": "Oui ? Ah, elle t'intéresse hein ? C'est sa valeur culturelle, ou sa valeur monétaire qui t'intéresse ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060708
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060708,
+					"content": "Je plaisante ! Cette relique décrit un passage de la Guerre des Archons... un combat entre clans, si je ne me trompe pas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060709
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060709,
+					"content": "Si j'arrive à la déchiffrer, je pourrai peut-être compléter quelques archives de l'Académie de Sumeru.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220060710
+					],
+					"speakerTitle": "Soraya"
+				},
+				{
+					"id": 220060710,
+					"content": "À moins que ces archives ne soient déjà complètes, et que je n'aie juste pas l'autorisation de les consulter...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Soraya"
+				}
+			]
+		}
+	]
+}

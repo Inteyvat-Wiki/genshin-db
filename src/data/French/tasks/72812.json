@@ -1,0 +1,197 @@
+{
+	"id": 72812,
+	"type": "WQ",
+	"name": "Structuration de l'intrigue",
+	"description": "Junkichi a de nouveau du mal à écrire son histoire...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7281201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Junkichi.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7281201,
+						0
+					],
+					"talkId": 7281201
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7281203,
+						0
+					],
+					"talkId": 7281203
+				}
+			]
+		},
+		{
+			"id": 7281202,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Écoutez l'histoire de Junkichi.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7281203,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Faites votre rapport à Junkichi.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7281202,
+						0
+					],
+					"talkId": 7281202
+				}
+			]
+		},
+		{
+			"id": 7281204,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Junkichi.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7281201,
+						0
+					],
+					"talkId": 7281201
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7281203,
+						0
+					],
+					"talkId": 7281203
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7281202,
+			"completionStepIds": [
+				7281203
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7281203",
+							"2"
+						],
+						"stepId": 7281203,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Junkichi",
+					"Shigeru"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 728120201,
+					"content": "C'est terminé.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728120202
+					],
+					"speakerTitle": "Junkichi"
+				},
+				{
+					"id": 728120202,
+					"content": "Pfiou, je n'ai jamais été aussi épuisé. Cette histoire a-t-elle toujours été aussi compliquée ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728120203
+					],
+					"speakerTitle": "Junkichi"
+				},
+				{
+					"id": 728120203,
+					"content": "Voilà ce qui ce passe quand on ne détermine pas les points centraux de l'intrigue dès le début. Sans eux, tout devient un bazar sans nom.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728120204
+					],
+					"speakerTitle": "Shigeru"
+				},
+				{
+					"id": 728120204,
+					"content": "Quand ça arrive, tu perds tout contrôle sur ton histoire. Puis, peu importe ce que tu écrirais, tu n'en verrais jamais le bout.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728120205
+					],
+					"speakerTitle": "Shigeru"
+				},
+				{
+					"id": 728120205,
+					"content": "#*soupir* D'accord, j'ai compris... Je n'ai plus la force de me disputer avec toi. Merci pour votre aide, {M#voyageur}{F#voyageuse}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728120206
+					],
+					"speakerTitle": "Junkichi"
+				},
+				{
+					"id": 728120206,
+					"content": "J'ai beaucoup appris.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728120207
+					],
+					"speakerTitle": "Junkichi"
+				},
+				{
+					"id": 728120207,
+					"content": "Prenez ceci en guise de remerciement. Je vais bientôt me remettre à ma plume.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728120208
+					],
+					"speakerTitle": "Junkichi"
+				},
+				{
+					"id": 728120208,
+					"content": "Qu'est-ce qui est le plus important ? L'intrigue ou son cadre ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Junkichi"
+				}
+			]
+		}
+	]
+}

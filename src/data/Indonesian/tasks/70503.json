@@ -1,0 +1,562 @@
+{
+	"id": 70503,
+	"type": "WQ",
+	"name": "Es Padat, Larut Dalam Anggur",
+	"description": "\"Ckck, kenapa si Lawrence harus minum di sini juga sih ... Sial ....\" \"Ehem ... Jaga ucapanmu itu. Bagaimanapun, dia juga salah satu dari Knight ....\"",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70508,
+		70509
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Luka dan masuk ke Tavern",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050302,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Raciklah minuman yang ditentukan untuk Eula",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050302,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050303,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Berikan minumannya kepada Eula",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050302,
+						0
+					],
+					"talkId": 7050302
+				}
+			]
+		},
+		{
+			"id": 7050304,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bicara dengan Eula",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050301,
+						0
+					],
+					"talkId": 7050301
+				}
+			]
+		},
+		{
+			"id": 7050305,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Pergi ke bar dan selesaikan persiapan bisnis",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050301,
+			"completionStepIds": [
+				7050304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050304",
+							"2"
+						],
+						"stepId": 7050304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050302",
+							"2"
+						],
+						"stepId": 7050302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Eula"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705030101,
+					"content": "Foamy Reef kecil satu ... Terima kasih.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030102,
+						705030103
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030102,
+					"content": "Eula?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030104
+					]
+				},
+				{
+					"id": 705030104,
+					"content": "A-Aku tidak apa-apa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030105
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030105,
+					"content": "Eh ... ada yang aneh nih. Apa Eula sudah minum sebelum ke sini?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030106
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030106,
+					"content": "Tapi, Foamy Reef kan ada kopinya. Bukannya bakalan sakit perut kalau minum kopi bareng alkohol?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030107
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030107,
+					"content": "Biar dia enggak sakit perut, kita encerin aja dulu minumannya ! Tambahin air!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030103,
+					"content": "Kamu kenapa?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030104
+					]
+				}
+			]
+		},
+		{
+			"id": 7050302,
+			"completionStepIds": [
+				7050303
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050303",
+							"2"
+						],
+						"stepId": 7050303,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Eula"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705030238,
+					"content": "Menuruti saran Paimon, kamu mencampurkan air ke kopinya ....",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": []
+				},
+				{
+					"id": 705030201,
+					"content": "Ini enak juga ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030202
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030202,
+					"content": "Wow, dia enggak sadar sama sekali kita masukin air banyak banget ... dia pasti sudah minum banyak tuh.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030203
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030203,
+					"content": "Bartender, satu lagi ... Loh?? Ko-Kok kalian sih yang jaga?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030204,
+						705030205
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030204,
+					"content": "Kami lagi belajar jadi bartender.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030206
+					]
+				},
+				{
+					"id": 705030205,
+					"content": "Kamu baru ngeh?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030206
+					]
+				},
+				{
+					"id": 705030206,
+					"content": "....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030207
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030207,
+					"content": "Maaf, aku barusan habis dari Cat's Tail. Mungkin ... aku sudah kebanyakan minum ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030208,
+						705030209
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030208,
+					"content": "Kamu kenapa? Lagi banyak pikiran?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030210
+					]
+				},
+				{
+					"id": 705030209,
+					"content": "Ceritakan padaku.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030210
+					]
+				},
+				{
+					"id": 705030210,
+					"content": "Iya, minum sendirian enggak asyik ah. Ngobrol saja sama kami sini!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030211
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030211,
+					"content": "....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030212
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030212,
+					"content": "Aku memang selalu minum sendirian.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030213
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030213,
+					"content": "Aku bukan tamu kehormatan di kedai mana pun yang ada di Mondstadt. Hari ini sebetulnya aku lagi senang dan ingin minum, tapi mereka tetap saja ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030214
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030214,
+					"content": "#{NICKNAME}, kasih tahu aku kenapa kamu mudah sekali punya teman?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030215
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030215,
+					"content": "Orang-orang selalu tersenyum dan bersikap hormat saat membicarakan kamu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030216
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030216,
+					"content": "Kalau aku, sebut nama klanku saja mereka langsung ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030217
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030217,
+					"content": "Jangan berpikir seperti itu.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030218
+					]
+				},
+				{
+					"id": 705030218,
+					"content": "Kamu mana bisa pilih mau lahir di klan Lawrence atau di mana! Kami juga tidak peduli sama yang begituan. Kami tahunya Eula yang kami kenal itu orang baik!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030219
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030219,
+					"content": "Tapi kamu juga orangnya enggak suka blak-blakan. Kamu selalu pura-pura mau membalas dendam, enggak suka nunjukin kalau kamu itu sebenarnya orangnya lembut dan perhatian ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030220
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030220,
+					"content": "Seenaknya, siapa bilang aku pura-pura ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030221,
+						705030222
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030221,
+					"content": "Selain kami, aku yakin ....",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030223
+					]
+				},
+				{
+					"id": 705030222,
+					"content": "Masih banyak orang yang mau menerima Eula.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030223
+					]
+				},
+				{
+					"id": 705030223,
+					"content": "Begitukah? Haha, aku tidak terbayang sama sekali. Padahal aku sudah mabuk begini ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030224
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030224,
+					"content": "Bahkan setelah jadi anggota Knights of Favonius pun, orang-orang tetap saja .....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030225
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030225,
+					"content": "\"Arah angin bisa berubah ....\"",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030226
+					]
+				},
+				{
+					"id": 705030226,
+					"content": "Nah jadi ingat kan! Si pengamen itu juga pernah ngomong kayak gitu!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030227
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030227,
+					"content": "Eula jadi diri sendiri saja ... dan terus maju!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030228
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030228,
+					"content": "Suatu hari nanti, kamu pasti bisa mengubah anggapan orang-orang soal klan Lawrence!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030229
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030229,
+					"content": "Betul. Sabar.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030230
+					]
+				},
+				{
+					"id": 705030230,
+					"content": "Aku mengerti, terima kasih ....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030231
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030231,
+					"content": "Aku ... ehem! Aku harus pamit dulu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030232
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030232,
+					"content": "Perlu kuantar?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705030233
+					]
+				},
+				{
+					"id": 705030233,
+					"content": "Tidak usah. Aku ingin mengingat omongan kalian barusan, dan aku tidak bisa berpikir yang lain sebelum menuliskan semuanya di catatanku.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030234
+					],
+					"speakerTitle": "Eula"
+				},
+				{
+					"id": 705030234,
+					"content": "Eula jadi terbuka banget kalau sudah minum ya.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030235
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030235,
+					"content": "Tapi rasanya aneh juga sih, dia enggak ngomong soal dendam sama sekali.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030236
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030236,
+					"content": "Oh-ow ... Kata kamu, besok pas dia bangun, dia bakal cari kita lalu marah-marah, terus suruh kita lupain apa yang terjadi hari ini?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705030237
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705030237,
+					"content": "Belum tentu.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

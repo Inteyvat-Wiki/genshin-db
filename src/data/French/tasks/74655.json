@@ -1,0 +1,167 @@
+{
+	"id": 74655,
+	"type": "WQ",
+	"name": "Du lait pour Paban",
+	"description": "Paban a besoin de 8 bouteilles de lait.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7465501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Donnez 8 bouteilles de lait à Paban.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7465501,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7465502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Paban.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7465502,
+						0
+					],
+					"talkId": 7465502
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7465501,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465501",
+							"2"
+						],
+						"stepId": 7465501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7465501"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paban"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746550101,
+					"content": "À propos du lait...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746550102
+					]
+				},
+				{
+					"id": 746550102,
+					"content": "#Vous voulez être {M#un fournisseur potentiel}{F#une fournisseuse potentielle} ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746550103
+					],
+					"speakerTitle": "Paban"
+				},
+				{
+					"id": 746550103,
+					"content": "Vos échantillons de lait sont-ils prêts ? Donnez-les-moi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746550106,
+						746550104
+					],
+					"speakerTitle": "Paban"
+				},
+				{
+					"id": 746550106,
+					"content": "Et voilà.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 746550104,
+					"content": "Pas encore.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746550105
+					]
+				},
+				{
+					"id": 746550105,
+					"content": "#Alors, dépêchez-vous. Vous n'êtes pas {M#le seul}{F#la seule} à vouloir ce contrat.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paban"
+				}
+			]
+		},
+		{
+			"id": 7465502,
+			"completionStepIds": [
+				7465502
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465502",
+							"2"
+						],
+						"stepId": 7465502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Paban"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746550201,
+					"content": "Très bien, voici les moras pour les échantillons, frais de service compris. Je vous informerai dès qu'un fournisseur aura été sélectionné.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paban"
+				}
+			]
+		}
+	]
+}

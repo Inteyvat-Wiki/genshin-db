@@ -1,0 +1,176 @@
+{
+	"id": 70711,
+	"type": "WQ",
+	"name": "男子汉杰克的男子汉之路",
+	"description": "蒙德的男子汉杰克需要三份蒙德烤鱼。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7071101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "将三份蒙德烤鱼交给男子汉杰克",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7071101,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7071102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "与男子汉杰克对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7071102,
+						0
+					],
+					"talkId": 7071102
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7071101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071101",
+							"2"
+						],
+						"stepId": 7071101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7071101"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"男子汉杰克"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707110101,
+					"content": "关于蒙德烤鱼…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707110102
+					]
+				},
+				{
+					"id": 707110102,
+					"content": "你是看见委托了吗？太好了，你把三份蒙德烤鱼带来了吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707110103,
+						707110104
+					],
+					"speakerTitle": "男子汉杰克"
+				},
+				{
+					"id": 707110103,
+					"content": "都带来了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707110104,
+					"content": "还没有。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707110105
+					]
+				},
+				{
+					"id": 707110105,
+					"content": "好吧，那你把三份蒙德烤鱼都准备好了之后，就快点带来给人家吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "男子汉杰克"
+				}
+			]
+		},
+		{
+			"id": 7071102,
+			"completionStepIds": [
+				7071102
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7071102",
+							"2"
+						],
+						"stepId": 7071102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"男子汉杰克"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707110201,
+					"content": "唔，这几份蒙德烤鱼闻起来味道不错…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707110202
+					],
+					"speakerTitle": "男子汉杰克"
+				},
+				{
+					"id": 707110202,
+					"content": "对了，这些东西请你收下吧，谢谢你帮我忙。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707110203
+					],
+					"speakerTitle": "男子汉杰克"
+				},
+				{
+					"id": 707110203,
+					"content": "不知道吃这个能不能长力气…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "男子汉杰克"
+				}
+			]
+		}
+	]
+}

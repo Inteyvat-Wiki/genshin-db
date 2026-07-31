@@ -1,0 +1,1925 @@
+{
+	"id": 8002,
+	"type": "AQ",
+	"name": "Unehrenhafte Prüfung",
+	"description": "Um den Plan aus dem Brief des Ordens des Abgrunds zu untersuchen, begibst du dich zur Kathedrale in Mondstadt, damit du die Mitglieder der Kathedrale befragen kannst.",
+	"unlockDescription": "",
+	"chapter": "Wir werden uns wiedersehen",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		8003
+	],
+	"prevMainQuestList": [
+		8001
+	],
+	"steps": [
+		{
+			"id": 800201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Geh zur Favonius-Kathedrale.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						800201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 800202,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Barbara.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						800201,
+						0
+					],
+					"talkId": 800201
+				}
+			]
+		},
+		{
+			"id": 800203,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Geh nach Wolfenlauf.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						800203,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 800204,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Besiege den Orden des Abgrunds.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 800205,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Jean.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						800202,
+						0
+					],
+					"talkId": 800202
+				}
+			]
+		},
+		{
+			"id": 800206,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Finde den großen Wolfskönig des Nordens.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						800206,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 800207,
+			"order": 10,
+			"listShowType": "QUEST_SHOW",
+			"description": "Besiege alle Gegner.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 800208,
+			"order": 12,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit dem großen Wolfskönig des Nordens.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						800207,
+						0
+					],
+					"talkId": 800207
+				}
+			]
+		},
+		{
+			"id": 800209,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Dain.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						800204,
+						0
+					],
+					"talkId": 800204
+				}
+			]
+		},
+		{
+			"id": 800210,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Dain.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						800205,
+						0
+					],
+					"talkId": 800205
+				}
+			]
+		},
+		{
+			"id": 800211,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Razor.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						800203,
+						0
+					],
+					"talkId": 800203
+				}
+			]
+		},
+		{
+			"id": 800212,
+			"order": 11,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						800212,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 800201,
+			"completionStepIds": [
+				800202
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"800202",
+							"2"
+						],
+						"stepId": 800202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Barbara"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 80020101,
+					"content": "Ehrenritter! Hallo, wie geht es dir? Brauchst du heute etwas?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020102
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020102,
+					"content": "Aah ... Aber zuerst muss ich klarstellen, dass wir dir nicht entgegenkommen können, falls du die Heilige Leier „Der Himmel“ wieder ausleihen willst.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020103
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020103,
+					"content": "(Es scheint, als ob sie noch immer nicht erkannt hat, dass es nur eine Illusion ist ...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020104
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020104,
+					"content": "Wir sind hier, um ein paar Fragen zu stellen. Barbara, hast du von dem „weltweit ersten Pflug“ gehört?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020105
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020105,
+					"content": "Hm? Was ist das? Was macht man mit einem ... Pflug?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020106
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020106,
+					"content": "Ah, natürlich, darüber weißt du ja nichts. Also, nächste Frage: Wurde der Kathedrale jemals eine Statue der Sieben gestohlen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020107
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020107,
+					"content": "Ach so?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020108
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020108,
+					"content": "Du willst dich nach dieser alten Geschichte erkundigen? Nun, das hätte ich nicht gedacht ... Das ist schon ewig her. Heutzutage redet kaum noch jemand darüber.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020109
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020109,
+					"content": "Vor langer Zeit verschwand eines Nachts tatsächlich eine Statue der Sieben spurlos.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020110
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020110,
+					"content": "Fast jedes Mitglied der Kathedrale schloss sich der Suche nach ihr an, aber sie wurde nie gefunden.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020111
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020111,
+					"content": "In den Chroniken der Kathedrale wurde dieser Vorfall als „Die verlorene Statue der Sieben“ bekannt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020112
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020112,
+					"content": "Hmm ... Natürlich.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020113
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020113,
+					"content": "Natürlich?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020114
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020114,
+					"content": "Ähm, nichts! Also, hast du sonst noch einen Anhaltspunkt? Äh, Paimon meint ... sonst noch irgendwelche merkwürdigen Geschichten?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020115
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020115,
+					"content": "(Entschuldige, Barbara, wir können dir noch nichts über die Statue sagen, die wir gesehen haben ... Wie Dain schon draußen sagte, es ist nur zu deinem Besten ...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020116
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020116,
+					"content": "Andere merkwürdige Geschichten? Ich weiß nicht, ich muss überlegen, welche anderen merkwürdigen Vorkommnisse es in den Aufzeichnungen der Kathedrale gibt ... „Der letzte Zorn des Tyrannen“? Nein, das stammt aus einer anderen Zeit, wahrscheinlich hat es nichts damit zu tun ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020117
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020117,
+					"content": "„Der letzte Zorn des Tyrannen“?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020118
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020118,
+					"content": "Oh, damit ist eine Zeit großer Gefahr gemeint, die das alte Mondstadt heimsuchte, der Ort, der heute als Sturmschreckenruinen bekannt ist.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020119
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020119,
+					"content": "Vor vielen, vielen Jahren gab es eine Zeit, in der es Feuerbälle vom Himmel regnete, sobald sich jemand dem alten Mondstadt näherte.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020120
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020120,
+					"content": "Feuerbälle, die aus dem Himmel regnen?! Wie furchterregend ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020121
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020121,
+					"content": "Damals glaubten die Menschen, dass es ein Fluch sei, der vom Gott der Stürme ausging. Deshalb nannten sie es „Der letzte Zorn des Tyrannen“.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020122
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020122,
+					"content": "Dieses rätselhafte Phänomen dauerte etwa ein Jahr lang an. Keiner war jemals in der Lage, es aufzuklären, es hörte einfach nach und nach von selbst auf.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020123,
+						80020124
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020123,
+					"content": "So bizarr.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020125
+					]
+				},
+				{
+					"id": 80020125,
+					"content": "Genau! Die Theorie des „Letzten Zorns des Tyrannen“ geriet später in den Augen der Kathedrale immer weiter in Misskredit. Der gesunde Menschenverstand gebietet, dass der Gott der Stürme keine Feuerbälle schießen würde ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020126
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020126,
+					"content": "Vielleicht wurde die Katastrophe durch etwas anderes verursacht.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020127
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020127,
+					"content": "Dieser Vorfall hat möglicherweise nichts mit der „Verlorenen Statue der Sieben“ zu tun, aber mir fallen einfach keine anderen seltsamen Vorfälle ein, die infrage kämen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020128
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020128,
+					"content": "Schon gut. Trotzdem Danke!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020129
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020129,
+					"content": "Da ist wieder dieses nutzlose Wort „Danke“. Ich kann mich einfach nicht daran gewöhnen, es zu hören ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020130
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 80020130,
+					"content": "Oh, Rosaria, du bist es.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020131
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020131,
+					"content": "Wenn du die Ritter des Ordo Favonius suchst, sie sind wieder mit diesen Monstern beschäftigt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020132
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 80020132,
+					"content": "Mit „diesen Monstern“ ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020133
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020133,
+					"content": "Diese Monster, die zuletzt versucht haben, Mondstadt anzugreifen, während des Vorfalls mit Sturmschrecken.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020134
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 80020134,
+					"content": "War das nicht der Orden des Abgrunds?! Sind sie wieder am Werk?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020135
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020135,
+					"content": "Das stimmt. Sie versammeln sich in <color=#00E1FFFF>Wolfenlauf</color> und sorgen für viel Aufruhr unter den Wölfen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020136
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 80020136,
+					"content": "Könnte es sein, dass ... der Orden des Abgrunds es auf den Geist von Boreas abgesehen hat? Was das Ziel ist, kann ich leider nicht mit Sicherheit sagen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020137
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 80020137,
+					"content": "Jean hat sich bereits auf den Weg nach <color=#00E1FFFF>Wolfenlauf</color> gemacht. Ich selbst muss ebenfalls langsam aufbrechen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020138
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 80020138,
+					"content": "Dann ... werde ich auch gehen!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020139
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020139,
+					"content": "Jean sagte, du solltest in der Kathedrale bleiben und weiter mit dem Klerus arbeiten.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020140
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 80020140,
+					"content": "Aber ... Du bist auch ein Mitglied des Klerus ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020141
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020141,
+					"content": "Mach dir keine Sorgen, ich werde dir auch helfen.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020142
+					]
+				},
+				{
+					"id": 80020142,
+					"content": "Gut, dann gehen wir mal zu Jean und helfen ihr!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020143
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020143,
+					"content": "Oh ... Na dann, wenn der Ehrenritter auch da sein wird ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020144
+					],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020144,
+					"content": "Aber seid bitte alle vorsichtig. Möge der Anemo-Archon euch alle schützen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Barbara"
+				},
+				{
+					"id": 80020124,
+					"content": "Es muss ja nicht mit dem Tyrannen zusammenhängen ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020125
+					]
+				}
+			]
+		},
+		{
+			"id": 800202,
+			"completionStepIds": [
+				800205
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"800205",
+							"2"
+						],
+						"stepId": 800205,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jean"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 80020201,
+					"content": "Puh ... Hier gibt es wirklich eine Menge Feinde!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020202
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020202,
+					"content": "Je näher wir dem Ziel kommen, desto mehr Feinde tauchen auf. Hmpf, das passt zum Orden des Abgrunds.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020203
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020203,
+					"content": "Wir sollten uns beeilen und Boreas finden.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020204
+					]
+				},
+				{
+					"id": 80020204,
+					"content": "Ja, lasst uns gehen!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020205
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020205,
+					"content": "Ich ... Ich geh nicht weiter.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020206
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020206,
+					"content": "Hm? Wieso nicht? Hast du etwa Angst vor flauschigen Tieren?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020207,
+						80020208
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020207,
+					"content": "Es geht nicht wirklich darum.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020209
+					]
+				},
+				{
+					"id": 80020209,
+					"content": "Das hat nichts mit Wölfen zu tun. Es hat damit zu tun, dass Boreas ein alter Gott war. Dennoch wurde er freiwillig ein Diener der Sieben.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020210
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020210,
+					"content": "Ich bin mit seinen Aktionen nicht einverstanden. Ich möchte nichts mit ihm zu tun haben.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020211
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020211,
+					"content": "Außerdem bist du derjenige, den die Menschen lieben. Ich bin ... weniger sympathisch.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020212,
+						80020214
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020212,
+					"content": "Du verabscheust die Sieben wirklich, hm?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020213
+					]
+				},
+				{
+					"id": 80020213,
+					"content": "Götter sind sowieso nichts Besonderes.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020216
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020216,
+					"content": "Es ist nur meine Ansicht, ein kleiner Ratschlag: Immer auf der Hut sein, wenn Götter in der Nähe sind.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020217
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020217,
+					"content": "Du solltest ihnen nicht zu viel Vertrauen schenken. Aber zugleich solltest du auch nicht zu weit in die Gegenrichtung gehen ... Versuch weder sie zu stürzen noch sie zu jagen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020218
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020218,
+					"content": "Selbst wenn der jeweilige Gott dein Erzfeind ist.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020219
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020219,
+					"content": "Vertraue ihnen nicht, und jage sie nicht ... Das ist ein ziemlich merkwürdiger Ratschlag. Hasst Dain die Sieben oder beschützt er sie?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020220
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020220,
+					"content": "Warum hast du eine so widersprüchliche Meinung?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020221
+					]
+				},
+				{
+					"id": 80020221,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020222
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020222,
+					"content": "Damit ich die Fehler meiner Vorfahren nicht wiederhole.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020223
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020223,
+					"content": "Ich ... werde dir einen letzten Fakt verraten.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020224
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020224,
+					"content": "Hm? Was für ein Fakt?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020225
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020225,
+					"content": "Die Ausrottung der Khaenri’ah durch die Götter ... ist der Hauptgrund dafür, dass der Orden des Abgrunds nun die Gebiete vernichten will, die von den Sieben bewacht werden.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020226
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020226,
+					"content": "Nun, das reicht an Plauderei. Wir müssen wieder an die Arbeit. Ich werde mich um die übrigen Mitglieder des Ordens des Abgrunds in der Gegend kümmern. Bitte versuche, deinen Besuch bei Boreas kurz zu halten. Und danach treffen wir uns am Eingang von Wolfenlauf.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020227
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020227,
+					"content": "Oh ... Und weg ist er.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020228
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020228,
+					"content": "Was für ein komischer Kauz.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020229
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020229,
+					"content": "Ich kann verstehen, worauf er hinauswill.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020230
+					]
+				},
+				{
+					"id": 80020230,
+					"content": "Ja, das stimmt. Du musst dich auch vor unbekannten Göttern in Acht nehmen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020231
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020231,
+					"content": "Bei der Adeptenzeremonie in Liyue war deine Entscheidung ähnlich dem, was Dain tun würde ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020232
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020232,
+					"content": "Wenn das Vertrauen fehlt, ist es besser, die Situation komplett zu vermeiden, als zu verhandeln.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020233
+					]
+				},
+				{
+					"id": 80020233,
+					"content": "*seufz* ... Nicht die bequemste Situation ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020234
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020234,
+					"content": "Ehrenritter! Paimon! Was macht ihr beide hier?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020235
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 80020235,
+					"content": "Oh, Jean! Paimon freut sich so, dass wir Euch gefunden haben.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020236
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020236,
+					"content": "Rosaria hat uns erzählt, dass Ihr hierherkamt, um den Orden des Abgrunds zu bekämpfen, also sind wir gekommen, um Euch zu helfen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020237
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020237,
+					"content": "Dann ist deine Hilfe sehr willkommen. Die plötzliche Offensive des Ordens des Abgrunds ist sehr befremdlich. Sie haben Wolfenlauf eingekreist. Ich schicke ein paar Ritter aus, um sie zurückzuschlagen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020238
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 80020238,
+					"content": "Ich habe gerade ganz Wolfenlauf ausgekundschaftet ... aber dich habe ich nicht gesehen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020239
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 80020239,
+					"content": "Rosaria sagte mir, dass der Orden des Abgrunds es auf Boreas abgesehen hat.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020240
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 80020240,
+					"content": "Doch der Orden des Abgrunds und Boreas ... Welche Verbindung besteht zwischen ihnen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020241
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 80020241,
+					"content": "Sie lieben es einfach, Probleme zu verursachen. Brauchen sie wirklich einen Grund?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020242
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020242,
+					"content": "Der Orden des Abgrunds war bereits hinter Dvalin her. Es ist nicht überraschend, dass sie hinter einem anderen Gefährten des Anemo-Archons her sind.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020243
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020243,
+					"content": "Hmm ... Das stimmt schon ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020244
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 80020244,
+					"content": "Ganz gleich, ob der Hintergrund der gegenwärtigen Bedrohung bekannt ist oder nicht, ich kümmere mich um die Situation.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020245
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 80020245,
+					"content": "Ehrenritter, bitte schau nach, ob Boreas in Gefahr ist.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020246
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 80020246,
+					"content": "Der Geist dieses Gottes ... Er sieht die Menschen nicht oft. Doch ich habe gehört, dass du ihn schon einmal gesehen hast. Deshalb ist es vielleicht das Beste, wenn du ihn auch diesmal triffst.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020247
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 80020247,
+					"content": "Ich werde das übernehmen.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020248
+					]
+				},
+				{
+					"id": 80020248,
+					"content": "Gut, sei vorsichtig. Vielen Dank für deine Hilfe, Ehrenritter des Ordo Favonius.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 80020214,
+					"content": "Du stehst echt nicht auf soziale Interaktion, hm?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020215
+					]
+				},
+				{
+					"id": 80020215,
+					"content": "Ich habe kein Problem damit, mit Leuten zu sprechen. Aber mit Göttern zu sprechen ... das ist eine andere Geschichte.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020216
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020208,
+					"content": "Sind flauschige Sachen nicht süß?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020209
+					]
+				}
+			]
+		},
+		{
+			"id": 800203,
+			"completionStepIds": [
+				800211
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"800211",
+							"2"
+						],
+						"stepId": 800211,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Razor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 80020301,
+					"content": "Du ... bist hier nicht willkommen!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020302
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 80020302,
+					"content": "Ahahaha ... Der erbärmliche Geist des Wolfes zieht also jetzt schon wilde Welpen auf?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020303
+					],
+					"speakerTitle": "Abgrundbote"
+				},
+				{
+					"id": 80020303,
+					"content": "Er will ein Wächter sein? Seine ehemals scharfen Krallen sind seit seiner Zeit des göttlichen Ruhms offensichtlich abgestumpft.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020304
+					],
+					"speakerTitle": "Abgrundbote"
+				},
+				{
+					"id": 80020304,
+					"content": "Wenn du uns dienen willst, stellen wir deine einstigen göttlichen Kräfte wieder her.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020305
+					],
+					"speakerTitle": "Abgrundbote"
+				},
+				{
+					"id": 80020305,
+					"content": "Lügen ... Lügen ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020306
+					],
+					"speakerTitle": "Boreas"
+				},
+				{
+					"id": 80020306,
+					"content": "Was ist das für eine Zeremonie? Er wirkt, als hätte er große Schmerzen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020307
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020307,
+					"content": "Oh nein ... Ist das dasselbe, was sie taten, um Dvalins Geist zu verderben?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020308
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020308,
+					"content": "Wölfe nicht aufgeben. Aber ... weiter geht nicht.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020309,
+						80020310
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 80020309,
+					"content": "Ich beende das.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020311
+					]
+				},
+				{
+					"id": 80020311,
+					"content": "Wie oft du dich auch wehrst, deine Anstrengungen sind alle vergebens ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Abgrundbote"
+				},
+				{
+					"id": 80020310,
+					"content": "Noch eine Runde mit dem Abgrundboten.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020311
+					]
+				}
+			]
+		},
+		{
+			"id": 800204,
+			"completionStepIds": [
+				800209
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"800209",
+							"2"
+						],
+						"stepId": 800209,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Dainsleif"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 80020401,
+					"content": "Eine gewaltige Statue, ein prachtvoller Dom ... Die Mondstädter haben offenbar viel Geld und Mühe investiert, um sie zu bauen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020402
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020402,
+					"content": "Aber wie viel wusste der Anemo-Archon davon, als er dieses Geschenk erhielt, und wie viel hat er im Gegenzug dafür zurückgegeben?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020403
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020403,
+					"content": "Der Glaube fordert allerdings keine Gegenleistung, oder?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020404
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020404,
+					"content": "Hmpf, wenn die Götter ein gutes Gewissen dabei haben, kann ich nichts dagegen sagen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020405
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020405,
+					"content": "Pst! Wir werden gleich in die Kathedrale eintreten. Sprich nichts Schlechtes über den Anemo-Archon ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020406
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020406,
+					"content": "Und der Anemo-Archon ist eigentlich ... Ach, vergiss es.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020407
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020407,
+					"content": "Ha, ich habe nie behauptet, dass ich in die Kathedrale gehen würde. Ich überlasse es euch beiden, euch unter die Schwestern zu mischen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020408
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020408,
+					"content": "Hä?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020409,
+						80020410
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020409,
+					"content": "Aber wir haben sonst alles gemeinsam gemacht.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020411
+					]
+				},
+				{
+					"id": 80020411,
+					"content": "Du bist der Ehrenritter von Mondstadt. Sie werden dir gewiss vertrauensvoll erlauben, in diesen Angelegenheiten zu ermitteln.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020412
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020412,
+					"content": "Meine Anwesenheit würde sie nur misstrauisch machen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020413,
+						80020414
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020413,
+					"content": "Weil sie dich nicht kennen?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020415
+					]
+				},
+				{
+					"id": 80020415,
+					"content": "Stimmt, und wie unser kleiner Freund sagte ... Ich könnte ja jederzeit etwas Schlechtes über die Kathedrale sagen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020416
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020416,
+					"content": "Wenn ein Ungläubiger heiligen Boden betritt, ist das Resultat selten schön.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020417
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020417,
+					"content": "Ich durfte noch nie die Gunst der Götter genießen. Ich wüsste auch keinen Grund, warum ich sie jetzt oder in Zukunft brauchen sollte.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020418
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020418,
+					"content": "Aber genug davon. Und während wir plaudern, macht der Orden des Abgrunds weiter.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020419
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020419,
+					"content": "#Gut, {NICKNAME}, dann werden wir einfach selbst hineingehen und uns umhören.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020420
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020420,
+					"content": "Ich sollte dich vor einer Sache noch warnen. Sprich die Entweihte Statue im Inneren der Kathedrale nicht an.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020421
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020421,
+					"content": "Die Favonius-Kathedrale wird die Angelegenheit mit der Statue nicht ignorieren, aber wenn du unüberlegt etwas gegen den Orden des Abgrunds unternimmst, würde das nur das Überraschungselement zerstören, das wir vielleicht haben.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020422
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020422,
+					"content": "Und außerdem ... Wenn man sich in die Angelegenheiten des Abgrunds einmischt, geht das für gewöhnlich nicht gut aus.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020414,
+					"content": "Glaubst du nicht, dass du bei den Schwestern sehr beliebt sein wirst?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020415
+					]
+				},
+				{
+					"id": 80020410,
+					"content": "Bist du nicht neugierig?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020411
+					]
+				}
+			]
+		},
+		{
+			"id": 800205,
+			"completionStepIds": [
+				800210
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"800210",
+							"2"
+						],
+						"stepId": 800210,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Dainsleif"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 80020501,
+					"content": "Aha, hat der Orden des Abgrunds schon eine neue Operation gestartet ...?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020502
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020502,
+					"content": "Das hat bestimmt was mit der Entweihten Statue zu tun. Wir sollten auch gehen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020503
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020503,
+					"content": "Aber warum will der Orden des Abgrunds überhaupt nach Wolfenlauf gehen? Versuchen sie, dasselbe zu tun, was sie mit Dvalin getan haben? Aaaah ... Nicht schon wieder!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020504
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020504,
+					"content": "Nein, das ist eher unwahrscheinlich.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020505
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020505,
+					"content": "Anders als Osial, der gerade erst beseitigt wurde, ist Andrius schon vor langer Zeit gestorben.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020506
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020506,
+					"content": "Heute wacht nur noch sein Geist über Wolfenlauf.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020507
+					],
+					"speakerTitle": "Dainsleif"
+				},
+				{
+					"id": 80020507,
+					"content": "Der Abgrundbote hat es vielleicht nur auf den Geist von Andrius abgesehen, um von einem alten Gefährten des Anemo-Archons irgendwelche Hinweise zu erhalten.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Dainsleif"
+				}
+			]
+		},
+		{
+			"id": 800206,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"800202",
+							"2"
+						],
+						"stepId": 800202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Dainsleif"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 80020601,
+					"content": "Gehe in die Kathedrale und höre dich um. Ich werde hier draußen warten.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Dainsleif"
+				}
+			]
+		},
+		{
+			"id": 800207,
+			"completionStepIds": [
+				800208
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"800208",
+							"2"
+						],
+						"stepId": 800208,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Boreas"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 80020701,
+					"content": "Hmpf ... Die Zeremonie wurde unterbrochen. Was für ein Glück für dich.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020702
+					],
+					"speakerTitle": "Abgrundbote"
+				},
+				{
+					"id": 80020702,
+					"content": "Wie schafft es ein alter Geist, so entschlossen zu sein?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020703
+					],
+					"speakerTitle": "Abgrundbote"
+				},
+				{
+					"id": 80020703,
+					"content": "Das spielt keine Rolle. Dies ist nur eine winzige Unwägbarkeit. Unser großer Plan wird davon nicht betroffen sein.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020704
+					],
+					"speakerTitle": "Abgrundbote"
+				},
+				{
+					"id": 80020704,
+					"content": "Schon wieder verschwunden ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020705,
+						80020706
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020705,
+					"content": "Wenigstens konnten wir es diesmal aufhalten.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020707
+					]
+				},
+				{
+					"id": 80020707,
+					"content": "Danke, rechte Zeit gekommen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020708
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 80020708,
+					"content": "Menschlicher Wolf ... Ich schäme mich, dass du mich in meinem gegenwärtigen Zustand sehen musst.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020709
+					],
+					"speakerTitle": "Boreas"
+				},
+				{
+					"id": 80020709,
+					"content": "Aber dennoch hat der Abgrundbote meine Macht unterschätzt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020710
+					],
+					"speakerTitle": "Boreas"
+				},
+				{
+					"id": 80020710,
+					"content": "Boreas lehnt nie Prüfung ab. Aber, furchterregender Fremder ... ehrt nicht die Regeln der Prüfung.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020711
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 80020711,
+					"content": "Ich habe auch nicht ... gesehen ... die Falle ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020712
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 80020712,
+					"content": "Du denkst also, dass der Orden des Abgrunds alles vorbereitet hatte, um Boreas’ Geist zu verderben und ihn dann hervorgelockt hat, indem man ihm vorgaukelte, dass er eine Prüfung bestehen müsse?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020713,
+						80020714
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020713,
+					"content": "Das ist nicht deine Schuld, Razor.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020715
+					]
+				},
+				{
+					"id": 80020715,
+					"content": "#Danke, {NICKNAME}. Meine Krallen müssen in Zukunft schärfer werden ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020716
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 80020716,
+					"content": "Du ... hast Gefahr erschnüffelt und bist gekommen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020717
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 80020717,
+					"content": "Nö, wir haben von der Gefahr gehört. Die Nase von Paimon weiß nicht einmal, wie Gefahr riecht!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020718
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020718,
+					"content": "Wir kamen nicht nur, um zu helfen, sondern haben auch eine Frage an dich.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020719
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020719,
+					"content": "Äh ... Entschuldigung, Herr Wolfsgott, weißt du etwas über den weltweit ersten Pflug?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020720
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020720,
+					"content": "Ich kümmere mich nicht um die Gerätschaften der Menschen. Ich kenne diesen „Pflug“ nicht, aber es gab tatsächlich eine von Menschen erschaffene Maschine, die ich nie vergessen kann.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020721
+					],
+					"speakerTitle": "Boreas"
+				},
+				{
+					"id": 80020721,
+					"content": "Er kam durch Zufall in mein Prüfungsgelände und ich hielt ihn irrtümlich für einen Herausforderer.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020722
+					],
+					"speakerTitle": "Boreas"
+				},
+				{
+					"id": 80020722,
+					"content": "Aber er konnte nicht denken, nur kämpfen. Er war von Kopf bis Fuß als reine Tötungsmaschine konstruiert.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020723
+					],
+					"speakerTitle": "Boreas"
+				},
+				{
+					"id": 80020723,
+					"content": "Schließlich habe ich ihn mit einem meiner Angriffe schwer beschädigt. Bevor er zu Boden fiel, flüchtete er vom Prüfungsgelände.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020724
+					],
+					"speakerTitle": "Boreas"
+				},
+				{
+					"id": 80020724,
+					"content": "Hmm ... Das klingt so, als könnte das der erste Pflug gewesen sein, richtig?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020725,
+						80020727
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020725,
+					"content": "Konnte er sich drehen?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020726
+					]
+				},
+				{
+					"id": 80020726,
+					"content": "Ja. Er konnte sich drehen, hoch in die Luft springen und sogar Feuerbälle verschießen. Auch wenn er keinem Gott gewachsen war, so war er doch stärker als viele, die ein Göttliches Auge haben.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020730
+					],
+					"speakerTitle": "Boreas"
+				},
+				{
+					"id": 80020730,
+					"content": "Feuerbälle? He, hatten wir das nicht vor Kurzem auch irgendwo anders gehört?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020731
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020731,
+					"content": "Das beweist doch wohl, dass der erste Pflug nach Mondstadt kam, oder nicht?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020732
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020732,
+					"content": "Es klingt, als wäre der erste viel stärker gewesen als die in Masse produzierten Ruinenwächter, die danach kamen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020733
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020733,
+					"content": "Aber in dieser Geschichte wurde er auf dem Prüfungsgelände beim Kampf gegen den Wolf des Nordens stark beschädigt ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020734
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020734,
+					"content": "Ich weiß nicht ... Aber, konnten wir helfen?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020735
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 80020735,
+					"content": "Ja, ihr wart eine große Hilfe! Danke!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020736
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020736,
+					"content": "Wir müssen weiterhin etwas Superwichtiges herausfinden. Der Abgrundbote ist zwar weg, aber der Orden greift weiterhin an. Passt auf, ihr zwei!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020737
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 80020737,
+					"content": "Ja. Ich rieche ... mehr Gefahr. Eine größere Gefahr.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020738
+					],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 80020738,
+					"content": "Ihr zwei, passt auch auf.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Razor"
+				},
+				{
+					"id": 80020727,
+					"content": "Kann er Raketen verschießen?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020728
+					]
+				},
+				{
+					"id": 80020728,
+					"content": "„Raketen“? Ich kenne dieses fremde Wort nicht ... Wie ich schon sagte, ich interessiere mich nicht für die Gerätschaften der Menschen.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020729
+					],
+					"speakerTitle": "Boreas"
+				},
+				{
+					"id": 80020729,
+					"content": "Er konnte sich drehen, hoch in die Luft springen und sogar Feuerbälle verschießen. Auch wenn er keinem Gott gewachsen war, so war er doch stärker als viele, die ein Göttliches Auge haben.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						80020730
+					],
+					"speakerTitle": "Boreas"
+				},
+				{
+					"id": 80020714,
+					"content": "Komm schon, Kopf hoch.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020715
+					]
+				},
+				{
+					"id": 80020706,
+					"content": "Der ist schnell weggerannt.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						80020707
+					]
+				}
+			]
+		}
+	]
+}

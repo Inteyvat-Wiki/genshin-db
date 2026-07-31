@@ -1,0 +1,410 @@
+{
+	"id": 20052,
+	"type": "IQ",
+	"name": "Anna the Adventurer!",
+	"description": "It appears that Anna from Mondstadt has successfully become an adventurer.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2005201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Anna",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2005201,
+						0
+					],
+					"talkId": 2005201
+				}
+			]
+		},
+		{
+			"id": 2005202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go with Anna to complete her Adventurers' Guild commission",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2005203,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go with Anna to complete her Adventurers' Guild commission",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2005204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Anna",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2005202,
+						0
+					],
+					"talkId": 2005202
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2005201,
+			"completionStepIds": [
+				2005201
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2005201",
+							"2"
+						],
+						"stepId": 2005201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Anna"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200520101,
+					"content": "Alright. Let's work hard today, too!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520102,
+						200520106
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520102,
+					"content": "Haha, you're all fired up.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200520103
+					]
+				},
+				{
+					"id": 200520103,
+					"content": "Of course! Being an adventurer is really interesting!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520104
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520104,
+					"content": "Well... I still am a bit unfamiliar with what to do while undertaking commissions, though.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520105
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520105,
+					"content": "Traveler, would you mind coming with me again? I still have things I'd like to ask you.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520108
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520108,
+					"content": "Then let's set out. Today's commission is...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520109
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520109,
+					"content": "Huh... So we're escorting... another transport balloon.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520106,
+					"content": "Want me to come along?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200520107
+					]
+				},
+				{
+					"id": 200520107,
+					"content": "Would you? Hehe, sure! There's still so much I could learn from you.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520108
+					],
+					"speakerTitle": "Anna"
+				}
+			]
+		},
+		{
+			"id": 2005202,
+			"completionStepIds": [
+				2005204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2005203",
+							"3"
+						],
+						"stepId": 2005203,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2005204",
+							"2"
+						],
+						"stepId": 2005204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Anna"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200520201,
+					"content": "And we're done! Thanks, Traveler. This went pretty well, I think.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520202
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520202,
+					"content": "But is this the usual fare for adventurers?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520203,
+						200520205
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520203,
+					"content": "There will be others.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200520204
+					]
+				},
+				{
+					"id": 200520204,
+					"content": "What's with that hapless tone...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520207
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520207,
+					"content": "Is that so... Nice! I'll keep working at it, then!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520208
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520208,
+					"content": "Once I've saved up enough Mora, I'll bring my brother and our parents out on a trip!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520209
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520209,
+					"content": "My brother always wanted to travel... But I fell ill, and he had to stay back to take care of me.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520210
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520210,
+					"content": "But I'm well now, and I've even become an adventurer.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520211
+					],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520211,
+					"content": "Hehe. When the time comes, I'll help my brother fulfill some of his dreams too!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Anna"
+				},
+				{
+					"id": 200520205,
+					"content": "You'll understand in time...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200520206
+					]
+				},
+				{
+					"id": 200520206,
+					"content": "Hey, not that tired look...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520207
+					],
+					"speakerTitle": "Anna"
+				}
+			]
+		},
+		{
+			"id": 2005203,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2005201",
+							"3"
+						],
+						"stepId": 2005201,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Anthony"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200520301,
+					"content": "Please take care of Anna, Traveler. Her excitement might have gotten to her head lately...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520302
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200520302,
+					"content": "Do you not want her to become an adventurer?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200520303
+					]
+				},
+				{
+					"id": 200520303,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520304
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200520304,
+					"content": "I respect my sister's wishes.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520305
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200520305,
+					"content": "Now that she's well again after such a long struggle with her illness, she deserves a chance to pursue her dreams.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520306
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200520306,
+					"content": "As her brother, I'll support her... all the way.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200520307
+					],
+					"speakerTitle": "Anthony"
+				},
+				{
+					"id": 200520307,
+					"content": "That's all I have to say.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Anthony"
+				}
+			]
+		}
+	]
+}

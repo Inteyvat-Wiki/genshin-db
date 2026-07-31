@@ -1,0 +1,91 @@
+{
+	"id": 16006,
+	"type": "LQ",
+	"name": "Entreacto: Un momento de descanso",
+	"description": "El libro no ofrece nuevas pistas por ahora. Decides descansar un rato antes de volver a encontrarte con Durin...",
+	"unlockDescription": "",
+	"chapter": "La magia de la narración",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1600601,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						1600601,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1600602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Espera a que el libro revele las pistas del siguiente capítulo",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TIME_VAR_PASS_DAY",
+					"rawParams": [
+						16006,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1600118,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1600602",
+							"2"
+						],
+						"stepId": 1600602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Durin"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 160011801,
+					"content": "Quiero leer este libro detenidamente.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						160011802
+					],
+					"speakerTitle": "Durin"
+				},
+				{
+					"id": 160011802,
+					"content": "Si quieren volver a la historia, vengan a buscarme.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Durin"
+				}
+			]
+		}
+	]
+}

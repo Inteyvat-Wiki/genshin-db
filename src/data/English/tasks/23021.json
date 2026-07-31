@@ -1,0 +1,744 @@
+{
+	"id": 23021,
+	"type": "IQ",
+	"name": "Problem Conversion: Loading Capacity",
+	"description": "At last, Rafiq's design has entered its testing phase...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2302101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Rafiq",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2302101,
+						0
+					],
+					"talkId": 2302101
+				}
+			]
+		},
+		{
+			"id": 2302102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Collect heavy items",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						2302102,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2302103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Collect heavy items",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2302104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Load the ship",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2302105,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						2302105,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2302106,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go back and talk to Rafiq",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2302106,
+						0
+					],
+					"talkId": 2302106
+				}
+			]
+		},
+		{
+			"id": 2302107,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						2302107,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2302108,
+			"order": 9,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go back and talk to Rafiq",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2302108,
+						0
+					],
+					"talkId": 2302108
+				}
+			]
+		},
+		{
+			"id": 2302109,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						2302109,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2302110,
+			"order": 10,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go back and talk to Rafiq",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						2302107,
+						3
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						2302105,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2302101,
+			"completionStepIds": [
+				2302101
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2302101",
+							"2"
+						],
+						"stepId": 2302101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Rafiq",
+					"Qishan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230210101,
+					"content": "Traveler! You're just in time. I just launched the ship. It's steady as she goes, as they say.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210102
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210102,
+					"content": "My calculation worked out perfectly, just as I thought!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210103
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210103,
+					"content": "So, when do we start this load test?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210104
+					],
+					"speakerTitle": "Qishan"
+				},
+				{
+					"id": 230210104,
+					"content": "Let's not rush. The Traveler is here, so we may start soon.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210105
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210105,
+					"content": "What's a load test?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230210106
+					]
+				},
+				{
+					"id": 230210106,
+					"content": "In a nutshell, we test the load capacity of the ship using heavy objects.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210107
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210107,
+					"content": "This means that someone is going to have to move the stuff onto the ship with me.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210108
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210108,
+					"content": "And you, Traveler, as I observed previously, are most able-bodied. Surely such a gig is a piece of cake to you...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210109,
+						230210110
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210109,
+					"content": "Oh, so that's why you asked me to come here, eh?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230210111
+					]
+				},
+				{
+					"id": 230210111,
+					"content": "Well... Ugh, I can't do this on my own, so I could only ask you to help out.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210112
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210112,
+					"content": "There will be generous rewards, I promise! I just helped a guy fix his large ship days ago. It was a pretty well-paying job, too!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210113
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210113,
+					"content": "Well paid, you say...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210114
+					],
+					"speakerTitle": "Qishan"
+				},
+				{
+					"id": 230210114,
+					"content": "Eh? Uh, well, I did spend nearly all that Mora on the ship...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210115
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210115,
+					"content": "Nearly all?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210116
+					],
+					"speakerTitle": "Qishan"
+				},
+				{
+					"id": 230210116,
+					"content": "I still have some left! Don't worry, I can still buy you some coffee...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210117
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210117,
+					"content": "Well then, Traveler, let's get this started! To the ship!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210110,
+					"content": "Oh, now I'm slightly annoyed.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						230210111
+					]
+				}
+			]
+		},
+		{
+			"id": 2302106,
+			"completionStepIds": [
+				2302106
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2302106",
+							"2"
+						],
+						"stepId": 2302106,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Rafiq",
+					"Qishan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230210614,
+					"content": "Alright! That should be it. Let's see what will happen...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210601
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210601,
+					"content": "Whoa! The ship's sprung a leak over there!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210615
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 230210615,
+					"content": "What!?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210602
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210602,
+					"content": "The ship is tilting! What's going on?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210603
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 230210603,
+					"content": "Move the stuff off now! Something's gone wrong!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210604
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210604,
+					"content": "You rid the ship of heavy items together with Rafiq in a hurry...",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": [
+						230210605
+					]
+				},
+				{
+					"id": 230210605,
+					"content": "Whew... We're lucky that there weren't too many things to move.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210606
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210606,
+					"content": "What the... Where did I go wrong?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210607
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210607,
+					"content": "What did I say? The theoretical data you used is too extreme to be reliable.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210608
+					],
+					"speakerTitle": "Qishan"
+				},
+				{
+					"id": 230210608,
+					"content": "*sigh* I... I... Fine.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210609
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210609,
+					"content": "This shouldn't have happened... I did my calculations with so much precision!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210610
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210610,
+					"content": "Thanks for your help, Traveler. Please take this as compensation for your trouble.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210611
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210611,
+					"content": "I'll go back and redo my calculations. Qishan, could you help me with them?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210612
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210612,
+					"content": "You say it like I wasn't already helping before...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210613
+					],
+					"speakerTitle": "Qishan"
+				},
+				{
+					"id": 230210613,
+					"content": "Just leave it to me, and remember to buy me coffee after this.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Qishan"
+				}
+			]
+		},
+		{
+			"id": 2302108,
+			"completionStepIds": [
+				2302108
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2302108",
+							"2"
+						],
+						"stepId": 2302108,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Rafiq"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230210801,
+					"content": "Yes! It worked out!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210802
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210802,
+					"content": "There are no structural problems with the hull... The waterline is stable, too. No tipping.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210803
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210803,
+					"content": "Look, Qishan, my design and calculations are immaculate!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210804
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210804,
+					"content": "Don't get carried away. We're just at phase one of the load test.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210805
+					],
+					"speakerTitle": "Qishan"
+				},
+				{
+					"id": 230210805,
+					"content": "And you haven't even taken into account the center of gravity shift that will occur on the ship due to weather and cargo as it navigates.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210806
+					],
+					"speakerTitle": "Qishan"
+				},
+				{
+					"id": 230210806,
+					"content": "Ugh... I'll consider those factors. But please, just let me enjoy this moment.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210807
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210807,
+					"content": "Oh, Traveler, this is your payment. Please take it.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210808
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210808,
+					"content": "Qishan, can't you just be happy for me once?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210809
+					],
+					"speakerTitle": "Rafiq"
+				},
+				{
+					"id": 230210809,
+					"content": "But being happy for you isn't going to help you build the ship.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						230210810
+					],
+					"speakerTitle": "Qishan"
+				},
+				{
+					"id": 230210810,
+					"content": "Best you try to make your wallet happy instead.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Qishan"
+				}
+			]
+		},
+		{
+			"id": 2302109,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2302102",
+							"2"
+						],
+						"stepId": 2302102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2302103",
+							"2"
+						],
+						"stepId": 2302103,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2302104",
+							"2"
+						],
+						"stepId": 2302104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Qishan"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230210901,
+					"content": "Huh? Is this ship really capable of carrying such heavy things...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Qishan"
+				}
+			]
+		},
+		{
+			"id": 2302110,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2302102",
+							"2"
+						],
+						"stepId": 2302102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2302103",
+							"2"
+						],
+						"stepId": 2302103,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2302104",
+							"2"
+						],
+						"stepId": 2302104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Rafiq"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 230211001,
+					"content": "The load capacity of this ship is out of the question! Don't worry!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Rafiq"
+				}
+			]
+		}
+	]
+}

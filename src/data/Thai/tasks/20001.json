@@ -1,0 +1,290 @@
+{
+	"id": 20001,
+	"type": "IQ",
+	"name": "ทางตันเหรอ?",
+	"description": "ในขณะที่ Quinn กำลังส่งผลไม้กลับมายัง Mondstadt ถูกขวางอยู่ที่ถนนใกล้กับ Thousand Winds Temple พวก Hilichurl ล้อมไว้อยู่ จัดการกับพวกมันเพื่อช่วย Quinn ออกมา",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2000101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "มุ่งสู่การตรวจสอบรายละเอียด",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000102,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "จัดการอสูรโดยรอบ",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "กำจัดมอนสเตอร์ทั้งหมดและทำลายสิ่งกีดขวาง",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2000104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "พูดคุยกับ Quinn",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2000110,
+						0
+					],
+					"talkId": 2000110
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2000102,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000102",
+							"2"
+						],
+						"stepId": 2000102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Quinn"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200010201,
+					"content": "เร็วเข้า ช่วยฉันด้วย!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Quinn"
+				}
+			]
+		},
+		{
+			"id": 2000109,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000102",
+							"3"
+						],
+						"stepId": 2000102,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000103",
+							"2"
+						],
+						"stepId": 2000103,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Quinn"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200010901,
+					"content": "นักเดินทาง ขอบคุณนะที่ช่วยจัดการเจ้าพวกนั้น",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200010902
+					],
+					"speakerTitle": "Quinn"
+				},
+				{
+					"id": 200010902,
+					"content": "โชคดีที่เธอมาด้วย เฮ้อ...แต่ยังมีสิ่งกีดขวางอยู่ ทำให้ฉันไปต่อไม่ได้",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200010903
+					],
+					"speakerTitle": "Quinn"
+				},
+				{
+					"id": 200010903,
+					"content": "ถ้าเป็นอย่างนี้ต่อไป สิ่งที่ลงแรงไปก็เสียเปล่ากันพอดีน่ะสิ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200010904
+					],
+					"speakerTitle": "Quinn"
+				},
+				{
+					"id": 200010904,
+					"content": "เธอช่วยจัดการกับสิ่งกีดขวางนี้หน่อยได้มั้ย?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200010905,
+						200010906
+					],
+					"speakerTitle": "Quinn"
+				},
+				{
+					"id": 200010905,
+					"content": "ไม่มีปัญหา",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200010907
+					]
+				},
+				{
+					"id": 200010907,
+					"content": "ฮ่าฮ่า งั้นก็รบกวนหน่อยนะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Quinn"
+				},
+				{
+					"id": 200010906,
+					"content": "ยังมีเรื่องอื่นต้องทำน่ะ",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200010908
+					]
+				},
+				{
+					"id": 200010908,
+					"content": "อ๋า? ฉันว่าช่วยคนก็ต้องช่วยให้สุดล่ะนะ ไม่ว่ายังไงเธอก็เป็นความหวังสุดท้ายล่ะ!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Quinn"
+				}
+			]
+		},
+		{
+			"id": 2000110,
+			"completionStepIds": [
+				2000104
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2000104",
+							"2"
+						],
+						"stepId": 2000104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Quinn"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200011001,
+					"content": "ขอบคุณมาก ๆ เลยนะ นักเดินทาง",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200011002
+					],
+					"speakerTitle": "Quinn"
+				},
+				{
+					"id": 200011002,
+					"content": "ฉันมานี่เพื่อเก็บผลไม้ไปขายในเมือง",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200011003
+					],
+					"speakerTitle": "Quinn"
+				},
+				{
+					"id": 200011003,
+					"content": "ดันมาติดอยู่ตรงนี้ และเจ้าพวกนั้นก็โผล่ออกมา",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200011004
+					],
+					"speakerTitle": "Quinn"
+				},
+				{
+					"id": 200011004,
+					"content": "ฉันกลับไปที่ Mondstadt ก่อนนะ อย่าลืมมาเยี่ยมที่ร้านกันบ้างล่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200011005
+					],
+					"speakerTitle": "Quinn"
+				},
+				{
+					"id": 200011005,
+					"content": "ถือซะว่านี่เป็นของตอบแทนก็แล้วกัน ผลไม้ของฉันน่ะสดมากเลยนะ... เพราะแบบนี้ Beatrice ถึงได้มาซื้อตลอดไงล่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Quinn"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,241 @@
+{
+	"id": 20028,
+	"type": "IQ",
+	"name": "Big Pudgy Problem!",
+	"description": "Slimes have suddenly shown up on the mountain behind Springvale, and it seems Timid Morrow has become caught up in the commotion...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2002801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go check the details",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Defeat the slimes",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002803,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Timid Morrow",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002801,
+						0
+					],
+					"talkId": 2002801
+				}
+			]
+		},
+		{
+			"id": 2002804,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Go to the strange location",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002805,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Use Anemo to blow out the dust",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002806,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Defeat all of the slimes",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2002801,
+			"completionStepIds": [
+				2002803
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002802",
+							"3"
+						],
+						"stepId": 2002802,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Timid Morrow"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200280101,
+					"content": "#Th—Thank you kindly, {M#sir}{F#ma'am}...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280102
+					],
+					"speakerTitle": "Timid Morrow"
+				},
+				{
+					"id": 200280102,
+					"content": "I may be a hunter by trade, but I've sure met my match with these darned slimes.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280103
+					],
+					"speakerTitle": "Timid Morrow"
+				},
+				{
+					"id": 200280103,
+					"content": "Thanks to them, once again I got nothing to show for this hunt. Ain't caught squat.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280104
+					],
+					"speakerTitle": "Timid Morrow"
+				},
+				{
+					"id": 200280104,
+					"content": "I sure hope them other hunters ain't as unfortunate as me.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280105
+					],
+					"speakerTitle": "Timid Morrow"
+				},
+				{
+					"id": 200280105,
+					"content": "Speaking of slimes and such... Could you take a look-see around here for me?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280106
+					],
+					"speakerTitle": "Timid Morrow"
+				},
+				{
+					"id": 200280106,
+					"content": "It could just be my imagination, but... they seem to be showing up more and more 'round this town.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280107
+					],
+					"speakerTitle": "Timid Morrow"
+				},
+				{
+					"id": 200280107,
+					"content": "Can you check the road ahead for slimes? If you see any... you know what to do.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280108,
+						200280109
+					],
+					"speakerTitle": "Timid Morrow"
+				},
+				{
+					"id": 200280108,
+					"content": "Sure, I have time.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200280110
+					]
+				},
+				{
+					"id": 200280110,
+					"content": "You're doing me a great service. Well, I'd better get back and report all this to Draff.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280111
+					],
+					"speakerTitle": "Timid Morrow"
+				},
+				{
+					"id": 200280111,
+					"content": "Here's hoping he isn't so drunk that it goes in one ear and out the other!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Timid Morrow"
+				},
+				{
+					"id": 200280109,
+					"content": "Sorry, I have to get back.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200280112
+					]
+				},
+				{
+					"id": 200280112,
+					"content": "#Please {M#sir}{F#ma'am}, if not for me, then for the sake of everyone in Springvale.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Timid Morrow"
+				}
+			]
+		}
+	]
+}

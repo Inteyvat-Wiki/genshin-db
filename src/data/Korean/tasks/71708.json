@@ -1,0 +1,176 @@
+{
+	"id": 71708,
+	"type": "WQ",
+	"name": "한봉의 철광 의뢰",
+	"description": "경책 산장의 한봉은 철광이 10개 필요하다",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "한봉에게 철광 10개 건네기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "한봉과 대화하기",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170802,
+						0
+					],
+					"talkId": 7170802
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170801,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170801",
+							"2"
+						],
+						"stepId": 7170801,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170801"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"한봉"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717080101,
+					"content": "철광에 대해…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717080102
+					]
+				},
+				{
+					"id": 717080102,
+					"content": "맞네, 내가 의뢰한 거야. 벌써 철광 10개를 다 모은 건가?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717080103,
+						717080104
+					],
+					"speakerTitle": "한봉"
+				},
+				{
+					"id": 717080103,
+					"content": "모아왔어요",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717080104,
+					"content": "아직이요…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717080105
+					]
+				},
+				{
+					"id": 717080105,
+					"content": "그렇구먼…. 다 모으면 바로 가져와주게. 호미를 고쳐야 나도 빨리 일하러 갈 수 있으니까",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "한봉"
+				}
+			]
+		},
+		{
+			"id": 7170802,
+			"completionStepIds": [
+				7170802
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170802",
+							"2"
+						],
+						"stepId": 7170802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"한봉"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717080201,
+					"content": "이 정도 철광이면 충분하겠네",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717080202
+					],
+					"speakerTitle": "한봉"
+				},
+				{
+					"id": 717080202,
+					"content": "그럼 이걸 자네에게 줄게. 고마워, 젊은이",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717080203
+					],
+					"speakerTitle": "한봉"
+				},
+				{
+					"id": 717080203,
+					"content": "내 솜씨가 너무 녹슬지 않았길 바라야지…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "한봉"
+				}
+			]
+		}
+	]
+}

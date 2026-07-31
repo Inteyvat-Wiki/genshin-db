@@ -1,0 +1,352 @@
+{
+	"id": 41160,
+	"type": "EQ",
+	"name": "Wanmin Fresh",
+	"description": "Wanmin Restaurant has taken a custom order that now awaits delivery...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 4116001,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Speak to Chef Mao",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4116001,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 4116002,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Deliver the food to Tacit Tingfang",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4116002,
+						0
+					],
+					"talkId": 4116002
+				}
+			]
+		},
+		{
+			"id": 4116003,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Tacit Tingfang",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						4116006,
+						0
+					],
+					"talkId": 4116006
+				}
+			]
+		},
+		{
+			"id": 4116004,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						4116004,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 4116001,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4116001",
+							"2"
+						],
+						"stepId": 4116001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Chef Mao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411600101,
+					"content": "I'll deliver it right now.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411600102
+					]
+				},
+				{
+					"id": 411600102,
+					"content": "I'm counting on you, then.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411600103
+					],
+					"speakerTitle": "Chef Mao"
+				},
+				{
+					"id": 411600103,
+					"content": "Do be careful. <color=#00E1FFFF>Don't touch any strange elements, and try not to get injured</color>, either.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Chef Mao"
+				}
+			]
+		},
+		{
+			"id": 4116002,
+			"completionStepIds": [
+				4116002
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4116001",
+							"3"
+						],
+						"stepId": 4116001,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tacit Tingfang"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411600201,
+					"content": "Hmm. I'm hungry.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tacit Tingfang"
+				}
+			]
+		},
+		{
+			"id": 4116003,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4116001",
+							"2"
+						],
+						"stepId": 4116001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Chef Mao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411600301,
+					"content": "I heard that someone placed a custom order...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411600302
+					]
+				},
+				{
+					"id": 411600302,
+					"content": "You heard correctly. Someone named Tingfang ordered a serving of Jewelry Soup earlier before heading off to Qingxu Pool.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411600303
+					],
+					"speakerTitle": "Chef Mao"
+				},
+				{
+					"id": 411600303,
+					"content": "I don't know what matter he needs to attend to, but I can say with confidence that you can't find any fault with our Jewelry Soup.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						411600304
+					],
+					"speakerTitle": "Chef Mao"
+				},
+				{
+					"id": 411600304,
+					"content": "Could I trouble you to deliver this Jewelry Soup for me? <color=#00E1FFFF>Just try not to use your wind glider to get there</color>, or some of the soup might spill.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Chef Mao"
+				}
+			]
+		},
+		{
+			"id": 4116004,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4116001",
+							"2"
+						],
+						"stepId": 4116001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Chef Mao"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411600401,
+					"content": "I've got something else to do.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411600402
+					]
+				},
+				{
+					"id": 411600402,
+					"content": "Ah, alright. I'll think of another way...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Chef Mao"
+				}
+			]
+		},
+		{
+			"id": 4116005,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4116001",
+							"2"
+						],
+						"stepId": 4116001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tacit Tingfang"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411600501,
+					"content": "Hmm...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tacit Tingfang"
+				}
+			]
+		},
+		{
+			"id": 4116006,
+			"completionStepIds": [
+				4116003
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"4116003",
+							"2"
+						],
+						"stepId": 4116003,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tacit Tingfang"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 411600601,
+					"content": "Here's the dish you ordered.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						411600602
+					]
+				},
+				{
+					"id": 411600602,
+					"content": "Thank you. Chef Mao is better than Smiley Yanxiao.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tacit Tingfang"
+				}
+			]
+		}
+	]
+}

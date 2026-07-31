@@ -1,0 +1,111 @@
+{
+	"id": 73079,
+	"type": "WQ",
+	"name": "(test)兰那罗打怪01$HIDDEN",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		73025
+	],
+	"steps": [
+		{
+			"id": 7307901,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)进圈接任务$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7307902,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)刷怪杀掉刷NPC$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7307903,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)对话$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7307901,
+						0
+					],
+					"talkId": 7307901
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7307901,
+			"completionStepIds": [
+				7307903
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7307902",
+							"3"
+						],
+						"stepId": 7307902,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"冒失的兰那罗"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 730790101,
+					"content": "哇，是金色的那菈！谢谢那菈朋友！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						730790103
+					],
+					"speakerTitle": "冒失的兰那罗"
+				},
+				{
+					"id": 730790103,
+					"content": "嘿嘿，回桓那兰那去咯，好那菈，再见啦！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "冒失的兰那罗"
+				}
+			]
+		}
+	]
+}

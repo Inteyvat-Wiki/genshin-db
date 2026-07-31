@@ -1,0 +1,507 @@
+{
+	"id": 71814,
+	"type": "WQ",
+	"name": "Нефритовая рыбалка",
+	"description": "Столкновение Нефритового дворца с морским чудовищем закончилось, но теперь воды вокруг города застланы обломками некогда парящей в небесах постройки. Одному из солдат Миллелита, Большому Куню, приходится искать в порту города добровольцев, желающих помочь с уборкой...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		11032
+	],
+	"steps": [
+		{
+			"id": 7181401,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		},
+		{
+			"id": 7181402,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Соберите обломки у северного причала",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7181403,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Соберите обломки у южного причала",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7181404,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Вернитесь к Большому Куню",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7181403,
+						0
+					],
+					"talkId": 7181403
+				}
+			]
+		},
+		{
+			"id": 7181405,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте коробку Бай Вэнь",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7181404,
+						0
+					],
+					"talkId": 7181404
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7181407,
+						0
+					],
+					"talkId": 7181407
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7181402,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"11015",
+							"0"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181402",
+							"2"
+						],
+						"stepId": 7181402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181403",
+							"2"
+						],
+						"stepId": 7181403,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181404",
+							"2"
+						],
+						"stepId": 7181404,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181405",
+							"2"
+						],
+						"stepId": 7181405,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Большой Кунь"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718140201,
+					"content": "Эх, такой был замечательный Нефритовый дворец... И вот его не стало...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Большой Кунь"
+				}
+			]
+		},
+		{
+			"id": 7181403,
+			"completionStepIds": [
+				7181404
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181404",
+							"2"
+						],
+						"stepId": 7181404,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Большой Кунь"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718140301,
+					"content": "#Ты уже закончил{F#а} с уборкой?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140302
+					],
+					"speakerTitle": "Большой Кунь"
+				},
+				{
+					"id": 718140302,
+					"content": "#Смотри, что я наш{F#ла}{M#ёл}...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718140303
+					]
+				},
+				{
+					"id": 718140303,
+					"content": "Хм... Мору можешь оставить себе. Её тут не очень много, пусть она будет твоим вознаграждением за работу.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140304
+					],
+					"speakerTitle": "Большой Кунь"
+				},
+				{
+					"id": 718140304,
+					"content": "А что это за коробка, я не знаю. Лучше покажи её Бай Вэнь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140305
+					],
+					"speakerTitle": "Большой Кунь"
+				},
+				{
+					"id": 718140305,
+					"content": "Она должна быть в павильоне Лунного моря. Может, она знает, что это такое.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Большой Кунь"
+				}
+			]
+		},
+		{
+			"id": 7181404,
+			"completionStepIds": [
+				7181405
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181405",
+							"2"
+						],
+						"stepId": 7181405,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"11015",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Бай Вэнь"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718140401,
+					"content": "Привет. Чем могу помочь?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140402
+					],
+					"speakerTitle": "Бай Вэнь"
+				},
+				{
+					"id": 718140402,
+					"content": "#Я наш{F#ла}{M#ёл} в море это...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718140403
+					]
+				},
+				{
+					"id": 718140403,
+					"content": "Хм? Позволь мне взглянуть.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140404
+					],
+					"speakerTitle": "Бай Вэнь"
+				},
+				{
+					"id": 718140404,
+					"content": "Верно, эта коробка действительно из Нефритового дворца.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140405
+					],
+					"speakerTitle": "Бай Вэнь"
+				},
+				{
+					"id": 718140405,
+					"content": "Но что это такое?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718140406
+					]
+				},
+				{
+					"id": 718140406,
+					"content": "В этой коробке лежат несколько бумаг и приказов, которые ещё предстоит рассмотреть. Удивительно, что они смогли так хорошо сохраниться.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140407
+					],
+					"speakerTitle": "Бай Вэнь"
+				},
+				{
+					"id": 718140407,
+					"content": "Тем не менее твоя находка сэкономит нам немного работы. На устранение последствий падения Нефритового дворца уходит уйма времени и усилий.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140408
+					],
+					"speakerTitle": "Бай Вэнь"
+				},
+				{
+					"id": 718140408,
+					"content": "#Спасибо, что прин{F#есла}{M#ёс} её мне. Вот, прими это в знак благодарности.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Бай Вэнь"
+				}
+			]
+		},
+		{
+			"id": 7181407,
+			"completionStepIds": [
+				7181405
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181405",
+							"2"
+						],
+						"stepId": 7181405,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"11015",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Бай Вэнь"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718140701,
+					"content": "Привет. Чем могу помочь?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140702
+					],
+					"speakerTitle": "Бай Вэнь"
+				},
+				{
+					"id": 718140702,
+					"content": "#Я наш{F#ла}{M#ёл} в море это...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718140703
+					]
+				},
+				{
+					"id": 718140703,
+					"content": "Хм? Позволь мне взглянуть.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140704
+					],
+					"speakerTitle": "Бай Вэнь"
+				},
+				{
+					"id": 718140704,
+					"content": "Верно, эта коробка действительно из Нефритового дворца.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140705
+					],
+					"speakerTitle": "Бай Вэнь"
+				},
+				{
+					"id": 718140705,
+					"content": "Но что это такое?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718140706
+					]
+				},
+				{
+					"id": 718140706,
+					"content": "В ней лежат несколько бумаг и приказов, которые ещё предстоит рассмотреть. Удивительно, что они смогли так хорошо сохраниться.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718140707
+					],
+					"speakerTitle": "Бай Вэнь"
+				},
+				{
+					"id": 718140707,
+					"content": "#Срок давности этих бумаг истёк, но всё равно спасибо, что прин{F#есла}{M#ёс} их мне. Вот, прими это в знак благодарности.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Бай Вэнь"
+				}
+			]
+		},
+		{
+			"id": 7181408,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_A_AND_ETCOR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"11015",
+							"1"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181402",
+							"2"
+						],
+						"stepId": 7181402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181403",
+							"2"
+						],
+						"stepId": 7181403,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181404",
+							"2"
+						],
+						"stepId": 7181404,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7181405",
+							"2"
+						],
+						"stepId": 7181405,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Большой Кунь"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718140801,
+					"content": "Нефритовый дворец такой большой... Я и подумать не мог, что его можно восстановить...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Большой Кунь"
+				}
+			]
+		}
+	]
+}

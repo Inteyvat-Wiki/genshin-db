@@ -1,0 +1,564 @@
+{
+	"id": 70507,
+	"type": "WQ",
+	"name": "Surrounded by the Aroma of Tea",
+	"description": "\"There seems to be a very unusual customer in the tavern...\" \"Well, it isn't every day that someone piques your interest. How about we go check this person out together?\" \"Forget it... I wouldn't dare to utter a word in front of him even if I went.\"",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70506
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Luka and enter the tavern",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050701,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050702,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Mix Zhongli the specified drink",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050702,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050703,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Give the drink to Zhongli",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050702,
+						0
+					],
+					"talkId": 7050702
+				}
+			]
+		},
+		{
+			"id": 7050704,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Zhongli",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050701,
+						0
+					],
+					"talkId": 7050701
+				}
+			]
+		},
+		{
+			"id": 7050705,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Head to the counter and get ready to open for business",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7050606,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050701,
+			"completionStepIds": [
+				7050704
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050704",
+							"2"
+						],
+						"stepId": 7050704,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050702",
+							"2"
+						],
+						"stepId": 7050702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Zhongli"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705070101,
+					"content": "Zh—Zhongli!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070102
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070102,
+					"content": "Ah, Traveler. Good to see you, I trust you are well?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070103
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070103,
+					"content": "W—Wait... Uh, Zhongli, what are you doing here?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070104
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070104,
+					"content": "If I am to roam about the world, then I certainly mustn't limit my destinations. The free and prosperous Land of Wind is as splendid a place to visit as any.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070105
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070105,
+					"content": "And it's quite a pleasant surprise to run into you here.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070106,
+						705070107
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070106,
+					"content": "Can I get you a drink?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070108
+					]
+				},
+				{
+					"id": 705070108,
+					"content": "One Misty Garden please. I take my tea strong, thank you.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070107,
+					"content": "We can chat over a cup of tea.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070108
+					]
+				}
+			]
+		},
+		{
+			"id": 7050702,
+			"completionStepIds": [
+				7050703
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050703",
+							"2"
+						],
+						"stepId": 7050703,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Zhongli"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705070201,
+					"content": "Sorry to keep you waiting!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070202
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070202,
+					"content": "Enjoy.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070203
+					]
+				},
+				{
+					"id": 705070203,
+					"content": "Mmm, the tea is clear and glows with a pleasing hue. Its richness is complemented by a floral and fruity fragrance. Exquisite.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070204
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070204,
+					"content": "Wow, so Zhongli is even super knowledgeable about tea.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070205
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070205,
+					"content": "Paimon usually just gulps down the tea and says something simple like, \"Yummy yummy in Paimon's tummy.\"",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070206
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070206,
+					"content": "Mindfully savoring the tea shows due respect to the person that brewed it for you.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070207
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070207,
+					"content": "Tea of good quality is hard to come by, and those capable of brewing tea according to the occasion and emotions even more so.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070208,
+						705070209
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070208,
+					"content": "You're too kind.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070210
+					]
+				},
+				{
+					"id": 705070210,
+					"content": "Oh, Paimon gets it now.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070211
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070211,
+					"content": "So could you teach Paimon how to savor tea like you do? It seems you smell it first, then drink it, right?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070212
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070212,
+					"content": "That's correct.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070213
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070213,
+					"content": "Every type of tea is unique. The more you drink, the more you will understand the subtle differences. Smelling the aroma will reveal the quality of the tea.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070214
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070214,
+					"content": "Lower-grade teas emit a musty and seemingly scorched scent, whereas ones with a delicate yet soothing aroma are usually of a higher quality.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070215
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070215,
+					"content": "If you want to be more particular, according to Liyue ancient tradition, you could acquire a \"Vintage Goblet,\" which is used specifically for examining the aroma.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070216
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070216,
+					"content": "Oh no, all this time, Paimon's been missing out on her tea...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070217
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070217,
+					"content": "Not to worry. Knowledge is vast, it's never too late to learn.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070218
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070218,
+					"content": "As a beginner, you can try this method: first observe the color. Then, smell the fragrance... And finally, take a sip.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070219
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070219,
+					"content": "Remember, you can understand anything as long as you approach it in the proper order.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070220,
+						705070221
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070220,
+					"content": "I learned a lot today.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070222
+					]
+				},
+				{
+					"id": 705070222,
+					"content": "Qiaoying Village in northwest Liyue is famous for their tea industry. It would be well worthwhile the visit when you get the chance.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070223
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070223,
+					"content": "What I shared with you today are mostly my own habits as an old-fashioned Liyue local.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070224
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070224,
+					"content": "Each region has its own tea traditions and culture. One should always respect the conventions of the local region.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070225
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070225,
+					"content": "Paimon gets it! But whether Paimon can remember it all is another story, hehe...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070226
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070226,
+					"content": "Classic Paimon.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070227
+					]
+				},
+				{
+					"id": 705070227,
+					"content": "#Thank you for such excellent tea, {NICKNAME}. It made my trip out here all the more worthwhile.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070228
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070228,
+					"content": "If you ever come to manage a tea house, I will certainly be a regular.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070229
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070229,
+					"content": "Well, we're already pretty busy. I don't think we'll have time to manage a side hustle at a tea house.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070230
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070230,
+					"content": "Well, who knows...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070231
+					]
+				},
+				{
+					"id": 705070231,
+					"content": "Regardless, you have my complete support.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070232
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070232,
+					"content": "Let's call it a day. I won't take more of your time. All the best with your new pursuit.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070233,
+						705070234
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070233,
+					"content": "Bye.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070235
+					]
+				},
+				{
+					"id": 705070235,
+					"content": "Ah yes, the bill... Just put it on Wangsheng Funeral Parlor's tab, as usual.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705070236
+					],
+					"speakerTitle": "Zhongli"
+				},
+				{
+					"id": 705070236,
+					"content": "Of course... Take care! Give our regards to the director!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705070234,
+					"content": "Wait, about the bill...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070235
+					]
+				},
+				{
+					"id": 705070221,
+					"content": "I'd like to know more.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070222
+					]
+				},
+				{
+					"id": 705070209,
+					"content": "I'm flattered.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705070210
+					]
+				}
+			]
+		}
+	]
+}

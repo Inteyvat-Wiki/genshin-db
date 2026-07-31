@@ -1,0 +1,581 @@
+{
+	"id": 71803,
+	"type": "WQ",
+	"name": "冒険者協会の数々な事情",
+	"description": "嵐姉さんが冒険者協会が引き受けた一部の依頼のことで悩んでいる…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		1025
+	],
+	"steps": [
+		{
+			"id": 7180301,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": []
+		},
+		{
+			"id": 7180302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "ヒルチャール·岩兜の王を倒す",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180303,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7180304,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "奇妙な子猫と交流する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180303,
+						0
+					],
+					"talkId": 7180303
+				}
+			]
+		},
+		{
+			"id": 7180305,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "灰灰を嵐姉の所に連れていく",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180304,
+						0
+					],
+					"talkId": 7180304
+				}
+			]
+		},
+		{
+			"id": 7180306,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7180305,
+						0
+					],
+					"talkId": 7180305
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7180302,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180301",
+							"3"
+						],
+						"stepId": 7180301,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"嵐姉"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718030201,
+					"content": "<color=#00E1FFFF>灰灰</color>…詳しく特徴を書いてくれているが、野外でいなくなったのなら、見つけるのは難しいだろうね…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "嵐姉"
+				}
+			]
+		},
+		{
+			"id": 7180303,
+			"completionStepIds": [
+				7180304
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180304",
+							"2"
+						],
+						"stepId": 7180304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"灰灰"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718030301,
+					"content": "にゃー…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030302
+					],
+					"speakerTitle": "灰灰"
+				},
+				{
+					"id": 718030302,
+					"content": "ん？なんで子猫がここにいるんだ？さっきの鳴き声はこいつか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030303
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 718030303,
+					"content": "にゃん…にゃん…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030304,
+						718030308
+					],
+					"speakerTitle": "灰灰"
+				},
+				{
+					"id": 718030304,
+					"content": "灰色の子猫…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030305
+					]
+				},
+				{
+					"id": 718030305,
+					"content": "灰色の子猫…野外でいなくなった…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030306
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 718030306,
+					"content": "あー！嵐姉さんが言ってた猫の捜索依頼…あの猫のことじゃないのか？えっと、灰灰って言うんだっけ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030307
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 718030307,
+					"content": "こんなところにいたとはな…ずっとここに隠れていたのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030311
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 718030311,
+					"content": "ヒルチャール·岩兜の王のせいで誰も探しに来れなかったんだな。こいつも…怖くてずっと隠れていたんだろうな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030312
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 718030312,
+					"content": "オイラたちが来てよかったぞ。じゃないと、こいつはここで待ちくたびれるところだったぜ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030313
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 718030313,
+					"content": "にゃー…にゃにゃ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030314,
+						718030317
+					],
+					"speakerTitle": "灰灰"
+				},
+				{
+					"id": 718030314,
+					"content": "にゃん…にゃん…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030315
+					]
+				},
+				{
+					"id": 718030315,
+					"content": "おい、おまえ何してんだ…って言っても分からないか。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030316
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 718030316,
+					"content": "嵐姉さんのところに連れて行って、依頼人に返してもらおう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030319
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 718030319,
+					"content": "にゃ…にゃー！にゃー！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030320,
+						718030322
+					],
+					"speakerTitle": "灰灰"
+				},
+				{
+					"id": 718030320,
+					"content": "にゃ…にゃー！にゃー！",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030321
+					]
+				},
+				{
+					"id": 718030321,
+					"content": "真似してもこいつには通じないぞ！早く連れて帰ろうぜ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 718030322,
+					"content": "返事をしたみたいだよ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030323
+					]
+				},
+				{
+					"id": 718030323,
+					"content": "なんで分かるんだ…まあいい、早く連れて帰ろう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 718030317,
+					"content": "嵐姉さんのところに連れて行こう。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030318
+					]
+				},
+				{
+					"id": 718030318,
+					"content": "うん、それしかないだろうな。灰灰を依頼人に返そう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030319
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 718030308,
+					"content": "この子が灰灰なのか…？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030309
+					]
+				},
+				{
+					"id": 718030309,
+					"content": "灰色の子猫…野外でいなくなった…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030310
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 718030310,
+					"content": "あー！嵐姉さんが言ってた依頼のことじゃないか？こんなところにいたとはな…ずっとここに隠れていたのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030311
+					],
+					"speakerTitle": "パイモン"
+				}
+			]
+		},
+		{
+			"id": 7180304,
+			"completionStepIds": [
+				7180305
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7180305",
+							"2"
+						],
+						"stepId": 7180305,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"嵐姉"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718030401,
+					"content": "ヒルチャール·岩兜の王を倒したのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030402,
+						718030404
+					],
+					"speakerTitle": "嵐姉"
+				},
+				{
+					"id": 718030402,
+					"content": "倒したよ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030403
+					]
+				},
+				{
+					"id": 718030403,
+					"content": "ご苦労様。この依頼を達成させれば、協会の実力も証明できる…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "嵐姉"
+				},
+				{
+					"id": 718030404,
+					"content": "もう倒したし灰灰も見つけた。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030405
+					]
+				},
+				{
+					"id": 718030405,
+					"content": "ご苦労様…なに？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "嵐姉"
+				}
+			]
+		},
+		{
+			"id": 7180305,
+			"completionStepIds": [
+				7180306
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_QUEST_VAR_EQUAL",
+						"rawParams": [
+							"1",
+							"1",
+							"71803"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"嵐姉"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 718030501,
+					"content": "にゃーにゃー…にゃ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030502
+					],
+					"speakerTitle": "灰灰"
+				},
+				{
+					"id": 718030502,
+					"content": "この猫は…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030503
+					],
+					"speakerTitle": "嵐姉"
+				},
+				{
+					"id": 718030503,
+					"content": "恐らく灰灰だ。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030504
+					]
+				},
+				{
+					"id": 718030504,
+					"content": "待って、依頼書と比較してみるわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030505
+					],
+					"speakerTitle": "嵐姉"
+				},
+				{
+					"id": 718030505,
+					"content": "どれどれ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030506
+					],
+					"speakerTitle": "嵐姉"
+				},
+				{
+					"id": 718030506,
+					"content": "ほとんど一致している…確かに依頼されていた探し猫だわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030508
+					],
+					"speakerTitle": "嵐姉"
+				},
+				{
+					"id": 718030508,
+					"content": "依頼人が喜ぶね。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						718030509
+					]
+				},
+				{
+					"id": 718030509,
+					"content": "ふぅ…回りに回って、結局猫探しの依頼に戻ってきたというわけね。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030510
+					],
+					"speakerTitle": "嵐姉"
+				},
+				{
+					"id": 718030510,
+					"content": "なんと言えばいいのか…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030511
+					],
+					"speakerTitle": "嵐姉"
+				},
+				{
+					"id": 718030511,
+					"content": "こなしてもらった二つの依頼をそれぞれ依頼人に報告するわね。ご苦労様。これは報酬よ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030512
+					],
+					"speakerTitle": "嵐姉"
+				},
+				{
+					"id": 718030512,
+					"content": "あの猫の依頼人はどうやら引っ越してしまったようね…連絡が付くのに時間がかかるみたい。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030513
+					],
+					"speakerTitle": "嵐姉"
+				},
+				{
+					"id": 718030513,
+					"content": "依頼人が見つかるまで、このチビちゃんは私が面倒を見るわ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						718030514
+					],
+					"speakerTitle": "嵐姉"
+				},
+				{
+					"id": 718030514,
+					"content": "にゃにゃ、にゃー！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "灰灰"
+				}
+			]
+		}
+	]
+}

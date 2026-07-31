@@ -1,0 +1,167 @@
+{
+	"id": 74652,
+	"type": "WQ",
+	"name": "繆妮的奶油需求",
+	"description": "繆妮需要3份奶油。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7465201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "將3份奶油交給繆妮",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7465201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7465202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "與繆妮對話",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7465202,
+						0
+					],
+					"talkId": 7465202
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7465201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465201",
+							"2"
+						],
+						"stepId": 7465201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7465201"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"繆妮"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746520101,
+					"content": "關於奶油…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746520102
+					]
+				},
+				{
+					"id": 746520102,
+					"content": "每次想吃點麵包，奶油總是不夠抹的，我覺得以後我還是隨身帶奶油好了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746520103
+					],
+					"speakerTitle": "繆妮"
+				},
+				{
+					"id": 746520103,
+					"content": "#奶油{F#妳}{M#你}都準備好了對吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746520106,
+						746520104
+					],
+					"speakerTitle": "繆妮"
+				},
+				{
+					"id": 746520106,
+					"content": "準備好了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 746520104,
+					"content": "還沒有。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746520105
+					]
+				},
+				{
+					"id": 746520105,
+					"content": "#我要的還滿不少的，還是等{F#妳}{M#你}準備好了再一起給我吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "繆妮"
+				}
+			]
+		},
+		{
+			"id": 7465202,
+			"completionStepIds": [
+				7465202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465202",
+							"2"
+						],
+						"stepId": 7465202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"繆妮"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746520201,
+					"content": "太好了，奶油，我的奶油…沒有奶油我寧願不吃麵包。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "繆妮"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,528 @@
+{
+	"id": 22031,
+	"type": "IQ",
+	"name": "Непрерывное обучение",
+	"description": "Асакура, который смог вернуть своё оружие, ищет кого-то, кто поможет ему обучиться боевым искусствам...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2203101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Найдите Асакуру, который выдал поручение",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2203101,
+						0
+					],
+					"talkId": 2203101
+				}
+			]
+		},
+		{
+			"id": 2203102,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Асакурой",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2203105,
+						0
+					],
+					"talkId": 2203105
+				}
+			]
+		},
+		{
+			"id": 2203103,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Закончите обучение с Асакурой",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2203104,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Асакурой",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2203104,
+						0
+					],
+					"talkId": 2203104
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2203101,
+			"completionStepIds": [
+				2203101
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2203101",
+							"2"
+						],
+						"stepId": 2203101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Асакура"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220310101,
+					"content": "Прямое копье, прямая линия... Ха!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310102
+					],
+					"speakerTitle": "Асакура"
+				},
+				{
+					"id": 220310102,
+					"content": "Я здесь, чтобы снова потренироваться с тобой.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220310103
+					]
+				},
+				{
+					"id": 220310103,
+					"content": "О! Это вы. Вы снова приняли мой запрос? Премного благодарен!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310104
+					],
+					"speakerTitle": "Асакура"
+				},
+				{
+					"id": 220310104,
+					"content": "Это действительно здорово, что со мной занимается такой сильный боец, как вы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310105,
+						220310110
+					],
+					"speakerTitle": "Асакура"
+				},
+				{
+					"id": 220310105,
+					"content": "Твой навык владения копьем значительно улучшился.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220310106
+					]
+				},
+				{
+					"id": 220310106,
+					"content": "Ха-ха... Вы слишком любите надо мной подшучивать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310107
+					],
+					"speakerTitle": "Асакура"
+				},
+				{
+					"id": 220310107,
+					"content": "Я слышал, одной из причин изобретения копья было то, что оно позволяет человеку, не умеющему как должно владеть оружием, такому как я, например, сражаться с лёгкостью.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310108
+					],
+					"speakerTitle": "Асакура"
+				},
+				{
+					"id": 220310108,
+					"content": "В конце концов, это длинное и острое оружие. Даже если владелец не знает, как им пользоваться, простое нанесение колющих ударов и махи им, по крайней мере, создают видимость силы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310109
+					],
+					"speakerTitle": "Асакура"
+				},
+				{
+					"id": 220310109,
+					"content": "Однако, согласно этому правилу... Я думаю, что скромные садовые вилы обладают даже большей силой...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Асакура"
+				},
+				{
+					"id": 220310110,
+					"content": "Разве ты уже не вернул себе своё оружие?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220310111
+					]
+				},
+				{
+					"id": 220310111,
+					"content": "Да, я вернул себе своё оружие, но это не значит, что моё обучение закончено.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310112
+					],
+					"speakerTitle": "Асакура"
+				},
+				{
+					"id": 220310112,
+					"content": "У меня уже была стычка с кайраги. Было бы самонадеянно предполагать, что в будущем я не столкнусь с ещё более сильными противниками.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310113
+					],
+					"speakerTitle": "Асакура"
+				},
+				{
+					"id": 220310113,
+					"content": "Я никогда больше не позволю своему оружию попасть в руки врага и тем самым осквернить мою честь как самурая. Таков путь самурая, который я хочу пройти.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Асакура"
+				}
+			]
+		},
+		{
+			"id": 2203102,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2203102",
+							"2"
+						],
+						"stepId": 2203102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Асакура"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220310201,
+					"content": "Ах, что ж, довольно болтовни. Я не думаю, что мне стоит и дальше тратить ваше время.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Асакура"
+				}
+			]
+		},
+		{
+			"id": 2203103,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Асакура"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220310301,
+					"content": "Кажется, вы сейчас были немного рассеяны. Ваши шаги были беспорядочными, а сила ваших атак - непоследовательной: иногда сильной, иногда слабой...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310302
+					],
+					"speakerTitle": "Асакура"
+				},
+				{
+					"id": 220310302,
+					"content": "Так не пойдёт. Пожалуйста, сначала подготовьтесь, как следует, и мы попробуем ещё раз.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Асакура"
+				}
+			]
+		},
+		{
+			"id": 2203104,
+			"completionStepIds": [
+				2203104
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2203104",
+							"2"
+						],
+						"stepId": 2203104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Асакура"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220310401,
+					"content": "*тяжело дышит* Уровень ваших навыков действительно намного выше моего...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310402
+					],
+					"speakerTitle": "Асакура"
+				},
+				{
+					"id": 220310402,
+					"content": "В следующий раз я постараюсь немного сдерживаться...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220310403
+					]
+				},
+				{
+					"id": 220310403,
+					"content": "Нет! Пожалуйста, используйте всю вашу силу. Без практики с сильными противниками я не смогу развиваться дальше.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310404
+					],
+					"speakerTitle": "Асакура"
+				},
+				{
+					"id": 220310404,
+					"content": "Учитывая вашу огромную силу, вы, должно быть, много тренировались...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310405
+					],
+					"speakerTitle": "Асакура"
+				},
+				{
+					"id": 220310405,
+					"content": "Простите меня за прямоту, но мне действительно интересно, как вы сами тренировались, чтобы достичь такого уровня.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310406,
+						220310408
+					],
+					"speakerTitle": "Асакура"
+				},
+				{
+					"id": 220310406,
+					"content": "Однажды гигантский дракон помог мне с тренировкой полета.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220310407
+					]
+				},
+				{
+					"id": 220310407,
+					"content": "Вы... вы летали с гигантским драконом? Невероятно...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310410
+					],
+					"speakerTitle": "Асакура"
+				},
+				{
+					"id": 220310410,
+					"content": "Ничего особенного...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220310411
+					]
+				},
+				{
+					"id": 220310411,
+					"content": "Ха-ха, правда? Тогда, наверное, вы действительно исключительно талантливы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310412
+					],
+					"speakerTitle": "Асакура"
+				},
+				{
+					"id": 220310412,
+					"content": "Благодарю за эту тренировку. Я буду помнить то, чему научился у вас. Пожалуйста, примите это в качестве благодарности.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Асакура"
+				},
+				{
+					"id": 220310408,
+					"content": "Огромный волк помогает мне в занятиях боевыми искусствами.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220310409
+					]
+				},
+				{
+					"id": 220310409,
+					"content": "Это звучит по-настоящему отважно. Я бы очень хотел увидеть, как вы и огромный волк бьётесь друг против друга...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						220310410
+					],
+					"speakerTitle": "Асакура"
+				}
+			]
+		},
+		{
+			"id": 2203105,
+			"completionStepIds": [
+				2203102
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2203102",
+							"2"
+						],
+						"stepId": 2203102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Асакура"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220310501,
+					"content": "Хорошо, начнём.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220310502
+					]
+				},
+				{
+					"id": 220310502,
+					"content": "Нет проблем. Будьте осторожней.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Асакура"
+				}
+			]
+		},
+		{
+			"id": 2203106,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2203102",
+							"2"
+						],
+						"stepId": 2203102,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Асакура"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 220310601,
+					"content": "Ещё минутку.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						220310602
+					]
+				},
+				{
+					"id": 220310602,
+					"content": "Мм. Пожалуйста, не торопитесь, и дайте мне знать, когда будете готовы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Асакура"
+				}
+			]
+		},
+		{
+			"id": 2203111,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Асакура"
+				],
+				"points": []
+			},
+			"dialogs": []
+		}
+	]
+}

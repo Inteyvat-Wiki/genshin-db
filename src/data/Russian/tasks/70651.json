@@ -1,0 +1,187 @@
+{
+	"id": 70651,
+	"type": "WQ",
+	"name": "Шахтёрское ремесло",
+	"description": "Шахтёром быть отнюдь не просто... Возможно, Вагнер из Мондштадта даст вам толковый совет...",
+	"unlockDescription": "Завершите текущее задание, чтобы разблокировать функцию поиска руды",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_GUIDE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7065101,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Вагнером",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7065102,
+						0
+					],
+					"talkId": 7065102
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7065103,
+						0
+					],
+					"talkId": 7065103
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7065104,
+						0
+					],
+					"talkId": 7065104
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7065101,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7065101",
+							"2"
+						],
+						"stepId": 7065101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Вагнер"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706510101,
+					"content": "Эх, руда, похоже, заканчивается...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706510102
+					],
+					"speakerTitle": "Вагнер"
+				},
+				{
+					"id": 706510102,
+					"content": "Можно спросить о сборе руды?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						706510103
+					]
+				},
+				{
+					"id": 706510103,
+					"content": "Руды? Что ты хочешь выковать? Оружие или броню?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706510104
+					],
+					"speakerTitle": "Вагнер"
+				},
+				{
+					"id": 706510104,
+					"content": "Если тебе нужна руда, то я знаю хорошие места.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706510105
+					],
+					"speakerTitle": "Вагнер"
+				},
+				{
+					"id": 706510105,
+					"content": "Но есть много разных видов руды. Чаще всего используют обломки железа. Качеством получше - обломки белого железа. А ещё лучше - обломки кристаллов.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706510106
+					],
+					"speakerTitle": "Вагнер"
+				},
+				{
+					"id": 706510106,
+					"content": "Ещё бывает магическая кристальная руда. Она очень высокого качества и из неё можно создать замечательные вещи.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Вагнер"
+				}
+			]
+		},
+		{
+			"id": 7065102,
+			"completionStepIds": [
+				7065101
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_NOT_HAVE_BLOSSOM_TALK",
+						"rawParams": []
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7065101",
+							"2"
+						],
+						"stepId": 7065101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Вагнер"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 706510201,
+					"content": "Но магическую руду очень трудно обрабатывать, поэтому, чтобы сделать из неё что-то, понадобится много других материалов.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706510202
+					],
+					"speakerTitle": "Вагнер"
+				},
+				{
+					"id": 706510202,
+					"content": "Однако я только вернулся из-за города, и похоже, что все жилы уже истощены. Вряд ли ты там что-то найдёшь.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						706510203
+					],
+					"speakerTitle": "Вагнер"
+				},
+				{
+					"id": 706510203,
+					"content": "Хм... Давай так. Подойди ко мне попозже и я отмечу все жилы, которые знаю, тебе на карте.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Вагнер"
+				}
+			]
+		}
+	]
+}

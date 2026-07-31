@@ -1,0 +1,241 @@
+{
+	"id": 20028,
+	"type": "IQ",
+	"name": "圆滚滚的大团骚乱！",
+	"description": "史莱姆突然在清泉镇后山出现，在附近的胆小的莫罗似乎被卷入其中…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2002801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "前去查看详请",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002802,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "消灭史莱姆",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002803,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "和胆小的莫罗对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002801,
+						0
+					],
+					"talkId": 2002801
+				}
+			]
+		},
+		{
+			"id": 2002804,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "前往异常地点",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002805,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "用「风」驱散尘埃",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002806,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "消灭全部史莱姆",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2002801,
+			"completionStepIds": [
+				2002803
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002802",
+							"3"
+						],
+						"stepId": 2002802,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"胆小的莫罗"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200280101,
+					"content": "#谢，谢谢你，{NICKNAME}…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280102
+					],
+					"speakerTitle": "胆小的莫罗"
+				},
+				{
+					"id": 200280102,
+					"content": "虽然是猎人…但是我也拿这些史莱姆没办法。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280103
+					],
+					"speakerTitle": "胆小的莫罗"
+				},
+				{
+					"id": 200280103,
+					"content": "被这群家伙一搅合，这次狩猎我又什么都带不回去了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280104
+					],
+					"speakerTitle": "胆小的莫罗"
+				},
+				{
+					"id": 200280104,
+					"content": "只希望别的猎人不要和我一样倒霉…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280105
+					],
+					"speakerTitle": "胆小的莫罗"
+				},
+				{
+					"id": 200280105,
+					"content": "对了，说起这个，能请你去周围看看吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280106
+					],
+					"speakerTitle": "胆小的莫罗"
+				},
+				{
+					"id": 200280106,
+					"content": "不知道是不是我的错觉，在镇子周围…史莱姆好像越来越多了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280107
+					],
+					"speakerTitle": "胆小的莫罗"
+				},
+				{
+					"id": 200280107,
+					"content": "请你去前头看看吧。如果发现了史莱姆，就直接把它们消灭掉吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280108,
+						200280109
+					],
+					"speakerTitle": "胆小的莫罗"
+				},
+				{
+					"id": 200280108,
+					"content": "没问题。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200280110
+					]
+				},
+				{
+					"id": 200280110,
+					"content": "那就拜托你了，我也会回去和杜拉夫先生报告的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200280111
+					],
+					"speakerTitle": "胆小的莫罗"
+				},
+				{
+					"id": 200280111,
+					"content": "希望他别喝太多了，能听进去我说的话…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "胆小的莫罗"
+				},
+				{
+					"id": 200280109,
+					"content": "还有别的事。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200280112
+					]
+				},
+				{
+					"id": 200280112,
+					"content": "但有能力能解决这件事的人，只有你了。为了清泉镇，就拜托你了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "胆小的莫罗"
+				}
+			]
+		}
+	]
+}

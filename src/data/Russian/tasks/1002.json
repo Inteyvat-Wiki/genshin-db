@@ -1,0 +1,388 @@
+{
+	"id": 1002,
+	"type": "AQ",
+	"name": "Неожиданная смена планов",
+	"description": "Церемония Сошествия началась, и божество явилось в назначенный момент. Но когда тучи рассеялись, его бездыханное тело рухнуло на алтарь подношений. Посреди воцарившегося хаоса Цисин тут же приказали найти и арестовать убийцу. Вы знаете, что вам не удастся доказать свою невиновность, поэтому вам приходится принять помощь Чайльда, одного из Предвестников Фатуи. Вы отправляетесь в Заоблачный предел, обитель Адептов...",
+	"unlockDescription": "",
+	"chapter": "Загадочная земля тысячи камней",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		1008,
+		1009,
+		1003
+	],
+	"prevMainQuestList": [
+		1000
+	],
+	"steps": [
+		{
+			"id": 100201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Найдите Адептов в Заоблачном пределе",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1160,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 100202,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "（test）与仙人对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						100202,
+						0
+					],
+					"talkId": 100202
+				}
+			]
+		},
+		{
+			"id": 100203,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						100203,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 100204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Битва с поддержкой Адепта",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 100205,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						100205,
+						0
+					],
+					"talkId": 100205
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 100202,
+			"completionStepIds": [
+				100202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"100202",
+							"2"
+						],
+						"stepId": 100202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Паймон"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 10020201,
+					"content": "Кто посмел ступить на священные земли Заоблачного предела?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020202,
+						10020203
+					],
+					"speakerTitle": "Владыка Лун"
+				},
+				{
+					"id": 10020202,
+					"content": "Я исполняю поручение...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10020203
+					]
+				},
+				{
+					"id": 10020203,
+					"content": "Вот, взгляните...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10020204
+					]
+				},
+				{
+					"id": 10020204,
+					"content": "Печать согласия... Я не видел такую уже очень давно.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020205
+					],
+					"speakerTitle": "Владыка Лун"
+				},
+				{
+					"id": 10020205,
+					"content": "#Вы находитесь в присутствии одного из просветлённых Адептов - Владыки Лун. Что привело тебя сюда, путешественни{F#ца}{M#к}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020206
+					],
+					"speakerTitle": "Владыка Лун"
+				},
+				{
+					"id": 10020206,
+					"content": "На самом деле...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020207
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 10020207,
+					"content": "Убийца бежал в эту сторону!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020208
+					],
+					"speakerTitle": "Сержант Миллелитов"
+				},
+				{
+					"id": 10020208,
+					"content": "Это Заоблачный предел, сержант. Мы зашли слишком далеко...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020209
+					],
+					"speakerTitle": "Солдат Миллелитов"
+				},
+				{
+					"id": 10020209,
+					"content": "Мы... У нас нет выбора! Наш приказ - поймать убийцу!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020210
+					],
+					"speakerTitle": "Сержант Миллелитов"
+				},
+				{
+					"id": 10020210,
+					"content": "...пересекли нашу границу.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020211
+					],
+					"speakerTitle": "Владыка Лун"
+				},
+				{
+					"id": 10020211,
+					"content": "Избавьтесь от них... Я не потерплю вторжения.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Владыка Лун"
+				}
+			]
+		},
+		{
+			"id": 100205,
+			"completionStepIds": [
+				100205
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"100205",
+							"2"
+						],
+						"stepId": 100205,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Владыка Лун"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 10020501,
+					"content": "#Прошу прощения. Так что же привело тебя сюда, путешественни{F#ца}{M#к}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020502
+					],
+					"speakerTitle": "Владыка Лун"
+				},
+				{
+					"id": 10020502,
+					"content": "На самом деле...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020503
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 10020503,
+					"content": "Безобразие...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020504
+					],
+					"speakerTitle": "Владыка Лун"
+				},
+				{
+					"id": 10020504,
+					"content": "БЕЗОБРАЗИЕ!!!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020505
+					],
+					"speakerTitle": "Владыка Лун"
+				},
+				{
+					"id": 10020505,
+					"content": "Группировка Цисин... Какое разочарование.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020506
+					],
+					"speakerTitle": "Владыка Лун"
+				},
+				{
+					"id": 10020506,
+					"content": "Они допустили убийство Властелина Камня во время Церемонии Сошествия...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020507
+					],
+					"speakerTitle": "Владыка Лун"
+				},
+				{
+					"id": 10020507,
+					"content": "А затем осмелились обвинить в этом поступке присутствующих на церемонии людей?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020508
+					],
+					"speakerTitle": "Владыка Лун"
+				},
+				{
+					"id": 10020508,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020509
+					],
+					"speakerTitle": "Владыка Лун"
+				},
+				{
+					"id": 10020509,
+					"content": "Я знаю, что вас осудили несправедливо, Путешественники.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020510
+					],
+					"speakerTitle": "Владыка Лун"
+				},
+				{
+					"id": 10020510,
+					"content": "И я имею некоторое представление о настоящем убийце, но мне необходимо посоветоваться с другими Адептами, чтобы подтвердить, что интуиция меня не подводит.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020511
+					],
+					"speakerTitle": "Владыка Лун"
+				},
+				{
+					"id": 10020511,
+					"content": "А теперь иди. Возьми с собой Печать согласия и передай от меня сообщение.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020512,
+						10020513
+					],
+					"speakerTitle": "Владыка Лун"
+				},
+				{
+					"id": 10020512,
+					"content": "Кому?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10020513
+					]
+				},
+				{
+					"id": 10020513,
+					"content": "Куда мне идти?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						10020514
+					]
+				},
+				{
+					"id": 10020514,
+					"content": "Здесь обитают Творец Гор и Хранитель Облаков. Только судьба решит, сможешь ли ты встретиться с ними... Только судьба.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						10020515
+					],
+					"speakerTitle": "Владыка Лун"
+				},
+				{
+					"id": 10020515,
+					"content": "Помимо того, ступай на постоялый двор «Ваншу». Отыщи следы Охотника на демонов, Защитника Яксы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Владыка Лун"
+				}
+			]
+		}
+	]
+}

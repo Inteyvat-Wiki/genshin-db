@@ -1,0 +1,912 @@
+{
+	"id": 72803,
+	"type": "WQ",
+	"name": "О, Архонт! Правильно ли я поступил?",
+	"description": "Святилище, где Сёта оставлял подношения, перестало отвечать ему. Он обращается к вам за помощью...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7280301,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7280301,
+						0
+					],
+					"talkId": 7280301
+				}
+			]
+		},
+		{
+			"id": 7280302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отправляйтесь в святилище за городом",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7280302,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7280303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Победите Похитителей сокровищ",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7280303,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7280304,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Помогите Сёте выяснить причину",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7280302,
+						0
+					],
+					"talkId": 7280302
+				}
+			]
+		},
+		{
+			"id": 7280306,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Узнайте мнение Коити",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7280304,
+						0
+					],
+					"talkId": 7280304
+				}
+			]
+		},
+		{
+			"id": 7280307,
+			"order": 7,
+			"listShowType": "QUEST_SHOW",
+			"description": "Узнайте мнение Яёй Нанацуки",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7280305,
+						0
+					],
+					"talkId": 7280305
+				}
+			]
+		},
+		{
+			"id": 7280308,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7280309,
+			"order": 8,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7280309,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7280302,
+			"completionStepIds": [
+				7280304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7280304",
+							"2"
+						],
+						"stepId": 7280304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Язвительный Похититель сокровищ"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 728030201,
+					"content": "Ах вы, воры! Божество не отвечает мне, потому что вы крадёте мои подношения!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030202
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030202,
+					"content": "Подношения? Ты о предметах, которые оставляют у алтаря? Да брось, мы их не взяли бы, даже если бы нам их подарили!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030203
+					],
+					"speakerTitle": "Язвительный Похититель сокровищ"
+				},
+				{
+					"id": 728030203,
+					"content": "И потом... Ты приносишь в храм такое барахло! Было бы забавно, если бы божество вообще ответило!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030204
+					],
+					"speakerTitle": "Язвительный Похититель сокровищ"
+				},
+				{
+					"id": 728030204,
+					"content": "Э-э... Что-что?! Мои подношения - не барахло!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030205
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030205,
+					"content": "Всё, проехали, некогда нам тут с тобой в игры играть!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030207
+					],
+					"speakerTitle": "Язвительный Похититель сокровищ"
+				},
+				{
+					"id": 728030207,
+					"content": "Но... мои подношения не барахло...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030208
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030208,
+					"content": "Расскажешь о своих желаниях?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030209
+					]
+				},
+				{
+					"id": 728030209,
+					"content": "Ладно... Раз уж всё сложилось вот так, наверное, они всё равно уже не исполнятся...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030210
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030210,
+					"content": "Два моих желания очень просты. Во-первых, я больше не хочу сдавать экзамены! Если мне не придётся их сдавать, меня и ругать больше не будут.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030211
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030211,
+					"content": "А второе... Хочу, чтобы эта злюка из школы больше не задирала меня...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030212,
+						728030214
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030212,
+					"content": "Мне тоже не нравятся экзамены.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030213
+					]
+				},
+				{
+					"id": 728030213,
+					"content": "Да уж! Экзамены - это ужас... Но эта злюка делает мою жизнь ещё хуже...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030216
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030216,
+					"content": "Она много раз видела, как я загадываю желания в храме. Подслушав, что я не хочу сдавать экзамены, она пошла к моим учителям и спросила у них о моих результатах.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030217
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030217,
+					"content": "С тех пор она постоянно твердит мне, что лучше бы я был внимательней на уроках, чем бегал по храмам. А ещё она говорит, что, если я буду таким настырным, божества потеряют терпение.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030218
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030218,
+					"content": "Она даже сказала, что я... попросту жалкий.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030219
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030219,
+					"content": "Ну, зависеть от божества так сильно не слишком-то хорошо.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030220
+					]
+				},
+				{
+					"id": 728030220,
+					"content": "Но, когда у взрослых проблемы, они всегда делают подношения в храме...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030221,
+						728030222
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030221,
+					"content": "Они просто загадывают желания.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030223
+					]
+				},
+				{
+					"id": 728030223,
+					"content": "Хм... Не понимаю... Мне казалось, что все делают подношения в храмах, чтобы боги им помогли?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030224
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030224,
+					"content": "Спросим кого-нибудь ещё.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030225
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030225,
+					"content": "Хм... Ладно. В любом случае мои желания уже не сбудутся...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030222,
+					"content": "Но в конечном счёте им всё равно приходится решать свои проблемы самим.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030223
+					]
+				},
+				{
+					"id": 728030214,
+					"content": "Злюка?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030215
+					]
+				},
+				{
+					"id": 728030215,
+					"content": "Она учится со мной в одном классе. И она... ужасно вредная!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030216
+					],
+					"speakerTitle": "Сёта"
+				}
+			]
+		},
+		{
+			"id": 7280304,
+			"completionStepIds": [
+				7280306
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7280306",
+							"2"
+						],
+						"stepId": 7280306,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Коити"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 728030401,
+					"content": "Приветствую! Чем могу помочь?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030402
+					],
+					"speakerTitle": "Коити"
+				},
+				{
+					"id": 728030402,
+					"content": "Я насчёт подношений в храме...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030403
+					]
+				},
+				{
+					"id": 728030403,
+					"content": "А... Храм... Мне доводилось бывать там.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030404
+					],
+					"speakerTitle": "Коити"
+				},
+				{
+					"id": 728030404,
+					"content": "Хе-хе! Мне нужно благословение божества! Чтобы, когда я вырасту, мне можно было выйти в большой мир и посмотреть, какой он.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030405
+					],
+					"speakerTitle": "Коити"
+				},
+				{
+					"id": 728030405,
+					"content": "И всё-таки, как ни крути, подношения - нечто вроде молитвы. Мне всё равно придётся усердно работать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030406
+					],
+					"speakerTitle": "Коити"
+				},
+				{
+					"id": 728030406,
+					"content": "Родители сказали мне, что, если я хочу путешествовать, сначала мне придётся заработать побольше денег...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030407
+					],
+					"speakerTitle": "Коити"
+				},
+				{
+					"id": 728030407,
+					"content": "Да, и пока божество благословляет тебя, все твои мечты будут сбываться!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030408
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030408,
+					"content": "Наверняка не скажу. В конце концов, если бы у меня и вправду получилось выйти в большой мир, вряд ли божества Инадзумы смогли бы защитить меня.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030409
+					],
+					"speakerTitle": "Коити"
+				},
+				{
+					"id": 728030409,
+					"content": "Мои родители говорили, что, делая подношения божествам, мы просто обретаем спокойствие. А вот сбудутся ли твои желания - зависит от того, сколько работы ты вкладываешь в их достижение.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030410
+					],
+					"speakerTitle": "Коити"
+				},
+				{
+					"id": 728030410,
+					"content": "Я не смогу объяснить так, чтобы было понятно. Если хотите узнать больше, поговорите с Нанацуки. Она в таких вещах разбирается.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030411
+					],
+					"speakerTitle": "Коити"
+				},
+				{
+					"id": 728030411,
+					"content": "#Хм... {NICKNAME}... Надо найти Нанацуки...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Сёта"
+				}
+			]
+		},
+		{
+			"id": 7280305,
+			"completionStepIds": [
+				7280307
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7280307",
+							"2"
+						],
+						"stepId": 7280307,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Яёй Нанацуки"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 728030501,
+					"content": "Сёта? Что тебя так расстроило? Тебя кто-то обидел?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030502
+					],
+					"speakerTitle": "Яёй Нанацуки"
+				},
+				{
+					"id": 728030502,
+					"content": "Нанацуки, ты же знаешь - все жители города делают подношения в храме, чтобы попросить благословения у божеств, так?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030503
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030503,
+					"content": "Пока мы вкладываем в наши подношения всю свою душу и делаем всё, чтобы у божеств были причины ответить нам, любое желание может сбыться... Ведь правда?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030504
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030504,
+					"content": "М? Почему это вдруг заинтересовало тебя? Что-то случилось?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030505
+					],
+					"speakerTitle": "Яёй Нанацуки"
+				},
+				{
+					"id": 728030505,
+					"content": "Просто...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030507
+					]
+				},
+				{
+					"id": 728030507,
+					"content": "Сёта... Тебя с такой силой тянуло в храм из-за этого...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030508
+					],
+					"speakerTitle": "Яёй Нанацуки"
+				},
+				{
+					"id": 728030508,
+					"content": "Да! Мои подношения были сделаны от чистого сердца! Но их постоянно кто-то крадёт... Мне кажется, божество может обвинить в этом меня и больше не станет беречь меня...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030509
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030509,
+					"content": "Глупое дитя... Не беспокойся, божество не станет злиться на тебя из-за таких мелочей...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030510
+					],
+					"speakerTitle": "Яёй Нанацуки"
+				},
+				{
+					"id": 728030510,
+					"content": "П-правда? Хорошо...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030511
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030511,
+					"content": "И в то же время это божество, наверное, не стало бы помогать кому-то только из-за подношений.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030512
+					],
+					"speakerTitle": "Яёй Нанацуки"
+				},
+				{
+					"id": 728030512,
+					"content": "А?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030513
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030513,
+					"content": "Причина, по которой люди делают подношения и просят благословения, не в том, что они хотят, чтобы их желания сбылись. Скорее, они делают подношения, чтобы у их веры было надёжное основание.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030514
+					],
+					"speakerTitle": "Яёй Нанацуки"
+				},
+				{
+					"id": 728030514,
+					"content": "У их веры?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030515
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030515,
+					"content": "«Раз уж мы уже рассказали божеству о наших желаниях, мы должны сделать всё возможное, чтобы эти желания сбылись».",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030516
+					],
+					"speakerTitle": "Яёй Нанацуки"
+				},
+				{
+					"id": 728030516,
+					"content": "«Божество наблюдает за нами, и, если мы постараемся, нас непременно ждёт успех».",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030517
+					],
+					"speakerTitle": "Яёй Нанацуки"
+				},
+				{
+					"id": 728030517,
+					"content": "Обретя эту веру, люди готовы сделать всё ради исполнения своих желаний. Вот почему все делают подношения в храмах.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030518
+					],
+					"speakerTitle": "Яёй Нанацуки"
+				},
+				{
+					"id": 728030518,
+					"content": "В конце концов... Именно люди - движущая сила нашего мира. Если мы будем молиться божествам и сидеть сложа руки, божества при всём желании не смогут помочь нам.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030519
+					],
+					"speakerTitle": "Яёй Нанацуки"
+				},
+				{
+					"id": 728030519,
+					"content": "Но... Раньше, когда я делал подношения, божество всегда помогало мне напрямую!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030520
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030520,
+					"content": "В тот раз с огнём... С человеком, который хотел стать сильнее... И с той моей книгой комиксов...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030521,
+						728030522
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030521,
+					"content": "(А он всё твердит о божествах...)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030523
+					]
+				},
+				{
+					"id": 728030523,
+					"content": "Хм... Всё так. Похоже, это божество и впрямь способно выполнять желания напрямую.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030524
+					],
+					"speakerTitle": "Яёй Нанацуки"
+				},
+				{
+					"id": 728030524,
+					"content": "Но, но... Экзамены всё-таки никуда не делись, да и та злюка тоже. Она всё так же капает мне на мозги, чтобы я не забывал учиться...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030525
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030525,
+					"content": "Хм, погоди. Девочка, которая тебя допекает... Как её зовут? Когда она появилась?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030526
+					],
+					"speakerTitle": "Яёй Нанацуки"
+				},
+				{
+					"id": 728030526,
+					"content": "Её... Её... зовут... Э-э... Как же её звали...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030527
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030527,
+					"content": "К-кажется, она пришла в школу одновременно со мной... Нет, нет, наверное, чуть раньше... или позже?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030528
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030528,
+					"content": "Странно... Почему я всё забыл... Единственное, что я помню - какая-то девочка заставляет меня учиться...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030529
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030529,
+					"content": "Хм, похоже, божество снова прислушалось к твоим желаниям, и сейчас помогает тебе преодолеть неприязнь к экзаменам.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030530
+					],
+					"speakerTitle": "Яёй Нанацуки"
+				},
+				{
+					"id": 728030530,
+					"content": "То есть, эта девочка... Та, что всё время меня достаёт... Божество прислало её, чтобы заставить меня учиться?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030531
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030531,
+					"content": "Не-е-ет! Я не хочу учиться, не хочу сдавать экзамены!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030532
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030532,
+					"content": "А-а-а! Она снова здесь! Вон там! Она переходит через дорогу и идёт ко мне!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030533,
+						728030534
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030533,
+					"content": "Где?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030535
+					]
+				},
+				{
+					"id": 728030535,
+					"content": "#Ты не видишь её, {NICKNAME}?! Она идёт сюда, и у неё в руках куча экзаменационных листов! А-а-а! Не хочу!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030536
+					],
+					"speakerTitle": "Сёта"
+				},
+				{
+					"id": 728030536,
+					"content": "Похоже, это очень целеустремлённое божество.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030537,
+						728030538
+					],
+					"speakerTitle": "Яёй Нанацуки"
+				},
+				{
+					"id": 728030537,
+					"content": "Это божество предпочитает действовать в открытую...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030539
+					]
+				},
+				{
+					"id": 728030539,
+					"content": "Однако под личным руководством божества этот парнишка сможет успешно сдать экзамены.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030540
+					],
+					"speakerTitle": "Яёй Нанацуки"
+				},
+				{
+					"id": 728030540,
+					"content": "В конце концов, вечное нытьё этого мальчишки может вывести из себя даже божеств...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						728030541
+					],
+					"speakerTitle": "Яёй Нанацуки"
+				},
+				{
+					"id": 728030541,
+					"content": "А? Погодите. Что это за листья на дороге? Раньше их здесь не было...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Яёй Нанацуки"
+				},
+				{
+					"id": 728030538,
+					"content": "Божества обычно так себя не ведут...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030539
+					]
+				},
+				{
+					"id": 728030534,
+					"content": "Я никого не вижу?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030535
+					]
+				},
+				{
+					"id": 728030522,
+					"content": "(Они совершенно не слышат друг друга...)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						728030523
+					]
+				}
+			]
+		}
+	]
+}

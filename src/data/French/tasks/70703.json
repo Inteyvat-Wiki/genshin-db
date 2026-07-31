@@ -1,0 +1,167 @@
+{
+	"id": 70703,
+	"type": "WQ",
+	"name": "Le vin artisanal de Connor",
+	"description": "Connor, du Domaine de l'Aurore, aurait besoin de 3 portions de graines de pissenlit.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Donnez 3 portions de graines de pissenlit à Connor.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070301,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Connor.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070302,
+						0
+					],
+					"talkId": 7070302
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070301,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070301",
+							"2"
+						],
+						"stepId": 7070301,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070301"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707030101,
+					"content": "Les graines de pissenlit...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707030102
+					]
+				},
+				{
+					"id": 707030102,
+					"content": "Je suppose que vous avez vu mon annonce. Vous avez trouvé les graines de pissenlit ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707030103,
+						707030104
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707030103,
+					"content": "Les voilà.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707030104,
+					"content": "Pas encore.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707030105
+					]
+				},
+				{
+					"id": 707030105,
+					"content": "Pas encore ? Revenez me voir quand vous les aurez.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Connor"
+				}
+			]
+		},
+		{
+			"id": 7070302,
+			"completionStepIds": [
+				7070302
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070302",
+							"2"
+						],
+						"stepId": 7070302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707030201,
+					"content": "Parfait. Ces graines devraient me durer un moment...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707030202
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 707030202,
+					"content": "Prenez ceci en guise de remerciement pour vos services.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Connor"
+				}
+			]
+		}
+	]
+}

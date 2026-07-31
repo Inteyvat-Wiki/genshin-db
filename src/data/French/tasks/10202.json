@@ -1,0 +1,605 @@
+{
+	"id": 10202,
+	"type": "LQ",
+	"name": "Un trésor pas comme les autres",
+	"description": "Le « trésor » explosif de Klee s'est avéré être une solution remarquablement efficace au problème posé par le Mage de l'Abîme. Cependant, la jeune fille s'est enfuie après l'explosion. Vous décidez de retourner au QG de l'Ordre faire votre rapport à Jean...",
+	"unlockDescription": "",
+	"chapter": "Le vrai trésor",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1020201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Retournez faire votre rapport à Jean.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1020201,
+						0
+					],
+					"talkId": 1020201
+				}
+			]
+		},
+		{
+			"id": 1020202,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Parlez à Jean.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						1020201,
+						3
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_PRESENT_AT_SPECIFIC_SCENE",
+					"rawParams": [
+						1004,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1020203,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Quittez le bureau de Jeann.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1020201,
+						0
+					],
+					"talkId": 1020201
+				}
+			]
+		},
+		{
+			"id": 1020204,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Trouvez la porte de la cellule du QG de l'Ordre de Favonius.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						1020204,
+						0
+					],
+					"talkId": 1020204
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1020201,
+			"completionStepIds": [
+				1020201,
+				1020203
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1020201",
+							"2"
+						],
+						"stepId": 1020201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Jean"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 102020101,
+					"content": "Klee ? Tu es là aussi ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020102
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020102,
+					"content": "Je... Je me rends.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020103
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020103,
+					"content": "Hein ?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020104
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020104,
+					"content": "*sanglote* Je... M—Ma bombe... Je-J'ai blessé quelqu'un...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020105
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020105,
+					"content": "*sniff* Je n'ai pas respecté une de mes règles de survie... Je ne verrai plus jamais la lumière du soleil...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020106
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020107,
+					"content": "Attendez ! Il y a un malentendu.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020108
+					]
+				},
+				{
+					"id": 102020106,
+					"content": "Klee, j'ai besoin que tu me répondes. Tu as dit que quelqu'un avait été blessé. Où est cette personne ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020107
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 102020109,
+					"content": "Klee a mis un Mage de l'Abîme hors d'état de nuire.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020110
+					]
+				},
+				{
+					"id": 102020108,
+					"content": "Hmm ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020109
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 102020110,
+					"content": "Mais... Mais monsieur Boule-de-poils n'était qu'un voleur... Il ne méritait pas d'exploser...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020111
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020111,
+					"content": "Hé... Je t'ai déjà dit que les Mages de l'Abîme étaient des méchants !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020112
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020112,
+					"content": "Ce sont même les pires méchants que tu puisses imaginer. Ils ne détestent pas seulement les gentils, ils détestent tout le monde... Leur ennemi c'est... l'humanité toute entière.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020113
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020113,
+					"content": "Monsieur Boule-de-poils... était méchant exprès ? ... Monsieur Boule-de-poils est l'ennemi de l'humanité !?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020114
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020114,
+					"content": "Qu... Quoi ?! Je ne comprends pas !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020115
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020115,
+					"content": "C'était une erreur de ma part.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020116
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 102020116,
+					"content": "Je ne t'ai rien dit à ce propos car tu es encore trop jeune.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020117
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 102020118,
+					"content": "À cause du trésor le plus puissant de Mondstadt ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020119
+					]
+				},
+				{
+					"id": 102020117,
+					"content": "En fait, les Mages de l'Abîme constituent une menace de plus en plus importante envers Mondstadt. Ils ont été très actifs dans la région ces derniers temps.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020118
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 102020119,
+					"content": "Aha, c'est ça ! Je comprends à présent !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020120
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020120,
+					"content": "Ils traquaient la pauvre Klee parce qu'ils avaient entendu des rumeurs sur son trésor !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020121
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020121,
+					"content": "Tout comme ma première réaction a été d'essayer de mettre la main sur... euh, non... de mettre les choses au clair à propos de ce trésor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020122
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020122,
+					"content": "Alors... ça veut dire...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020123
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020123,
+					"content": "Au vu de ta contribution dans cette affaire, je t'autorise à participer avec nous au prochain Ludi Harpastum.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020124
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 102020125,
+					"content": "Tu as de la chance !",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020127
+					]
+				},
+				{
+					"id": 102020126,
+					"content": "#Je suis {M#content}{F#contente} pour toi.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020127
+					]
+				},
+				{
+					"id": 102020124,
+					"content": "Ludi Harpastum ! Waouh !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020125,
+						102020126
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020127,
+					"content": "Chevalier honoraire, il faut que vous veniez aussi !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020128
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020128,
+					"content": "Tout est bien qui finit bien !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020129
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020129,
+					"content": "À part que...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020131
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 102020130,
+					"content": "À part que quoi ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020131
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020131,
+					"content": "Klee, où est-ce que tu avais enterré le trésor en premier lieu ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020132
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 102020132,
+					"content": "Je... Euh...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020133
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020133,
+					"content": "Ne me dis pas que tu voulais faire exploser les poissons du Lac Tombétoile ?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020134
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 102020134,
+					"content": "N—Non !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020135
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020136,
+					"content": "(Jean n'est pas dupe...)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020137
+					]
+				},
+				{
+					"id": 102020135,
+					"content": "(Elle nous regarde comme si elle voulait qu'on joue le jeu...)",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020136
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020137,
+					"content": "Klee ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020138
+					],
+					"speakerTitle": "Jean"
+				},
+				{
+					"id": 102020138,
+					"content": "Je crois que je peux regagner ma <color=#00E1FFFF>cellule</color> comme une grande... *sniff* ...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020139
+					],
+					"speakerTitle": "Klee"
+				},
+				{
+					"id": 102020139,
+					"content": "Klee doit certainement se sentir seule en isolation...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 1020204,
+			"completionStepIds": [
+				1020204
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1020204",
+							"2"
+						],
+						"stepId": 1020204,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Cellule d'isolement"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 102020401,
+					"content": "Devine qui c'est ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020402
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020402,
+					"content": "C'est la voix de Paimon que j'entends !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020403,
+						102020404
+					],
+					"speakerTitle": "Cellule d'isolement"
+				},
+				{
+					"id": 102020403,
+					"content": "On te sort de là ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020405
+					]
+				},
+				{
+					"id": 102020405,
+					"content": "Oh, oui, d'accord... Non, attendez ! Euh, non, ce n'est pas possible. Je dois être une gentille fille et réfléchir à ce que j'ai fait ! Ne me tentez pas !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020406
+					],
+					"speakerTitle": "Cellule d'isolement"
+				},
+				{
+					"id": 102020406,
+					"content": "Enfin, puisque je suis coincée ici, je vais en profiter pour fabriquer un nouveau trésor... version Ludi Harpastum !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020407
+					],
+					"speakerTitle": "Cellule d'isolement"
+				},
+				{
+					"id": 102020407,
+					"content": "Un « trésor » tu dis ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020408
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020408,
+					"content": "Héhé... Je lui ai donné la forme d'un harpastum et tout ! C'est tellement mignon...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020409,
+						102020410
+					],
+					"speakerTitle": "Cellule d'isolement"
+				},
+				{
+					"id": 102020409,
+					"content": "Une bombe en forme de harpastum ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020411
+					]
+				},
+				{
+					"id": 102020411,
+					"content": "Tout le monde sera surpris pendant le Ludi Harpastum !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020412
+					],
+					"speakerTitle": "Cellule d'isolement"
+				},
+				{
+					"id": 102020412,
+					"content": "*soupir* Ça serait la fin des haricots si Jean nous entendait...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						102020413
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020413,
+					"content": "La période d'isolation de Klee pourrait être rallongée de beaucoup.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 102020410,
+					"content": "Donc... Une autre bombe ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020411
+					]
+				},
+				{
+					"id": 102020404,
+					"content": "On te ramène de la nourriture ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						102020405
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,920 @@
+{
+	"id": 376,
+	"type": "AQ",
+	"name": "La fuite",
+	"description": "Le plan de Venti s'est déroulé comme prévu... ou presque. Alors que vous vous apprêtez à mettre la main sur la lyre sacrée, une personne inconnue la subtilise sous vos yeux. Les gardes, alertés, vous donnent la chasse, et vous n'avez d'autre choix que de vous enfuir les mains vides.",
+	"unlockDescription": "",
+	"chapter": "Pour un avenir sans larmes",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		377
+	],
+	"prevMainQuestList": [
+		375
+	],
+	"steps": [
+		{
+			"id": 37601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Échappez-vous de la cathédrale.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1031,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Échappez-vous de la cathédrale à l'aide des champs de vent.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1070,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37603,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37604,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Cachez-vous dans la taverne.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_ROOM",
+					"rawParams": [
+						1009,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37605,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Répondez aux doutes de Diluc.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37604,
+						0
+					],
+					"talkId": 37604
+				}
+			]
+		},
+		{
+			"id": 37606,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Cachez-vous à l'étage de la taverne.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1034,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 37607,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37606,
+						0
+					],
+					"talkId": 37606
+				}
+			]
+		},
+		{
+			"id": 37608,
+			"order": 8,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Diluc.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						37607,
+						0
+					],
+					"talkId": 37607
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 37604,
+			"completionStepIds": [
+				37605
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37604",
+							"3"
+						],
+						"stepId": 37604,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37605",
+							"2"
+						],
+						"stepId": 37605,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Diluc"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3760401,
+					"content": "Maître Diluc, voici les comptes de cette semaine.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760402
+					],
+					"speakerTitle": "Charles"
+				},
+				{
+					"id": 3760402,
+					"content": "Cette catastrophe a eu des répercussions sur nos affaires...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760403
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760403,
+					"content": "J'espère que toute cette folie s'arrêtera bientôt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760404
+					],
+					"speakerTitle": "Charles"
+				},
+				{
+					"id": 3760404,
+					"content": "Bonsoir, nous aimerions nous asseoir dans un endroit discret.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760405
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3760405,
+					"content": "Si vous cherchez un coin tranquille, vous pouvez monter à l'étage.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760406
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760406,
+					"content": "Vous êtes un barde, non ? Ça ne vous dit pas de vous asseoir dans un endroit plus animé ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760407
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760407,
+					"content": "Oh, je ferai mon spectacle un autre soir !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760408
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3760408,
+					"content": "Gardez un œil sur eux. Le barde m'a l'air suspect. Je vais me renseigner de mon côté.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760409
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760409,
+					"content": "Auprès de qui ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760410
+					],
+					"speakerTitle": "Charles"
+				},
+				{
+					"id": 3760410,
+					"content": "Des gardes de Mondstadt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Diluc"
+				}
+			]
+		},
+		{
+			"id": 37605,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37606",
+							"2"
+						],
+						"stepId": 37606,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Diluc"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3760411,
+					"content": "Vous ne montez pas ? Vous aviez l'air pressés pourtant.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Diluc"
+				}
+			]
+		},
+		{
+			"id": 37606,
+			"completionStepIds": [
+				37607
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37606",
+							"3"
+						],
+						"stepId": 37606,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37607",
+							"2"
+						],
+						"stepId": 37607,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Diluc"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3760601,
+					"content": "Bonsoir, maître Diluc. Auriez-vous vu passer deux voleurs ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760602
+					],
+					"speakerTitle": "Otto"
+				},
+				{
+					"id": 3760602,
+					"content": "Que s'est-il passé ? Pourquoi avoir amené autant de gardes ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760603
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760603,
+					"content": "Vous ne le savez donc pas ? Des malotrus ont tenté de voler la lyre sacrée !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760604
+					],
+					"speakerTitle": "Myers"
+				},
+				{
+					"id": 3760604,
+					"content": "Oh ? Comme c'est étrange.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760605
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760605,
+					"content": "N'est-ce pas ? La lyre sacrée est un trésor qui a appartenu à l'Archon Anémo. Elle fait partie de notre patrimoine culturel et...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760606
+					],
+					"speakerTitle": "Myers"
+				},
+				{
+					"id": 3760606,
+					"content": "Pourquoi voler un objet qu'on ne peut pas revendre ? Ils se feraient bien plus d'argent en volant mes caves...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760607
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760607,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760608
+					],
+					"speakerTitle": "Otto"
+				},
+				{
+					"id": 3760608,
+					"content": "Oh, veuillez m'excuser. Je parlais tout seul. Ils sont partis dans cette direction.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760609
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760609,
+					"content": "Très bien, je vous remercie !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Myers"
+				}
+			]
+		},
+		{
+			"id": 37607,
+			"completionStepIds": [
+				37608
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37607",
+							"3"
+						],
+						"stepId": 37607,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"37608",
+							"2"
+						],
+						"stepId": 37608,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Diluc"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3760701,
+					"content": "Je voudrais bien un verre de...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760702
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3760702,
+					"content": "Reposez immédiatement la bouteille que vous avez prise derrière le comptoir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760703
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760703,
+					"content": "... un verre d'eau.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760704
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3760704,
+					"content": "Maintenant, vous deux allez répondre à mes questions.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760705
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760705,
+					"content": "Laissez-moi boire un verre d'abord, je vous paierai avec une chanson.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760706
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3760706,
+					"content": "L'argent n'est pas le problème. Vous m'avez l'air bien jeune pour boire.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760707
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760708,
+					"content": "Pourquoi ne pas répondre d'abord ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3760709
+					]
+				},
+				{
+					"id": 3760710,
+					"content": "Qui est cet homme ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3760711
+					]
+				},
+				{
+					"id": 3760707,
+					"content": "Pas d'inquiétude. Je buvais déjà quand vous étiez encore dans le ventre de...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760708,
+						3760710
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3760709,
+					"content": "Tu te demandes qui c'est, n'est-ce pas ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760711
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3760711,
+					"content": "C'est maître <color=#00E1FFFF>Diluc</color>, le patron de cette taverne...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760712
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3760712,
+					"content": "Il est très célèbre à Mondstadt. Le vin de dent-de-lion qu'il produit est mon préféré.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760713
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3760713,
+					"content": "Même si je ne peux en général m'en payer qu'une ou deux bouteilles...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760714
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3760714,
+					"content": "Les gardes viennent de me dire que des voleurs étaient en cavale, intéressant non ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760715
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760715,
+					"content": "Tout d'abord, vous avez eu un sacré culot d'avoir essayé de voler cette lyre... J'apprécie votre cran.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760716
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760716,
+					"content": "Ne vous y méprenez pas, vous êtes des imbéciles... mais ce n'est pas tous les jours qu'on voit ça.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760717
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760717,
+					"content": "Nous ne l'avons pas volée ! C'est l'œuvre de quelqu'un d'autre !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760718
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 3760718,
+					"content": "La nouvelle célébrité de l'Ordre de Favonius se tient devant vous. Pourquoi quelqu'un d'aussi prometteur voudrait-il voler le trésor sacré de Mondstadt ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760719
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3760719,
+					"content": "C'est de vous dont il parle ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760720
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760721,
+					"content": "Plus que j'aimerais, à dire vrai.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3760723
+					]
+				},
+				{
+					"id": 3760722,
+					"content": "Je l'ai juste entendu chanter une fois.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3760723
+					]
+				},
+				{
+					"id": 3760720,
+					"content": "Vous connaissez donc ce barde ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760721,
+						3760722
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760723,
+					"content": "Hum... Vous n'êtes que de passage à Mondstadt, mais vous avez quand même décidé de nous venir en aide.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760724
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760724,
+					"content": "Quel dommage d'avoir choisi de rejoindre l'Ordre de Favonius. Un vrai gâchis de vos talents.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760725
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760725,
+					"content": "Les chevaliers de l'Ordre... Un bel exemple d'incompétence.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760726
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760726,
+					"content": "Quant à leur position vis-à-vis des <color=#00E1FFFF>Fatui</color>... Aussi conservatrice qu'inefficace.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760727
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760727,
+					"content": "Enfin... Je n'ai pas envie de m'étaler sur le sujet.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760728
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760728,
+					"content": "Vous n'avez pas l'air de porter l'Ordre de Favonius dans votre cœur, sieur Diluc.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760729
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3760729,
+					"content": "Disons que nos chemins diffèrent mais que notre objectif est identique.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760730
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760730,
+					"content": "J'ai mes propres aspirations pour Mondstadt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760731
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760731,
+					"content": "Revenons-en à nos Brutocollinus. Pourquoi avoir voulu voler la lyre sacrée ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760732
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760732,
+					"content": "Êtes-vous sûr de vouloir savoir ? Vous vous retrouverez mêlé aux problèmes de l'Ordre.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760733
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3760733,
+					"content": "Je compte déjà comme l'un de leurs « problèmes ».",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760734
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760734,
+					"content": "Si je vous chante notre histoire, vous laisserez-vous convaincre ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760735
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3760735,
+					"content": "Ça dépend. Je me ferai mon propre jugement.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760736
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760736,
+					"content": "Bien, c'est de bonne guerre. Et serai-je payé ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760737
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3760737,
+					"content": "Ça peut aller de 5 moras à la lyre sacrée selon la qualité de la prestation.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760738
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760738,
+					"content": "Parfait ! Dans ce cas, c'est parti !",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760739
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3760739,
+					"content": "Ainsi donc...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760740
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760740,
+					"content": "Voilà des informations particulièrement confidentielles. Pourquoi les avoir partagées avec moi ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760741
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760741,
+					"content": "Pourquoi ? Hum, disons que le vent souffle dans une nouvelle direction.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760742
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3760742,
+					"content": "Alors, maître Diluc ? Qu'en dites-vous ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760743
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3760743,
+					"content": "Intéressant.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760744
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760744,
+					"content": "Laissez-moi un peu de temps, je vais organiser quelques contacts.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760745
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760745,
+					"content": "#{M#Étranger}{F#Étrangère}, comme vous faites partie de l'Ordre, je doute qu'on vous soupçonne.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760746
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760746,
+					"content": "Les gardes ne devraient pas vous trouver facilement. Le seul détail de l'avis de recherche est la couleur de vos cheveux.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760747
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760747,
+					"content": "En revanche, le barde doit rester ici.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760748
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760748,
+					"content": "Enfermé dans une taverne ? Voilà une idée qui me ravit.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760749
+					],
+					"speakerTitle": "Venti"
+				},
+				{
+					"id": 3760749,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760750
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 3760750,
+					"content": "Très bien. Retrouvons-nous ici après la fermeture de la taverne.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3760751
+					],
+					"speakerTitle": "Diluc"
+				},
+				{
+					"id": 4820221,
+					"content": "Il faut suivre <color=#00E1FFFF>le parcours indiqué</color> jusqu'à la fin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						4820222
+					],
+					"speakerTitle": "Amber"
+				}
+			]
+		}
+	]
+}

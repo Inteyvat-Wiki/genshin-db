@@ -1,0 +1,223 @@
+{
+	"id": 20027,
+	"type": "IQ",
+	"name": "Belalı Bodurloplar!",
+	"description": "Bodurloplar birden Şafak Şaraphanesinde belirdi. Tunner da bu kargaşanın ortasında kalmış gibi görünüyor...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2002701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Ayrıntıları kontrol et.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_GAME_TIME_TICK",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bodurlopları yen.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002703,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Tunner ile konuş.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2002701,
+						0
+					],
+					"talkId": 2002701
+				}
+			]
+		},
+		{
+			"id": 2002704,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Tuhaf yere git.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002705,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Tozu uçurmak için Rüzgarı kullan.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2002706,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Tüm bodurlopları yen.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2002701,
+			"completionStepIds": [
+				2002703
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2002702",
+							"3"
+						],
+						"stepId": 2002702,
+						"stateName": "QUEST_STATE_FINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Tunner"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200270101,
+					"content": "#Teşekkürler {NICKNAME}...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270102
+					],
+					"speakerTitle": "Tunner"
+				},
+				{
+					"id": 200270102,
+					"content": "Üzüm asmalarına bakmaya çalışıyordum ama sonra... Bu oldu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270103
+					],
+					"speakerTitle": "Tunner"
+				},
+				{
+					"id": 200270103,
+					"content": "*iç çeker* Lütfen oğluma bundan bahsetme. Kendisi bir Favonius Şövalyesi, zaten işi başından aşkındır.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270104
+					],
+					"speakerTitle": "Tunner"
+				},
+				{
+					"id": 200270104,
+					"content": "Şapşal bir ihtiyarın başını soktuğu belayla onu meşgul etmeye gerek yok.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270105
+					],
+					"speakerTitle": "Tunner"
+				},
+				{
+					"id": 200270105,
+					"content": "Ancak yakın zamanda bu çevrede bodurloplarla sorun yaşamaya başladık. Sürekli üzüm asmalarıma zarar verecekler diye endişeleniyorum. Artık geceleri uykum kaçıyor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270106
+					],
+					"speakerTitle": "Tunner"
+				},
+				{
+					"id": 200270106,
+					"content": "Benim gibi bir ihtiyara ayıracak zamanın var mı bilmiyorum ama... Benim için bu bölgedeki bodurlopları kovalayıp üzümlerime dadanmalarını engeller misin?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200270107,
+						200270108
+					],
+					"speakerTitle": "Tunner"
+				},
+				{
+					"id": 200270107,
+					"content": "Tabii ki.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200270109
+					]
+				},
+				{
+					"id": 200270109,
+					"content": "Çok teşekkür ederim evlat! Bu sayede rahat uyuyacağım.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tunner"
+				},
+				{
+					"id": 200270108,
+					"content": "Mümkün değil.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200270110
+					]
+				},
+				{
+					"id": 200270110,
+					"content": "*iç çeker* Kendim yapmayı çok isterdim ama benim yaşımda olunca insanın eski kuvvetinden eser kalmıyor... Senin gibi bir delikanlı için hiç sorun olmayacaktır. Hadi şu ihtiyarın gününü güzelleştir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Tunner"
+				}
+			]
+		}
+	]
+}

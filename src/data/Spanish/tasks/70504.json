@@ -1,0 +1,666 @@
+{
+	"id": 70504,
+	"type": "WQ",
+	"name": "Armaduras fuera",
+	"description": "#“Disculpen, ¿alguien ha visto al Capitán Kaeya?”... “¿Kaeya? Puedes buscarlo en la taberna. Jeje, ¿eres nuev{F#a}{M#o}? ¡Mucho ánimo!”",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70505
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050401,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Luka y entra en la taberna",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050401,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050402,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Prepara la bebida para Rosaria",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050402,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050403,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Prepara la bebida para Kaeya",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050403,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050404,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dales las bebidas a Kaeya y Rosaria",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050402,
+						0
+					],
+					"talkId": 7050402
+				}
+			]
+		},
+		{
+			"id": 7050405,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Kaeya y Rosaria",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050401,
+						0
+					],
+					"talkId": 7050401
+				}
+			]
+		},
+		{
+			"id": 7050406,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dirígete a la barra para completar los preparativos",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050401,
+			"completionStepIds": [
+				7050405
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050405",
+							"2"
+						],
+						"stepId": 7050405,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050402",
+							"2"
+						],
+						"stepId": 7050402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050403",
+							"2"
+						],
+						"stepId": 7050403,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Kaeya",
+					"Rosaria"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705040101,
+					"content": "#Vaya, vaya, pero qué sorpresa. No esperaba verl{F#as}{M#os} a ustedes dos detrás del mostrador hoy.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040102
+					],
+					"speakerTitle": "Kaeya"
+				},
+				{
+					"id": 705040102,
+					"content": "En ese caso, pónganme una “Muerte después de...”",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040103
+					],
+					"speakerTitle": "Kaeya"
+				},
+				{
+					"id": 705040103,
+					"content": "Solo Kaeya sabe complicar las cosas desde el comienzo...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040104
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 705040104,
+					"content": "Oh, vamos, solo quería ver cómo reaccionaba. Debo admitir que tampoco esperaba verte hoy aquí, Rosaria.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040105
+					],
+					"speakerTitle": "Kaeya"
+				},
+				{
+					"id": 705040105,
+					"content": "#Con tantos clientes exigentes en la taberna, pensé que podría ayudar {F#a la viajera}{M#al viajero} a adquirir algo de experiencia.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040106
+					],
+					"speakerTitle": "Kaeya"
+				},
+				{
+					"id": 705040106,
+					"content": "Otra vez Kaeya y su labia...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040107
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705040107,
+					"content": "Oh, no me malinterpreten, ¡solo intentaba ser de utilidad! En todo caso, deberían darme las gracias. Bien, ¿qué tal si empezamos con algo sencillo, como un Callejón brilloluna?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040108
+					],
+					"speakerTitle": "Kaeya"
+				},
+				{
+					"id": 705040108,
+					"content": "Que sea en una copa grande, por favor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040109
+					],
+					"speakerTitle": "Kaeya"
+				},
+				{
+					"id": 705040109,
+					"content": "En cuanto a mi bebida, confío en ti. Puedes prepararme un té o algo así, y que no sea muy grande.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040110
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 705040110,
+					"content": "¡A la orden!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705040111
+					]
+				},
+				{
+					"id": 705040111,
+					"content": "Tómate tu tiempo. Esperar con ansias también es parte de la diversión.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Kaeya"
+				}
+			]
+		},
+		{
+			"id": 7050402,
+			"completionStepIds": [
+				7050404
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050404",
+							"2"
+						],
+						"stepId": 7050404,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Rosaria",
+					"Kaeya"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705040201,
+					"content": "Humm...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040202
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 705040202,
+					"content": "¿Qué ocurre, Rosaria? ¿No te gusta?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040203
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705040203,
+					"content": "Puedo hacer otra si quieres...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705040204
+					]
+				},
+				{
+					"id": 705040204,
+					"content": "No, no, la bebida está bien, es solo que no suelo beber té. Su sabor me hace recordar ciertas cosas...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040205
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 705040205,
+					"content": "¿Es algo relacionado con la Iglesia?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040206
+					],
+					"speakerTitle": "Kaeya"
+				},
+				{
+					"id": 705040206,
+					"content": "Sí. Una vez, organizaron un evento al que no pude asistir, pero aun así, Bárbara me guardó algo de té y unos dulces.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040207
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 705040207,
+					"content": "Los dulces se quedaron un poco rancios, así que se los llevó cuando no estaba mirando, pero el té sabía igual que el que me has preparado.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040208
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 705040208,
+					"content": "Es raro verte comportarte así, Rosaria.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040209
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705040209,
+					"content": "Parece que Mondstadt acaba de hacerse con otra aficionada al té negro.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040210
+					],
+					"speakerTitle": "Kaeya"
+				},
+				{
+					"id": 705040210,
+					"content": "¡Hum! Prefiero algo un poco más fuerte.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040211
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 705040211,
+					"content": "¿Y tú, Kaeya? ¿Qué tal está tu bebida?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705040212
+					]
+				},
+				{
+					"id": 705040212,
+					"content": "Depende. Si señalo algunos defectos, ¿me harás otra?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040213
+					],
+					"speakerTitle": "Kaeya"
+				},
+				{
+					"id": 705040213,
+					"content": "Jajaja, es broma. Nunca te haría pasar por eso.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040214
+					],
+					"speakerTitle": "Kaeya"
+				},
+				{
+					"id": 705040214,
+					"content": "Kaeya es realmente impredecible, nunca se sabe qué va a decir. ¿Cómo puedes soportar la tortura que es beber con él, Rosaria?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040215
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705040215,
+					"content": "¿Eh? Me importa bastante poco lo que se le pase por la cabeza siempre y cuando hablemos sobre alcohol.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040216
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 705040216,
+					"content": "Además, a Kaeya solo le interesa la gente y las cosas que le resultan curiosas, ya seas tú, el dueño de esta taberna o cualquier otra persona.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040217
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 705040217,
+					"content": "¡Eh! ¿Cómo puedes desvelar tanta información sobre tu querido amigo de copas?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040218
+					],
+					"speakerTitle": "Kaeya"
+				},
+				{
+					"id": 705040218,
+					"content": "¿Crees que hablé de más? ¡Ja! No te creas tan importante, no es para tanto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040219
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 705040219,
+					"content": "Estoy todo el día rodeada de mojigatos. Prefiero el relajado ambiente de las tabernas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040220
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 705040220,
+					"content": "Oh, ¿estamos cotilleando sobre gente que se toma las cosas demasiado en serio?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040221
+					],
+					"speakerTitle": "Kaeya"
+				},
+				{
+					"id": 705040221,
+					"content": "Pues, hablando de eso, conozco a alguien que podría estar perfectamente entre las “tres personas más serias de Mondstadt”.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040222
+					],
+					"speakerTitle": "Kaeya"
+				},
+				{
+					"id": 705040222,
+					"content": "Si quieren saber qué tan seria es... Bueno, digamos que ni siquiera se inmutaría aunque le dijera eso a la cara.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040223
+					],
+					"speakerTitle": "Kaeya"
+				},
+				{
+					"id": 705040223,
+					"content": "¿De verdad hay una clasificación para ese tipo de gente?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040224
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705040224,
+					"content": "Por supuesto. Y ahora que lo pienso, también hay una lista de los borrachos más testarudos, los trabajadores más diligentes, los peores chefs, e incluso de las personas que más secretos oscuros guardan.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040225
+					],
+					"speakerTitle": "Kaeya"
+				},
+				{
+					"id": 705040225,
+					"content": "¡Suena a que la gente de Mondstadt no tiene nada que hacer con sus vidas!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040226
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705040226,
+					"content": "¿De verdad hay tantas personas que no necesitan trabajar?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040227,
+						705040228
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 705040227,
+					"content": "No...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705040229
+					]
+				},
+				{
+					"id": 705040229,
+					"content": "#Pero ¿qué hay de Paimon? ¿Hay alguna categoría en la que Paimon esté tan arriba como {NICKNAME}?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040230
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705040230,
+					"content": "#Claro. Por ejemplo, la de l{F#as}{M#os} mejores cantiner{F#as}{M#os}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040231
+					],
+					"speakerTitle": "Kaeya"
+				},
+				{
+					"id": 705040231,
+					"content": "¡¿E-en serio?!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040232
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705040232,
+					"content": "#¡Qué bien, {NICKNAME}! Todo el mundo recordará nuestros nombres.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040233
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705040233,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040234
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 705040234,
+					"content": "Bueno, he de admitir que el ambiente aquí es agradable.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040235
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 705040235,
+					"content": "#¡Exacto! Con solo mirar a est{F#as}{M#os} dos, se me escapa una sonrisa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040236
+					],
+					"speakerTitle": "Kaeya"
+				},
+				{
+					"id": 705040236,
+					"content": "#En una taberna, un ambiente cálido y acogedor es muy importante para atraer más clientes. Parece que, después de todo, realmente merecen el título de “mejores cantiner{F#as}{M#os}”.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040237
+					],
+					"speakerTitle": "Kaeya"
+				},
+				{
+					"id": 705040237,
+					"content": "¿Eh?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040238
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705040238,
+					"content": "Oh, no es nada. Gracias por su hospitalidad.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040239
+					],
+					"speakerTitle": "Kaeya"
+				},
+				{
+					"id": 705040239,
+					"content": "Sí, yo también me voy a ir yendo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040240
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 705040240,
+					"content": "Por cierto, ese té negro sabía muy bien. Intentaré hacerlo para mí misma en el futuro... si es que consigo levantarme temprano, claro.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040241
+					],
+					"speakerTitle": "Rosaria"
+				},
+				{
+					"id": 705040241,
+					"content": "¡Hasta la próxima!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705040242
+					],
+					"speakerTitle": "Kaeya"
+				},
+				{
+					"id": 705040242,
+					"content": "Nos vemos.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 705040228,
+					"content": "Creo que sé de quién habla.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705040229
+					]
+				}
+			]
+		}
+	]
+}

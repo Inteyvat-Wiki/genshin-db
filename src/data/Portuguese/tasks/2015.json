@@ -1,0 +1,1001 @@
+{
+	"id": 2015,
+	"type": "AQ",
+	"name": "Ilusão",
+	"description": "A arma secreta e último recurso da resistência são, na verdade, as Ilusões. A morte de Teppei desperta uma chama de fúria inextinguível em você...",
+	"unlockDescription": "",
+	"chapter": "Onipresença Sobre os Mortais",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		2016
+	],
+	"prevMainQuestList": [
+		2014
+	],
+	"steps": [
+		{
+			"id": 201501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com Sangonomiya Kokomi",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						201501,
+						0
+					],
+					"talkId": 201501
+				}
+			]
+		},
+		{
+			"id": 201502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Encontre o local de fabricação das Ilusões",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						201502,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 201503,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Entre na fábrica de Ilusões",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_DUNGEON",
+					"rawParams": [
+						1119,
+						398
+					]
+				}
+			]
+		},
+		{
+			"id": 201504,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Encontre quem está dirigindo a fábrica",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 201505,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Encontre quem está dirigindo a fábrica",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						201504,
+						0
+					],
+					"talkId": 201504
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						201505,
+						0
+					],
+					"talkId": 201505
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 201501,
+			"completionStepIds": [
+				201501
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"201501",
+							"2"
+						],
+						"stepId": 201501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sangonomiya Kokomi",
+					"Gorou"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 20150101,
+					"content": "#{NICKNAME}, como está a situação de Teppei?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150102,
+						20150103
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150102,
+					"content": "Não tínhamos reparado...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150104
+					]
+				},
+				{
+					"id": 20150104,
+					"content": "Eu ordenei que todas as Ilusões fossem confiscadas.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150105
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150105,
+					"content": "A maioria está mostrando uma perda de vitalidade, mas nada muito sério.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150106
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150106,
+					"content": "Mas algumas pessoas....",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150107
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150107,
+					"content": "Vossa Excelência Sangonomiya, eu gostaria de estabelecer um acampamento para observar o estado dos soldados feridos.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150108
+					],
+					"speakerTitle": "Gorou"
+				},
+				{
+					"id": 20150108,
+					"content": "Os soldados estão irritados com a proibição. Eles sabem muito bem o que uma Ilusão é, mas ainda pretendem continuar a utilizar-las.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150109
+					],
+					"speakerTitle": "Gorou"
+				},
+				{
+					"id": 20150109,
+					"content": "Muito bem, deixarei isso com você. Agora eu tenho que ir para as linhas de frente.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150110
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150110,
+					"content": "Uma coisa tão grave certamente afetará a moral dos soldados. Se os soldados do Shogunato aproveitarem essa situação e lançarem ataques, todos os nossos esforços serão em vão.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150111
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150111,
+					"content": "#{NICKNAME}, você tem algum plano?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150112
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150112,
+					"content": "Pretendo impedir os Fatui.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150113
+					]
+				},
+				{
+					"id": 20150113,
+					"content": "Não posso deixar que você faça isso! É muito perigoso!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150114
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150114,
+					"content": "O Decreto Sakoku ainda está em vigor, creio que as Ilusões devem ter sido fabricadas em Inazuma mesmo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150115
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150115,
+					"content": "Para organizarem uma operação desta escala é necessário muita mão de obra e recursos. Eles devem ter algum tipo de apoio local.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150116
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150116,
+					"content": "Para impedi-los, temos que acabar com a fábrica que produz Ilusões, mas suponho que a fábrica esteja bem vigiada.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150117
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150117,
+					"content": "Não posso deixar você se arriscar. Pelo menos leve algumas tropas...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150118
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150118,
+					"content": "Não tenho tempo.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150119
+					]
+				},
+				{
+					"id": 20150119,
+					"content": "Vossa Excelência Sangonomiya, fomos com muita pressa ao confiscar as Ilusões, os Fatui devem ter visto tudo isto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150120
+					],
+					"speakerTitle": "Gorou"
+				},
+				{
+					"id": 20150120,
+					"content": "Se continuarmos gastando forças e nos descobrirem, eles vão acabar fugindo!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150121
+					],
+					"speakerTitle": "Gorou"
+				},
+				{
+					"id": 20150121,
+					"content": "Eu sei... deixe-me pensar!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150122
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150122,
+					"content": "Pensei nisso enquanto você confiscava as Ilusões. O local da fábrica deve ser grande e isolado, mas próximo o suficiente de uma rota de transporte para garantir o abastecimento de matéria-prima...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150123
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150123,
+					"content": "Não há muitos lugares que atendam a estes critérios, e se levarmos em conta também os locais onde nossos soldados receberam suas Ilusões, suspeito que o local seja provavelmente os penhascos próximos ao oceano a sudoeste da <color=#00E1FFFF>Ilha Yashiori</color>.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150124
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150124,
+					"content": "Eu não vou parar você, mas por favor, tenha cuidado.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150125
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150125,
+					"content": "Já perdemos muitos lutadores corajosos. Eu não quero perder você também.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150126
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150126,
+					"content": "Ok. Vamos lá.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150127
+					]
+				},
+				{
+					"id": 20150127,
+					"content": "Hum? Você quer dizer a <color=#00E1FFFF>Fábrica de Ilusões</color>?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150128
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 20150128,
+					"content": "...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150129
+					]
+				},
+				{
+					"id": 20150129,
+					"content": "Sério? Você não vai nem dar uma pensada primeiro? Ugh... Está bem...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 20150103,
+					"content": "A situação piorou de repente.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150104
+					]
+				}
+			]
+		},
+		{
+			"id": 201504,
+			"completionStepIds": [
+				201505
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"201505",
+							"2"
+						],
+						"stepId": 201505,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"50001",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Scaramouche"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 20150401,
+					"content": "Você realmente conseguiu achar este lugar. Parabéns.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150402
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150402,
+					"content": "Engraçado. A gente mal se encontrou e parece que você já me quer morto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150403,
+						20150404
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150403,
+					"content": "Vocês estão fazendo Ilusões...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150405
+					]
+				},
+				{
+					"id": 20150405,
+					"content": "Oh, então era sobre isso.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150406
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150406,
+					"content": "Acho que você entendeu errado. Sei o que parece, mas eu só estou aqui seguindo ordens.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150407
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150407,
+					"content": "#Obviamente não sou o cérebro por trás disso. Você não era muito dur{F#ona}{M#ão}? O que você está esperando, vá buscá-las!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150408
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150408,
+					"content": "#Você está ficando todo agitad{M#o}{F#a} por nada. Pff, você mudou... Você está ficando frac{M#o}{F#a}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150409
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150409,
+					"content": "Como você pode dizer que isso é nada?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150410
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 20150410,
+					"content": "Como você poderia chamar isso de outra coisa? É o jeito do mundo. A vida humana não vale nada.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150411
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150411,
+					"content": "Eles já iriam morrer de qualquer forma, com ou sem uma Ilusão. Ao menos ter uma lhes dá uma chance de realizar suas ambições.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150412
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150412,
+					"content": "Você tem alguma ideia da utilidade que o Decreto de Caça à Visão tem para nós? Foi preciso muito trabalho para que isso acontecesse. Obviamente, era de nosso maior interesse.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150413
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150413,
+					"content": "A boa notícia é que nosso trabalho árduo finalmente está dando frutos. A geração de conflitos cria um grande mercado para as Ilusões. Agora apenas deixamos que a promessa de poder atraia os fracos...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150414
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150414,
+					"content": "Por apenas um pequeno preço, eles têm a sensação de controlar o mundo. Trocar sua vida pelo poder supremo... Um bom negócio, você não acha?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150415
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150415,
+					"content": "Então os Fatui iniciaram o Decreto de Caça à Visão? Vocês têm estado por trás disso o tempo todo?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150416
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 20150416,
+					"content": "De fora, Inazuma parece bastante impenetrável, mas por dentro... É uma terra de oportunidades. Com um pouco de esforço, fomos capazes de quebrá-la a partir de seu interior.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150417
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150417,
+					"content": "A eternidade prolonga as coisas por muito tempo. Mas cada momento dentro dela se torna ainda mais frágil.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150418
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150418,
+					"content": "Considere seu amigo na resistência, por exemplo. Não há nada que você possa fazer agora. Ele é uma causa perdida.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150419
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150419,
+					"content": "Assim como uma bolha na água. Bonita por um momento, depois destruição total.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150420
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150420,
+					"content": "Quanto mais se tira deles, mais firmemente eles se agarram a isso. E quanto mais incompetentes são, mais determinados estão para lutar contra isso! Hahaha, é uma farsa tão grande, você tem que ver pelo lado engraçado.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150421,
+						20150422
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150421,
+					"content": "Teppei...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150423
+					]
+				},
+				{
+					"id": 20150423,
+					"content": "#Ei! {NICKNAME}, se acalme...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 20150422,
+					"content": "Ele não é incompetente!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150423
+					]
+				},
+				{
+					"id": 20150404,
+					"content": "Vocês estão enviando Ilusões para a resistência...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150405
+					]
+				}
+			]
+		},
+		{
+			"id": 201505,
+			"completionStepIds": [
+				201505
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"201505",
+							"2"
+						],
+						"stepId": 201505,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"50001",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Scaramouche"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 20150401,
+					"content": "Você realmente conseguiu achar este lugar. Parabéns.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150402
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150502,
+					"content": "Então você é outro Mensageiro dos Fatui... Como a Signora e o Childe?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150503
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 20150503,
+					"content": "Signora e Childe? Hã... Eu não sabia que você e meus dois colegas menos confiáveis se conheciam.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150504
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150504,
+					"content": "#Eu sou Scaramouche, Nº 6 dos Mensageiros dos Fatui. Prazer em conhecê-l{M#o}{F#a}, ó Poderos{M#o}{F#a} Viajante.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150505
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150506,
+					"content": "Vocês estão fazendo Ilusões...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150508
+					]
+				},
+				{
+					"id": 20150507,
+					"content": "Vocês estão enviando Ilusões para a resistência...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150508
+					]
+				},
+				{
+					"id": 20150505,
+					"content": "Tantos visitantes hoje em dia. A que devo a honra?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150506,
+						20150507
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150508,
+					"content": "Oh, então é sobre isso.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150509
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150406,
+					"content": "Acho que você entendeu errado. Sei o que parece, mas eu só estou aqui seguindo ordens.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150407
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150407,
+					"content": "#Obviamente não sou o cérebro por trás disso. Você não era muito dur{F#ona}{M#ão}? O que você está esperando, vá buscá-las!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150408
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150511,
+					"content": "Você está com raiva de uma coisa tão bobinha? Eu não imaginava que você era tão vulnerável.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150512
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150409,
+					"content": "Como você pode dizer que isso é nada?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150410
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 20150410,
+					"content": "Como você poderia chamar isso de outra coisa? É o jeito do mundo. A vida humana não vale nada.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150411
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150411,
+					"content": "Eles já iriam morrer de qualquer forma, com ou sem uma Ilusão. Ao menos ter uma lhes dá uma chance de realizar suas ambições.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150412
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150412,
+					"content": "Você tem alguma ideia da utilidade que o Decreto de Caça à Visão tem para nós? Foi preciso muito trabalho para que isso acontecesse. Obviamente, era de nosso maior interesse.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150413
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150413,
+					"content": "A boa notícia é que nosso trabalho árduo finalmente está dando frutos. A geração de conflitos cria um grande mercado para as Ilusões. Agora apenas deixamos que a promessa de poder atraia os fracos...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150414
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150414,
+					"content": "Por apenas um pequeno preço, eles têm a sensação de controlar o mundo. Trocar sua vida pelo poder supremo... Um bom negócio, você não acha?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150415
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150415,
+					"content": "Então os Fatui iniciaram o Decreto de Caça à Visão? Vocês têm estado por trás disso o tempo todo?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150416
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 20150416,
+					"content": "De fora, Inazuma parece bastante impenetrável, mas por dentro... É uma terra de oportunidades. Com um pouco de esforço, fomos capazes de quebrá-la a partir de seu interior.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150417
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150417,
+					"content": "A eternidade prolonga as coisas por muito tempo. Mas cada momento dentro dela se torna ainda mais frágil.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150418
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150418,
+					"content": "Considere seu amigo na resistência, por exemplo. Não há nada que você possa fazer agora. Ele é uma causa perdida.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150419
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150419,
+					"content": "Assim como uma bolha na água. Bonita por um momento, depois destruição total.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150420
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150421,
+					"content": "Teppei...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150423
+					]
+				},
+				{
+					"id": 20150422,
+					"content": "Ele não é incompetente!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150423
+					]
+				},
+				{
+					"id": 20150420,
+					"content": "Quanto mais se tira deles, mais firmemente eles se agarram a isso. E quanto mais incompetentes são, mais determinados estão para lutar contra isso! Hahaha, é uma farsa tão grande, você tem que ver pelo lado engraçado.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150421,
+						20150422
+					],
+					"speakerTitle": "Scaramouche"
+				},
+				{
+					"id": 20150423,
+					"content": "#Ei! {NICKNAME}, se acalme...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 201552,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"201501",
+							"2"
+						],
+						"stepId": 201501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"201502",
+							"2"
+						],
+						"stepId": 201502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Teppei"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 20155201,
+					"content": "A respiração de Teppei está cada vez mais fraca...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 201553,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 20155325,
+					"content": "A situação da Guerra Civil Inazuma não é clara no momento. Quanto mais a guerra continuar, mais favorável se tornará para mim...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20155326
+					],
+					"speakerTitle": "Aviso do Hall"
+				},
+				{
+					"id": 20155326,
+					"content": "Para ampliar a demanda da resistência pela \"Ilusão\", incitar a intensidade da guerra, e a determinação de promover uma batalha prolongada entre os dois comandantes...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20155327
+					],
+					"speakerTitle": "Aviso do Hall"
+				},
+				{
+					"id": 20155327,
+					"content": "Venho por este meio pedir a todos os camaradas disponíveis a auxiliar o 2º Tenente Naval Nathan a pôr um fim às aspirações das tropas Sangonomiya o mais rápido possível.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20155328
+					],
+					"speakerTitle": "Aviso do Hall"
+				},
+				{
+					"id": 20155328,
+					"content": "Se houver algum acidente, ajude na fuga do 2º Tenente Nathan e silencie todos os que possam revelar nossa infiltração em suas fileiras!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20155329
+					],
+					"speakerTitle": "Aviso do Hall"
+				},
+				{
+					"id": 20155329,
+					"content": "Lembrem-se: esta missão é de extrema importância para garantir nosso suprimento de Ilusões. Nenhum detalhe pode ser esquecido!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Aviso do Hall"
+				}
+			]
+		}
+	]
+}

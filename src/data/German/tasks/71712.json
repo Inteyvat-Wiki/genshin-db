@@ -1,0 +1,176 @@
+{
+	"id": 71712,
+	"type": "WQ",
+	"name": "Geris Erinnerungen an Mondstadts Leckerbissen",
+	"description": "Geri benötigt zwei Portionen feurige Nudeln.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7171201,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Bringe Geri zwei Portionen feurige Nudeln.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7171201,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7171202,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sprich mit Geri.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7171202,
+						0
+					],
+					"talkId": 7171202
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7171201,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7171201",
+							"2"
+						],
+						"stepId": 7171201,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7171201"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Geri"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717120101,
+					"content": "Wegen der feurigen Nudeln ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717120102
+					]
+				},
+				{
+					"id": 717120102,
+					"content": "Oh stimmt, also hast du meinen Auftrag gesehen. Hast du die zwei Portionen mit feurigen Nudeln?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717120103,
+						717120104
+					],
+					"speakerTitle": "Geri"
+				},
+				{
+					"id": 717120103,
+					"content": "Habe ich, hier sind sie.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717120104,
+					"content": "Noch nicht ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717120105
+					]
+				},
+				{
+					"id": 717120105,
+					"content": "Na schön, bitte gib mir Bescheid, wann sie fertig sind.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717120106
+					],
+					"speakerTitle": "Geri"
+				},
+				{
+					"id": 717120106,
+					"content": "Ich weiß nicht einmal mehr, wann ich das letzte Mal feurige Nudeln hatte.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Geri"
+				}
+			]
+		},
+		{
+			"id": 7171202,
+			"completionStepIds": [
+				7171202
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7171202",
+							"2"
+						],
+						"stepId": 7171202,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Geri"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717120201,
+					"content": "Mm-hmm! Diese feurigen Nudeln schmecken genauso wie in meiner Erinnerung.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717120202
+					],
+					"speakerTitle": "Geri"
+				},
+				{
+					"id": 717120202,
+					"content": "Hier, bitte nimm das hier. Danke für die Essenslieferung.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Geri"
+				}
+			]
+		}
+	]
+}

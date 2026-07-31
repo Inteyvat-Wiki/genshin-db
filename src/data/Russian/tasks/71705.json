@@ -1,0 +1,167 @@
+{
+	"id": 71705,
+	"type": "WQ",
+	"name": "Продукты для улыбчивого Янь Сяо",
+	"description": "Улыбчивому Янь Сяо с постоялого двора «Ваншу» нужны две сосиски.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7170501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отдайте Улыбчивому Янь Сяо 2 сосиски",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7170501,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7170502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с улыбчивым Янь Сяо",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7170502,
+						0
+					],
+					"talkId": 7170502
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7170501,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170501",
+							"2"
+						],
+						"stepId": 7170501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7170501"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Улыбчивый Янь Сяо"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717050101,
+					"content": "О сосисках...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717050102
+					]
+				},
+				{
+					"id": 717050102,
+					"content": "#Ага, я отсылал поручение. Ты {M#принёс}{F#принесла} две сосиски?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717050103,
+						717050104
+					],
+					"speakerTitle": "Улыбчивый Янь Сяо"
+				},
+				{
+					"id": 717050103,
+					"content": "Да, вот они.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 717050104,
+					"content": "Пока ещё нет.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						717050105
+					]
+				},
+				{
+					"id": 717050105,
+					"content": "Ну давай скорее тогда неси, мне ещё еду готовить. Гости же ждут.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Улыбчивый Янь Сяо"
+				}
+			]
+		},
+		{
+			"id": 7170502,
+			"completionStepIds": [
+				7170502
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7170502",
+							"2"
+						],
+						"stepId": 7170502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Улыбчивый Янь Сяо"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 717050201,
+					"content": "Да... Неплохие сосиски. Для этого блюда в самый раз.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						717050202
+					],
+					"speakerTitle": "Улыбчивый Янь Сяо"
+				},
+				{
+					"id": 717050202,
+					"content": "Вот и оплата. Держи.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Улыбчивый Янь Сяо"
+				}
+			]
+		}
+	]
+}

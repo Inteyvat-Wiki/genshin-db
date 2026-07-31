@@ -1,0 +1,524 @@
+{
+	"id": 383,
+	"type": "AQ",
+	"name": "Кристальные слёзы",
+	"description": "После сбора слёз вы встречаетесь с компаньонами.",
+	"unlockDescription": "",
+	"chapter": "Горькие слёзы",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		384
+	],
+	"prevMainQuestList": [
+		380,
+		381,
+		382
+	],
+	"steps": [
+		{
+			"id": 38301,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Отправляйтесь на винокурню «Рассвет»",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_TRIGGER_FIRE",
+					"rawParams": [
+						1035,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 38302,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Поговорите с Джинн",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						38302,
+						0
+					],
+					"talkId": 38302
+				}
+			]
+		},
+		{
+			"id": 38303,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Используйте слезу Двалина на Небесной лире",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 38304,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						38304,
+						0
+					],
+					"talkId": 38304
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 38302,
+			"completionStepIds": [
+				38302
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"38301",
+							"3"
+						],
+						"stepId": 38301,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"38302",
+							"2"
+						],
+						"stepId": 38302,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Джинн"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3830201,
+					"content": "Ух ты!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830202
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 3830202,
+					"content": "Отряд защитников Двалина, стройся!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830203
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 3830203,
+					"content": "Что ж, давайте посмотрим на собранные кристаллы!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830204
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3830204,
+					"content": "Что?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830205
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3830205,
+					"content": "Они все осквернены...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830206
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3830206,
+					"content": "Двалин... Сколько же страданий выпало на твою долю...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830207
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3830207,
+					"content": "#Прошу тебя, Путешественн{F#ица}{M#ик}, давай очистим эти кристаллы.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830208
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3830208,
+					"content": "В это сложно поверить, пока не увидишь своими глазами...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830209
+					],
+					"speakerTitle": "Джинн"
+				},
+				{
+					"id": 3830209,
+					"content": "Очень интересно. Процесс напоминает фильтрацию вина. За этим приятно наблюдать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830210
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3830210,
+					"content": "Нам должно хватить этих кристаллов.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Венти"
+				}
+			]
+		},
+		{
+			"id": 38303,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Венти"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3830211,
+					"content": "Приложи кристаллы к Небесной лире, как в прошлый раз.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830302
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3830302,
+					"content": "Хорошо.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 38304,
+			"completionStepIds": [
+				38304
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"38303",
+							"3"
+						],
+						"stepId": 38303,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"38304",
+							"2"
+						],
+						"stepId": 38304,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Джинн"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 3830401,
+					"content": "Ух ты! Сработало!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830402
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 3830402,
+					"content": "Теперь она выглядит совсем иначе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830403
+					],
+					"speakerTitle": "Джинн"
+				},
+				{
+					"id": 3830403,
+					"content": "Энергия Лиры полностью восстановлена. Теперь мы можем её использовать.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830404
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3830404,
+					"content": "#Спасибо тебе, {NICKNAME}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830405
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3830405,
+					"content": "Теперь нужно решить, куда мы призовём Ужас Бури.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830406
+					],
+					"speakerTitle": "Джинн"
+				},
+				{
+					"id": 3830406,
+					"content": "Это точно нельзя делать в городе. Если что-то пойдёт не так, всему городу придёт конец.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830407
+					],
+					"speakerTitle": "Джинн"
+				},
+				{
+					"id": 3830407,
+					"content": "А если мы устроим это здесь, на винокурне...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830408
+					],
+					"speakerTitle": "Джинн"
+				},
+				{
+					"id": 3830408,
+					"content": "Я переживу, если винокурня будет вдруг уничтожена. Но всё-таки давайте выберем другое место.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830409
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3830409,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830410
+					],
+					"speakerTitle": "Джинн"
+				},
+				{
+					"id": 3830410,
+					"content": "Ветер, что дует с моря или высоко в горах, разнесёт песнь барда по округе.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830411
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3830411,
+					"content": "Чтобы это сработало, воздух должен быть свежим и в меру влажным.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830412
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3830412,
+					"content": "Понятно... Море или горы, так?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830413
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 3830413,
+					"content": "Значит, самое подходящее место для игры на Лире - это...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830414,
+						3830415,
+						3830416
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 3830414,
+					"content": "Скала?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3830418
+					]
+				},
+				{
+					"id": 3830418,
+					"content": "На востоке от озера Звездопадов есть высокая скала. Ты найдёшь её, если будешь двигаться на юг вдоль пляжа.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830419
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3830419,
+					"content": "#Это тот самый пляж, на котором ты рассказал{F#а} Паймон о {F#своём брате}{M#своей сестре}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830420
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 3830420,
+					"content": "В общем, там ты найдёшь <color=#00E1FFFF>утёс Звездолова</color>.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830421
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3830421,
+					"content": "Там есть и высокая скала, и морской ветер. Такое место подойдёт, бард?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830422
+					],
+					"speakerTitle": "Дилюк"
+				},
+				{
+					"id": 3830422,
+					"content": "Хм... Дайте подумать. Утёс Звездолова...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830423
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3830423,
+					"content": "Хорошо. Пусть будет утёс Звездолова.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830424
+					],
+					"speakerTitle": "Венти"
+				},
+				{
+					"id": 3830424,
+					"content": "Отлично! Тогда встретимся на месте.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830425
+					],
+					"speakerTitle": "Джинн"
+				},
+				{
+					"id": 3830425,
+					"content": "Пожалуйста, не опаздывайте.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830426
+					],
+					"speakerTitle": "Джинн"
+				},
+				{
+					"id": 3830426,
+					"content": "Будет сделано, магистр!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830427
+					],
+					"speakerTitle": "Паймон"
+				},
+				{
+					"id": 3830427,
+					"content": "Ох... Прошу прощения, я случайно...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Джинн"
+				},
+				{
+					"id": 3830415,
+					"content": "Побережье?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3830418
+					]
+				},
+				{
+					"id": 3830416,
+					"content": "Небо? Можно парить на планере и играть на Лире...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						3830417
+					]
+				},
+				{
+					"id": 3830417,
+					"content": "Даже Эмбер не стала бы таким заниматься.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						3830418
+					],
+					"speakerTitle": "Джинн"
+				}
+			]
+		}
+	]
+}

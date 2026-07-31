@@ -1,0 +1,1001 @@
+{
+	"id": 2015,
+	"type": "AQ",
+	"name": "Engaño",
+	"description": "El “arma secreta” y último recurso del ejército de resistencia son los Engaños. El mal estado de Teppei hace difícil contener tu ira hacia los Fatui...",
+	"unlockDescription": "",
+	"chapter": "Omnipresencia sobre los mortales",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [
+		2016
+	],
+	"prevMainQuestList": [
+		2014
+	],
+	"steps": [
+		{
+			"id": 201501,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Sangonomiya Kokomi",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						201501,
+						0
+					],
+					"talkId": 201501
+				}
+			]
+		},
+		{
+			"id": 201502,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Busca el lugar en el que se fabrican los Engaños",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						201502,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 201503,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Entra en la fábrica de Engaños",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_ENTER_DUNGEON",
+					"rawParams": [
+						1119,
+						398
+					]
+				}
+			]
+		},
+		{
+			"id": 201504,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Busca a quien dirige la fábrica",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 201505,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Busca a quien dirige la fábrica",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						201504,
+						0
+					],
+					"talkId": 201504
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						201505,
+						0
+					],
+					"talkId": 201505
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 201501,
+			"completionStepIds": [
+				201501
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"201501",
+							"2"
+						],
+						"stepId": 201501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Sangonomiya Kokomi",
+					"Gorou"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 20150101,
+					"content": "#{NICKNAME}, ¿cómo está Teppei?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150102,
+						20150103
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150102,
+					"content": "¿Cómo es posible que ninguno de nosotros se haya dado cuenta?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150104
+					]
+				},
+				{
+					"id": 20150104,
+					"content": "He dado la orden de requisar todos los Engaños.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150105
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150105,
+					"content": "La gran mayoría de los soldados muestra cierta pérdida de vitalidad, pero no es nada grave.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150106
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150106,
+					"content": "Lamentablemente, algunos han sido... menos afortunados...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150107
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150107,
+					"content": "Su Excelencia, estoy planeando establecer un hospital de campaña para monitorear el estado de los soldados.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150108
+					],
+					"speakerTitle": "Gorou"
+				},
+				{
+					"id": 20150108,
+					"content": "Sin embargo, están en pie de guerra por la prohibición de los Engaños. Saben muy bien lo que son, pero aun así piensan seguir usándolos.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150109
+					],
+					"speakerTitle": "Gorou"
+				},
+				{
+					"id": 20150109,
+					"content": "Bien. Te dejaré a cargo de esta situación. Yo debo ir al frente de batalla.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150110
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150110,
+					"content": "Todo este fiasco será un duro golpe para nuestra moral. Si el ejército de la Shogun ataca ahora mientras nos recuperamos, tiraríamos por la borda todo lo que hemos logrado hasta ahora.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150111
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150111,
+					"content": "#{NICKNAME}, ¿qué opinas?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150112
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150112,
+					"content": "Me enfrentaré a los Fatui directamente.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150113
+					]
+				},
+				{
+					"id": 20150113,
+					"content": "¡No, es demasiado peligroso!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150114
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150114,
+					"content": "El Decreto de cierre de fronteras sigue en vigor, así que deben estar fabricando sus Engaños en las fronteras de Inazuma.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150115
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150115,
+					"content": "Para organizar una operación de esta envergadura, debieron movilizar una enorme cantidad de mano de obra y recursos. No pudieron haberlo hecho sin apoyo local.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150116
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150116,
+					"content": "Si queremos detenerlos, tenemos que destruir la fábrica donde se hacen los Engaños, pero seguramente estará muy vigilada...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150117
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150117,
+					"content": "#Es peligroso que vayas sol{F#a}{M#o}. Al menos llévate algunas tropas contigo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150118
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150118,
+					"content": "No hay tiempo para eso.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150119
+					]
+				},
+				{
+					"id": 20150119,
+					"content": "Su Excelencia, dada la urgencia de la situación, no fuimos muy discretos al confiscar los Engaños. Los Fatui se darán cuenta.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150120
+					],
+					"speakerTitle": "Gorou"
+				},
+				{
+					"id": 20150120,
+					"content": "Si perdemos más reuniendo nuestras fuerzas, se enterarán de nuestros planes y escaparán.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150121
+					],
+					"speakerTitle": "Gorou"
+				},
+				{
+					"id": 20150121,
+					"content": "Humm, tienes razón... déjame pensar...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150122
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150122,
+					"content": "Mientras confiscaban los Engaños, estuve pensando en algo. La fábrica debe de ser muy grande y estar aislada, pero seguro que está cerca de una ruta de transporte para asegurar el suministro de materias primas...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150123
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150123,
+					"content": "No muchos lugares cumplen con estos criterios y, si tenemos en cuenta los lugares en los que nuestros soldados recibieron sus Engaños, la fábrica podría estar en los acantilados cercanos al mar en el suroeste de la <color=#00E1FFFF>Isla Yashiori</color>.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150124
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150124,
+					"content": "No voy a detenerte, pero, por favor, ten cuidado.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150125
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150125,
+					"content": "Ya hemos perdido demasiados luchadores valientes. No quiero perderte a ti también.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150126
+					],
+					"speakerTitle": "Sangonomiya Kokomi"
+				},
+				{
+					"id": 20150126,
+					"content": "Bien, en marcha.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150127
+					]
+				},
+				{
+					"id": 20150127,
+					"content": "¿Eh? ¿Te refieres a ir a la <color=#00E1FFFF>fábrica de Engaños</color>?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150128
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 20150128,
+					"content": "...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150129
+					]
+				},
+				{
+					"id": 20150129,
+					"content": "¿De verdad? ¿No vas a pensarlo primero? Oh, está bien...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 20150103,
+					"content": "De repente está mucho peor.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150104
+					]
+				}
+			]
+		},
+		{
+			"id": 201504,
+			"completionStepIds": [
+				201505
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"201505",
+							"2"
+						],
+						"stepId": 201505,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"50001",
+							"1"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Scaramuccia"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 20150401,
+					"content": "Conseguiste encontrar este lugar. Enhorabuena.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150402
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150402,
+					"content": "Ja. Apenas he dicho dos palabras y ya parece que me quieres muerto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150403,
+						20150404
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150403,
+					"content": "Están fabricando Engaños.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150405
+					]
+				},
+				{
+					"id": 20150405,
+					"content": "Oh, así que de eso se trata.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150406
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150406,
+					"content": "Creo que es un malentendido. Sé lo que parece, pero solo estoy aquí siguiendo órdenes.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150407
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150407,
+					"content": "Obviamente, no soy el cerebro detrás de todo esto. ¿No se supone que eres muy fuerte? ¿Qué estás esperando? ¡Ve por ellos!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150408
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150408,
+					"content": "Te sobresaltas por nada. Pff, has cambiado... Te estás volviendo débil.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150409
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150409,
+					"content": "¿Cómo puedes decir que esto no es nada?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150410
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 20150410,
+					"content": "¿Cómo puedes pensar que es más que eso? Así funciona este mundo. La vida humana no tiene ningún valor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150411
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150411,
+					"content": "Iban a morir de cualquier forma, con o sin Engaño. Al menos tener uno les da la oportunidad de cumplir sus ambiciones.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150412
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150412,
+					"content": "¿Tienes idea de lo útil que es para nosotros el Decreto de captura de Visiones? Nos costó bastante trabajo hacerlo realidad, pero obviamente era en nuestro beneficio.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150413
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150413,
+					"content": "La buena noticia es que nuestro duro trabajo finalmente está rindiendo frutos. Los conflictos crean un gran mercado para los Engaños, por lo que nosotros solo dejamos que la posibilidad de obtener un gran poder atraiga a los débiles...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150414
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150414,
+					"content": "Por un pequeño precio, obtienen la sensación de controlar el mundo. Cambiar tu vida por un poder supremo es un buen trato, ¿no crees?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150415
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150415,
+					"content": "¿Así que fueron los Fatui los que iniciaron el Decreto de captura de Visiones? ¿Ustedes han estado detrás de él todo el tiempo?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150416
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 20150416,
+					"content": "Desde fuera, Inazuma parece impenetrable, pero por dentro... es una tierra de oportunidades. Con un poco de esfuerzo, fuimos capaces de destruirla desde su interior.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150417
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150417,
+					"content": "La eternidad prolonga las cosas por mucho tiempo, pero también las vuelve más frágiles con cada segundo que pasa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150418
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150418,
+					"content": "Por ejemplo, mira a tu amigo de la resistencia. Ya no hay nada que puedas hacer. Es una causa perdida.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150419
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150419,
+					"content": "Es como una burbuja dentro del agua: hermosa por un momento, hasta que llega su destrucción.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150420
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150420,
+					"content": "Cuantas más cosas les quita, más se aferran a ella. ¡Y cuanto más incompetentes son, más decididos están a luchar contra ella! Jajaja, qué gran farsa... Deberías ver el lado divertido de todo esto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150421,
+						20150422
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150421,
+					"content": "No te atrevas a burlarte de Teppei.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150423
+					]
+				},
+				{
+					"id": 20150423,
+					"content": "#Oye, {NICKNAME}, cálmate...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 20150422,
+					"content": "¡No es ningún incompetente!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150423
+					]
+				},
+				{
+					"id": 20150404,
+					"content": "Están dándole Engaños al ejército de resistencia.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150405
+					]
+				}
+			]
+		},
+		{
+			"id": 201505,
+			"completionStepIds": [
+				201505
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"201505",
+							"2"
+						],
+						"stepId": 201505,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"50001",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Scaramuccia"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 20150401,
+					"content": "Conseguiste encontrar este lugar. Enhorabuena.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150402
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150502,
+					"content": "¿Así que eres otro de Los Once, como Signora y Nobile?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150503
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 20150503,
+					"content": "¿Signora y Nobile? Oh... No sabía que mis dos colegas menos confiables y tú se conocían.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150504
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150504,
+					"content": "#Soy Scaramuccia, el sexto de Los Once de los Fatui. Encantado de conocerte, oh, poderos{F#a}{M#o} viajer{F#a}{M#o}.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150505
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150506,
+					"content": "Están fabricando Engaños.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150508
+					]
+				},
+				{
+					"id": 20150507,
+					"content": "Están dándole Engaños al ejército de resistencia.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150508
+					]
+				},
+				{
+					"id": 20150505,
+					"content": "Cuántas visitas hay hoy... ¿A qué le debo el honor?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150506,
+						20150507
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150508,
+					"content": "Oh, así que de eso se trata.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150509
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150406,
+					"content": "Creo que es un malentendido. Sé lo que parece, pero solo estoy aquí siguiendo órdenes.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150407
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150407,
+					"content": "Obviamente, no soy el cerebro detrás de todo esto. ¿No se supone que eres muy fuerte? ¿Qué estás esperando? ¡Ve por ellos!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150408
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150511,
+					"content": "Te sobresaltas por nada. Humm... No pensé que fueras tan débil.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150512
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150409,
+					"content": "¿Cómo puedes decir que esto no es nada?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150410
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 20150410,
+					"content": "¿Cómo puedes pensar que es más que eso? Así funciona este mundo. La vida humana no tiene ningún valor.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150411
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150411,
+					"content": "Iban a morir de cualquier forma, con o sin Engaño. Al menos tener uno les da la oportunidad de cumplir sus ambiciones.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150412
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150412,
+					"content": "¿Tienes idea de lo útil que es para nosotros el Decreto de captura de Visiones? Nos costó bastante trabajo hacerlo realidad, pero obviamente era en nuestro beneficio.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150413
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150413,
+					"content": "La buena noticia es que nuestro duro trabajo finalmente está rindiendo frutos. Los conflictos crean un gran mercado para los Engaños, por lo que nosotros solo dejamos que la posibilidad de obtener un gran poder atraiga a los débiles...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150414
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150414,
+					"content": "Por un pequeño precio, obtienen la sensación de controlar el mundo. Cambiar tu vida por un poder supremo es un buen trato, ¿no crees?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150415
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150415,
+					"content": "¿Así que fueron los Fatui los que iniciaron el Decreto de captura de Visiones? ¿Ustedes han estado detrás de él todo el tiempo?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150416
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 20150416,
+					"content": "Desde fuera, Inazuma parece impenetrable, pero por dentro... es una tierra de oportunidades. Con un poco de esfuerzo, fuimos capaces de destruirla desde su interior.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150417
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150417,
+					"content": "La eternidad prolonga las cosas por mucho tiempo, pero también las vuelve más frágiles con cada segundo que pasa.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150418
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150418,
+					"content": "Por ejemplo, mira a tu amigo de la resistencia. Ya no hay nada que puedas hacer. Es una causa perdida.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150419
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150419,
+					"content": "Es como una burbuja dentro del agua: hermosa por un momento, hasta que llega su destrucción.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150420
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150421,
+					"content": "No te atrevas a burlarte de Teppei.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150423
+					]
+				},
+				{
+					"id": 20150422,
+					"content": "¡No es ningún incompetente!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						20150423
+					]
+				},
+				{
+					"id": 20150420,
+					"content": "Cuantas más cosas les quita, más se aferran a ella. ¡Y cuanto más incompetentes son, más decididos están a luchar contra ella! Jajaja, qué gran farsa... Deberías ver el lado divertido de todo esto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20150421,
+						20150422
+					],
+					"speakerTitle": "Scaramuccia"
+				},
+				{
+					"id": 20150423,
+					"content": "#Oye, {NICKNAME}, cálmate...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 201552,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"201501",
+							"2"
+						],
+						"stepId": 201501,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"201502",
+							"2"
+						],
+						"stepId": 201502,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Teppei"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 20155201,
+					"content": "La respiración de Teppei se vuelve cada vez más débil...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 201553,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": []
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 20155325,
+					"content": "La situación de la guerra civil en Inazuma aún no está clara. Cuanto más se prolongue, mejor será para nosotros.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20155326
+					],
+					"speakerTitle": "Aviso de la superintendente"
+				},
+				{
+					"id": 20155326,
+					"content": "Para expandir la demanda de Engaños del ejército de resistencia, instigar la guerra y mantener viva la voluntad de seguir con la guerra por parte de ambos bandos...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20155327
+					],
+					"speakerTitle": "Aviso de la superintendente"
+				},
+				{
+					"id": 20155327,
+					"content": "... pedimos a todos los compañeros que apoyen al oficial de asuntos marítimos de segundo grado, Nathan, para poner un alto a las aspiraciones de las tropas de Sangonomiya a la brevedad.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20155328
+					],
+					"speakerTitle": "Aviso de la superintendente"
+				},
+				{
+					"id": 20155328,
+					"content": "Si ocurre algún imprevisto, deberán ayudar a Nathan a huir. ¡Queda terminantemente prohibido difundir rumores sobre la infiltración en nuestras filas!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						20155329
+					],
+					"speakerTitle": "Aviso de la superintendente"
+				},
+				{
+					"id": 20155329,
+					"content": "Recuérdenlo bien, pues solo de esta forma se podrá garantizar el suministro de Engaños. ¡No podemos ignorar el más mínimo detalle!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Aviso de la superintendente"
+				}
+			]
+		}
+	]
+}

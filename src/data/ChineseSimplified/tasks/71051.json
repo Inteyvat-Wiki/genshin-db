@@ -1,0 +1,466 @@
+{
+	"id": 71051,
+	"type": "WQ",
+	"name": "水生环境调查",
+	"description": "从层岩巨渊中钓出了奇怪的物件，究竟是什么呢，交由须弥学者海迪夫调查后，说要放到水边激活才可知道其真相…",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		71037
+	],
+	"steps": [
+		{
+			"id": 7105101,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "将钓起的奇怪物件交给海迪夫鉴定$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7105005,
+						0
+					],
+					"talkId": 7105005
+				}
+			]
+		},
+		{
+			"id": 7105102,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "将奇怪物件放至水边",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7105103,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "击败出现的水岩龙蜥",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7105104,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "告诉海迪夫在水边发生的事",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7105008,
+						0
+					],
+					"talkId": 7105008
+				}
+			]
+		},
+		{
+			"id": 7105105,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "利用水元素反应激活奇怪物件",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7105106,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "隐藏判断钓鱼是否进包$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7105005,
+			"completionStepIds": [
+				7105101
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7105101",
+							"2"
+						],
+						"stepId": 7105101,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"海迪夫"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 710500501,
+					"content": "关于奇怪的物件…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710500502
+					]
+				},
+				{
+					"id": 710500502,
+					"content": "嗯？这是你钓鱼钓到的，钓鱼？唔…这东西粗看起来倒像是我们钓鱼用的鱼饵。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500503
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500503,
+					"content": "钓鱼是能钓出这种东西的活动吗…？阿妮萨学姐在海祇岛也天天钓鱼，没见到她钓出什么成果来啊。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500504
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500504,
+					"content": "该说不愧是你吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500505
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500505,
+					"content": "我看看，这个东西…能够感受到它有很可怕的水元素含量。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500506
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500506,
+					"content": "层岩巨渊的地下水中，富含的元素量之多，确实有点不太正常…难道是因为有这些东西在地下水里生长的缘故吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500507
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500507,
+					"content": "不过这个东西从水里拿出来以后，元素就在不断流失，说不定必须得放在水边才会有产生效果。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500508
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500508,
+					"content": "放在水边？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710500509
+					]
+				},
+				{
+					"id": 710500509,
+					"content": "放到水边，用水元素激活，大概就能知道这东西是什么作用了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500510
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500510,
+					"content": "这样吧，你去激活它，反正东西也是你钓上来的，发生什么事就告诉我吧。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500511
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500511,
+					"content": "要是有什么研究价值的话，我会支付你报酬的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "海迪夫"
+				}
+			]
+		},
+		{
+			"id": 7105008,
+			"completionStepIds": [
+				7105104
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7105104",
+							"2"
+						],
+						"stepId": 7105104,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"海迪夫"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 710500801,
+					"content": "关于放在水边的奇怪物件…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710500802
+					]
+				},
+				{
+					"id": 710500802,
+					"content": "嗯？你把那个东西放在水边了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500803
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500803,
+					"content": "怎么样，有发生什么特殊反应之类的吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500804
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500804,
+					"content": "出现了岩龙蜥…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710500805
+					]
+				},
+				{
+					"id": 710500805,
+					"content": "岩龙蜥？那个东西放到水里变成了岩龙蜥？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500806
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500806,
+					"content": "哦，不是那个东西变成的，而是岩龙蜥看到那个东西之后就游出来了…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500807
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500807,
+					"content": "吓了我一跳，要是这个东西入水直接变成岩龙蜥，那我的世界观的立柱都要崩塌了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500808
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500808,
+					"content": "那个东西到底是…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710500809
+					]
+				},
+				{
+					"id": 710500809,
+					"content": "说来也简单，该怎么说明好呢，这样吧，让我先猜一猜，那只岩龙蜥，有没有什么特别之处…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500810
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500810,
+					"content": "比如说，元素附着属性是水之类的？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500811,
+						710500813
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500811,
+					"content": "好像是这样的…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710500812
+					]
+				},
+				{
+					"id": 710500812,
+					"content": "那就对了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500816
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500816,
+					"content": "那只岩龙蜥应该可以调用水元素。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500817
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500817,
+					"content": "层岩巨渊的地下水，水元素含量很高，特殊的聚集点就会养出类似你钓上来的水草一样的事物。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500818
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500818,
+					"content": "岩龙蜥，当然了，其他生长在层岩巨渊的亲水生物也一样，靠食用这种富含水元素的水草来提升自己的力量。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500819
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500819,
+					"content": "所以那个东西其实就是…富含水元素的水草！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500820
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500820,
+					"content": "只是水草吗…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710500821
+					]
+				},
+				{
+					"id": 710500821,
+					"content": "嗯，就是水草，不过富有如此元素量的水草…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500822
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500822,
+					"content": "正常环境可长不出来，除非有什么非常纯净又巨大的能量影响了水源…不说这个了，这些水草…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500823
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500823,
+					"content": "说不定有一天也会生出意识变成元素生物，真是值得好好研究一番啊。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500813,
+					"content": "没看见…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						710500814
+					]
+				},
+				{
+					"id": 710500814,
+					"content": "#难道是因为解决得太快了所以根本没在意到吗…真是厉害啊，不愧是传说中的{NICKNAME}。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500815
+					],
+					"speakerTitle": "海迪夫"
+				},
+				{
+					"id": 710500815,
+					"content": "不过根据我的推测…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						710500816
+					],
+					"speakerTitle": "海迪夫"
+				}
+			]
+		}
+	]
+}

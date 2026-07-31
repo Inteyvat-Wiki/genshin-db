@@ -1,0 +1,555 @@
+{
+	"id": 72247,
+	"type": "WQ",
+	"name": "狭間を訪ねる",
+	"description": "阿倍良久という残魂の話によると、試練をクリアすることで供物が手に入るそうだ…",
+	"unlockDescription": "",
+	"chapter": "ハイペリオン哀歌",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		72177
+	],
+	"steps": [
+		{
+			"id": 7224701,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7224702,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "残魂の試練を開始する",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7224705,
+						0
+					],
+					"talkId": 7224705
+				}
+			]
+		},
+		{
+			"id": 7224703,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7224704,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "残魂から供物を手に入れる",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7224702,
+						0
+					],
+					"talkId": 7224702
+				}
+			]
+		},
+		{
+			"id": 7224705,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7224703,
+						0
+					],
+					"talkId": 7224703
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7224701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7224702",
+							"2"
+						],
+						"stepId": 7224702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"阿倍良久"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722470101,
+					"content": "旅人よ、準備はできたか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "阿倍良久"
+				}
+			]
+		},
+		{
+			"id": 7224702,
+			"completionStepIds": [
+				7224704
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7224704",
+							"2"
+						],
+						"stepId": 7224704,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"阿倍良久",
+					"パイモン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722470201,
+					"content": "汝らの実力であれば…供え物の護送は容易であろう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470202
+					],
+					"speakerTitle": "阿倍良久"
+				},
+				{
+					"id": 722470202,
+					"content": "これで、吾も安心できる…頼む、無事に送り届けてくれ、そうすれば…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470203
+					],
+					"speakerTitle": "阿倍良久"
+				},
+				{
+					"id": 722470203,
+					"content": "そうすれば、どうなるんだ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470204
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 722470204,
+					"content": "そうすれば…そうすれば…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470205
+					],
+					"speakerTitle": "阿倍良久"
+				},
+				{
+					"id": 722470205,
+					"content": "うわぁ…なんか壊れたみたいになってる。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470206
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 722470206,
+					"content": "でも供え物って、これのことだよな…もうボロボロだけど。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "パイモン"
+				}
+			]
+		},
+		{
+			"id": 7224703,
+			"completionStepIds": [
+				7224705
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7224705",
+							"2"
+						],
+						"stepId": 7224705,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_COMMON",
+			"trigger": {
+				"objectNames": [
+					"パイモン",
+					"阿倍良久"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722470301,
+					"content": "な、なにか出てきたぞ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470302
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 722470302,
+					"content": "他と同じような残影みたいだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470303
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 722470303,
+					"content": "吾は…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470304
+					],
+					"speakerTitle": "阿倍良久"
+				},
+				{
+					"id": 722470304,
+					"content": "吾は、ヘリオスの建造者——阿倍良久なり！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470305
+					],
+					"speakerTitle": "阿倍良久"
+				},
+				{
+					"id": 722470305,
+					"content": "オイラ、わかったぞ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470306
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 722470306,
+					"content": "この言葉の意味は——",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470307
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 722470307,
+					"content": "こいつの名前がヘリオスだってことだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470308,
+						722470309
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 722470308,
+					"content": "全然違う！",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722470310
+					]
+				},
+				{
+					"id": 722470310,
+					"content": "そ、そうなのか…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470311
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 722470311,
+					"content": "阿倍良久っていうのか…聞きなれない名前だな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470312
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 722470312,
+					"content": "でも名前が阿倍良久なら、ヘリオスはなんなんだ？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470313
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 722470313,
+					"content": "ヘリオス！そう、ヘリオス！！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470314
+					],
+					"speakerTitle": "阿倍良久"
+				},
+				{
+					"id": 722470314,
+					"content": "吾がこの手で作りし物…ヘリオスが建てられた日、万丈の光が天を包み、人々は龍獣の脅威から逃れた。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470315
+					],
+					"speakerTitle": "阿倍良久"
+				},
+				{
+					"id": 722470315,
+					"content": "ああ…当時、民衆がそれを見た時、涙を流し、歓喜と感動の声を上げていた…だが今はもう…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470316
+					],
+					"speakerTitle": "阿倍良久"
+				},
+				{
+					"id": 722470316,
+					"content": "なぜ…なぜ吾はここにいる…なぜ…なぜ吾の魂は彷徨い、安寧を得られぬ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470317
+					],
+					"speakerTitle": "阿倍良久"
+				},
+				{
+					"id": 722470317,
+					"content": "パイモン、理解できた？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722470318
+					]
+				},
+				{
+					"id": 722470318,
+					"content": "おう、たぶん…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470319
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 722470319,
+					"content": "精神が不安定な残魂なんじゃないか。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470320
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 722470320,
+					"content": "思い出した…それは吾の魂が不完全だからだ…魂が元の場所に戻れば、安らぎを得られる。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470321
+					],
+					"speakerTitle": "阿倍良久"
+				},
+				{
+					"id": 722470321,
+					"content": "転機は汝にあり…吾の話を聞いてほしい…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470322
+					],
+					"speakerTitle": "阿倍良久"
+				},
+				{
+					"id": 722470322,
+					"content": "おいおい…なんか面倒事の気配が…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470323
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 722470323,
+					"content": "ここには本来、吾の遺骨が納められてあったが、すでに朽ち果てている…だから汝に頼みたい…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470324
+					],
+					"speakerTitle": "阿倍良久"
+				},
+				{
+					"id": 722470324,
+					"content": "吾の想いが込められた供え物を持っていってほしい…だが、周りには吾の魂を見張る怪物がいる。これが持ち出されれば…襲いかかってくるだろう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						722470325
+					],
+					"speakerTitle": "阿倍良久"
+				},
+				{
+					"id": 722470325,
+					"content": "これは極めて危険なことだ。旅人よ、準備ができたら、吾に言ってくれ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "阿倍良久"
+				},
+				{
+					"id": 722470309,
+					"content": "この人の名前は阿倍良久。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722470310
+					]
+				}
+			]
+		},
+		{
+			"id": 7224705,
+			"completionStepIds": [
+				7224702
+			],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7224702",
+							"2"
+						],
+						"stepId": 7224702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"阿倍良久"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722470501,
+					"content": "準備できた。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722470502
+					]
+				},
+				{
+					"id": 722470502,
+					"content": "では、汝の…武運を祈る。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "阿倍良久"
+				}
+			]
+		},
+		{
+			"id": 7224706,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7224702",
+							"2"
+						],
+						"stepId": 7224702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"阿倍良久"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 722470601,
+					"content": "もう少し準備させて。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						722470602
+					]
+				},
+				{
+					"id": 722470602,
+					"content": "では、静かにここで汝を待とう。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "阿倍良久"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,176 @@
+{
+	"id": 70700,
+	"type": "WQ",
+	"name": "Mistura Especial de Helen",
+	"description": "Helen da Cidade de Mondstadt precisa de 10 Flores Doces.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7070001,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dê 10 Flores Doce para Helen",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7070001,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7070002,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Fale com Helen",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7070002,
+						0
+					],
+					"talkId": 7070002
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7070001,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070001",
+							"2"
+						],
+						"stepId": 7070001,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7070001"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Helen"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707000101,
+					"content": "Sobre a Flor Doce...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707000102
+					]
+				},
+				{
+					"id": 707000102,
+					"content": "Você viu minha missão? Ótimo... Finalmente alguém veio ajudar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707000103
+					],
+					"speakerTitle": "Helen"
+				},
+				{
+					"id": 707000103,
+					"content": "Você já coletou 10 Flores Doces?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707000104,
+						707000105
+					],
+					"speakerTitle": "Helen"
+				},
+				{
+					"id": 707000104,
+					"content": "Sim.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 707000105,
+					"content": "Ainda não.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						707000106
+					]
+				},
+				{
+					"id": 707000106,
+					"content": "Está bem... Assim que as coletar, traga-as até mim o mais rápido possível, minha garganta está cada dia pior...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Helen"
+				}
+			]
+		},
+		{
+			"id": 7070002,
+			"completionStepIds": [
+				7070002
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7070002",
+							"2"
+						],
+						"stepId": 7070002,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Helen"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 707000201,
+					"content": "Ótimo, obrigada pela sua ajuda. Por favor, fique com isto.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						707000202
+					],
+					"speakerTitle": "Helen"
+				},
+				{
+					"id": 707000202,
+					"content": "Usarei elas para fazer um chá, espero que façam minha garganta se sentir melhor...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Helen"
+				}
+			]
+		}
+	]
+}

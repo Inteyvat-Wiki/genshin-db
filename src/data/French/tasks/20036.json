@@ -1,0 +1,455 @@
+{
+	"id": 20036,
+	"type": "IQ",
+	"name": "Emporté par le vent",
+	"description": "Le compagnon de Gloria, qui est parti en voyage, lui manque. Cette dernière cherche un moyen de lui faire parvenir un message...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2003601,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Allez voir Gloria.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003602,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Gloria.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003601,
+						0
+					],
+					"talkId": 2003601
+				}
+			]
+		},
+		{
+			"id": 2003603,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Trouvez 3 portions de graines de pissenlit.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						2003603,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003604,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Donnez les graines de pissenlit à Gloria.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003602,
+						0
+					],
+					"talkId": 2003602
+				}
+			]
+		},
+		{
+			"id": 2003605,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Montez au sommet de la statue de l'Archon Anémo pour disperser les graines de pissenlit.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_INTERACT_GADGET",
+					"rawParams": [
+						70710009,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2003606,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Parlez à Gloria.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2003603,
+						0
+					],
+					"talkId": 2003603
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2003601,
+			"completionStepIds": [
+				2003602
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003601",
+							"3"
+						],
+						"stepId": 2003601,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003602",
+							"2"
+						],
+						"stepId": 2003602,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Gloria"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200360101,
+					"content": "Godwin... Qu'est-ce qui te prend autant de temps ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360102
+					],
+					"speakerTitle": "Gloria"
+				},
+				{
+					"id": 200360102,
+					"content": "Bonjour...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360103
+					]
+				},
+				{
+					"id": 200360103,
+					"content": "#Cette voix... C'est vous, {M#Voyageur}{F#Voyageuse} ? Que Barbatos soit loué, le vent vous a sûrement {M#mené}{F#menée} à moi. J'aurais un service à vous demander...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360104
+					],
+					"speakerTitle": "Gloria"
+				},
+				{
+					"id": 200360104,
+					"content": "Hum... Godwin, mon petit ami, est un chevalier de l'Ordre de Favonius et ça fait longtemps qu'il n'est pas revenu de mission.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360105
+					],
+					"speakerTitle": "Gloria"
+				},
+				{
+					"id": 200360105,
+					"content": "Je n'ai plus aucune nouvelle de lui.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360106
+					],
+					"speakerTitle": "Gloria"
+				},
+				{
+					"id": 200360106,
+					"content": "Je me fais un sang d'encre pour lui. Mon pauvre chéri... Si ça se trouve, des Brutocollinus s'en sont pris à lui ? L'Ordre de l'Abîme l'aurait peut-être gravement blessé ? Sinon, il pourrait s'être entiché d'une autre femme...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360107
+					],
+					"speakerTitle": "Gloria"
+				},
+				{
+					"id": 200360107,
+					"content": "P—Pardon ! Je me suis emportée ! Ma mère me dit toujours que les graines de pissenlit peuvent porter les pensées des gens jusqu'à des contrées lointaines...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360108
+					],
+					"speakerTitle": "Gloria"
+				},
+				{
+					"id": 200360108,
+					"content": "J'ai une faveur à vous demander. Pouvez-vous me ramener trois graines de pissenlit de Ventlevé ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360109,
+						200360110
+					],
+					"speakerTitle": "Gloria"
+				},
+				{
+					"id": 200360109,
+					"content": "Bien sûr.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360111
+					]
+				},
+				{
+					"id": 200360111,
+					"content": "Merci beaucoup ! Que Barbatos vous bénisse.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Gloria"
+				},
+				{
+					"id": 200360110,
+					"content": "#Je suis {M#occupé}{F#occupée}.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360112
+					]
+				},
+				{
+					"id": 200360112,
+					"content": "#Je vous en prie ! Ce n'est rien pour {M#un voyageur expérimenté}{F#une voyageuse expérimentée} comme vous.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Gloria"
+				}
+			]
+		},
+		{
+			"id": 2003602,
+			"completionStepIds": [
+				2003604
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003602",
+							"3"
+						],
+						"stepId": 2003602,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_PACK_HAVE_ITEM",
+						"rawParams": [
+							"100057",
+							"3"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003604",
+							"2"
+						],
+						"stepId": 2003604,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Gloria"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200360201,
+					"content": "Bonjour ! Avez-vous pu trouver mes graines de pissenlit ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360202
+					],
+					"speakerTitle": "Gloria"
+				},
+				{
+					"id": 200360202,
+					"content": "Oui, tout est là.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360203
+					]
+				},
+				{
+					"id": 200360203,
+					"content": "Merci encore ! Pourriez-vous les déposer dans ma main ? Je les perdrai sinon... Je suis aveugle.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360204
+					],
+					"speakerTitle": "Gloria"
+				},
+				{
+					"id": 200360204,
+					"content": "Le compte est bon ?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360205
+					]
+				},
+				{
+					"id": 200360205,
+					"content": "Pourriez-vous les déposer dans ma main ? C'est la seule manière que j'ai de le savoir.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360206
+					],
+					"speakerTitle": "Gloria"
+				},
+				{
+					"id": 200360206,
+					"content": "Tout est bon. Je n'ai plus qu'à leur dire le message qu'ils doivent passer à Godwin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360207
+					],
+					"speakerTitle": "Gloria"
+				},
+				{
+					"id": 200360207,
+					"content": "Euh, bouchez-vous les oreilles, s'il vous plaît. Et n'essayez pas d'écouter en cachette ! Ce sont des paroles qui ne sont destinées qu'à mon amant.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360208
+					],
+					"speakerTitle": "Gloria"
+				},
+				{
+					"id": 200360208,
+					"content": "C'est bon, j'ai fini. Une dernière chose : Prenez-les avec vous et lâchez-les au sommet de la statue de l'Archon Anémo. Merci.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360209
+					],
+					"speakerTitle": "Gloria"
+				},
+				{
+					"id": 200360209,
+					"content": "J'espère qu'il saura transporter mes mots à Godwin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Gloria"
+				}
+			]
+		},
+		{
+			"id": 2003603,
+			"completionStepIds": [
+				2003606
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2003606",
+							"2"
+						],
+						"stepId": 2003606,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Gloria"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200360301,
+					"content": "C'est bon ? Vous l'avez fait ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360302
+					],
+					"speakerTitle": "Gloria"
+				},
+				{
+					"id": 200360302,
+					"content": "Le vent soufflait si fort au sommet...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						200360303
+					]
+				},
+				{
+					"id": 200360303,
+					"content": "Tant mieux, les graines pourront voyager longtemps.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360304
+					],
+					"speakerTitle": "Gloria"
+				},
+				{
+					"id": 200360304,
+					"content": "Elles auront plus de chances d'atteindre les oreilles de Godwin.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360305
+					],
+					"speakerTitle": "Gloria"
+				},
+				{
+					"id": 200360305,
+					"content": "Prenez donc ce cadeau de remerciement.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200360306
+					],
+					"speakerTitle": "Gloria"
+				},
+				{
+					"id": 200360306,
+					"content": "Il y a encore tant de choses que je voudrais lui dire. Je solliciterai certainement de nouveau votre aide.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Gloria"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,631 @@
+{
+	"id": 70508,
+	"type": "WQ",
+	"name": "Cập Bến Đêm Trăng",
+	"description": "\"Nói nghe nè, hôm nay tôi đã gặp một khách hàng rất tuyệt. Cô ấy cư xử nhẹ nhàng, nói năng duyên dáng, mua hàng cũng rất hào phóng.\" - \"Anh bán cái gì cho cô ấy vậy?\" \"Bí mật.\"",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70503,
+		70509
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Nói chuyện với Luka và vào quán rượu",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050802,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Pha loại uống đặc biệt cho Ningguang",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050802,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050803,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Pha loại uống đặc biệt cho Beidou",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050803,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050804,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đưa đồ uống cho Ningguang và Beidou",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050802,
+						0
+					],
+					"talkId": 7050802
+				}
+			]
+		},
+		{
+			"id": 7050805,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Nói chuyện với Ningguang và Beidou",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050801,
+						0
+					],
+					"talkId": 7050801
+				}
+			]
+		},
+		{
+			"id": 7050806,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Đến quầy bar để hoàn tất chuẩn bị",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7050305,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050801,
+			"completionStepIds": [
+				7050805
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050805",
+							"2"
+						],
+						"stepId": 7050805,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050802",
+							"2"
+						],
+						"stepId": 7050802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050803",
+							"2"
+						],
+						"stepId": 7050803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Beidou",
+					"Ningguang"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705080101,
+					"content": "#Ồ! Đây không phải là {NICKNAME} sao, đến đúng lúc lắm, ngồi xuống uống vài ly chứ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080102
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080102,
+					"content": "Gặp được bạn ở đây, đúng là một chuyện vui đấy.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080103
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080103,
+					"content": "Hai vị sao lại đến đây vậy?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080104
+					]
+				},
+				{
+					"id": 705080104,
+					"content": "Khoan đã, tại sao hai người lại đi chung với nhau?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080105
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705080105,
+					"content": "Vị đại nhân này tự nhiên nổi hứng nói muốn đi nghỉ dưỡng, cho nên chạy đến đây chơi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080106
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080106,
+					"content": "Nhưng mà gu đi du lịch của chúng tôi khác nhau, còn chưa leo được ngọn núi nào mà đã đến đây nghỉ ngơi, đúng là bệnh nhà giàu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080107
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080107,
+					"content": "Nói câu này nghe hơi tổn thương đấy. Tôi chiều theo ý cô nên mới cố tình chọn một nơi có rượu để uống đấy.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080108
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080108,
+					"content": "Chỉ tiếc là vị thuyền trưởng đây hiểu biết sâu rộng, chắc là chê quán rượu nhỏ này rồi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080109
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080109,
+					"content": "Hừ, bữa này tôi mời, vậy là được rồi đúng không?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080110
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080110,
+					"content": "Beidou muốn bao ăn hả? Bao luôn tôi được không?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080111
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705080111,
+					"content": "Paimon, chúng ta đang làm việc đấy.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080112
+					]
+				},
+				{
+					"id": 705080112,
+					"content": "Đúng ha, cứ quen miệng...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080113
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705080113,
+					"content": "Hai vị khách quý muốn dùng món gì?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080114
+					]
+				},
+				{
+					"id": 705080114,
+					"content": "Cho tôi một ly Bạch Dương nhỏ nhé, chua một chút càng tốt.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080115
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080115,
+					"content": "Một ly Màn Đêm, cỡ bự nhé, cảm ơn.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080116
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080116,
+					"content": "Hiểu rồi, đợi chút nhé.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7050802,
+			"completionStepIds": [
+				7050804
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050804",
+							"2"
+						],
+						"stepId": 7050804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ningguang",
+					"Beidou"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705080201,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080202
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080202,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080203
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080203,
+					"content": "Sao, sao vậy? Đừng im lặng thế chứ, tôi căng thẳng lắm!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080204
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705080204,
+					"content": "Ừm... chỉ là đang hồi tưởng lại hương vị của quá khứ thôi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080205
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080205,
+					"content": "Lúc tay trắng lập nghiệp đúng không? Có hương vị thế nào?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080206
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080206,
+					"content": "Haha... trong chua có ngọt, hương vị vừa đủ.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080207
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080207,
+					"content": "Ừm... mùi vị kiểu như làm ăn nhỏ rồi phát hiện ra rằng bán trái cây không có lãi đúng không?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080208
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080208,
+					"content": "Có cần phải nói thẳng thế không? Chuyện qua rồi thì cứ để nó qua đi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080209
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080209,
+					"content": "Haha, ai mà ngờ là Thiên Quyền Tinh cao sang quý phái lại có những ngày tháng bán trái cây bên đường chứ.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080210
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080210,
+					"content": "Cũng như tôi, nhìn đâu giống xuất thân từ ngư dân đâu đúng không?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080211
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080211,
+					"content": "Chưa chắc, nếu để tôi nói thì...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080212
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080212,
+					"content": "Thuyền trưởng Beidou có con mắt nhìn thấu biển cả, có lòng nhiệt huyết vượt qua ngàn con sóng, như là một người lớn lên từ biển cả vậy.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080213
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080213,
+					"content": "Này, câu này hình như là đang nói móc tôi đúng không?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080214
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080214,
+					"content": "Nói móc cô thì tôi được lợi gì chứ.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080215
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080215,
+					"content": "Biết miệng mồm của cô lợi hại rồi. Hôm nay tôi mời, nên cô bớt đanh đá đi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080216
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080216,
+					"content": "Ừm... vậy tôi muốn uống thêm vài ly.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080217,
+						705080218
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080217,
+					"content": "Muốn uống nữa sao?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080219
+					]
+				},
+				{
+					"id": 705080218,
+					"content": "Hân hạnh được phục vụ!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080219
+					]
+				},
+				{
+					"id": 705080219,
+					"content": "Pha chế, làm việc đi!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080220
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705080220,
+					"content": "Rất khí thế đó! Vậy tôi cũng làm thêm một ly!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080221
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080234,
+					"content": "Rồi lập tức rót thêm ly nữa cho họ...",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": []
+				},
+				{
+					"id": 705080221,
+					"content": "Nước ép của Mondstadt ngon thật, nếu như mỗi ngày đều có thể uống thì tốt biết mấy.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080222
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080222,
+					"content": "Hả? Cô đùa sao? Đừng nói tôi nghe là cô muốn mở đường kinh doanh Quả Nhật Lạc đó nha...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080223
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080223,
+					"content": "Nghe cũng khá thú vị đấy.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080224
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080224,
+					"content": "Làm thiệt hả?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080225
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080225,
+					"content": "Nói đùa thôi. Ngành này sớm đã có quy mô rồi, không cần tôi phải động tay vào đâu.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080226
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080226,
+					"content": "#{NICKNAME}, hôm nay thật cảm ơn. Nếu ngày nào đó bạn muốn tìm một công việc nhẹ nhàng thì cứ đến làm pha chế cho riêng tôi nhé.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080227
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080227,
+					"content": "Hoặc có thể lên \"Ngôi Sao Chết Chóc\" cũng được, chúng tôi ai nấy cũng thích uống rượu. Lên đó là có thể ăn nhậu cả ngày, bảo đảm vui.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080228
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080228,
+					"content": "Thuyền trưởng Beidou đang muốn giành nhân tài với tôi sao? Cô chỉ muốn thức uống của nhà lữ hành pha thôi mà đúng không, cứ lên Quần Ngọc Các là được thôi.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080229
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080229,
+					"content": "(Mình đắt hàng thật!)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080230
+					]
+				},
+				{
+					"id": 705080230,
+					"content": "Hai người đó như muốn mua bạn luôn vậy đó...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080231,
+						705080232
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705080231,
+					"content": "Nếu có cơ hội...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 705080232,
+					"content": "Tôi sẽ đến chỗ của cả hai mà...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

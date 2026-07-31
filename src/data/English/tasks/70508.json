@@ -1,0 +1,631 @@
+{
+	"id": 70508,
+	"type": "WQ",
+	"name": "Docked on a Moonlit Night",
+	"description": "\"Do you know that I met a very nice client today? She moved and talked with grace — a very generous buyer, too.\" \"What did you sell her?\" \"Trade secret.\"",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 5062,
+	"mainQuestTag": "MAINQUEST_TAG_ACTIVITY",
+	"suggestTrackMainQuestList": [
+		70503,
+		70509
+	],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7050801,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Luka and enter the tavern",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050801,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050802,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Mix Ningguang the specified drink",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050802,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050803,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Mix Beidou the specified drink",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7050803,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7050804,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Give the drinks to Ningguang and Beidou",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050802,
+						0
+					],
+					"talkId": 7050802
+				}
+			]
+		},
+		{
+			"id": 7050805,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Talk to Ningguang and Beidou",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7050801,
+						0
+					],
+					"talkId": 7050801
+				}
+			]
+		},
+		{
+			"id": 7050806,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Head to the counter and get ready to open for business",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_VAR_EQUAL",
+					"rawParams": [
+						0,
+						1
+					]
+				},
+				{
+					"type": "QUEST_CONTENT_QUEST_STATE_EQUAL",
+					"rawParams": [
+						7050305,
+						3
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7050801,
+			"completionStepIds": [
+				7050805
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050805",
+							"2"
+						],
+						"stepId": 7050805,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050802",
+							"2"
+						],
+						"stepId": 7050802,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050803",
+							"2"
+						],
+						"stepId": 7050803,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Beidou",
+					"Ningguang"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705080101,
+					"content": "#Ahoy, {NICKNAME}! Great timing. Join us for a round?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080102
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080102,
+					"content": "Traveler, what a pleasant surprise.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080103
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080103,
+					"content": "What are you two doing here?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080104
+					]
+				},
+				{
+					"id": 705080104,
+					"content": "Wait, did you two come together?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080105
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705080105,
+					"content": "This lady decided on a whim that she wanted a little vacation, so we ended up traveling around the area.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080106
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080106,
+					"content": "But I guess we have different ideas of vacation. We hardly hiked the mountains before we came here to put our feet up. Talk about spoiled.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080107
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080107,
+					"content": "Come now, no need to hurt anyone's feelings. Besides, I specifically chose this place because I knew how much you like to drink.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080108
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080108,
+					"content": "But our captain here has seen a lot more of the world, so she's not exactly thrilled with this little tavern.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080109
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080109,
+					"content": "It'll do. Anyway, this one's on me, okay?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080110
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080110,
+					"content": "Beidou's paying? Uh, does that include us?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080111
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705080111,
+					"content": "We're the bartenders, Paimon.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080112
+					]
+				},
+				{
+					"id": 705080112,
+					"content": "Oh right. Hehe, sorry... guess that's just a habit now.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080113
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705080113,
+					"content": "And what can I get for the two lovely ladies?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080114
+					]
+				},
+				{
+					"id": 705080114,
+					"content": "I'll have a small Birch Sap, on the sour side.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080115
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080115,
+					"content": "Uh... I will have a... a large Dusk, please. Thanks!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080116
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080116,
+					"content": "Got it. Coming right up.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7050802,
+			"completionStepIds": [
+				7050804
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7050804",
+							"2"
+						],
+						"stepId": 7050804,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ningguang",
+					"Beidou"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 705080201,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080202
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080202,
+					"content": "...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080203
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080203,
+					"content": "Well? H—How is it? This silence is making Paimon nervous!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080204
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705080204,
+					"content": "Mmm... The bittersweet taste of nostalgia.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080205
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080205,
+					"content": "You mean the taste of going from rags to riches? Just what kind of taste is that?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080206
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080206,
+					"content": "Hehe... It's mainly sour with just a tinge of sweetness, and a lingering aftertaste.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080207
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080207,
+					"content": "Interesting... Does it taste like starting a little business then discovering that selling fruit isn't very lucrative?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080208
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080208,
+					"content": "No need to get into the details. Let's leave the past in the past.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080209
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080209,
+					"content": "Haha, who'd have thought that the dignified Tianquan was once a fruit vendor on the street.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080210
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080210,
+					"content": "On the other hand, I bet few can tell that I'm from an ordinary fishing village, right?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080211
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080211,
+					"content": "Not necessarily. If you ask me...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080212
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080212,
+					"content": "I'd say that Captain Beidou has eyes that can pierce the sea. You're an adventure-seeking pioneer who tames the wind and the waves... Which is clearly indicative of someone who grew up by the sea.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080213
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080213,
+					"content": "Hey, you're not mocking me, are you?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080214
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080214,
+					"content": "Come now, it wouldn't do any good to be sarcastic.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080215
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080215,
+					"content": "I know how fierce you can be with words. It's my treat today, so remember to take it easy on me.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080216
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080216,
+					"content": "Alright, then I'd like to have a few more.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080217,
+						705080218
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080217,
+					"content": "Another drink for the lovely lady?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080219
+					]
+				},
+				{
+					"id": 705080218,
+					"content": "We're here to serve you!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080219
+					]
+				},
+				{
+					"id": 705080219,
+					"content": "Well, you heard the good lady, bartender!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080220
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705080220,
+					"content": "I like where this is going! I'll have another round, too!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080221
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080234,
+					"content": "You give the two a refill immediately...",
+					"roleType": "TALK_ROLE_BLACK_SCREEN",
+					"nextDialogs": []
+				},
+				{
+					"id": 705080221,
+					"content": "Mondstadt's fresh fruit juice is hard to top. I wish I could enjoy some every day.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080222
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080222,
+					"content": "Are you serious? Don't tell me you're gonna open a Sunsettia trade route now...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080223
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080223,
+					"content": "Hmm, an interesting proposition.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080224
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080224,
+					"content": "Wait... Huh, really?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080225
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080225,
+					"content": "I'm just joking, of course. There's already a whole industry established for that. They don't need me muscling my way in to their business.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080226
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080226,
+					"content": "#Thanks for the drinks today, {NICKNAME}. If you'd ever like a cushy job, I'd enjoy having you as my personal bartender.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080227
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080227,
+					"content": "You're also welcome aboard the Alcor. The crew loves to drink, you could come feast with us. I promise you'd have a blast.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080228
+					],
+					"speakerTitle": "Beidou"
+				},
+				{
+					"id": 705080228,
+					"content": "My, my, Captain Beidou, are you competing with me for talent? That's hardly necessary. You may simply stop by the Jade Chamber whenever you want the Traveler to mix you a drink.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080229
+					],
+					"speakerTitle": "Ningguang"
+				},
+				{
+					"id": 705080229,
+					"content": "(I'm so popular!)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						705080230
+					]
+				},
+				{
+					"id": 705080230,
+					"content": "Is it Paimon, or does it sound like they think you work for them?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						705080231,
+						705080232
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 705080231,
+					"content": "When I have a chance...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 705080232,
+					"content": "I'll visit you both. I promise.",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

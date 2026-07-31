@@ -1,0 +1,399 @@
+{
+	"id": 19107,
+	"type": "LQ",
+	"name": "Los cantineros comparan notas",
+	"description": "Para aprender más de coctelería profesional, Diona y Connor intercambian conocimientos.",
+	"unlockDescription": "",
+	"chapter": "Coctelería felina",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 1910701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dirígete al Viñedo del Amanecer para encontrarte con Diona",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						103901,
+						70101
+					]
+				}
+			]
+		},
+		{
+			"id": 1910702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Empieza a preparar la bebida",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						103901,
+						70201
+					]
+				}
+			]
+		},
+		{
+			"id": 1910703,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Dale la bebida recién preparada a Diona",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						1910703,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 1910704,
+			"order": 4,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Diona",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						103901,
+						70301
+					]
+				}
+			]
+		},
+		{
+			"id": 1910705,
+			"order": 5,
+			"listShowType": "QUEST_SHOW",
+			"description": "Empieza a preparar la bebida",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						103901,
+						70401
+					]
+				}
+			]
+		},
+		{
+			"id": 1910706,
+			"order": 6,
+			"listShowType": "QUEST_SHOW",
+			"description": "Habla con Diona",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT",
+					"rawParams": [
+						103901,
+						105
+					]
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 1910703,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1910703",
+							"2"
+						],
+						"stepId": 1910703,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"1910703"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Diona"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191070301,
+					"content": "¿Ya terminaste de prepararla?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						0
+					],
+					"speakerTitle": "Diona"
+				}
+			]
+		},
+		{
+			"id": 1910795,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1910706",
+							"2"
+						],
+						"stepId": 1910706,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Elzer",
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191079501,
+					"content": "¿Eh? ¿Ya... terminó? Espero con ansias probar su nueva obra...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191079502
+					],
+					"speakerTitle": "Elzer"
+				},
+				{
+					"id": 191079502,
+					"content": "Me pregunto, ¿qué sorpresa tiene preparada para nosotros esta vez?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						0
+					],
+					"speakerTitle": "Connor"
+				}
+			]
+		},
+		{
+			"id": 1910797,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_OR",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1910703",
+							"2"
+						],
+						"stepId": 1910703,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1910704",
+							"2"
+						],
+						"stepId": 1910704,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Elzer",
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191079701,
+					"content": "Sr. Elzer, pero si...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191079702
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 191079702,
+					"content": "Connor, ahora lo más importante es hacer que Diona pueda sentir nuestra buena fe, ¿entiendes?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191079703
+					],
+					"speakerTitle": "Elzer"
+				},
+				{
+					"id": 191079703,
+					"content": "¡E-entiendo, Sr. Elzer!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						0
+					],
+					"speakerTitle": "Connor"
+				}
+			]
+		},
+		{
+			"id": 1910798,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1910702",
+							"2"
+						],
+						"stepId": 1910702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Elzer",
+					"Connor"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191079801,
+					"content": "Bien hecho, Connor. Si sigues así, ¡seguro que podremos invitar a Diona para que sea cantinera permanente del Viñedo del Amanecer!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191079802
+					],
+					"speakerTitle": "Elzer"
+				},
+				{
+					"id": 191079802,
+					"content": "Espero que lo consigamos. Tras varias semanas seguidas vigilándola, por fin tenemos esta rara oportunidad que no debemos dejar pasar.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191079803
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 191079803,
+					"content": "Muchas gracias, Connor. Mientras consigamos que Diona venga, todos nuestros esfuerzos habrán valido la pena. Esto es el primer paso.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191079804
+					],
+					"speakerTitle": "Elzer"
+				},
+				{
+					"id": 191079804,
+					"content": "Recuerda: ¡debemos hacer que Diona sienta nuestra buena fe y hospitalidad! Así que, por favor, no seas maleducado.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191079805
+					],
+					"speakerTitle": "Elzer"
+				},
+				{
+					"id": 191079805,
+					"content": "No se preocupe, Sr. Elzer. Lo hemos ensayado muchas veces, así que seguro que...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191079806
+					],
+					"speakerTitle": "Connor"
+				},
+				{
+					"id": 191079806,
+					"content": "¿De qué hablan?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						191079807
+					]
+				},
+				{
+					"id": 191079807,
+					"content": "¡¿Eh?! D-de nada, estábamos discutiendo... sobre unos asuntos de negocios relacionados con el viñedo, jajaja.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						191079808
+					],
+					"speakerTitle": "Elzer"
+				},
+				{
+					"id": 191079808,
+					"content": "Sí, eso. Estábamos hablando de negocios. Bueno, Sr. Elzer, sigamos con lo de los gastos del viñedo...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						0
+					],
+					"speakerTitle": "Connor"
+				}
+			]
+		},
+		{
+			"id": 1910799,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"1910702",
+							"2"
+						],
+						"stepId": 1910702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Diona"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 191079901,
+					"content": "Recuerda: tienes que usar una técnica de preparación de alcohol contraria a la de Connor para alcanzar mi... nuestro objetivo.",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						0
+					],
+					"speakerTitle": "Diona"
+				}
+			]
+		}
+	]
+}

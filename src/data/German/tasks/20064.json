@@ -1,0 +1,103 @@
+{
+	"id": 20064,
+	"type": "IQ",
+	"name": "Die Grenzen eines Abenteurers",
+	"description": "Herman macht sich ziemlich Sorgen.",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 2006401,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Sprich mit der wütenden Ellin 1",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 2006402,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "Sprich mit der wütenden Ellin 2",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						2006401,
+						0
+					],
+					"talkId": 2006401
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 2006401,
+			"completionStepIds": [
+				2006402
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006401",
+							"3"
+						],
+						"stepId": 2006401,
+						"stateName": "QUEST_STATE_FINISHED"
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"2006402",
+							"2"
+						],
+						"stepId": 2006402,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Ellin"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 200640101,
+					"content": "He! Was machst du denn da? Die sind von meinem Vater für mich, damit ich besser üben kann!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						200640102
+					],
+					"speakerTitle": "Ellin"
+				},
+				{
+					"id": 200640102,
+					"content": "Wenn ich die Ritterauswahl nicht bestehe, trägst du die Schuld!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Ellin"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,167 @@
+{
+	"id": 74657,
+	"type": "WQ",
+	"name": "伽拉蒂雅的盐需求",
+	"description": "伽拉蒂雅需要10瓶盐。",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_REPUTATION",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7465701,
+			"order": 1,
+			"listShowType": "QUEST_SHOW",
+			"description": "将10瓶盐交给伽拉蒂雅",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7465701,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7465702,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "与伽拉蒂雅对话",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7465702,
+						0
+					],
+					"talkId": 7465702
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7465701,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465701",
+							"2"
+						],
+						"stepId": 7465701,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7465701"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"伽拉蒂雅"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746570101,
+					"content": "关于盐…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746570102
+					]
+				},
+				{
+					"id": 746570102,
+					"content": "你好，你是来讨论食盐供应的事情的吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746570103
+					],
+					"speakerTitle": "伽拉蒂雅"
+				},
+				{
+					"id": 746570103,
+					"content": "那你一定已经准备好了足够多的盐吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						746570106,
+						746570104
+					],
+					"speakerTitle": "伽拉蒂雅"
+				},
+				{
+					"id": 746570106,
+					"content": "准备好了。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				},
+				{
+					"id": 746570104,
+					"content": "还没有。",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						746570105
+					]
+				},
+				{
+					"id": 746570105,
+					"content": "食盐数量不够多可不行，我们一船人到处航行，每次都得准备好够多的盐才行。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "伽拉蒂雅"
+				}
+			]
+		},
+		{
+			"id": 7465702,
+			"completionStepIds": [
+				7465702
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7465702",
+							"2"
+						],
+						"stepId": 7465702,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"伽拉蒂雅"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 746570201,
+					"content": "这个数量应该够我们一次短途航行吃的了，你看起来挺靠谱的，以后有这方面的需求我会优先联络你的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "伽拉蒂雅"
+				}
+			]
+		}
+	]
+}
