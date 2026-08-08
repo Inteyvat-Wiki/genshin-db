@@ -1,0 +1,534 @@
+{
+	"id": 70809,
+	"type": "WQ",
+	"name": "(test)隐藏$HIDDEN",
+	"description": "(test)隐藏$HIDDEN",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		70077
+	],
+	"steps": [
+		{
+			"id": 7080901,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)隐藏$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080902,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)隐藏$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7080902,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080903,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)隐藏$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7080903,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080904,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)隐藏$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080903,
+						0
+					],
+					"talkId": 7080903
+				}
+			]
+		},
+		{
+			"id": 7080905,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)隐藏$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6180115,
+						0
+					],
+					"talkId": 6180115
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6180116,
+						0
+					],
+					"talkId": 6180116
+				}
+			]
+		},
+		{
+			"id": 7080906,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)隐藏$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080905,
+						0
+					],
+					"talkId": 7080905
+				}
+			]
+		},
+		{
+			"id": 7080907,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "(test)隐藏$HIDDEN",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080904,
+						0
+					],
+					"talkId": 7080904
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7080901,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7080902"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080902",
+							"2"
+						],
+						"stepId": 7080902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7007711",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"内田幸太郎"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708090101,
+					"content": "你是不是在找这个？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7080902,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7080903"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080903",
+							"2"
+						],
+						"stepId": 7080903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7007711",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"洛恩"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708090201,
+					"content": "我在鸟巢里找到了这个…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7080903,
+			"completionStepIds": [
+				7080904
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080904",
+							"2"
+						],
+						"stepId": 7080904,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							3048.129,
+							237.658,
+							-131.896
+						],
+						"pointId": 16753
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							3048.092,
+							237.511,
+							-133.307
+						],
+						"pointId": 16779
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 708090301,
+					"content": "（鸟巢内有许多零散的碎纸条，似乎还有七零八落的字迹…）",
+					"roleType": "TALK_ROLE_NEED_CLICK_BLACK_SCREEN",
+					"nextDialogs": [
+						708090302
+					]
+				},
+				{
+					"id": 708090302,
+					"content": "这些纸条…不会是它们为了筑巢特意撕开的吧？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090303
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 708090303,
+					"content": "上面好像还有字呢，要不要拼起来看看写了什么？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090304
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 708090304,
+					"content": "搞半天还是要自己拼…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708090305
+					]
+				},
+				{
+					"id": 708090305,
+					"content": "你就不好奇吗？说不定是什么藏宝图呢！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090306
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 708090306,
+					"content": "在派蒙的连声催促下拼好了纸条…",
+					"roleType": "TALK_ROLE_NEED_CLICK_BLACK_SCREEN",
+					"nextDialogs": [
+						708090307
+					]
+				},
+				{
+					"id": 708090307,
+					"content": "让我看看…这是…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090308
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 708090308,
+					"content": "这…这难道是…「犯罪计划书」吗！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090309,
+						708090311
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 708090309,
+					"content": "谁的犯罪计划会被鸟叼走啊！",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708090310
+					]
+				},
+				{
+					"id": 708090310,
+					"content": "但…但是小说里经常有这种情节吧！万无一失的计划，偏偏就在最不可能的地方出了疏漏…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090313
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 708090313,
+					"content": "我们去附近的酒馆里打听一下吧？看看有没有谁听说过，「最近有人要犯罪了！」什么的…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 708090311,
+					"content": "宁可信其有，不可信其无…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708090312
+					]
+				},
+				{
+					"id": 708090312,
+					"content": "你…你说得对，不怕一万，就怕万一…如果真有人打算犯罪，回头后悔可就晚了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090313
+					],
+					"speakerTitle": "派蒙"
+				}
+			]
+		},
+		{
+			"id": 7080904,
+			"completionStepIds": [
+				7080907
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080907",
+							"2"
+						],
+						"stepId": 7080907,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"内田幸太郎"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708090401,
+					"content": "这…这是…我的「作案手法」！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090402
+					],
+					"speakerTitle": "内田幸太郎"
+				},
+				{
+					"id": 708090402,
+					"content": "#{NICKNAME}！他居然直接就承认了！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090403
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 708090403,
+					"content": "啊！请别误会，这是我打算写进下一部小说里的诡计，是我之前喝酒的时候想出来的。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090404
+					],
+					"speakerTitle": "内田幸太郎"
+				},
+				{
+					"id": 708090404,
+					"content": "没想到酒一醒这页纸就消失了…我差点以为自己是在做梦呢。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090405
+					],
+					"speakerTitle": "内田幸太郎"
+				},
+				{
+					"id": 708090405,
+					"content": "总之，多谢你帮忙找回它啦。这下我的小说应该就能顺产了，到时候我先送你一本！带签名的！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "内田幸太郎"
+				}
+			]
+		},
+		{
+			"id": 7080905,
+			"completionStepIds": [
+				7080906
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080906",
+							"2"
+						],
+						"stepId": 7080906,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"洛恩"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708090501,
+					"content": "哦？有点意思，让我看看…嗯，创意可以给六分，可行性大概就四分吧…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090502
+					],
+					"speakerTitle": "洛恩"
+				},
+				{
+					"id": 708090502,
+					"content": "这…这是「犯罪计划书」吗？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090503
+					],
+					"speakerTitle": "派蒙"
+				},
+				{
+					"id": 708090503,
+					"content": "哈哈，其实我从驻地跑来这里，就是听说了有人在这儿盘算一些稀奇古怪的「犯罪计划」。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090504
+					],
+					"speakerTitle": "洛恩"
+				},
+				{
+					"id": 708090504,
+					"content": "…不过看过这页笔记之后，我大概知道那些流言是怎么起来的了。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090505
+					],
+					"speakerTitle": "洛恩"
+				},
+				{
+					"id": 708090505,
+					"content": "这份「犯罪计划书」就交给骑士团来处理吧，回头要是有空就来我的驻地逛逛？没准会有好戏呢。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "洛恩"
+				}
+			]
+		}
+	]
+}

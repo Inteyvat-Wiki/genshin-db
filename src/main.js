@@ -16,6 +16,7 @@ const baseoptions = new Options(
     true, // matchNames
     false, // matchFilenames
     false, // matchFilenameOnly
+    false, // matchIds
     true, // matchAltNames
     false, // matchAliases
     false, // matchCategories
@@ -28,6 +29,7 @@ const baseoptions = new Options(
 
 const SearchSource = {
     Filenames: "filenames",
+    Ids: "ids",
     Names: "names",
     AltNames: "altnames",
     Aliases: "aliases",
@@ -70,7 +72,7 @@ function sanitizeOptions(opts) {
     if (!opts || typeof opts !== 'object') return;
 
     let sanOpts = {};
-    ['dumpResult', 'matchNames', 'matchFilenames', 'matchFilenameOnly', 'matchAltNames', 'matchAliases', 'matchCategories', 'verboseCategories', 'v4Props', 'v4PropsOnly'].forEach(prop => {
+    ['dumpResult', 'matchNames', 'matchFilenames', 'matchFilenameOnly', 'matchIds', 'matchAltNames', 'matchAliases', 'matchCategories', 'verboseCategories', 'v4Props', 'v4PropsOnly'].forEach(prop => {
         if (typeof opts[prop] === 'boolean') sanOpts[prop] = opts[prop];
     });
     opts.resultLanguage = language.format(opts.resultLanguage);
@@ -85,6 +87,7 @@ function sanitizeOptions(opts) {
 const MatchType = {
     None: "none",
     Filenames: "filenames",
+    Ids: "ids",
     Names: "names",
     AltNames: "altnames",
     Aliases: "aliases",
@@ -93,13 +96,35 @@ const MatchType = {
 
 const matchTypeMap = {
     [SearchSource.Filenames]: MatchType.Filenames,
+    [SearchSource.Ids]: MatchType.Ids,
     [SearchSource.Names]: MatchType.Names,
     [SearchSource.AltNames]: MatchType.AltNames,
     [SearchSource.Aliases]: MatchType.Aliases,
     [SearchSource.Categories]: MatchType.Categories
 }
 
+function getIdCandidate(query, folders, opts) {
+    if (!opts.matchIds) return undefined;
+    const queryId = ("" + query).trim();
+    if (queryId === "") return undefined;
+
+    const folderList = Array.isArray(folders) ? folders : [folders];
+    for (const folder of folderList) {
+        for (const lang of opts.queryLanguages) {
+            const index = getIndex(lang, folder);
+            if (index === undefined || !index.ids) continue;
+            if (index.ids[queryId] !== undefined) {
+                return { value: queryId, folder, lang, source: SearchSource.Ids };
+            }
+        }
+    }
+    return undefined;
+}
+
 function getQueryCandidate(query, folders, opts) {
+    const idCandidate = getIdCandidate(query, folders, opts);
+    if (idCandidate) return idCandidate;
+
     if (Array.isArray(folders)) {
         return autocomplete("" + query, folders.reduce((accum, folder) => {
             return accum.concat(getFolderCandidates(opts.queryLanguages, folder, opts));
@@ -119,6 +144,8 @@ function resolveFilename(candidate, opts) {
     switch(candidate.source) {
         case SearchSource.Filenames:
             return index.namemap && index.namemap[candidate.value] !== undefined ? candidate.value : undefined;
+        case SearchSource.Ids:
+            return index.ids ? index.ids[candidate.value] : undefined;
         case SearchSource.Names:
             return index.names ? index.names[candidate.value] : undefined;
         case SearchSource.AltNames:
@@ -157,6 +184,7 @@ function retrieveData(query, folders, opts, getfilename) {
     if (opts.matchFilenameOnly) {
         opts.matchFilenames = true;
         opts.matchNames = false;
+        opts.matchIds = false;
         opts.matchAltNames = false;
         opts.matchAliases = false;
         opts.matchCategories = false;
@@ -609,6 +637,7 @@ genshin.addAltName = function (language, folder, altname, query) {
         true, // matchNames
         false, // matchFilenames
         false, // matchFilenameOnly
+        false, // matchIds
         false, // matchAltNames
         false, // matchAliases
         false, // matchCategories

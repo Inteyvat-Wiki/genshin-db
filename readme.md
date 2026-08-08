@@ -132,6 +132,7 @@ The following are the **default options** that the library begins with:
     matchNames: true, // Allows the matching of names.
     matchFilenames: false, // Allows the matching of JSON filenames.
     matchFilenameOnly: false, // Allows only the matching of JSON filenames.
+    matchIds: false, // Allows exact matching of ids.
     matchAltNames: true, // Allows the matching of alternate or custom names.
     matchAliases: false, // Allows the matching of aliases. These are searchable fields that returns the data object the query matched in.
     matchCategories: false, // Allows the matching of categories. If true, then returns an array if it matches.

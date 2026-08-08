@@ -24,6 +24,7 @@ function makeIndex() {
 		for(const folder of specificfolders) {
 			let index = {
 				namemap: {}, // maps filename to name
+				ids: {}, // maps id to filename
 				names: {}, // maps name to filename
 				aliases: {}, // maps alias to filename
 				categories: {}, // maps category to array of filenames
@@ -42,6 +43,13 @@ function makeIndex() {
 
 						if(index.namemap[filename] !== undefined) console.log(`Duplicate filename: ${lang}/${folder}: ${filename}`);
 						index.namemap[filename] = data.name;
+						if(data.id !== undefined) {
+							if(index.ids[data.id] !== undefined && index.ids[data.id] !== filename) {
+								console.log(`Duplicate id: ${lang}/${folder}: ${data.id},${filename}`);
+							} else {
+								index.ids[data.id] = filename;
+							}
+						}
 						if(index.names[data.name] !== undefined) {
 							// if(!['risingstarlumine', 'scarletbeakduck', 'prizedisshinbladea', 'prizedisshinbladeb', 'cakefortravelera', 'cakefortravelerb', 'keysigila',
 							// 	'keysigilb', 'keysigilc', 'keysigild'].includes(filename)) // TODO: add translated lumine/aether to the end of name for indexing

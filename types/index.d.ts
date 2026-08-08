@@ -116,6 +116,7 @@ declare module "genshin-db" {
 		matchNames?: boolean;
 		matchFilenames?: boolean;
 		matchFilenameOnly?: boolean;
+		matchIds?: boolean;
 		matchAltNames?: boolean;
 		matchAliases?: boolean;
 		matchCategories?: boolean;

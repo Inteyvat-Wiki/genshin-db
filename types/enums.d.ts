@@ -66,6 +66,7 @@ declare module "genshin-db" {
 	export enum MatchType {
 		None = "none",
 		Filenames = "filenames",
+		Ids = "ids",
 		Names = "names",
 		AltNames = "altnames",
 		Aliases = "aliases",

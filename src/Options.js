@@ -9,6 +9,7 @@ class Options {
      * @param {boolean} matchNames - Allows autocomplete matching of data names.
      * @param {boolean} matchFilenames - Allows autocomplete matching of data filenames.
      * @param {boolean} matchFilenameOnly - Allows autocomplete matching of data filenames only.
+     * @param {boolean} matchIds - Allows exact matching of data ids.
      * @param {boolean} matchAltNames - Allows autocomplete matching of alternate or custom names.
      * @param {boolean} matchAliases - Allows autocomplete matching of data-defined aliases.
      * @param {boolean} matchCategories - Allows autocomplete matching of categories. If true, returns an array of the categories that matched.
@@ -23,6 +24,7 @@ class Options {
                 matchNames=undefined,
                 matchFilenames=undefined,
                 matchFilenameOnly=undefined,
+                matchIds=undefined,
                 matchAltNames=undefined,
                 matchAliases=undefined,
                 matchCategories=undefined,
@@ -36,6 +38,7 @@ class Options {
         this.matchNames = matchNames;
         this.matchFilenames = matchFilenames;
         this.matchFilenameOnly = matchFilenameOnly;
+        this.matchIds = matchIds;
         this.matchAltNames = matchAltNames;
         this.matchAliases = matchAliases;
         this.matchCategories = matchCategories;

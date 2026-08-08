@@ -1,52 +1,111 @@
-let all = require('./min/data.min.json');
 const pako = require('pako');
 
-if(all instanceof ArrayBuffer) {
-    all = JSON.parse(pako.ungzip(all, { to: 'string' }));
+let fs;
+let path;
+let useFileData = false;
+try {
+    const req = eval('require');
+    fs = req('fs');
+    path = req('path');
+    useFileData = fs.existsSync(path.join(__dirname, 'data'));
+} catch (e) {
+    useFileData = false;
 }
 
-/**
-{
-  data: {
-    [Languages]: {
-      [folders]: ObjectMap
+let bundledAll;
+function loadBundledData() {
+    if (bundledAll !== undefined) return bundledAll;
+    let all = require('./min/data.min.json');
+    if (all instanceof ArrayBuffer) {
+        all = JSON.parse(pako.ungzip(all, { to: 'string' }));
     }
-  },
-  index: {
-    [Languages]: {
-      [folders]: ObjectMap
-    }
-  },
-  image: {
-    [folders]: ObjectMap
-  },
-  stats: {
-    [folders]: ObjectMap
-  },
-  curve: {
-    [folders]: ObjectMap
-  },
-  url: {
-    [folders]: ObjectMap
-  }
+    if(!all.data) all.data = {};
+    if(!all.index) all.index = {};
+    if(!all.image) all.image = {};
+    if(!all.url) all.url = {};
+    if(!all.stats) all.stats = {};
+    if(!all.curve) all.curve = {};
+    if(!all.version) all.version = {};
+    bundledAll = all;
+    return bundledAll;
 }
-*/
 
-if(!all.data) all.data = {};
-if(!all.index) all.index = {};
-if(!all.image) all.image = {};
-if(!all.url) all.url = {};
-if(!all.stats) all.stats = {};
-if(!all.curve) all.curve = {};
-if(!all.version) all.version = {};
+const fileCache = {
+    data: {},
+    index: {},
+    image: {},
+    stats: {},
+    curve: {},
+    url: {},
+    version: {},
+};
 
-const alldata    = all.data;
-const allindex   = all.index;
-const allimage   = all.image;
-const allurl     = all.url;
-const allstats   = all.stats;
-const allcurve   = all.curve;
-const allversion = all.version
+function readJsonFile(filepath) {
+    if (!useFileData) return undefined;
+    try {
+        return JSON.parse(fs.readFileSync(filepath, 'utf8'));
+    } catch (e) {
+        return undefined;
+    }
+}
+
+function readCachedJson(cache, filepath) {
+    if (!useFileData) return undefined;
+    if (cache[filepath] !== undefined) return cache[filepath];
+    const data = readJsonFile(filepath);
+    cache[filepath] = data;
+    return data;
+}
+
+function getSourceData() {
+    if (useFileData) return undefined;
+    const all = loadBundledData();
+    return {
+        data: all.data,
+        index: all.index,
+        image: all.image,
+        stats: all.stats,
+        curve: all.curve,
+        url: all.url,
+        version: all.version,
+    };
+}
+const sourceAll = getSourceData();
+const alldata    = sourceAll ? sourceAll.data : {};
+const allindex   = sourceAll ? sourceAll.index : {};
+const allimage   = sourceAll ? sourceAll.image : {};
+const allurl     = sourceAll ? sourceAll.url : {};
+const allstats   = sourceAll ? sourceAll.stats : {};
+const allcurve   = sourceAll ? sourceAll.curve : {};
+const allversion = sourceAll ? sourceAll.version : {};
+
+function getDataPath(lang, folder, filename) {
+    return path.join(__dirname, 'data', lang, folder, `${filename}.json`);
+}
+
+function getIndexPath(lang, folder) {
+    return path.join(__dirname, 'data', 'index', lang, `${folder}.json`);
+}
+
+function getImagePath(folder) {
+    return path.join(__dirname, 'data', 'image', `${folder}.json`);
+}
+
+function getStatsPath(folder) {
+    return path.join(__dirname, 'data', 'stats', `${folder}.json`);
+}
+
+function getCurvePath(folder) {
+    return path.join(__dirname, 'data', 'curve', `${folder}.json`);
+}
+
+function getUrlPath(folder) {
+    return path.join(__dirname, 'data', 'url', `${folder}.json`);
+}
+
+function getVersionPath(folder) {
+    return path.join(__dirname, 'data', 'version', `${folder}.json`);
+}
 
 const design = require('./design.json');
 const v4prop = require('./v4prop.js');
@@ -60,7 +119,11 @@ const calcStatsMap = {
 function getData(lang, folder, filename, v4Prop, v4PropOnly) {
     let tmp;
     try {
-        tmp = alldata[lang][folder][filename];
+        if (useFileData) {
+            tmp = dataExists(alldata, lang, folder, filename) || readCachedJson(fileCache.data, getDataPath(lang, folder, filename));
+        } else {
+            tmp = alldata[lang][folder][filename];
+        }
         if(tmp.images === undefined && design.hasImage.includes(folder)) {
             tmp.images = getImage(folder, filename);
         }
@@ -86,36 +149,66 @@ function getData(lang, folder, filename, v4Prop, v4PropOnly) {
 
 function getIndex(lang, folder) {
     try {
+        if (useFileData) {
+            return dataExists(allindex, lang, folder) || readCachedJson(fileCache.index, getIndexPath(lang, folder));
+        }
         return allindex[lang][folder];
     } catch(e) { return undefined; }
 }
 
 function getImage(folder, filename) {
     try {
+        if (useFileData) {
+            const cached = dataExists(allimage, undefined, folder, filename);
+            if (cached !== undefined) return cached;
+            const image = readCachedJson(fileCache.image, getImagePath(folder));
+            return image ? image[filename] : undefined;
+        }
         return allimage[folder][filename];
     } catch(e) { return undefined; }
 }
 
 function getURL(folder, filename) {
     try {
+        if (useFileData) {
+            const cached = dataExists(allurl, undefined, folder, filename);
+            if (cached !== undefined) return cached;
+            const url = readCachedJson(fileCache.url, getUrlPath(folder));
+            return url ? url[filename] : undefined;
+        }
         return allurl[folder][filename];
     } catch(e) { return undefined; }
 }
 
 function getVersion(folder,  filename) {
     try {
+        if (useFileData) {
+            const cached = dataExists(allversion, undefined, folder, filename);
+            if (cached !== undefined) return cached;
+            const version = readCachedJson(fileCache.version, getVersionPath(folder));
+            return version ? version[filename] : '';
+        }
         return allversion[folder][filename];
     } catch(e) { return ''; }
 }
 
 function getStats(folder, filename) {
     try {
+        if (useFileData) {
+            const cached = dataExists(allstats, undefined, folder, filename);
+            if (cached !== undefined) return cached;
+            const stats = readCachedJson(fileCache.stats, getStatsPath(folder));
+            return stats ? stats[filename] : undefined;
+        }
         return allstats[folder][filename];
     } catch(e) { return undefined; }
 }
 
 function getCurve(folder) {
     try {
+        if (useFileData) {
+            return allcurve[folder] || readCachedJson(fileCache.curve, getCurvePath(folder));
+        }
         return allcurve[folder];
     } catch(e) { return undefined; }
 }
@@ -283,7 +376,7 @@ function assignArray(obj, keyPath, lastKey, array) {
 const languagesArr = require('./language.js').languages;
 const foldersArr = require('./folder.js').folders;
 function addData(newdata, override = true) {
-    if(newdata instanceof ArrayBuffer || (Buffer && newdata instanceof Buffer)) {
+    if(newdata instanceof ArrayBuffer || (typeof Buffer !== 'undefined' && newdata instanceof Buffer)) {
         newdata = JSON.parse(pako.ungzip(newdata, { to: 'string' }));
     }
 
@@ -308,7 +401,7 @@ function addData(newdata, override = true) {
             for(const folder of Object.keys(newdata.index[language])) { // allows new folders
                 if(!isObject(newdata.index[language][folder])) continue;
                 for(const indexprop of ['namemap', 'names', 'aliases', 'categories', 'properties']) {
-                    initPropIfNotExist(allindex, ['language', 'folder', indexprop]);
+                    initPropIfNotExist(allindex, [language, folder, indexprop]);
                     if(!isObject(newdata.index[language][folder][indexprop])) continue;
                     for(const filename in newdata.index[language][folder][indexprop]) {
                         switch(indexprop) { // check if valid type (either string or array)

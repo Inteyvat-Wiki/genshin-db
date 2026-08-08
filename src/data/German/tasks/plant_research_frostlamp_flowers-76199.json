@@ -1,0 +1,163 @@
+{
+	"id": 76199,
+	"type": "WQ",
+	"name": "Botanische Forschung – Frostglocke",
+	"description": "Westlich der Enklave des Frostmonds wurden Kolonien von Frostglocken entdeckt ...",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_SHOW",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [],
+	"steps": [
+		{
+			"id": 7619901,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_PLOT",
+					"rawParams": [
+						7619901,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7619902,
+			"order": 2,
+			"listShowType": "QUEST_SHOW",
+			"description": "Geh an den angegebenen Ort und beginne mit der Untersuchung.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7619901,
+						0
+					],
+					"talkId": 7619901
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					1849.176,
+					229.446,
+					10408.2
+				],
+				"pointId": 15870
+			}
+		},
+		{
+			"id": 7619903,
+			"order": 3,
+			"listShowType": "QUEST_SHOW",
+			"description": "Sammle Frostglocken.",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_OBTAIN_ITEM",
+					"rawParams": [
+						121547,
+						0
+					]
+				}
+			],
+			"guide": {
+				"sceneId": 3,
+				"position": [
+					1844.911,
+					221.253,
+					10439.67
+				],
+				"pointId": 15871
+			}
+		}
+	],
+	"talks": [
+		{
+			"id": 7619901,
+			"completionStepIds": [
+				7619902
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7619902",
+							"2"
+						],
+						"stepId": 7619902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PLAYER_CURRENT_AVATAR",
+						"rawParams": [
+							"10000130",
+							"0",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 761990101,
+					"content": "Die Vorbereitungen für die Untersuchung sind schnell getroffen ...",
+					"roleType": "TALK_ROLE_NEED_CLICK_BLACK_SCREEN",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7619902,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7619902",
+							"2"
+						],
+						"stepId": 7619902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_PLAYER_CURRENT_NOT_AVATAR",
+						"rawParams": [
+							"10000130",
+							"0",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 761990201,
+					"content": "(In der Nähe scheint es etwas zu geben, das es sich zu untersuchen lohnt. <color=#FFCC33FF>Linnea</color> kennt sich mit der lokalen Ökologie gut aus. Wenn ich sie frage, finde ich vielleicht etwas heraus ...)",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		}
+	]
+}

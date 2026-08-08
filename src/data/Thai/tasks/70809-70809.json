@@ -1,0 +1,534 @@
+{
+	"id": 70809,
+	"type": "WQ",
+	"name": "",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		70077
+	],
+	"steps": [
+		{
+			"id": 7080901,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080902,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7080902,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080903,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7080903,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080904,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080903,
+						0
+					],
+					"talkId": 7080903
+				}
+			]
+		},
+		{
+			"id": 7080905,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6180115,
+						0
+					],
+					"talkId": 6180115
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6180116,
+						0
+					],
+					"talkId": 6180116
+				}
+			]
+		},
+		{
+			"id": 7080906,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080905,
+						0
+					],
+					"talkId": 7080905
+				}
+			]
+		},
+		{
+			"id": 7080907,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080904,
+						0
+					],
+					"talkId": 7080904
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7080901,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7080902"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080902",
+							"2"
+						],
+						"stepId": 7080902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7007711",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Uchida Kotaro"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708090101,
+					"content": "เธอกำลังตามหาสิ่งนี้อยู่รึเปล่า?",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7080902,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7080903"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080903",
+							"2"
+						],
+						"stepId": 7080903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7007711",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lohen"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708090201,
+					"content": "ฉันเจออันนี้ในรังนกน่ะ...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7080903,
+			"completionStepIds": [
+				7080904
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080904",
+							"2"
+						],
+						"stepId": 7080904,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							3048.129,
+							237.658,
+							-131.896
+						],
+						"pointId": 16753
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							3048.092,
+							237.511,
+							-133.307
+						],
+						"pointId": 16779
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 708090301,
+					"content": "(ในรังนกมีเศษกระดาษชิ้นเล็กชิ้นน้อยกระจัดกระจายอยู่มากมาย ดูเหมือนจะมีร่องรอยลายมือที่ขาด ๆ หาย ๆ อยู่ด้วย...)",
+					"roleType": "TALK_ROLE_NEED_CLICK_BLACK_SCREEN",
+					"nextDialogs": [
+						708090302
+					]
+				},
+				{
+					"id": 708090302,
+					"content": "เศษกระดาษพวกนี้... คงไม่ใช่ว่าพวกมันตั้งใจฉีกมาเพื่อทำรังหรอกใช่มั้ย?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090303
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 708090303,
+					"content": "เหมือนจะมีตัวหนังสือเขียนอยู่ด้วยนะ อยากลองต่อดูมั้ยว่าเขียนไว้ว่าอะไร?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090304
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 708090304,
+					"content": "สุดท้ายก็ต้องมาต่อเองอยู่ดี...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708090305
+					]
+				},
+				{
+					"id": 708090305,
+					"content": "เธอไม่สงสัยหน่อยเหรอ? เผลอ ๆ อาจจะเป็นแผนที่สมบัติก็ได้นะ!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090306
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 708090306,
+					"content": "ต่อแผ่นกระดาษจนเสร็จ ท่ามกลางเสียงเร่งเร้าของ Paimon...",
+					"roleType": "TALK_ROLE_NEED_CLICK_BLACK_SCREEN",
+					"nextDialogs": [
+						708090307
+					]
+				},
+				{
+					"id": 708090307,
+					"content": "ไหนฉันดูหน่อยซิ... นี่มัน...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090308
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 708090308,
+					"content": "นะ...นี่หรือว่าจะเป็น... \"แผนการก่ออาชญากรรม\" งั้นเหรอ!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090309,
+						708090311
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 708090309,
+					"content": "แผนก่ออาชญากรรมของใครจะโดนนกคาบไปกันล่ะ!",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708090310
+					]
+				},
+				{
+					"id": 708090310,
+					"content": "ตะ...แต่ว่าในนิยายก็มักจะมีพล็อตแบบนี้อยู่บ่อย ๆ นี่นา! แผนการที่ไม่มีทางพลาด ดันมาพลาดในจุดที่ไม่น่าจะเป็นไปได้ที่สุด...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090313
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 708090313,
+					"content": "พวกเราไปสืบข่าวที่ร้านเหล้าแถว ๆ นี้กันดูมั้ย? เผื่อจะมีใครเคยได้ยินเรื่องอย่าง \"ช่วงนี้มีคนกำลังจะก่ออาชญากรรม!\" อะไรทำนองนี้บ้าง...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 708090311,
+					"content": "เชื่อว่ามีไว้ก่อน ดีกว่าเชื่อว่าไม่มี...",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708090312
+					]
+				},
+				{
+					"id": 708090312,
+					"content": "ธะ...เธอพูดถูก กันไว้ดีกว่าแก้... ถ้ามีคนคิดจะก่ออาชญากรรมจริง ๆ จะมาเสียใจทีหลังก็สายไปแล้ว!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090313
+					],
+					"speakerTitle": "Paimon"
+				}
+			]
+		},
+		{
+			"id": 7080904,
+			"completionStepIds": [
+				7080907
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080907",
+							"2"
+						],
+						"stepId": 7080907,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Uchida Kotaro"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708090401,
+					"content": "นี่...นี่มัน... \"วิธีการก่อเหตุ\" ของฉัน!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090402
+					],
+					"speakerTitle": "Uchida Kotaro"
+				},
+				{
+					"id": 708090402,
+					"content": "#{NICKNAME}! เขาดันยอมรับออกมาตรง ๆ เลย!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090403
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 708090403,
+					"content": "อ๊ะ! อย่าเข้าใจผิดนะ นี่คือแผนการที่ฉันตั้งใจจะเขียนลงในนิยายเรื่องถัดไป ซึ่งฉันคิดมันออกตอนดื่มเหล้าก่อนหน้านี้น่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090404
+					],
+					"speakerTitle": "Uchida Kotaro"
+				},
+				{
+					"id": 708090404,
+					"content": "นึกไม่ถึงเลยว่าพอสร่างเมา กระดาษแผ่นนี้ก็หายไป... ฉันเกือบจะคิดว่าตัวเองฝันไปซะแล้ว",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090405
+					],
+					"speakerTitle": "Uchida Kotaro"
+				},
+				{
+					"id": 708090405,
+					"content": "เอาเป็นว่า ขอบใจมากนะที่ช่วยตามหากลับมาให้ ทีนี้นิยายของฉันก็น่าจะพร้อมเฉิดฉายอย่างราบรื่นแล้ว ไว้ถึงตอนนั้นฉันจะให้เธอเล่มนึงก่อนเลย! พร้อมลายเซ็นด้วยนะ!",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Uchida Kotaro"
+				}
+			]
+		},
+		{
+			"id": 7080905,
+			"completionStepIds": [
+				7080906
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080906",
+							"2"
+						],
+						"stepId": 7080906,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"Lohen"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708090501,
+					"content": "โห? น่าสนใจดีนี่ ไหนขอดูหน่อยซิ... อืม ความคิดสร้างสรรค์ให้หกคะแนน ความเป็นไปได้น่าจะสักสี่คะแนนมั้ง...",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090502
+					],
+					"speakerTitle": "Lohen"
+				},
+				{
+					"id": 708090502,
+					"content": "นี่... นี่คือ \"แผนการก่ออาชญากรรม\" เหรอ?",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090503
+					],
+					"speakerTitle": "Paimon"
+				},
+				{
+					"id": 708090503,
+					"content": "ฮ่าฮ่า ที่จริงแล้วที่ฉันวิ่งจากค่ายมาที่นี่ ก็เพราะได้ยินมาว่ามีคนกำลังวางแผน \"แผนการก่ออาชญากรรม\" แปลก ๆ อยู่ที่นี่น่ะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090504
+					],
+					"speakerTitle": "Lohen"
+				},
+				{
+					"id": 708090504,
+					"content": "... แต่หลังจากได้เห็นบันทึกหน้านี้แล้ว ฉันก็พอจะรู้แล้วล่ะว่าข่าวลือพวกนั้นเกิดขึ้นมาได้ยังไง",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090505
+					],
+					"speakerTitle": "Lohen"
+				},
+				{
+					"id": 708090505,
+					"content": "\"แผนการก่ออาชญากรรม\" ฉบับนี้เอาให้กองอัศวินเป็นคนจัดการเถอะ แล้วถ้าว่าง ๆ ก็แวะมาเดินเล่นที่จุดประจำการของฉันดูมั้ย? ไม่แน่อาจจะมีเรื่องสนุก ๆ ให้ดูก็ได้นะ",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "Lohen"
+				}
+			]
+		}
+	]
+}

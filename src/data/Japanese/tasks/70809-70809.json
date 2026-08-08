@@ -1,0 +1,534 @@
+{
+	"id": 70809,
+	"type": "WQ",
+	"name": "",
+	"description": "",
+	"unlockDescription": "",
+	"chapter": "",
+	"showType": "QUEST_HIDDEN",
+	"activityId": 0,
+	"mainQuestTag": "MAINQUEST_TAG_NONE",
+	"suggestTrackMainQuestList": [],
+	"prevMainQuestList": [
+		70077
+	],
+	"steps": [
+		{
+			"id": 7080901,
+			"order": 1,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_LUA_NOTIFY",
+					"rawParams": [
+						0,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080902,
+			"order": 3,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7080902,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080903,
+			"order": 4,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_FINISH_ITEM_GIVING",
+					"rawParams": [
+						7080903,
+						0
+					]
+				}
+			]
+		},
+		{
+			"id": 7080904,
+			"order": 2,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080903,
+						0
+					],
+					"talkId": 7080903
+				}
+			]
+		},
+		{
+			"id": 7080905,
+			"order": 7,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6180115,
+						0
+					],
+					"talkId": 6180115
+				},
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						6180116,
+						0
+					],
+					"talkId": 6180116
+				}
+			]
+		},
+		{
+			"id": 7080906,
+			"order": 6,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080905,
+						0
+					],
+					"talkId": 7080905
+				}
+			]
+		},
+		{
+			"id": 7080907,
+			"order": 5,
+			"listShowType": "QUEST_HIDDEN",
+			"description": "",
+			"finishConditions": [
+				{
+					"type": "QUEST_CONTENT_COMPLETE_TALK",
+					"rawParams": [
+						7080904,
+						0
+					],
+					"talkId": 7080904
+				}
+			]
+		}
+	],
+	"talks": [
+		{
+			"id": 7080901,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7080902"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080902",
+							"2"
+						],
+						"stepId": 7080902,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7007711",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"内田幸太郎"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708090101,
+					"content": "探してるのはこれ？",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7080902,
+			"completionStepIds": [],
+			"beginWay": "TALK_BEGIN_NONE",
+			"beginConditions": {
+				"logic": "LOGIC_AND",
+				"conditions": [
+					{
+						"type": "QUEST_COND_ITEM_GIVING_ACTIVED",
+						"rawParams": [
+							"7080903"
+						]
+					},
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080903",
+							"2"
+						],
+						"stepId": 7080903,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					},
+					{
+						"type": "QUEST_COND_QUEST_GLOBAL_VAR_EQUAL",
+						"rawParams": [
+							"7007711",
+							"0"
+						]
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ローエン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708090201,
+					"content": "鳥の巣でこれを見つけた…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": []
+				}
+			]
+		},
+		{
+			"id": 7080903,
+			"completionStepIds": [
+				7080904
+			],
+			"beginWay": "TALK_BEGIN_MANUAL",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080904",
+							"2"
+						],
+						"stepId": 7080904,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [],
+				"points": [
+					{
+						"sceneId": 3,
+						"position": [
+							3048.129,
+							237.658,
+							-131.896
+						],
+						"pointId": 16753
+					},
+					{
+						"sceneId": 3,
+						"position": [
+							3048.092,
+							237.511,
+							-133.307
+						],
+						"pointId": 16779
+					}
+				]
+			},
+			"dialogs": [
+				{
+					"id": 708090301,
+					"content": "（鳥の巣の中にはバラバラになった紙切れがたくさんあり、ところどころに字の跡も見られる…）",
+					"roleType": "TALK_ROLE_NEED_CLICK_BLACK_SCREEN",
+					"nextDialogs": [
+						708090302
+					]
+				},
+				{
+					"id": 708090302,
+					"content": "このメモ…もしかして、巣を作るために破かれたのか？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090303
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 708090303,
+					"content": "なにか書いてあるみたいだぞ。つなぎ合わせて、読んでみようぜ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090304
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 708090304,
+					"content": "やっぱり自力でつなげなきゃいけないの…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708090305
+					]
+				},
+				{
+					"id": 708090305,
+					"content": "おまえはこれが気にならないのか！？宝の地図かもしれないんだぞ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090306
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 708090306,
+					"content": "パイモンに促され、メモをつなぎ合わせた…",
+					"roleType": "TALK_ROLE_NEED_CLICK_BLACK_SCREEN",
+					"nextDialogs": [
+						708090307
+					]
+				},
+				{
+					"id": 708090307,
+					"content": "よーし、どれどれ…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090308
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 708090308,
+					"content": "こ、これってまさか…「犯罪計画書」じゃないか！？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090309,
+						708090311
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 708090309,
+					"content": "そんなものを鳥に取られるなんて…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708090310
+					]
+				},
+				{
+					"id": 708090310,
+					"content": "で、でも小説にはよくある展開だろ？万全な計画に限って、ありえないところでミスをしちゃうって…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090313
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 708090313,
+					"content": "近くの酒場で聞き込みしてみようぜ？「最近、誰かが犯罪しようとしてる！」みたいな噂があるかも…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 708090311,
+					"content": "ありえないとは言い切れない…",
+					"roleType": "TALK_ROLE_PLAYER",
+					"nextDialogs": [
+						708090312
+					]
+				},
+				{
+					"id": 708090312,
+					"content": "お、おう。万が一ってこともあるし…もしホントに犯罪を企んでるやつがいたら、後で後悔しても遅いもんな！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090313
+					],
+					"speakerTitle": "パイモン"
+				}
+			]
+		},
+		{
+			"id": 7080904,
+			"completionStepIds": [
+				7080907
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080907",
+							"2"
+						],
+						"stepId": 7080907,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"内田幸太郎"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708090401,
+					"content": "こ、これは…僕の「犯行の手口」だ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090402
+					],
+					"speakerTitle": "内田幸太郎"
+				},
+				{
+					"id": 708090402,
+					"content": "#{NICKNAME}！あいつ、あっさり認めたぞ！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090403
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 708090403,
+					"content": "ああっ！誤解しないでくれ。これは次の小説で使おうと思ってたトリックでね。先日、酒を飲みながら思いついたんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090404
+					],
+					"speakerTitle": "内田幸太郎"
+				},
+				{
+					"id": 708090404,
+					"content": "まさか、酔いがさめるとメモごと消えることになるとは…自分が夢でも見ていたのかと思ったよ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090405
+					],
+					"speakerTitle": "内田幸太郎"
+				},
+				{
+					"id": 708090405,
+					"content": "とにかく、見つけてくれてありがとう。これで小説も無事に完成しそうだ。出来上がったら真っ先に一冊送ってあげるよ！サイン入りでね！",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "内田幸太郎"
+				}
+			]
+		},
+		{
+			"id": 7080905,
+			"completionStepIds": [
+				7080906
+			],
+			"beginWay": "TALK_BEGIN_AUTO",
+			"beginConditions": {
+				"logic": "LOGIC_NONE",
+				"conditions": [
+					{
+						"type": "QUEST_COND_STATE_EQUAL",
+						"rawParams": [
+							"7080906",
+							"2"
+						],
+						"stepId": 7080906,
+						"stateName": "QUEST_STATE_UNFINISHED"
+					}
+				]
+			},
+			"mark": "TALK_MARK_NONE",
+			"trigger": {
+				"objectNames": [
+					"ローエン"
+				],
+				"points": []
+			},
+			"dialogs": [
+				{
+					"id": 708090501,
+					"content": "へぇ？面白そうだな。見せてくれ…ふーん、アイデアは六点、実現性は四点ってとこか…",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090502
+					],
+					"speakerTitle": "ローエン"
+				},
+				{
+					"id": 708090502,
+					"content": "こ、これって…「犯罪計画書」じゃないか！？",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090503
+					],
+					"speakerTitle": "パイモン"
+				},
+				{
+					"id": 708090503,
+					"content": "ハハッ、俺がわざわざ駐屯地から出てきたのは、どっかの誰かがここで奇妙な「犯罪計画」を練ってるって聞いたからなんだ。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090504
+					],
+					"speakerTitle": "ローエン"
+				},
+				{
+					"id": 708090504,
+					"content": "…ま、このメモを見たら、あの噂がどうやって広まったのか…大体見当がついた。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [
+						708090505
+					],
+					"speakerTitle": "ローエン"
+				},
+				{
+					"id": 708090505,
+					"content": "この「犯罪計画書」は騎士団に任せとけ。あとで暇があれば、俺の駐屯地に遊びに来いよ。面白いもんが見れるかもな。",
+					"roleType": "TALK_ROLE_NPC",
+					"nextDialogs": [],
+					"speakerTitle": "ローエン"
+				}
+			]
+		}
+	]
+}
