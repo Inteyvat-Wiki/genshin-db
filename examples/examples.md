@@ -34,41 +34,41 @@ const genshindb = require('genshin-db');
 
 ```js
 [
-  'Aether',           'Aino',          'Albedo',
-  'Alhaitham',        'Aloy',          'Amber',
-  'Arataki Itto',     'Arlecchino',    'Baizhu',
-  'Barbara',          'Beidou',        'Bennett',
-  'Candace',          'Charlotte',     'Chasca',
-  'Chevreuse',        'Chiori',        'Chongyun',
-  'Citlali',          'Clorinde',      'Collei',
-  'Columbina',        'Cyno',          'Dahlia',
-  'Dehya',            'Diluc',         'Diona',
-  'Dori',             'Durin',         'Emilie',
-  'Escoffier',        'Eula',          'Faruzan',
-  'Fischl',           'Flins',         'Freminet',
-  'Furina',           'Gaming',        'Ganyu',
-  'Gorou',            'Hu Tao',        'Iansan',
-  'Ifa',              'Illuga',        'Ineffa',
-  'Jahoda',           'Jean',          'Kachina',
-  'Kaedehara Kazuha', 'Kaeya',         'Kamisato Ayaka',
-  'Kamisato Ayato',   'Kaveh',         'Keqing',
-  'Kinich',           'Kirara',        'Klee',
-  'Kujou Sara',       'Kuki Shinobu',  'Lan Yan',
-  'Lauma',            'Layla',         'Linnea',
-  'Lisa',             'Lohen',         'Lumine',
-  'Lynette',          'Lyney',         'Manekin',
-  'Manekina',         'Mavuika',       'Mika',
-  'Mona',             'Mualani',       'Nahida',
-  'Navia',            'Nefer',         'Neuvillette',
-  'Nicole',           'Nilou',         'Ningguang',
-  'Noelle',           'Ororon',        'Prune',
-  'Qiqi',             'Raiden Shogun', 'Razor',
-  'Rosaria',          'Sandrone',      'Sangonomiya Kokomi',
-  'Sayu',             'Sethos',        'Shenhe',
-  'Shikanoin Heizou', 'Sigewinne',     'Skirk',
-  'Sucrose',          'Tartaglia',     'Thoma',
-  'Tighnari',
-  ... 20 more items
+  'Aether',         'Aino',               'Albedo',
+  'Alhaitham',      'Aloy',               'Alyosha',
+  'Amber',          'Arataki Itto',       'Arlecchino',
+  'Baizhu',         'Barbara',            'Beidou',
+  'Bennett',        'Candace',            'Charlotte',
+  'Chasca',         'Chevreuse',          'Chiori',
+  'Chongyun',       'Citlali',            'Clorinde',
+  'Collei',         'Columbina',          'Cyno',
+  'Dahlia',         'Dehya',              'Diluc',
+  'Diona',          'Dori',               'Durin',
+  'Emilie',         'Escoffier',          'Eula',
+  'Faruzan',        'Fischl',             'Flins',
+  'Freminet',       'Furina',             'Gaming',
+  'Ganyu',          'Gorou',              'Hu Tao',
+  'Iansan',         'Ifa',                'Illuga',
+  'Ineffa',         'Jahoda',             'Jean',
+  'Kachina',        'Kaedehara Kazuha',   'Kaeya',
+  'Kamisato Ayaka', 'Kamisato Ayato',     'Kaveh',
+  'Keqing',         'Kinich',             'Kirara',
+  'Klee',           'Kujou Sara',         'Kuki Shinobu',
+  'Lan Yan',        'Lauma',              'Layla',
+  'Linnea',         'Lisa',               'Lohen',
+  'Lumine',         'Lynette',            'Lyney',
+  'Manekin',        'Manekina',           'Mavuika',
+  'Mika',           'Mona',               'Mualani',
+  'Nahida',         'Navia',              'Nefer',
+  'Neuvillette',    'Nicole',             'Nilou',
+  'Ningguang',      'Noelle',             'Odette',
+  'Ororon',         'Prune',              'Qiqi',
+  'Raiden Shogun',  'Razor',              'Rosaria',
+  'Sandrone',       'Sangonomiya Kokomi', 'Sayu',
+  'Sethos',         'Shenhe',             'Shikanoin Heizou',
+  'Sigewinne',      'Skirk',              'Sucrose',
+  'Tartaglia',
+  ... 22 more items
 ]
 ```
 
@@ -594,8 +594,7 @@ const genshindb = require('genshin-db');
   options: {
     dumpResult: true,
     matchNames: true,
-    matchFilenames: false,
-    matchFilenameOnly: false,
+    matchIds: false,
     matchAltNames: true,
     matchAliases: false,
     matchCategories: true,
@@ -675,9 +674,10 @@ const genshindb = require('genshin-db');
   'Kuki Shinobu',     'Layla',
   'Lumine',           'Lynette',
   'Manekin',          'Manekina',
-  'Nilou',            'Qiqi',
-  'Skirk',            'Xilonen',
-  'Xingqiu',          'Zibai'
+  'Nilou',            'Odette',
+  'Qiqi',             'Skirk',
+  'Xilonen',          'Xingqiu',
+  'Zibai'
 ]
 ```
 
@@ -766,32 +766,32 @@ const genshindb = require('genshin-db');
 ```js
 [
   'Aino',               'Albedo',           'Alhaitham',
-  'Aloy',               'Amber',            'Arataki Itto',
-  'Arlecchino',         'Baizhu',           'Barbara',
-  'Beidou',             'Bennett',          'Candace',
-  'Charlotte',          'Chasca',           'Chevreuse',
-  'Chiori',             'Chongyun',         'Citlali',
-  'Clorinde',           'Collei',           'Columbina',
-  'Cyno',               'Dahlia',           'Dehya',
-  'Diluc',              'Diona',            'Dori',
-  'Durin',              'Emilie',           'Escoffier',
-  'Eula',               'Faruzan',          'Fischl',
-  'Flins',              'Freminet',         'Furina',
-  'Gaming',             'Ganyu',            'Gorou',
-  'Hu Tao',             'Iansan',           'Ifa',
-  'Illuga',             'Ineffa',           'Jahoda',
-  'Jean',               'Kachina',          'Kaedehara Kazuha',
-  'Kaeya',              'Kamisato Ayaka',   'Kamisato Ayato',
-  'Kaveh',              'Keqing',           'Kinich',
-  'Kirara',             'Klee',             'Kujou Sara',
-  'Kuki Shinobu',       'Lan Yan',          'Lauma',
-  'Layla',              'Linnea',           'Lisa',
-  'Lohen',              'Lynette',          'Lyney',
-  'Manekin',            'Manekina',         'Mavuika',
-  'Mika',               'Mona',             'Mualani',
-  'Nahida',             'Navia',            'Nefer',
-  'Neuvillette',        'Nicole',           'Nilou',
-  'Ningguang',          'Noelle',           'Ororon',
+  'Aloy',               'Alyosha',          'Amber',
+  'Arataki Itto',       'Arlecchino',       'Baizhu',
+  'Barbara',            'Beidou',           'Bennett',
+  'Candace',            'Charlotte',        'Chasca',
+  'Chevreuse',          'Chiori',           'Chongyun',
+  'Citlali',            'Clorinde',         'Collei',
+  'Columbina',          'Cyno',             'Dahlia',
+  'Dehya',              'Diluc',            'Diona',
+  'Dori',               'Durin',            'Emilie',
+  'Escoffier',          'Eula',             'Faruzan',
+  'Fischl',             'Flins',            'Freminet',
+  'Furina',             'Gaming',           'Ganyu',
+  'Gorou',              'Hu Tao',           'Iansan',
+  'Ifa',                'Illuga',           'Ineffa',
+  'Jahoda',             'Jean',             'Kachina',
+  'Kaedehara Kazuha',   'Kaeya',            'Kamisato Ayaka',
+  'Kamisato Ayato',     'Kaveh',            'Keqing',
+  'Kinich',             'Kirara',           'Klee',
+  'Kujou Sara',         'Kuki Shinobu',     'Lan Yan',
+  'Lauma',              'Layla',            'Linnea',
+  'Lisa',               'Lohen',            'Lynette',
+  'Lyney',              'Mavuika',          'Mika',
+  'Mona',               'Mualani',          'Nahida',
+  'Navia',              'Nefer',            'Neuvillette',
+  'Nicole',             'Nilou',            'Ningguang',
+  'Noelle',             'Odette',           'Ororon',
   'Prune',              'Qiqi',             'Raiden Shogun',
   'Razor',              'Rosaria',          'Sandrone',
   'Sangonomiya Kokomi', 'Sayu',             'Sethos',
@@ -1105,56 +1105,15 @@ const genshindb = require('genshin-db');
     }
   },
   costs: {
-    lvl2: [
-      { id: 202, name: 'Mora', count: 12500 },
-      { id: 104310, name: 'Teachings of Prosperity', count: 3 },
-      { id: 112032, name: "Recruit's Insignia", count: 6 }
-    ],
-    lvl3: [
-      { id: 202, name: 'Mora', count: 17500 },
-      { id: 104311, name: 'Guide to Prosperity', count: 2 },
-      { id: 112033, name: "Sergeant's Insignia", count: 3 }
-    ],
-    lvl4: [
-      { id: 202, name: 'Mora', count: 25000 },
-      { id: 104311, name: 'Guide to Prosperity', count: 4 },
-      { id: 112033, name: "Sergeant's Insignia", count: 4 }
-    ],
-    lvl5: [
-      { id: 202, name: 'Mora', count: 30000 },
-      { id: 104311, name: 'Guide to Prosperity', count: 6 },
-      { id: 112033, name: "Sergeant's Insignia", count: 6 }
-    ],
-    lvl6: [
-      { id: 202, name: 'Mora', count: 37500 },
-      { id: 104311, name: 'Guide to Prosperity', count: 9 },
-      { id: 112033, name: "Sergeant's Insignia", count: 9 }
-    ],
-    lvl7: [
-      { id: 202, name: 'Mora', count: 120000 },
-      { id: 104312, name: 'Philosophies of Prosperity', count: 4 },
-      { id: 112034, name: "Lieutenant's Insignia", count: 4 },
-      { id: 113008, name: 'Spirit Locket of Boreas', count: 1 }
-    ],
-    lvl8: [
-      { id: 202, name: 'Mora', count: 260000 },
-      { id: 104312, name: 'Philosophies of Prosperity', count: 6 },
-      { id: 112034, name: "Lieutenant's Insignia", count: 6 },
-      { id: 113008, name: 'Spirit Locket of Boreas', count: 1 }
-    ],
-    lvl9: [
-      { id: 202, name: 'Mora', count: 450000 },
-      { id: 104312, name: 'Philosophies of Prosperity', count: 12 },
-      { id: 112034, name: "Lieutenant's Insignia", count: 9 },
-      { id: 113008, name: 'Spirit Locket of Boreas', count: 2 }
-    ],
-    lvl10: [
-      { id: 202, name: 'Mora', count: 700000 },
-      { id: 104312, name: 'Philosophies of Prosperity', count: 16 },
-      { id: 112034, name: "Lieutenant's Insignia", count: 12 },
-      { id: 113008, name: 'Spirit Locket of Boreas', count: 2 },
-      { id: 104319, name: 'Crown of Insight', count: 1 }
-    ]
+    lvl2: [ { id: 202, name: 'Mora', count: 12500 } ],
+    lvl3: [ { id: 202, name: 'Mora', count: 17500 } ],
+    lvl4: [ { id: 202, name: 'Mora', count: 25000 } ],
+    lvl5: [ { id: 202, name: 'Mora', count: 30000 } ],
+    lvl6: [ { id: 202, name: 'Mora', count: 37500 } ],
+    lvl7: [ { id: 202, name: 'Mora', count: 120000 } ],
+    lvl8: [ { id: 202, name: 'Mora', count: 260000 } ],
+    lvl9: [ { id: 202, name: 'Mora', count: 450000 } ],
+    lvl10: [ { id: 202, name: 'Mora', count: 700000 } ]
   },
   images: {
     filename_combat1: 'Skill_A_Catalyst_MD',
@@ -1174,56 +1133,15 @@ const genshindb = require('genshin-db');
 
 ```js
 {
-  lvl2: [
-    { id: 202, name: 'Mora', count: 12500 },
-    { id: 104310, name: 'Teachings of Prosperity', count: 3 },
-    { id: 112032, name: "Recruit's Insignia", count: 6 }
-  ],
-  lvl3: [
-    { id: 202, name: 'Mora', count: 17500 },
-    { id: 104311, name: 'Guide to Prosperity', count: 2 },
-    { id: 112033, name: "Sergeant's Insignia", count: 3 }
-  ],
-  lvl4: [
-    { id: 202, name: 'Mora', count: 25000 },
-    { id: 104311, name: 'Guide to Prosperity', count: 4 },
-    { id: 112033, name: "Sergeant's Insignia", count: 4 }
-  ],
-  lvl5: [
-    { id: 202, name: 'Mora', count: 30000 },
-    { id: 104311, name: 'Guide to Prosperity', count: 6 },
-    { id: 112033, name: "Sergeant's Insignia", count: 6 }
-  ],
-  lvl6: [
-    { id: 202, name: 'Mora', count: 37500 },
-    { id: 104311, name: 'Guide to Prosperity', count: 9 },
-    { id: 112033, name: "Sergeant's Insignia", count: 9 }
-  ],
-  lvl7: [
-    { id: 202, name: 'Mora', count: 120000 },
-    { id: 104312, name: 'Philosophies of Prosperity', count: 4 },
-    { id: 112034, name: "Lieutenant's Insignia", count: 4 },
-    { id: 113008, name: 'Spirit Locket of Boreas', count: 1 }
-  ],
-  lvl8: [
-    { id: 202, name: 'Mora', count: 260000 },
-    { id: 104312, name: 'Philosophies of Prosperity', count: 6 },
-    { id: 112034, name: "Lieutenant's Insignia", count: 6 },
-    { id: 113008, name: 'Spirit Locket of Boreas', count: 1 }
-  ],
-  lvl9: [
-    { id: 202, name: 'Mora', count: 450000 },
-    { id: 104312, name: 'Philosophies of Prosperity', count: 12 },
-    { id: 112034, name: "Lieutenant's Insignia", count: 9 },
-    { id: 113008, name: 'Spirit Locket of Boreas', count: 2 }
-  ],
-  lvl10: [
-    { id: 202, name: 'Mora', count: 700000 },
-    { id: 104312, name: 'Philosophies of Prosperity', count: 16 },
-    { id: 112034, name: "Lieutenant's Insignia", count: 12 },
-    { id: 113008, name: 'Spirit Locket of Boreas', count: 2 },
-    { id: 104319, name: 'Crown of Insight', count: 1 }
-  ]
+  lvl2: [ { id: 202, name: 'Mora', count: 12500 } ],
+  lvl3: [ { id: 202, name: 'Mora', count: 17500 } ],
+  lvl4: [ { id: 202, name: 'Mora', count: 25000 } ],
+  lvl5: [ { id: 202, name: 'Mora', count: 30000 } ],
+  lvl6: [ { id: 202, name: 'Mora', count: 37500 } ],
+  lvl7: [ { id: 202, name: 'Mora', count: 120000 } ],
+  lvl8: [ { id: 202, name: 'Mora', count: 260000 } ],
+  lvl9: [ { id: 202, name: 'Mora', count: 450000 } ],
+  lvl10: [ { id: 202, name: 'Mora', count: 700000 } ]
 }
 ```
 
@@ -1587,18 +1505,7 @@ const genshindb = require('genshin-db');
 <summary>genshindb.talents('<b>ballad', { matchCategories: true }</b>)</summary>
 
 ```js
-[
-  'Albedo',
-  'Dahlia',
-  'Durin',
-  'Fischl',
-  'Kaeya',
-  'Lisa',
-  'Mika',
-  'Rosaria',
-  'Traveler (Anemo)',
-  'Venti'
-]
+undefined
 ```
 
 </details>
@@ -1606,7 +1513,7 @@ const genshindb = require('genshin-db');
 <summary>genshindb.talents('<b>dvalin sigh', { matchCategories: true }</b>)</summary>
 
 ```js
-[ 'Amber', 'Beidou', 'Chongyun', 'Traveler (Anemo)' ]
+undefined
 ```
 
 </details>
@@ -1614,15 +1521,7 @@ const genshindb = require('genshin-db');
 <summary>genshindb.talents('<b>arrowhead', { matchCategories: true }</b>)</summary>
 
 ```js
-[
-  'Amber',
-  'Collei',
-  'Dahlia',
-  'Diona',
-  'Fischl',
-  'Lohen',
-  'Traveler (Geo)'
-]
+undefined
 ```
 
 </details>
@@ -1805,6 +1704,7 @@ const genshindb = require('genshin-db');
   'Blackcliff Slasher',
   'Blackcliff Warbow',
   'Blackmarrow Lantern',
+  'Blade of Atonement',
   'Bloodsoaked Ruins',
   'Bloodtainted Greatsword',
   'Calamity of Eshu',
@@ -1812,9 +1712,11 @@ const genshindb = require('genshin-db');
   'Cashflow Supervision',
   'Chain Breaker',
   'Cinnabar Spindle',
+  'Clash of Kings',
   'Cloudforged',
   'Compound Bow',
   'Cool Steel',
+  'Covenant of Frost and Snow',
   "Crane's Echoing Call",
   'Crescent Pike',
   "Crimson Moon's Semblance",
@@ -1829,12 +1731,15 @@ const genshindb = require('genshin-db');
   'Dragonspine Spear',
   'Dull Blade',
   'Earth Shaker',
+  'Echoes of the Heart',
   'Elegy for the End',
+  'Emberwell',
   'Emerald Orb',
   'End of the Line',
   'Engulfing Lightning',
   'Etherlight Spindlelute',
   'Everlasting Moonglow',
+  'Exaiphanes Blade',
   'Eye of Perception',
   'Fading Twilight',
   'Fang of the Mountain King',
@@ -1854,9 +1759,11 @@ const genshindb = require('genshin-db');
   'Flute of Ezpitzal',
   'Footprint of the Rainbow',
   'Forest Regalia',
+  'Forged by the Golden Melody',
   'Fractured Halo',
   'Freedom-Sworn',
   'Frostbearer',
+  'Frostbreath',
   'Fruit of Fulfillment',
   'Fruitful Hook',
   'Gest of the Mighty Wolf',
@@ -1866,19 +1773,11 @@ const genshindb = require('genshin-db');
   'Hamayumi',
   'Haran Geppaku Futsu',
   'Harbinger of Dawn',
+  "Heretic's Molten Blade",
   "Hunter's Bow",
   "Hunter's Path",
   'Ibis Piercer',
-  'Iron Point',
-  'Iron Sting',
-  "Jadefall's Splendor",
-  'Kagotsurube Isshin',
-  "Kagura's Verity",
-  'Katsuragikiri Nagamasa',
-  'Key of Khaj-Nisut',
-  "King's Squire",
-  'Kitain Cross Spear',
-  ... 137 more items
+  ... 149 more items
 ]
 ```
 
@@ -2258,7 +2157,9 @@ const genshindb = require('genshin-db');
   'Blazing Heartfeather Bass',
   'Brown Shirakodai',
   'Cerulean Doppeldrake',
+  'Charcoal Snowfin',
   'Common Axehead Fish',
+  'Cream Snowfin',
   'Crystalfish',
   'Dawncatcher',
   'Divda Ray',
@@ -2267,10 +2168,12 @@ const genshindb = require('genshin-db');
   'Floral Rapidfighting Fish',
   'Formalo Ray',
   'Frosted Axehead Fish',
+  'Frostpetal Starbloom Fish',
   'Glaze Medaka',
   'Golden Koi',
   'Greenwave Sunfish',
   'Halcyon Jade Axe Marlin',
+  'Iridescent Starbloom Fish',
   'Jade Heartfeather Bass',
   'Lazurite Axe Marlin',
   'Lunged Stickleback',
@@ -2281,6 +2184,7 @@ const genshindb = require('genshin-db');
   'Maintenance Mek: Situation Controller',
   'Maintenance Mek: Water Body Cleaner',
   'Medaka',
+  'Moonlight Snowfin',
   'Neon Mauler Shark',
   'Nightgaze Crystal-Eye',
   'Peach of the Deep Waves',
@@ -2290,6 +2194,7 @@ const genshindb = require('genshin-db');
   'Purple Shirakodai',
   'Raimei Angelfish',
   'Rippling Heartfeather Bass',
+  'Ruby Starbloom Fish',
   'Rusty Koi',
   'Sandstorm Angler',
   'Secret Source Scout Sweeper',
@@ -2368,6 +2273,7 @@ const genshindb = require('genshin-db');
   "Blazing Sacrificial Heart's Splendor",
   "Blazing Sacrificial Heart's Terror",
   'Chapter of an Ancient Chord',
+  'Clarion of the Pale Star Army',
   'Copper Talisman of the Forest Dew',
   'Coral Branch of a Distant Sea',
   "Debris of Decarabian's City",
@@ -2378,6 +2284,7 @@ const genshindb = require('genshin-db');
   'Golden Branch of a Distant Sea',
   'Golden Talisman of the Forest Dew',
   'Guide to Admonition',
+  'Guide to Charity',
   'Guide to Contention',
   'Guide to Equity',
   'Guide to Freedom',
@@ -2390,7 +2297,9 @@ const genshindb = require('genshin-db');
   'Luminous Sands from Guyun',
   'Lustrous Stone from Guyun',
   'Movement of an Ancient Chord',
+  'Muster of the Pale Star Army',
   'Philosophies of Admonition',
+  'Philosophies of Charity',
   'Philosophies of Contention',
   'Philosophies of Equity',
   'Philosophies of Freedom',
@@ -2398,16 +2307,19 @@ const genshindb = require('genshin-db');
   'Philosophies of Prosperity',
   'Philosophies of Transience',
   'Relic from Guyun',
+  'Rise of the Pale Star Army',
   "Scattered Piece of Decarabian's Dream",
   'Silver Talisman of the Forest Dew',
   'Teachings of Admonition',
+  'Teachings of Charity',
   'Teachings of Contention',
   'Teachings of Equity',
   'Teachings of Freedom',
   'Teachings of Moonlight',
   'Teachings of Prosperity',
   'Teachings of Transience',
-  "Tile of Decarabian's Tower"
+  "Tile of Decarabian's Tower",
+  'Triumph of the Pale Star Army'
 ]
 ```
 
@@ -2417,23 +2329,24 @@ const genshindb = require('genshin-db');
 
 ```js
 [
-  'Ajilenakh Nut',   'Almond',          'Bacon',           'Bamboo Shoot',
-  'Berry',           'Bird Egg',        'Butter',          'Cabbage',
-  'Carrot',          'Cheese',          'Chenyu Adeptea',  'Chilled Meat',
-  'Coffee Beans',    'Crab',            'Crab Roe',        'Cream',
-  'Dried Fish',      'Eel Meat',        'Fermented Juice', 'Fish',
-  'Flour',           'Fowl',            'Glabrous Beans',  'Grainfruit',
-  'Ham',             'Harra Fruit',     'Jam',             'Lakkaberry',
-  'Lavender Melon',  'Lotus Head',      'Marcotte',        'Matsutake',
-  'Midsommar Berry', 'Milk',            'Mint',            'Mushroom',
-  'Mysterious Meat', 'Onion',           'Pepper',          'Pinecone',
-  'Potato',          'Radish',          'Raw Meat',        'Red Berryshroom',
-  'Rice',            'Rye',             'Rye Flour',       'Salt',
-  'Sausage',         'Seagrass',        'Shrimp Meat',     'Silver Lotus',
-  'Smetana',         'Smoked Fish',     'Smoked Fowl',     'Snapdragon',
-  'Spice',           'Spinel Fruit',    'Sugar',           'Sumeru Rose',
-  'Sweet Flower',    'Tidalga',         'Tofu',            'Tomato',
-  'Wheat',           'Windrest Flower', 'Zaytun Peach'
+  'Ajilenakh Nut',   'Almond',       'Bacon',           'Bamboo Shoot',
+  'Berry',           'Bird Egg',     'Butter',          'Cabbage',
+  'Carrot',          'Cheese',       'Chenyu Adeptea',  'Chilled Meat',
+  'Coffee Beans',    'Crab',         'Crab Roe',        'Cream',
+  'Dried Fish',      'Eel Meat',     'Fermented Juice', 'Fish',
+  'Flour',           'Fowl',         'Glabrous Beans',  'Glaciafruit',
+  'Grainfruit',      'Ham',          'Harra Fruit',     'Honey',
+  'Jam',             'Lakkaberry',   'Lavender Melon',  'Lotus Head',
+  'Marcotte',        'Matsutake',    'Midsommar Berry', 'Milk',
+  'Mint',            'Mushroom',     'Mysterious Meat', 'Onion',
+  'Pepper',          'Pinecone',     'Potato',          'Radish',
+  'Raw Meat',        'Red Beet',     'Red Berryshroom', 'Rice',
+  'Rimecurrant',     'Rye',          'Rye Flour',       'Salt',
+  'Sausage',         'Seagrass',     'Shrimp Meat',     'Silver Lotus',
+  'Smetana',         'Smoked Fish',  'Smoked Fowl',     'Snapdragon',
+  'Snowball Flower', 'Spice',        'Spinel Fruit',    'Sugar',
+  'Sumeru Rose',     'Sweet Flower', 'Tidalga',         'Tofu',
+  'Tomato',          'Wheat',        'Windrest Flower', 'Zaytun Peach'
 ]
 ```
 
@@ -2681,6 +2594,7 @@ const genshindb = require('genshin-db');
   'Spiced Fried Chicken',
   'Stormcrest Pie',
   'Super Magnificent Pizza',
+  'Sweet Scoops',
   'Tandoori Roast Chicken',
   "Thick-Cut Duelist's Burger",
   'Tianshu Meat',
@@ -2751,6 +2665,7 @@ const genshindb = require('genshin-db');
   'Shimi Chazuke',
   'Shrimp Bisque',
   "Sin: The Kind that Doesn't Need to be Dealt With",
+  'Snowrealm Okroshkas',
   'Stir-Fried Shrimp',
   'Stormcrest Pie',
   'Sunshine Sprat',
@@ -3117,17 +3032,16 @@ const genshindb = require('genshin-db');
   rewardPreviewId: 16000,
   rewardPreview: [
     { id: 202, name: 'Mora' },
-    { id: 112004, name: 'Slime Concentrate', count: 0.0448 },
-    { id: 112003, name: 'Slime Secretions', count: 0.1792 },
-    { id: 112002, name: 'Slime Condensate', count: 0.6723 }
+    { id: 112004, name: 'Slime Concentrate', count: 0.045 },
+    { id: 112003, name: 'Slime Secretions', count: 0.179 },
+    { id: 112002, name: 'Slime Condensate', count: 0.672 }
   ],
   monsterType: 'MONSTER_ORDINARY',
-  enemyType: 'NORMAL',
+  enemyType: 'COMMON',
   categoryType: 'CODEX_SUBTYPE_ELEMENTAL',
   categoryText: 'Elemental Lifeforms',
   description: 'A monster created by the coalescing of Electro dispersed throughout nature.\n' +
     'Due to the abundant Electro within its form, it will deliver an electric shock to its surroundings from time to time. At present, some have attempted to harness this energy to aid in production activities. Perhaps some new science will be born from this...?',
-  aggroRange: 'VISION_LEVEL_NORMAL',
   bgm: 1,
   budget: 4,
   images: {
@@ -3152,6 +3066,7 @@ const genshindb = require('genshin-db');
   'Azhdaha',
   'Bolteater Bathysmal Vishap',
   'Childe',
+  'Chimeric Winged Lion',
   'Cryo Hypostasis',
   'Cryo Regisvine',
   'Dendro Hypostasis',
@@ -3169,6 +3084,7 @@ const genshindb = require('genshin-db');
   'Hydro Tulpa',
   'Icewind Suite',
   'Il Dottore',
+  'Immortal Construct',
   'Iniquitous Baptist',
   'Jadeplume Terrorshroom',
   'Knuckle Duckle',
@@ -3372,10 +3288,12 @@ const genshindb = require('genshin-db');
   'Etherwing Moth',
   'Flatcrest Fulmar',
   'Flowcurrent Bird',
+  'Fluffahog',
   'Fluff-Fleece Goat',
   'Flying Squirrel',
   'Forest Tree Frog',
   'Frog',
+  'Fuzzbadger',
   'General Crab',
   'Geo Crystalfly',
   'Glittergray Hunting Hound',
@@ -3393,15 +3311,19 @@ const genshindb = require('genshin-db');
   'Malachitin Lumibug',
   'Marrow Lizard',
   'Masked Weasel',
+  'Morozhound',
   'Mud Frog',
+  'Nochhornowl',
   'Ocean Crab',
   'Pale Red Crab',
+  'Polyarbear',
   'Puffin',
   'Pyro Crystalfly',
   'Quicksand Eel',
   'Red Flamingo',
   'Red Horned Lizard',
   'Red Tailed Lizard',
+  'Red-Bellied Plover',
   'Redbill Pelican',
   'Redcrown Finch',
   'Red-Finned Unagi',
@@ -3410,6 +3332,7 @@ const genshindb = require('genshin-db');
   'Sacred Ibis',
   'Sapphire',
   'Scarab',
+  'Severelk',
   'Shroomboar',
   'Slate Umbrellafinch',
   'Snow Finch',
@@ -3422,13 +3345,7 @@ const genshindb = require('genshin-db');
   'Sun Crab',
   'Sunny Loach',
   'Sunset Loach',
-  'Thick-Feathered Ruffed Pheasant',
-  'Thornback Gecko',
-  'Violet Ibis',
-  'Violetgold Angler Gull',
-  'Viridian Fantail Pigeon',
-  'White Pigeon',
-  'Windvigil Angler Gull'
+  ... 7 more items
 ]
 ```
 
@@ -3573,7 +3490,6 @@ const genshindb = require('genshin-db');
 {
   id: 60,
   name: '60',
-  exp: 0,
   unlockDescription: '',
   reward: [
     { id: 201, name: 'Primogem', count: 150, type: 'MATERIAL' },
@@ -4124,9 +4040,7 @@ const genshindb = require('genshin-db');
         'In honor of your birthday, please allow me to perform a fan dance for you.',
       voicefile: null,
       hasUnlockConditions: true,
-      unlockConditions: [
-        { conditionType: 'FETTER_COND_PLAYER_BIRTHDAY', paramList: [] }
-      ]
+      unlockConditions: [ { conditionType: 'FETTER_COND_PLAYER_BIRTHDAY' } ]
     },
     {
       voicelineId: 3142,

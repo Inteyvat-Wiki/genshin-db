@@ -130,8 +130,6 @@ The following are the **default options** that the library begins with:
 {
     dumpResult: false, // The query result will return an object with the properties: { query, folder, match, matchtype, options, filename, result }.
     matchNames: true, // Allows the matching of names.
-    matchFilenames: false, // Allows the matching of JSON filenames.
-    matchFilenameOnly: false, // Allows only the matching of JSON filenames.
     matchIds: false, // Allows exact matching of ids.
     matchAltNames: true, // Allows the matching of alternate or custom names.
     matchAliases: false, // Allows the matching of aliases. These are searchable fields that returns the data object the query matched in.
