@@ -2,6 +2,7 @@
 // USING `npm run makeIndex -- [arguments here]`
 
 const fs = require('fs');
+const path = require('path');
 const languagejs = require('../../src/language.js');
 const design = require('../../src/design.json');
 const helper = require('./helper.js');
@@ -39,10 +40,10 @@ function makeIndex() {
 					.sort()
 					.forEach(filename => {
 						const data = require(`../../src/data/${lang}/${folder}/${filename}`);
-						if(data.name === undefined || data.name === "") return; // go next file if this one doesn't have name property
+						const name = data.name === undefined ? "" : data.name;
 
 						if(index.namemap[filename] !== undefined) console.log(`Duplicate filename: ${lang}/${folder}: ${filename}`);
-						index.namemap[filename] = data.name;
+						index.namemap[filename] = name;
 						if(data.id !== undefined) {
 							if(index.ids[data.id] !== undefined && index.ids[data.id] !== filename) {
 								console.log(`Duplicate id: ${lang}/${folder}: ${data.id},${filename}`);
@@ -50,6 +51,7 @@ function makeIndex() {
 								index.ids[data.id] = filename;
 							}
 						}
+						if(name === "") return; // continue indexing only by filename and id
 						if(index.names[data.name] !== undefined) {
 							// if(!['risingstarlumine', 'scarletbeakduck', 'prizedisshinbladea', 'prizedisshinbladeb', 'cakefortravelera', 'cakefortravelerb', 'keysigila',
 							// 	'keysigilb', 'keysigilc', 'keysigild'].includes(filename)) // TODO: add translated lumine/aether to the end of name for indexing
@@ -124,6 +126,67 @@ function makeIndex() {
 		}
 		console.log("  done "+lang);
 	}
+	if (specificfolders.includes('interactions')) makeInteractionIndex();
+}
+
+function makeInteractionIndex() {
+	const root = path.resolve(__dirname, '../../src/data/interactions');
+	if (!fs.existsSync(root)) return;
+
+	const index = {
+		namemap: {},
+		ids: {},
+		names: {},
+		aliases: {},
+		categories: {},
+		properties: {}
+	};
+
+	function getDialogIds(data) {
+		const ids = [];
+		const visit = value => {
+			if (Array.isArray(value)) {
+				value.forEach(visit);
+				return;
+			}
+			if (!value || typeof value !== 'object') return;
+
+			if (value._type === 'DIALOG') {
+				const candidates = Object.entries(value)
+					.filter(([key, item]) => !key.startsWith('_') && !key.startsWith('$') && Number.isInteger(item) && item > 0)
+					.map(([, item]) => item);
+				if (candidates.length === 1) ids.push(candidates[0]);
+			}
+			Object.values(value).forEach(visit);
+		};
+		visit(data);
+		return ids;
+	}
+
+	function addFiles(directory, relativeDirectory = '') {
+		for (const entry of fs.readdirSync(directory, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+			const relativePath = relativeDirectory
+				? `${relativeDirectory}/${entry.name}`
+				: entry.name;
+			const absolutePath = path.join(directory, entry.name);
+
+			if (entry.isDirectory()) {
+				addFiles(absolutePath, relativePath);
+			} else if (entry.isFile() && entry.name.endsWith('.json')) {
+				const filename = relativePath.slice(0, -'.json'.length);
+				index.namemap[filename] = filename;
+				try {
+					const data = JSON.parse(fs.readFileSync(absolutePath, 'utf8'));
+					for (const id of getDialogIds(data)) index.ids[id] = filename;
+				} catch (e) {
+					console.error(`invalid interaction: ${relativePath}`);
+				}
+			}
+		}
+	}
+
+	addFiles(root);
+	helper.writeJsonIfDifferent('../../src/data/index/interactions.json', index);
 }
 
 function getNestedValue(data, props) {

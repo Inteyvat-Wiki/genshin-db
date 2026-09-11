@@ -333,6 +333,17 @@ genshin.tasks = genshin.task = function (query, opts) {
 }
 
 /**
+ * Get an InterAction configuration by its source path.
+ * @param {string} query - InterAction source path, such as QuestDialogue/AQ/NodKrai_6018/Q601809.
+ * @param {object|Options} opts - The library options, see Valid Options.
+ * @returns {object} - The raw InterAction configuration found by source path.
+ */
+genshin.interactions = genshin.interaction = function (query, opts) {
+    opts = Object.assign({ matchFilenameOnly: true }, opts);
+    return retrieveData(query, Folder.interactions, opts);
+}
+
+/**
  * Get data about a weapon(s).
  * 
  * The returned object also includes a method to calculate the stats of the weapon at each level, namely .stats().

@@ -20,6 +20,7 @@
 /// <reference path="./folders/rarity.d.ts" />
 /// <reference path="./folders/stories.d.ts" />
 /// <reference path="./folders/tasks.d.ts" />
+/// <reference path="./folders/interactions.d.ts" />
 /// <reference path="./folders/talentmaterialtypes.d.ts" />
 /// <reference path="./folders/talents.d.ts" />
 // <reference path="./folders/weaponmaterialtypes.d.ts" />
@@ -142,6 +143,7 @@ declare module "genshin-db" {
 	export const foods: QueryFunction<Food>;
 	export const geographies: QueryFunction<Geography>;
 	export const hyperlinks: QueryFunction<Hyperlink>;
+	export const interactions: QueryFunction<Interaction>;
 	export const materials: QueryFunction<Material>;
 	export const namecards: QueryFunction<Namecard>;
 	export const outfits: QueryFunction<Outfit>;

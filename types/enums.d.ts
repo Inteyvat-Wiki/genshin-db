@@ -38,6 +38,7 @@ declare module "genshin-db" {
 		namecards      = "namecards",
 		geographies    = "geographies",
 		chapters       = "chapters",
+		interactions   = "interactions",
 
 		achievements   = "achievements",
 		achievementgroups = "achievementgroups",

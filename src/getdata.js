@@ -83,8 +83,22 @@ function getDataPath(lang, folder, filename) {
     return path.join(__dirname, 'data', lang, folder, `${filename}.json`);
 }
 
+function getInteractionDataPath(filename) {
+    if (typeof filename !== 'string' || filename === '') return undefined;
+
+    const root = path.resolve(__dirname, 'data', 'interactions');
+    const relativePath = filename.endsWith('.json') ? filename.slice(0, -'.json'.length) : filename;
+    const target = path.resolve(root, ...relativePath.split(/[\\/]/));
+    if (target !== root && !target.startsWith(`${root}${path.sep}`)) return undefined;
+    return `${target}.json`;
+}
+
 function getIndexPath(lang, folder) {
     return path.join(__dirname, 'data', 'index', lang, `${folder}.json`);
+}
+
+function getInteractionIndexPath() {
+    return path.join(__dirname, 'data', 'index', 'interactions.json');
 }
 
 function getImagePath(folder) {
@@ -119,11 +133,17 @@ const calcStatsMap = {
 function getData(lang, folder, filename, v4Prop, v4PropOnly) {
     let tmp;
     try {
-        if (useFileData) {
+        if (folder === 'interactions') {
+            const filepath = getInteractionDataPath(filename);
+            // InterAction files can be several megabytes each. Keeping every raw file in the
+            // general data cache makes bulk consumers retain gigabytes of one-shot data.
+            tmp = useFileData && filepath ? readJsonFile(filepath) : dataExists(alldata, undefined, folder, filename);
+        } else if (useFileData) {
             tmp = dataExists(alldata, lang, folder, filename) || readCachedJson(fileCache.data, getDataPath(lang, folder, filename));
         } else {
             tmp = alldata[lang][folder][filename];
         }
+		if (folder === 'interactions') return tmp;
         if(tmp.images === undefined && design.hasImage.includes(folder)) {
             tmp.images = getImage(folder, filename);
         }
@@ -149,6 +169,10 @@ function getData(lang, folder, filename, v4Prop, v4PropOnly) {
 
 function getIndex(lang, folder) {
     try {
+        if (folder === 'interactions') {
+            if (useFileData) return readCachedJson(fileCache.index, getInteractionIndexPath());
+            return allindex.interactions;
+        }
         if (useFileData) {
             return dataExists(allindex, lang, folder) || readCachedJson(fileCache.index, getIndexPath(lang, folder));
         }
