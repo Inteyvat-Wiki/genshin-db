@@ -59,6 +59,7 @@ declare module "genshin-db" {
 
 	export interface TaskTalkSegment {
 		id: number;
+		priority: number;
 		completionStepIds: number[];
 		beginWay: 'TALK_BEGIN_MANUAL' | 'TALK_BEGIN_AUTO' | string;
 		beginConditions: TaskTalkBeginConditionGroup;
