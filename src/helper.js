@@ -1,6 +1,16 @@
 const helper = {};
 
 /**
+ * Normalizes text used as a search key without changing the text returned to callers.
+ */
+helper.normalizeSearchText = function(value) {
+	if (typeof value !== 'string') return '';
+	return value
+		.normalize('NFD')
+		.replace(/[\u0300-\u036f]/g, '');
+}
+
+/**
  * 
  */
 helper.makeFilename = function(englishname) {

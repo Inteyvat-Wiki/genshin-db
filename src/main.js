@@ -5,6 +5,7 @@ const Folder = require('./folder.js').FoldersEnum;
 const FolderFormat = require('./folder.js').format;
 const altnames = require('./altnames.js');
 const Options = require('./Options.js');
+const helper = require('./helper.js');
 const { getData, getIndex, addData } = require('./getdata.js');
 
 // object that will be exported
@@ -14,8 +15,6 @@ const genshin = {};
 const baseoptions = new Options(
     false, // dumpResult
     true, // matchNames
-    false, // matchFilenames
-    false, // matchFilenameOnly
     false, // matchIds
     true, // matchAltNames
     false, // matchAliases
@@ -27,39 +26,39 @@ const baseoptions = new Options(
     false // v4PropsOnly
 );
 
-const SearchSource = {
-    Filenames: "filenames",
-    Ids: "ids",
-    Names: "names",
-    AltNames: "altnames",
-    Aliases: "aliases",
-    Categories: "categories"
-}
-
-function getFolderCandidates(querylangs, folder, opts) {
-    let candidates = [];
-    if (opts.matchCategories)
-        candidates.push({ value: 'names', folder: folder, source: SearchSource.Categories });
+// returns an array of strings used for autocomplete aka fuzzy searching
+function buildQueryDict(querylangs, folder, opts) {
+    let dict = opts.matchCategories ? ['names'] : [];
     for (const lang of querylangs) {
         const index = getIndex(lang, folder);
         if (index === undefined) continue;
-        if (opts.matchFilenames && index.namemap)
-            candidates = candidates.concat(Object.keys(index.namemap).map(value => ({ value, folder, lang, source: SearchSource.Filenames })));
         if (opts.matchNames && index.namemap)
-            candidates = candidates.concat(Object.values(index.namemap).map(value => ({ value, folder, lang, source: SearchSource.Names })));
+            dict = dict.concat(Object.values(index.namemap));
         if (opts.matchAltNames)
-            candidates = candidates.concat(altnames.getAltNamesList(lang, folder).map(value => ({ value, folder, lang, source: SearchSource.AltNames })));
+            dict = dict.concat(altnames.getAltNamesList(lang, folder));
         if (opts.matchAliases && index.aliases)
-            candidates = candidates.concat(Object.keys(index.aliases).map(value => ({ value, folder, lang, source: SearchSource.Aliases })));
+            dict = dict.concat(Object.keys(index.aliases));
         if (opts.matchCategories && index.categories)
-            candidates = candidates.concat(Object.keys(index.categories).map(value => ({ value, folder, lang, source: SearchSource.Categories })));
+            dict = dict.concat(Object.keys(index.categories));
     }
-    return candidates;
+    return dict;
 }
 
-function autocomplete(input, candidates) {
-    let result = fuzzysort.go(input, candidates, { limit: 1, key: 'value' })[0];
-    return result === undefined ? undefined : result.obj;
+function autocomplete(input, dict, key) {
+	const searchDict = dict.map(item => ({
+		item: item,
+		value: helper.normalizeSearchText(key ? item[key] : item)
+	}));
+	const result = fuzzysort.go(helper.normalizeSearchText("" + input), searchDict, { limit: 1, key: 'value' })[0];
+	return result === undefined ? undefined : result.obj.item;
+}
+
+function getIndexedValue(index, property, value) {
+	if (index === undefined || index[property] === undefined) return undefined;
+	const indexed = index[property];
+	const normalized = helper.normalizeSearchText("" + value);
+	if (Object.prototype.hasOwnProperty.call(indexed, normalized)) return indexed[normalized];
+	return indexed[value];
 }
 
 /**
@@ -72,7 +71,7 @@ function sanitizeOptions(opts) {
     if (!opts || typeof opts !== 'object') return;
 
     let sanOpts = {};
-    ['dumpResult', 'matchNames', 'matchFilenames', 'matchFilenameOnly', 'matchIds', 'matchAltNames', 'matchAliases', 'matchCategories', 'verboseCategories', 'v4Props', 'v4PropsOnly'].forEach(prop => {
+    ['dumpResult', 'matchNames', 'matchIds', 'matchAltNames', 'matchAliases', 'matchCategories', 'verboseCategories', 'v4Props', 'v4PropsOnly'].forEach(prop => {
         if (typeof opts[prop] === 'boolean') sanOpts[prop] = opts[prop];
     });
     opts.resultLanguage = language.format(opts.resultLanguage);
@@ -86,7 +85,6 @@ function sanitizeOptions(opts) {
 
 const MatchType = {
     None: "none",
-    Filenames: "filenames",
     Ids: "ids",
     Names: "names",
     AltNames: "altnames",
@@ -94,16 +92,7 @@ const MatchType = {
     Categories: "categories"
 }
 
-const matchTypeMap = {
-    [SearchSource.Filenames]: MatchType.Filenames,
-    [SearchSource.Ids]: MatchType.Ids,
-    [SearchSource.Names]: MatchType.Names,
-    [SearchSource.AltNames]: MatchType.AltNames,
-    [SearchSource.Aliases]: MatchType.Aliases,
-    [SearchSource.Categories]: MatchType.Categories
-}
-
-function getIdCandidate(query, folders, opts) {
+function getIdMatch(query, folders, opts) {
     if (!opts.matchIds) return undefined;
     const queryId = ("" + query).trim();
     if (queryId === "") return undefined;
@@ -114,63 +103,11 @@ function getIdCandidate(query, folders, opts) {
             const index = getIndex(lang, folder);
             if (index === undefined || !index.ids) continue;
             if (index.ids[queryId] !== undefined) {
-                return { value: queryId, folder, lang, source: SearchSource.Ids };
+                return { folder, lang, filename: index.ids[queryId] };
             }
         }
     }
     return undefined;
-}
-
-function getQueryCandidate(query, folders, opts) {
-    const idCandidate = getIdCandidate(query, folders, opts);
-    if (idCandidate) return idCandidate;
-
-    if (Array.isArray(folders)) {
-        return autocomplete("" + query, folders.reduce((accum, folder) => {
-            return accum.concat(getFolderCandidates(opts.queryLanguages, folder, opts));
-        }, []));
-    }
-
-    const candidate = autocomplete("" + query, getFolderCandidates(opts.queryLanguages, folders, opts));
-    if (candidate) return candidate;
-    return { folder: folders };
-}
-
-function resolveFilename(candidate, opts) {
-    if (!candidate || !candidate.source) return undefined;
-    const index = getIndex(candidate.lang, candidate.folder);
-    if (index === undefined) return undefined;
-
-    switch(candidate.source) {
-        case SearchSource.Filenames:
-            return index.namemap && index.namemap[candidate.value] !== undefined ? candidate.value : undefined;
-        case SearchSource.Ids:
-            return index.ids ? index.ids[candidate.value] : undefined;
-        case SearchSource.Names:
-            return index.names ? index.names[candidate.value] : undefined;
-        case SearchSource.AltNames:
-            return altnames.getFilename(candidate.lang, candidate.folder, candidate.value);
-        case SearchSource.Aliases:
-            return index.aliases ? index.aliases[candidate.value] : undefined;
-        case SearchSource.Categories:
-            return undefined;
-    }
-}
-
-function getCategoryResult(candidate, opts) {
-    if (!candidate || candidate.source !== SearchSource.Categories) return undefined;
-    const reslangindex = getIndex(opts.resultLanguage, candidate.folder);
-    if (reslangindex === undefined) return undefined;
-    const index = candidate.value === 'names' ? undefined : getIndex(candidate.lang, candidate.folder);
-    if (candidate.value !== 'names' && (index === undefined || !index.categories || index.categories[candidate.value] === undefined)) return undefined;
-
-    const filenames = candidate.value === 'names' ? Object.keys(reslangindex.namemap) : index.categories[candidate.value];
-    const result = filenames.reduce((accum, filename) => {
-        let res = opts.verboseCategories ? getData(opts.resultLanguage, candidate.folder, filename, opts.v4Props, opts.v4PropsOnly) : reslangindex.namemap[filename];
-        if (res !== undefined) accum.push(res);
-        return accum;
-    }, []);
-    return { filenames, result };
 }
 
 // TODO: if folder is undefined, search through every folder
@@ -181,34 +118,80 @@ function getCategoryResult(candidate, opts) {
  */
 function retrieveData(query, folders, opts, getfilename) {
     opts = Object.assign({}, baseoptions, sanitizeOptions(opts));
-    if (opts.matchFilenameOnly) {
-        opts.matchFilenames = true;
-        opts.matchNames = false;
-        opts.matchIds = false;
-        opts.matchAltNames = false;
-        opts.matchAliases = false;
-        opts.matchCategories = false;
+    const idMatch = getIdMatch(query, folders, opts);
+    if (idMatch) {
+        if (getfilename) return idMatch.filename;
+        const result = getData(opts.resultLanguage, idMatch.folder, idMatch.filename, opts.v4Props, opts.v4PropsOnly);
+        return opts.dumpResult
+            ? getDump(query, folders, query, idMatch.folder, MatchType.Ids, opts, idMatch.filename, result)
+            : result;
     }
-    const candidate = getQueryCandidate(query, folders, opts);
-    const folderMatch = candidate ? candidate.folder : undefined;
 
-    if (!candidate || candidate.value === undefined) { // no result;
+    let queryMatch;
+    let folderMatch;
+    if (Array.isArray(folders)) {
+        const qdict = folders.reduce((accum, f) => {
+            return accum.concat(buildQueryDict(opts.queryLanguages, f, opts).map(e => ({ name: e, folder: f })));
+        }, []);
+        const result = autocomplete("" + query, qdict, 'name');
+        if (result) {
+            folderMatch = result.folder;
+            queryMatch = result.name;
+        }
+    } else {
+        folderMatch = folders;
+        queryMatch = autocomplete("" + query, buildQueryDict(opts.queryLanguages, folderMatch, opts));
+    }
+
+    if (queryMatch === undefined) { // no result;
         return opts.dumpResult ? getDump(query, folders, undefined, folderMatch, MatchType.None, opts, undefined, undefined) : undefined;
     }
 
-    const categoryResult = getCategoryResult(candidate, opts);
-    if (categoryResult) {
-        return opts.dumpResult ? getDump(query, folders, candidate.value, folderMatch, MatchType.Categories, opts, categoryResult.filenames, categoryResult.result) : categoryResult.result;
+    for (let lang of opts.queryLanguages) {
+        let langindex = getIndex(lang, folderMatch);
+        if (langindex === undefined) continue;
+
+		if (opts.matchNames && langindex.names) {
+			const filename = getIndexedValue(langindex, 'names', queryMatch);
+			if (filename !== undefined) {
+				if (getfilename) return filename;
+				let result = getData(opts.resultLanguage, folderMatch, filename, opts.v4Props, opts.v4PropsOnly);
+				return opts.dumpResult ? getDump(query, folders, queryMatch, folderMatch, MatchType.Names, opts, filename, result) : result;
+			}
+		}
+
+        if (opts.matchAltNames && altnames.getFilename(lang, folderMatch, queryMatch)) {
+            const filename = altnames.getFilename(lang, folderMatch, queryMatch);
+            if (getfilename) return filename;
+            let result = getData(opts.resultLanguage, folderMatch, filename, opts.v4Props, opts.v4PropsOnly);
+            return opts.dumpResult ? getDump(query, folders, queryMatch, folderMatch, MatchType.AltNames, opts, filename, result) : result;
+        }
+
+		if (opts.matchAliases && langindex.aliases) {
+			const filename = getIndexedValue(langindex, 'aliases', queryMatch);
+			if (filename !== undefined) {
+				if (getfilename) return filename;
+				let result = getData(opts.resultLanguage, folderMatch, filename, opts.v4Props, opts.v4PropsOnly);
+				return opts.dumpResult ? getDump(query, folders, queryMatch, folderMatch, MatchType.Aliases, opts, filename, result) : result;
+			}
+		}
+
+		const categoryResult = getIndexedValue(langindex, 'categories', queryMatch);
+		if (opts.matchCategories && (helper.normalizeSearchText(queryMatch) === 'names' || categoryResult !== undefined)) {
+			let reslangindex = getIndex(opts.resultLanguage, folderMatch);
+			if (reslangindex === undefined) return undefined;
+
+			let tmparr = helper.normalizeSearchText(queryMatch) === 'names' ? Object.keys(reslangindex.namemap) : categoryResult;
+            let result = tmparr.reduce((accum, filename) => {
+                let res = opts.verboseCategories ? getData(opts.resultLanguage, folderMatch, filename, opts.v4Props, opts.v4PropsOnly) : reslangindex.namemap[filename];
+                if (res !== undefined) accum.push(res);
+                return accum;
+            }, []);
+            return opts.dumpResult ? getDump(query, folders, queryMatch, folderMatch, MatchType.Categories, opts, tmparr, result) : result;
+        }
     }
 
-    const filename = resolveFilename(candidate, opts);
-    if (filename !== undefined) {
-        if (getfilename) return filename;
-        let result = getData(opts.resultLanguage, folderMatch, filename, opts.v4Props, opts.v4PropsOnly);
-        return opts.dumpResult ? getDump(query, folders, candidate.value, folderMatch, matchTypeMap[candidate.source], opts, filename, result) : result;
-    }
-
-    return opts.dumpResult ? getDump(query, folders, candidate.value, folderMatch, MatchType.None, opts, undefined, undefined) : undefined;
+    return opts.dumpResult ? getDump(query, folders, queryMatch, folderMatch, MatchType.None, opts, undefined, undefined) : undefined;
 }
 
 function getDump(query, folders, match, matchfolder, matchtype, options, filename, result) {
@@ -253,13 +236,13 @@ genshin.categories = genshin.category = function (query, folder, opts) {
 
     const index = getIndex(opts.resultLanguage, folder);
     const queryDict = Object.keys(index.properties);
-    if (query === 'names') {
-        return queryDict;
-    } else {
-        let queryMatch = autocomplete("" + query, queryDict);
-        if (queryMatch === undefined) return undefined;
-        return index.properties[queryMatch];
-    }
+	if (helper.normalizeSearchText("" + query) === 'names') {
+		return queryDict;
+	} else {
+		let queryMatch = autocomplete("" + query, queryDict);
+		if (queryMatch === undefined) return undefined;
+		return getIndexedValue(index, 'properties', queryMatch);
+	}
 }
 
 /**
@@ -333,13 +316,12 @@ genshin.tasks = genshin.task = function (query, opts) {
 }
 
 /**
- * Get an InterAction configuration by its source path.
- * @param {string} query - InterAction source path, such as QuestDialogue/AQ/NodKrai_6018/Q601809.
+ * Get an InterAction configuration by a dialog id or indexed alias.
+ * @param {string} query - InterAction dialog id or alias.
  * @param {object|Options} opts - The library options, see Valid Options.
- * @returns {object} - The raw InterAction configuration found by source path.
+ * @returns {object} - The raw InterAction configuration found by id or alias.
  */
 genshin.interactions = genshin.interaction = function (query, opts) {
-    opts = Object.assign({ matchFilenameOnly: true }, opts);
     return retrieveData(query, Folder.interactions, opts);
 }
 
@@ -646,8 +628,6 @@ genshin.addAltName = function (language, folder, altname, query) {
     const options = new Options(
         false, // dumpResult
         true, // matchNames
-        false, // matchFilenames
-        false, // matchFilenameOnly
         false, // matchIds
         false, // matchAltNames
         false, // matchAliases

@@ -115,8 +115,6 @@ declare module "genshin-db" {
 	export interface QueryOptions {
 		dumpResult?: boolean;
 		matchNames?: boolean;
-		matchFilenames?: boolean;
-		matchFilenameOnly?: boolean;
 		matchIds?: boolean;
 		matchAltNames?: boolean;
 		matchAliases?: boolean;

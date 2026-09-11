@@ -73,6 +73,7 @@ declare module "genshin-db" {
 
 	export interface Task {
 		id: number;
+		alias: string;
 		type: 'AQ' | 'LQ' | 'EQ' | 'IQ' | 'WQ' | string;
 		name: string;
 		description: string;

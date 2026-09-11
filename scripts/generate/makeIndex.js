@@ -6,6 +6,7 @@ const path = require('path');
 const languagejs = require('../../src/language.js');
 const design = require('../../src/design.json');
 const helper = require('./helper.js');
+const searchHelper = require('../../src/helper.js');
 
 const argv = require('yargs-parser')(process.argv.slice(2), {
 	alias: { folder: ['folders'], language: ['languages'] },
@@ -26,9 +27,9 @@ function makeIndex() {
 			let index = {
 				namemap: {}, // maps filename to name
 				ids: {}, // maps id to filename
-				names: {}, // maps name to filename
-				aliases: {}, // maps alias to filename
-				categories: {}, // maps category to array of filenames
+				names: {}, // maps normalized name to filename
+				aliases: {}, // maps normalized alias to filename
+				categories: {}, // maps normalized category to array of filenames
 				properties: {} // maps property to array of category values
 			};
 			try {
@@ -51,28 +52,33 @@ function makeIndex() {
 								index.ids[data.id] = filename;
 							}
 						}
-						if(name === "") return; // continue indexing only by filename and id
-						if(index.names[data.name] !== undefined) {
-							// if(!['risingstarlumine', 'scarletbeakduck', 'prizedisshinbladea', 'prizedisshinbladeb', 'cakefortravelera', 'cakefortravelerb', 'keysigila',
-							// 	'keysigilb', 'keysigilc', 'keysigild'].includes(filename)) // TODO: add translated lumine/aether to the end of name for indexing
-							// 	console.log(`Duplicate name: ${lang}/${folder}: ${data.name} | ${filename}`);
-						} else {
-							index.names[data.name] = filename;
+						if(name !== "") {
+							const nameKey = searchHelper.normalizeSearchText(data.name);
+							if(nameKey !== '' && index.names[nameKey] !== undefined) {
+								// if(!['risingstarlumine', 'scarletbeakduck', 'prizedisshinbladea', 'prizedisshinbladeb', 'cakefortravelera', 'cakefortravelerb', 'keysigila',
+								// 	'keysigilb', 'keysigilc', 'keysigild'].includes(filename)) // TODO: add translated lumine/aether to the end of name for indexing
+								// 	console.log(`Duplicate name: ${lang}/${folder}: ${data.name} | ${filename}`);
+							} else if(nameKey !== '') {
+								index.names[nameKey] = filename;
+							}
 						}
 
 						if(design.aliases[folder] === undefined) design.aliases[folder] = [];
-						design.aliases[folder].push('alias');
-						design.aliases[folder].push('dupealias');
+						for (const alias of ['alias', 'dupealias']) {
+							if (!design.aliases[folder].includes(alias)) design.aliases[folder].push(alias);
+						}
 						for(let altname of design.aliases[folder]) { // add all the aliases to the index
 							let values = getNestedValue(data, altname.split('.'));
 							if(values === undefined || values === "") continue;
 							if(!Array.isArray(values))
-								values = [values];
+							values = [values];
 							for(let val of values) {
 								if(val !== undefined && val !== "") {
-									if(index.aliases[val] !== undefined && index.aliases[val] !== filename && filename !== 'lumine')
+									const aliasKey = searchHelper.normalizeSearchText(String(val));
+									if(aliasKey === '') continue;
+									if(index.aliases[aliasKey] !== undefined && index.aliases[aliasKey] !== filename && filename !== 'lumine')
 										console.log(`Duplicate alias: ${lang}/${folder}: ${altname},${val},${filename}`);
-									index.aliases[val] = filename;
+									index.aliases[aliasKey] = filename;
 								}
 							}
 						}
@@ -101,11 +107,13 @@ function makeIndex() {
 									val = birthday.toLocaleString(languagejs.localeMap[lang], { timeZone: 'UTC', month: 'long' });
 								}
 
-								if(index.categories[val] === undefined) {
-									index.categories[val] = [filename];
+								const categoryKey = searchHelper.normalizeSearchText(String(val));
+								if(categoryKey === '') continue;
+								if(index.categories[categoryKey] === undefined) {
+									index.categories[categoryKey] = [filename];
 								} else {
-									if(index.categories[val].includes(filename)) console.log(`Duplicate category: ${lang}/${folder}: ${val},${filename}`);
-									index.categories[val].push(filename);
+									if(index.categories[categoryKey].includes(filename)) console.log(`Duplicate category: ${lang}/${folder}: ${val},${filename}`);
+									index.categories[categoryKey].push(filename);
 								}
 
 								if(index.properties[prop] === undefined) {
