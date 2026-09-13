@@ -4,6 +4,7 @@
 /// <reference path="./folders/animals.d.ts" />
 /// <reference path="./folders/artifacts.d.ts" />
 /// <reference path="./folders/chapters.d.ts" />
+/// <reference path="./folders/books.d.ts" />
 /// <reference path="./folders/characters.d.ts" />
 /// <reference path="./folders/constellations.d.ts" />
 /// <reference path="./folders/domains.d.ts" />
@@ -130,6 +131,7 @@ declare module "genshin-db" {
 	export const animals: QueryFunction<Animal>;
 	export const artifacts: QueryFunction<Artifact>;
 	export const chapters: QueryFunction<Chapter>;
+	export const books: QueryFunction<Book>;
 	export const characters: QueryFunction<Character>;
 	export const constellations: QueryFunction<Constellation>;
 	export const crafts: QueryFunction<Craft>;

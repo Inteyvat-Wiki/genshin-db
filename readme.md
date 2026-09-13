@@ -105,6 +105,7 @@ genshindb.achievements(query[, opts]);
 genshindb.adventureranks(query[, opts]);
 genshindb.animals(query[, opts]);
 genshindb.artifacts(query[, opts]);
+genshindb.books(query[, opts]);
 genshindb.characters(query[, opts]);
 genshindb.constellations(query[, opts]);
 genshindb.crafts(query[, opts]);

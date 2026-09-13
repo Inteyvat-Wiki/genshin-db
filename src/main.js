@@ -306,6 +306,16 @@ genshin.chapters = genshin.chapter = function (query, opts) {
 }
 
 /**
+ * Get data about a book.
+ * @param {string} query - Book name, book collection, or book id.
+ * @param {object|Options} opts - The library options, see Valid Options.
+ * @returns {object} - The data found based on the query string and options parameter.
+ */
+genshin.books = genshin.book = function (query, opts) {
+    return retrieveData(query, Folder.books, opts);
+}
+
+/**
  * Get data about a task / quest.
  * @param {string} query - Task title or task id.
  * @param {object|Options} opts - The library options, see Valid Options.
