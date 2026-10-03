@@ -1,4 +1,13 @@
 declare module "genshin-db" {
+	export interface TaskItemOperation {
+		action: 'obtain' | 'give' | 'remove';
+		items: { id: number; count: number | null }[];
+		choices?: { id: number }[];
+		count?: number;
+		givingId?: number;
+		rewardId?: number;
+		remove?: boolean;
+	}
 	export interface TaskDialog {
 		id: number;
 		content: string;
@@ -39,6 +48,7 @@ declare module "genshin-db" {
 	}
 
 	export interface TaskStep {
+		itemOperations: TaskItemOperation[];
 		id: number;
 		order: number;
 		listShowType: 'QUEST_SHOW' | 'QUEST_HIDDEN' | string;
@@ -72,6 +82,7 @@ declare module "genshin-db" {
 	}
 
 	export interface Task {
+		itemOperations: TaskItemOperation[];
 		id: number;
 		alias: string;
 		type: 'AQ' | 'LQ' | 'EQ' | 'IQ' | 'WQ' | string;
