@@ -16,6 +16,7 @@
 /// <reference path="./folders/hyperlinks.d.ts" />
 /// <reference path="./folders/maplayers.d.ts" />
 /// <reference path="./folders/materials.d.ts" />
+/// <reference path="./folders/questitems.d.ts" />
 /// <reference path="./folders/namecards.d.ts" />
 /// <reference path="./folders/outfits.d.ts" />
 /// <reference path="./folders/rarity.d.ts" />
@@ -145,6 +146,7 @@ declare module "genshin-db" {
 	export const hyperlinks: QueryFunction<Hyperlink>;
 	export const interactions: QueryFunction<Interaction>;
 	export const materials: QueryFunction<Material>;
+	export const questitems: QueryFunction<QuestItem>;
 	export const namecards: QueryFunction<Namecard>;
 	export const outfits: QueryFunction<Outfit>;
 	/** @deprecated */

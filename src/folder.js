@@ -17,6 +17,7 @@ const FoldersEnum = {
 
 	foods          : 'foods',
 	materials      : 'materials',
+	questitems     : 'questitems',
 	crafts         : 'crafts',
 
 	artifacts      : 'artifacts',

@@ -68,7 +68,7 @@ const genshindb = require('genshin-db');
   'Sethos',         'Shenhe',             'Shikanoin Heizou',
   'Sigewinne',      'Skirk',              'Sucrose',
   'Tartaglia',
-  ... 22 more items
+  ... 24 more items
 ]
 ```
 
@@ -676,8 +676,8 @@ const genshindb = require('genshin-db');
   'Manekin',          'Manekina',
   'Nilou',            'Odette',
   'Qiqi',             'Skirk',
-  'Xilonen',          'Xingqiu',
-  'Zibai'
+  'Vesna',            'Xilonen',
+  'Xingqiu',          'Zibai'
 ]
 ```
 
@@ -799,7 +799,7 @@ const genshindb = require('genshin-db');
   'Skirk',              'Sucrose',          'Tartaglia',
   'Thoma',              'Tighnari',         'Traveler (Anemo)',
   'Traveler (Cryo)',
-  ... 25 more items
+  ... 27 more items
 ]
 ```
 
@@ -1043,7 +1043,12 @@ const genshindb = require('genshin-db');
       param17: 0,
       param18: 0,
       param19: 0,
-      param20: 0
+      param20: 0,
+      param21: 0,
+      param22: 0,
+      param23: 0,
+      param24: 0,
+      param25: 0
     }
   },
   passive2: {
@@ -1072,7 +1077,12 @@ const genshindb = require('genshin-db');
       param17: 0,
       param18: 0,
       param19: 0,
-      param20: 0
+      param20: 0,
+      param21: 0,
+      param22: 0,
+      param23: 0,
+      param24: 0,
+      param25: 0
     }
   },
   passive3: {
@@ -1101,19 +1111,65 @@ const genshindb = require('genshin-db');
       param17: 0,
       param18: 0,
       param19: 0,
-      param20: 0
+      param20: 0,
+      param21: 0,
+      param22: 0,
+      param23: 0,
+      param24: 0,
+      param25: 0
     }
   },
   costs: {
-    lvl2: [ { id: 202, name: 'Mora', count: 12500 } ],
-    lvl3: [ { id: 202, name: 'Mora', count: 17500 } ],
-    lvl4: [ { id: 202, name: 'Mora', count: 25000 } ],
-    lvl5: [ { id: 202, name: 'Mora', count: 30000 } ],
-    lvl6: [ { id: 202, name: 'Mora', count: 37500 } ],
-    lvl7: [ { id: 202, name: 'Mora', count: 120000 } ],
-    lvl8: [ { id: 202, name: 'Mora', count: 260000 } ],
-    lvl9: [ { id: 202, name: 'Mora', count: 450000 } ],
-    lvl10: [ { id: 202, name: 'Mora', count: 700000 } ]
+    lvl2: [
+      { id: 202, name: 'Mora', count: 12500 },
+      { id: 104310, name: 'Teachings of Prosperity', count: 3 },
+      { id: 112032, name: "Recruit's Insignia", count: 6 }
+    ],
+    lvl3: [
+      { id: 202, name: 'Mora', count: 17500 },
+      { id: 104311, name: 'Guide to Prosperity', count: 2 },
+      { id: 112033, name: "Sergeant's Insignia", count: 3 }
+    ],
+    lvl4: [
+      { id: 202, name: 'Mora', count: 25000 },
+      { id: 104311, name: 'Guide to Prosperity', count: 4 },
+      { id: 112033, name: "Sergeant's Insignia", count: 4 }
+    ],
+    lvl5: [
+      { id: 202, name: 'Mora', count: 30000 },
+      { id: 104311, name: 'Guide to Prosperity', count: 6 },
+      { id: 112033, name: "Sergeant's Insignia", count: 6 }
+    ],
+    lvl6: [
+      { id: 202, name: 'Mora', count: 37500 },
+      { id: 104311, name: 'Guide to Prosperity', count: 9 },
+      { id: 112033, name: "Sergeant's Insignia", count: 9 }
+    ],
+    lvl7: [
+      { id: 202, name: 'Mora', count: 120000 },
+      { id: 104312, name: 'Philosophies of Prosperity', count: 4 },
+      { id: 112034, name: "Lieutenant's Insignia", count: 4 },
+      { id: 113008, name: 'Spirit Locket of Boreas', count: 1 }
+    ],
+    lvl8: [
+      { id: 202, name: 'Mora', count: 260000 },
+      { id: 104312, name: 'Philosophies of Prosperity', count: 6 },
+      { id: 112034, name: "Lieutenant's Insignia", count: 6 },
+      { id: 113008, name: 'Spirit Locket of Boreas', count: 1 }
+    ],
+    lvl9: [
+      { id: 202, name: 'Mora', count: 450000 },
+      { id: 104312, name: 'Philosophies of Prosperity', count: 12 },
+      { id: 112034, name: "Lieutenant's Insignia", count: 9 },
+      { id: 113008, name: 'Spirit Locket of Boreas', count: 2 }
+    ],
+    lvl10: [
+      { id: 202, name: 'Mora', count: 700000 },
+      { id: 104312, name: 'Philosophies of Prosperity', count: 16 },
+      { id: 112034, name: "Lieutenant's Insignia", count: 12 },
+      { id: 113008, name: 'Spirit Locket of Boreas', count: 2 },
+      { id: 104319, name: 'Crown of Insight', count: 1 }
+    ]
   },
   images: {
     filename_combat1: 'Skill_A_Catalyst_MD',
@@ -1133,15 +1189,56 @@ const genshindb = require('genshin-db');
 
 ```js
 {
-  lvl2: [ { id: 202, name: 'Mora', count: 12500 } ],
-  lvl3: [ { id: 202, name: 'Mora', count: 17500 } ],
-  lvl4: [ { id: 202, name: 'Mora', count: 25000 } ],
-  lvl5: [ { id: 202, name: 'Mora', count: 30000 } ],
-  lvl6: [ { id: 202, name: 'Mora', count: 37500 } ],
-  lvl7: [ { id: 202, name: 'Mora', count: 120000 } ],
-  lvl8: [ { id: 202, name: 'Mora', count: 260000 } ],
-  lvl9: [ { id: 202, name: 'Mora', count: 450000 } ],
-  lvl10: [ { id: 202, name: 'Mora', count: 700000 } ]
+  lvl2: [
+    { id: 202, name: 'Mora', count: 12500 },
+    { id: 104310, name: 'Teachings of Prosperity', count: 3 },
+    { id: 112032, name: "Recruit's Insignia", count: 6 }
+  ],
+  lvl3: [
+    { id: 202, name: 'Mora', count: 17500 },
+    { id: 104311, name: 'Guide to Prosperity', count: 2 },
+    { id: 112033, name: "Sergeant's Insignia", count: 3 }
+  ],
+  lvl4: [
+    { id: 202, name: 'Mora', count: 25000 },
+    { id: 104311, name: 'Guide to Prosperity', count: 4 },
+    { id: 112033, name: "Sergeant's Insignia", count: 4 }
+  ],
+  lvl5: [
+    { id: 202, name: 'Mora', count: 30000 },
+    { id: 104311, name: 'Guide to Prosperity', count: 6 },
+    { id: 112033, name: "Sergeant's Insignia", count: 6 }
+  ],
+  lvl6: [
+    { id: 202, name: 'Mora', count: 37500 },
+    { id: 104311, name: 'Guide to Prosperity', count: 9 },
+    { id: 112033, name: "Sergeant's Insignia", count: 9 }
+  ],
+  lvl7: [
+    { id: 202, name: 'Mora', count: 120000 },
+    { id: 104312, name: 'Philosophies of Prosperity', count: 4 },
+    { id: 112034, name: "Lieutenant's Insignia", count: 4 },
+    { id: 113008, name: 'Spirit Locket of Boreas', count: 1 }
+  ],
+  lvl8: [
+    { id: 202, name: 'Mora', count: 260000 },
+    { id: 104312, name: 'Philosophies of Prosperity', count: 6 },
+    { id: 112034, name: "Lieutenant's Insignia", count: 6 },
+    { id: 113008, name: 'Spirit Locket of Boreas', count: 1 }
+  ],
+  lvl9: [
+    { id: 202, name: 'Mora', count: 450000 },
+    { id: 104312, name: 'Philosophies of Prosperity', count: 12 },
+    { id: 112034, name: "Lieutenant's Insignia", count: 9 },
+    { id: 113008, name: 'Spirit Locket of Boreas', count: 2 }
+  ],
+  lvl10: [
+    { id: 202, name: 'Mora', count: 700000 },
+    { id: 104312, name: 'Philosophies of Prosperity', count: 16 },
+    { id: 112034, name: "Lieutenant's Insignia", count: 12 },
+    { id: 113008, name: 'Spirit Locket of Boreas', count: 2 },
+    { id: 104319, name: 'Crown of Insight', count: 1 }
+  ]
 }
 ```
 
@@ -1176,7 +1273,12 @@ const genshindb = require('genshin-db');
     param17: 0,
     param18: 0,
     param19: 0,
-    param20: 0
+    param20: 0,
+    param21: 0,
+    param22: 0,
+    param23: 0,
+    param24: 0,
+    param25: 0
   }
 }
 ```
@@ -1505,7 +1607,18 @@ const genshindb = require('genshin-db');
 <summary>genshindb.talents('<b>ballad', { matchCategories: true }</b>)</summary>
 
 ```js
-undefined
+[
+  'Albedo',
+  'Dahlia',
+  'Durin',
+  'Fischl',
+  'Kaeya',
+  'Lisa',
+  'Mika',
+  'Rosaria',
+  'Traveler (Anemo)',
+  'Venti'
+]
 ```
 
 </details>
@@ -1513,7 +1626,7 @@ undefined
 <summary>genshindb.talents('<b>dvalin sigh', { matchCategories: true }</b>)</summary>
 
 ```js
-undefined
+[ 'Amber', 'Beidou', 'Chongyun', 'Traveler (Anemo)' ]
 ```
 
 </details>
@@ -1521,7 +1634,15 @@ undefined
 <summary>genshindb.talents('<b>arrowhead', { matchCategories: true }</b>)</summary>
 
 ```js
-undefined
+[
+  'Amber',
+  'Collei',
+  'Dahlia',
+  'Diona',
+  'Fischl',
+  'Lohen',
+  'Traveler (Geo)'
+]
 ```
 
 </details>
@@ -1697,6 +1818,7 @@ undefined
   'Ballad of the Fjords',
   'Beacon of the Reed Sea',
   "Beginner's Protector",
+  'Beyond the Chrysalis',
   'Black Tassel',
   'Blackcliff Agate',
   'Blackcliff Longsword',
@@ -1707,6 +1829,7 @@ undefined
   'Blade of Atonement',
   'Bloodsoaked Ruins',
   'Bloodtainted Greatsword',
+  'Breezeborne Refrain',
   'Calamity of Eshu',
   'Calamity Queller',
   'Cashflow Supervision',
@@ -1775,9 +1898,7 @@ undefined
   'Harbinger of Dawn',
   "Heretic's Molten Blade",
   "Hunter's Bow",
-  "Hunter's Path",
-  'Ibis Piercer',
-  ... 149 more items
+  ... 155 more items
 ]
 ```
 
@@ -1794,34 +1915,36 @@ undefined
   weaponType: 'WEAPON_CATALYST',
   weaponText: 'Catalyst',
   rarity: 5,
-  story: 'Scriptures of the ancient winds, passed from generation to generation among the observers of ritual in service of the Anemo Archon.\n' +
-    'Countless hands have touched the now-yellowing pages of this book, though any prints they left have since been carried away by the wind.\n' +
-    '\n' +
-    'In the era when the Storm Lord reigned from his tower up high, desperate appeals filled the scriptures.\n' +
-    'Then, in the era when the sands of snow thawed, the joy of the sprouting greenery flooded the pages.\n' +
-    '\n' +
-    'In the days of yore, when the ruling aristocracy pulled at puppet strings to control the masses,\n' +
-    'The scriptures in the hands of slaves told of their envy and their desire for the thousand winds.\n' +
-    '\n' +
-    'The people of Mondstadt lived, endured, fought, rejoiced, and enjoyed freedom.\n' +
-    'As the precious years passed, the scriptures grew thicker and heavier.\n' +
-    '\n' +
-    'When Mondstadt was born anew, and the Church finally unshackled,\n' +
-    'The scriptures of the winds could bear no longer being confined to a shelf,\n' +
-    "And so the book took flight, left the Church's treasury, and was gone.\n" +
-    'Like the winds of Mondstadt, and like the people of Mondstadt,\n' +
-    'It belonged to freedom and the winds.\n' +
-    '\n' +
-    'The elegant handwriting on the title page reads:\n' +
-    '\n' +
-    'Children of the Anemo Archon, heed these words:\n' +
-    'From the winds we have come, and with the winds we shall go.\n' +
-    'Never, ever grieve for me.\n' +
-    "'Tis but my flesh and bones which rest in the soil:\n" +
-    'My soul has become one with the thousand winds.\n' +
-    '\n' +
-    'When flowers bloom, when leaves sway,\n' +
-    'That is me who sings the songs of freedom, of the winds.',
+  story: [
+    'Scriptures of the ancient winds, passed from generation to generation among the observers of ritual in service of the Anemo Archon.\n' +
+      'Countless hands have touched the now-yellowing pages of this book, though any prints they left have since been carried away by the wind.\n' +
+      '\n' +
+      'In the era when the Storm Lord reigned from his tower up high, desperate appeals filled the scriptures.\n' +
+      'Then, in the era when the sands of snow thawed, the joy of the sprouting greenery flooded the pages.\n' +
+      '\n' +
+      'In the days of yore, when the ruling aristocracy pulled at puppet strings to control the masses,\n' +
+      'The scriptures in the hands of slaves told of their envy and their desire for the thousand winds.\n' +
+      '\n' +
+      'The people of Mondstadt lived, endured, fought, rejoiced, and enjoyed freedom.\n' +
+      'As the precious years passed, the scriptures grew thicker and heavier.\n' +
+      '\n' +
+      'When Mondstadt was born anew, and the Church finally unshackled,\n' +
+      'The scriptures of the winds could bear no longer being confined to a shelf,\n' +
+      "And so the book took flight, left the Church's treasury, and was gone.\n" +
+      'Like the winds of Mondstadt, and like the people of Mondstadt,\n' +
+      'It belonged to freedom and the winds.\n' +
+      '\n' +
+      'The elegant handwriting on the title page reads:\n' +
+      '\n' +
+      'Children of the Anemo Archon, heed these words:\n' +
+      'From the winds we have come, and with the winds we shall go.\n' +
+      'Never, ever grieve for me.\n' +
+      "'Tis but my flesh and bones which rest in the soil:\n" +
+      'My soul has become one with the thousand winds.\n' +
+      '\n' +
+      'When flowers bloom, when leaves sway,\n' +
+      'That is me who sings the songs of freedom, of the winds.'
+  ],
   baseAtkValue: 45.9364,
   mainStatType: 'FIGHT_PROP_CRITICAL',
   mainStatText: 'CRIT Rate',
@@ -2567,6 +2690,7 @@ undefined
   'Bountiful Year',
   'Butter Crab',
   'Candy Shells',
+  'Celestial Tea Crisp',
   'Chicken Tofu Pudding',
   'Chili-Mince Cornbread Buns',
   'Drunken Plums in Snow',
@@ -2589,6 +2713,7 @@ undefined
   'Mystique Soup',
   'Petit Gateau Debord: Revised Version',
   'Puff Pops',
+  'Royal Grilled Fish',
   'Sashimi Platter',
   'Sing Your Heart Out',
   'Spiced Fried Chicken',
@@ -2646,6 +2771,7 @@ undefined
   'Halvamazd',
   'Harbor Fish Burger',
   'Heat-Quelling Soup',
+  'Hoarfrost Soup',
   'Jade Fruit Soup',
   'Jewelry Soup',
   'La Lettre a Focalors',
@@ -2660,6 +2786,7 @@ undefined
   'Quiet Elegance',
   'Rice Cake Soup',
   'Right at Home',
+  'Royal Grilled Fish',
   'Sakura Shrimp Crackers',
   'Sakura Tempura',
   'Shimi Chazuke',
@@ -3079,6 +3206,7 @@ undefined
   'Gluttonous Yumkasaur Mountain King',
   'Golden Wolflord',
   'Goldflame Qucusaur Tyrant',
+  'Guardian Blade of Drifting Snow',
   "Guardian of Apep's Oasis",
   'Hydro Hypostasis',
   'Hydro Tulpa',

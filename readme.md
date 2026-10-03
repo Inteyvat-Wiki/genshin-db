@@ -115,6 +115,7 @@ genshindb.enemies(query[, opts]);
 genshindb.foods(query[, opts]);
 genshindb.geographies(query[, opts]);
 genshindb.materials(query[, opts]);
+genshindb.questitems(query[, opts]);
 genshindb.namecards(query[, opts]);
 genshindb.outfits(query[, opts]);
 genshindb.rarity(query[, opts]);

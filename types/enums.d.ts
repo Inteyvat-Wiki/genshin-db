@@ -25,6 +25,7 @@ declare module "genshin-db" {
 		weapons        = "weapons",
 
 		materials      = "materials",
+		questitems     = "questitems",
 		foods          = "foods",
 		crafts         = "crafts",
 

@@ -11,7 +11,7 @@ declare module "genshin-db" {
 		weaponText: string; // translated
 
 		rarity: 1 | 2 | 3 | 4 | 5;
-		story: string; // empty string if no story
+		story: string[]; // ordered pages; empty array if no story
 
 		baseAtkValue: number; // not rounded
 		mainStatType?: 'FIGHT_PROP_ATTACK_PERCENT' | 'FIGHT_PROP_CHARGE_EFFICIENCY' | 'FIGHT_PROP_CRITICAL' | 'FIGHT_PROP_CRITICAL_HURT' | 'FIGHT_PROP_DEFENSE_PERCENT' | 'FIGHT_PROP_ELEMENT_MASTERY' | 'FIGHT_PROP_HP_PERCENT' | 'FIGHT_PROP_PHYSICAL_ADD_HURT'; // enum. low rarity weapons dont have this

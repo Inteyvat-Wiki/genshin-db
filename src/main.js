@@ -378,6 +378,16 @@ genshin.materials = genshin.material = function (query, opts) {
 }
 
 /**
+ * Get data about a quest item(s).
+ * @param {string} query - Quest item name or id.
+ * @param {object|Options} opts - The library options, see [Valid Options](https://github.com/theBowja/genshin-db/blob/main/readme.md#genshindbsetoptionsopts)
+ * @returns {object} - The data found based on the query string and options parameter.
+ */
+genshin.questitems = genshin.questitem = function (query, opts) {
+    return retrieveData(query, Folder.questitems, opts);
+}
+
+/**
  * Get data about an element.
  * @param {string} query - Name of the element.
  * @param {object|Options} opts - The library options, see [Valid Options](https://github.com/theBowja/genshin-db/blob/main/readme.md#genshindbsetoptionsopts)
