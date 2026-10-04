@@ -72,9 +72,11 @@ declare module "genshin-db" {
 		priority: number;
 		completionStepIds: number[];
 		beginWay: 'TALK_BEGIN_MANUAL' | 'TALK_BEGIN_AUTO' | string;
+		nextTalks: number[];
 		beginConditions: TaskTalkBeginConditionGroup;
 		mark: string;
 		trigger: {
+			objectIds: number[];
 			objectNames: string[];
 			points: TaskTriggerPoint[];
 		}
