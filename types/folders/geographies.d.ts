@@ -5,7 +5,7 @@ declare module "genshin-db" {
 		areaId: number;
 		areaName: string;
 		description: string;
-		regionId: string;
+		regionId: number;
 		regionName: string;
 		showOnlyUnlocked?: true;
 		sortOrder: number;

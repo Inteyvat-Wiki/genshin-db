@@ -3,6 +3,8 @@ declare module "genshin-db" {
 		id: number;
         name?: string;
         description: string;
+        regionId?: number;
+        regionName?: string;
         tabs: {
             id: number;
             name: string;
