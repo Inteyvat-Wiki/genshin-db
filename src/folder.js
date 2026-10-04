@@ -10,6 +10,7 @@ const FoldersEnum = {
 	stories		   : 'stories',
 	chapters	   : 'chapters',
 	books         : 'books',
+	documents      : 'documents',
 	tasks		   : 'tasks',
 	interactions   : 'interactions',
 	

@@ -316,6 +316,16 @@ genshin.books = genshin.book = function (query, opts) {
 }
 
 /**
+ * Get a document's title and readable contents.
+ * @param {string} query - Document title, id, or alias.
+ * @param {object|Options} opts - The library options, see Valid Options.
+ * @returns {object} - The data found based on the query string and options parameter.
+ */
+genshin.documents = genshin.document = function (query, opts) {
+    return retrieveData(query, Folder.documents, opts);
+}
+
+/**
  * Get data about a task / quest.
  * @param {string} query - Task title or task id.
  * @param {object|Options} opts - The library options, see Valid Options.

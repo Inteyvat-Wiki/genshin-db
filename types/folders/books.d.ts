@@ -1,6 +1,7 @@
 declare module "genshin-db" {
 	export interface Book {
 		id: number;
+		alias: string[];
 		materialId: number;
 		name: string;
 		description: string;
