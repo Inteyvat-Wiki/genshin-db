@@ -158,7 +158,7 @@ const genshindb = require('genshin-db');
   },
   url: undefined,
   stats: [Function (anonymous)],
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -298,7 +298,7 @@ const genshindb = require('genshin-db');
   },
   url: undefined,
   stats: [Function (anonymous)],
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -388,7 +388,7 @@ const genshindb = require('genshin-db');
   },
   url: undefined,
   stats: [Function (anonymous)],
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -478,7 +478,7 @@ const genshindb = require('genshin-db');
   },
   url: undefined,
   stats: [Function (anonymous)],
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -568,7 +568,7 @@ const genshindb = require('genshin-db');
   },
   url: undefined,
   stats: [Function (anonymous)],
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -689,10 +689,10 @@ const genshindb = require('genshin-db');
 {
   level: 90,
   ascension: 6,
-  hp: 10286.5650232,
-  attack: 310.931894,
-  defense: 614.843496,
-  specialized: 0.288
+  hp: NaN,
+  attack: NaN,
+  defense: NaN,
+  specialized: 0
 }
 ```
 
@@ -704,10 +704,10 @@ const genshindb = require('genshin-db');
 {
   level: 80,
   ascension: 5,
-  hp: 9075.6026368,
-  attack: 274.32836599999996,
-  defense: 542.462304,
-  specialized: 0.216
+  hp: NaN,
+  attack: NaN,
+  defense: NaN,
+  specialized: 0
 }
 ```
 
@@ -719,10 +719,10 @@ const genshindb = require('genshin-db');
 {
   level: 80,
   ascension: 6,
-  hp: 9563.452736800002,
-  attack: 289.073876,
-  defense: 571.622304,
-  specialized: 0.288
+  hp: NaN,
+  attack: NaN,
+  defense: NaN,
+  specialized: 0
 }
 ```
 
@@ -734,9 +734,9 @@ const genshindb = require('genshin-db');
 {
   level: 12,
   ascension: 0,
-  hp: 1739.697228,
-  attack: 33.977664,
-  defense: 109.1853,
+  hp: NaN,
+  attack: NaN,
+  defense: NaN,
   specialized: 0
 }
 ```
@@ -749,10 +749,10 @@ const genshindb = require('genshin-db');
 {
   level: 95,
   ascension: 6,
-  hp: 15850.780750000002,
-  attack: 271.4059676,
-  defense: 720.23234925,
-  specialized: 0.242
+  hp: NaN,
+  attack: NaN,
+  defense: NaN,
+  specialized: 0.05
 }
 ```
 
@@ -1179,7 +1179,7 @@ const genshindb = require('genshin-db');
     filename_passive2: 'UI_Talent_S_Ningguang_06',
     filename_passive3: 'UI_Talent_Collect_Ore'
   },
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -1706,7 +1706,7 @@ const genshindb = require('genshin-db');
     filename_c6: 'UI_Talent_S_Ambor_04',
     filename_constellation: 'Eff_UI_Talent_Ambor'
   },
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -1785,7 +1785,7 @@ const genshindb = require('genshin-db');
     filename_constellation: 'Eff_UI_Talent_PlayerBoy_Rock',
     filename_constellation2: 'Eff_UI_Talent_PlayerGirl_Rock'
   },
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -2041,7 +2041,7 @@ const genshindb = require('genshin-db');
     filename_gacha: 'UI_Gacha_EquipIcon_Catalyst_Fourwinds'
   },
   stats: [Function (anonymous)],
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -2188,7 +2188,7 @@ const genshindb = require('genshin-db');
 <summary>genshindb.weapons('<b>dull blade'</b>)<b>.stats(49)</b></summary>
 
 ```js
-{ level: 49, ascension: 2, attack: 127.972235, specialized: 0 }
+{ level: 49, ascension: 2, attack: NaN, specialized: NaN }
 ```
 
 </details>
@@ -2196,12 +2196,7 @@ const genshindb = require('genshin-db');
 <summary>genshindb.weapons('<b>sac sword'</b>)<b>.stats(80, '+')</b></summary>
 
 ```js
-{
-  level: 80,
-  ascension: 6,
-  attack: 426.5607258,
-  specialized: 0.5586652700000001
-}
+{ level: 80, ascension: 6, attack: NaN, specialized: NaN }
 ```
 
 </details>
@@ -2209,12 +2204,7 @@ const genshindb = require('genshin-db');
 <summary>genshindb.weapons('<b>wolf grave'</b>)<b>.stats(90)</b></summary>
 
 ```js
-{
-  level: 90,
-  ascension: 6,
-  attack: 608.0745972,
-  specialized: 0.49615200000000004
-}
+{ level: 90, ascension: 6, attack: NaN, specialized: NaN }
 ```
 
 </details>
@@ -2241,7 +2231,7 @@ const genshindb = require('genshin-db');
   fullDescription: 'Poetry is the soul of the land of the wind. Poetry is the manifestations of the will to encourage. In the dark days, the gales in the streets and alleyways whisper words of fury, like the battle drums, like the low rumbling before the storm.',
   sources: [],
   images: { filename_icon: 'UI_ItemIcon_104308' },
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -2260,7 +2250,7 @@ const genshindb = require('genshin-db');
   fullDescription: '',
   sources: [],
   images: { filename_icon: 'UI_ItemIcon_115018' },
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -2358,7 +2348,7 @@ const genshindb = require('genshin-db');
   fullDescription: "The Dragon of the East's physical form is beautiful and transparent. Both trade winds and tornadoes will work in his name. The winds move as his companion, his voice, and his freedom. His enemies are the thousands who stand against the wind.",
   sources: [],
   images: { filename_icon: 'UI_ItemIcon_113005' },
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -2377,7 +2367,7 @@ const genshindb = require('genshin-db');
   fullDescription: "This iron ore can be turned into a multitude of handy items in the hands of a skilled craftsman. Mineral ores' presence on the surface usually indicates abundant ore veins underneath.",
   sources: [ 'Found in the wild' ],
   images: { filename_icon: 'UI_ItemIcon_101001' },
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -2489,7 +2479,7 @@ const genshindb = require('genshin-db');
   fullDescription: '',
   sources: [],
   images: { filename_icon: 'UI_ItemIcon_107007' },
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -2631,7 +2621,7 @@ const genshindb = require('genshin-db');
     filename_goblet: 'UI_RelicIcon_15018_1',
     filename_circlet: 'UI_RelicIcon_15018_3'
   },
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -2675,7 +2665,7 @@ const genshindb = require('genshin-db');
     filename_buff: 'UI_Buff_Item_Atk_Add',
     filename_icon: 'UI_ItemIcon_108123'
   },
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -2863,7 +2853,7 @@ const genshindb = require('genshin-db');
     filename_buff: 'UI_Buff_Item_Atk_CritRate',
     filename_icon: 'UI_ItemIcon_108058'
   },
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -2904,9 +2894,9 @@ const genshindb = require('genshin-db');
     { id: 20011201, name: 'Pyro Slime' },
     { id: 20011301, name: 'Large Pyro Slime' }
   ],
-  monsterlist: [ null, null, null ],
+  monsterlist: [ 'Pyro Slime', 'Large Pyro Slime', 'Pyro Abyss Mage' ],
   images: {},
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -3176,7 +3166,7 @@ const genshindb = require('genshin-db');
     filename_icon: 'UI_MonsterIcon_Slime_Electric_03'
   },
   stats: [Function (anonymous)],
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -3275,7 +3265,7 @@ const genshindb = require('genshin-db');
     filename_sideIcon: 'UI_AvatarIcon_Side_AmborCostumeWic'
   },
   url: undefined,
-  version: ''
+  version: '2.5'
 }
 ```
 
@@ -3322,7 +3312,7 @@ const genshindb = require('genshin-db');
     filename_icon: 'UI_FlycloakIcon_Thunderclap',
     filename_gacha: 'UI_Gacha_FlycloakIcon_Thunderclap'
   },
-  version: ''
+  version: '2.0'
 }
 ```
 
@@ -3344,7 +3334,7 @@ const genshindb = require('genshin-db');
   countType: 'COUNT_TYPE_NONE',
   sortOrder: 11015,
   images: { filename_icon: 'UI_AnimalIcon_DogPrick_02' },
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -3363,7 +3353,7 @@ const genshindb = require('genshin-db');
   countType: 'COUNT_TYPE_CAPTURE',
   sortOrder: 10026,
   images: { filename_icon: 'UI_AnimalIcon_Pigeon_Beak' },
-  version: ''
+  version: '3.0'
 }
 ```
 
@@ -3497,7 +3487,7 @@ const genshindb = require('genshin-db');
     filename_banner: 'UI_NameCardPic_Klee_Alpha',
     filename_background: 'UI_NameCardPic_Klee_P'
   },
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -3519,7 +3509,7 @@ const genshindb = require('genshin-db');
   regionId: 1,
   sortOrder: 7,
   images: { filename_image: 'UI_Codex_Scenery_MDtushuguan' },
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -3606,7 +3596,7 @@ const genshindb = require('genshin-db');
       type: 'MATERIAL'
     }
   ],
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -3631,7 +3621,7 @@ const genshindb = require('genshin-db');
     },
     { id: 104003, name: "Hero's Wit", count: 21, type: 'MATERIAL' }
   ],
-  version: ''
+  version: '1.x'
 }
 ```
 
@@ -3650,7 +3640,7 @@ const genshindb = require('genshin-db');
   sortOrder: 27,
   dupealias: 'Oh! 1',
   images: { filename_icon: 'UI_EmotionIcon27' },
-  version: ''
+  version: '2.1'
 }
 ```
 
@@ -4388,7 +4378,7 @@ const genshindb = require('genshin-db');
       voicefile: null
     }
   ],
-  version: ''
+  version: '2.0'
 }
 ```
 
