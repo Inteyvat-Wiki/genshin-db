@@ -59,6 +59,7 @@ declare module "genshin-db" {
 			position: [number, number, number];
 		};
 		finishConditions: TaskStepFinishCondition[];
+		failConditions: TaskStepFinishCondition[];
 	}
 
 	export interface TaskTriggerPoint {
