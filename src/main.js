@@ -336,6 +336,13 @@ genshin.tasks = genshin.task = function (query, opts) {
 }
 
 /**
+ * Get an NPC's dialogue entries and topics by name, alias or NPC id.
+ */
+genshin.npcs = genshin.npc = function (query, opts) {
+    return retrieveData(query, Folder.npcs, opts);
+}
+
+/**
  * Get an InterAction configuration by a dialog id or indexed alias.
  * @param {string} query - InterAction dialog id or alias.
  * @param {object|Options} opts - The library options, see Valid Options.

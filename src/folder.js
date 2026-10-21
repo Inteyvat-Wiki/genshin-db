@@ -12,6 +12,7 @@ const FoldersEnum = {
 	books         : 'books',
 	documents      : 'documents',
 	tasks		   : 'tasks',
+	npcs           : 'npcs',
 	interactions   : 'interactions',
 	
 	weapons        : 'weapons',
