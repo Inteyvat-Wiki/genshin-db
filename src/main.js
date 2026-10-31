@@ -342,6 +342,23 @@ genshin.npcs = genshin.npc = function (query, opts) {
     return retrieveData(query, Folder.npcs, opts);
 }
 
+/** Source-bound research catalogues exported by GenshinData-scripts. */
+genshin.serenitea = function (query, opts) {
+    return retrieveData(query, Folder.serenitea, opts);
+}
+genshin.tcg = function (query, opts) {
+    return retrieveData(query, Folder.tcg, opts);
+}
+genshin.miliastra = function (query, opts) {
+    return retrieveData(query, Folder.miliastra, opts);
+}
+genshin.misc = function (query, opts) {
+    return retrieveData(query, Folder.misc, opts);
+}
+genshin.tasksubtitles = function (query, opts) {
+    return retrieveData(query, Folder.tasksubtitles, opts);
+}
+
 /**
  * Get an InterAction configuration by a dialog id or indexed alias.
  * @param {string} query - InterAction dialog id or alias.

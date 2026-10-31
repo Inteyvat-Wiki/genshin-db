@@ -43,6 +43,11 @@ declare module "genshin-db" {
 		documents      = "documents",
 		interactions   = "interactions",
 		npcs           = "npcs",
+		serenitea      = "serenitea",
+		tcg            = "tcg",
+		miliastra      = "miliastra",
+		misc           = "misc",
+		tasksubtitles  = "tasksubtitles",
 
 		achievements   = "achievements",
 		achievementgroups = "achievementgroups",

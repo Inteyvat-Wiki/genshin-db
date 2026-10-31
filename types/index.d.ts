@@ -24,6 +24,9 @@
 /// <reference path="./folders/stories.d.ts" />
 /// <reference path="./folders/tasks.d.ts" />
 /// <reference path="./folders/npcs.d.ts" />
+/// <reference path="./folders/archives.d.ts" />
+/// <reference path="./folders/misc.d.ts" />
+/// <reference path="./folders/tasksubtitles.d.ts" />
 /// <reference path="./folders/interactions.d.ts" />
 /// <reference path="./folders/talentmaterialtypes.d.ts" />
 /// <reference path="./folders/talents.d.ts" />
@@ -157,6 +160,11 @@ declare module "genshin-db" {
 	export const stories: QueryFunction<Story>;
 	export const tasks: QueryFunction<Task>;
 	export const npcs: QueryFunction<Npc>;
+	export const serenitea: QueryFunction<ArchiveRecord>;
+	export const tcg: QueryFunction<ArchiveRecord>;
+	export const miliastra: QueryFunction<ArchiveRecord>;
+	export const misc: QueryFunction<MiscRecord>;
+	export const tasksubtitles: QueryFunction<TaskSubtitleRecord>;
 	export const talentmaterialtypes: QueryFunction<TalentMaterial>;
 	export const talents: QueryFunction<Talent>;
 	// export const weaponmaterialtypes: QueryFunction<WeaponMaterial>;

@@ -13,6 +13,11 @@ const FoldersEnum = {
 	documents      : 'documents',
 	tasks		   : 'tasks',
 	npcs           : 'npcs',
+	serenitea      : 'serenitea',
+	tcg            : 'tcg',
+	miliastra      : 'miliastra',
+	misc           : 'misc',
+	tasksubtitles  : 'tasksubtitles',
 	interactions   : 'interactions',
 	
 	weapons        : 'weapons',
