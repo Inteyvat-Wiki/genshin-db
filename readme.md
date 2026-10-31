@@ -1,7 +1,14 @@
 # genshin-db
 
-![npm](https://img.shields.io/npm/v/genshin-db)
-![npm bundle size](https://img.shields.io/bundlephobia/min/genshin-db)
+## 来源、署名与许可
+
+本项目衍生自 [theBowja/genshin-db](https://github.com/theBowja/genshin-db)，由 Inteyvat-Wiki 独立维护。原作者为 theBowja；原始版权声明与 MIT 许可全文保留在 [LICENSE](LICENSE)，修改部分另行署名，贡献者记录见 Git 历史。
+
+本分支并非社区 npm 包 `genshin-db` 的官方发布，不保证与上游接口、数据格式及运行方式兼容。下面保留的上游使用文档中，npm 安装命令、发行版、服务与联系方式描述的是上游项目，不代表本分支已提供相同发布或服务。请使用本仓库 Issues 联系本分支维护者。
+
+代码许可不等于游戏内容的再授权，详见 [NOTICES.md](NOTICES.md)。
+
+## 上游使用文档（保留供参考）
 
 ### Genshin Impact JSON data with a robust searching functions! Updated to version 6.4. Sources from the fandom wiki and GenshinData repo.
 
@@ -233,7 +240,7 @@ This is a built-in way to limit the kinds of altnames that can be added.
 
 ## Licensing
 
-Currently using MIT License but I don't really care. Let me know if you need something more lax or free.
+Software code is provided under the [MIT License](LICENSE), with upstream copyright notices preserved. This does not independently license game content or other third-party material; see [NOTICES.md](NOTICES.md).
 
 ## Build scripts
 
