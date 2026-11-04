@@ -3,6 +3,10 @@ declare module "genshin-db" {
 		id: number;
 		name: string;
 		description: string;
+		/** Original text markup, with escaped newlines decoded. */
+		descriptionRaw: string;
+		/** Document/Localization readable; empty string when no story exists. */
+		story: string;
 		isDefault: boolean;
 		characterId: number;
 		characterName: string;

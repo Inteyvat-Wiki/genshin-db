@@ -11,13 +11,20 @@ const searchHelper = require('../../src/helper.js');
 const argv = require('yargs-parser')(process.argv.slice(2), {
 	alias: { folder: ['folders'], language: ['languages'] },
 	array: [ 'folders', 'languages' ],
+	string: ['cache', 'snapshot', 'index-cache'],
 	default: { folders: ['standard'], languages: ['all'] }
 });
 
-let specificlanguages = helper.sanitizeLanguages(argv.languages);
-let specificfolders = helper.sanitizeFolders(argv.folders);
+let specificlanguages = helper.sanitizeLanguages(argv.languages.flatMap(value => value.split(',')));
+let specificfolders = helper.sanitizeFolders(argv.folders.flatMap(value => value.split(',')));
 
-makeIndex();
+if (argv.cache || argv.snapshot) {
+	const snapshot = require('genshindata-scripts').openSnapshot({ cacheRoot: argv.cache, snapshotId: argv.snapshot });
+	const summary = require('../../src/main').buildIndexes(snapshot, {
+		cacheRoot: argv['index-cache'], folders: specificfolders, languages: specificlanguages
+	});
+	console.log(JSON.stringify(summary, null, 2));
+} else makeIndex();
 
 function makeIndex() {
 

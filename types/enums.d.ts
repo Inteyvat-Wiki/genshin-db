@@ -35,9 +35,11 @@ declare module "genshin-db" {
 		animals        = "animals",
 
 		outfits        = "outfits",
+		weaponskins    = "weaponskins",
 		windgliders    = "windgliders",
 		namecards      = "namecards",
 		geographies    = "geographies",
+		maps           = "maps",
 		chapters       = "chapters",
 		books          = "books",
 		documents      = "documents",

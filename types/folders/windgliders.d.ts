@@ -3,8 +3,10 @@ declare module "genshin-db" {
 		id: number;
 		name: string;
 		description: string;
+		/** Original text markup, with escaped newlines decoded. */
+		descriptionRaw: string;
 		rarity: 4;
-		story: string;
+		story: string; // Document/Localization readable; empty string when absent
 		isHidden?: true;
 		source: string[];
 		

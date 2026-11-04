@@ -39,11 +39,13 @@ const FoldersEnum = {
 
 	windgliders    : 'windgliders',
 	outfits        : 'outfits',
+	weaponskins    : 'weaponskins',
 	animals        : 'animals',
 	namecards      : 'namecards',
 	geographies    : 'geographies',
 	dungeons	   : 'dungeons',
 	maplayers	   : 'maplayers',
+	maps           : 'maps',
 	adventureranks : 'adventureranks',
 
 	emojis         : 'emojis',

@@ -1,4 +1,5 @@
 const pako = require('pako');
+const provider = require('./provider');
 
 let fs;
 let path;
@@ -57,27 +58,8 @@ function readCachedJson(cache, filepath) {
     return data;
 }
 
-function getSourceData() {
-    if (useFileData) return undefined;
-    const all = loadBundledData();
-    return {
-        data: all.data,
-        index: all.index,
-        image: all.image,
-        stats: all.stats,
-        curve: all.curve,
-        url: all.url,
-        version: all.version,
-    };
-}
-const sourceAll = getSourceData();
-const alldata    = sourceAll ? sourceAll.data : {};
-const allindex   = sourceAll ? sourceAll.index : {};
-const allimage   = sourceAll ? sourceAll.image : {};
-const allurl     = sourceAll ? sourceAll.url : {};
-const allstats   = sourceAll ? sourceAll.stats : {};
-const allcurve   = sourceAll ? sourceAll.curve : {};
-const allversion = sourceAll ? sourceAll.version : {};
+// These maps hold only explicit addData overrides. Bundles are opened lazily in legacy mode.
+const alldata = {}, allindex = {}, allimage = {}, allurl = {}, allstats = {}, allcurve = {}, allversion = {};
 
 function getDataPath(lang, folder, filename) {
     return path.join(__dirname, 'data', lang, folder, `${filename}.json`);
@@ -133,15 +115,18 @@ const calcStatsMap = {
 function getData(lang, folder, filename, v4Prop, v4PropOnly) {
     let tmp;
     try {
-        if (folder === 'interactions') {
+        if (provider.getSnapshot()) {
+            tmp = provider.getSnapshot().getRecord(lang, folder, filename);
+            if (tmp === undefined) return undefined;
+        } else if (folder === 'interactions') {
             const filepath = getInteractionDataPath(filename);
             // InterAction files can be several megabytes each. Keeping every raw file in the
             // general data cache makes bulk consumers retain gigabytes of one-shot data.
-            tmp = useFileData && filepath ? readJsonFile(filepath) : dataExists(alldata, undefined, folder, filename);
+            tmp = useFileData && filepath ? readJsonFile(filepath) : dataExists(alldata, undefined, folder, filename) || loadBundledData().data?.interactions?.[filename];
         } else if (useFileData) {
             tmp = dataExists(alldata, lang, folder, filename) || readCachedJson(fileCache.data, getDataPath(lang, folder, filename));
         } else {
-            tmp = alldata[lang][folder][filename];
+            tmp = dataExists(alldata, lang, folder, filename) || loadBundledData().data?.[lang]?.[folder]?.[filename];
         }
 		if (folder === 'interactions') return tmp;
         if(tmp.images === undefined && design.hasImage.includes(folder)) {
@@ -159,7 +144,7 @@ function getData(lang, folder, filename, v4Prop, v4PropOnly) {
         if(tmp.version === undefined) {
             tmp.version = getVersion(folder, filename);
         }
-    } catch(e) { return undefined; }
+    } catch(e) { if (provider.getSnapshot()) throw e; return undefined; }
 
     if (v4PropOnly) return v4prop.getv4(tmp, folder);
     if (v4Prop) return v4prop.addv4(tmp, folder);
@@ -168,19 +153,21 @@ function getData(lang, folder, filename, v4Prop, v4PropOnly) {
 }
 
 function getIndex(lang, folder) {
+    if (provider.getSnapshot()) return provider.getIndex(lang, folder);
     try {
         if (folder === 'interactions') {
             if (useFileData) return readCachedJson(fileCache.index, getInteractionIndexPath());
-            return allindex.interactions;
+            return allindex.interactions || loadBundledData().index?.interactions;
         }
         if (useFileData) {
             return dataExists(allindex, lang, folder) || readCachedJson(fileCache.index, getIndexPath(lang, folder));
         }
-        return allindex[lang][folder];
+        return allindex[lang]?.[folder] || loadBundledData().index?.[lang]?.[folder];
     } catch(e) { return undefined; }
 }
 
 function getImage(folder, filename) {
+    if (provider.getSnapshot()) return provider.getSnapshot().getAuxiliary('image', folder, filename);
     try {
         if (useFileData) {
             const cached = dataExists(allimage, undefined, folder, filename);
@@ -188,11 +175,12 @@ function getImage(folder, filename) {
             const image = readCachedJson(fileCache.image, getImagePath(folder));
             return image ? image[filename] : undefined;
         }
-        return allimage[folder][filename];
+        return allimage[folder]?.[filename] || loadBundledData().image?.[folder]?.[filename];
     } catch(e) { return undefined; }
 }
 
 function getURL(folder, filename) {
+    if (provider.getSnapshot()) return provider.getSnapshot().getAuxiliary('url', folder, filename);
     try {
         if (useFileData) {
             const cached = dataExists(allurl, undefined, folder, filename);
@@ -200,11 +188,12 @@ function getURL(folder, filename) {
             const url = readCachedJson(fileCache.url, getUrlPath(folder));
             return url ? url[filename] : undefined;
         }
-        return allurl[folder][filename];
+        return allurl[folder]?.[filename] || loadBundledData().url?.[folder]?.[filename];
     } catch(e) { return undefined; }
 }
 
 function getVersion(folder,  filename) {
+    if (provider.getSnapshot()) return provider.getSnapshot().getAuxiliary('version', folder, filename) || '';
     try {
         if (useFileData) {
             const cached = dataExists(allversion, undefined, folder, filename);
@@ -212,11 +201,12 @@ function getVersion(folder,  filename) {
             const version = readCachedJson(fileCache.version, getVersionPath(folder));
             return version ? version[filename] : '';
         }
-        return allversion[folder][filename];
+        return allversion[folder]?.[filename] ?? loadBundledData().version?.[folder]?.[filename];
     } catch(e) { return ''; }
 }
 
 function getStats(folder, filename) {
+    if (provider.getSnapshot()) return provider.getSnapshot().getAuxiliary('stats', folder, filename);
     try {
         if (useFileData) {
             const cached = dataExists(allstats, undefined, folder, filename);
@@ -224,16 +214,17 @@ function getStats(folder, filename) {
             const stats = readCachedJson(fileCache.stats, getStatsPath(folder));
             return stats ? stats[filename] : undefined;
         }
-        return allstats[folder][filename];
+        return allstats[folder]?.[filename] || loadBundledData().stats?.[folder]?.[filename];
     } catch(e) { return undefined; }
 }
 
 function getCurve(folder) {
+    if (provider.getSnapshot()) return provider.getSnapshot().getAuxiliary('curve', folder);
     try {
         if (useFileData) {
             return allcurve[folder] || readCachedJson(fileCache.curve, getCurvePath(folder));
         }
-        return allcurve[folder];
+        return allcurve[folder] || loadBundledData().curve?.[folder];
     } catch(e) { return undefined; }
 }
 
@@ -498,6 +489,10 @@ function addData(newdata, override = true) {
 }
 
 module.exports = {
+    getGiving(id) {
+        if (provider.getSnapshot()) return provider.getSnapshot().getInteractionGiving(id);
+        return readCachedJson(fileCache.data, path.join(__dirname, 'data/interactions.json'))?.givings?.[id];
+    },
     addData: addData,
     getData: getData,
     getIndex: getIndex,

@@ -3,10 +3,11 @@ const fuzzysort = require('fuzzysort');
 const language = require('./language.js');
 const Folder = require('./folder.js').FoldersEnum;
 const FolderFormat = require('./folder.js').format;
-const altnames = require('./altnames.js');
 const Options = require('./Options.js');
 const helper = require('./helper.js');
-const { getData, getIndex, addData } = require('./getdata.js');
+function createQueryApi(storage) {
+const { getData, getIndex, addData, getGiving } = storage;
+const altnames = require('./altnames.js').createStore(getIndex);
 
 // object that will be exported
 const genshin = {};
@@ -263,6 +264,10 @@ genshin.characters = genshin.character = function (query, opts) {
  */
 genshin.outfits = genshin.outfit = function (query, opts) {
     return retrieveData(query, Folder.outfits, opts);
+}
+
+genshin.weaponskins = genshin.weaponskin = function (query, opts) {
+    return retrieveData(query, Folder.weaponskins, opts);
 }
 
 /**
@@ -571,6 +576,11 @@ genshin.maplayers = genshin.maplayer = function (query, opts) {
     return retrieveData(query, Folder.maplayers, opts);
 }
 
+/** Query source-qualified map records from the selected upstream snapshot. */
+genshin.maps = function (query, opts) {
+    return retrieveData(query, Folder.maps, opts);
+}
+
 /**
  * Get data about adventure ranks
  * @param {string} query - adventure level
@@ -703,5 +713,48 @@ genshin.setAltNameLimits = altnames.setLimit;
 genshin.Options = Options;
 
 genshin.addData = addData;
+genshin.getRecord = function(folder, key, options = {}) {
+    if (!Object.hasOwn(Folder, folder) || typeof key !== 'string') throw new Error('Expected a folder and an exact record key');
+    const lang = language.format(options.language || baseoptions.resultLanguage);
+    if (!lang) throw new Error('Unknown record language');
+    if (folder === 'interactions') key = key.replaceAll('\\', '/').replace(/\.json$/i, '');
+    if (!key || key.split(/[\\/]/).some(part => !part || part === '.' || part === '..' || /[:\x00-\x1f]/.test(part)))
+        throw new Error('Invalid cache key');
+    return getData(lang, folder, key, false, false);
+};
+genshin.interactionGiving = function(id) {
+    if (!Number.isSafeInteger(id) || id <= 0) throw new Error('Expected a positive giving ID');
+    return getGiving(id);
+};
+
+return genshin;
+}
+
+const storage = require('./getdata.js');
+const genshin = createQueryApi(storage);
+
+// Legacy mode remains available for compatibility and isolated migration comparisons.
+genshin.useProvider = require('./provider').useProvider;
+genshin.prepare = async function(options) {
+    const snapshot = await require('genshindata-scripts').prepare(options);
+    genshin.useProvider(snapshot, { cacheRoot: options.indexCacheRoot });
+    return snapshot;
+};
+genshin.openSnapshot = function(options = {}) {
+    const snapshot = require('genshindata-scripts').openSnapshot(options);
+    genshin.useProvider(snapshot, { cacheRoot: options.indexCacheRoot });
+    return snapshot;
+};
+genshin.createClient = function(snapshot, options = {}) {
+    const provider = require('./provider');
+    const context = provider.createContext(snapshot, options);
+    const scoped = {};
+    for (const method of ['getData', 'getIndex', 'getGiving']) scoped[method] = (...args) => provider.withContext(context, () => storage[method](...args));
+    const client = createQueryApi(scoped);
+    delete client.addData;
+    Object.defineProperty(client, 'snapshotId', { value: snapshot.snapshotId, enumerable: true });
+    return Object.freeze(client);
+};
+genshin.buildIndexes = require('./provider').buildIndexes;
 
 module.exports = genshin;

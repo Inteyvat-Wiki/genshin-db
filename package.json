@@ -1,11 +1,17 @@
 {
 	"name": "genshin-db",
 	"version": "5.2.9",
+	"private": true,
+	"engines": { "node": ">=22.13" },
 	"description": "Genshin Impact v6.4 JSON data. Search and get results in all in-game languages! Sources from the fandom wiki and GenshinData repo.",
 	"main": "./src/main.js",
 	"types": "./types/index.d.ts",
 	"scripts": {
+		"test:unit": "node --test tests/*.test.js",
+		"test:provider": "node --test tests/provider.test.js",
 		"test:misc": "node --test tests/misc.test.js",
+		"test:maps": "node --test tests/maps.test.js",
+		"test:cosmetics": "node --test tests/cosmetics.test.js",
 		"import": "cd scripts/import && node ./import.js",
 		"examples": "cd scripts/generate && node ./examples.js",
 		"makeIndex": "cd scripts/generate && node ./makeIndex.js",
@@ -14,8 +20,7 @@
 		"assemble": "npm run makeIndex && npm run combineData && npm run examples && npm run imagelist",
 		"build": "node ./scripts/webpack/build.js",
 		"buildAllDist": "node ./scripts/webpack/buildAllDist.js",
-		"publish": "node ./scripts/publish/publish.js",
-		"publishTcg": "npm run publish tcg"
+		"prepublishOnly": "node scripts/publish/disabled.cjs"
 	},
 	"keywords": [
 		"genshin-impact",
@@ -33,6 +38,7 @@
 	},
 	"homepage": "https://github.com/Inteyvat-Wiki/genshin-db#readme",
 	"dependencies": {
+		"genshindata-scripts": "file:../GenshinData-scripts",
 		"fuzzysort": "^1.1.4",
 		"pako": "^2.0.4"
 	},
@@ -48,6 +54,7 @@
 		"examples/index.ts",
 		"LICENSE",
 		"NOTICES.md",
+		"docs/provider.md",
 		"LICENSES/",
 		"README.md",
 		"types/*",
@@ -57,8 +64,8 @@
 		"src/helper.js",
 		"src/main.js",
 		"src/getdata.js",
+		"src/provider.js",
 		"src/Options.js",
-		"src/min/data.min.json",
 		"src/design.json",
 		"src/v4prop.js"
 	]

@@ -16,10 +16,12 @@
 /// <reference path="./folders/geographies.d.ts" />
 /// <reference path="./folders/hyperlinks.d.ts" />
 /// <reference path="./folders/maplayers.d.ts" />
+/// <reference path="./folders/maps.d.ts" />
 /// <reference path="./folders/materials.d.ts" />
 /// <reference path="./folders/questitems.d.ts" />
 /// <reference path="./folders/namecards.d.ts" />
 /// <reference path="./folders/outfits.d.ts" />
+/// <reference path="./folders/weaponskins.d.ts" />
 /// <reference path="./folders/rarity.d.ts" />
 /// <reference path="./folders/stories.d.ts" />
 /// <reference path="./folders/tasks.d.ts" />
@@ -51,6 +53,14 @@
 /// <reference path="./enums.d.ts" />
 
 declare module "genshin-db" {
+	export function useProvider(snapshot?: import('genshindata-scripts').Snapshot, options?: { cacheRoot?: string }): void;
+	export function prepare(options: import('genshindata-scripts').PreparationOptions & { indexCacheRoot?: string }): Promise<import('genshindata-scripts').Snapshot>;
+	export function openSnapshot(options?: { cacheRoot?: string; snapshotId?: string; indexCacheRoot?: string }): import('genshindata-scripts').Snapshot;
+	export type SnapshotClient = Omit<typeof import('genshin-db'), 'useProvider' | 'prepare' | 'openSnapshot' | 'createClient' | 'buildIndexes' | 'addData'> & { readonly snapshotId: string };
+	export function createClient(snapshot: import('genshindata-scripts').Snapshot, options?: { cacheRoot?: string }): SnapshotClient;
+	export function getRecord<T = unknown>(folder: string, key: string, options?: { language?: string }): T | undefined;
+	export function interactionGiving(id: number): { items: Array<{ id: number; count: number }>; choices?: Array<{ id: number }>; count?: number; remove: boolean } | undefined;
+	export function buildIndexes(snapshot: import('genshindata-scripts').Snapshot, options?: { cacheRoot?: string; folders?: string[]; languages?: string[] }): { snapshotId: string; indexes: Array<{ language: string; folder: string; count: number }> };
 	export interface QueryFunction<R> {
 		<Q extends string, O extends QueryOptions>(query: Q, opts?: O):
 			(O extends { dumpResult: true }
@@ -145,6 +155,7 @@ declare module "genshin-db" {
 	export const domains: QueryFunction<Domain>;
 	export const dungeons: QueryFunction<Dungeon>;
 	export const maplayers: QueryFunction<MapLayer>;
+	export const maps: QueryFunction<MapRecord>;
 	export const elements: QueryFunction<Element>; 
 	export const enemies: QueryFunction<Enemy>;
 	export const foods: QueryFunction<Food>;
@@ -155,6 +166,8 @@ declare module "genshin-db" {
 	export const questitems: QueryFunction<QuestItem>;
 	export const namecards: QueryFunction<Namecard>;
 	export const outfits: QueryFunction<Outfit>;
+	export const weaponskins: QueryFunction<WeaponSkin>;
+	export const weaponskin: QueryFunction<WeaponSkin>;
 	/** @deprecated */
 	export const rarity: QueryFunction<Rarity>;
 	export const stories: QueryFunction<Story>;

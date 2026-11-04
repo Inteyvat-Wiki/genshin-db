@@ -10,6 +10,8 @@
 
 ## 上游使用文档（保留供参考）
 
+本分支新增的 Node.js 快照缓存及上游接口用法见 [数据提供接口](docs/provider.md)。新 npm 包不携带完整游戏数据；现有开发目录仍保留旧文件适配器供逐步迁移。
+
 ### Genshin Impact JSON data with a robust searching functions! Updated to version 6.4. Sources from the fandom wiki and GenshinData repo.
 
 ------------------------------------

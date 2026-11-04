@@ -1,23 +1,16 @@
-name: Send genshin-db_release repository dispatch
+name: Legacy release dispatch (disabled)
 
 on:
-  release:
-    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   genshin-db_release:
-    strategy:
-      matrix:
-        repo:
-          - 'theBowja/genshin-db-dist'
-          - 'AllySummers/genshin-db-data'
     runs-on: ubuntu-latest
 
     steps:
-      - name: Repository Dispatch
-        uses: peter-evans/repository-dispatch@v2
-        with:
-          token: ${{ secrets.PUBLIC_REPO_PAT }}
-          repository: ${{ matrix.repo }}
-          event-type: genshin-db_release
-          client-payload: '{"tagname": "${{ github.ref_name}}"}' # for example github.ref_name might be "v5.0.0"
+      - run: |
+          echo 'This fork does not notify upstream repositories. Define an organization-owned release process before re-enabling dispatch.'
+          exit 1

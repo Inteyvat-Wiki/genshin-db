@@ -8,6 +8,8 @@ This derivative is independently maintained by Inteyvat-Wiki. It is not an offic
 
 ## Dependencies and source data
 
+The new Node.js snapshot adapter depends on the Inteyvat-Wiki derivative of GenshinData-scripts. Its mixed license scope, upstream ISC declaration and Razmoth MIT adaptation are documented in that package's LICENSE, LICENSES and NOTICES.md; this repository's MIT grant does not replace them. During local development the dependency is a file link, not a new community package release.
+
 The currently installed runtime dependencies are fuzzysort 1.1.4 (MIT) and pako 2.0.4 (MIT AND Zlib). Their original license texts are retained in [LICENSES/README.md](LICENSES/README.md). The AND expression requires respecting both parts; it is not a choice between MIT and Zlib. Keep this directory with distributions containing these dependencies, and refresh it if their versions change. This limited runtime inventory is not a complete inventory of every build tool or final bundle.
 
 npm dependencies retain their own licenses. Before distributing bundled code, include the applicable dependency licenses and notices. Data obtained through GenshinData-scripts, external datasets or community sources must be assessed under the applicable source terms; this repository's MIT license does not override those terms.

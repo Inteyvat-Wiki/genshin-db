@@ -1,6 +1,6 @@
 const { FoldersEnum } = require('./folder.js');
 const { LanguagesEnum } = require('./language.js');
-const { getIndex } = require('./getdata.js');
+function createStore(getIndex) {
 
 // object to export
 let altnames = {}
@@ -26,10 +26,10 @@ let baselimits = {
 
 
 function isValidFolder(folder) {
-	return typeof folder === 'string' && FoldersEnum[folder];
+	return typeof folder === 'string' && Object.hasOwn(FoldersEnum, folder);
 }
 function isValidLanguage(language) {
-	return typeof language === 'string' && LanguagesEnum[language];
+	return typeof language === 'string' && Object.hasOwn(LanguagesEnum, language);
 }
 function isValidAltName(altname) {
 	return typeof altname === 'string' && altname.length > 0 && altname.length <= baselimits.maxLength;
@@ -56,14 +56,14 @@ altnames.setLimit = function(limits) {
 altnames.addAltName = function(language, folder, altname, filename) {
 	if(!isValidLanguage(language) || !isValidFolder(folder)) return false;
 	if(!isValidAltName(altname) || !isValidFilename(filename, language, folder)) return false;
-	if(altnameindex.count >= baselimits.maxCount) return false;
+	if(altnameindex.count >= baselimits.maxCount && !Object.hasOwn(altnameindex[language]?.[folder] || {}, altname)) return false;
 
 	if(!altnameindex[language])
 		altnameindex[language] = {};
 	if(!altnameindex[language][folder])
 		altnameindex[language][folder] = {};
-	altnameindex[language][folder][altname]	= filename;
-	altnameindex.count++;
+	if (!Object.hasOwn(altnameindex[language][folder], altname)) altnameindex.count++;
+	Object.defineProperty(altnameindex[language][folder], altname, { value: filename, enumerable: true, configurable: true, writable: true });
 	return true;
 }
 
@@ -73,8 +73,10 @@ altnames.removeAltNames = function(language, folder, altname) {
 
 	try {
 		if(altname !== undefined) {
-			altnameindex.count--;
-			delete altnameindex[language][folder][altname];
+			if (Object.hasOwn(altnameindex[language][folder], altname)) {
+				altnameindex.count--;
+				delete altnameindex[language][folder][altname];
+			}
 		} else {
 			altnameindex.count -= Object.keys(altnameindex[language][folder]).length;
 			delete altnameindex[language][folder];
@@ -95,28 +97,36 @@ altnames.getAltNamesList = function(language, folder) {
 }
 
 altnames.getFilename = function(language, folder, altname) {
-	if(altnameindex[language] && altnameindex[language][folder] && altnameindex[language][folder][altname])
+	if(altnameindex[language] && altnameindex[language][folder] && Object.hasOwn(altnameindex[language][folder], altname))
 		return altnameindex[language][folder][altname];
 	else
 		return undefined;
 }
 
-// add default altnames
-altnames.addAltName('English', 'characters', 'Childe', 'tartaglia');
-altnames.addAltName('English', 'talents', 'Childe', 'tartaglia');
-altnames.addAltName('English', 'constellations', 'Childe', 'tartaglia');
+// Seed references without reading any data or indexes during package import.
+function seed(language, folder, name, filename) {
+    altnameindex[language] ||= {};
+    altnameindex[language][folder] ||= {};
+    altnameindex[language][folder][name] = filename;
+    altnameindex.count++;
+}
+seed('English', 'characters', 'Childe', 'tartaglia');
+seed('English', 'talents', 'Childe', 'tartaglia');
+seed('English', 'constellations', 'Childe', 'tartaglia');
 
-altnames.addAltName('English', 'characters', 'Baal', 'raidenshogun');
-altnames.addAltName('English', 'talents', 'Baal', 'raidenshogun');
-altnames.addAltName('English', 'constellations', 'Baal', 'raidenshogun');
+seed('English', 'characters', 'Baal', 'raidenshogun');
+seed('English', 'talents', 'Baal', 'raidenshogun');
+seed('English', 'constellations', 'Baal', 'raidenshogun');
 
-altnames.addAltName('English', 'talents', 'Anemo Traveler', 'traveleranemo');
-altnames.addAltName('English', 'talents', 'Electro Traveler', 'travelerelectro');
-altnames.addAltName('English', 'talents', 'Geo Traveler', 'travelergeo');
-altnames.addAltName('English', 'constellations', 'Anemo Traveler', 'traveleranemo');
-altnames.addAltName('English', 'constellations', 'Electro Traveler', 'travelerelectro');
-altnames.addAltName('English', 'constellations', 'Geo Traveler', 'travelergeo');
+seed('English', 'talents', 'Anemo Traveler', 'traveleranemo');
+seed('English', 'talents', 'Electro Traveler', 'travelerelectro');
+seed('English', 'talents', 'Geo Traveler', 'travelergeo');
+seed('English', 'constellations', 'Anemo Traveler', 'traveleranemo');
+seed('English', 'constellations', 'Electro Traveler', 'travelerelectro');
+seed('English', 'constellations', 'Geo Traveler', 'travelergeo');
 
-altnames.addAltName('English', 'enemies', 'Dvalin', 'stormterror');
+seed('English', 'enemies', 'Dvalin', 'stormterror');
 
-module.exports = altnames;
+return altnames;
+}
+module.exports = Object.assign(createStore((...args) => require('./getdata.js').getIndex(...args)), { createStore });

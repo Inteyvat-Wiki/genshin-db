@@ -1,4 +1,4 @@
-name: Manual Publish tcg genshin-db Package to npm
+name: Legacy TCG publication (disabled)
 on:
   workflow_dispatch:
 jobs:
@@ -6,16 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      id-token: write
     steps:
-      - uses: actions/checkout@v4
-      # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20.x'
-          registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
-      - run: npm run assemble
-      - run: npm run publish tcg
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: |
+          echo 'Community TCG package publication is disabled in this fork.'
+          exit 1
