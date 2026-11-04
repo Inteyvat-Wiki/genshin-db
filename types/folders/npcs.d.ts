@@ -41,9 +41,10 @@ declare module "genshin-db" {
 	export interface Npc {
 		id: number;
 		name: string;
+		version: string;
 		title?: string;
 		alias: string;
-		source: { group: string; resource: string | number };
+		source: { group: string; resource?: string | number };
 		birthPoints: NpcBirthPoint[];
 		entryTalks: number[];
 		talks: NpcTalk[];
