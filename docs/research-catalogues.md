@@ -4,7 +4,7 @@ Data is extracted by GenshinData-scripts, written to genshin-db, indexed here an
 then queried by wiki-data. No Wiki extraction fallback is required or supported.
 
 ```js
-const db = require('genshin-db');
+const db = require('@inteyvat-wiki/genshin-db');
 const options = {
     resultLanguage: 'ChineseSimplified',
     queryLanguages: ['ChineseSimplified'],

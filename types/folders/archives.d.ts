@@ -1,4 +1,4 @@
-declare module "genshin-db" {
+declare module "@inteyvat-wiki/genshin-db" {
     export type ArchiveCategory = 'serenitea' | 'tcg' | 'miliastra';
     export interface ArchiveClassification {
         /** Original HomeWorldFurnitureType.typeID and typeCategoryID, not translated-name keys. */

@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
-const upstream = require('genshindata-scripts');
+const upstream = require('@inteyvat-wiki/genshin-data-scripts');
 const db = require('../src/main');
 
 async function main() {

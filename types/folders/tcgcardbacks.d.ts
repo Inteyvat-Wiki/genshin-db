@@ -1,4 +1,4 @@
-declare module "genshin-db" {
+declare module "@inteyvat-wiki/genshin-db" {
 	export interface TcgCardBacks {
 		id: number;
 		name: string; // translated

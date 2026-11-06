@@ -1,4 +1,4 @@
-declare module "genshin-db" {
+declare module "@inteyvat-wiki/genshin-db" {
 	//deprecated
 	export interface TalentMaterial { // English only
 		name: string;

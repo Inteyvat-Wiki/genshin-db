@@ -1,4 +1,4 @@
-# genshin-db
+# @inteyvat-wiki/genshin-db
 
 ## 来源、署名与许可
 
@@ -7,6 +7,11 @@
 本分支并非社区 npm 包 `genshin-db` 的官方发布，不保证与上游接口、数据格式及运行方式兼容。下面保留的上游使用文档中，npm 安装命令、发行版、服务与联系方式描述的是上游项目，不代表本分支已提供相同发布或服务。请使用本仓库 Issues 联系本分支维护者。
 
 代码许可不等于游戏内容的再授权，详见 [NOTICES.md](NOTICES.md)。
+
+本分支包版本为 `0.1.0`，精确依赖 `@inteyvat-wiki/genshin-data-scripts@0.1.0`。
+包仍为 `private: true` 且发布禁用；以下组织包安装命令仅说明批准发布后的名称，
+不表示该版本已存在于 npm。发布前请使用 wiki-data 的维护者打包验证流程。
+运行时必须显式准备/打开外部快照，不附带旧完整数据。参见 [数据提供接口](docs/provider.md)。
 
 ## 上游使用文档（保留供参考）
 
@@ -56,17 +61,17 @@ Install a Node version that is still supported.
 
 Install this package into your project with:
 ```cmd
-npm install genshin-db@latest
+npm install @inteyvat-wiki/genshin-db@0.1.0
 ```
 
 Start with:
 ```js
-const genshindb = require('genshin-db');
+const genshindb = require('@inteyvat-wiki/genshin-db');
 ```
 
 Once a new version of `genshin-db` comes out, you'll have to update using:
 ```cmd
-npm install genshin-db@latest
+npm install @inteyvat-wiki/genshin-db@0.1.0
 ```
 
 Make sure to check the [releases page](https://github.com/theBowja/genshin-db/releases) for any possible breaking changes between versions.

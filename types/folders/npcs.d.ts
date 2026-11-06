@@ -1,4 +1,4 @@
-declare module "genshin-db" {
+declare module "@inteyvat-wiki/genshin-db" {
 	export interface NpcDialog extends TaskDialog {
 		speakerName?: string;
 		showType?: string;

@@ -1,4 +1,4 @@
-declare module "genshin-db" {
+declare module "@inteyvat-wiki/genshin-db" {
 	/** Data about a quest item. */
 	export interface QuestItem {
 		id: number;

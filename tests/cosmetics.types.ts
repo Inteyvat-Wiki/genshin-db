@@ -1,5 +1,5 @@
 /// <reference path="../types/index.d.ts" />
-import * as db from 'genshin-db';
+import * as db from '@inteyvat-wiki/genshin-db';
 
 const appearance: db.WeaponSkin | undefined = db.weaponskins('390003', { matchIds: true });
 if (appearance) {

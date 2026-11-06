@@ -1,4 +1,4 @@
-declare module "genshin-db" {
+declare module "@inteyvat-wiki/genshin-db" {
     export type TaskSubtitleCondition = { type: 'boolean'; id: string; title: string; subtitle: string; value: boolean } | 'and';
     export interface TaskSubtitleDialog {
         content: string;

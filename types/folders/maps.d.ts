@@ -1,4 +1,4 @@
-declare module "genshin-db" {
+declare module "@inteyvat-wiki/genshin-db" {
     export type MapRecordKind = 'scene' | 'world_area' | 'map_area' | 'layer_group' | 'floor' | 'layer'
         | 'label' | 'point' | 'point_collection' | 'level_tag' | 'scene_tag' | 'limit_region' | 'open_state' | 'quest_event'
         | 'map_tag' | 'map_icon' | 'map_settings' | 'resource'

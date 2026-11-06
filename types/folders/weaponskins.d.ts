@@ -1,4 +1,4 @@
-declare module "genshin-db" {
+declare module "@inteyvat-wiki/genshin-db" {
 	export interface WeaponSkin {
 		/** AvatarWeaponSkin ID, not its inventory material ID. */
 		id: number;

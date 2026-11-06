@@ -1,11 +1,16 @@
 {
-	"name": "genshin-db",
-	"version": "5.2.9",
+	"name": "@inteyvat-wiki/genshin-db",
+	"version": "0.1.0",
 	"private": true,
 	"engines": { "node": ">=22.13" },
 	"description": "Genshin Impact v6.4 JSON data. Search and get results in all in-game languages! Sources from the fandom wiki and GenshinData repo.",
 	"main": "./src/main.js",
 	"types": "./types/index.d.ts",
+	"exports": {
+		".": { "types": "./types/index.d.ts", "default": "./src/main.js" },
+		"./resources": { "types": "./types/resources.d.ts", "default": "./src/resources.js" },
+		"./package.json": "./package.json"
+	},
 	"scripts": {
 		"test:unit": "node --test tests/*.test.js",
 		"test:provider": "node --test tests/provider.test.js",
@@ -38,7 +43,7 @@
 	},
 	"homepage": "https://github.com/Inteyvat-Wiki/genshin-db#readme",
 	"dependencies": {
-		"genshindata-scripts": "file:../GenshinData-scripts",
+		"@inteyvat-wiki/genshin-data-scripts": "0.1.0",
 		"fuzzysort": "^1.1.4",
 		"pako": "^2.0.4"
 	},
@@ -55,6 +60,7 @@
 		"LICENSE",
 		"NOTICES.md",
 		"docs/provider.md",
+		"scripts/publish/disabled.cjs",
 		"LICENSES/",
 		"README.md",
 		"types/*",
@@ -65,6 +71,7 @@
 		"src/main.js",
 		"src/getdata.js",
 		"src/provider.js",
+		"src/resources.js",
 		"src/Options.js",
 		"src/design.json",
 		"src/v4prop.js"

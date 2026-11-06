@@ -1,4 +1,4 @@
-import * as genshindb from "genshin-db";
+import * as genshindb from "@inteyvat-wiki/genshin-db";
 
 // Test examples
 genshindb.characters("names", { matchCategories: true }); // string[]
@@ -12,4 +12,4 @@ genshindb.characters("foobar", { verboseCategories: false }); // Character | und
 
 genshindb.characters("foobar", { matchCategories: true }); // Character | string[] | undefined
 genshindb.characters("foobar", { matchCategories: true, verboseCategories: true }); // Character | Character[] | undefined
-	
+

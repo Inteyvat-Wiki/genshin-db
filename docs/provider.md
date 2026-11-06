@@ -5,7 +5,7 @@
 以下带 await 的示例在异步函数中执行。
 
 ```js
-const db = require('genshin-db');
+const db = require('@inteyvat-wiki/genshin-db');
 const snapshot = await db.prepare({
     sourceRoot: 'D:/genshin data',
     cacheRoot: 'D:/GenshinCache/data',
@@ -30,16 +30,20 @@ db.openSnapshot({ cacheRoot: 'D:/GenshinCache/data', snapshotId: '完整快照 I
 
 重复名称保存在 `nameMatches` 中；旧查询保持首条匹配的兼容行为，不再在索引构建时丢掉其他同名映射。正文从上游按条读取，不留全量正文内存缓存。版本、图片和数值计算的输入从同一快照获取。
 
-当前为 Node.js 数据处理接口；npm 文件白名单已移除合并数据 `src/min/data.min.json`。wiki-data 已接入显式初始化与固定快照实例；旧文件模式保留用于迁移对比。旧浏览器构建尚未改造成新架构；旧 npm 发布及向上游仓库发送通知的流程已停用。包暂设 `private: true`，仍可本地 `npm pack` 和安装，但在确定组织包名与依赖版本前不允许发布到 npm。
+当前为 Node.js 数据处理接口；npm 文件白名单已移除合并数据 `src/min/data.min.json`。wiki-data 已接入显式初始化与固定快照实例；旧文件模式保留用于迁移对比。旧浏览器构建尚未改造成新架构；旧 npm 发布及向上游仓库发送通知的流程已停用。包保留 `private: true` 和发布禁用脚本，可以本地 `npm pack` 和安装；组织包名已确定，但没有正式发布授权。
 
-包名及版本线尚未调整，`genshindata-scripts` 暂为本地 file 依赖。更换为组织作用域发布包、逐分类精确失效、旧快照清理、真正异步的 I/O 查询以及彻底移除旧数据适配器仍待后续处理；隔离的同步查询实例已提供。
+包名为 `@inteyvat-wiki/genshin-db@0.1.0`，精确依赖 `@inteyvat-wiki/genshin-data-scripts@0.1.0`；不使用 `file:` 或相邻仓库路径。逐分类精确失效、旧快照清理、真正异步的 I/O 查询以及彻底移除旧数据适配器仍待后续处理；隔离的同步查询实例已提供。
+
+`sourceRoot` 必须显式传入，或由上游明确选择的环境变量/旧配置提供。默认导出、Lua、资源和索引位置均位于操作系统用户缓存目录；不会读取包内 `.cache`。历史拼接必须通过 `historyRefs` 显式指定，旧 `config.json` 只在设置 `GENSHIN_DATA_CONFIG` 后加载。
+
+`db.resources` 与 `require('@inteyvat-wiki/genshin-db/resources')` 转发同一稳定上游资源 API。可读 `supportedKinds`，调用 `prepare(kind, options)` 得到 `{ kind, cachePath, result }`，然后将 `cachePath` 作为 `db.prepare({ resourceCaches: ... })` 的输入。支持的原生模块、准确参数和输出见 `@inteyvat-wiki/genshin-data-scripts/resources/README.md`。调用者负责提供已核验计划；没有自动猜测 Lua/地图块、对象 ID 或地图规则。
 
 elements、rarity、weaponmaterialtypes、talentmaterialtypes 保留着社区查询接口，但当前本地导出里并没有这些目录。本轮没有按接口名称补造条目。新模式只提供所选提取器及必要关联分类，不隐式回退到旧完整数据。
 
 ## 独立查询实例
 
 ```js
-const data = require('genshindata-scripts');
+const data = require('@inteyvat-wiki/genshin-data-scripts');
 const first = data.openSnapshot({ cacheRoot: 'D:/GenshinCache/data', snapshotId: '第一份完整快照 ID' });
 const second = data.openSnapshot({ cacheRoot: 'D:/GenshinCache/data', snapshotId: '第二份完整快照 ID' });
 const a = db.createClient(first, { cacheRoot: 'D:/GenshinCache/indexes' });

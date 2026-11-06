@@ -16,6 +16,8 @@ try {
 let bundledAll;
 function loadBundledData() {
     if (bundledAll !== undefined) return bundledAll;
+    if (fs && !fs.existsSync(path.join(__dirname, 'min/data.min.json')))
+        throw new Error('No prepared data provider. Call db.prepare({ sourceRoot, folders, ... }), db.openSnapshot({ cacheRoot, ... }), or db.createClient(snapshot) before querying. The npm package does not contain game data.');
     let all = require('./min/data.min.json');
     if (all instanceof ArrayBuffer) {
         all = JSON.parse(pako.ungzip(all, { to: 'string' }));

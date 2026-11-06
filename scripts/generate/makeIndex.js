@@ -19,7 +19,7 @@ let specificlanguages = helper.sanitizeLanguages(argv.languages.flatMap(value =>
 let specificfolders = helper.sanitizeFolders(argv.folders.flatMap(value => value.split(',')));
 
 if (argv.cache || argv.snapshot) {
-	const snapshot = require('genshindata-scripts').openSnapshot({ cacheRoot: argv.cache, snapshotId: argv.snapshot });
+	const snapshot = require('@inteyvat-wiki/genshin-data-scripts').openSnapshot({ cacheRoot: argv.cache, snapshotId: argv.snapshot });
 	const summary = require('../../src/main').buildIndexes(snapshot, {
 		cacheRoot: argv['index-cache'], folders: specificfolders, languages: specificlanguages
 	});

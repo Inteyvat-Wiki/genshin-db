@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
-const { digest, publish, putJSON } = require('genshindata-scripts/cache/storage');
+const { digest, publish, putJSON } = require('@inteyvat-wiki/genshin-data-scripts/cache/storage');
 const db = require('../src/main');
 
 test('map records keep namespaces and language queries while indexes contain no record bodies', t => {

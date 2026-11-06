@@ -39,14 +39,14 @@ function replaceTypes() {
 	for (const filename of fs.readdirSync('./types')) {
 		if (!filename.endsWith('d.ts')) continue;
 		let typefile = helper.readAndCacheFile(namespace, `./types/${filename}`, 'd.ts');
-		typefile = typefile.replaceAll(`module "genshin-db"`, `module "@genshin-db/tcg"`);
+		typefile = typefile.replaceAll(`module "@inteyvat-wiki/genshin-db"`, `module "@genshin-db/tcg"`);
 		helper.writeFile(`./types/${filename}`, typefile);
 	}
 
 	for (const filename of fs.readdirSync('./types/folders')) {
 		if (!filename.endsWith('d.ts')) continue;
 		let typefile = helper.readAndCacheFile(namespace, `./types/folders/${filename}`, 'd.ts');
-		typefile = typefile.replaceAll(`module "genshin-db"`, `module "@genshin-db/tcg"`);
+		typefile = typefile.replaceAll(`module "@inteyvat-wiki/genshin-db"`, `module "@genshin-db/tcg"`);
 		helper.writeFile(`./types/folders/${filename}`, typefile);
 	}
 }

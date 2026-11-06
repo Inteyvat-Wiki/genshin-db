@@ -52,15 +52,16 @@
 
 /// <reference path="./enums.d.ts" />
 
-declare module "genshin-db" {
-	export function useProvider(snapshot?: import('genshindata-scripts').Snapshot, options?: { cacheRoot?: string }): void;
-	export function prepare(options: import('genshindata-scripts').PreparationOptions & { indexCacheRoot?: string }): Promise<import('genshindata-scripts').Snapshot>;
-	export function openSnapshot(options?: { cacheRoot?: string; snapshotId?: string; indexCacheRoot?: string }): import('genshindata-scripts').Snapshot;
-	export type SnapshotClient = Omit<typeof import('genshin-db'), 'useProvider' | 'prepare' | 'openSnapshot' | 'createClient' | 'buildIndexes' | 'addData'> & { readonly snapshotId: string };
-	export function createClient(snapshot: import('genshindata-scripts').Snapshot, options?: { cacheRoot?: string }): SnapshotClient;
+declare module "@inteyvat-wiki/genshin-db" {
+    export const resources: typeof import('@inteyvat-wiki/genshin-data-scripts/resources');
+	export function useProvider(snapshot?: import('@inteyvat-wiki/genshin-data-scripts').Snapshot, options?: { cacheRoot?: string }): void;
+	export function prepare(options: import('@inteyvat-wiki/genshin-data-scripts').PreparationOptions & { indexCacheRoot?: string }): Promise<import('@inteyvat-wiki/genshin-data-scripts').Snapshot>;
+	export function openSnapshot(options?: { cacheRoot?: string; snapshotId?: string; indexCacheRoot?: string }): import('@inteyvat-wiki/genshin-data-scripts').Snapshot;
+	export type SnapshotClient = Omit<typeof import('@inteyvat-wiki/genshin-db'), 'useProvider' | 'prepare' | 'openSnapshot' | 'createClient' | 'buildIndexes' | 'addData' | 'resources'> & { readonly snapshotId: string };
+	export function createClient(snapshot: import('@inteyvat-wiki/genshin-data-scripts').Snapshot, options?: { cacheRoot?: string }): SnapshotClient;
 	export function getRecord<T = unknown>(folder: string, key: string, options?: { language?: string }): T | undefined;
 	export function interactionGiving(id: number): { items: Array<{ id: number; count: number }>; choices?: Array<{ id: number }>; count?: number; remove: boolean } | undefined;
-	export function buildIndexes(snapshot: import('genshindata-scripts').Snapshot, options?: { cacheRoot?: string; folders?: string[]; languages?: string[] }): { snapshotId: string; indexes: Array<{ language: string; folder: string; count: number }> };
+	export function buildIndexes(snapshot: import('@inteyvat-wiki/genshin-data-scripts').Snapshot, options?: { cacheRoot?: string; folders?: string[]; languages?: string[] }): { snapshotId: string; indexes: Array<{ language: string; folder: string; count: number }> };
 	export interface QueryFunction<R> {
 		<Q extends string, O extends QueryOptions>(query: Q, opts?: O):
 			(O extends { dumpResult: true }

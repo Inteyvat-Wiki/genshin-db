@@ -2,7 +2,7 @@
 
 First start off with:
 ```js
-const genshindb = require('genshin-db');
+const genshindb = require('@inteyvat-wiki/genshin-db');
 ```
 
 ## Table of Contents

@@ -1,4 +1,4 @@
-declare module "genshin-db" {
+declare module "@inteyvat-wiki/genshin-db" {
 	export interface TaskItemOperation {
 		action: 'obtain' | 'give' | 'remove';
 		items: { id: number; count: number | null }[];

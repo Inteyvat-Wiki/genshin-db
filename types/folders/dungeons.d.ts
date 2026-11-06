@@ -1,4 +1,4 @@
-declare module "genshin-db" {
+declare module "@inteyvat-wiki/genshin-db" {
 	export interface Dungeon {
 		id: number;
         /** Unique DungeonEntry configuration ID; present in prepared snapshots. */

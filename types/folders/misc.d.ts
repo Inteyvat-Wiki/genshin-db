@@ -1,4 +1,4 @@
-declare module "genshin-db" {
+declare module "@inteyvat-wiki/genshin-db" {
     export type MiscType = 'achievement' | 'achievement_group' | 'namecard' | 'profile_picture' | 'profile_frame'
         | 'expedition' | 'gallant_path' | 'loading_tip' | 'tutorial' | 'graeae_message';
 

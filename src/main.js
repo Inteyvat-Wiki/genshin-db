@@ -736,12 +736,12 @@ const genshin = createQueryApi(storage);
 // Legacy mode remains available for compatibility and isolated migration comparisons.
 genshin.useProvider = require('./provider').useProvider;
 genshin.prepare = async function(options) {
-    const snapshot = await require('genshindata-scripts').prepare(options);
+    const snapshot = await require('@inteyvat-wiki/genshin-data-scripts').prepare(options);
     genshin.useProvider(snapshot, { cacheRoot: options.indexCacheRoot });
     return snapshot;
 };
 genshin.openSnapshot = function(options = {}) {
-    const snapshot = require('genshindata-scripts').openSnapshot(options);
+    const snapshot = require('@inteyvat-wiki/genshin-data-scripts').openSnapshot(options);
     genshin.useProvider(snapshot, { cacheRoot: options.indexCacheRoot });
     return snapshot;
 };
@@ -756,5 +756,6 @@ genshin.createClient = function(snapshot, options = {}) {
     return Object.freeze(client);
 };
 genshin.buildIndexes = require('./provider').buildIndexes;
+Object.defineProperty(genshin, 'resources', { enumerable: true, get: () => require('./resources') });
 
 module.exports = genshin;

@@ -10,7 +10,7 @@ function codeStart() { return '```js\n'; };
 function codeEnd() { return '\n```\n'; };
 const libname = 'genshindb';
 
-let header = `# Examples\n\nFirst start off with:\n${codeStart()}const ${libname} = require('genshin-db');${codeEnd()}`
+let header = `# Examples\n\nFirst start off with:\n${codeStart()}const ${libname} = require('@inteyvat-wiki/genshin-db');${codeEnd()}`
 
 let folders = [
 	{
