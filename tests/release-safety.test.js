@@ -11,9 +11,8 @@ test('incompatible fork cannot use legacy registry publishing or upstream dispat
     assert.equal(metadata.scripts.publish, undefined);
     assert.equal(metadata.scripts.publishTcg, undefined);
     for (const file of ['manual_publish.yml', 'manual_publish_tcg.yml', 'release_dispatch.yml']) {
-        const source = fs.readFileSync(path.join(root, '.github/workflows', file), 'utf8');
-        assert(!/npm (?:run )?publish|repository-dispatch@|secrets\.|id-token: write|types: \[published\]/.test(source));
-        assert(source.includes('exit 1'));
+        assert.equal(fs.existsSync(path.join(root, '.github/workflows', file)), false,
+            `Legacy workflow must remain removed: ${file}`);
     }
     const result = spawnSync(process.execPath, ['scripts/publish/publish.js', 'tcg'], { cwd: root, encoding: 'utf8', windowsHide: true });
     assert.ifError(result.error);
